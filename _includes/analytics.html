@@ -1,0 +1,108 @@
+{% if site.analytics and site.analytics.google and site.analytics.mode == 'privacy' %}
+<!-- PRIVACY FRIENDLY GOOGLE ANALYTICS
+- https://rankmath.com/blog/google-analytics-gdpr/
+- https://helgeklein.com/blog/google-analytics-cookieless-tracking-without-gdpr-consent/
+-->
+<script type="text/javascript">
+(function () {
+	const cyrb53 = function(str, seed = 0) {
+		let h1 = 0xdeadbeef ^ seed,
+			h2 = 0x41c6ce57 ^ seed;
+		for (let i = 0, ch; i < str.length; i++) {
+			ch = str.charCodeAt(i);
+			h1 = Math.imul(h1 ^ ch, 2654435761);
+			h2 = Math.imul(h2 ^ ch, 1597334677);
+		}
+		h1 = Math.imul(h1 ^ h1 >>> 16, 2246822507) ^ Math.imul(h2 ^ h2 >>> 13, 3266489909);
+		h2 = Math.imul(h2 ^ h2 >>> 16, 2246822507) ^ Math.imul(h1 ^ h1 >>> 13, 3266489909);
+		return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+	};
+
+	const getClientID = function() {
+		let ua = navigator.userAgent || "";
+		let lang = window.navigator.language || window.navigator.userLanguage || window.navigator.browserLanguage || window.navigator.systemLanguage || "";
+		let colors = window.screen.colorDepth || "";
+		let memKey = window.navigator.deviceMemory || "";
+		let pixels = window.devicePixelRatio || "";
+		let res = [window.screen.width, window.screen.height].sort().reverse().join("x");
+		let validityInterval = Math.round (new Date() / 1000 / 3600 / 24 / 7);
+		let clientIDSource = ua + lang + colors + memKey + pixels + res + validityInterval
+		return cyrb53(clientIDSource).toString(16);
+	};
+
+
+	// Load script
+	let script = document.createElement('script');
+	script.src = "https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}";
+	document.head.appendChild(script);
+
+	window.dataLayer = window.dataLayer || [];
+  	function gtag(){dataLayer.push(arguments);}
+  	
+  	// Configuración inicial de GA4 con opciones avanzadas para desactivar cookies
+    gtag('config', '{{ site.analytics.google }}', {
+        'client_storage': 'none', // Desactiva el almacenamiento de cookies
+        'anonymize_ip': true, // Anonimizar IPs (opcional, pero recomendado por privacidad)
+        'user_id': getClientID(), // Proporciona tu propio ID de usuario
+        'cookie_expires': 0, // Asegura que no se creen cookies persistentes
+        'cookie_update': false // Desactiva la actualización de cookies
+    });
+
+    // Set default consent to 'denied'
+	gtag('consent', 'default', {
+	  'ad_storage': 'denied',
+	  'ad_user_data': 'denied',
+	  'ad_personalization': 'denied',
+	  'analytics_storage': 'denied'
+	});
+
+    // Desactivar cookies explícitamente
+    gtag('set', 'allow_google_signals', false); // Desactiva Google Signals, que podría crear cookies
+    gtag('set', 'allow_ad_personalization_signals', false); // Desactiva la personalización de anuncios
+
+    gtag('js', new Date());
+})();
+</script>
+
+{% elsif site.analytics and site.analytics.google and site.analytics.mode == 'consent' %}
+<!-- CONSENT BASED GOOGLE ANALYTICS
+- https://alex-d.github.io/Cookies-EU-banner/
+-->
+<script type="text/javascript">
+	function addBanner() {
+		// Avoid adding multiple times
+		if( document.querySelector('script[src*="www.googletagmanager.com/gtag/js?id="]') ) return
+		if( document.querySelector('#cookies-eu-banner') ) return
+
+		// Append cookie banner to DOM
+		let cookieBanner = document.createElement('div');
+		cookieBanner.id = 'cookies-eu-banner'
+		cookieBanner.style.display = 'none'
+		cookieBanner.innerHTML = `
+		    Para mejorar tu experiencia en nuestro sitio web utilizamos cookies de Google Analytics. ¿Aceptas el uso de estas cookies?
+		    <a href="{{ 'legal/politica-cookies.html' | absolute_url }}" id="cookies-eu-more">Leer más</a>
+		    <button id="cookies-eu-reject">Rechazar</button>
+		    <button id="cookies-eu-accept">Aceptar</button>`
+		document.body.appendChild(cookieBanner);
+
+		// Load google Analytics
+		new CookiesEuBanner(function () {
+
+			// Load script
+			let script = document.createElement('script');
+			script.src = "https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}";
+			document.head.appendChild(script);
+
+			// Set up
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+ 		    gtag('config', '{{ site.analytics.google }}');
+
+		}, true);
+	}
+	window.addEventListener("load", () => { addBanner() })
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/gh/Alex-D/Cookies-EU-banner@master/src/cookies-eu-banner.js" onload="addBanner()"></script >
+{% endif %}

@@ -1,0 +1,230 @@
+<script>
+let ordering = ['type', 'weekend', 'time', 'weekday', 'location', 'none']
+
+
+async function loadICS(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Error al cargar el archivo: ${response.status}`);
+        const icsText = await response.text();
+        return parseICS(icsText);
+    } catch (error) {
+        console.error("Error al cargar el archivo .ics:", error);
+        return [];
+    }
+}
+
+function parseICSDate(dateString) {
+    const match = /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})$/.exec(dateString);
+    if (!match) return dateString //throw new Error("Formato de fecha inválido");
+
+    const [, year, month, day, hour, minute, second] = match.map(Number);
+    return new Date(Date.UTC(year, month - 1, day, hour, minute, second)); // UTC para manejar TZ correctamente
+}
+
+function parseICS(icsString) {
+    const lines = icsString.split(/\r?\n/);
+    const events = [];
+    let event = null;
+    let lastKey = null;
+
+    for (let i = 0; i < lines.length; i++) {
+        let line = lines[i].trim();
+        if (line.startsWith("BEGIN:VEVENT")) {
+            event = {};
+        } else if (line.startsWith("END:VEVENT")) {
+            if (event) events.push(event);
+            event = null;
+        } else if (event) {
+            const match = /^([A-Z-]+)(?:;[^:]+)?:([\s\S]*)$/.exec(line);
+            if (match) {
+                let [, key, value] = match;
+                key = key.toLowerCase();
+                if (key == 'rrule') {
+                    const match = /BYDAY=([^;]+)$/.exec(value);
+                    if (match) event.byday = match[1]
+                } else if (key == 'dtstart') {
+                    const match = /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})$/.exec(value);
+                    if (match) {
+                        event.time = `${match[4]}:${match[5]}`
+                        event.date = `${match[1]}-${match[2]}-${match[3]}`
+                    }
+                } else {
+                    event[key] = value
+                }
+                lastKey = key;
+            } else if (lastKey) {
+                event[lastKey] += " " + line;
+            }
+        }
+    }
+
+    return events;
+}
+
+
+function groupEvents(events, mappingFns) {
+    if (mappingFns.length === 0) return events;
+    const currentFn = mappingFns[0];
+    const grouped = events.reduce((acc, event) => {
+        const key = currentFn(event);
+        if (!acc[key]) acc[key] = [];
+        acc[key].push(event);
+        return acc;
+    }, {});
+    // Se aplica recursivamente con el resto de funciones
+    Object.keys(grouped).forEach(key => {
+        grouped[key] = groupEvents(grouped[key], mappingFns.slice(1));
+    });
+    // Ordenamos las claves y creamos un nuevo objeto
+    const sortedGrouped = {};
+    Object.keys(grouped).sort().forEach(key => {
+        sortedGrouped[key] = grouped[key];
+    });
+
+    return sortedGrouped;
+}
+const mappers = {
+    location(event) {
+        return event.location
+    },
+    time(event) {
+        return event.time
+    },
+    none(event) {
+        return " ";
+    },
+    type(event) {
+        return event.categories;
+    },
+    weekend(event) {
+        return /S|D/.exec(event.byday) ? 'weekend' : 'weekday'
+    },
+    weekday(event) {
+        return event.byday;
+    },
+    area(event) {
+        return event.location.startsWith("B") ? "Norte" : "Sur";
+    },
+}
+
+function display(item) {
+    let str = Object.keys(item).join(', ').trim()
+    return str ? " (" + str + ")" : ""
+}
+
+
+
+
+const colorMap = { ' ': 'none' };
+const colors = ["#007bff", "#28a745", "#dc3545", "#ffc107", "#17a2b8", "#6f42c1", "#e83e8c", "#fd7e14"];
+
+function getColorForKey(key) {
+    if (!colorMap[key]) {
+        colorMap[key] = colors[Object.keys(colorMap).length % colors.length];
+    }
+    return colorMap[key];
+}
+
+const mappingFns = ordering.map(fnc => mappers[fnc])
+
+
+// Uso:
+loadICS("http://127.0.0.1:4000/events.ics").then(events => {
+    const groupedEvents = groupEvents(events, mappingFns);
+    console.log(events, groupedEvents, mappingFns)
+
+    PetiteVue.createApp({
+        groupedEvents: groupedEvents,
+    }).mount('#events')
+});
+</script>
+<template>
+    {% raw %}
+    <div id="events" style="width: 450px" v-scope>
+        <!-- Primer grupo: cada clave genera una tabla -->
+        <div v-for="(group, groupKey) in groupedEvents" style="margin-bottom:20px;">
+            <h1>{{ groupKey.trim() }}</h1>
+            <div v-for="(table, tableKey) in group" style="margin-bottom:20px;">
+                <h3>{{ tableKey.trim() }}</h3>
+                <table border="1">
+                    <tbody>
+                        <!-- Segundo grupo: cada fila con dos columnas (clave y valor) -->
+                        <tr v-for="(row, rowKey) in table">
+                            <td>{{ rowKey.trim() }}</td>
+                            <td>
+                                <!-- Tercer grupo: elementos en la misma línea -->
+                                <p v-for="(line, lineKey) in row" style="margin-right:10px;">
+                                    {{ lineKey.trim() }}
+                                    <span v-for="(item, itemKey) in line" :style="{ backgroundColor: getColorForKey(itemKey) }">
+                                        {{ itemKey.trim() }}{{ display(item) }}
+                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% endraw %}
+</template>
+
+<head>
+    <script src="https://unpkg.com/petite-vue"></script>
+</head>
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/*tr:hover {
+    background-color: #e2e6ea;
+}*/
+
+h1:empty,
+h3:empty,
+td:empty,
+span:empty {
+    display: none;
+}
+
+h3 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    font-size: 1.4em;
+}
+
+span {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    font-size: 0.9em;
+}
+</style>

@@ -1,0 +1,276 @@
+<script>
+async function fetchCors(url) {
+    let response = await fetch(`https://arrietaeguren.es/cors?url=${encodeURIComponent(url)}`, { referrerPolicy: "no-referrer", cache: "force-cache" });
+    return response.text()
+}
+
+function extract(elem) {
+    if (!elem) return ''
+    return elem.innerHTML.replace(/<p>|<\/p>|<br>/g, '\n').replace(/<span .+?>|<\/span>|<p .+?>|\t/g, '').replace(/\n\n+/g, '\n\n')
+}
+
+function scraper(source, map, area = '', data = {}) {
+    const parser = new DOMParser();
+    doc = parser.parseFromString(source, 'text/html');
+    for (let [key, value] of Object.entries(map)) {
+        data[key] = extract(doc.querySelector(area + ' ' + value))
+    }
+    return data
+}
+
+
+/*fetchCors('https://archimadrid.org/index.php/oracion-y-liturgia/index.php?option=com_archimadrid&format=json&task=leer_lecturas&dia=2025-03-02')
+    .then(source => {
+        console.log(source, JSON.parse(source))
+        source = JSON.parse(source)[0].post_content
+        return scraper(source, {
+            evangelio: '',
+        }, 'body')
+    }).then(lecturas => {
+        console.log(lecturas)
+        const app = {
+            lecturas: lecturas,
+        }
+        PetiteVue.createApp(app).mount('#evangelio')
+    })*/
+
+
+async function fetchAndJoinVerses(version, reference) {
+    const { book, chapter, verses } = parseReference(reference);
+    // Si verses es un array de arrays, lo aplanamos; si no, usamos directamente.
+    const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
+
+    let url = `https://cdn.jsdelivr.net/gh/wldeh/bible-api/bibles/${version}/books/${book}/chapters/${chapter}.json`
+    console.log(url)
+    const verseTexts = await fetch(url)
+        .then(response => response.json())
+        .then(data => verseNums.map(verse => data.data[verse].text))
+
+    return verseTexts.join(' ');
+}
+
+
+
+
+
+function parseReference(ref) {
+
+    // Mapeo de abreviaturas bascas a nombres completos en inglés.
+    // Actualiza el diccionario según tus necesidades.
+    const bookMap = {
+        // Antiguo Testamento
+        "Ur": "genesis",
+        "Gen": "genesis",
+        "Has": "genesis",
+        "Ex": "exodus",
+        "Exodo": "exodus",
+        "Le": "leviticus",
+        "Lev": "leviticus",
+        "Num": "numbers",
+        "Dt": "deuteronomy",
+        "Deut": "deuteronomy",
+        "Jos": "joshua",
+        "Jdg": "judges",
+        "Jud": "judges",
+        "Rut": "ruth",
+        "Sa": "samuel", // 1 y 2 Samuel
+        "1Sa": "samuel",
+        "2Sa": "samuel",
+        "Ki": "kings", // 1 y 2 Kings
+        "1Ki": "kings",
+        "2Ki": "kings",
+        "Ch": "chronicles", // 1 y 2 Chronicles
+        "1Ch": "chronicles",
+        "2Ch": "chronicles",
+        "Ezr": "ezra",
+        "Neh": "nehemiah",
+        "Est": "esther",
+        "Job": "job",
+        "Sal": "psalms",
+        "Psalm": "psalms",
+        "Pro": "proverbs",
+        "Pr": "proverbs",
+        "Ecc": "ecclesiastes",
+        "Ec": "ecclesiastes",
+        "Can": "song of solomon",
+        "Cnc": "song of solomon",
+        "Is": "isaiah",
+        "Isai": "isaiah",
+        "Jer": "jeremiah",
+        "Jr": "jeremiah",
+        "Lam": "lamentations",
+        "Eze": "ezekiel",
+        "Ezk": "ezekiel",
+        "Dan": "daniel",
+        "Hos": "hosea",
+        "Joel": "joel",
+        "Amo": "amos",
+        "Oba": "obadiah",
+        "Jon": "jonah",
+        "Mic": "micah",
+        "Nah": "nahum",
+        "Hab": "habakkuk",
+        "Zeph": "zephaniah",
+        "Zef": "zephaniah",
+        "Hag": "haggai",
+        "Zec": "zechariah",
+        "Zek": "zechariah",
+        "Mal": "malachi",
+        // Nuevo Testamento
+        "Mat": "matthew",
+        "Mt": "matthew",
+        "Mar": "mark",
+        "Mk": "mark",
+        "Luk": "luke",
+        "Lu": "luke",
+        "Jn": "john",
+        "Jo": "john",
+        "Act": "acts",
+        "Acts": "acts",
+        "Ac": "acts",
+        "Rom": "romans",
+        "Ko": "corinthians",
+        "Kor": "corinthians",
+        "Gal": "galatians",
+        "Eph": "ephesians",
+        "Efe": "ephesians",
+        "Phil": "philippians",
+        "Fil": "philippians",
+        "Col": "colossians",
+        "Tes": "thessalonians", // 1 y 2 Thessalonians
+        "1Tes": "thessalonians",
+        "2Tes": "thessalonians",
+        "Tim": "timothy", // 1 y 2 Timothy
+        "1Tim": "timothy",
+        "2Tim": "timothy",
+        "Tit": "titus",
+        "Phlm": "philemon",
+        "Heb": "hebrews",
+        "Jas": "james",
+        "Jms": "james",
+        "Pet": "peter", // 1 y 2 Peter
+        "1Pet": "peter",
+        "2Pet": "peter",
+        "Pt": "peter",
+        "Jud": "jude",
+        "Rev": "revelation"
+    };
+
+
+    // Separa la parte "libro y capítulo" de los versos.
+    const [head, versesStr] = ref.split(',').map(s => s.trim());
+    // Se asume que la última palabra de "head" es el capítulo.
+    const parts = head.split(' ');
+    const chapter = parts.pop();
+    let bookAbbr = parts.join(' ');
+    let book;
+    // Si existe un número inicial (ej.: "1 Ko")
+    const match = bookAbbr.match(/^(\d+)\s*(\w+)$/);
+    if (match) {
+        const [, num, abbr] = match;
+        book = `${num}${bookMap[abbr] || abbr}`;
+    } else {
+        book = bookMap[bookAbbr] || bookAbbr;
+    }
+
+    // Convierte los rangos de versos.
+    // Separa grupos por "." y elimina espacios.
+    console.log(versesStr.replace(/[abcd ]/g, ''))
+    const verseGroups = versesStr.replace(/[abcd ]/g, '').split('.').map(s => s.trim()).filter(Boolean);
+    // Función para transformar un rango "start-end" a un array numérico.
+    const parseRange = r => {
+        const [start, end] = r.split('-').map(Number);
+        if (!end) return [start]
+        return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+    }
+    // Si hay más de un grupo, se devuelve un array de arrays.
+    const verses = verseGroups.length > 1 ?
+        verseGroups.map(parseRange) :
+        parseRange(verseGroups[0]);
+
+    return { book, chapter: parseInt(chapter), verses };
+}
+
+
+function convert(readings) {
+
+    // Ejemplo de uso: se recorre cada lectura y se imprime el texto completo.
+    for (const key in readings) {
+        fetchAndJoinVerses('en-asv', readings[key]).then(fullText => {
+            console.log(key, fullText);
+        });
+    }
+
+
+    let data = {}
+    for (const key in readings) {
+        data[key] = parseReference(readings[key])
+    }
+    return data
+
+
+}
+
+fetchCors('https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irakurgaiak/?d=17-06-2025')
+    .then(source => {
+        return scraper(source, {
+            evangelio: 'div:nth-last-of-type(1)',
+            salmo: 'div:nth-last-of-type(2)',
+            primera: 'div:nth-last-of-type(4)',
+            segunda: 'div:nth-last-of-type(3)',
+        }, '.evangelio-textos-content')
+    }).then(lecturas => {
+        if (!lecturas.primera) {
+            lecturas.primera = lecturas.segunda
+            //   lecturas.segunda = ''
+        }
+        let cite = {
+            primera: lecturas.primera.split('\n').filter(Boolean)[2],
+            evangelio: lecturas.evangelio.split('\n').filter(Boolean)[2],
+            salmo: lecturas.salmo.split('\n').filter(Boolean)[0],
+            segunda: lecturas.segunda.split('\n').filter(Boolean)[2]
+        }
+        console.log(lecturas, cite)
+        const app = {
+            lecturas: lecturas,
+            cite: cite
+            //$delimiters: ['{{', '}}'],
+        }
+        PetiteVue.createApp(app).mount('#ebenjelioa')
+        let data = convert(cite)
+    }) /**/
+</script>
+<template>
+    {% raw %}
+    <!-- anywhere on the page -->
+    <div id="ebenjelioa" style="white-space: pre-line;" v-scope>
+        {{ cite }}
+        <h4>IRAKURGAIA 1</h4>
+        {{ lecturas.primera }}
+        <h4>SALMOA</h4>
+        {{ lecturas.salmo }}
+        <div v-if="lecturas.segunda">
+            <h4>IRAKURGAIA 2</h4>
+            {{ lecturas.segunda }}
+        </div>
+        <h4>EBANJELIOA</h4>
+        {{ lecturas.evangelio }}
+    </div>
+    <div id="evangelio" style="white-space: pre-line;" v-scope>
+        {{ lecturas.evangelio }}
+    </div>
+    {% endraw %}
+</template>
+
+<head>
+    <script src="https://unpkg.com/petite-vue"></script>
+</head>
+<style>
+[v-scope] {
+    display: none;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+</style>

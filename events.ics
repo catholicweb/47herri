@@ -1,0 +1,33 @@
+---
+layout: null
+permalink: /events.ics
+content-type: text/calendar
+---
+{% assign today = "now" | date: "%Y%m%d" %}
+{%- assign all_events = "" | split: "" -%}
+{% for page in site.pages %}
+  {% if page.events %}
+    {% assign all_events = all_events | concat: page.events %}
+  {% endif %}
+{%- endfor -%}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//{{site.name}} Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+{% for event in all_events %}BEGIN:VEVENT
+ORGANIZER:mailto:{{ site.email | escape }}
+DTSTAMP:{{ site.time | date: "%Y%m%dT%H%M%S" }}
+URL:{{ event.url | default: site.url }}
+STATUS:CONFIRMED
+UID:{{ event.start | date: "%Y%m%dT%H%M%S" }}-{{ forloop.index }}
+CATEGORIES:{{event.type | escape }}
+SUMMARY:{{ event.summary | escape }}
+LOCATION:{{ event.location | escape }}
+GEO:37.5739497;-85.7399606
+DESCRIPTION:{{ event.description | escape }}
+DTSTART:{{ today }}T{{ event.time | replace: ":", "" }}00
+DTEND:{{ event.end | date: "%Y%m%dT%H%M%S" }}
+RRULE:FREQ=WEEKLY;WKST=MO;BYDAY={{ event.byday }}
+END:VEVENT
+{% endfor %}END:VCALENDAR

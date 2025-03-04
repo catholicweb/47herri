@@ -1,0 +1,3338 @@
+{
+    "version": 0.6,
+    "generator": "Overpass API 0.7.62.5 1bd436f1",
+    "osm3s":
+    {
+        "timestamp_osm_base": "2025-03-03T17:32:44Z",
+        "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+    },
+    "elements": [
+
+        {
+            "type": "node",
+            "id": 2101309487,
+            "lat": 42.9914409,
+            "lon": -1.8817280,
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "name": "San Pedro eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3723947757,
+            "lat": 42.9818894,
+            "lon": -1.8562972,
+            "tags":
+            {
+                "addr:city": "Arruitz",
+                "amenity": "place_of_worship",
+                "denomination": "catholic",
+                "name": "Santa Luzia ermita",
+                "name:es": "Ermita de Santa Lucia",
+                "name:eu": "Santa Luzia ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "node",
+            "id": 5494768266,
+            "lat": 43.0408045,
+            "lon": -1.9264675,
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "name": "Santa Krutz ermita",
+                "name:es": "Ermita de la Santa Cruz",
+                "name:eu": "Santa Krutz ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "node",
+            "id": 5843619052,
+            "lat": 43.0265551,
+            "lon": -1.8259029,
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "name": "Juan Bautista eliza",
+                "name:eu": "San Joan Bataiatzailearen eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "node",
+            "id": 6115164196,
+            "lat": 42.9934123,
+            "lon": -1.8615922,
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "name": "San Kristobal parrokia",
+                "name:es": "Parroquia de San Cristobal",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "node",
+            "id": 6466684823,
+            "lat": 43.0143326,
+            "lon": -1.9647542,
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "name": "Ermita de San Donato",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "node",
+            "id": 11246257987,
+            "lat": 43.0104177,
+            "lon": -1.8607036,
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "name": "Santa Luzia ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 95791700,
+            "bounds":
+            {
+                "minlat": 43.0170320,
+                "minlon": -1.9926103,
+                "maxlat": 43.0172416,
+                "maxlon": -1.9922773
+            },
+            "nodes": [
+                1110261528,
+                1110261711,
+                1110261638,
+                1110261748,
+                1110261762,
+                1110261704,
+                1110261650,
+                1110261790,
+                1110261552,
+                1110261528
+            ],
+            "geometry": [
+            {
+                "lat": 43.0170702,
+                "lon": -1.9925652
+            },
+            {
+                "lat": 43.0171089,
+                "lon": -1.9925755
+            },
+            {
+                "lat": 43.0171982,
+                "lon": -1.9926103
+            },
+            {
+                "lat": 43.0172416,
+                "lon": -1.9923122
+            },
+            {
+                "lat": 43.0171114,
+                "lon": -1.9922773
+            },
+            {
+                "lat": 43.0171025,
+                "lon": -1.9923395
+            },
+            {
+                "lat": 43.0170776,
+                "lon": -1.9923297
+            },
+            {
+                "lat": 43.0170320,
+                "lon": -1.9925450
+            },
+            {
+                "lat": 43.0170709,
+                "lon": -1.9925605
+            },
+            {
+                "lat": 43.0170702,
+                "lon": -1.9925652
+            }],
+            "tags":
+            {
+                "addr:housenumber": "5",
+                "addr:street": "Santiago auzoa",
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "denomination": "catholic",
+                "name": "Santiago parrokia",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 95794304,
+            "bounds":
+            {
+                "minlat": 43.0376686,
+                "minlon": -1.9843036,
+                "maxlat": 43.0378764,
+                "maxlon": -1.9838936
+            },
+            "nodes": [
+                1110276755,
+                1110276695,
+                1110276784,
+                1110276663,
+                1110276765,
+                1110276638,
+                1110276750,
+                1110276621,
+                1110276734,
+                1110276603,
+                9274153188,
+                1110276705,
+                1110276749,
+                1110276787,
+                1110276676,
+                9274153186,
+                9274153189,
+                1110276771,
+                1110276642,
+                1110276617,
+                9274153187,
+                1110276753,
+                1110276635,
+                1110276755
+            ],
+            "geometry": [
+            {
+                "lat": 43.0378764,
+                "lon": -1.9842030
+            },
+            {
+                "lat": 43.0378383,
+                "lon": -1.9840111
+            },
+            {
+                "lat": 43.0377910,
+                "lon": -1.9839129
+            },
+            {
+                "lat": 43.0377545,
+                "lon": -1.9838936
+            },
+            {
+                "lat": 43.0377200,
+                "lon": -1.9839081
+            },
+            {
+                "lat": 43.0376921,
+                "lon": -1.9839376
+            },
+            {
+                "lat": 43.0376686,
+                "lon": -1.9839846
+            },
+            {
+                "lat": 43.0376715,
+                "lon": -1.9840968
+            },
+            {
+                "lat": 43.0376960,
+                "lon": -1.9842444
+            },
+            {
+                "lat": 43.0377465,
+                "lon": -1.9842324
+            },
+            {
+                "lat": 43.0377511,
+                "lon": -1.9842532
+            },
+            {
+                "lat": 43.0377886,
+                "lon": -1.9842395
+            },
+            {
+                "lat": 43.0377936,
+                "lon": -1.9842640
+            },
+            {
+                "lat": 43.0377982,
+                "lon": -1.9842868
+            },
+            {
+                "lat": 43.0378022,
+                "lon": -1.9842936
+            },
+            {
+                "lat": 43.0378137,
+                "lon": -1.9843036
+            },
+            {
+                "lat": 43.0378424,
+                "lon": -1.9842984
+            },
+            {
+                "lat": 43.0378545,
+                "lon": -1.9842747
+            },
+            {
+                "lat": 43.0378545,
+                "lon": -1.9842571
+            },
+            {
+                "lat": 43.0378521,
+                "lon": -1.9842419
+            },
+            {
+                "lat": 43.0378487,
+                "lon": -1.9842314
+            },
+            {
+                "lat": 43.0378400,
+                "lon": -1.9842219
+            },
+            {
+                "lat": 43.0378421,
+                "lon": -1.9842004
+            },
+            {
+                "lat": 43.0378764,
+                "lon": -1.9842030
+            }],
+            "tags":
+            {
+                "addr:city": "Araitz",
+                "addr:housenumber": "15",
+                "addr:postcode": "31891",
+                "addr:street": "San Migel kalea",
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "denomination": "catholic",
+                "name": "San Migel eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 96064135,
+            "bounds":
+            {
+                "minlat": 43.0315655,
+                "minlon": -1.9829714,
+                "maxlat": 43.0316518,
+                "maxlon": -1.9828181
+            },
+            "nodes": [
+                1113006751,
+                1113007020,
+                1113006469,
+                1113006666,
+                1113006751
+            ],
+            "geometry": [
+            {
+                "lat": 43.0315882,
+                "lon": -1.9828181
+            },
+            {
+                "lat": 43.0315655,
+                "lon": -1.9829510
+            },
+            {
+                "lat": 43.0316290,
+                "lon": -1.9829714
+            },
+            {
+                "lat": 43.0316518,
+                "lon": -1.9828384
+            },
+            {
+                "lat": 43.0315882,
+                "lon": -1.9828181
+            }],
+            "tags":
+            {
+                "addr:city": "Araitz",
+                "addr:housenumber": "17",
+                "addr:postcode": "31891",
+                "addr:street": "Orella auzoa",
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "check_date": "2024-01-27",
+                "denomination": "catholic",
+                "name": "Orellako ermita",
+                "name:es": "Nuestra Señora del Camino",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 97950357,
+            "bounds":
+            {
+                "minlat": 43.0414074,
+                "minlon": -1.9874368,
+                "maxlat": 43.0416064,
+                "maxlon": -1.9871708
+            },
+            "nodes": [
+                1133701236,
+                1133701390,
+                1133701120,
+                1133701397,
+                1133701148,
+                1133701264,
+                1133701282,
+                1133701365,
+                1133700957,
+                1133701084,
+                1133701236
+            ],
+            "geometry": [
+            {
+                "lat": 43.0415964,
+                "lon": -1.9872746
+            },
+            {
+                "lat": 43.0416064,
+                "lon": -1.9872048
+            },
+            {
+                "lat": 43.0415649,
+                "lon": -1.9871942
+            },
+            {
+                "lat": 43.0414623,
+                "lon": -1.9871708
+            },
+            {
+                "lat": 43.0414535,
+                "lon": -1.9872332
+            },
+            {
+                "lat": 43.0414231,
+                "lon": -1.9872273
+            },
+            {
+                "lat": 43.0414074,
+                "lon": -1.9873788
+            },
+            {
+                "lat": 43.0414705,
+                "lon": -1.9874225
+            },
+            {
+                "lat": 43.0415518,
+                "lon": -1.9874368
+            },
+            {
+                "lat": 43.0415723,
+                "lon": -1.9872669
+            },
+            {
+                "lat": 43.0415964,
+                "lon": -1.9872746
+            }],
+            "tags":
+            {
+                "addr:city": "Araitz",
+                "addr:housenumber": "27",
+                "addr:postcode": "31891",
+                "addr:street": "San Juan kalea",
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "denomination": "catholic",
+                "name": "San Juan Bataiatzailea",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 98127892,
+            "bounds":
+            {
+                "minlat": 43.0406583,
+                "minlon": -1.9886203,
+                "maxlat": 43.0407829,
+                "maxlon": -1.9884164
+            },
+            "nodes": [
+                1135611264,
+                1135611219,
+                1135611194,
+                1135611114,
+                1135611264
+            ],
+            "geometry": [
+            {
+                "lat": 43.0406948,
+                "lon": -1.9886203
+            },
+            {
+                "lat": 43.0407829,
+                "lon": -1.9885845
+            },
+            {
+                "lat": 43.0407465,
+                "lon": -1.9884164
+            },
+            {
+                "lat": 43.0406583,
+                "lon": -1.9884522
+            },
+            {
+                "lat": 43.0406948,
+                "lon": -1.9886203
+            }],
+            "tags":
+            {
+                "addr:city": "Atallu",
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "denomination": "catholic",
+                "name": "Santa Ageda ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 130124195,
+            "bounds":
+            {
+                "minlat": 43.0259394,
+                "minlon": -1.9802554,
+                "maxlat": 43.0261847,
+                "maxlon": -1.9798600
+            },
+            "nodes": [
+                1434200046,
+                1434200057,
+                1434200050,
+                1434200044,
+                7101671839,
+                1434200042,
+                1434199994,
+                1434199996,
+                1434199981,
+                1434199983,
+                1434200011,
+                1434200014,
+                1434200029,
+                1434200027,
+                1434200047,
+                1434200046
+            ],
+            "geometry": [
+            {
+                "lat": 43.0261616,
+                "lon": -1.9800810
+            },
+            {
+                "lat": 43.0261847,
+                "lon": -1.9800802
+            },
+            {
+                "lat": 43.0261825,
+                "lon": -1.9799709
+            },
+            {
+                "lat": 43.0261594,
+                "lon": -1.9799718
+            },
+            {
+                "lat": 43.0261169,
+                "lon": -1.9799672
+            },
+            {
+                "lat": 43.0261019,
+                "lon": -1.9798607
+            },
+            {
+                "lat": 43.0259639,
+                "lon": -1.9798600
+            },
+            {
+                "lat": 43.0259660,
+                "lon": -1.9799633
+            },
+            {
+                "lat": 43.0259394,
+                "lon": -1.9799643
+            },
+            {
+                "lat": 43.0259444,
+                "lon": -1.9802063
+            },
+            {
+                "lat": 43.0260226,
+                "lon": -1.9802033
+            },
+            {
+                "lat": 43.0260237,
+                "lon": -1.9802554
+            },
+            {
+                "lat": 43.0260951,
+                "lon": -1.9802527
+            },
+            {
+                "lat": 43.0260940,
+                "lon": -1.9802006
+            },
+            {
+                "lat": 43.0261640,
+                "lon": -1.9801979
+            },
+            {
+                "lat": 43.0261616,
+                "lon": -1.9800810
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "check_date": "2024-12-30",
+                "denomination": "catholic",
+                "name": "Pedro Deuna apostoluaren eliza",
+                "name:es": "Iglesia de San Pedro",
+                "name:eu": "Pedro Deuna apostoluaren eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 147005925,
+            "bounds":
+            {
+                "minlat": 43.0012487,
+                "minlon": -1.8023543,
+                "maxlat": 43.0013820,
+                "maxlon": -1.8021482
+            },
+            "nodes": [
+                1602031757,
+                1602031756,
+                1602031714,
+                1602031749,
+                1602031757
+            ],
+            "geometry": [
+            {
+                "lat": 43.0013820,
+                "lon": -1.8021795
+            },
+            {
+                "lat": 43.0013544,
+                "lon": -1.8023543
+            },
+            {
+                "lat": 43.0012487,
+                "lon": -1.8023231
+            },
+            {
+                "lat": 43.0012764,
+                "lon": -1.8021482
+            },
+            {
+                "lat": 43.0013820,
+                "lon": -1.8021795
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "denomination": "catholic",
+                "name": "La Asunción / Jasokundearen eliza",
+                "name:es": "Iglesia de La Asunción",
+                "name:eu": "Jasokundearen eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 218415219,
+            "bounds":
+            {
+                "minlat": 43.0515617,
+                "minlon": -1.9612142,
+                "maxlat": 43.0516296,
+                "maxlon": -1.9611107
+            },
+            "nodes": [
+                2276619270,
+                2276619269,
+                4414808974,
+                2276619272,
+                2276619273,
+                2276619270
+            ],
+            "geometry": [
+            {
+                "lat": 43.0515719,
+                "lon": -1.9611107
+            },
+            {
+                "lat": 43.0515617,
+                "lon": -1.9612021
+            },
+            {
+                "lat": 43.0515668,
+                "lon": -1.9612032
+            },
+            {
+                "lat": 43.0516194,
+                "lon": -1.9612142
+            },
+            {
+                "lat": 43.0516296,
+                "lon": -1.9611228
+            },
+            {
+                "lat": 43.0515719,
+                "lon": -1.9611107
+            }],
+            "tags":
+            {
+                "addr:city": "Gorriti",
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "denomination": "catholic",
+                "name": "Santa Barbara baseliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 267889880,
+            "bounds":
+            {
+                "minlat": 43.0058807,
+                "minlon": -1.8955658,
+                "maxlat": 43.0060308,
+                "maxlon": -1.8952596
+            },
+            "nodes": [
+                2732855170,
+                2732855172,
+                2732855176,
+                2732855177,
+                5894653518,
+                2732855180,
+                5894653519,
+                2732855182,
+                7580296540,
+                2732855187,
+                5894653520,
+                2732855170
+            ],
+            "geometry": [
+            {
+                "lat": 43.0059190,
+                "lon": -1.8955510
+            },
+            {
+                "lat": 43.0059983,
+                "lon": -1.8955658
+            },
+            {
+                "lat": 43.0060308,
+                "lon": -1.8953217
+            },
+            {
+                "lat": 43.0060063,
+                "lon": -1.8952708
+            },
+            {
+                "lat": 43.0059574,
+                "lon": -1.8952596
+            },
+            {
+                "lat": 43.0059356,
+                "lon": -1.8952881
+            },
+            {
+                "lat": 43.0058887,
+                "lon": -1.8952851
+            },
+            {
+                "lat": 43.0058807,
+                "lon": -1.8953793
+            },
+            {
+                "lat": 43.0059120,
+                "lon": -1.8953834
+            },
+            {
+                "lat": 43.0058974,
+                "lon": -1.8954800
+            },
+            {
+                "lat": 43.0058917,
+                "lon": -1.8955439
+            },
+            {
+                "lat": 43.0059190,
+                "lon": -1.8955510
+            }],
+            "tags":
+            {
+                "addr:city": "Lekunberri",
+                "addr:housenumber": "16",
+                "addr:municipality": "Lekunberri",
+                "addr:postcode": "31870",
+                "amenity": "place_of_worship",
+                "building": "church",
+                "denomination": "roman_catholic",
+                "historic": "yes",
+                "name": "Done Joanes Bataiatzailearen Eliza / Iglesia de San Juan Bautista",
+                "name:es": "Iglesia de San Juan Bautista",
+                "name:eu": "Done Joanes Bataiatzailearen Eliza",
+                "religion": "christian",
+                "wikimedia_commons": "File:San_Juan_Bautista_eliza.jpg"
+            }
+        },
+        {
+            "type": "way",
+            "id": 267900393,
+            "bounds":
+            {
+                "minlat": 43.0066442,
+                "minlon": -1.8981400,
+                "maxlat": 43.0067993,
+                "maxlon": -1.8979532
+            },
+            "nodes": [
+                2732870131,
+                2732870133,
+                2732870136,
+                2901109341,
+                2732870139,
+                2732870142,
+                2732870131
+            ],
+            "geometry": [
+            {
+                "lat": 43.0066908,
+                "lon": -1.8981400
+            },
+            {
+                "lat": 43.0066442,
+                "lon": -1.8980421
+            },
+            {
+                "lat": 43.0067334,
+                "lon": -1.8979543
+            },
+            {
+                "lat": 43.0067770,
+                "lon": -1.8979532
+            },
+            {
+                "lat": 43.0067993,
+                "lon": -1.8980008
+            },
+            {
+                "lat": 43.0067884,
+                "lon": -1.8980556
+            },
+            {
+                "lat": 43.0066908,
+                "lon": -1.8981400
+            }],
+            "tags":
+            {
+                "addr:city": "Lekunberri",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "Ermita del Pilar",
+                "religion": "christian",
+                "wikimedia_commons": "File:Ermita_del_Pilar_-_Lekunberri.jpg"
+            }
+        },
+        {
+            "type": "way",
+            "id": 305417390,
+            "bounds":
+            {
+                "minlat": 43.0778189,
+                "minlon": -1.9129179,
+                "maxlat": 43.0781153,
+                "maxlon": -1.9122785
+            },
+            "nodes": [
+                3100387740,
+                3100387741,
+                3100387742,
+                4340495660,
+                3100387744,
+                3100387743,
+                3100387740
+            ],
+            "geometry": [
+            {
+                "lat": 43.0781153,
+                "lon": -1.9129009
+            },
+            {
+                "lat": 43.0778396,
+                "lon": -1.9129179
+            },
+            {
+                "lat": 43.0778189,
+                "lon": -1.9122903
+            },
+            {
+                "lat": 43.0780112,
+                "lon": -1.9122785
+            },
+            {
+                "lat": 43.0780139,
+                "lon": -1.9123594
+            },
+            {
+                "lat": 43.0780973,
+                "lon": -1.9123542
+            },
+            {
+                "lat": 43.0781153,
+                "lon": -1.9129009
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "denomination": "roman_catholic",
+                "historic": "yes",
+                "name": "Done Mikel eliza",
+                "name:es": "Iglesia de San Miguel",
+                "name:eu": "Done Mikel eliza",
+                "religion": "christian",
+                "wikidata": "Q25479484",
+                "wikimedia_commons": "File:San_Migel_eliza_-_Leitza.jpg"
+            }
+        },
+        {
+            "type": "way",
+            "id": 310167079,
+            "bounds":
+            {
+                "minlat": 43.0826221,
+                "minlon": -1.9521911,
+                "maxlat": 43.0828203,
+                "maxlon": -1.9518005
+            },
+            "nodes": [
+                3155455892,
+                6617822916,
+                3155455869,
+                6617822912,
+                3155455887,
+                3155455881,
+                3155455358,
+                3155455873,
+                3155455886,
+                3155455872,
+                3155455889,
+                3155455898,
+                3155455892
+            ],
+            "geometry": [
+            {
+                "lat": 43.0827848,
+                "lon": -1.9521911
+            },
+            {
+                "lat": 43.0826798,
+                "lon": -1.9521555
+            },
+            {
+                "lat": 43.0826339,
+                "lon": -1.9521399
+            },
+            {
+                "lat": 43.0826456,
+                "lon": -1.9520748
+            },
+            {
+                "lat": 43.0826507,
+                "lon": -1.9520467
+            },
+            {
+                "lat": 43.0826221,
+                "lon": -1.9520370
+            },
+            {
+                "lat": 43.0826649,
+                "lon": -1.9518005
+            },
+            {
+                "lat": 43.0827804,
+                "lon": -1.9518397
+            },
+            {
+                "lat": 43.0827703,
+                "lon": -1.9518955
+            },
+            {
+                "lat": 43.0828002,
+                "lon": -1.9519056
+            },
+            {
+                "lat": 43.0827861,
+                "lon": -1.9519832
+            },
+            {
+                "lat": 43.0828203,
+                "lon": -1.9519948
+            },
+            {
+                "lat": 43.0827848,
+                "lon": -1.9521911
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 314309458,
+            "bounds":
+            {
+                "minlat": 43.0094469,
+                "minlon": -1.8600246,
+                "maxlat": 43.0096901,
+                "maxlon": -1.8594525
+            },
+            "nodes": [
+                3203595593,
+                3203595591,
+                3203595582,
+                3203595584,
+                3203595576,
+                3203595583,
+                3203595598,
+                3203595594,
+                3203595593
+            ],
+            "geometry": [
+            {
+                "lat": 43.0096239,
+                "lon": -1.8598651
+            },
+            {
+                "lat": 43.0096027,
+                "lon": -1.8600246
+            },
+            {
+                "lat": 43.0094982,
+                "lon": -1.8599986
+            },
+            {
+                "lat": 43.0095116,
+                "lon": -1.8598987
+            },
+            {
+                "lat": 43.0094469,
+                "lon": -1.8598826
+            },
+            {
+                "lat": 43.0095042,
+                "lon": -1.8594525
+            },
+            {
+                "lat": 43.0096901,
+                "lon": -1.8594988
+            },
+            {
+                "lat": 43.0096407,
+                "lon": -1.8598693
+            },
+            {
+                "lat": 43.0096239,
+                "lon": -1.8598651
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "church",
+                "check_date": "2025-03-02",
+                "denomination": "catholic",
+                "name": "Done Martin eliza",
+                "name:es": "Iglesia de San Martín",
+                "name:eu": "Done Martin eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 360766891,
+            "bounds":
+            {
+                "minlat": 42.9692861,
+                "minlon": -1.7904582,
+                "maxlat": 42.9695740,
+                "maxlon": -1.7900126
+            },
+            "nodes": [
+                3653164219,
+                3653164220,
+                3653164221,
+                3653164222,
+                3653164223,
+                3653164224,
+                3653164219
+            ],
+            "geometry": [
+            {
+                "lat": 42.9695740,
+                "lon": -1.7903303
+            },
+            {
+                "lat": 42.9694748,
+                "lon": -1.7904582
+            },
+            {
+                "lat": 42.9692861,
+                "lon": -1.7901788
+            },
+            {
+                "lat": 42.9694069,
+                "lon": -1.7900126
+            },
+            {
+                "lat": 42.9695083,
+                "lon": -1.7901595
+            },
+            {
+                "lat": 42.9694807,
+                "lon": -1.7901952
+            },
+            {
+                "lat": 42.9695740,
+                "lon": -1.7903303
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "church",
+                "check_date": "2025-03-02",
+                "name": "San Esteban eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 366597209,
+            "bounds":
+            {
+                "minlat": 43.0407394,
+                "minlon": -1.9266011,
+                "maxlat": 43.0408516,
+                "maxlon": -1.9263723
+            },
+            "nodes": [
+                3705897891,
+                3705897892,
+                3705897893,
+                3705897894,
+                3705897891
+            ],
+            "geometry": [
+            {
+                "lat": 43.0407982,
+                "lon": -1.9266011
+            },
+            {
+                "lat": 43.0407394,
+                "lon": -1.9264045
+            },
+            {
+                "lat": 43.0407959,
+                "lon": -1.9263723
+            },
+            {
+                "lat": 43.0408516,
+                "lon": -1.9265678
+            },
+            {
+                "lat": 43.0407982,
+                "lon": -1.9266011
+            }],
+            "tags":
+            {
+                "addr:city": "Uitzi",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "Ermita de la Santa Cruz",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 367207357,
+            "bounds":
+            {
+                "minlat": 43.0087023,
+                "minlon": -1.9370160,
+                "maxlat": 43.0088566,
+                "maxlon": -1.9366483
+            },
+            "nodes": [
+                5894653765,
+                3711603403,
+                3711603399,
+                7129731997,
+                7129731996,
+                5894653766,
+                3711603392,
+                5894653768,
+                5894653769,
+                5894653770,
+                5894653765
+            ],
+            "geometry": [
+            {
+                "lat": 43.0087752,
+                "lon": -1.9370160
+            },
+            {
+                "lat": 43.0088566,
+                "lon": -1.9369930
+            },
+            {
+                "lat": 43.0088044,
+                "lon": -1.9366483
+            },
+            {
+                "lat": 43.0087023,
+                "lon": -1.9366772
+            },
+            {
+                "lat": 43.0087299,
+                "lon": -1.9368592
+            },
+            {
+                "lat": 43.0087707,
+                "lon": -1.9368477
+            },
+            {
+                "lat": 43.0087776,
+                "lon": -1.9368938
+            },
+            {
+                "lat": 43.0087399,
+                "lon": -1.9369045
+            },
+            {
+                "lat": 43.0087510,
+                "lon": -1.9369782
+            },
+            {
+                "lat": 43.0087687,
+                "lon": -1.9369732
+            },
+            {
+                "lat": 43.0087752,
+                "lon": -1.9370160
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "church",
+                "denomination": "roman_catholic",
+                "name": "Done Laurendi parrokia",
+                "name:es": "Iglesia de San Lorenzo",
+                "name:eu": "Done Laurendi parrokia",
+                "religion": "christian",
+                "wikimedia_commons": "File:San_Lorenzo_eliza_-_Albiasu.jpg"
+            }
+        },
+        {
+            "type": "way",
+            "id": 367723079,
+            "bounds":
+            {
+                "minlat": 43.0283009,
+                "minlon": -1.9341215,
+                "maxlat": 43.0284163,
+                "maxlon": -1.9339131
+            },
+            "nodes": [
+                3716127340,
+                3716127341,
+                3716127342,
+                3716127343,
+                3716127344,
+                3716127345,
+                3716127346,
+                3716127347,
+                3716127340
+            ],
+            "geometry": [
+            {
+                "lat": 43.0283559,
+                "lon": -1.9341215
+            },
+            {
+                "lat": 43.0283079,
+                "lon": -1.9340431
+            },
+            {
+                "lat": 43.0283009,
+                "lon": -1.9339894
+            },
+            {
+                "lat": 43.0283606,
+                "lon": -1.9339131
+            },
+            {
+                "lat": 43.0283826,
+                "lon": -1.9339249
+            },
+            {
+                "lat": 43.0284116,
+                "lon": -1.9339765
+            },
+            {
+                "lat": 43.0283904,
+                "lon": -1.9340076
+            },
+            {
+                "lat": 43.0284163,
+                "lon": -1.9340463
+            },
+            {
+                "lat": 43.0283559,
+                "lon": -1.9341215
+            }],
+            "tags":
+            {
+                "addr:city": "Azpirotz",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "San Bartolome ermita",
+                "name:es": "Ermita de San Bartolomé",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 368437436,
+            "bounds":
+            {
+                "minlat": 43.0238000,
+                "minlon": -1.8264896,
+                "maxlat": 43.0239888,
+                "maxlon": -1.8262640
+            },
+            "nodes": [
+                3722726478,
+                9801532041,
+                3722726479,
+                3722726480,
+                3722726481,
+                3722726478
+            ],
+            "geometry": [
+            {
+                "lat": 43.0239454,
+                "lon": -1.8264896
+            },
+            {
+                "lat": 43.0239277,
+                "lon": -1.8264720
+            },
+            {
+                "lat": 43.0238000,
+                "lon": -1.8263464
+            },
+            {
+                "lat": 43.0238434,
+                "lon": -1.8262640
+            },
+            {
+                "lat": 43.0239888,
+                "lon": -1.8264072
+            },
+            {
+                "lat": 43.0239454,
+                "lon": -1.8264896
+            }],
+            "tags":
+            {
+                "addr:city": "Beruete",
+                "amenity": "place_of_worship",
+                "building": "church",
+                "name": "Santa Kruz ermita",
+                "name:es": "Ermita de la Santa Cruz",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 368439661,
+            "bounds":
+            {
+                "minlat": 43.0142624,
+                "minlon": -1.9648408,
+                "maxlat": 43.0144070,
+                "maxlon": -1.9645999
+            },
+            "nodes": [
+                3722751716,
+                3722751717,
+                3722751718,
+                3722751719,
+                3722751716
+            ],
+            "geometry": [
+            {
+                "lat": 43.0143222,
+                "lon": -1.9648408
+            },
+            {
+                "lat": 43.0142624,
+                "lon": -1.9647912
+            },
+            {
+                "lat": 43.0143472,
+                "lon": -1.9645999
+            },
+            {
+                "lat": 43.0144070,
+                "lon": -1.9646495
+            },
+            {
+                "lat": 43.0143222,
+                "lon": -1.9648408
+            }],
+            "tags":
+            {
+                "addr:city": "Betelu",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "Ermita de San Donato",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 368533317,
+            "bounds":
+            {
+                "minlat": 43.0795928,
+                "minlon": -1.9045694,
+                "maxlat": 43.0797748,
+                "maxlon": -1.9042264
+            },
+            "nodes": [
+                3723918685,
+                6063414689,
+                6063414688,
+                3723918686,
+                6063414687,
+                6063414686,
+                3723918687,
+                6063414685,
+                6063414584,
+                3723918688,
+                3723918685
+            ],
+            "geometry": [
+            {
+                "lat": 43.0796746,
+                "lon": -1.9045694
+            },
+            {
+                "lat": 43.0795976,
+                "lon": -1.9045177
+            },
+            {
+                "lat": 43.0796222,
+                "lon": -1.9044490
+            },
+            {
+                "lat": 43.0795928,
+                "lon": -1.9044293
+            },
+            {
+                "lat": 43.0796364,
+                "lon": -1.9043077
+            },
+            {
+                "lat": 43.0796337,
+                "lon": -1.9043058
+            },
+            {
+                "lat": 43.0796622,
+                "lon": -1.9042264
+            },
+            {
+                "lat": 43.0797047,
+                "lon": -1.9042550
+            },
+            {
+                "lat": 43.0797082,
+                "lon": -1.9042452
+            },
+            {
+                "lat": 43.0797748,
+                "lon": -1.9042900
+            },
+            {
+                "lat": 43.0796746,
+                "lon": -1.9045694
+            }],
+            "tags":
+            {
+                "addr:city": "Leitza",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "Santa Krutz baseliza",
+                "name:es": "Ermita de la Santa Cruz",
+                "name:eu": "Santa Krutz baseliza",
+                "religion": "christian",
+                "wikidata": "Q29912860",
+                "wikimedia_commons": "File:Santa_Krutz_baseliza_-_Leitza.jpg"
+            }
+        },
+        {
+            "type": "way",
+            "id": 368533704,
+            "bounds":
+            {
+                "minlat": 42.9919169,
+                "minlon": -1.8332076,
+                "maxlat": 42.9921101,
+                "maxlon": -1.8328736
+            },
+            "nodes": [
+                3723931337,
+                3723931338,
+                3723931339,
+                3723931340,
+                3723931337
+            ],
+            "geometry": [
+            {
+                "lat": 42.9919668,
+                "lon": -1.8332076
+            },
+            {
+                "lat": 42.9919169,
+                "lon": -1.8331612
+            },
+            {
+                "lat": 42.9920602,
+                "lon": -1.8328736
+            },
+            {
+                "lat": 42.9921101,
+                "lon": -1.8329200
+            },
+            {
+                "lat": 42.9919668,
+                "lon": -1.8332076
+            }],
+            "tags":
+            {
+                "addr:city": "Itsaso",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "Ermita de San Salvador",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 368605580,
+            "bounds":
+            {
+                "minlat": 42.9593505,
+                "minlon": -1.7817261,
+                "maxlat": 42.9594383,
+                "maxlon": -1.7815663
+            },
+            "nodes": [
+                3724576594,
+                3724576595,
+                3724576596,
+                3724576597,
+                3724576594
+            ],
+            "geometry": [
+            {
+                "lat": 42.9593505,
+                "lon": -1.7815930
+            },
+            {
+                "lat": 42.9594063,
+                "lon": -1.7815663
+            },
+            {
+                "lat": 42.9594383,
+                "lon": -1.7816995
+            },
+            {
+                "lat": 42.9593853,
+                "lon": -1.7817261
+            },
+            {
+                "lat": 42.9593505,
+                "lon": -1.7815930
+            }],
+            "tags":
+            {
+                "addr:city": "Oskotz",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "Ermita de San Pelayo",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 368844290,
+            "bounds":
+            {
+                "minlat": 43.0021180,
+                "minlon": -1.8730923,
+                "maxlat": 43.0022481,
+                "maxlon": -1.8728650
+            },
+            "nodes": [
+                3726862373,
+                3726862374,
+                3726862375,
+                3726862376,
+                3726862373
+            ],
+            "geometry": [
+            {
+                "lat": 43.0022481,
+                "lon": -1.8730457
+            },
+            {
+                "lat": 43.0021841,
+                "lon": -1.8730923
+            },
+            {
+                "lat": 43.0021180,
+                "lon": -1.8729087
+            },
+            {
+                "lat": 43.0021841,
+                "lon": -1.8728650
+            },
+            {
+                "lat": 43.0022481,
+                "lon": -1.8730457
+            }],
+            "tags":
+            {
+                "addr:city": "Etxarri",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "Ermita de la Santa Cruz",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 368844681,
+            "bounds":
+            {
+                "minlat": 43.0225287,
+                "minlon": -1.9762440,
+                "maxlat": 43.0226482,
+                "maxlon": -1.9760694
+            },
+            "nodes": [
+                3726862306,
+                3726862307,
+                3726862308,
+                3726862309,
+                3726862306
+            ],
+            "geometry": [
+            {
+                "lat": 43.0226034,
+                "lon": -1.9762440
+            },
+            {
+                "lat": 43.0225287,
+                "lon": -1.9761198
+            },
+            {
+                "lat": 43.0225735,
+                "lon": -1.9760694
+            },
+            {
+                "lat": 43.0226482,
+                "lon": -1.9761936
+            },
+            {
+                "lat": 43.0226034,
+                "lon": -1.9762440
+            }],
+            "tags":
+            {
+                "addr:city": "Betelu",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "check_date": "2024-12-30",
+                "denomination": "roman_catholic",
+                "name": "Santa Krutz ermita",
+                "name:es": "Ermita de la Santa Cruz",
+                "name:eu": "Santa Krutz ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 377905779,
+            "bounds":
+            {
+                "minlat": 43.0513298,
+                "minlon": -1.9548586,
+                "maxlat": 43.0515727,
+                "maxlon": -1.9544067
+            },
+            "nodes": [
+                3813134864,
+                3813134055,
+                3813134860,
+                3813134865,
+                3813134857,
+                3813134051,
+                3813134864
+            ],
+            "geometry": [
+            {
+                "lat": 43.0515727,
+                "lon": -1.9547770
+            },
+            {
+                "lat": 43.0514704,
+                "lon": -1.9548586
+            },
+            {
+                "lat": 43.0513391,
+                "lon": -1.9545704
+            },
+            {
+                "lat": 43.0513610,
+                "lon": -1.9545537
+            },
+            {
+                "lat": 43.0513298,
+                "lon": -1.9544770
+            },
+            {
+                "lat": 43.0514220,
+                "lon": -1.9544067
+            },
+            {
+                "lat": 43.0515727,
+                "lon": -1.9547770
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "San Bartolome eliza",
+                "name:es": "Iglesia de San Bartolomé",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 623154998,
+            "bounds":
+            {
+                "minlat": 42.9894319,
+                "minlon": -1.9236347,
+                "maxlat": 42.9896359,
+                "maxlon": -1.9233075
+            },
+            "nodes": [
+                5885287683,
+                5885287682,
+                5885287681,
+                5885287680,
+                5885287679,
+                5885287678,
+                5885287677,
+                5885287676,
+                5885287675,
+                5885287674,
+                5885287673,
+                5885287672,
+                5885287671,
+                5885287670,
+                5885287683
+            ],
+            "geometry": [
+            {
+                "lat": 42.9895418,
+                "lon": -1.9236347
+            },
+            {
+                "lat": 42.9895957,
+                "lon": -1.9234637
+            },
+            {
+                "lat": 42.9896188,
+                "lon": -1.9234604
+            },
+            {
+                "lat": 42.9896335,
+                "lon": -1.9234335
+            },
+            {
+                "lat": 42.9896359,
+                "lon": -1.9234000
+            },
+            {
+                "lat": 42.9896163,
+                "lon": -1.9233772
+            },
+            {
+                "lat": 42.9896153,
+                "lon": -1.9233377
+            },
+            {
+                "lat": 42.9895751,
+                "lon": -1.9233169
+            },
+            {
+                "lat": 42.9895668,
+                "lon": -1.9233263
+            },
+            {
+                "lat": 42.9895069,
+                "lon": -1.9233075
+            },
+            {
+                "lat": 42.9894854,
+                "lon": -1.9233450
+            },
+            {
+                "lat": 42.9894736,
+                "lon": -1.9233812
+            },
+            {
+                "lat": 42.9894790,
+                "lon": -1.9234201
+            },
+            {
+                "lat": 42.9894319,
+                "lon": -1.9235697
+            },
+            {
+                "lat": 42.9895418,
+                "lon": -1.9236347
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "church",
+                "denomination": "roman_catholic",
+                "name": "San Migel eliza",
+                "name:es": "Iglesia de San Miguel",
+                "name:eu": "San Migel eliza",
+                "religion": "christian",
+                "wikimedia_commons": "File:San_Migel_eliza_-_Baraibar.jpg"
+            }
+        },
+        {
+            "type": "way",
+            "id": 623155068,
+            "bounds":
+            {
+                "minlat": 42.9885502,
+                "minlon": -1.9043027,
+                "maxlat": 42.9887094,
+                "maxlon": -1.9040498
+            },
+            "nodes": [
+                5885288048,
+                5885288047,
+                5885288046,
+                5885288044,
+                5885288043,
+                5885288045,
+                5885288041,
+                5885288042,
+                5885288048
+            ],
+            "geometry": [
+            {
+                "lat": 42.9886937,
+                "lon": -1.9043027
+            },
+            {
+                "lat": 42.9887094,
+                "lon": -1.9040693
+            },
+            {
+                "lat": 42.9885542,
+                "lon": -1.9040498
+            },
+            {
+                "lat": 42.9885502,
+                "lon": -1.9041095
+            },
+            {
+                "lat": 42.9885712,
+                "lon": -1.9041121
+            },
+            {
+                "lat": 42.9885630,
+                "lon": -1.9042337
+            },
+            {
+                "lat": 42.9886266,
+                "lon": -1.9042417
+            },
+            {
+                "lat": 42.9886231,
+                "lon": -1.9042938
+            },
+            {
+                "lat": 42.9886937,
+                "lon": -1.9043027
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "church",
+                "denomination": "roman_catholic",
+                "name": "San Joan Bataiatzailearen eliza",
+                "name:es": "Iglesia de San Juan Bautista",
+                "name:eu": "San Joan Bataiatzailearen eliza",
+                "religion": "christian",
+                "wikidata": "Q89683640",
+                "wikimedia_commons": "File:San_Joan_Bataiatzailearen_eliza_-_Iribas.jpg",
+                "wikipedia": "eu:San Joan Bataiatzailearen eliza (Iribas)"
+            }
+        },
+        {
+            "type": "way",
+            "id": 652237019,
+            "bounds":
+            {
+                "minlat": 42.9706677,
+                "minlon": -1.8785401,
+                "maxlat": 42.9708042,
+                "maxlon": -1.8782178
+            },
+            "nodes": [
+                6115163306,
+                6115163307,
+                6115163308,
+                6115163309,
+                6115163310,
+                6115163311,
+                6115163312,
+                10277019669,
+                6115163313,
+                6115163314,
+                6115163315,
+                6115163316,
+                6115163317,
+                6115163328,
+                6115163306
+            ],
+            "geometry": [
+            {
+                "lat": 42.9708042,
+                "lon": -1.8785127
+            },
+            {
+                "lat": 42.9707699,
+                "lon": -1.8783675
+            },
+            {
+                "lat": 42.9707801,
+                "lon": -1.8783582
+            },
+            {
+                "lat": 42.9707677,
+                "lon": -1.8783074
+            },
+            {
+                "lat": 42.9707564,
+                "lon": -1.8783074
+            },
+            {
+                "lat": 42.9707352,
+                "lon": -1.8782178
+            },
+            {
+                "lat": 42.9706698,
+                "lon": -1.8782468
+            },
+            {
+                "lat": 42.9706715,
+                "lon": -1.8782537
+            },
+            {
+                "lat": 42.9706904,
+                "lon": -1.8783337
+            },
+            {
+                "lat": 42.9706677,
+                "lon": -1.8783437
+            },
+            {
+                "lat": 42.9707051,
+                "lon": -1.8785018
+            },
+            {
+                "lat": 42.9707306,
+                "lon": -1.8784905
+            },
+            {
+                "lat": 42.9707423,
+                "lon": -1.8785401
+            },
+            {
+                "lat": 42.9707564,
+                "lon": -1.8785339
+            },
+            {
+                "lat": 42.9708042,
+                "lon": -1.8785127
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "Pedro Donearen eliza",
+                "name:es": "Iglesia de San Pedro",
+                "name:eu": "Pedro Donearen eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 652237039,
+            "bounds":
+            {
+                "minlat": 42.9913679,
+                "minlon": -1.8818054,
+                "maxlat": 42.9914978,
+                "maxlon": -1.8815402
+            },
+            "nodes": [
+                6115163796,
+                6115163797,
+                6115163798,
+                6115163799,
+                6115163800,
+                6115163801,
+                6115163802,
+                6115163803,
+                6115163804,
+                6115163805,
+                6115163806,
+                6115163807,
+                6115163808,
+                6115163809,
+                6115163810,
+                6115163811,
+                6115163796
+            ],
+            "geometry": [
+            {
+                "lat": 42.9914887,
+                "lon": -1.8817966
+            },
+            {
+                "lat": 42.9913887,
+                "lon": -1.8818054
+            },
+            {
+                "lat": 42.9913853,
+                "lon": -1.8817340
+            },
+            {
+                "lat": 42.9914071,
+                "lon": -1.8817320
+            },
+            {
+                "lat": 42.9914045,
+                "lon": -1.8816764
+            },
+            {
+                "lat": 42.9913838,
+                "lon": -1.8816782
+            },
+            {
+                "lat": 42.9913815,
+                "lon": -1.8816299
+            },
+            {
+                "lat": 42.9913719,
+                "lon": -1.8816307
+            },
+            {
+                "lat": 42.9913679,
+                "lon": -1.8815459
+            },
+            {
+                "lat": 42.9914334,
+                "lon": -1.8815402
+            },
+            {
+                "lat": 42.9914348,
+                "lon": -1.8815716
+            },
+            {
+                "lat": 42.9914788,
+                "lon": -1.8815678
+            },
+            {
+                "lat": 42.9914804,
+                "lon": -1.8816008
+            },
+            {
+                "lat": 42.9914941,
+                "lon": -1.8815996
+            },
+            {
+                "lat": 42.9914978,
+                "lon": -1.8816788
+            },
+            {
+                "lat": 42.9914832,
+                "lon": -1.8816801
+            },
+            {
+                "lat": 42.9914887,
+                "lon": -1.8817966
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "San Pedro eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 652237108,
+            "bounds":
+            {
+                "minlat": 42.9933048,
+                "minlon": -1.8617085,
+                "maxlat": 42.9935037,
+                "maxlon": -1.8614135
+            },
+            "nodes": [
+                6115164084,
+                6115164185,
+                6115164186,
+                6115164187,
+                6115164188,
+                6115164189,
+                6115164190,
+                6115164191,
+                6115164192,
+                6115164193,
+                6115164194,
+                6115164195,
+                6115164084
+            ],
+            "geometry": [
+            {
+                "lat": 42.9934906,
+                "lon": -1.8614549
+            },
+            {
+                "lat": 42.9935037,
+                "lon": -1.8616597
+            },
+            {
+                "lat": 42.9934357,
+                "lon": -1.8616678
+            },
+            {
+                "lat": 42.9934378,
+                "lon": -1.8617007
+            },
+            {
+                "lat": 42.9933725,
+                "lon": -1.8617085
+            },
+            {
+                "lat": 42.9933704,
+                "lon": -1.8616759
+            },
+            {
+                "lat": 42.9933094,
+                "lon": -1.8616831
+            },
+            {
+                "lat": 42.9933048,
+                "lon": -1.8616101
+            },
+            {
+                "lat": 42.9933809,
+                "lon": -1.8616011
+            },
+            {
+                "lat": 42.9933692,
+                "lon": -1.8614174
+            },
+            {
+                "lat": 42.9934019,
+                "lon": -1.8614135
+            },
+            {
+                "lat": 42.9934052,
+                "lon": -1.8614650
+            },
+            {
+                "lat": 42.9934906,
+                "lon": -1.8614549
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 652248848,
+            "bounds":
+            {
+                "minlat": 43.0064725,
+                "minlon": -1.9607941,
+                "maxlat": 43.0066835,
+                "maxlon": -1.9604699
+            },
+            "nodes": [
+                6115243814,
+                6115243815,
+                10251794553,
+                6115243819,
+                10251794554,
+                6115243820,
+                6115243821,
+                6115243822,
+                6115243823,
+                6115243824,
+                6115243826,
+                6115243827,
+                6115243814
+            ],
+            "geometry": [
+            {
+                "lat": 43.0066039,
+                "lon": -1.9607941
+            },
+            {
+                "lat": 43.0064725,
+                "lon": -1.9607365
+            },
+            {
+                "lat": 43.0065087,
+                "lon": -1.9605948
+            },
+            {
+                "lat": 43.0065224,
+                "lon": -1.9605929
+            },
+            {
+                "lat": 43.0065351,
+                "lon": -1.9605128
+            },
+            {
+                "lat": 43.0065676,
+                "lon": -1.9605169
+            },
+            {
+                "lat": 43.0065834,
+                "lon": -1.9604699
+            },
+            {
+                "lat": 43.0066606,
+                "lon": -1.9604918
+            },
+            {
+                "lat": 43.0066526,
+                "lon": -1.9605302
+            },
+            {
+                "lat": 43.0066835,
+                "lon": -1.9605393
+            },
+            {
+                "lat": 43.0066633,
+                "lon": -1.9606717
+            },
+            {
+                "lat": 43.0066364,
+                "lon": -1.9606638
+            },
+            {
+                "lat": 43.0066039,
+                "lon": -1.9607941
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "San Martin eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 710532135,
+            "bounds":
+            {
+                "minlat": 42.9973588,
+                "minlon": -1.7741334,
+                "maxlat": 42.9975191,
+                "maxlon": -1.7738937
+            },
+            "nodes": [
+                6680369137,
+                6680369138,
+                6680369139,
+                6680369140,
+                6680369141,
+                6680369142,
+                6680369143,
+                6680369144,
+                6680369137
+            ],
+            "geometry": [
+            {
+                "lat": 42.9975153,
+                "lon": -1.7741334
+            },
+            {
+                "lat": 42.9975191,
+                "lon": -1.7740703
+            },
+            {
+                "lat": 42.9974964,
+                "lon": -1.7740678
+            },
+            {
+                "lat": 42.9975058,
+                "lon": -1.7739095
+            },
+            {
+                "lat": 42.9973631,
+                "lon": -1.7738937
+            },
+            {
+                "lat": 42.9973588,
+                "lon": -1.7739672
+            },
+            {
+                "lat": 42.9973952,
+                "lon": -1.7739712
+            },
+            {
+                "lat": 42.9973864,
+                "lon": -1.7741191
+            },
+            {
+                "lat": 42.9975153,
+                "lon": -1.7741334
+            }],
+            "tags":
+            {
+                "addr:city": "Gartzaron",
+                "addr:postcode": "31866",
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "La Asuncion eliza",
+                "name:es": "Iglesia de La Asunción",
+                "name:eu": "Jasokundearen eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 711640699,
+            "bounds":
+            {
+                "minlat": 43.0134878,
+                "minlon": -1.7581047,
+                "maxlat": 43.0136606,
+                "maxlon": -1.7578257
+            },
+            "nodes": [
+                6690683616,
+                6690683615,
+                6690683614,
+                6690683613,
+                6690683612,
+                6690683611,
+                6690683610,
+                6690683609,
+                6690683608,
+                6690683607,
+                6690683606,
+                6690683605,
+                6690683604,
+                6690683603,
+                6690683616
+            ],
+            "geometry": [
+            {
+                "lat": 43.0136516,
+                "lon": -1.7580024
+            },
+            {
+                "lat": 43.0136606,
+                "lon": -1.7579168
+            },
+            {
+                "lat": 43.0136340,
+                "lon": -1.7579116
+            },
+            {
+                "lat": 43.0136404,
+                "lon": -1.7578502
+            },
+            {
+                "lat": 43.0135155,
+                "lon": -1.7578257
+            },
+            {
+                "lat": 43.0135081,
+                "lon": -1.7578960
+            },
+            {
+                "lat": 43.0134988,
+                "lon": -1.7579840
+            },
+            {
+                "lat": 43.0134878,
+                "lon": -1.7580891
+            },
+            {
+                "lat": 43.0135431,
+                "lon": -1.7581000
+            },
+            {
+                "lat": 43.0135489,
+                "lon": -1.7580445
+            },
+            {
+                "lat": 43.0135750,
+                "lon": -1.7580496
+            },
+            {
+                "lat": 43.0135700,
+                "lon": -1.7580968
+            },
+            {
+                "lat": 43.0136101,
+                "lon": -1.7581047
+            },
+            {
+                "lat": 43.0136214,
+                "lon": -1.7579965
+            },
+            {
+                "lat": 43.0136516,
+                "lon": -1.7580024
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "San Tiburtzio parroki-eliza",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 762558291,
+            "bounds":
+            {
+                "minlat": 42.9913412,
+                "minlon": -1.8218179,
+                "maxlat": 42.9914799,
+                "maxlon": -1.8215943
+            },
+            "nodes": [
+                7125136033,
+                7125136034,
+                7125136035,
+                7125136036,
+                7125136037,
+                7125136038,
+                7125136039,
+                7125136040,
+                7125136033
+            ],
+            "geometry": [
+            {
+                "lat": 42.9914734,
+                "lon": -1.8218179
+            },
+            {
+                "lat": 42.9914799,
+                "lon": -1.8217273
+            },
+            {
+                "lat": 42.9914566,
+                "lon": -1.8217242
+            },
+            {
+                "lat": 42.9914649,
+                "lon": -1.8216091
+            },
+            {
+                "lat": 42.9913538,
+                "lon": -1.8215943
+            },
+            {
+                "lat": 42.9913412,
+                "lon": -1.8217695
+            },
+            {
+                "lat": 42.9913810,
+                "lon": -1.8217749
+            },
+            {
+                "lat": 42.9913789,
+                "lon": -1.8218052
+            },
+            {
+                "lat": 42.9914734,
+                "lon": -1.8218179
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "Iglesia de San Pedro",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 762575802,
+            "bounds":
+            {
+                "minlat": 42.9745342,
+                "minlon": -1.8271306,
+                "maxlat": 42.9746963,
+                "maxlon": -1.8269149
+            },
+            "nodes": [
+                7125325385,
+                7125325386,
+                7125325387,
+                7125325388,
+                7125325389,
+                7125325390,
+                7125325391,
+                7125325392,
+                7125325385
+            ],
+            "geometry": [
+            {
+                "lat": 42.9745342,
+                "lon": -1.8271093
+            },
+            {
+                "lat": 42.9745686,
+                "lon": -1.8269149
+            },
+            {
+                "lat": 42.9746963,
+                "lon": -1.8269571
+            },
+            {
+                "lat": 42.9746701,
+                "lon": -1.8271055
+            },
+            {
+                "lat": 42.9746513,
+                "lon": -1.8270993
+            },
+            {
+                "lat": 42.9746458,
+                "lon": -1.8271306
+            },
+            {
+                "lat": 42.9745901,
+                "lon": -1.8271122
+            },
+            {
+                "lat": 42.9745875,
+                "lon": -1.8271269
+            },
+            {
+                "lat": 42.9745342,
+                "lon": -1.8271093
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "Arrosarioko Andre Mariadena eliza",
+                "name:es": "Iglesia Virgen del Rosario",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 762685601,
+            "bounds":
+            {
+                "minlat": 42.9914377,
+                "minlon": -1.8968848,
+                "maxlat": 42.9915740,
+                "maxlon": -1.8965697
+            },
+            "nodes": [
+                7126566984,
+                7126569885,
+                7126569886,
+                7126569887,
+                7126569888,
+                7126569889,
+                7126569890,
+                7126569891,
+                10276069170,
+                7126569893,
+                7126569894,
+                7126569895,
+                7126569896,
+                7126569897,
+                7126566984
+            ],
+            "geometry": [
+            {
+                "lat": 42.9915583,
+                "lon": -1.8968848
+            },
+            {
+                "lat": 42.9915573,
+                "lon": -1.8968500
+            },
+            {
+                "lat": 42.9915740,
+                "lon": -1.8968486
+            },
+            {
+                "lat": 42.9915711,
+                "lon": -1.8967749
+            },
+            {
+                "lat": 42.9915583,
+                "lon": -1.8967735
+            },
+            {
+                "lat": 42.9915505,
+                "lon": -1.8965697
+            },
+            {
+                "lat": 42.9914377,
+                "lon": -1.8965737
+            },
+            {
+                "lat": 42.9914413,
+                "lon": -1.8966194
+            },
+            {
+                "lat": 42.9914578,
+                "lon": -1.8966156
+            },
+            {
+                "lat": 42.9914757,
+                "lon": -1.8967596
+            },
+            {
+                "lat": 42.9914563,
+                "lon": -1.8967669
+            },
+            {
+                "lat": 42.9914592,
+                "lon": -1.8968138
+            },
+            {
+                "lat": 42.9914396,
+                "lon": -1.8968138
+            },
+            {
+                "lat": 42.9914396,
+                "lon": -1.8968808
+            },
+            {
+                "lat": 42.9915583,
+                "lon": -1.8968848
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "Donibane eta Done Pauloren parrokia",
+                "name:es": "Parroquia de San Juan y San Pablo",
+                "name:eu": "Donibane eta Done Pauloren parrokia",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 762761487,
+            "bounds":
+            {
+                "minlat": 43.0103673,
+                "minlon": -1.8608873,
+                "maxlat": 43.0104691,
+                "maxlon": -1.8605855
+            },
+            "nodes": [
+                7127378014,
+                7127378015,
+                7127378016,
+                7127378017,
+                7127378018,
+                7127378019,
+                7127378020,
+                7127378021,
+                7127378014
+            ],
+            "geometry": [
+            {
+                "lat": 43.0104691,
+                "lon": -1.8608832
+            },
+            {
+                "lat": 43.0103732,
+                "lon": -1.8608873
+            },
+            {
+                "lat": 43.0103673,
+                "lon": -1.8606314
+            },
+            {
+                "lat": 43.0103797,
+                "lon": -1.8606309
+            },
+            {
+                "lat": 43.0103787,
+                "lon": -1.8605883
+            },
+            {
+                "lat": 43.0104444,
+                "lon": -1.8605855
+            },
+            {
+                "lat": 43.0104453,
+                "lon": -1.8606255
+            },
+            {
+                "lat": 43.0104632,
+                "lon": -1.8606247
+            },
+            {
+                "lat": 43.0104691,
+                "lon": -1.8608832
+            }],
+            "tags":
+            {
+                "addr:city": "Aldatz",
+                "amenity": "place_of_worship",
+                "building": "church",
+                "name": "Santa Luzia ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 762772035,
+            "bounds":
+            {
+                "minlat": 43.0285092,
+                "minlon": -1.9318669,
+                "maxlat": 43.0287094,
+                "maxlon": -1.9315763
+            },
+            "nodes": [
+                7127564165,
+                7127564166,
+                7127564167,
+                7127564168,
+                7127564165
+            ],
+            "geometry": [
+            {
+                "lat": 43.0286050,
+                "lon": -1.9318669
+            },
+            {
+                "lat": 43.0287094,
+                "lon": -1.9317552
+            },
+            {
+                "lat": 43.0286071,
+                "lon": -1.9315763
+            },
+            {
+                "lat": 43.0285092,
+                "lon": -1.9316898
+            },
+            {
+                "lat": 43.0286050,
+                "lon": -1.9318669
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "San Esteban parrokia",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 763135625,
+            "bounds":
+            {
+                "minlat": 42.9818250,
+                "minlon": -1.8563812,
+                "maxlat": 42.9819662,
+                "maxlon": -1.8562068
+            },
+            "nodes": [
+                7131243317,
+                7131243318,
+                7131243319,
+                7131243320,
+                7131243317
+            ],
+            "geometry": [
+            {
+                "lat": 42.9819278,
+                "lon": -1.8563812
+            },
+            {
+                "lat": 42.9819662,
+                "lon": -1.8563085
+            },
+            {
+                "lat": 42.9818634,
+                "lon": -1.8562068
+            },
+            {
+                "lat": 42.9818250,
+                "lon": -1.8562795
+            },
+            {
+                "lat": 42.9819278,
+                "lon": -1.8563812
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1083640851,
+            "bounds":
+            {
+                "minlat": 43.0414441,
+                "minlon": -1.8884236,
+                "maxlat": 43.0416703,
+                "maxlon": -1.8881107
+            },
+            "nodes": [
+                9727346487,
+                9930597781,
+                9930597782,
+                9930597783,
+                9727346487
+            ],
+            "geometry": [
+            {
+                "lat": 43.0415879,
+                "lon": -1.8884236
+            },
+            {
+                "lat": 43.0416703,
+                "lon": -1.8882192
+            },
+            {
+                "lat": 43.0415266,
+                "lon": -1.8881107
+            },
+            {
+                "lat": 43.0414441,
+                "lon": -1.8883151
+            },
+            {
+                "lat": 43.0415879,
+                "lon": -1.8884236
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "Santa Engraziako ermita",
+                "name:es": "Ermita de Santa Engracia",
+                "name:eu": "Santa Engraziako ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 49187105,
+            "bounds":
+            {
+                "minlat": 43.2136768,
+                "minlon": -1.7959757,
+                "maxlat": 43.2138709,
+                "maxlon": -1.7957344
+            },
+            "nodes": [
+                623959156,
+                623959158,
+                623959159,
+                623959154,
+                623959156
+            ],
+            "geometry": [
+            {
+                "lat": 43.2137321,
+                "lon": -1.7959757
+            },
+            {
+                "lat": 43.2138709,
+                "lon": -1.7958654
+            },
+            {
+                "lat": 43.2138155,
+                "lon": -1.7957344
+            },
+            {
+                "lat": 43.2136768,
+                "lon": -1.7958447
+            },
+            {
+                "lat": 43.2137321,
+                "lon": -1.7959757
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "denomination": "catholic",
+                "name": "San Agustin ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 204935603,
+            "bounds":
+            {
+                "minlat": 43.1994081,
+                "minlon": -1.8948103,
+                "maxlat": 43.1996145,
+                "maxlon": -1.8944382
+            },
+            "nodes": [
+                2149143181,
+                2149143174,
+                5012652792,
+                2149143179,
+                5012652793,
+                2149143170,
+                2149143148,
+                2149143152,
+                2149143181
+            ],
+            "geometry": [
+            {
+                "lat": 43.1996057,
+                "lon": -1.8947632
+            },
+            {
+                "lat": 43.1995821,
+                "lon": -1.8946315
+            },
+            {
+                "lat": 43.1996145,
+                "lon": -1.8946206
+            },
+            {
+                "lat": 43.1995933,
+                "lon": -1.8945026
+            },
+            {
+                "lat": 43.1995613,
+                "lon": -1.8945134
+            },
+            {
+                "lat": 43.1995478,
+                "lon": -1.8944382
+            },
+            {
+                "lat": 43.1994081,
+                "lon": -1.8944853
+            },
+            {
+                "lat": 43.1994663,
+                "lon": -1.8948103
+            },
+            {
+                "lat": 43.1996057,
+                "lon": -1.8947632
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "church",
+                "denomination": "roman_catholic",
+                "historic": "yes",
+                "name": "San Martin parrokia",
+                "religion": "christian",
+                "wikimedia_commons": "File:San_Martin_eliza_-_Arano.jpg"
+            }
+        },
+        {
+            "type": "way",
+            "id": 219509011,
+            "bounds":
+            {
+                "minlat": 43.2204768,
+                "minlon": -1.9150262,
+                "maxlat": 43.2206558,
+                "maxlon": -1.9148092
+            },
+            "nodes": [
+                2286597561,
+                2286597565,
+                2286597562,
+                2286597563,
+                2286597558,
+                2286597557,
+                2286597553,
+                2286597551,
+                2286597556,
+                2286597559,
+                2286597561
+            ],
+            "geometry": [
+            {
+                "lat": 43.2206190,
+                "lon": -1.9150262
+            },
+            {
+                "lat": 43.2206558,
+                "lon": -1.9148714
+            },
+            {
+                "lat": 43.2206208,
+                "lon": -1.9148557
+            },
+            {
+                "lat": 43.2206227,
+                "lon": -1.9148476
+            },
+            {
+                "lat": 43.2205626,
+                "lon": -1.9148207
+            },
+            {
+                "lat": 43.2205609,
+                "lon": -1.9148281
+            },
+            {
+                "lat": 43.2205187,
+                "lon": -1.9148092
+            },
+            {
+                "lat": 43.2204768,
+                "lon": -1.9149853
+            },
+            {
+                "lat": 43.2205585,
+                "lon": -1.9150220
+            },
+            {
+                "lat": 43.2205635,
+                "lon": -1.9150013
+            },
+            {
+                "lat": 43.2206190,
+                "lon": -1.9150262
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "church",
+                "denomination": "catholic",
+                "name": "Santiagoko ermita",
+                "name:eu": "Santiagoko ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 221013529,
+            "bounds":
+            {
+                "minlat": 43.1932551,
+                "minlon": -1.8925942,
+                "maxlat": 43.1933622,
+                "maxlon": -1.8923676
+            },
+            "nodes": [
+                2300675469,
+                2300675455,
+                2300675448,
+                2300675464,
+                2300675469
+            ],
+            "geometry": [
+            {
+                "lat": 43.1933622,
+                "lon": -1.8923870
+            },
+            {
+                "lat": 43.1932816,
+                "lon": -1.8923676
+            },
+            {
+                "lat": 43.1932551,
+                "lon": -1.8925748
+            },
+            {
+                "lat": 43.1933357,
+                "lon": -1.8925942
+            },
+            {
+                "lat": 43.1933622,
+                "lon": -1.8923870
+            }],
+            "tags":
+            {
+                "addr:city": "Arano",
+                "amenity": "place_of_worship",
+                "building": "church",
+                "denomination": "roman_catholic",
+                "historic": "yes",
+                "name": "San Roke ermita",
+                "name:es": "Ermita de San Roque",
+                "religion": "christian",
+                "wikimedia_commons": "File:San_Roke_baseliza_-_Arano.jpg"
+            }
+        },
+        {
+            "type": "way",
+            "id": 366861747,
+            "bounds":
+            {
+                "minlat": 43.1749149,
+                "minlon": -1.8629589,
+                "maxlat": 43.1751181,
+                "maxlon": -1.8627236
+            },
+            "nodes": [
+                5613967182,
+                3708437527,
+                5613967184,
+                5613967183,
+                5613967182
+            ],
+            "geometry": [
+            {
+                "lat": 43.1749614,
+                "lon": -1.8629589
+            },
+            {
+                "lat": 43.1749149,
+                "lon": -1.8628289
+            },
+            {
+                "lat": 43.1750716,
+                "lon": -1.8627236
+            },
+            {
+                "lat": 43.1751181,
+                "lon": -1.8628536
+            },
+            {
+                "lat": 43.1749614,
+                "lon": -1.8629589
+            }],
+            "tags":
+            {
+                "addr:city": "Goizueta",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "Magdalenako ermita",
+                "name:es": "Ermita de La Magdalena",
+                "name:eu": "Magdalenako ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 366861824,
+            "bounds":
+            {
+                "minlat": 43.1784525,
+                "minlon": -1.8620114,
+                "maxlat": 43.1785151,
+                "maxlon": -1.8618630
+            },
+            "nodes": [
+                3708437865,
+                3708437866,
+                3708437867,
+                3708437868,
+                3708437865
+            ],
+            "geometry": [
+            {
+                "lat": 43.1785151,
+                "lon": -1.8620108
+            },
+            {
+                "lat": 43.1784533,
+                "lon": -1.8620114
+            },
+            {
+                "lat": 43.1784525,
+                "lon": -1.8618637
+            },
+            {
+                "lat": 43.1785143,
+                "lon": -1.8618630
+            },
+            {
+                "lat": 43.1785151,
+                "lon": -1.8620108
+            }],
+            "tags":
+            {
+                "addr:city": "Goizueta",
+                "amenity": "place_of_worship",
+                "building": "chapel",
+                "denomination": "roman_catholic",
+                "name": "San Anton ermita",
+                "religion": "christian"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1357699831,
+            "bounds":
+            {
+                "minlat": 43.1710220,
+                "minlon": -1.8648959,
+                "maxlat": 43.1712049,
+                "maxlon": -1.8644306
+            },
+            "nodes": [
+                12564770774,
+                12564770775,
+                12564770776,
+                12564770777,
+                12564770778,
+                12564770779,
+                12564770780,
+                12564770781,
+                12564770782,
+                12564770783,
+                12564770774
+            ],
+            "geometry": [
+            {
+                "lat": 43.1710641,
+                "lon": -1.8648852
+            },
+            {
+                "lat": 43.1710592,
+                "lon": -1.8646572
+            },
+            {
+                "lat": 43.1710230,
+                "lon": -1.8646559
+            },
+            {
+                "lat": 43.1710220,
+                "lon": -1.8645606
+            },
+            {
+                "lat": 43.1710523,
+                "lon": -1.8645606
+            },
+            {
+                "lat": 43.1710514,
+                "lon": -1.8644386
+            },
+            {
+                "lat": 43.1711981,
+                "lon": -1.8644306
+            },
+            {
+                "lat": 43.1712049,
+                "lon": -1.8646532
+            },
+            {
+                "lat": 43.1711756,
+                "lon": -1.8646545
+            },
+            {
+                "lat": 43.1711746,
+                "lon": -1.8648959
+            },
+            {
+                "lat": 43.1710641,
+                "lon": -1.8648852
+            }],
+            "tags":
+            {
+                "amenity": "place_of_worship",
+                "building": "yes",
+                "name": "Asunción de Nuestra Señora de Goizueta",
+                "religion": "christian"
+            }
+        }
+
+    ]
+}
