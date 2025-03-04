@@ -38,7 +38,7 @@ function onMapClick(e) {
 
 map.on('click', onMapClick);
 
-fetch('http://127.0.0.1:4000/map.geojson') // Load the JSON file
+fetch('{{"/map.geojson" | absolute_url}}') // Load the JSON file
     .then(response => response.json()) // Convert the response to JSON
     .then(data => {
         L.geoJSON(data, {
@@ -52,7 +52,7 @@ fetch('http://127.0.0.1:4000/map.geojson') // Load the JSON file
     });
 
 
-fetch('http://127.0.0.1:4000/places.json') // Load the JSON file
+fetch('{{"/places.json" | absolute_url}}') // Load the JSON file
     .then(response => response.json()) // Convert the response to JSON
     .then(data => {
         for (var i = 0; i < data.elements.length; i++) {
@@ -81,7 +81,7 @@ fetch('http://127.0.0.1:4000/places.json') // Load the JSON file
 </head>
 <template>
     {%- assign params = include.params -%}
-    <div style="width: 100%; aspect-ratio: 1;" id="map"></div>
+    <div style="width: 50%; aspect-ratio: 1;" id="map"></div>
 </template>
 <style>
 .bounce {

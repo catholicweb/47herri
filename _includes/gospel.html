@@ -175,8 +175,7 @@ function parseReference(ref) {
 
     // Convierte los rangos de versos.
     // Separa grupos por "." y elimina espacios.
-    console.log(versesStr.replace(/[abcd ]/g, ''))
-    const verseGroups = versesStr.replace(/[abcd ]/g, '').split('.').map(s => s.trim()).filter(Boolean);
+    const verseGroups = versesStr.replace(/[^0-9\.\,]/g, '').split('.').map(s => s.trim()).filter(Boolean);
     // Función para transformar un rango "start-end" a un array numérico.
     const parseRange = r => {
         const [start, end] = r.split('-').map(Number);
@@ -211,7 +210,11 @@ function convert(readings) {
 
 }
 
-fetchCors('https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irakurgaiak/?d=17-06-2025')
+let date = new Date();
+const formattedDate = date.toLocaleDateString('en-GB').split('/').reverse().join('-');
+
+
+fetchCors(`https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irakurgaiak/?d=${formattedDate}`)
     .then(source => {
         return scraper(source, {
             evangelio: 'div:nth-last-of-type(1)',
