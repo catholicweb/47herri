@@ -16,6 +16,14 @@ content:
       - name: cover
         label: Preview image
         type: image
+      - name: ermitas
+        label: Ermitas y monasterios
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Nombre
+            type: string
       - name: events
         label: Lista de eventos
         type: object
@@ -25,35 +33,28 @@ content:
             type: object
             list: true
             fields:
-              - name: location
-                label: Ubicación
-                type: select
-                options:
-                  values: [ Leiza, ..., ... ]
               - name: time
-                type: date
-                options:
-                  time: true
-                  step: 9000
-                label: fecha y hora
+                type: string
+                label: Hora (ej 19:00)
+                pattern: { regex: 'Debe ser un formato de hora válida (ej: 19:00)', message: '/^(0?[1-9]|1[0-2]):[0-5][0-9]$/' }
               - name: byday
                 type: string
-                label: repeat
+                label: Periodicidad
                 description: 'LMXJVSD...'
           - name: funerales
             label: Funerales
             type: object
             list: true
             fields:
-              - name: location
+              - name: notas
                 type: string
-                label: Ubicación
+                label: Difuntos / Notas
               - name: time
                 type: date
+                label: Fecha y hora
                 options:
                   time: true
-                  step: 9000
-                label: fecha y hora
+                  step: 900
           - name: otros
             label: otrsos
             type: object
@@ -68,7 +69,7 @@ content:
                 type: date
                 options:
                   time: true
-                  step: 9000
+                  step: 900
                 label: fecha y hora
               - name: byday
                 type: string
