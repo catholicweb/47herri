@@ -73,7 +73,7 @@ content:
               values: [ Leiza, Lekumberri, Aldatz,... ]}
           }
   - name: config
-    label: Jekyll config
+    label: Settings
     path: _config.yml
     type: file
     fields:
