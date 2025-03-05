@@ -26,12 +26,15 @@ content:
             list: true
             fields:
               - name: location
-                type: string
                 label: Ubicación
+                type: select
+                options:
+                  values: [ Leiza, ..., ... ]
               - name: time
                 type: date
                 options:
                   time: true
+                  step: 900
                 label: fecha y hora
               - name: byday
                 type: string
@@ -49,7 +52,28 @@ content:
                 type: date
                 options:
                   time: true
+                  step: 900
                 label: fecha y hora
+          - name: otros
+            label: otrsos
+            type: object
+            list: true
+            fields:
+              - name: location
+                label: Ubicación
+                type: select
+                options:
+                  values: [ Leiza, ..., ... ]
+              - name: time
+                type: date
+                options:
+                  time: true
+                  step: 900
+                label: fecha y hora
+              - name: byday
+                type: string
+                label: repeat
+                description: 'LMXJVSD...'
       - name: body
         label: Body
         type: rich-text
