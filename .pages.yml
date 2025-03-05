@@ -3,7 +3,7 @@ content:
   - name: parroquias
     label: Parroquias
     type: collection
-    path: 'parroquias'
+    path: 'parrokiak'
     view:
       fields: [ title, location ]
     fields:
