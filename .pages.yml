@@ -57,13 +57,13 @@ content:
       - name: body
         label: Body
         type: rich-text
-  - name: funerales
-    label: funerales
-    path: funerales.yml
+  - name: hiletak
+    label: Hiletak
+    path: hiletak.yml
     type: file
     fields:
-      - name: funerales
-        label: Funerales
+      - name: hiletak
+        label: Hiletak
         type: object
         list: true
         fields:
