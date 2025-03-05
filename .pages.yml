@@ -17,44 +17,32 @@ content:
         fields:
           - { name: name, label: Nombre, type: string }
           - { name: geo, label: Geo, type: string }
-      - name: events
-        label: Lista de eventos
+      - name: misas
+        label: Misas
         type: object
+        list: true
         fields:
-          - name: misas
-            label: Misas
-            description: '{LMXJVSD} {3 astekoa} {martxoak|pazkoa...} {3 astean|hilean|urtean behin}'
-            type: object
-            list: true
-            fields:
-              - { name: time, type: string, label: Hora (ej 19:00), pattern: {
-                  message: 'Baliozko formatua erabili behar duzu {HH:MM}',
-                  regex: '$' }
-                }
-              - { name: byday, type: string, list: true, label: Periodicidad, pattern: { message: 'Baliozko formatua erabili behar duzu', regex: '^[LMXJVSD]+( ([12345]).? astek?o?a)?( pazkoa| urtarrila?k?| otsaila?k?| martxoa?k?| apirila?k?| maiatza?k?| ekaina?k?| uztaila?k?| abuztua?k?| iraila?k?| urria?k?| azaroa?k?| abendua?k?)?( [1-9] (astea?n?|hilea?n?|urtea?n?)( behin)?)?$' } }
-              - { name: notas, label: Notas, type: string }
-          - name: funerales
-            label: Funerales
-            type: object
-            list: true
-            fields:
-              - { name: notas, label: Difunto / Notas, type: string }
-              - { name: time, type: date, label: Fecha y hora, options: { time: true}}
-          - name: otros
-            label: otrsos
-            type: object
-            list: true
-            fields:
-              - name: time
-                type: date
-                options:
-                  time: true
-                  step: 900
-                label: fecha y hora
-              - name: byday
-                type: string
-                label: repeat
-                description: 'LMXJVSD...'
+          - { name: time, type: string, label: Hora (ej 19:00), pattern: {
+              message: 'Baliozko formatua erabili behar duzu {HH:MM}',
+              regex: '$' }
+            }
+          - { name: byday, type: string, label: Periodicidad, description: '{LMXJVSD} {3 astekoa} {martxoak|pazkoa...} {3 astean|hilean|urtean behin}', pattern: { message: 'Baliozko formatua erabili behar duzu', regex: '^[LMXJVSD]+( ([12345]).? astek?o?a)?( pazkoa| urtarrila?k?| otsaila?k?| martxoa?k?| apirila?k?| maiatza?k?| ekaina?k?| uztaila?k?| abuztua?k?| iraila?k?| urria?k?| azaroa?k?| abendua?k?)?( [1-9] (astea?n?|hilea?n?|urtea?n?)( behin)?)?$' } }
+          - { name: notas, label: Notas, type: string }
+      - name: otros
+        label: otrsos
+        type: object
+        list: true
+        fields:
+          - name: time
+            type: date
+            options:
+              time: true
+              step: 900
+            label: fecha y hora
+          - name: byday
+            type: string
+            label: repeat
+            description: 'LMXJVSD...'
       - name: body
         label: Body
         type: rich-text
