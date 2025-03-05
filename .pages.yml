@@ -10,6 +10,7 @@ content:
       - { name: title, label: Website title, type: string }
       - { name: description, label: Website description, type: string }
       - { name: cover, label: Preview image, type: image }
+      - { name: video, label: Youtube, type: string }
       - name: ermitas
         label: Ermitas y monasterios
         type: object
@@ -17,18 +18,18 @@ content:
         fields:
           - { name: name, label: Nombre, type: string }
           - { name: geo, label: Geo, type: string }
-      - name: misas
-        label: Misas
+      - name: masses
+        label: Mezak
         type: object
         list: true
         fields:
-          - { name: time, type: string, label: Ordua (ej 19:00), pattern: {
+          - { name: time, type: string, label: Ordua (adib. 19:00), pattern: {
               message: 'Baliozko formatua erabili behar duzu {HH:MM}',
               regex: '^([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])$' }
             }
-          - { name: byday, type: string, label: Egunak, pattern: { message: 'Baliozko formatua erabili behar duzu: {LMXJVSD} {3 astekoa} {martxoak|pazkoa...} {3 astean|hilean|urtean behin}', regex: '^[LMXJVSD]+[ ,-]?(([12345]).? ?astek?o?a)?[ ,-]?(pazkoa|urtarrila?k?|otsaila?k?|martxoa?k?|apirila?k?|maiatza?k?|ekaina?k?|uztaila?k?|abuztua?k?|iraila?k?|urria?k?|azaroa?k?|abendua?k?)?[ ,-]?([1-9] ?(astea?n?|hilea?n?|urtea?n?)( behin)?)?$' } }
+          - { name: byday, type: string, label: Egunak (adib. LMXJVSD), pattern: { message: 'Baliozko formatua erabili behar duzu: LMXJVSD - 3 astea - pazkoa - urtarrila|otsaila|... - 3 astean|hilean|urtean behin', regex: '^[LMXJVSD]+[ ,-]?(([12345]).? ?astek?o?a)?[ ,-]?(pazkoa|urtarrila?k?|otsaila?k?|martxoa?k?|apirila?k?|maiatza?k?|ekaina?k?|uztaila?k?|abuztua?k?|iraila?k?|urria?k?|azaroa?k?|abendua?k?)?[ ,-]?([1-9] ?(astea?n?|hilea?n?|urtea?n?)( behin)?)?$' } }
           - { name: notas, label: Notas, type: string }
-      - name: otros
+      - name: other
         label: otrsos
         type: object
         list: true
@@ -61,26 +62,6 @@ content:
         - { name: location, label: Ubicación, type: select, options: {
               values: [ Leiza, Lekumberri, Aldatz,... ]}
           }
-  - name: mezak
-    label: Mezak
-    path: mezak.yml
-    type: file
-    fields:
-      - name: misas
-        label: Misas
-        type: object
-        list: true
-        fields:
-          - { name: time, type: string, label: Ordua (adib. 19:00), pattern: {
-              message: 'Baliozko formatua erabili behar duzu {HH:MM}',
-              regex: '^([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])$' }
-            }
-          - { name: byday, type: string, label: Egunak (adib. LMXJVSD), pattern: { message: 'Baliozko formatua erabili behar duzu: LMXJVSD - 3 astea - pazkoa - urtarrila|otsaila|... - 3 astean|hilean|urtean behin', regex: '^[LMXJVSD]+[ ,-]?(([12345]).? ?astek?o?a)?[ ,-]?(pazkoa|urtarrila?k?|otsaila?k?|martxoa?k?|apirila?k?|maiatza?k?|ekaina?k?|uztaila?k?|abuztua?k?|iraila?k?|urria?k?|azaroa?k?|abendua?k?)?[ ,-]?([1-9] ?(astea?n?|hilea?n?|urtea?n?)( behin)?)?$' } }
-          - { name: notas, label: Notas, type: string }
-          - { name: location, label: Ubicación, type: select, options: {
-              values: [ Leiza, Lekumberri, Aldatz,... ]}
-          }
-          
   - name: config
     label: Page config
     path: _config.yml
