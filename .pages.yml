@@ -1,22 +1,55 @@
 media: media
 content:
   - name: parroquias
-    label: Posts
+    label: Parroquias
     type: collection
     path: 'parroquias'
     view:
       fields: [ title, location ]
     fields:
-      - name: published
-        label: Published
-        type: boolean
-        default: true
-      - name: date
-        label: Date
-        type: date
-      - name: events
-        label: Title
+      - name: title
+        label: Website title
         type: string
+      - name: description
+        label: Website description
+        type: string
+      - name: cover
+        label: Preview image
+        type: image
+      - name: events
+        label: Lista de eventos
+        type: object
+        fields:
+          - name: misas
+            label: Misas
+            type: object
+            list: true
+            fields:
+              - name: location
+                type: string
+                label: Ubicación
+              - name: time
+                type: date
+                options:
+                  time: true
+                label: fecha y hora
+              - name: byday
+                type: string
+                label: repeat
+                description: 'LMXJVSD...'
+          - name: funerales
+            label: Funerales
+            type: object
+            list: true
+            fields:
+              - name: location
+                type: string
+                label: Ubicación
+              - name: time
+                type: date
+                options:
+                  time: true
+                label: fecha y hora
       - name: body
         label: Body
         type: rich-text
