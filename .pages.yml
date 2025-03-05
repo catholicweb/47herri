@@ -7,23 +7,16 @@ content:
     view:
       fields: [ title, location ]
     fields:
-      - name: title
-        label: Website title
-        type: string
-      - name: description
-        label: Website description
-        type: string
-      - name: cover
-        label: Preview image
-        type: image
+      - { name: title, label: Website title, type: string }
+      - { name: description, label: Website description, type: string }
+      - { name: cover, label: Preview image, type: image }
       - name: ermitas
         label: Ermitas y monasterios
         type: object
         list: true
         fields:
-          - name: name
-            label: Nombre
-            type: string
+          - { name: name, label: Nombre, type: string }
+          - { name: geo, label: Geo, type: string }
       - name: events
         label: Lista de eventos
         type: object
@@ -33,28 +26,19 @@ content:
             type: object
             list: true
             fields:
-              - name: time
-                type: string
-                label: Hora (ej 19:00)
-                pattern: { regex: 'Debe ser un formato de hora válida (ej: 19:00)', message: '/^(0?[1-9]|1[0-2]):[0-5][0-9]$/' }
-              - name: byday
-                type: string
-                label: Periodicidad
-                description: 'LMXJVSD...'
+              - { name: time, type: string, label: Hora (ej 19:00), pattern: {
+                  message: 'Debe ser un formato de hora válida (ej: 19:00)',
+                  regex: '/^(0?[1-9]|1[0-2]):[0-5][0-9]$/' }
+                }
+              - { name: byday, type: string, label: Periodicidad, description: 'LMXJVSD...', pattern: { message: 'Debe ser un formato de hora válida (ej: 19:00)', regex: '/^(0?[1-9]|1[0-2]):[0-5][0-9]$/' } }
+              - { name: notas, label: Notas, type: string }
           - name: funerales
             label: Funerales
             type: object
             list: true
             fields:
-              - name: notas
-                type: string
-                label: Difuntos / Notas
-              - name: time
-                type: date
-                label: Fecha y hora
-                options:
-                  time: true
-                  step: 900
+              - { name: notas, label: Difunto / Notas, type: string }
+              - { name: time, type: date, label: Fecha y hora, options: { time: true}}
           - name: otros
             label: otrsos
             type: object
