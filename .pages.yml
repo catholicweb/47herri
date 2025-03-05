@@ -34,7 +34,7 @@ content:
                 type: date
                 options:
                   time: true
-                  step: 900
+                  step: 9000
                 label: fecha y hora
               - name: byday
                 type: string
@@ -52,7 +52,7 @@ content:
                 type: date
                 options:
                   time: true
-                  step: 900
+                  step: 9000
                 label: fecha y hora
           - name: otros
             label: otrsos
@@ -68,7 +68,7 @@ content:
                 type: date
                 options:
                   time: true
-                  step: 900
+                  step: 9000
                 label: fecha y hora
               - name: byday
                 type: string
