@@ -44,11 +44,6 @@ content:
             type: object
             list: true
             fields:
-              - name: location
-                label: Ubicación
-                type: select
-                options:
-                  values: [ Leiza, ..., ... ]
               - name: time
                 type: date
                 options:
@@ -62,6 +57,21 @@ content:
       - name: body
         label: Body
         type: rich-text
+  - name: funerales
+    label: funerales
+    path: funerales.yml
+    type: file
+    fields:
+      - name: funerales
+        label: Funerales
+        type: object
+        list: true
+        fields:
+        - { name: notas, label: Difunto / Notas, type: string }
+        - { name: time, type: date, label: Fecha y hora, options: { time: true}}
+        - { name: location, label: Ubicación, type: select, options: {
+              values: [ Leiza, Lekumberri, Aldatz,... ]}
+          }
   - name: config
     label: Jekyll config
     path: _config.yml
