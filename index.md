@@ -1,3 +1,3 @@
 ---
-layout: parroquia
+layout: home
 ---

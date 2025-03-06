@@ -19,6 +19,7 @@ modules:
   - gospel
   - maps
   - events
+  - facade
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -38,7 +38,7 @@ function onMapClick(e) {
 
 map.on('click', onMapClick);
 
-fetch('{{"/map.geojson" | absolute_url}}') // Load the JSON file
+fetch('/assets/map.geojson') // Load the JSON file
     .then(response => response.json()) // Convert the response to JSON
     .then(data => {
         L.geoJSON(data, {
@@ -52,7 +52,7 @@ fetch('{{"/map.geojson" | absolute_url}}') // Load the JSON file
     });
 
 
-fetch('{{"/places.json" | absolute_url}}') // Load the JSON file
+fetch('/assets/places.json') // Load the JSON file
     .then(response => response.json()) // Convert the response to JSON
     .then(data => {
         for (var i = 0; i < data.elements.length; i++) {

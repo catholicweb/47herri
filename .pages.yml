@@ -1,9 +1,9 @@
 media: media
 content:
-  - name: parroquias
-    label: Parroquias
+  - name: herriak
+    label: Herriak
     type: collection
-    path: 'parrokiak'
+    path: 'herriak'
     view:
       fields: [ title, location ]
     fields:
@@ -14,17 +14,6 @@ content:
         fields:
         - { name: notas, label: Difunto / Notas, type: string }
         - { name: time, type: date, label: Fecha y hora, options: { time: true}}
-      - { name: title, label: Website title, type: string }
-      - { name: description, label: Website description, type: string }
-      - { name: cover, label: Preview image, type: image }
-      - { name: video, label: Youtube, type: string }
-      - name: ermitas
-        label: Ermitas y monasterios
-        type: object
-        list: true
-        fields:
-          - { name: name, label: Nombre, type: string }
-          - { name: geo, label: Geo, type: string }
       - name: masses
         label: Mezak
         type: object
@@ -36,36 +25,19 @@ content:
             }
           - { name: byday, type: string, label: Egunak (adib. LMXJVSD), pattern: { message: 'Baliozko formatua erabili behar duzu: LMXJVSD - 3 astea - pazkoa - urtarrila|otsaila|... - 3 astean|hilean|urtean behin', regex: '^[LMXJVSD]+[ ,-]?(([12345]).? ?astek?o?a)?[ ,-]?(pazkoa|urtarrila?k?|otsaila?k?|martxoa?k?|apirila?k?|maiatza?k?|ekaina?k?|uztaila?k?|abuztua?k?|iraila?k?|urria?k?|azaroa?k?|abendua?k?)?[ ,-]?([1-9] ?(astea?n?|hilea?n?|urtea?n?)( behin)?)?$' } }
           - { name: notas, label: Notas, type: string }
-      - name: other
-        label: otrsos
+      - { name: title, label: title, type: string }
+      - { name: description, label: description, type: string }
+      - { name: cover, label: Preview image, type: image }
+      - { name: video, label: Youtube, type: string }
+      - name: location
+        label: Ubicación
         type: object
-        list: true
         fields:
-          - name: time
-            type: date
-            options:
-              time: true
-              step: 900
-            label: fecha y hora
-          - name: byday
-            type: string
-            label: repeat
-            description: 'LMXJVSD...'
+          - { name: name, label: Nombre, type: string }
+          - { name: geo, label: Geo, type: string }
       - name: body
         label: Body
         type: rich-text
-  - name: hiletak
-    label: Hiletak
-    path: hiletak.yml
-    type: file
-    fields:
-      - name: hiletak
-        label: Hiletak
-        type: object
-        list: true
-        fields:
-        - { name: notas, label: Difunto / Notas, type: string }
-        - { name: time, type: date, label: Fecha y hora, options: { time: true}}
   - name: config
     label: Page config
     path: _config.yml
