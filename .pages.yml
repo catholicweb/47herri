@@ -59,9 +59,6 @@ content:
         fields:
         - { name: notas, label: Difunto / Notas, type: string }
         - { name: time, type: date, label: Fecha y hora, options: { time: true}}
-        - { name: location, label: Ubicación, type: select, options: {
-              values: [ Leiza, Lekumberri, Aldatz,... ]}
-          }
   - name: config
     label: Page config
     path: _config.yml
