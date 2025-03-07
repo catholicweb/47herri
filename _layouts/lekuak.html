@@ -1,0 +1,76 @@
+{% include head.html %}
+
+<body class="sub_page">
+    {% include header.html %}
+    <!-- book section -->
+    <section class="offer_section layout_padding-bottom">
+        <div class="offer_container">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-xl-9">
+                        {% include module name='maps' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- food section -->
+    <section class="food_section layout_padding-bottom">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    Gure herriak
+                </h2>
+            </div>
+            <ul class="filters_menu">
+                <li class="active" data-filter="*">All</li>
+                <li data-filter=".imotz">Imotz</li>
+                <li data-filter=".basaburua">Basaburua</li>
+                <li data-filter=".larraun">Larraun</li>
+                <li data-filter=".leitzaran">Leitzaran</li>
+                <li data-filter="....">...</li>
+            </ul>
+            <div class="filters-content">
+                <div class="row grid">
+                    {% assign items = "imotz, basaburua, larraun, leitzaran" | split: ", " %}
+                    {% for herri in site.pages %}{% if herri.path contains 'herriak' %}
+                    {% assign index = forloop.index0 | modulo: items.size %}
+                    {% assign index2 = forloop.index0 | modulo: 3 %}
+                    <div class="col-6 col-sm-4 col-lg-3 all {{ items[index] }}">
+                        <a href="{{herri.url}}">
+                            <div class="box">
+                                <div>
+                                    <div class="img-box">
+                                        <img src="media/f{{ index2 }}.png" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h5>
+                                            {{ herri.title }}
+                                        </h5>
+                                        <p>
+                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                        </p>
+                                        <div class="options">
+                                            <h6>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endif %}{% endfor %}
+                </div>
+            </div>
+            <div class="btn-box">
+                <a href="">
+                    View More
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- end food section -->
+    {% include footer.html %}
+</body>
+
+</html>

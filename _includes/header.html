@@ -1,4 +1,132 @@
-
-
-
-<div> HEADER </div>
+<div class="hero_area">
+    <div class="bg-box">
+        <img src="/media/hero-bg.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="/index.html">
+                    <h3 style="color: #fff">
+                        47 herri
+                    </h3>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class=""> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav  mx-auto ">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/index.html">47 herri </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/baliabideak.html">Baliabideak</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/parrokiak.html">Parrokiak</a>
+                        </li>
+                    </ul>
+                    <div class="user_option">
+                        <div class="language-selector">
+                            <!--<img id="flag" class="flag" src="https://flagcdn.com/w40/gb.png" alt="flag">-->
+                            <select id="language">
+                                <option value="eu" data-flag="es">Euskara</option>
+                                <option value="es" data-flag="es">Español</option>
+                                <option value="en" data-flag="gb">English</option>
+                                <option value="bg" data-flag="bg">Български</option>
+                                <option value="it" data-flag="it">Italiano</option>
+                                <option value="ro" data-flag="ro">Română</option>
+                                <option value="pt" data-flag="pt">Português</option>
+                                <option value="ca" data-flag="es">Català</option>
+                                <option value="ar" data-flag="sa">العربية</option>
+                                <option value="de" data-flag="de">Deutsch</option>
+                                <option value="fr" data-flag="fr">Français</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end header section -->
+    {% if page.url == "/" %}
+    <!-- slider section -->
+    <section class="slider_section ">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-7 col-lg-6 ">
+                                <div class="detail-box">
+                                    <h1>
+                                        47 herri...
+                                    </h1>
+                                    <p>
+                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a href="" class="btn1">
+                                            Order Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-7 col-lg-6 ">
+                                <div class="detail-box">
+                                    <h1>
+                                        47 herri...
+                                    </h1>
+                                    <p>
+                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a href="" class="btn1">
+                                            Order Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-7 col-lg-6 ">
+                                <div class="detail-box">
+                                    <h1>
+                                        47 herri...
+                                    </h1>
+                                    <p>
+                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a href="" class="btn1">
+                                            Order Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <ol class="carousel-indicators">
+                    <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#customCarousel1" data-slide-to="1"></li>
+                    <li data-target="#customCarousel1" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <!-- end slider section -->
+    {% endif %}
+</div>

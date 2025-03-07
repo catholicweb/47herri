@@ -9,6 +9,7 @@ async function loadICS(url) {
         const icsText = await response.text();
         return parseICS(icsText);
     } catch (error) {
+        console.log(url)
         console.error("Error al cargar el archivo .ics:", error);
         return [];
     }
@@ -130,7 +131,7 @@ const mappingFns = ordering.map(fnc => mappers[fnc])
 
 
 // Uso:
-loadICS("http://127.0.0.1:4000/events.ics").then(events => {
+loadICS("/assets/events.ics").then(events => {
     const groupedEvents = groupEvents(events, mappingFns);
     console.log(events, groupedEvents, mappingFns)
 

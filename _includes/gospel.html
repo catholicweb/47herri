@@ -35,7 +35,53 @@ function scraper(source, map, area = '', data = {}) {
     })*/
 
 
-async function fetchAndJoinVerses(version, reference) {
+
+function parse(htmlString) {
+    // Supón que 'htmlString' contiene el HTML original
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+
+    const verses = {};
+
+    doc.querySelectorAll('.verse').forEach(verse => {
+        // Busca la clase que coincide con "v" seguido de dígitos
+        const verseKey = Array.from(verse.classList).find(cls => /^v\d+$/.test(cls));
+        if (verseKey) {
+            let text = '';
+            verse.querySelectorAll('.content').forEach(el => {
+                text += el.textContent.trim() + ' ';
+            });
+            text = text.trim();
+            // Si ya existe un contenido para ese verso, lo concatenamos
+            verses[verseKey] = verses[verseKey] ? verses[verseKey] + ' ' + text : text;
+        }
+    });
+
+    console.log(verses);
+
+    return verses
+
+}
+
+
+
+async function fetchBibleCom(version, reference) {
+    const { book, chapter, verses } = parseReference(reference);
+    const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
+    version = version.split(':')
+    let source = await fetchCors(`https://www.bible.com/_next/data/KTdxJfLK1givPUU1IjMWJ/en/audio-bible/${version[1] || '56'}/${book}.${chapter}.${version[0]}.json?versionId=${version[1] || '56'}&usfm=${book}.${chapter}.${version[0]}`)
+
+    source = JSON.parse(source).pageProps.chapterInfo.content
+
+    let chapterVerses = parse(source)
+    const verseTexts = verseNums.map(verse => chapterVerses['v' + verse]).join('\n')
+
+    console.log(chapterVerses, verses, reference, verseNums, verseTexts)
+
+    return verseTexts;
+}
+
+/*async function fetchAndJoinVerses(version, reference) {
     const { book, chapter, verses } = parseReference(reference);
     // Si verses es un array de arrays, lo aplanamos; si no, usamos directamente.
     const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
@@ -47,113 +93,17 @@ async function fetchAndJoinVerses(version, reference) {
         .then(data => verseNums.map(verse => data.data[verse].text))
 
     return verseTexts.join(' ');
-}
-
-
-
+}*/
 
 
 function parseReference(ref) {
-
-    // Mapeo de abreviaturas bascas a nombres completos en inglés.
+    // Mapeo de abreviaturas vascas a nombres completos en inglés.
     // Actualiza el diccionario según tus necesidades.
     const bookMap = {
-        // Antiguo Testamento
-        "Ur": "genesis",
-        "Gen": "genesis",
-        "Has": "genesis",
-        "Ex": "exodus",
-        "Exodo": "exodus",
-        "Le": "leviticus",
-        "Lev": "leviticus",
-        "Num": "numbers",
-        "Dt": "deuteronomy",
-        "Deut": "deuteronomy",
-        "Jos": "joshua",
-        "Jdg": "judges",
-        "Jud": "judges",
-        "Rut": "ruth",
-        "Sa": "samuel", // 1 y 2 Samuel
-        "1Sa": "samuel",
-        "2Sa": "samuel",
-        "Ki": "kings", // 1 y 2 Kings
-        "1Ki": "kings",
-        "2Ki": "kings",
-        "Ch": "chronicles", // 1 y 2 Chronicles
-        "1Ch": "chronicles",
-        "2Ch": "chronicles",
-        "Ezr": "ezra",
-        "Neh": "nehemiah",
-        "Est": "esther",
-        "Job": "job",
-        "Sal": "psalms",
-        "Psalm": "psalms",
-        "Pro": "proverbs",
-        "Pr": "proverbs",
-        "Ecc": "ecclesiastes",
-        "Ec": "ecclesiastes",
-        "Can": "song of solomon",
-        "Cnc": "song of solomon",
-        "Is": "isaiah",
-        "Isai": "isaiah",
-        "Jer": "jeremiah",
-        "Jr": "jeremiah",
-        "Lam": "lamentations",
-        "Eze": "ezekiel",
-        "Ezk": "ezekiel",
-        "Dan": "daniel",
-        "Hos": "hosea",
-        "Joel": "joel",
-        "Amo": "amos",
-        "Oba": "obadiah",
-        "Jon": "jonah",
-        "Mic": "micah",
-        "Nah": "nahum",
-        "Hab": "habakkuk",
-        "Zeph": "zephaniah",
-        "Zef": "zephaniah",
-        "Hag": "haggai",
-        "Zec": "zechariah",
-        "Zek": "zechariah",
-        "Mal": "malachi",
-        // Nuevo Testamento
-        "Mat": "matthew",
-        "Mt": "matthew",
-        "Mar": "mark",
-        "Mk": "mark",
-        "Luk": "luke",
-        "Lu": "luke",
+        "Mt": "MAT",
+        "Mar": "MRK",
         "Jn": "john",
         "Jo": "john",
-        "Act": "acts",
-        "Acts": "acts",
-        "Ac": "acts",
-        "Rom": "romans",
-        "Ko": "corinthians",
-        "Kor": "corinthians",
-        "Gal": "galatians",
-        "Eph": "ephesians",
-        "Efe": "ephesians",
-        "Phil": "philippians",
-        "Fil": "philippians",
-        "Col": "colossians",
-        "Tes": "thessalonians", // 1 y 2 Thessalonians
-        "1Tes": "thessalonians",
-        "2Tes": "thessalonians",
-        "Tim": "timothy", // 1 y 2 Timothy
-        "1Tim": "timothy",
-        "2Tim": "timothy",
-        "Tit": "titus",
-        "Phlm": "philemon",
-        "Heb": "hebrews",
-        "Jas": "james",
-        "Jms": "james",
-        "Pet": "peter", // 1 y 2 Peter
-        "1Pet": "peter",
-        "2Pet": "peter",
-        "Pt": "peter",
-        "Jud": "jude",
-        "Rev": "revelation"
     };
 
 
@@ -175,9 +125,10 @@ function parseReference(ref) {
 
     // Convierte los rangos de versos.
     // Separa grupos por "." y elimina espacios.
-    const verseGroups = versesStr.replace(/[^0-9\.\,]/g, '').split('.').map(s => s.trim()).filter(Boolean);
+    const verseGroups = versesStr.replace(/[^0-9\.\,-]/g, '').split('.').map(s => s.trim()).filter(Boolean);
     // Función para transformar un rango "start-end" a un array numérico.
     const parseRange = r => {
+        console.log(r)
         const [start, end] = r.split('-').map(Number);
         if (!end) return [start]
         return Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -211,7 +162,7 @@ function convert(readings) {
 }
 
 let date = new Date();
-const formattedDate = date.toLocaleDateString('en-GB').split('/').reverse().join('-');
+let formattedDate = date.toLocaleDateString('en-GB').split('/').reverse().join('-');
 
 
 fetchCors(`https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irakurgaiak/?d=${formattedDate}`)
@@ -233,13 +184,17 @@ fetchCors(`https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irak
             salmo: lecturas.salmo.split('\n').filter(Boolean)[0],
             segunda: lecturas.segunda.split('\n').filter(Boolean)[2]
         }
-        console.log(lecturas, cite)
+        let arab = '%25D8%25AC%25D8%25B2%25D8%25A7%25D8%25A6%25D8%25B1%25D9%258A:3193'
+        let basque = 'EAB:56'
         const app = {
             lecturas: lecturas,
-            cite: cite
+            arab: '',
+            cite: cite,
+            date: date.toLocaleDateString('en-GB').split('/').join('-')
             //$delimiters: ['{{', '}}'],
         }
         PetiteVue.createApp(app).mount('#ebenjelioa')
+        let arabreadings = fetchBibleCom(arab, cite.evangelio).then(r => { app.arab = r })
         let data = convert(cite)
     }) /**/
 </script>
@@ -247,7 +202,7 @@ fetchCors(`https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irak
     {% raw %}
     <!-- anywhere on the page -->
     <div id="ebenjelioa" style="white-space: pre-line;" v-scope>
-        {{ cite }}
+        <!--{{ cite }}
         <h4>IRAKURGAIA 1</h4>
         {{ lecturas.primera }}
         <h4>SALMOA</h4>
@@ -255,11 +210,8 @@ fetchCors(`https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irak
         <div v-if="lecturas.segunda">
             <h4>IRAKURGAIA 2</h4>
             {{ lecturas.segunda }}
-        </div>
-        <h4>EBANJELIOA</h4>
-        {{ lecturas.evangelio }}
-    </div>
-    <div id="evangelio" style="white-space: pre-line;" v-scope>
+        </div>-->
+        <h4>EBANJELIOA {{ date }}</h4>
         {{ lecturas.evangelio }}
     </div>
     {% endraw %}

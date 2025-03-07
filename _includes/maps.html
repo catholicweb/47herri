@@ -22,15 +22,6 @@ var redIcon = L.icon({
     popupAnchor: [1, -34]
 });
 
-var bouncingIcon = L.divIcon({
-    className: 'bounce-marker',
-    html: '<div class="bounce"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button"></div>',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34]
-});
-
-
 
 function onMapClick(e) {
     alert("You clicked the map at " + e.latlng);
@@ -41,11 +32,7 @@ map.on('click', onMapClick);
 fetch('/assets/map.geojson') // Load the JSON file
     .then(response => response.json()) // Convert the response to JSON
     .then(data => {
-        L.geoJSON(data, {
-            style: function(feature) {
-                return { color: 'red' };
-            }
-        }).addTo(map);
+        L.geoJSON(data).addTo(map);
     })
     .catch(error => {
         console.error('Error loading the JSON data:', error);
@@ -81,7 +68,7 @@ fetch('/assets/places.json') // Load the JSON file
 </head>
 <template>
     {%- assign params = include.params -%}
-    <div style="width: 50%; aspect-ratio: 1;" id="map"></div>
+    <div style="width: 100%; aspect-ratio: 1;" id="map"></div>
 </template>
 <style>
 .bounce {
@@ -96,5 +83,10 @@ fetch('/assets/places.json') // Load the JSON file
     100% {
         transform: translateY(-10px);
     }
+}
+
+.leaflet-pane>svg path.leaflet-interactive {
+    stroke: none;
+    fill: red;
 }
 </style>
