@@ -4,73 +4,50 @@
     {% include header.html %}
     <!-- book section -->
     <section class="offer_section layout_padding-bottom">
-        <div class="offer_container">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-md-6">
-                        {% include module name='gospel' %}
-                    </div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-6">
+                    {% include module name='gospel' %}
                 </div>
             </div>
         </div>
     </section>
-    <section class="book_section layout_padding">
+    <section class="food_section layout_padding-bottom">
         <div class="container">
-            <div class="heading_container">
+            <div class="heading_container heading_center">
                 <h2>
-                    Book A Table
+                    Musika
                 </h2>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form_container">
-                        <form action="">
-                            <div>
-                                <input type="text" class="form-control" placeholder="Your Name" />
-                            </div>
-                            <div>
-                                <input type="text" class="form-control" placeholder="Phone Number" />
-                            </div>
-                            <div>
-                                <input type="email" class="form-control" placeholder="Your Email" />
-                            </div>
-                            <div>
-                                <select class="form-control nice-select wide">
-                                    <option value="" disabled selected>
-                                        How many persons?
-                                    </option>
-                                    <option value="">
-                                        2
-                                    </option>
-                                    <option value="">
-                                        3
-                                    </option>
-                                    <option value="">
-                                        4
-                                    </option>
-                                    <option value="">
-                                        5
-                                    </option>
-                                </select>
-                            </div>
-                            <div>
-                                <input type="date" class="form-control">
-                            </div>
-                            <div class="btn_box">
-                                <button>
-                                    Book Now
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="map_container ">
-                        <div id="googleMap"></div>
+            <ul class="filters_menu">
+                <li class="active" data-filter="*">All</li>
+                <li data-filter=".imotz">grupo 1</li>
+                <li data-filter=".basaburua">grupo 2</li>
+                <li data-filter=".larraun">grupo 3</li>
+                <li data-filter=".leitzaran">grupo 4</li>
+            </ul>
+            <div class="container">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="search-container">
+                            <input type="text" class="form-control search-input" placeholder="Bilatu...">
+                            <i class="fas fa-search search-icon"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="filters-content">
+                <div class="row grid">
+                    {% assign items = "imotz, basaburua, larraun, leitzaran" | split: ", " %}
+                    {% for video in site.data.playlist %}
+                    {% assign index = forloop.index0 | modulo: items.size %}
+                    <div class="col-6 col-sm-4 col-lg-3 all {{ items[index] }}">
+                        {% include module name='facade' yt=video.link style='max-width: 450px;' %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
     </section>
     <!-- end book section -->
     {% include footer.html %}
