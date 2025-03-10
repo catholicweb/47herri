@@ -43,7 +43,7 @@
                     {% for video in site.data.playlist %}
                     {% assign index = forloop.index0 | modulo: items.size %}
                     <div class="col-6 col-sm-4 col-lg-3 all {{ items[index] }}">
-                        {% include module name='facade' yt=video.link style='max-width: 450px;' %}
+                        {% include module name='facade' yt=video.link title=video.title style='max-width: 450px;' %}
                     </div>
                     {% endfor %}
                 </div>

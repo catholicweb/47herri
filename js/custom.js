@@ -20,6 +20,16 @@ $(window).on('load', function() {
         })
     });
 
+    $('.search-container .search-input').on("input", function() {
+        var data = this.value.toLowerCase()
+        $grid.isotope({
+            filter: function() {
+                let e = this.querySelector('header') || this.querySelector('h5')
+                return e.textContent.toLowerCase().includes(data)
+            }
+        })
+    });
+
     var $grid = $(".grid").isotope({
         itemSelector: ".all",
         percentPosition: false,

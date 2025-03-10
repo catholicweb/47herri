@@ -19,30 +19,10 @@ function scraper(source, map, area = '', data = {}) {
 }
 
 
-/*fetchCors('https://archimadrid.org/index.php/oracion-y-liturgia/index.php?option=com_archimadrid&format=json&task=leer_lecturas&dia=2025-03-02')
-    .then(source => {
-        console.log(source, JSON.parse(source))
-        source = JSON.parse(source)[0].post_content
-        return scraper(source, {
-            evangelio: '',
-        }, 'body')
-    }).then(lecturas => {
-        console.log(lecturas)
-        const app = {
-            lecturas: lecturas,
-        }
-        PetiteVue.createApp(app).mount('#evangelio')
-    })*/
-
-
-
-function parse(htmlString) {
-    // Supón que 'htmlString' contiene el HTML original
+function parseBibleCom(htmlString) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, 'text/html');
-
     const verses = {};
-
     doc.querySelectorAll('.verse').forEach(verse => {
         // Busca la clase que coincide con "v" seguido de dígitos
         const verseKey = Array.from(verse.classList).find(cls => /^v\d+$/.test(cls));
@@ -53,14 +33,10 @@ function parse(htmlString) {
             });
             text = text.trim();
             // Si ya existe un contenido para ese verso, lo concatenamos
-            verses[verseKey] = verses[verseKey] ? verses[verseKey] + ' ' + text : text;
+            verses[verseKey] = verses[verseKey] ? verses[verseKey] + '\n ' + text : text;
         }
     });
-
-    console.log(verses);
-
     return verses
-
 }
 
 
@@ -70,30 +46,16 @@ async function fetchBibleCom(version, reference) {
     const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
     version = version.split(':')
     let source = await fetchCors(`https://www.bible.com/_next/data/KTdxJfLK1givPUU1IjMWJ/en/audio-bible/${version[1] || '56'}/${book}.${chapter}.${version[0]}.json?versionId=${version[1] || '56'}&usfm=${book}.${chapter}.${version[0]}`)
-
     source = JSON.parse(source).pageProps.chapterInfo.content
-
-    let chapterVerses = parse(source)
-    const verseTexts = verseNums.map(verse => chapterVerses['v' + verse]).join('\n')
+    let chapterVerses = parseBibleCom(source)
+    const verseTexts = verseNums.map(verse => chapterVerses['v' + verse]).join(' ').replace(/ +\./g, '.')
 
     console.log(chapterVerses, verses, reference, verseNums, verseTexts)
 
     return verseTexts;
 }
 
-/*async function fetchAndJoinVerses(version, reference) {
-    const { book, chapter, verses } = parseReference(reference);
-    // Si verses es un array de arrays, lo aplanamos; si no, usamos directamente.
-    const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
 
-    let url = `https://cdn.jsdelivr.net/gh/wldeh/bible-api/bibles/${version}/books/${book}/chapters/${chapter}.json`
-    console.log(url)
-    const verseTexts = await fetch(url)
-        .then(response => response.json())
-        .then(data => verseNums.map(verse => data.data[verse].text))
-
-    return verseTexts.join(' ');
-}*/
 
 
 function parseReference(ref) {
@@ -102,7 +64,7 @@ function parseReference(ref) {
     const bookMap = {
         "Mt": "MAT",
         "Mar": "MRK",
-        "Jn": "john",
+        "Lk": "LUK",
         "Jo": "john",
     };
 
@@ -142,77 +104,89 @@ function parseReference(ref) {
 }
 
 
-function convert(readings) {
 
-    // Ejemplo de uso: se recorre cada lectura y se imprime el texto completo.
-    for (const key in readings) {
-        fetchAndJoinVerses('en-asv', readings[key]).then(fullText => {
-            console.log(key, fullText);
-        });
+
+
+async function fetchBizkeliza(date) {
+    let formattedDate = date.toLocaleDateString('en-GB').split('/').reverse().join('-');
+
+    let source = await fetchCors(`https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irakurgaiak/?d=${formattedDate}`)
+
+    let readings = scraper(source, {
+        evangelio: 'div:nth-last-of-type(1)',
+        salmo: 'div:nth-last-of-type(2)',
+        primera: 'div:nth-last-of-type(4)',
+        segunda: 'div:nth-last-of-type(3)',
+    }, '.evangelio-textos-content')
+
+    if (!readings.primera) {
+        readings.primera = readings.segunda
+        delete readings.segunda
     }
+    let ref = {}
+    if (readings.primera) ref.primera = readings.primera.split('\n').filter(Boolean)[2]
+    if (readings.evangelio) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[2]
+    if (readings.salmo) ref.salmo = readings.salmo.split('\n').filter(Boolean)[0]
+    if (readings.segunda) ref.segunda = readings.segunda.split('\n').filter(Boolean)[2]
 
-
-    let data = {}
-    for (const key in readings) {
-        data[key] = parseReference(readings[key])
-    }
-    return data
-
-
+    return { ref, readings }
 }
 
-let date = new Date();
-let formattedDate = date.toLocaleDateString('en-GB').split('/').reverse().join('-');
-
-
-fetchCors(`https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irakurgaiak/?d=${formattedDate}`)
-    .then(source => {
-        return scraper(source, {
-            evangelio: 'div:nth-last-of-type(1)',
-            salmo: 'div:nth-last-of-type(2)',
-            primera: 'div:nth-last-of-type(4)',
-            segunda: 'div:nth-last-of-type(3)',
-        }, '.evangelio-textos-content')
-    }).then(lecturas => {
-        if (!lecturas.primera) {
-            lecturas.primera = lecturas.segunda
-            //   lecturas.segunda = ''
+const app = {
+    readings: {},
+    ref: {},
+    date: new Date(),
+    lang: 'eus',
+    changeDate: function(diff) {
+        this.date.setDate(this.date.getDate() + diff)
+        this.fetchReference(this.date)
+    },
+    tr_test: 0,
+    fetchTranslation: async function(lang) {
+        let translations = {
+            arabic: '%25D8%25AC%25D8%25B2%25D8%25A7%25D8%25A6%25D8%25B1%25D9%258A:3193',
+            basque: 'EABD:223',
+            french: 'PDV2017:133',
+            spanish: 'BTI:214',
+            bulgarian: '%25D0%25A1%25D0%2598:1558'
         }
-        let cite = {
-            primera: lecturas.primera.split('\n').filter(Boolean)[2],
-            evangelio: lecturas.evangelio.split('\n').filter(Boolean)[2],
-            salmo: lecturas.salmo.split('\n').filter(Boolean)[0],
-            segunda: lecturas.segunda.split('\n').filter(Boolean)[2]
+        lang = Object.keys(translations)[this.tr_test % 4]
+        console.log(lang)
+        let evangelio = await fetchBibleCom(translations[lang], this.ref.evangelio)
+        this.readings = { evangelio: evangelio }
+    },
+    fetchReference: async function(date) {
+        console.log('fetchReference')
+        let data = await fetchBizkeliza(date)
+        this.ref = data.ref
+        this.ref.date = this.date.toLocaleDateString('en-GB').split('/').join('-')
+        this.readings = data.readings
+        if (this.lang != 'eus') {
+            this.fetchTranslation(this.lang)
         }
-        let arab = '%25D8%25AC%25D8%25B2%25D8%25A7%25D8%25A6%25D8%25B1%25D9%258A:3193'
-        let basque = 'EAB:56'
-        const app = {
-            lecturas: lecturas,
-            arab: '',
-            cite: cite,
-            date: date.toLocaleDateString('en-GB').split('/').join('-')
-            //$delimiters: ['{{', '}}'],
-        }
-        PetiteVue.createApp(app).mount('#ebenjelioa')
-        let arabreadings = fetchBibleCom(arab, cite.evangelio).then(r => { app.arab = r })
-        let data = convert(cite)
-    }) /**/
+    }
+    //$delimiters: ['{{', '}}'],
+}
+PetiteVue.createApp(app).mount('#ebenjelioa')
+app.fetchReference(app.date)
 </script>
 <template>
     {% raw %}
-    <!-- anywhere on the page -->
     <div id="ebenjelioa" style="white-space: pre-line;" v-scope>
-        <!--{{ cite }}
+        <button @click="changeDate(-1)">-</button>
+        <button @click="changeDate(+1)">+</button>
+        <button @click="tr_test++; lang = '', changeDate(0)">translate</button>
+        <!--{{ ref }}
         <h4>IRAKURGAIA 1</h4>
-        {{ lecturas.primera }}
+        {{ readings.primera }}
         <h4>SALMOA</h4>
-        {{ lecturas.salmo }}
-        <div v-if="lecturas.segunda">
+        {{ readings.salmo }}
+        <div v-if="readings.segunda">
             <h4>IRAKURGAIA 2</h4>
-            {{ lecturas.segunda }}
+            {{ readings.segunda }}
         </div>-->
-        <h2>EBANJELIOA {{ date }}</h2>
-        {{ lecturas.evangelio }}
+        <h2>EBANJELIOA {{ ref.date }} - {{ ref.evangelio }}</h2>
+        {{ readings.evangelio }}
     </div>
     {% endraw %}
 </template>
