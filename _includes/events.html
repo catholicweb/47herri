@@ -1,76 +1,16 @@
 <script>
-let ordering = ['type', 'weekend', 'time', 'weekday', 'location', 'none']
-
-
-async function loadICS(url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`Error al cargar el archivo: ${response.status}`);
-        const icsText = await response.text();
-        return parseICS(icsText);
-    } catch (error) {
-        console.log(url)
-        console.error("Error al cargar el archivo .ics:", error);
-        return [];
-    }
-}
-
-function parseICSDate(dateString) {
-    const match = /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})$/.exec(dateString);
-    if (!match) return dateString //throw new Error("Formato de fecha inválido");
-
-    const [, year, month, day, hour, minute, second] = match.map(Number);
-    return new Date(Date.UTC(year, month - 1, day, hour, minute, second)); // UTC para manejar TZ correctamente
-}
-
-function parseICS(icsString) {
-    const lines = icsString.split(/\r?\n/);
-    const events = [];
-    let event = null;
-    let lastKey = null;
-
-    for (let i = 0; i < lines.length; i++) {
-        let line = lines[i].trim();
-        if (line.startsWith("BEGIN:VEVENT")) {
-            event = {};
-        } else if (line.startsWith("END:VEVENT")) {
-            if (event) events.push(event);
-            event = null;
-        } else if (event) {
-            const match = /^([A-Z-]+)(?:;[^:]+)?:([\s\S]*)$/.exec(line);
-            if (match) {
-                let [, key, value] = match;
-                key = key.toLowerCase();
-                if (key == 'rrule') {
-                    const match = /BYDAY=([^;]+)$/.exec(value);
-                    if (match) event.byday = match[1]
-                } else if (key == 'dtstart') {
-                    const match = /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})$/.exec(value);
-                    if (match) {
-                        event.time = `${match[4]}:${match[5]}`
-                        event.date = `${match[1]}-${match[2]}-${match[3]}`
-                    }
-                } else {
-                    event[key] = value
-                }
-                lastKey = key;
-            } else if (lastKey) {
-                event[lastKey] += " " + line;
-            }
-        }
-    }
-
-    return events;
-}
-
+let ordering = ['none', 'none', 'time', 'weekday', 'location', 'none', 'none']
 
 function groupEvents(events, mappingFns) {
     if (mappingFns.length === 0) return events;
     const currentFn = mappingFns[0];
     const grouped = events.reduce((acc, event) => {
-        const key = currentFn(event);
-        if (!acc[key]) acc[key] = [];
-        acc[key].push(event);
+        const key_array = currentFn(event);
+        for (var i = 0; i < key_array.length; i++) {
+            let key = key_array[i]
+            if (!acc[key]) acc[key] = [];
+            acc[key].push(event);
+        }
         return acc;
     }, {});
     // Se aplica recursivamente con el resto de funciones
@@ -85,27 +25,32 @@ function groupEvents(events, mappingFns) {
 
     return sortedGrouped;
 }
+
+
 const mappers = {
     location(event) {
-        return event.location
+        return [event.location]
     },
     time(event) {
-        return event.time
+        return [event.time]
     },
     none(event) {
-        return " ";
+        return [" "];
     },
     type(event) {
-        return event.categories;
+        return [event.type];
     },
     weekend(event) {
-        return /S|D/.exec(event.byday) ? 'weekend' : 'weekday'
+        return /S|D/.exec(event.byday) ? ['weekend'] : ['weekday']
+    },
+    funerals(event) {
+        return event.type == 'funeral' ? ['funeral'] : []
     },
     weekday(event) {
-        return event.byday;
+        return [event.byday];
     },
     area(event) {
-        return event.location.startsWith("B") ? "Norte" : "Sur";
+        return event.location.startsWith("B") ? ["Norte"] : ["Sur"];
     },
 }
 
@@ -114,13 +59,10 @@ function display(item) {
     return str ? " (" + str + ")" : ""
 }
 
-
-
-
 const colorMap = { ' ': 'none' };
-const colors = ["#007bff", "#28a745", "#dc3545", "#ffc107", "#17a2b8", "#6f42c1", "#e83e8c", "#fd7e14"];
 
 function getColorForKey(key) {
+    const colors = ["#007bff", "#28a745", "#dc3545", "#ffc107", "#17a2b8", "#6f42c1", "#e83e8c", "#fd7e14"];
     if (!colorMap[key]) {
         colorMap[key] = colors[Object.keys(colorMap).length % colors.length];
     }
@@ -129,37 +71,49 @@ function getColorForKey(key) {
 
 const mappingFns = ordering.map(fnc => mappers[fnc])
 
-
 // Uso:
-loadICS("/assets/events.ics").then(events => {
-    const groupedEvents = groupEvents(events, mappingFns);
-    console.log(events, groupedEvents, mappingFns)
-
-    PetiteVue.createApp({
-        groupedEvents: groupedEvents,
-    }).mount('#events')
-});
+fetch("/assets/events.json")
+    .then(response => {
+        return response.json();
+    }).then(events => {
+        const groupedEvents = groupEvents(events.events, mappingFns);
+        PetiteVue.createApp({
+            getSubKeys: function(table) {
+                const keys = new Set();
+                for (const row in table) {
+                    for (const subKey in table[row]) keys.add(subKey);
+                }
+                return Array.from(keys);
+            },
+            groupedEvents: groupedEvents,
+        }).mount('#events')
+    });
 </script>
 <template>
     {% raw %}
-    <div id="events" style="width: 450px" v-scope>
-        <!-- Primer grupo: cada clave genera una tabla -->
+    <div id="events" style="width: 450px">
+        <!-- Primer grupo -->
         <div v-for="(group, groupKey) in groupedEvents" style="margin-bottom:20px;">
             <h1>{{ groupKey.trim() }}</h1>
+            <!-- Segundo grupo: cada clave genera una tabla -->
             <div v-for="(table, tableKey) in group" style="margin-bottom:20px;">
                 <h3>{{ tableKey.trim() }}</h3>
                 <table border="1">
+                    <thead v-if="getSubKeys(table).length - 1">
+                        <tr>
+                            <th> </th>
+                            <th v-for="subKey in getSubKeys(table)">{{ subKey.trim() }}</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <!-- Segundo grupo: cada fila con dos columnas (clave y valor) -->
+                        <!-- Segundo grupo -->
                         <tr v-for="(row, rowKey) in table">
                             <td>{{ rowKey.trim() }}</td>
-                            <td>
+                            <td v-for="subKey in getSubKeys(table)">
                                 <!-- Tercer grupo: elementos en la misma línea -->
-                                <p v-for="(line, lineKey) in row" style="margin-right:10px;">
+                                <p v-for="(line, lineKey) in row[subKey]" style="margin-right:10px; display: flex;">
                                     {{ lineKey.trim() }}
-                                    <span v-for="(item, itemKey) in line" :style="{ backgroundColor: getColorForKey(itemKey) }">
-                                        {{ itemKey.trim() }}{{ display(item) }}
-                                    </span>
+                                    <span v-for="(item, itemKey) in line" :style="{ backgroundColor: getColorForKey(itemKey) }">{{ itemKey.trim() }}{{ display(item).trim() }}</span>
                                 </p>
                             </td>
                         </tr>
@@ -200,15 +154,17 @@ loadICS("/assets/events.ics").then(events => {
     background-color: #f8f9fa;
 }
 
-/*#events tr:hover {
-    background-color: #e2e6ea;
-}*/
+#events p {
+    margin: 0;
+}
 
 h1:empty,
 h3:empty,
 td:empty,
+th:empty,
+tr:empty,
 span:empty {
-    display: none;
+    display: none !important;
 }
 
 #events h3 {

@@ -49,9 +49,6 @@ async function fetchBibleCom(version, reference) {
     source = JSON.parse(source).pageProps.chapterInfo.content
     let chapterVerses = parseBibleCom(source)
     const verseTexts = verseNums.map(verse => chapterVerses['v' + verse]).join(' ').replace(/ +\./g, '.')
-
-    console.log(chapterVerses, verses, reference, verseNums, verseTexts)
-
     return verseTexts;
 }
 
@@ -65,7 +62,7 @@ function parseReference(ref) {
         "Mt": "MAT",
         "Mar": "MRK",
         "Lk": "LUK",
-        "Jo": "john",
+        "Jo": "JHN",
     };
 
 
@@ -136,32 +133,46 @@ const app = {
     readings: {},
     ref: {},
     date: new Date(),
-    lang: 'eus',
+    lang: 'eu',
     changeDate: function(diff) {
         this.date.setDate(this.date.getDate() + diff)
         this.fetchReference(this.date)
     },
-    tr_test: 0,
+    tr_test: -1,
     fetchTranslation: async function(lang) {
         let translations = {
-            arabic: '%25D8%25AC%25D8%25B2%25D8%25A7%25D8%25A6%25D8%25B1%25D9%258A:3193',
-            basque: 'EABD:223',
-            french: 'PDV2017:133',
-            spanish: 'BTI:214',
-            bulgarian: '%25D0%25A1%25D0%2598:1558'
+            ar: '%25D8%25AC%25D8%25B2%25D8%25A7%25D8%25A6%25D8%25B1%25D9%258A:3193', // arabic
+            eu: 'EABD:223', // euskara
+            fr: 'PDV2017:133', // french
+            es: 'CEE', //BTI:214',
+            en: 'NRSV-CI:2015', // english
+            it: 'ICL00D:1196', // italian
+            ro: 'BINT09:1506', //romana
+            pt: 'BPT09DC:228', // portugues
+            ca: 'BCI:335', // catalan
+            //de: '',// deutsch
+            bu: '%25D0%25A1%25D0%2598:1558' // bulgarian
         }
-        lang = Object.keys(translations)[this.tr_test % 4]
-        console.log(lang)
-        let evangelio = await fetchBibleCom(translations[lang], this.ref.evangelio)
-        this.readings = { evangelio: evangelio }
+        lang = Object.keys(translations)[this.tr_test % 9]
+        if (lang == 'es') {
+            const { book, chapter, verses } = parseReference(this.ref.evangelio);
+            const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
+            let gospel = await fetch('/assets/gospel.json')
+            gospel = await gospel.json()
+            this.readings = {}
+            this.readings.evangelio = verseNums.map(verse => gospel[book][chapter - 1].versiculos[verse - 1]).join(' ').replace(/ +\./g, '.')
+        } else {
+            let evangelio = await fetchBibleCom(translations[lang], this.ref.evangelio)
+            this.readings = { evangelio: evangelio }
+        }
     },
     fetchReference: async function(date) {
-        console.log('fetchReference')
         let data = await fetchBizkeliza(date)
         this.ref = data.ref
-        this.ref.date = this.date.toLocaleDateString('en-GB').split('/').join('-')
+        this.ref.date = this.date.toLocaleDateString('en-GB')
         this.readings = data.readings
-        if (this.lang != 'eus') {
+        console.log('fetchReference', this.ref, this.readings)
+        if (this.lang != 'eu') {
             this.fetchTranslation(this.lang)
         }
     }
@@ -172,10 +183,7 @@ app.fetchReference(app.date)
 </script>
 <template>
     {% raw %}
-    <div id="ebenjelioa" style="white-space: pre-line;" v-scope>
-        <button @click="changeDate(-1)">-</button>
-        <button @click="changeDate(+1)">+</button>
-        <button @click="tr_test++; lang = '', changeDate(0)">translate</button>
+    <div id="ebenjelioa" style="/*white-space: pre-line;*/">
         <!--{{ ref }}
         <h4>IRAKURGAIA 1</h4>
         {{ readings.primera }}
@@ -185,7 +193,8 @@ app.fetchReference(app.date)
             <h4>IRAKURGAIA 2</h4>
             {{ readings.segunda }}
         </div>-->
-        <h2>EBANJELIOA {{ ref.date }} - {{ ref.evangelio }}</h2>
+        <h2>EBANJELIOA <button @click="changeDate(-1)">-</button> {{ ref.date }} <button @click="changeDate(+1)">+</button></h2>
+        <h4>{{ ref.evangelio }} <button @click="tr_test++; lang = '', fetchTranslation()">translate</button></h4>
         {{ readings.evangelio }}
     </div>
     {% endraw %}
