@@ -2,6 +2,6 @@
 title: Alli
 video: NPKCefEllNA
 masses:
-  - time: 17:00
-    byday: S - 1 astea
+  - date: larunbat 17.00 1 astea
+    notes:
 ---

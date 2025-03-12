@@ -11,8 +11,12 @@ url: "https://47herri.eus"
 plugins:
   - jekyll-feed
 
+
+goatcounter: '47herri'
+
 modules:
   - gospel
   - maps
   - events
   - facade
+  - analytics
