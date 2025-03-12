@@ -1,0 +1,101 @@
+<script>
+/*https://gist.github.com/JCPedroza/04d13c652c1c83e32097d9b5a1b58f30*/
+(function() {
+    console.log('Activate Single Page Application!')
+    let currentPath = location.pathname
+
+    // Extract tag from html string
+    function getElement(htmlString, tag) {
+        var bodyRegex = new RegExp(`<${tag}[\\s\\S]*?>([\\s\\S]*?)<\\/${tag}>`, "i");
+        var bodyMatch = bodyRegex.exec(htmlString);
+        return bodyMatch ? bodyMatch[1] : false
+    }
+
+    // Simple (buggy?) event delegation
+    function getLink(elem) {
+        if (elem.href) {
+            return new URL(elem.href)
+        } else if (!elem.matches('a *')) {
+            return false
+        } else {
+            for (var i = 0; i < 10; i++) {
+                elem = elem.parentNode
+                if (!elem) return false
+                if (elem.href) return new URL(elem.href)
+            }
+        }
+    }
+
+    // Subscribe to "popstate" aka clicks to "back" or "forward" button on their browser
+    window.addEventListener('popstate', handleNavigation)
+
+    // Intercept all clicks on links so they don't trigger a page reload.
+    // we can then use `history.pushState` so those link clicks still change the url appropriately.
+    window.addEventListener('click', (e) => {
+        // Get desired url (if any)
+        let url = getLink(e.target)
+        if (!url) return
+
+        // Open external (crossorigin) links on new page
+        if (url.origin !== location.origin) {
+            e.preventDefault()
+            return window.open(url.href, '_blank').focus();
+        }
+
+        // If same origin, but different path, use SPA navigation
+        if (url.pathname !== location.pathname) {
+            e.preventDefault()
+            history.pushState(null, document.title, url.href)
+            handleNavigation()
+        }
+    })
+
+    // handleNavigation callback is fired whenever we need to react to a SPA navigation action.
+    function handleNavigation(e) {
+        // If we have not changed the path, skip processing
+        if (currentPath == location.pathname) return
+        // Now route accordingly
+        console.log('Routing SPA to:', location.pathname)
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', location.pathname, true);
+        xhr.onreadystatechange = function() {
+            // If something failed, fallback to good old page load
+            if (this.readyState !== 4) return
+            if (this.status !== 200) return location.reload()
+
+            // Update path
+            document.body.innerHTML = getElement(this.responseText, 'body');
+            document.title = getElement(this.responseText, 'title') || document.title
+            currentPath = location.pathname
+
+            // Dispatch 'onload' event
+            window.dispatchEvent(new Event("load"));
+
+            // Handle hash
+            if (location.hash && document.querySelector(location.hash)) {
+                document.querySelector(location.hash).scrollIntoView();
+                document.querySelector(location.hash).focus()
+            }
+        };
+        xhr.send();
+    }
+
+})();
+
+
+window.onload = function() {
+    updateActiveLink()
+}
+// Update active link
+function updateActiveLink() {
+    let links = document.querySelectorAll('a[href]')
+    for (var i = 0; i < links.length; i++) {
+        let linkPath = links[i].href ? new URL(links[i].href).pathname : null
+        if (linkPath === location.pathname) {
+            links[i].classList.add('active')
+        } else {
+            links[i].classList.remove('active')
+        }
+    }
+}
+</script>

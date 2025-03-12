@@ -1,5 +1,5 @@
 <script>
-let ordering = ['none', 'none', 'time', 'weekday', 'location', 'none', 'none']
+let ordering = ['type', 'weekend', 'time', 'byweek', 'location', 'none', 'none']
 
 function groupEvents(events, mappingFns) {
     if (mappingFns.length === 0) return events;
@@ -41,7 +41,10 @@ const mappers = {
         return [event.type];
     },
     weekend(event) {
-        return /S|D/.exec(event.byday) ? ['weekend'] : ['weekday']
+        return event.byday.map(el => ['igandea', 'larunbat'].includes(el) ? el : 'astegunetan');
+    },
+    byweek(event) {
+        return event.byweek || []
     },
     funerals(event) {
         return event.type == 'funeral' ? ['funeral'] : []
@@ -69,6 +72,32 @@ function getColorForKey(key) {
     return colorMap[key];
 }
 
+
+function parseRawEvent(event) {
+    if (!event || !event.raw) {
+        console.log(event)
+        return event
+    }
+
+    // Define different parts of the regex
+    let regex = {
+        byday: /(astelehenan?|asteartean?|asteazkenan?|ostegunan?|ostiralan?|larunbat?|igandean?|astegunetan?|bezperan?)/gmi,
+        time: /([0-9]|0[0-9]|1[0-9]|2[0-3])[:.]([0-5][0-9])/gmi,
+        byweek: /([12345]) ?astek?o?a/gmi,
+        months: /(pazkoa|urtarrila?k?|otsaila?k?|martxoa?k?|apirila?k?|maiatza?k?|ekaina?k?|uztaila?k?|abuztua?k?|iraila?k?|urria?k?|azaroa?k?|abendua?k?)/gmi,
+        frequency: /([1-9]) (astea?n?|hilea?n?|urtea?n?) behin/gmi
+    }
+    let defaults = {
+        byweek: ['1 astea', '2 astea', '3 astea', '4 astea', '5 astea']
+    }
+    for (const key in regex) {
+        const match = event.raw.match(regex[key]);
+        event[key] = match || defaults[key] || []
+    }
+    return event
+}
+
+
 const mappingFns = ordering.map(fnc => mappers[fnc])
 
 // Uso:
@@ -76,7 +105,12 @@ fetch("/assets/events.json")
     .then(response => {
         return response.json();
     }).then(events => {
-        const groupedEvents = groupEvents(events.events, mappingFns);
+
+        let parsed = events.slice(0, -1).map(event => parseRawEvent(event))
+        console.log(parsed)
+
+        const groupedEvents = groupEvents(parsed, mappingFns);
+        console.log(groupedEvents)
         PetiteVue.createApp({
             getSubKeys: function(table) {
                 const keys = new Set();
@@ -99,7 +133,7 @@ fetch("/assets/events.json")
             <div v-for="(table, tableKey) in group" style="margin-bottom:20px;">
                 <h3>{{ tableKey.trim() }}</h3>
                 <table border="1">
-                    <thead v-if="getSubKeys(table).length - 1">
+                    <thead v-if="getSubKeys(table)[0] != ' '">
                         <tr>
                             <th> </th>
                             <th v-for="subKey in getSubKeys(table)">{{ subKey.trim() }}</th>

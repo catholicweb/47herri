@@ -7,7 +7,7 @@ masses:
     notes:
   - date: larunbat 19.30
     notes:
-  - date: igandea 9.00
+  - date: igandea 09.00
     notes:
   - date: igandea 11.00
     notes:

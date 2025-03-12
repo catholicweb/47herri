@@ -15,6 +15,7 @@ plugins:
 goatcounter: '47herri'
 
 modules:
+  - seo
   - gospel
   - maps
   - events

@@ -1,18 +1,18 @@
-<!-- Begin SEO -->
+<head>
+    <!-- Begin SEO -->
     {%- if page.redirect -%}
     <meta http-equiv="refresh" content="0; url={{ page.redirect | absolute_url }}">
-    <script type="text/javascript">window.location.href = "{{ page.redirect | absolute_url }}"</script>
+    <script type="text/javascript">
+    window.location.href = "{{ page.redirect | absolute_url }}"
+    </script>
     <link rel="canonical" href="{{ page.redirect | absolute_url }}" />
     {%- endif -%}
-
     <!-- Title -->
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="canonical" href="{{ page.url | absolute_url }}" />
-    
     <!-- Favicon -->
     <link href="{{ page.icon | default: site.icon | absolute_url }}" rel="icon">
-
-    <!-- Open Graph --> 
+    <!-- Open Graph -->
     <meta property="og:title" content="{{ page.title }} - {{ site.title }}" />
     <meta property="og:locale" content="{{ site.locale }}" />
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
@@ -20,13 +20,12 @@
     <meta property="og:image" content="{{ page.image | default: site.image | absolute_url | uri_escape }}" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ page.description | default: site.description }}" />
-
     <!-- Other meta -->
     <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
     <meta name="description" content="{{ page.description | default: site.description }}">
     <meta name="author" content="{{ site.author }}" />
-    {% if site.google-site-verification %}<meta name="google-site-verification" content="{{ site.google-site-verification }} " />{% endif %}
-
+    {% if site.google-site-verification %}
+    <meta name="google-site-verification" content="{{ site.google-site-verification }} " />{% endif %}
     <!-- Twitter meta -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:image" content="{{ page.image | default: site.image | absolute_url | uri_escape }}" />
@@ -34,62 +33,66 @@
     <meta property="twitter:domain" content="{{ site.url }}">
     <meta property="twitter:url" content="{{ page.url | absolute_url }}">
     <meta name="twitter:description" content="{{ page.description | default: site.description }}">
-
-
     <!-- JSON+LD SCHEMA -->
     {% if page.layout == "product" %}
     <script type="application/ld+json">
     {
-      "@context":"https://schema.org",
-      "@type":"Product",
-      "name":"{{ page.title  }}",
-      "description":"{{ page.description | default: site.description }}",
-      "headline":"{{ page.title }} - {{ site.title }}",
-      "image":"{{ page.image | default: site.image | absolute_url | uri_escape }}",
-      "url":"{{ page.url | absolute_url}}",
-      "offers": {
-        "@type": "Offer",
-        "url": "{{ page.url | absolute_url }}",
-        "priceCurrency": "EUR",
-        "price": {{ page.price | default: 0 }},
-        "priceValidUntil": "2030-11-20",
-        "itemCondition": "https://schema.org/NewCondition",
-        "availability": "https://schema.org/InStock"
-      }
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "{{ page.title  }}",
+        "description": "{{ page.description | default: site.description }}",
+        "headline": "{{ page.title }} - {{ site.title }}",
+        "image": "{{ page.image | default: site.image | absolute_url | uri_escape }}",
+        "url": "{{ page.url | absolute_url}}",
+        "offers": {
+            "@type": "Offer",
+            "url": "{{ page.url | absolute_url }}",
+            "priceCurrency": "EUR",
+            "price": {
+                {
+                    page.price |
+                        default: 0
+                }
+            },
+            "priceValidUntil": "2030-11-20",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+        }
     }
     </script>
     {% else %}
     <script type='application/ld+json'>
     {
-      "@context": "http://www.schema.org",
-      "@type": "{{ site.ldType }}",
-      "name": "{{ site.title }}",
-      "url": "{{ site.url }}",
-      "sameAs": [
-         "{{ site.sameAs.facebook }}"
-      ],
-      "logo": "{{ site.logo || default: site.icon }}",
-      "priceRange": "$$",
-      "image": "{{ page.image | default: site.image | absolute_url | uri_escape }}",
-      "description": "{{ page.description | default: site.description }}",
-      "keywords": "{{ page.keywords }}",
-      "address": {
-         "@type": "PostalAddress",
-         "streetAddress": "{{ site.street }}",
-         "addressLocality": "{{ site.city }}",
-         "addressRegion": "{{ site.region }}",
-         "postalCode": "{{ site.zip }}",
-         "addressCountry": "{{ site.country }}"
-      },
-      "geo": {
-         "@type": "GeoCoordinates",
-         "latitude": "{{ site.latitude }}",
-         "longitude": "{{ site.longitude }}"
-      },
-      "hasMap": "{{ site.googleMaps }}",
-      "openingHours": "{{ site.openingHours }}",
-      "telephone": "{{ site.phone }}",
-      "email": "{{ site.email }}"
+        "@context": "http://www.schema.org",
+        "@type": "{{ site.ldType }}",
+        "name": "{{ site.title }}",
+        "url": "{{ site.url }}",
+        "sameAs": [
+            "{{ site.sameAs.facebook }}"
+        ],
+        "logo": "{{ site.logo || default: site.icon }}",
+        "priceRange": "$$",
+        "image": "{{ page.image | default: site.image | absolute_url | uri_escape }}",
+        "description": "{{ page.description | default: site.description }}",
+        "keywords": "{{ page.keywords }}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ site.street }}",
+            "addressLocality": "{{ site.city }}",
+            "addressRegion": "{{ site.region }}",
+            "postalCode": "{{ site.zip }}",
+            "addressCountry": "{{ site.country }}"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "{{ site.latitude }}",
+            "longitude": "{{ site.longitude }}"
+        },
+        "hasMap": "{{ site.googleMaps }}",
+        "openingHours": "{{ site.openingHours }}",
+        "telephone": "{{ site.phone }}",
+        "email": "{{ site.email }}"
     }
     </script>
-{% endif %}
+    {% endif %}
+</head>
