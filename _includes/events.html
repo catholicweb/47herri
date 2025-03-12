@@ -1,5 +1,5 @@
 <script>
-let ordering = ['type', 'weekend', 'time', 'byweek', 'location', 'none', 'none']
+let ordering = ['type', 'weekend', 'time', 'none', 'location', 'notes']
 
 function groupEvents(events, mappingFns) {
     if (mappingFns.length === 0) return events;
@@ -44,7 +44,7 @@ const mappers = {
         return event.byday.map(el => ['igandea', 'larunbat'].includes(el) ? el : 'astegunetan');
     },
     byweek(event) {
-        return event.byweek || []
+        return event.byweek
     },
     funerals(event) {
         return event.type == 'funeral' ? ['funeral'] : []
@@ -55,12 +55,20 @@ const mappers = {
     area(event) {
         return event.location.startsWith("B") ? ["Norte"] : ["Sur"];
     },
+    notes(event) {
+        let arr = event.notes ? [event.notes] : []
+        if (!ordering.includes('byweek') && event.byweek.length < 5) {
+            arr.push(event.byweek)
+        }
+        if (!ordering.includes('weekday') && !['igandea', 'larunbat', 'astegunetan'].includes(event.byday[0])) {
+            arr.push(event.byday)
+        }
+        let str = arr.join(', ').trim()
+        console.log(str)
+        return str ? [" (" + str + ")"] : [""]
+    }
 }
 
-function display(item) {
-    let str = Object.keys(item).join(', ').trim()
-    return str ? " (" + str + ")" : ""
-}
 
 const colorMap = { ' ': 'none' };
 
@@ -119,13 +127,13 @@ fetch("/assets/events.json")
                 }
                 return Array.from(keys);
             },
-            groupedEvents: groupedEvents,
+            groupedEvents: groupedEvents
         }).mount('#events')
     });
 </script>
 <template>
     {% raw %}
-    <div id="events" style="width: 450px">
+    <div id="events">
         <!-- Primer grupo -->
         <div v-for="(group, groupKey) in groupedEvents" style="margin-bottom:20px;">
             <h1>{{ groupKey.trim() }}</h1>
@@ -147,7 +155,7 @@ fetch("/assets/events.json")
                                 <!-- Tercer grupo: elementos en la misma línea -->
                                 <p v-for="(line, lineKey) in row[subKey]" style="margin-right:10px; display: flex;">
                                     {{ lineKey.trim() }}
-                                    <span v-for="(item, itemKey) in line" :style="{ backgroundColor: getColorForKey(itemKey) }">{{ itemKey.trim() }}{{ display(item).trim() }}</span>
+                                    <span v-for="(item, itemKey) in line" :style="/*{ backgroundColor: getColorForKey(itemKey) }*/">{{ itemKey.trim() }}</span>
                                 </p>
                             </td>
                         </tr>
@@ -170,6 +178,7 @@ fetch("/assets/events.json")
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
     border-radius: 8px;
     overflow: hidden;
+    text-transform: capitalize;
 }
 
 #events th,
@@ -209,13 +218,15 @@ span:empty {
     font-size: 1.4em;
 }
 
+
 #events span {
-    display: inline-block;
+    /*display: inline-block;
     background-color: #007bff;
     color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
     margin-right: 6px;
-    font-size: 0.9em;
+    border-radius: 4px;*/
+    font-style: italic;
+    padding: 0px 4px;
+    font-size: 0.7em;
 }
 </style>

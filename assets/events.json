@@ -9,6 +9,7 @@ layout: null
 {
 "raw": "{{ mass.date }}",
 "type": "mass",
+"notes": "{{ mass.notes }}",
 "location": "{{ page.title }}"
 },
 {%- endfor -%}
