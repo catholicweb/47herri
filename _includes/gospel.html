@@ -87,7 +87,6 @@ function parseReference(ref) {
     const verseGroups = versesStr.replace(/[^0-9\.\,-]/g, '').split('.').map(s => s.trim()).filter(Boolean);
     // Función para transformar un rango "start-end" a un array numérico.
     const parseRange = r => {
-        console.log(r)
         const [start, end] = r.split('-').map(Number);
         if (!end) return [start]
         return Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -171,7 +170,6 @@ const app = {
         this.ref = data.ref
         this.ref.date = this.date.toLocaleDateString('en-GB')
         this.readings = data.readings
-        console.log('fetchReference', this.ref, this.readings)
         if (this.lang != 'eu') {
             this.fetchTranslation(this.lang)
         }

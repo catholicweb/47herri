@@ -64,8 +64,7 @@ const mappers = {
             arr.push(event.byday)
         }
         let str = arr.join(', ').trim()
-        console.log(str)
-        return str ? [" (" + str + ")"] : [""]
+        return str ? [" (" + str + ")"] : [" "]
     }
 }
 
@@ -83,7 +82,6 @@ function getColorForKey(key) {
 
 function parseRawEvent(event) {
     if (!event || !event.raw) {
-        console.log(event)
         return event
     }
 
@@ -108,28 +106,27 @@ function parseRawEvent(event) {
 
 const mappingFns = ordering.map(fnc => mappers[fnc])
 
-// Uso:
-fetch("/assets/events.json")
-    .then(response => {
-        return response.json();
-    }).then(events => {
 
+let eventsApp = {
+    getSubKeys: function(table) {
+        const keys = new Set();
+        for (const row in table) {
+            for (const subKey in table[row]) keys.add(subKey);
+        }
+        return Array.from(keys);
+    },
+    fetchEvents: async function(mappingFns) {
+        let response = await fetch("/assets/events.json")
+        let events = await response.json()
         let parsed = events.slice(0, -1).map(event => parseRawEvent(event))
-        console.log(parsed)
+        this.groupedEvents = groupEvents(parsed, mappingFns);
+        console.log(this.groupedEvents)
+    },
+    groupedEvents: {}
+}
 
-        const groupedEvents = groupEvents(parsed, mappingFns);
-        console.log(groupedEvents)
-        PetiteVue.createApp({
-            getSubKeys: function(table) {
-                const keys = new Set();
-                for (const row in table) {
-                    for (const subKey in table[row]) keys.add(subKey);
-                }
-                return Array.from(keys);
-            },
-            groupedEvents: groupedEvents
-        }).mount('#events')
-    });
+PetiteVue.createApp(eventsApp).mount('#events')
+eventsApp.fetchEvents(mappingFns)
 </script>
 <template>
     {% raw %}
@@ -178,6 +175,9 @@ fetch("/assets/events.json")
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
     border-radius: 8px;
     overflow: hidden;
+}
+
+#events {
     text-transform: capitalize;
 }
 
@@ -212,7 +212,7 @@ span:empty {
 
 #events h3 {
     color: #333;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 3px solid #009C46;
     padding-bottom: 5px;
     margin-top: 20px;
     font-size: 1.4em;
