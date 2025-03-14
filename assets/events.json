@@ -8,7 +8,7 @@ layout: null
 {%- for mass in page.masses -%}
 {
 "raw": "{{ mass.date }}",
-"type": "mass",
+"type": "mezak",
 "notes": "{{ mass.notes }}",
 "location": "{{ page.title }}"
 },
