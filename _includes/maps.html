@@ -1,72 +1,74 @@
 <script>
-var map = L.map('map', { fullscreenControl: true }).fitBounds([
-    [42.879634, -1.658455],
-    [43.263256, -2.0709]
-])
+document.addEventListener("load", function() {
+    var map = L.map('map', { fullscreenControl: true }).fitBounds([
+        [42.879634, -1.658455],
+        [43.263256, -2.0709]
+    ])
 
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; Carto - OpenStreetMap'
-}).addTo(map); /**/
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; Carto - OpenStreetMap'
+    }).addTo(map); /**/
 
-/*L.tileLayer('https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png', {
-    attribution: '&copy; Thunderforest | &copy; OpenStreetMap contributors'
-}).addTo(map); /**/
-
-
-var redIcon = L.icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34]
-});
+    /*L.tileLayer('https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png', {
+        attribution: '&copy; Thunderforest | &copy; OpenStreetMap contributors'
+    }).addTo(map); /**/
 
 
-/*function onMapClick(e) {
-    alert("You clicked the map at " + e.latlng);
-}
-
-map.on('click', onMapClick);*/
-
-fetch('/assets/map.geojson') // Load the JSON file
-    .then(response => response.json()) // Convert the response to JSON
-    .then(data => {
-        L.geoJSON(data).addTo(map);
-    })
-    .catch(error => {
-        console.error('Error loading the JSON data:', error);
+    var redIcon = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34]
     });
 
 
-fetch('/assets/places.json') // Load the JSON file
-    .then(response => response.json()) // Convert the response to JSON
-    .then(data => {
-        for (var i = 0; i < data.elements.length; i++) {
-            let elem = data.elements[i]
-            let config = {}
-            if (!elem.lat) {
-                elem.lat = elem.bounds.minlat
-                elem.lon = elem.bounds.minlon
+    /*function onMapClick(e) {
+        alert("You clicked the map at " + e.latlng);
+    }
+
+    map.on('click', onMapClick);*/
+
+    fetch('/assets/map.geojson') // Load the JSON file
+        .then(response => response.json()) // Convert the response to JSON
+        .then(data => {
+            L.geoJSON(data).addTo(map);
+        })
+        .catch(error => {
+            console.error('Error loading the JSON data:', error);
+        });
+
+
+    fetch('/assets/places.json') // Load the JSON file
+        .then(response => response.json()) // Convert the response to JSON
+        .then(data => {
+            for (var i = 0; i < data.elements.length; i++) {
+                let elem = data.elements[i]
+                let config = {}
+                if (!elem.lat) {
+                    elem.lat = elem.bounds.minlat
+                    elem.lon = elem.bounds.minlon
+                }
+                if (JSON.stringify(elem.tags).includes('ermita')) {
+                    config = { icon: redIcon }
+                }
+                var marker = L.marker([elem.lat, elem.lon], config).addTo(map).bindPopup(JSON.stringify(elem.tags))
             }
-            if (JSON.stringify(elem.tags).includes('ermita')) {
-                config = { icon: redIcon }
-            }
-            var marker = L.marker([elem.lat, elem.lon], config).addTo(map).bindPopup(JSON.stringify(elem.tags))
-        }
-        console.log(data.elements.length)
-    })
-    .catch(error => {
-        console.error('Error loading the JSON data:', error);
-    });
+            console.log(data.elements.length)
+        })
+        .catch(error => {
+            console.error('Error loading the JSON data:', error);
+        });
+})
 </script>
 
 <head>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <!-- fullscreen -->
-    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <script defer src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 </head>
 <template>
