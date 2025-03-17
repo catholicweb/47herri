@@ -39,11 +39,6 @@ $(window).on('load', function() {
     })
 });
 
-// nice select
-$(document).ready(function() {
-    $('select').niceSelect();
-});
-
 
 // client section owl carousel
 $(".client_owl-carousel").owlCarousel({

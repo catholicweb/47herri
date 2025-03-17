@@ -26,24 +26,7 @@
                             <a class="nav-link" href="/parrokiak.html">Parrokiak</a>
                         </li>
                     </ul>
-                    <div class="user_option">
-                        <div class="language-selector">
-                            <!--<img id="flag" class="flag" src="https://flagcdn.com/w40/gb.png" alt="flag">-->
-                            <select id="language">
-                                <option value="eu" data-flag="es">Euskara</option>
-                                <option value="es" data-flag="es">Español</option>
-                                <option value="en" data-flag="gb">English</option>
-                                <option value="bg" data-flag="bg">Български</option>
-                                <option value="it" data-flag="it">Italiano</option>
-                                <option value="ro" data-flag="ro">Română</option>
-                                <option value="pt" data-flag="pt">Português</option>
-                                <option value="ca" data-flag="es">Català</option>
-                                <option value="ar" data-flag="sa">العربية</option>
-                                <option value="de" data-flag="de">Deutsch</option>
-                                <option value="fr" data-flag="fr">Français</option>
-                            </select>
-                        </div>
-                    </div>
+                    {% include module name='translate' %}
                 </div>
             </nav>
         </div>

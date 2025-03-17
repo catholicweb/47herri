@@ -35,10 +35,10 @@ function make(parent, tagName, ...attr) {
 function addIframe(source, id) {
     let props = { allowfullscreen: true, allowtransparency: true, frameborder: "0" }
     if (source == 'vimeo') {
-        props.allow = "autoplay; fullscreen; picture-in-picture"
+        props.allow = "autoplay; allowfullscreen; fullscreen; picture-in-picture"
         props.src = `https://player.vimeo.com/video/${id}?autoplay=1`
     } else if (source == 'youtube') {
-        props.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        props.allow = "accelerometer; allowfullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         props.src = `https://www.youtube.com/embed/${id}?autoplay=1`
     } else {
         return console.error('[addIframe] Invalid source', source)

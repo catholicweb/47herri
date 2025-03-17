@@ -10,7 +10,7 @@ layout: null
 "raw": "{{ mass.date }}",
 "type": "mezak",
 "notes": "{{ mass.notes }}",
-"location": "{{ page.title }}"
+"location": "{{ page.title | default: page.name | capitalize | replace: ".md", "" }}"
 },
 {%- endfor -%}
 {%- endif -%}

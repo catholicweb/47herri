@@ -176,8 +176,8 @@
                                         <img loading="lazy" src="media/f{{ index2 }}.webp" alt="">
                                     </div>
                                     <div class="detail-box">
-                                        <h5 style="text-transform: capitalize;">
-                                            {{ herri.title }}
+                                        <h5 class="notr" style="text-transform: capitalize;">
+                                            {{ herri.title | default: herri.name | capitalize | replace: ".md", "" }}
                                         </h5>
                                         <p>
                                             Veniam debitis quaerat officiis quasi...

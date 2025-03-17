@@ -1,4 +1,5 @@
 <script>
+//
 async function fetchCors(url) {
     let response = await fetch(`https://arrietaeguren.es/cors?url=${encodeURIComponent(url)}`, { referrerPolicy: "no-referrer", cache: "force-cache" });
     return response.text()
@@ -45,7 +46,7 @@ async function fetchBibleCom(version, reference) {
     const { book, chapter, verses } = parseReference(reference);
     const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
     version = version.split(':')
-    let source = await fetchCors(`https://www.bible.com/_next/data/KTdxJfLK1givPUU1IjMWJ/en/audio-bible/${version[1] || '56'}/${book}.${chapter}.${version[0]}.json?versionId=${version[1] || '56'}&usfm=${book}.${chapter}.${version[0]}`)
+    let source = await fetchCors(`https://www.bible.com/_next/data/NSe_168GcWF7M6ZbZ1-Jv/en/audio-bible/${version[1] || '56'}/${book}.${chapter}.${version[0]}.json?versionId=${version[1] || '56'}&usfm=${book}.${chapter}.${version[0]}`)
     source = JSON.parse(source).pageProps.chapterInfo.content
     let chapterVerses = parseBibleCom(source)
     const verseTexts = verseNums.map(verse => chapterVerses['v' + verse]).join(' ').replace(/ +\./g, '.')
@@ -137,7 +138,7 @@ const app = {
         this.date.setDate(this.date.getDate() + diff)
         this.fetchReference(this.date)
     },
-    tr_test: -1,
+    tr_test: 1,
     fetchTranslation: async function(lang) {
         let translations = {
             ar: '%25D8%25AC%25D8%25B2%25D8%25A7%25D8%25A6%25D8%25B1%25D9%258A:3193', // arabic
@@ -161,6 +162,7 @@ const app = {
             this.readings = {}
             this.readings.evangelio = verseNums.map(verse => gospel[book][chapter - 1].versiculos[verse - 1]).join(' ').replace(/ +\./g, '.')
         } else {
+            console.log(lang, translations[lang])
             let evangelio = await fetchBibleCom(translations[lang], this.ref.evangelio)
             this.readings = { evangelio: evangelio }
         }
@@ -170,9 +172,8 @@ const app = {
         this.ref = data.ref
         this.ref.date = this.date.toLocaleDateString('en-GB')
         this.readings = data.readings
-        if (this.lang != 'eu') {
-            this.fetchTranslation(this.lang)
-        }
+        this.fetchTranslation(this.lang)
+
     }
     //$delimiters: ['{{', '}}'],
 }
@@ -181,7 +182,7 @@ app.fetchReference(app.date)
 </script>
 <template>
     {% raw %}
-    <div id="ebenjelioa" style="/*white-space: pre-line;*/">
+    <div id="ebenjelioa" class="notr" style="/*white-space: pre-line;*/">
         <!--{{ ref }}
         <h4>IRAKURGAIA 1</h4>
         {{ readings.primera }}
@@ -198,7 +199,7 @@ app.fetchReference(app.date)
     {% endraw %}
 </template>
 
-<head>
+<head disable="already included">
     <script src="https://unpkg.com/petite-vue"></script>
 </head>
 <style>

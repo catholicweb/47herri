@@ -1,0 +1,154 @@
+<script>
+// Diccionario de traducciones y objeto para registrar ausencias.
+
+let dictionary = {}
+let original = {}
+// Función recursiva para obtener todos los nodos de texto de un elemento.
+function getTextNodes(node) {
+    let nodes = [];
+    if (node.nodeType === Node.ELEMENT_NODE && (node.classList.contains('notr') || ['SCRIPT', 'STYLE'].includes(node.tagName))) {
+        return nodes; // No seguir explorando este subárbol
+    }
+
+    node.childNodes.forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE && child.nodeValue.trim() !== '') {
+            nodes.push(child);
+        } else {
+            nodes = nodes.concat(getTextNodes(child));
+        }
+    });
+
+    return nodes;
+}
+
+
+// Evento para el botón de traducción.
+function translate(language) {
+    if (!language) return;
+    localStorage.language = language
+
+    if (!dictionary[language]) dictionary[language] = {}
+    const elements = document.querySelectorAll('body');
+    let textsToTranslate = [];
+    // Recorrer cada elemento y sus nodos de texto.
+    elements.forEach(el => {
+        const nodes = getTextNodes(el);
+        nodes.forEach(node => {
+            let text = node.nodeValue.trim();
+            if (!text) return
+            if (language == 'basque' && original[text]) {
+                node.nodeValue = original[text]
+                return
+            }
+            if (original[text]) text = original[text]
+            if (dictionary[language][text]) {
+                original[dictionary[language][text]] = text
+                node.nodeValue = dictionary[language][text];
+            } else {
+                textsToTranslate.push(text);
+            }
+        });
+    });
+    return [...new Set(textsToTranslate)];
+}
+
+
+async function fetchTranslations() {
+    const language = localStorage.language || 'basque';
+    let textsToTranslate = translate(language)
+    if (!textsToTranslate || !textsToTranslate.length) return console.log('No need to fetch any translation')
+    translations = await translateTexts(textsToTranslate, language)
+    console.log(translations)
+    textsToTranslate.forEach((text, index) => {
+        const translatedText = translations.translations[index]; // Obtener la traducción en la misma posición
+        if (translatedText) {
+            dictionary[language][text] = translatedText;
+        }
+    });
+    localStorage.dictionary = JSON.stringify(dictionary || '{}');
+    translate(language)
+}
+
+async function translateTexts(texts, language) {
+
+    console.log('calling open ai', texts)
+    let apiKey = localStorage.apiKey
+    if (!apiKey) return
+
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${apiKey}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            model: "gpt-4o-mini",
+            response_format: { "type": "json_object" },
+            messages: [
+                { role: "system", content: "You are a professional translator for a catholic website. Return only a JSON array with translations, ej { translations: ['translated text 1','translated text 2'...]}" },
+                { role: "user", content: `Translate these texts from basque to ${language}: ${JSON.stringify(texts)}` }
+            ],
+            temperature: 0.3
+        })
+    });
+
+    if (!response.ok) {
+        console.error(response)
+        throw new Error("Failed to fetch translation");
+    }
+
+    const data = await response.json();
+
+    if (!data.choices || !data.choices[0] || !data.choices[0].message.content) {
+        throw new Error("Invalid response from OpenAI");
+    }
+
+    return JSON.parse(data.choices[0].message.content);
+}
+
+
+let select = document.getElementById("language");
+//const flag = document.getElementById("flag");
+
+select.onchange = function() {
+    const selectedOption = select.options[select.selectedIndex];
+    //    const flagCode = selectedOption.getAttribute("data-flag");
+    console.log(selectedOption.value)
+    let missing = translate(selectedOption.value)
+    //flag.src = `https://flagcdn.com/w40/${flagCode}.png`;
+    //flag.alt = selectedOption.text;
+};
+
+fetch('/assets/dictionary.json').then(response => {
+    return response.json()
+}).then(data => {
+    dictionary = data
+    let language = localStorage.language
+    if (language) {
+        const option = select.querySelector(`option[value="${language}"]`);
+        console.log(option, select.selectedIndex, option.index)
+        select.selectedIndex = option.index || 0
+        translate(language)
+    }
+})
+</script>
+<template>
+    <div class="user_option notr">
+        <div class="language-selector">
+            <!--<img id="flag" class="flag" src="https://flagcdn.com/w40/gb.png" alt="flag">-->
+            <select id="language">
+                <option data-flag="es" value="basque">Euskara</option>
+                <option data-flag="es" value="spanish">Español</option>
+                <option data-flag="gb" value="english">English</option>
+                <option data-flag="bg" value="bulgarian">Български</option>
+                <option data-flag="it" value="italian">Italiano</option>
+                <option data-flag="ro" value="romanian">Română</option>
+                <option data-flag="pt" value="portuguese">Português</option>
+                <option data-flag="es" value="catalan">Català</option>
+                <option data-flag="sa" value="arabic">العربية</option>
+                <option data-flag="de" value="german">Deutsch</option>
+                <option data-flag="fr" value="french">Français</option>
+            </select>
+        </div>
+    </div>
+</template>

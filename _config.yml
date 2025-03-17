@@ -21,3 +21,5 @@ modules:
   - events
   - facade
   - analytics
+  - translate
+
