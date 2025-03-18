@@ -4,8 +4,7 @@ content:
     label: Herriak
     type: collection
     path: 'herriak'
-    view:
-      fields: [ title, location ]
+
     fields:
       - name: hiletak
         label: Hiletak
