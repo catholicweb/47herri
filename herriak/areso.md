@@ -1,9 +1,8 @@
 ---
-layout: parroquia
-title: areso
-video: 6RONQJ-46eE
+hiletak:
+  - {}
 masses:
   - date: igandea 10.00
-    notes:
+image: /media/f2.webp
+title: areso
 ---
-
