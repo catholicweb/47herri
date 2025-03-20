@@ -3,14 +3,17 @@ function loadMap() {
 
     if (!document.querySelector('#map')) return
 
-    var map = L.map('map', { fullscreenControl: true }).fitBounds([
+
+    var supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+    var map = L.map('map', { fullscreenControl: true, zoomControl: !supportsTouch }).fitBounds([
         [42.879634, -1.658455],
         [43.263256, -2.0709]
     ])
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; Carto - OpenStreetMap'
-    }).addTo(map); /**/
+    }).addTo(map);
 
     var redIcon = L.icon({
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',

@@ -1,5 +1,6 @@
 ---
 layout: parroquia
+image: /media/arano.jpg
 title: arano
 video: UdCfCIHmvaU
 masses:

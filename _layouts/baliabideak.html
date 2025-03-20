@@ -40,12 +40,17 @@
             <div class="filters-content">
                 <div class="row grid">
                     {% assign items = "imotz, basaburua, larraun, leitzaran" | split: ", " %}
-                    {% for video in site.data.playlist %}
+                    {% assign count = 0 %}
+                    {% for video in site.data.videos %}
+                    {% assign title = video.title | downcase %}
+                    {% if title contains 'leitza' %}
                     {% assign index = forloop.index0 | modulo: items.size %}
                     <div class="col-6 col-sm-4 col-lg-3 all {{ items[index] }}">
-                        {% include module name='facade' yt=video.link title=video.title style='max-width: 450px;' %}
+                        {% include module name='facade' yt=video.videoId title=video.title style='max-width: 450px;' %}
                     </div>
-                    {% endfor %}
+                    {% if count > 10 %} {% break %} {% endif %}
+                    {% assign count = count | plus: 1 %}
+                    {% endif %}{% endfor %}
                 </div>
             </div>
     </section>

@@ -4,7 +4,15 @@ https://codepen.io/jason-knight/pen/OJBjgNQ -->
 <template>
     {%- assign params = include.params -%}
     {%- assign ratio = params.ratio | default: '16/9' -%}
-    {% if params.yt %}
+    {% if params.vue %}
+    <div class="facade youtube" :style="{ '--aspect-ratio': ratio, '--video-poster': 'url(https://img.youtube.com/vi/' + {{ params.yt }} + '/hqdefault.jpg)' }">
+        <header>{{ title }}</header>
+        <a :href="'https://www.youtube.com/watch?v=' + {{ params.yt }}" target="_blank">
+            <span>Ver en YouTube</span>
+        </a>
+        <button type="button" @click="addIframe('youtube', {{ params.yt }})">{{ title }}</button>
+    </div>
+    {% elsif params.yt %}
     <div class="facade youtube" style="--aspect-ratio:{{ ratio }}; --video-poster:url(https://img.youtube.com/vi/{{ params.yt }}/hqdefault.jpg)">
         <header>{{ params.title }}</header>
         <a href="https://www.youtube.com/watch?v={{ params.yt }}" target="_blank">

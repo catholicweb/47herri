@@ -1,10 +1,34 @@
 {% include head.html %}
 
-<body class="sub_page">
+<body>
     {% include header.html %}
     <!-- about section -->
-    <section class="layout_padding" style='max-width: 450px; margin: auto;'>
+    <section class="layout_padding" style='max-width: 550px; margin: auto;'>
+        <h1 class="notr">
+            {{ page.title | default: page.name | capitalize | replace: ".md", "" }} - Ongi etorri
+        </h1>
         {% include module name='facade' yt=page.video %}
+    </section>
+    <section class="layout_padding">
+        <div class="container">
+            <h2>Azken gertakariak</h2>
+            <div class="filters-content">
+                <div class="row grid">
+                    {% assign items = "imotz, basaburua, larraun, leitzaran" | split: ", " %}
+                    {% assign count = 0 %}
+                    {% for video in site.data.videos %}
+                    {% assign title = video.title | downcase %}
+                    {% if title contains page.title %}
+                    {% assign index = forloop.index0 | modulo: items.size %}
+                    <div class="col-6 col-sm-4 col-lg-3 all {{ items[index] }}">
+                        {% include module name='facade' yt=video.videoId title=video.title style='max-width: 450px;' %}
+                    </div>
+                    {% if count > 8 %} {% break %} {% endif %}
+                    {% assign count = count | plus: 1 %}
+                    {% endif %}{% endfor %}
+                </div>
+            </div>
+        </div>
     </section>
     <section class="about_section layout_padding">
         <div class="container  ">

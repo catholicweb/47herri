@@ -1,0 +1,20 @@
+<head>
+    <link media="print" onload="this.media='all';" href="/assets/own-carousel.min.css" rel="stylesheet">
+    <script defer src="/assets/own-carousel.min.js"></script>
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".own-carousel__container").ownCarousel({
+        itemPerRow: 5,
+        itemWidth: 19,
+        autoplay: 500,
+        responsive: {
+            1000: [4, 24],
+            800: [3, 33],
+            600: [2, 49],
+            400: [1, 100]
+        },
+    });
+    responsive();
+});
+</script>

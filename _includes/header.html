@@ -1,9 +1,9 @@
 <div class="hero_area">
     <div class="bg-box">
         <picture>
-            <source srcset="/media/hero-bg-large.webp" media="(min-width: 1800px)">
-            <source srcset="/media/hero-bg.webp" media="(min-width: 600px)">
-            <img src="/media/hero-bg-small.webp" alt="Hero background">
+            <!--<source srcset="/media/{{page.image | default: site.image }}-large.webp" media="(min-width: 1800px)">
+            <source srcset="/media/{{page.image | default: site.image }}-small.webp" media="(min-width: 600px)">-->
+            <img src="{{page.image | default: site.image }}" alt="Hero background">
         </picture>
     </div>
     <!-- header section strats -->
@@ -38,14 +38,14 @@
     <!-- end header section -->
     {% if page.url == "/" %}
     <!-- slider section -->
-    <section class="slider_section ">
+    <section class="slider_section">
         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="container ">
                         <div class="row">
                             <div class="col-md-7 col-lg-6 ">
-                                <div class="detail-box">
+                                <div class="detail-box" style="margin-bottom: 0px;">
                                     <h2>
                                         Javierada
                                     </h2>
@@ -67,7 +67,7 @@
                     <div class="container ">
                         <div class="row">
                             <div class="col-md-7 col-lg-6 ">
-                                <div class="detail-box">
+                                <div class="detail-box" style="margin-bottom: 0px;">
                                     <h2>
                                         Viacrucis
                                     </h2>
@@ -88,7 +88,7 @@
                     <div class="container ">
                         <div class="row">
                             <div class="col-md-7 col-lg-6 ">
-                                <div class="detail-box">
+                                <div class="detail-box" style="margin-bottom: 0px;">
                                     <h2>
                                         Aitorren hileta
                                     </h2>
