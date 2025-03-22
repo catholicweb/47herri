@@ -1,9 +1,8 @@
 ---
-layout: parroquia
-title: oskotz
-video: ZQDbuAbIsRw
+hiletak:
+  - {}
 masses:
-  - date: larunbat 17.00 1 astea
-    notes:
+  - date: larunbat 17.00 1. astea
+image: /media/375115502.webp
+title: oskotz
 ---
-
