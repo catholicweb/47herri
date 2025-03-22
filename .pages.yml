@@ -26,7 +26,8 @@ content:
       - { name: description, label: Deskribapena, type: string }
       - { name: image, label: Cover image, type: image }
       - { name: gallery, label: Gallery, type: image, list: true }
-      - { name: video, label: Youtube, type: string, hidden: true  }
+      - { name: video, label: Youtube, type: string, hidden: true }
+      - { name: layout, label: layout, type: string, hidden: true  }
       - { name: location, label: Geo (lat/log), type: string, hidden: true }
       - { name: title, label: Izenburua, type: string }
       - { name: body, label: Body, type: rich-text }
