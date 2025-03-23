@@ -1,15 +1,11 @@
 ---
-layout: parroquia
-title: leitza
-video: HdPgPOzptII
+hiletak:
+  - {}
 masses:
   - date: astegunetan 19.30
-    notes:
   - date: larunbat 19.30
-    notes:
   - date: igandea 09.00
-    notes:
   - date: igandea 11.00
-    notes:
+image: /media/f1.webp
+title: leitza
 ---
-
