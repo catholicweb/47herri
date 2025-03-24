@@ -21,6 +21,24 @@
     <style>
     @import url('https://fonts.cdnfonts.com/css/basque-smile');
 
+    .circle-img {
+        object-fit: cover;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+    }
+
+    .location-mark::before {
+        content: "";
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        padding: 0.75em;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+
     h1,
     h2,
     h3,

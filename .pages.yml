@@ -3,7 +3,7 @@ content:
   - name: herriak
     label: Herriak
     type: collection
-    path: 'herriak'
+    path: herriak
     view:
       fields: [ title, location, name, filename ]
     fields:
@@ -12,15 +12,15 @@ content:
         type: object
         list: true
         fields:
-        - { name: date, type: date, label: Fecha y hora, options: { time: true}}
-        - { name: notes, label: Hildakoa edo argibideak, type: string }
-      - name: masses
+        - { name: date, type: date, label: Fecha y hora, options: { time: true, format: dd/MM/yyyy HH.mm}}
+        - { name: title, label: Hildakoa edo argibideak, type: string }
+      - name: mezak
         label: Mezak
         type: object
         list: true
         fields:
           - { name: date, type: string, label: Eguna eta ordua (adib. astelehena 19:00), pattern: {
-            message: 'Formatu zorrotza izan behar du: astelehenan|astegunetan|... - 09.30 - 3 astea - pazkoa - urtarrila|otsaila|... - 3 astean|hilean|urtean behin',
+            message: Formatu zorrotza izan behar du: astelehenan|astegunetan|... - 09.30 - 3. astea - pazkoa - urtarrila|otsaila|... - 3. astean|hilean|urtean behin,
             regex: '^(astelehenan?|asteartean?|asteazkenan?|ostegunan?|ostiralan?|larunbat|igandean?|astegunetan?|bezperan?)*([ ,-]?([0-9]|0[0-9]|1[0-9]|2[0-3])[:.]([0-5][0-9]))?[ ,-]?([12345]\. astea)?[ ,-]?(pazkoa|urtarrila?k?|otsaila?k?|martxoa?k?|apirila?k?|maiatza?k?|ekaina?k?|uztaila?k?|abuztua?k?|iraila?k?|urria?k?|azaroa?k?|abendua?k?)?[ ,-]?([1-9] (astea?n?|hilea?n?|urtea?n?) behin)?$' } }
           - { name: notes, label: Argibideak, type: string }
       - { name: description, label: Deskribapena, type: string }

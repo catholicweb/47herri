@@ -57,13 +57,19 @@
         <div class="container ">
             <div class="heading_container heading_center">
                 <h2>
-                    Gertaerak
+                    Datozen ekitaldiak
                 </h2>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    {% include module name='events' %}
-                </div>
+            <div class="">
+                {% include module name='events' ordering="/hiletak|ekitaldi|aitortzaren/i,['none', 'type', 'datetime', 'none', 'title', 'location']" %}
+            </div>
+            <div class="heading_container heading_center">
+                <h2>
+                    Mezak
+                </h2>
+            </div>
+            <div class="">
+                {% include module name='events' ordering="/mezak/,['none', 'weekend', 'time', 'none', 'location', 'notes']" %}
             </div>
         </div>
     </section>

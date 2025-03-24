@@ -2,7 +2,7 @@
 layout: parroquia
 title: lekunberri
 video: 2tkabr7el28
-masses:
+mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
   - date: larunbat 09.00

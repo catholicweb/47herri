@@ -1,0 +1,18 @@
+{%- assign matches = "" -%}
+{%- assign years = "2024,2025,2026,*" | split: "," -%}
+{%- assign months = "01,02,03,04,05,06,07,08,09,10,11,12" | split: "," -%}
+{%- assign days = "01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31" | split: "," -%}
+{%- for year in years -%}
+  {%- for month in months -%}
+    {%- for day in days -%}
+      {%- assign date = day | append: "/" | append: month | append: "/" | append: year -%}
+      {%- if include.string contains date -%}
+        {%- if matches != "" -%}
+          {%- assign matches = matches | append: "," -%}
+        {%- endif -%}
+        {%- assign matches = matches | append: '"' | append: date | append: '"' -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endfor -%}
+{{ "[" | append: matches | append: "]" }}

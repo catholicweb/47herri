@@ -174,29 +174,27 @@ const app = {
         this.readings = data.readings
         this.fetchTranslation(this.lang)
 
-    }
-    //$delimiters: ['{{', '}}'],
+    },
+    $delimiters: ['[[', ']]'],
 }
 PetiteVue.createApp(app).mount('#ebenjelioa')
 app.fetchReference(app.date)
 </script>
 <template>
-    {% raw %}
     <div id="ebenjelioa" class="notr" style="/*white-space: pre-line;*/">
-        <!--{{ ref }}
+        <!--[[ ref ]]
         <h4>IRAKURGAIA 1</h4>
-        {{ readings.primera }}
+        [[ readings.primera ]]
         <h4>SALMOA</h4>
-        {{ readings.salmo }}
+        [[ readings.salmo ]]
         <div v-if="readings.segunda">
             <h4>IRAKURGAIA 2</h4>
-            {{ readings.segunda }}
+            [[ readings.segunda ]]
         </div>-->
-        <h2>EBANJELIOA <button @click="changeDate(-1)">-</button> {{ ref.date }} <button @click="changeDate(+1)">+</button></h2>
-        <h4>{{ ref.evangelio }} <button @click="tr_test++; lang = '', fetchTranslation()">translate</button></h4>
-        {{ readings.evangelio }}
+        <h2>EBANJELIOA <button @click="changeDate(-1)">-</button> [[ ref.date ]] <button @click="changeDate(+1)">+</button></h2>
+        <h4>[[ ref.evangelio ]] <button @click="tr_test++; lang = '', fetchTranslation()">translate</button></h4>
+        [[ readings.evangelio ]]
     </div>
-    {% endraw %}
 </template>
 
 <head disable="already included">

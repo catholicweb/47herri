@@ -2,7 +2,7 @@
 layout: parroquia
 title: beruete
 video: PmiNoRGv7hY
-masses:
+mezak:
   - date: igandea 11.00
     notes:
 ---

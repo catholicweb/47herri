@@ -15,3 +15,6 @@ find "media/" -type f -not -name "*.webp" -print0  | while IFS= read -r -d '' fi
     #libwebp/bin/cwebp -resize 1200 0 "$file" -o "$lqoutput"
     rm "$file"
 done
+
+
+cwebp -resize 1200 0

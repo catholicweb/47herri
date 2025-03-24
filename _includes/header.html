@@ -38,63 +38,28 @@
     <!-- end header section -->
     {% if page.url == "/" %}
     <!-- slider section -->
-    <section class="slider_section">
+    <section class="slider_section" v-scope>
         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div v-for="(event, index) in groupedEvents(/hiletak|ekitaldi|aitortzaren/,[])" class="carousel-item" :class="{ active: index == 0 }">
                     <div class="container ">
                         <div class="row">
-                            <div class="col-md-7 col-lg-6 ">
+                            <div class="col-md-7 col-lg-6 events">
+                                <!-- Primer grupo -->
                                 <div class="detail-box" style="margin-bottom: 0px;">
                                     <h2>
-                                        Javierada
+                                        [[ event.title ]]
                                     </h2>
-                                    <p>
-                                        <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOQRtJfG631w1IVxPjKX4ASAk9177RQ-USPg&s" style="width: 40%;border-radius: 100%;float: right;" alt="">
-                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                                    </p>
+                                    <div class="container overflow-hidden">
+                                        <img v-if="event.image" loading="lazy" class="img-fluid circle-img" :src="event.image" style="width: 40%; float: right;" alt="">
+                                        <p>[[ event.notes ]]</p>
+                                        <p class="location-mark">[[ event.location ]]</p>
+                                    </div>
                                     <div class="btn-box">
                                         <a href="" class="btn1">
-                                            Apuntarse
+                                            [[ event.dates[0] ]]
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item ">
-                    <div class="container ">
-                        <div class="row">
-                            <div class="col-md-7 col-lg-6 ">
-                                <div class="detail-box" style="margin-bottom: 0px;">
-                                    <h2>
-                                        Viacrucis
-                                    </h2>
-                                    <p>
-                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                                    </p>
-                                    <div class="btn-box">
-                                        <a href="" class="btn1">
-                                            Más información
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container ">
-                        <div class="row">
-                            <div class="col-md-7 col-lg-6 ">
-                                <div class="detail-box" style="margin-bottom: 0px;">
-                                    <h2>
-                                        Aitorren hileta
-                                    </h2>
-                                    <p>
-                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -103,9 +68,7 @@
             </div>
             <div class="container">
                 <ol class="carousel-indicators">
-                    <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-                    <li data-target="#customCarousel1" data-slide-to="1"></li>
-                    <li data-target="#customCarousel1" data-slide-to="2"></li>
+                    <li data-target="#customCarousel1" :data-slide-to="index" v-for="(event, index) in groupedEvents(/hiletak|ekitaldi|aitortzaren/,[])" :class="{ active: index == 0 }"></li>
                 </ol>
             </div>
         </div>

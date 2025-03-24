@@ -2,7 +2,7 @@
 layout: parroquia
 title: astitz
 video: FOXRrA3WGgk
-masses:
+mezak:
   - date:
     notes:
 ---

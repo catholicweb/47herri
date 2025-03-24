@@ -2,7 +2,7 @@
 layout: parroquia
 title: oderitz
 video: JBJbOYAKZik
-masses:
+mezak:
   - date:
     notes:
 ---

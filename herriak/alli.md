@@ -1,7 +1,7 @@
 ---
 title: Alli
 video: NPKCefEllNA
-masses:
+mezak:
   - date:
     notes:
 ---
