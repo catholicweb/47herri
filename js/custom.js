@@ -24,7 +24,7 @@ $(window).on('load', function() {
         var data = this.value.toLowerCase()
         $grid.isotope({
             filter: function() {
-                let e = this.querySelector('header') || this.querySelector('h5')
+                let e = this.querySelector('header') || this.querySelector('h4')
                 return e.textContent.toLowerCase().includes(data)
             }
         })

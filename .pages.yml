@@ -26,9 +26,9 @@ content:
       - { name: description, label: Deskribapena, type: string }
       - { name: image, label: Cover image, type: image }
       - { name: gallery, label: Gallery, type: image, list: true }
-      - { name: video, label: Youtube, type: string, hidden: true }
-      - { name: layout, label: layout, type: string, hidden: true  }
-      - { name: location, label: Geo (lat/log), type: string, hidden: true }
+      - { name: video, label: Youtube, type: string }
+      - { name: layout, label: layout, type: string, default: parroquia, hidden: true }
+      - { name: location, label: Geo (lat/log), type: string }
       - { name: title, label: Izenburua, type: string }
       - { name: body, label: Body, type: rich-text }
   - name: config
@@ -40,5 +40,5 @@ content:
       - { name: bizum, label: Bizum, type: string }
       - { name: bankaccount, label: Banku-kontu, type: string }
       - { name: description, label: Webgunearen deskribapena, type: string}
-      - { name: url, label: Website URL, type: string, hidden: true, pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$ }
+      - { name: url, label: Website URL, type: string, pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$ }
       - { name: cover, label: Preview image, type: image, description: Image used in the social preview on social networks (e.g. Facebook, Twitter...)}
