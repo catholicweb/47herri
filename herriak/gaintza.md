@@ -1,9 +1,11 @@
 ---
-layout: parroquia
-title: gaintza
-video: G7g958WP8FU
+hiletak:
+  - {}
+ekitaldi:
+  - {}
 mezak:
   - date: larunbat 17.00 2. astea
-    notes:
+video: G7g958WP8FU
+layout: parroquia
+title: gaintza
 ---
-
