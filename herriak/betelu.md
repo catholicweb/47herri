@@ -1,11 +1,11 @@
 ---
-layout: parroquia
-title: betelu
-video: 46Wos9wDdpw
+hiletak:
+  - {}
 masses:
   - date: ostirala 11.00
-    notes:
   - date: igandea 12.30
-    notes:
+image: /media/Screenshot_20250324_223949_YouTube.jpg
+video: 46Wos9wDdpw
+layout: parroquia
+title: betelu
 ---
-
