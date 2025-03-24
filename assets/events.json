@@ -4,15 +4,21 @@ layout: null
 [
 {%- assign all_events = "" | split: "" -%}
 {%- for page in site.pages -%}
-{%- if page.masses -%}
-{%- for mass in page.masses -%}
+{%- if page.masses -%}{%- for mass in page.masses -%}{%- if mass.date -%}
 {
 "raw": "{{ mass.date }}",
 "type": "mezak",
 "notes": "{{ mass.notes }}",
 "location": "{{ page.title | default: page.name | capitalize | replace: ".md", "" }}"
 },
-{%- endfor -%}
-{%- endif -%}
+{%- endif -%}{%- endfor -%}{%- endif -%}
+{%- if page.hiletak -%}{%- for hileta in page.hiletak -%}{%- if hileta.date -%}
+{
+"raw": "{{ hileta.date }}",
+"type": "hiletak",
+"notes": "{{ hileta.notes }}",
+"location": "{{ page.title | default: page.name | capitalize | replace: ".md", "" }}"
+},
+{% endif %}{%- endfor -%}{% endif %}
 {%- endfor -%}
 {}]

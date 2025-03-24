@@ -41,6 +41,7 @@ const mappers = {
         return [event.type];
     },
     weekend(event) {
+        if (event.type == 'hiletak') return [event.raw]
         return event.byday.map(el => ['igandea', 'larunbat'].includes(el) ? el : 'astegunetan');
     },
     byweek(event) {
@@ -89,16 +90,20 @@ function parseRawEvent(event) {
     let regex = {
         byday: /(astelehenan?|asteartean?|asteazkenan?|ostegunan?|ostiralan?|larunbat?|igandean?|astegunetan?|bezperan?)/gmi,
         time: /([0-9]|0[0-9]|1[0-9]|2[0-3])[:.]([0-5][0-9])/gmi,
-        byweek: /([12345]) ?astek?o?a/gmi,
+        byweek: /([12345])\.? ?astek?o?a/gmi,
         months: /(pazkoa|urtarrila?k?|otsaila?k?|martxoa?k?|apirila?k?|maiatza?k?|ekaina?k?|uztaila?k?|abuztua?k?|iraila?k?|urria?k?|azaroa?k?|abendua?k?)/gmi,
         frequency: /([1-9]) (astea?n?|hilea?n?|urtea?n?) behin/gmi
     }
     let defaults = {
-        byweek: ['1 astea', '2 astea', '3 astea', '4 astea', '5 astea']
+        byweek: ['1 astea', '2 astea', '3 astea', '4 astea', '5 astea'],
+        byday: []
     }
     for (const key in regex) {
         const match = event.raw.match(regex[key]);
         event[key] = match || defaults[key] || []
+    }
+    if (event.type == 'hiletak') {
+        console.log(event)
     }
     return event
 }
@@ -119,6 +124,7 @@ let eventsApp = {
         let response = await fetch("/assets/events.json")
         let events = await response.json()
         let parsed = events.slice(0, -1).map(event => parseRawEvent(event))
+        console.log(parsed)
         this.groupedEvents = groupEvents(parsed, mappingFns);
         console.log(this.groupedEvents)
     },
