@@ -1,9 +1,12 @@
 ---
-layout: parroquia
-title: beruete
-video: PmiNoRGv7hY
+hiletak:
+  - {}
+ekitaldi:
+  - {}
 mezak:
   - date: igandea 11.00
-    notes:
+image: /media/640px-Beruete.jpg
+video: PmiNoRGv7hY
+layout: parroquia
+title: beruete
 ---
-
