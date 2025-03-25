@@ -1,5 +1,5 @@
 <div class="hero_area">
-    <div class="bg-box" style="background-image: url('{{site.image | replace: '.webp', '-small.webp' }}'); background-size: cover; background-position: center;">
+    <div class="bg-box" style="background-image: url('{{site.image | replace: '.webp', '-small.webp' }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <!--<source srcset="/media/{{page.image | default: site.image }}-large.webp" media="(min-width: 1800px)">
             <source srcset="/media/{{page.image | default: site.image }}-small.webp" media="(min-width: 600px)">-->
         <img src="{{page.image | default: site.image }}" loading="lazy" alt="Hero background">
@@ -34,29 +34,33 @@
         </div>
     </header>
     <!-- end header section -->
-    {% if page.url == "/" %}
+    {% if page.url == "/" or page.path contains 'herriak' %}
+    {% if page.url == "/" %}{% assign filter = 'hiletak|ekitaldi|aitortzaren' %}
+    {% else %}{% assign filter = page.title %}{% endif %}
     <!-- slider section -->
-    <section class="slider_section" v-scope>
+    <section class="slider_section" v-scope @vue:mounted="fetchEvents()">
         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div v-for="(event, index) in groupedEvents(/hiletak|ekitaldi|aitortzaren/,[])" class="carousel-item" :class="{ active: index == 0 }">
+                <div v-for="(event, index) in groupedEvents(/{{filter}}/i,[])" class="carousel-item" :class="{ active: index == 0 }">
                     <div class="container ">
                         <div class="row">
                             <div class="col-md-7 col-lg-6 events">
                                 <!-- Primer grupo -->
                                 <div class="detail-box" style="margin-bottom: 0px;">
                                     <h2>
-                                        [[ event.title ]]
+                                        [[ event.title || event.type ]]
                                     </h2>
                                     <div class="container overflow-hidden">
                                         <img v-if="event.image" loading="lazy" class="img-fluid circle-img" :src="event.image" style="width: 40%; float: right;" alt="">
                                         <p>[[ event.notes ]]</p>
-                                        <p class="location-mark">[[ event.location ]]</p>
                                     </div>
                                     <div class="btn-box">
-                                        <a href="" class="btn1">
+                                        <p class="location-mark">[[ event.location ]]</p>
+                                        <p class="time-mark">[[ event.times[0] ]]</p>
+                                        <p class="calendar-mark">[[ event.dates[0] || event.byday[0] ]]</p>
+                                        <!--<a href="" class="btn1">
                                             [[ event.dates[0] ]]
-                                        </a>
+                                        </a>-->
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +70,7 @@
             </div>
             <div class="container">
                 <ol class="carousel-indicators">
-                    <li data-target="#customCarousel1" :data-slide-to="index" v-for="(event, index) in groupedEvents(/hiletak|ekitaldi|aitortzaren/,[])" :class="{ active: index == 0 }"></li>
+                    <li data-target="#customCarousel1" :data-slide-to="index" v-for="(event, index) in groupedEvents(/{{filter}}/i,[])" :class="{ active: index == 0 }"></li>
                 </ol>
             </div>
         </div>

@@ -97,7 +97,7 @@ let eventsApp = {
     },
     events: [],
     groupedEvents: function(filter, ordering) {
-        let events = this.events.filter(event => filter.test(event.type));
+        let events = this.events.filter(event => filter.test(JSON.stringify(event)));
         const mappingFns = ordering.map(fnc => mappers[fnc])
         return groupEvents(events, mappingFns);
     }
