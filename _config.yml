@@ -30,4 +30,5 @@ modules:
   - facade
   - analytics
   - translate
+  - infinite
 

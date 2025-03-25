@@ -78,6 +78,13 @@
         </div>
     </div>
 </footer>
+<script src="/js/custom.js"></script>
+<script type="text/javascript">
+function vueMount() {
+    vueApp.$delimiters = ['[[', ']]']
+    PetiteVue.createApp(vueApp).mount()
+}
+</script>
 <!-- footer section -->
 <!-- jQery -->
 <script defer src="/js/jquery-3.4.1.min.js"></script>
@@ -92,9 +99,3 @@
 <!-- isotope js -->
 <script defer src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
 <!-- custom js -->
-<script defer src="/js/custom.js"></script>
-<!-- beautify ignore:start -->
-<script type="text/javascript">
-{% include module tag='script' %}
-</script>
-<!-- beautify ignore:end -->

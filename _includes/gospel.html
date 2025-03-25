@@ -129,7 +129,7 @@ async function fetchBizkeliza(date) {
     return { ref, readings }
 }
 
-const app = {
+let bibleApp = {
     readings: {},
     ref: {},
     date: new Date(),
@@ -168,20 +168,20 @@ const app = {
         }
     },
     fetchReference: async function(date) {
+        if (!date) date = this.date
         let data = await fetchBizkeliza(date)
         this.ref = data.ref
         this.ref.date = this.date.toLocaleDateString('en-GB')
         this.readings = data.readings
         this.fetchTranslation(this.lang)
 
-    },
-    $delimiters: ['[[', ']]'],
+    }
 }
-PetiteVue.createApp(app).mount('#ebenjelioa')
-app.fetchReference(app.date)
+if (!window.vueApp) window.vueApp = {}
+vueApp = { ...vueApp, ...bibleApp };
 </script>
 <template>
-    <div id="ebenjelioa" class="notr" style="/*white-space: pre-line;*/">
+    <div id="ebenjelioa" v-scope class="notr" v-scope @vue:mounted="fetchReference()" style="/*white-space: pre-line;*/">
         <!--[[ ref ]]
         <h4>IRAKURGAIA 1</h4>
         [[ readings.primera ]]

@@ -82,8 +82,7 @@ function getColorForKey(key) {
 }
 
 
-if (!window.vueApp) window.vueApp = {}
-vueApp = {
+let eventsApp = {
     getSubKeys: function(table) {
         const keys = new Set();
         for (const row in table) {
@@ -103,14 +102,12 @@ vueApp = {
         return groupEvents(events, mappingFns);
     }
 }
-
-vueApp.$delimiters = ['[[', ']]']
-PetiteVue.createApp(vueApp).mount()
-vueApp.fetchEvents()
+if (!window.vueApp) window.vueApp = {}
+vueApp = { ...vueApp, ...eventsApp };
 </script>
 <template>
     {%- assign params = include.params -%}
-    <div class="events" v-scope>
+    <div class="events" v-scope @vue:mounted="fetchEvents()">
         <!-- Primer grupo -->
         <div v-for="(group, groupKey) in groupedEvents({{ params.ordering }})" style="margin-bottom:20px;" class="row">
             <h1 class="col-12 heading_center">[[ groupKey.trim() ]]</h1>

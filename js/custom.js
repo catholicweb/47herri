@@ -1,15 +1,21 @@
-// to get current year
-function getYear() {
-    var currentDate = new Date();
-    var currentYear = currentDate.getFullYear();
-    document.querySelector("#displayYear").innerHTML = currentYear;
-}
-
-getYear();
+---
+layout: null
+---
 
 
-// isotope js
-$(window).on('load', function() {
+window.addEventListener("load", function() {
+    // to get current year
+    function getYear() {
+        var currentDate = new Date();
+        var currentYear = currentDate.getFullYear();
+        document.querySelector("#displayYear").innerHTML = currentYear;
+    }
+
+    getYear();
+
+
+    // isotope js
+
     $('.filters_menu li').click(function() {
         $('.filters_menu li').removeClass('active');
         $(this).addClass('active');
@@ -37,31 +43,37 @@ $(window).on('load', function() {
             columnWidth: ".all"
         }
     })
-});
 
 
-// client section owl carousel
-$(".client_owl-carousel").owlCarousel({
-    loop: true,
-    margin: 0,
-    dots: false,
-    nav: true,
-    navText: [],
-    autoplay: true,
-    autoplayHoverPause: true,
-    navText: [
-        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-    ],
-    responsive: {
-        0: {
-            items: 1
-        },
-        768: {
-            items: 2
-        },
-        1000: {
-            items: 4
+    // client section owl carousel
+    $(".client_owl-carousel").owlCarousel({
+        loop: true,
+        margin: 0,
+        dots: false,
+        nav: true,
+        navText: [],
+        autoplay: true,
+        autoplayHoverPause: true,
+        navText: [
+            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+            '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+        ],
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            1000: {
+                items: 4
+            }
         }
-    }
-});
+    });
+
+})
+
+
+/* beautify ignore:start */
+{% include module tag='script' %}
+/* beautify ignore:end */

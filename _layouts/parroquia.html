@@ -12,26 +12,13 @@
     <section class="layout_padding">
         <div class="container">
             <h2>Azken gertakariak</h2>
-            <div class="filters-content">
-                <div class="row grid">
-                    {% assign items = "imotz, basaburua, larraun, leitzaran" | split: ", " %}
-                    {% assign count = 0 %}
-                    {% for video in site.data.videos %}
-                    {% assign title = video.title | downcase %}
-                    {% if title contains page.title %}
-                    {% assign index = forloop.index0 | modulo: items.size %}
-                    <div class="col-6 col-sm-4 col-lg-3 all {{ items[index] }}">
-                        {% include module name='facade' yt=video.videoId title=video.title style='max-width: 450px;' %}
-                    </div>
-                    {% if count > 8 %} {% break %} {% endif %}
-                    {% assign count = count | plus: 1 %}
-                    {% endif %}{% endfor %}
-                </div>
+            <div class="row">
+                {% include module name='infinite' filter=page.title %}
             </div>
         </div>
     </section>
     <section class="about_section layout_padding">
-        <div class="container  ">
+        <div class="container">
             <div class="row">
                 <div class="col-md-6 ">
                     <div class="img-box">
@@ -40,20 +27,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="detail-box">
-                        <div class="heading_container">
-                            <h2>
-                                We Are 47 herri
-                            </h2>
-                        </div>
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                            in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                            are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                            the middle of text. All
-                        </p>
-                        <a href="">
-                            Read More
-                        </a>
+                        {{ page.content }}
                     </div>
                 </div>
             </div>

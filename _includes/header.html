@@ -1,10 +1,8 @@
 <div class="hero_area">
-    <div class="bg-box">
-        <picture>
-            <!--<source srcset="/media/{{page.image | default: site.image }}-large.webp" media="(min-width: 1800px)">
+    <div class="bg-box" style="background-image: url('{{site.image | replace: '.webp', '-small.webp' }}'); background-size: cover; background-position: center;">
+        <!--<source srcset="/media/{{page.image | default: site.image }}-large.webp" media="(min-width: 1800px)">
             <source srcset="/media/{{page.image | default: site.image }}-small.webp" media="(min-width: 600px)">-->
-            <img src="{{page.image | default: site.image }}" alt="Hero background">
-        </picture>
+        <img src="{{page.image | default: site.image }}" loading="lazy" alt="Hero background">
     </div>
     <!-- header section strats -->
     <header class="header_section">
