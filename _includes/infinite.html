@@ -36,10 +36,17 @@ let carouselApp = {
         }));
         this.loadMoreItems();
     },
-    formatDate(isoString) {
+    formatDate(isoString, short) {
         const date = new Date(isoString);
-        const options = { day: '2-digit', month: 'long', year: 'numeric' };
-        return date.toLocaleDateString('eu', options);
+        let months = ["Urtarrilak", "Otsailak", "Martxoak", "Apirilak", "Maiatzak", "Ekainak", "Uztailak", "Abuztuak", "Irailak", "Urriak", "Azaroak", "Abenduak"]
+        // Function to convert ISO string to Basque date format
+        const day = date.getDate();
+        const monthIndex = date.getMonth()
+        const year = date.getFullYear();
+
+        // Return the formatted date in Basque
+        if (short) return `${months[monthIndex]} ${day}`;
+        return `${months[monthIndex]} ${day} (${year})`;
     },
     loadMoreItems() {
         const start = this.visibleItems.length;
