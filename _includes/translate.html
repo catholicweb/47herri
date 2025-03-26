@@ -115,6 +115,7 @@ select.onchange = function() {
     //    const flagCode = selectedOption.getAttribute("data-flag");
     console.log(selectedOption.value)
     let missing = translate(selectedOption.value)
+    vueApp.changeLang(selectedOption.value)
     //flag.src = `https://flagcdn.com/w40/${flagCode}.png`;
     //flag.alt = selectedOption.text;
 };
@@ -129,6 +130,7 @@ fetch('/assets/dictionary.json').then(response => {
         console.log(option, select.selectedIndex, option.index)
         select.selectedIndex = option.index || 0
         translate(language)
+        vueApp.changeLang(language)
     }
 })
 </script>
@@ -137,15 +139,15 @@ fetch('/assets/dictionary.json').then(response => {
         <div class="language-selector">
             <!--<img id="flag" class="flag" src="https://flagcdn.com/w40/gb.png" alt="flag">-->
             <select id="language">
-                <option data-flag="es" value="basque">Euskara</option>
+                <option data-flag="eu" value="basque">Euskara</option>
                 <option data-flag="es" value="spanish">Español</option>
-                <option data-flag="gb" value="english">English</option>
-                <option data-flag="bg" value="bulgarian">Български</option>
+                <option data-flag="en" value="english">English</option>
+                <option data-flag="bu" value="bulgarian">Български</option>
                 <option data-flag="it" value="italian">Italiano</option>
                 <option data-flag="ro" value="romanian">Română</option>
                 <option data-flag="pt" value="portuguese">Português</option>
-                <option data-flag="es" value="catalan">Català</option>
-                <option data-flag="sa" value="arabic">العربية</option>
+                <option data-flag="ca" value="catalan">Català</option>
+                <option data-flag="ar" value="arabic">العربية</option>
                 <option data-flag="de" value="german">Deutsch</option>
                 <option data-flag="fr" value="french">Français</option>
             </select>

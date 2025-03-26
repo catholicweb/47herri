@@ -1,72 +1,13 @@
 <script>
-//
-async function fetchCors(url) {
-    let response = await fetch(`https://arrietaeguren.es/cors?url=${encodeURIComponent(url)}`, { referrerPolicy: "no-referrer", cache: "force-cache" });
-    return response.text()
-}
-
-function extract(elem) {
-    if (!elem) return ''
-    return elem.innerHTML.replace(/<p>|<\/p>|<br>/g, '\n').replace(/<span .+?>|<\/span>|<p .+?>|\t/g, '').replace(/\n\n+/g, '\n\n')
-}
-
-function scraper(source, map, area = '', data = {}) {
-    const parser = new DOMParser();
-    doc = parser.parseFromString(source, 'text/html');
-    for (let [key, value] of Object.entries(map)) {
-        data[key] = extract(doc.querySelector(area + ' ' + value))
-    }
-    return data
-}
-
-
-function parseBibleCom(htmlString) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlString, 'text/html');
-    const verses = {};
-    doc.querySelectorAll('.verse').forEach(verse => {
-        // Busca la clase que coincide con "v" seguido de dígitos
-        const verseKey = Array.from(verse.classList).find(cls => /^v\d+$/.test(cls));
-        if (verseKey) {
-            let text = '';
-            verse.querySelectorAll('.content').forEach(el => {
-                text += el.textContent.trim() + ' ';
-            });
-            text = text.trim();
-            // Si ya existe un contenido para ese verso, lo concatenamos
-            verses[verseKey] = verses[verseKey] ? verses[verseKey] + '\n ' + text : text;
-        }
-    });
-    return verses
-}
-
-
-
-async function fetchBibleCom(version, reference) {
-    const { book, chapter, verses } = parseReference(reference);
-    const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
-    version = version.split(':')
-    let source = await fetchCors(`https://www.bible.com/_next/data/NSe_168GcWF7M6ZbZ1-Jv/en/audio-bible/${version[1] || '56'}/${book}.${chapter}.${version[0]}.json?versionId=${version[1] || '56'}&usfm=${book}.${chapter}.${version[0]}`)
-    source = JSON.parse(source).pageProps.chapterInfo.content
-    let chapterVerses = parseBibleCom(source)
-    const verseTexts = verseNums.map(verse => chapterVerses['v' + verse]).join(' ').replace(/ +\./g, '.')
-    return verseTexts;
-}
-
-
-
-
 function parseReference(ref) {
     // Mapeo de abreviaturas vascas a nombres completos en inglés.
     // Actualiza el diccionario según tus necesidades.
     const bookMap = {
         "Mt": "MAT",
-        "Mar": "MRK",
+        "Mk": "MRK",
         "Lk": "LUK",
-        "Jo": "JHN",
+        "Jn": "JHN",
     };
-
-
     // Separa la parte "libro y capítulo" de los versos.
     const [head, versesStr] = ref.split(',').map(s => s.trim());
     // Se asume que la última palabra de "head" es el capítulo.
@@ -97,91 +38,63 @@ function parseReference(ref) {
         verseGroups.map(parseRange) :
         parseRange(verseGroups[0]);
 
+
+    book = bookMap[book] || book;
     return { book, chapter: parseInt(chapter), verses };
 }
 
-
-
-
-
-async function fetchBizkeliza(date) {
-    let formattedDate = date.toLocaleDateString('en-GB').split('/').reverse().join('-');
-
-    let source = await fetchCors(`https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irakurgaiak/?d=${formattedDate}`)
-
-    let readings = scraper(source, {
-        evangelio: 'div:nth-last-of-type(1)',
-        salmo: 'div:nth-last-of-type(2)',
-        primera: 'div:nth-last-of-type(4)',
-        segunda: 'div:nth-last-of-type(3)',
-    }, '.evangelio-textos-content')
-
-    if (!readings.primera) {
-        readings.primera = readings.segunda
-        delete readings.segunda
-    }
-    let ref = {}
-    if (readings.primera) ref.primera = readings.primera.split('\n').filter(Boolean)[2]
-    if (readings.evangelio) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[2]
-    if (readings.salmo) ref.salmo = readings.salmo.split('\n').filter(Boolean)[0]
-    if (readings.segunda) ref.segunda = readings.segunda.split('\n').filter(Boolean)[2]
-
-    return { ref, readings }
-}
-
 let bibleApp = {
-    readings: {},
-    ref: {},
+    gospel: {},
+    references: {},
     date: new Date(),
-    lang: 'eu',
+    lang: window.lang || 'eu',
     changeDate: function(diff) {
         this.date.setDate(this.date.getDate() + diff)
-        this.fetchReference(this.date)
+        this.fetchTranslation()
     },
-    tr_test: 1,
-    fetchTranslation: async function(lang) {
-        let translations = {
-            ar: '%25D8%25AC%25D8%25B2%25D8%25A7%25D8%25A6%25D8%25B1%25D9%258A:3193', // arabic
-            eu: 'EABD:223', // euskara
-            fr: 'PDV2017:133', // french
-            es: 'CEE', //BTI:214',
-            en: 'NRSV-CI:2015', // english
-            it: 'ICL00D:1196', // italian
-            ro: 'BINT09:1506', //romana
-            pt: 'BPT09DC:228', // portugues
-            ca: 'BCI:335', // catalan
-            //de: '',// deutsch
-            bu: '%25D0%25A1%25D0%2598:1558' // bulgarian
+    changeLang: function(lang) {
+        let langMap = {
+            basque: "eu",
+            spanish: "es",
+            english: "en",
+            bulgarian: "bu",
+            italian: "it",
+            romanian: "ro",
+            portuguese: "pt",
+            catalan: "ca",
+            arabic: "ar",
+            german: "de",
+            french: "fr"
         }
-        lang = Object.keys(translations)[this.tr_test % 9]
-        if (lang == 'es') {
-            const { book, chapter, verses } = parseReference(this.ref.evangelio);
-            const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
-            let gospel = await fetch('/assets/gospel.json')
-            gospel = await gospel.json()
-            this.readings = {}
-            this.readings.evangelio = verseNums.map(verse => gospel[book][chapter - 1].versiculos[verse - 1]).join(' ').replace(/ +\./g, '.')
-        } else {
-            console.log(lang, translations[lang])
-            let evangelio = await fetchBibleCom(translations[lang], this.ref.evangelio)
-            this.readings = { evangelio: evangelio }
-        }
+        this.lang = langMap[lang] || lang;
+        console.log('new lang!', lang, '->', this.lang)
+        this.fetchTranslation()
     },
-    fetchReference: async function(date) {
-        if (!date) date = this.date
-        let data = await fetchBizkeliza(date)
-        this.ref = data.ref
-        this.ref.date = this.date.toLocaleDateString('en-GB')
-        this.readings = data.readings
-        this.fetchTranslation(this.lang)
-
+    fetchTranslation: async function() {
+        this.gospel = {}
+        this.gospel.ref = await this.fetchReference()
+        console.log(this.gospel.ref)
+        const { book, chapter, verses } = parseReference(this.gospel.ref);
+        const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
+        let data = await fetch(`/assets/bible/${this.lang}-${book}-${chapter}.json`, { cache: 'force-cache' })
+        console.log(data)
+        let chapterVerses = await data.json()
+        this.gospel.text = verseNums.map(verse => chapterVerses['v' + verse]).join(' ').replace(/ +\./g, '.')
+    },
+    fetchReference: async function() {
+        if (Object.keys(this.references).length === 0) {
+            let data = await fetch('/assets/bible/ref.json')
+            this.references = await data.json()
+        }
+        this.gospel.date = this.date.toISOString().split('T')[0];
+        return this.references[this.gospel.date] || 'error! working on it...'
     }
 }
 if (!window.vueApp) window.vueApp = {}
 vueApp = { ...vueApp, ...bibleApp };
 </script>
 <template>
-    <div id="ebenjelioa" v-scope class="notr" v-scope @vue:mounted="fetchReference()" style="/*white-space: pre-line;*/">
+    <div id="ebenjelioa" v-scope class="notr" v-scope @vue:mounted="fetchTranslation()" style="/*white-space: pre-line;*/">
         <!--[[ ref ]]
         <h4>IRAKURGAIA 1</h4>
         [[ readings.primera ]]
@@ -191,9 +104,9 @@ vueApp = { ...vueApp, ...bibleApp };
             <h4>IRAKURGAIA 2</h4>
             [[ readings.segunda ]]
         </div>-->
-        <h2>EBANJELIOA <button @click="changeDate(-1)">-</button> [[ ref.date ]] <button @click="changeDate(+1)">+</button></h2>
-        <h4>[[ ref.evangelio ]] <button @click="tr_test++; lang = '', fetchTranslation()">translate</button></h4>
-        [[ readings.evangelio ]]
+        <h2>EBANJELIOA <button @click="changeDate(-1)">-</button> [[ gospel.date ]] <button @click="changeDate(+1)">+</button></h2>
+        <h4>[[ gospel.ref ]]</h4>
+        [[ gospel.text ]]
     </div>
 </template>
 
