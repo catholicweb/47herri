@@ -1,15 +1,13 @@
 {% if site.goatcounter %}
 <!-- PRIVACY FRIENDLY ANALYTICS www.goatcounter.com -->
-
-<head>
+<footer>
     <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</head>
+</footer>
 {% elsif site.googleanalytics %}
 <!-- CONSENT BASED GOOGLE ANALYTICS
-	https://alex-d.github.io/Cookies-EU-banner/
+    https://alex-d.github.io/Cookies-EU-banner/
 -->
-
-<head>
+<footer>
     <script type="text/javascript">
     function addBanner() {
         // Avoid adding multiple times
@@ -21,10 +19,10 @@
         cookieBanner.id = 'cookies-eu-banner'
         cookieBanner.style.display = 'none'
         cookieBanner.innerHTML = `
-		    Para mejorar tu experiencia en nuestro sitio web utilizamos cookies de Google Analytics. ¿Aceptas el uso de estas cookies?
-		    <a href="{{ 'legal/politica-cookies.html' | absolute_url }}" id="cookies-eu-more">Leer más</a>
-		    <button id="cookies-eu-reject">Rechazar</button>
-		    <button id="cookies-eu-accept">Aceptar</button>`
+            Para mejorar tu experiencia en nuestro sitio web utilizamos cookies de Google Analytics. ¿Aceptas el uso de estas cookies?
+            <a href="{{ 'legal/politica-cookies.html' | absolute_url }}" id="cookies-eu-more">Leer más</a>
+            <button id="cookies-eu-reject">Rechazar</button>
+            <button id="cookies-eu-accept">Aceptar</button>`
         document.body.appendChild(cookieBanner);
 
         // Load google Analytics
@@ -47,5 +45,5 @@
     window.addEventListener("load", () => { addBanner() })
     </script>
     <script defer src="https://cdn.jsdelivr.net/gh/Alex-D/Cookies-EU-banner@master/src/cookies-eu-banner.js" onload="addBanner()"></script>
-</head>
+</footer>
 {% endif %}

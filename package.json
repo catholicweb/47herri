@@ -1,8 +1,15 @@
 {
   "dependencies": {
+    "cheerio": "^1.0.0",
+    "criticalcss": "^2.1.0",
     "fs": "^0.0.1-security",
     "jsdom": "^26.0.0",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "undici": "^7.5.0",
+    "web-streams-polyfill": "^4.1.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "critical": "^7.2.1"
+  }
 }

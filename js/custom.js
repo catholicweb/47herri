@@ -2,7 +2,6 @@
 layout: null
 ---
 
-
 window.addEventListener("load", function() {
     // to get current year
     function getYear() {
@@ -77,3 +76,8 @@ window.addEventListener("load", function() {
 /* beautify ignore:start */
 {% include module tag='script' %}
 /* beautify ignore:end */
+
+function vueMount() {
+    vueApp.$delimiters = ['[[', ']]']
+    PetiteVue.createApp(vueApp).mount()
+}
