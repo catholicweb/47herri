@@ -42,7 +42,7 @@ const mappers = {
         return [event.title];
     },
     datetime(event) {
-        return [`${event.dates[0]} - ${event.times[0]}`]
+        return [`${event.times[0]} - ${event.dates[0]}`]
     },
     dates(event) {
         return event.dates
@@ -96,8 +96,22 @@ let eventsApp = {
         this.events = events.slice(0, -1)
     },
     events: [],
+    forgetPastEvents(events) {
+        let now = new Date();
+        return events
+            .map(event => ({
+                ...event,
+                dates: event.dates.map(vueApp.parseDateToISO) // Convert dates
+            }))
+            .filter(event => !event.dates.length || event.dates.some(date => new Date(date) >= now))
+            .map(event => ({
+                ...event,
+                dates: event.dates.map(date => vueApp.formatDate(date, true)) // Convert dates
+            }))
+    },
     groupedEvents: function(filter, ordering) {
         let events = this.events.filter(event => filter.test(JSON.stringify(event)));
+        events = this.forgetPastEvents(events)
         const mappingFns = ordering.map(fnc => mappers[fnc])
         return groupEvents(events, mappingFns);
     }

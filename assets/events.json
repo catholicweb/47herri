@@ -16,13 +16,14 @@ layout: null
 {%- for item in items -%}
 {%- if item.date -%}
 {
-{%- assign date_dots = item.date | replace: '.' , ':' -%}
+{%- assign date_long = item.date | append: item.notes -%}
+{%- assign date_dots = item.date | append: item.notes | replace: '.' , ':' | replace: 'tan' , ':00' -%}
 "raw": "{{ item.date }}",
-"byday": {% include brute_regex string=item.date substrings=bydays %},
+"byday": {% include brute_regex string=date_long substrings=bydays %},
 "times": {% include brute_regex string=date_dots substrings=times %},
-"byweek": {% include brute_regex string=item.date substrings=byweek %},
-"bymonth": {% include brute_regex string=item.date substrings=bymonth %},
-"dates": {% include match_date string=item.date %},
+"byweek": {% include brute_regex string=date_long substrings=byweek %},
+"bymonth": {% include brute_regex string=date_long substrings=bymonth %},
+"dates": {% include match_date string=date_long %},
 "type": "{{ item.type | default: subfield }}",
 {%- if subfield == 'hiletak' -%}
 "notes": "{{ item.notes | default: 'Jauna, zure eskuetan uzten dugu maite duguna, eman iezaiozu betiko atsedenaldia, eta betiereko argiak argi diezaion. Goian bego. Amen.' }}",

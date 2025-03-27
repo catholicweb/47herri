@@ -36,14 +36,21 @@ let carouselApp = {
         }));
         this.loadMoreItems();
     },
+    parseDateToISO(dateStr) {
+        let [day, month, year] = dateStr.split("/").map(num => parseInt(num, 10));
+        let now = new Date();
+        let eventDate = new Date(year || now.getFullYear(), month - 1, day);
+        if (!year && eventDate < now) eventDate.setFullYear(eventDate.getFullYear() + 1);
+        return eventDate.toISOString();
+    },
     formatDate(isoString, short) {
+        isoString = isoString.replaceAll('/', '-')
         const date = new Date(isoString);
         let months = ["Urtarrilak", "Otsailak", "Martxoak", "Apirilak", "Maiatzak", "Ekainak", "Uztailak", "Abuztuak", "Irailak", "Urriak", "Azaroak", "Abenduak"]
         // Function to convert ISO string to Basque date format
         const day = date.getDate();
         const monthIndex = date.getMonth()
         const year = date.getFullYear();
-
         // Return the formatted date in Basque
         if (short) return `${months[monthIndex]} ${day}`;
         return `${months[monthIndex]} ${day} (${year})`;
