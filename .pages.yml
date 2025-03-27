@@ -19,11 +19,11 @@ content:
         type: object
         list: true
         fields:
-          - { name: date, label: date, type: string }
+          - { name: date, label: Eguna eta ordua (adib. astelehena 19:00 edo 25/12/2025), type: string }
           - { name: title, label: Izenburua, type: string }
           - { name: notes, label: Notes, type: string }
           - { name: image, label: Image, type: image }
-          - { name: type, label: type, type: string }
+          - { name: type, label: Mota (adib. hiletak|mezak|..., type: string }
       - name: mezak
         label: Mezak
         type: object
