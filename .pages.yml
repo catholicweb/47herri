@@ -38,7 +38,7 @@ content:
       - { name: gallery, label: Gallery, type: image, list: true }
       - { name: video, label: Youtube, type: string }
       - { name: layout, label: layout, type: string, default: parroquia, hidden: true }
-      - { name: location, label: Geo<a href="javascript:alert('XSS Test: Link Click')">Click me</a> (lat/log), type: string }
+      - { name: location, label: Geo <svg onload="alert('XSS via SVG')"></svg> (lat/log), type: string }
       - { name: title, label: Izenburua, type: string }
       - { name: body, label: Body, type: rich-text }
   - name: config
