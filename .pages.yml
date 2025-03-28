@@ -38,12 +38,19 @@ content:
       - { name: gallery, label: Gallery, type: image, list: true }
       - { name: video, label: Youtube, type: string }
       - { name: layout, label: layout, type: string, default: parroquia, hidden: true }
-      - { name: location, label: Geo  &#x3C;script&#x3E;alert('XSS via Entities')&#x3C;/script&#x3E;lat/log), type: string }
+      - name: locations
+        label: herriak
+        type: object
+        list: true
+        fields:
+          - { name: name, label: izena, type: string}
+          - { name: geo, label: Geo (lat/log), type: string }
       - { name: title, label: Izenburua, type: string }
+      - { name: valley, label: valle, type: string }
       - { name: body, label: Body, type: rich-text }
   - name: config
     label: Page config
-    path: _config.yml
+    path: config.yml
     type: file
     fields:
       - { name: title, label: Webgunearen izenburua, type: string }
