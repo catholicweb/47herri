@@ -1,10 +1,10 @@
 ---
 hiletak:
-  - {}
+  - date: 01/04/2025 17.00
 ekitaldi:
-  - date: 24/05/2025 18.00
+  - date: 24/05/2025 19.30
     title: sendotza
-    notes: Gure gazteek sendotza sakramentua jasoko dute
+    notes: Gure gazteek sendotzako sakramentua jasoko dute
     image: /media/sendotza.webp
   - date: 23/08/2025 11.00
     title: Aitortzaren
