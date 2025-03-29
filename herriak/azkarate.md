@@ -1,9 +1,8 @@
 ---
-layout: parroquia
-title: azkarate
-video: bcuyvxWt-7A
 mezak:
   - date: larunbat 17.00 1. astea
-    notes:
+image: /media/zarate-web-1.jpg
+video: bcuyvxWt-7A
+layout: parroquia
+title: azkarate
 ---
-
