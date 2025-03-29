@@ -1,9 +1,8 @@
 ---
-layout: parroquia
-title: arribe
-video: 853drMvd_2Q
 mezak:
   - date: larunbat 18.00 2 hilean behin
-    notes:
+image: /media/Screenshot_20250330_004022_YouTube.jpg
+video: 853drMvd_2Q
+layout: parroquia
+title: arribe
 ---
-
