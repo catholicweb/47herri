@@ -1,6 +1,7 @@
 ---
 hiletak:
   - date: 01/04/2025 17.00
+    title: XANTI LARRAZ
 ekitaldi:
   - date: 24/05/2025 19.30
     title: sendotza
