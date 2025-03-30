@@ -5,4 +5,5 @@ image: /media/zarate-web-1.jpg
 video: bcuyvxWt-7A
 layout: parroquia
 title: azkarate
+valley: Araitz
 ---
