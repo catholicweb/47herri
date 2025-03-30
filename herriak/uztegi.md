@@ -1,9 +1,8 @@
 ---
-layout: parroquia
-title: uztegi
-video: dFtsDjJI1BY
 mezak:
   - date: larunbat 17.00 3. astea
-    notes:
+image: /media/Screenshot_20250330_202431_YouTube.jpg
+video: dFtsDjJI1BY
+layout: parroquia
+title: uztegi
 ---
-
