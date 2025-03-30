@@ -9,4 +9,5 @@ image: /media/640px-Beruete.jpg
 video: PmiNoRGv7hY
 layout: parroquia
 title: beruete
+valley: "Basaburua "
 ---
