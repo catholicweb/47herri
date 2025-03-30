@@ -1,9 +1,8 @@
 ---
-layout: parroquia
-title: azpirotz
-video: 8QZ-kf7qDps
 mezak:
   - date: igandea 12.30 2. astea
-    notes:
+image: /media/Screenshot_20250330_010046_YouTube.jpg
+video: 8QZ-kf7qDps
+layout: parroquia
+title: azpirotz
 ---
-
