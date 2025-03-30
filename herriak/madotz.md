@@ -1,9 +1,8 @@
 ---
+mezak:
+  - {}
+video: S_glc18h9uE
 layout: parroquia
 title: madotz
-video: S_glc18h9uE
-mezak:
-  - date:
-    notes:
+valley: Larraun
 ---
-
