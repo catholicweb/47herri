@@ -5,4 +5,5 @@ image: /media/Screenshot_20250330_185413_Samsung Internet.jpg
 video: mhyvWRma7_M
 layout: parroquia
 title: etxarri
+valley: Larraun
 ---
