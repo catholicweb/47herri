@@ -9,4 +9,5 @@ image: /media/Screenshot_20250330_185501_YouTube.jpg
 video: G7g958WP8FU
 layout: parroquia
 title: gaintza
+valley: Araitz
 ---
