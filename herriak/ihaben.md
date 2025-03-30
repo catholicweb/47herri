@@ -1,9 +1,9 @@
 ---
-layout: parroquia
-title: ihaben
-video: ffUAe8dUe-U
 mezak:
   - date: igandea 10.00 2. astea
-    notes:
+image: /media/Screenshot_20250330_190821_YouTube.jpg
+video: ffUAe8dUe-U
+layout: parroquia
+title: ihaben
+valley: "Basaburua "
 ---
-
