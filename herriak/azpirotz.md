@@ -5,4 +5,5 @@ image: /media/Screenshot_20250330_010046_YouTube.jpg
 video: 8QZ-kf7qDps
 layout: parroquia
 title: azpirotz
+valley: Larraun
 ---
