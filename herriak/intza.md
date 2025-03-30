@@ -5,5 +5,5 @@ image: /media/Screenshot_20250330_190929_YouTube.jpg
 video: ed4vjo-bQVw
 layout: parroquia
 title: intza
-valley: Imotz
+valley: Araitz
 ---
