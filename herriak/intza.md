@@ -1,9 +1,9 @@
 ---
-layout: parroquia
-title: intza
-video: ed4vjo-bQVw
 mezak:
   - date: larunbat 17.00 4. astea
-    notes:
+image: /media/Screenshot_20250330_190929_YouTube.jpg
+video: ed4vjo-bQVw
+layout: parroquia
+title: intza
+valley: Imotz
 ---
-
