@@ -4,9 +4,9 @@ hiletak:
     title: XANTI LARRAZ
 ekitaldi:
   - date: 16/04/2025 18:00
-    title: "Aitortzak "
+    title: Aitortzak
     image: /media/semea.webp
-    type: aitortzak/confesiones
+    type: Aitortzaren
   - date: 24/05/2025 19.30
     title: sendotza
     notes: Gure gazteek sendotzako sakramentua jasoko dute
