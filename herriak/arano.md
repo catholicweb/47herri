@@ -1,10 +1,9 @@
 ---
-layout: parroquia
-image: /media/arano.jpg
-title: arano
-video: UdCfCIHmvaU
 mezak:
   - date: igandea 11.00
-    notes:
+image: /media/arano.jpg
+video: UdCfCIHmvaU
+layout: parroquia
+title: arano
+valley: Urumea
 ---
-
