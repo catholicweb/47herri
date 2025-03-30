@@ -12,4 +12,5 @@ image: /media/d3b837671117-282807663138a24a34050o-a.jpg
 video: 2tkabr7el28
 layout: parroquia
 title: lekunberri
+valley: Larraun
 ---
