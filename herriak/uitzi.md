@@ -1,6 +1,6 @@
 ---
 ekitaldi:
-  - date: 15/042025 12:00
+  - date: 15/04/2025 12:00
     title: SANTA ENGRAZIA
     image: /media/Screenshot_20250330_090921_YouTube.jpg
 mezak:
