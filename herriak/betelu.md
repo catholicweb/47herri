@@ -9,4 +9,5 @@ image: /media/Screenshot_20250324_223949_YouTube-1.jpg
 video: 46Wos9wDdpw
 layout: parroquia
 title: betelu
+valley: Araitz
 ---
