@@ -6,7 +6,7 @@ ekitaldi:
   - date: 16/04/2025 18:00
     title: Aitortzak
     image: /media/semea.webp
-    type: Aitortzaren
+    type: aitortzak/confesiones
   - date: 24/05/2025 19.30
     title: sendotza
     notes: Gure gazteek sendotzako sakramentua jasoko dute
