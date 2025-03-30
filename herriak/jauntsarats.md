@@ -1,9 +1,9 @@
 ---
-layout: parroquia
-title: jauntsarats
-video: imRARVKWyTM
 mezak:
   - date: igandea 10.00 4. astea
-    notes:
+image: /media/Screenshot_20250330_193829_YouTube.jpg
+video: imRARVKWyTM
+layout: parroquia
+title: jauntsarats
+valley: "Basaburua "
 ---
-
