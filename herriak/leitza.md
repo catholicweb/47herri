@@ -3,7 +3,7 @@ hiletak:
   - date: 01/04/2025 17.00
     title: XANTI LARRAZ
 ekitaldi:
-  - date: 16/04/2025 18:00
+  - date: 16/04/2025 18:00-19:30
     title: Aitortzak
     image: /media/semea.webp
     type: aitortzak/confesiones
@@ -21,4 +21,5 @@ image: /media/f1.webp
 video: HdPgPOzptII
 layout: parroquia
 title: leitza
+valley: Leitzaran
 ---
