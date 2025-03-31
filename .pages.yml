@@ -54,6 +54,16 @@ content:
     path: index.md
     type: file
     fields:
+      - name: ekitaldi
+        label: Ekitaldi
+        type: object
+        list: true
+        fields:
+          - { name: date, label: Eguna eta ordua (adib. astelehena 19:00 edo 25/12/2025), type: string }
+          - { name: title, label: Izenburua, type: string }
+          - { name: notes, label: Notes, type: string }
+          - { name: image, label: Image, type: image }
+          - { name: location, label: Herria, type: string }
       - { name: layout, label: layout, type: string, default: home, hidden: true }
       - { name: bizum, label: Bizum, type: string }
       - { name: bankaccount, label: Banku-kontu, type: string, list: true }

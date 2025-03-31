@@ -56,6 +56,9 @@ const mappers = {
     weekday(event) {
         return event.byday;
     },
+    long(event) {
+        return [`${event.times[0]} - ${event.title} (${event.location})`]
+    },
     notes(event) {
         let arr = event.notes ? [event.notes] : []
         let ordering = ['none', 'weekend', 'time', 'none', 'location', 'notes'] // TODO: very ugly fix

@@ -61,7 +61,7 @@
                 </h2>
             </div>
             <div class="">
-                {% include module name='events' ordering="/hiletak|ekitaldi|aitortzaren/i,['none', 'type', 'datetime', 'none', 'title', 'location']" %}
+                {% include module name='events' ordering="/hiletak|ekitaldi|aitortzaren/i,['none', 'type', 'dates','none','long']" %}
             </div>
             <div class="heading_container heading_center">
                 <h2>
@@ -81,13 +81,20 @@
                     Gure herriak
                 </h2>
             </div>
+            {%- assign valleys = "" | split: "," -%}
+            {%- for page in site.pages -%}
+            {%- if page.valley -%}
+            {%- assign valley = page.valley | strip -%}
+            {%- unless valleys contains valley -%}
+            {%- assign valleys = valleys | push: valley -%}
+            {%- endunless -%}
+            {%- endif -%}
+            {%- endfor -%}
             <ul class="filters_menu">
                 <li class="active" data-filter="*">All</li>
-                <li data-filter=".imotz">Imotz</li>
-                <li data-filter=".basaburua">Basaburua</li>
-                <li data-filter=".larraun">Larraun</li>
-                <li data-filter=".leitzaran">Leitzaran</li>
-                <li data-filter="....">...</li>
+                {% for valley in valleys %}
+                <li data-filter=".{{ valley }}">{{ valley }}</li>
+                {% endfor %}
             </ul>
             <div class="container">
                 <div class="row justify-content-center">
@@ -101,19 +108,17 @@
             </div>
             <div class="filters-content">
                 <div class="row grid">
-                    {% assign items = "imotz, basaburua, larraun, leitzaran" | split: ", " %}
-                    {% for herri in site.pages %}{% if herri.path contains 'herriak' %}
-                    {% assign index = forloop.index0 | modulo: items.size %}
-                    <div class="col-6 col-sm-4 col-lg-3 all {{ items[index] }}" style="padding: 0 7px">
-                        <a href="{{herri.url}}">
+                    {% for page in site.pages %}{% if page.path contains 'herriak' %}
+                    <div class="col-6 col-sm-4 col-lg-3 all {{ page.valley | strip }}" style="padding: 0 7px">
+                        <a href="{{page.url}}">
                             <div class="box">
                                 <div>
                                     <div class="img-box default-bg">
-                                        <img loading="lazy" src="{{ herri.image }} " alt="">
+                                        <img loading="lazy" src="{{ page.image }} " alt="">
                                     </div>
                                     <div style="padding: 20px; text-align: center;">
                                         <h4 class="notr" style="text-transform: capitalize;">
-                                            {{ herri.title | default: herri.name | capitalize | replace: ".md", "" }}
+                                            {{ page.title | default: page.name | capitalize | replace: ".md", "" }}
                                         </h4>
                                         <!--<p>
                                             Veniam debitis quaerat officiis quasi...

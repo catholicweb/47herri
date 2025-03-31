@@ -16,8 +16,8 @@ layout: null
 {%- for item in items -%}
 {%- if item.date -%}
 {
-{%- assign date_long = item.date | append: item.notes -%}
-{%- assign date_dots = item.date | append: item.notes | replace: '.' , ':' | replace: 'tan' , ':00' -%}
+{%- assign date_long = item.date | append: item.notes | downcase -%}
+{%- assign date_dots = date_long | replace: '.' , ':' | replace: 'tan' , ':00' -%}
 "raw": "{{ item.date }}",
 "byday": {% include brute_regex string=date_long substrings=bydays %},
 "times": {% include brute_regex string=date_dots substrings=times %},

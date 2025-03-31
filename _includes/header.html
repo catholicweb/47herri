@@ -44,17 +44,17 @@
                 <div v-for="(event, index) in groupedEvents(/{{filter}}/i,[])" class="carousel-item" :class="{ active: index == 0 }">
                     <div class="container ">
                         <div class="row">
-                            <div class="col-md-7 col-lg-6 events">
+                            <div class="col-md-7 col-lg-6 events" style="text-transform: none;">
                                 <!-- Primer grupo -->
                                 <div class="detail-box" style="margin-bottom: 0px;">
                                     <h2>
                                         [[ event.title || event.type ]]
                                     </h2>
-                                    <div class="container overflow-hidden">
+                                    <div class="overflow-hidden">
                                         <img v-if="event.image" loading="lazy" class="img-fluid circle-img" :src="event.image" style="width: 40%; float: right;" alt="">
                                         <p>[[ event.notes ]]</p>
                                     </div>
-                                    <div class="btn-box">
+                                    <div class="btn-box" style="margin-top: 10px">
                                         <p class="location-mark">[[ event.location ]]</p>
                                         <p class="time-mark">[[ event.times[0] ]]</p>
                                         <p class="calendar-mark">[[ event.dates[0] || event.byday[0] ]]</p>
