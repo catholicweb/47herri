@@ -1,6 +1,6 @@
 ---
 mezak:
-image: /media/Screenshot_20250330_005419_YouTube.jpg
+image: /media/Screenshot_20250330_005419_YouTube.webp
 video: lkT9FGSPG04
 layout: parroquia
 title: atallu

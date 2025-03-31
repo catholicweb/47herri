@@ -1,20 +1,26 @@
 #!/bin/bash
 
-origin=".png"
-destination=""
+# Set the root directory for your media folder
+MEDIA_DIR="media"
 
-# String to replace
-find "media/" -type f -not -name "*.webp" -print0  | while IFS= read -r -d '' file; do
-    output="${file%.*}.webp"
-
-    echo "$file => $output"
-    cwebp "$file" -o "$output"
+# Find all image files in the 'media' folder (jpg, png, jpeg, gif)
+find "$MEDIA_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) | while read -r img; do
+    # Get the original file's extension
+    EXT="${img##*.}"
     
-    #lqoutput="assets/${file%.*}-LQ.webp"
-    #mkdir -p "$(dirname "$lqoutput")"
-    #libwebp/bin/cwebp -resize 1200 0 "$file" -o "$lqoutput"
-    rm "$file"
+    # Create the new file name with .webp extension
+    NEW_IMG="${img%.$EXT}.webp"
+
+    # Convert the image to .webp using cwebp
+    cwebp "$img" -o "$NEW_IMG"
+    
+    # If the conversion is successful, replace the original references
+    if [ $? -eq 0 ]; then
+        echo "Converted $img to $NEW_IMG"    
+        # Find and replace occurrences of the original filename with the new .webp filename in all files
+        find . -type f \( -iname "*.html" -o -iname "*.md" -o -iname "*.txt" \) -print0 | xargs -0 sed -i "s|$img|$NEW_IMG|g"
+        rm "$img"
+    else
+        echo "Failed to convert $img"
+    fi
 done
-
-
-cwebp -resize 1200 0

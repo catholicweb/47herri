@@ -1,7 +1,7 @@
 ---
 mezak:
   - date: Igandea 12:00 3. astea
-image: /media/Screenshot_20250330_190717_YouTube.jpg
+image: /media/Screenshot_20250330_190717_YouTube.webp
 video: A5xFxCW8NEs
 layout: parroquia
 title: igoa-aizarotz

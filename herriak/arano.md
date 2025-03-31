@@ -1,7 +1,7 @@
 ---
 mezak:
   - date: igandea 11.00
-image: /media/arano.jpg
+image: /media/arano.webp
 video: UdCfCIHmvaU
 layout: parroquia
 title: arano
