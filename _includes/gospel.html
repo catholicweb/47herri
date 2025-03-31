@@ -1,5 +1,5 @@
 <script>
-function parseReference(ref) {
+async function parseReference(ref) {
     // Mapeo de abreviaturas vascas a nombres completos en inglés.
     // Actualiza el diccionario según tus necesidades.
     const bookMap = {
@@ -71,13 +71,11 @@ let bibleApp = {
         this.fetchTranslation()
     },
     fetchTranslation: async function() {
-        this.gospel = {}
         this.gospel.ref = await this.fetchReference()
-        console.log(this.gospel.ref)
-        const { book, chapter, verses } = parseReference(this.gospel.ref);
+        let error = { ref: 'error! working on it...', text: '', date: this.gospel.date }
+        const { book, chapter, verses } = await parseReference(this.gospel.ref).catch(e => this.gospel = error)
         const verseNums = Array.isArray(verses[0]) ? verses.flat() : verses;
-        let data = await fetch(`/assets/bible/${this.lang}-${book}-${chapter}.json`, { cache: 'force-cache' })
-        let chapterVerses = await data.json()
+        let chapterVerses = await fetch(`/assets/bible/${this.lang}-${book}-${chapter}.json`, { cache: 'force-cache' }).then(r => r.json()).catch(e => this.gospel = error)
         this.gospel.source = chapterVerses.source
         this.gospel.text = verseNums.map(verse => chapterVerses['v' + verse]).join(' ').replace(/ +\./g, '.')
     },
@@ -87,7 +85,7 @@ let bibleApp = {
             this.references = await data.json()
         }
         this.gospel.date = this.date.toISOString().split('T')[0];
-        return this.references[this.gospel.date] || 'error! working on it...'
+        return this.references[this.gospel.date]
     }
 }
 if (!window.vueApp) window.vueApp = {}
