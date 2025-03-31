@@ -19,6 +19,11 @@ mezak:
   - date: larunbat 19.30
   - date: igandea 09.00
   - date: igandea 11.00
+locations:
+  - name: Done Mikel eliza
+    geo: 43.07797, -1.91260
+  - name: Santa Krutz baseliza
+    geo: 43.07968, -1.90440
 image: /media/f1.webp
 video: HdPgPOzptII
 layout: parroquia

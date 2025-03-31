@@ -92,16 +92,18 @@ if (!window.vueApp) window.vueApp = {}
 vueApp = { ...vueApp, ...bibleApp };
 </script>
 <template>
-    <div id="ebanjelioa" v-scope class="notr" v-scope @vue:mounted="fetchTranslation()">
+    <div id="ebanjelioa" v-scope v-scope @vue:mounted="fetchTranslation()">
         <h2 class="heading_center">EBANJELIOA</h2>
-        <h4>[[ gospel.ref ]]
+        <h4 class="notr">[[ gospel.ref ]]
             <span style="float: right;">
                 <button @click="changeDate(-1)">
                     <</button> [[ formatDate(gospel.date) ]] <button @click="changeDate(+1)">>
                 </button>
             </span>
         </h4>
-        [[ gospel.text ]]
+        <div class="notr">
+            [[ gospel.text ]]
+        </div>
         <a v-if="gospel.source" target="_blank" :href="gospel.source">Iturria</a>
     </div>
 </template>

@@ -41,24 +41,66 @@ function loadMap() {
 
 
     fetch('/assets/places.json') // Load the JSON file
-        .then(response => response.json()) // Convert the response to JSON
+        .then(r => r.json()) // Convert the response to JSON
         .then(data => {
             for (var i = 0; i < data.elements.length; i++) {
                 let elem = data.elements[i]
                 let config = {}
                 if (!elem.lat) {
-                    elem.lat = elem.bounds.minlat
-                    elem.lon = elem.bounds.minlon
+                    elem.lat = (elem.bounds.minlat + elem.bounds.maxlat) / 2
+                    elem.lon = (elem.bounds.minlon + elem.bounds.maxlon) / 2
                 }
-                if (JSON.stringify(elem.tags).includes('ermita')) {
+                if (false && JSON.stringify(elem.tags).includes('ermita')) {
                     config = { icon: redIcon }
                 }
+                elem.tags.geo = `${elem.lat.toFixed(5)}, ${elem.lon.toFixed(5)}`;
                 var marker = L.marker([elem.lat, elem.lon], config).addTo(map).bindPopup(JSON.stringify(elem.tags))
             }
         })
         .catch(error => {
             console.error('Error loading the JSON data:', error);
         });
+
+    async function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    sleep(1000).then(
+        fetch('/assets/site.json') // Load the JSON file
+        .then(r => r.json()) // Convert the response to JSON
+        .then(site => {
+            let pages = site.pages
+            for (var i = 0; i < pages.length; i++) {
+                let page = pages[i]
+                if (!page.locations) continue
+                for (var j = 0; j < page.locations.length; j++) {
+                    let loc = page.locations[j]
+                    if (!loc.geo || !loc.name) continue
+
+                    let config = {}
+                    if (true || loc.name.includes('baseliza')) {
+                        config = { icon: redIcon }
+                    }
+                    let geo = loc.geo.split(', ')
+                    let name = `${loc.name} (${page.title})`
+                    var htmlContent = `<a href="${page.url}">
+                    <h2 class="notr" style="text-transform: capitalize; color: black;text-align: center;">
+                                            ${ name }
+                                        </h2>
+                                <div class="box" style="margin: 0;background: white;">
+                                    <div class="img-box default-bg">
+                                        <img loading="lazy" src="${ page.image } " alt="">
+                                    </div>
+                                </div>
+                        </a>`;
+                    var marker = L.marker(geo, config).addTo(map).bindPopup(htmlContent)
+                }
+
+            }
+        })
+        .catch(error => {
+            console.error('Error loading the JSON data:', error);
+        }))
 }
 window.addEventListener("load", function() {
     loadMap()
