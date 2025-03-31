@@ -40,7 +40,7 @@ content:
       - { name: video, label: Youtube, type: string }
       - { name: layout, label: layout, type: string, default: parroquia, hidden: true }
       - name: locations
-        label: herriak
+        label: Tenplu
         type: object
         list: true
         fields:
