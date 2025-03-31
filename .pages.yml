@@ -25,7 +25,6 @@ content:
           - { name: title, label: Izenburua, type: string }
           - { name: notes, label: Notes, type: string }
           - { name: image, label: Image, type: image }
-          - { name: type, label: Mota (adib. hiletak|mezak|..., type: string }
       - name: mezak
         label: Mezak
         type: object
