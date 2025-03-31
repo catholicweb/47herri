@@ -1,6 +1,7 @@
 ---
 layout: null
 ---
+{%- assign index_page = site.pages | where: "path", "index.md" | first -%}
 {%- assign subfields = "mezak|hiletak|ekitaldi" | split: "|" -%}
 {%- assign bydays = "astelehena|asteartea|asteazkena|osteguna|ostirala|larunbat|igandea|asteguneta|bezpera" | split: "|" -%}
 {%- assign byweek = "1. astea|2. astea|3. astea|4. astea|5. astea" | split: "|" -%}
@@ -24,10 +25,14 @@ layout: null
 "byweek": {% include brute_regex string=date_long substrings=byweek %},
 "bymonth": {% include brute_regex string=date_long substrings=bymonth %},
 "dates": {% include match_date string=date_long %},
-"type": "{{ item.type | default: subfield }}",
+{%- if item.date contains 'type:mezak' -%}
+"type": "mezak",
+{%- else -%}
+"type": "{{ subfield }}",
+{%- endif -%}
 {%- if subfield == 'hiletak' -%}
-"notes": "{{ item.notes | default: 'Jauna, zure eskuetan uzten dugu maite duguna, eman iezaiozu betiko atsedenaldia, eta betiereko argiak argi diezaion. Goian bego. Amen.' }}",
-"image": "{{ item.image | default: '/media/hiletak.webp' }}",
+"notes": "{{ item.notes | default: index_page.hiletak_default.description }}",
+"image": "{{ item.image | default: index_page.hiletak_default.image }}",
 {%- else -%}
 "notes": "{{ item.notes }}",
 "image": "{{ item.image }}",

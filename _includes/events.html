@@ -109,7 +109,7 @@ let eventsApp = {
             .filter(event => !event.dates.length || event.dates.some(date => new Date(date) >= now))
             .map(event => ({
                 ...event,
-                dates: event.dates.map(date => vueApp.formatDate(date, true)) // Convert dates
+                dates: event.dates.map(vueApp.formatDate) // Convert dates
             }))
     },
     groupedEvents: function(filter, ordering) {

@@ -153,54 +153,22 @@
                     </h2>
                 </div>
                 <div class="row">
+                    {% for collab in page.collaborators %}
                     <div class="col-md-4  ">
                         <div class="box ">
                             <div class="img-box">
-                                <img loading="lazy" src="media/inaxio.webp" alt="">
+                                <img loading="lazy" src="{{ collab.image }}" alt="">
                             </div>
                             <div class="detail-box">
-                                <h5>
-                                    Inaxio Azcoaga
-                                </h5>
+                                <h5>{{ collab.title }}</h5>
                                 <blockquote>
-                                    El rey de los tejados
+                                    {{ collab.description }}
                                 </blockquote>
                                 <a href="">Llamar</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4  ">
-                        <div class="box ">
-                            <div class="img-box">
-                                <img loading="lazy" src="media/santi.webp" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h5>
-                                    Santi Garisoain
-                                </h5>
-                                <blockquote>
-                                    La paloma
-                                </blockquote>
-                                <a href="">Llamar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4  ">
-                        <div class="box ">
-                            <div class="img-box">
-                                <img loading="lazy" src="media/sotil.webp" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h5>
-                                    Jesús Mª Sotil
-                                </h5>
-                                <blockquote>
-                                    El abuelo
-                                </blockquote>
-                                <a href="">Llamar</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
