@@ -13,4 +13,9 @@ video: 2tkabr7el28
 layout: parroquia
 title: lekunberri
 valley: Larraun
+locations:
+  - name: Done Joanes Bataiatzailearen
+    geo: 43.00596, -1.89541
+  - name: Pilar baseliza
+    geo: 43.00672, -1.89805
 ---

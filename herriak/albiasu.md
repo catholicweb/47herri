@@ -12,4 +12,7 @@ locations:
   - {}
 title: albiasu
 valley: Larraun
+locations:
+  - name: Done Laurendi
+    geo: 43.00878, -1.93683
 ---

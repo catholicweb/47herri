@@ -8,4 +8,7 @@ video: fBoeJCgbx9s
 layout: parroquia
 title: errazkin
 valley: Larraun
+locations:
+  - name: San Martin
+    geo: 43.00658, -1.96063
 ---
