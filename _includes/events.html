@@ -100,13 +100,14 @@ let eventsApp = {
     },
     events: [],
     forgetPastEvents(events) {
-        let now = new Date();
+        let today = new Date();
+        today.setHours(0, 0, 0, 0);
         return events
             .map(event => ({
                 ...event,
                 dates: event.dates.map(vueApp.parseDateToISO) // Convert dates
             }))
-            .filter(event => !event.dates.length || event.dates.some(date => new Date(date) >= now))
+            .filter(event => !event.dates.length || event.dates.some(date => new Date(date) >= today))
             .map(event => ({
                 ...event,
                 dates: event.dates.map(vueApp.formatDate) // Convert dates
