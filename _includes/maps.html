@@ -84,12 +84,12 @@ function loadMap() {
                     let geo = loc.geo.split(', ')
                     let name = `${loc.name} (${page.title})`
                     var htmlContent = `<a href="${page.url}">
-                    <h2 class="notr" style="text-transform: capitalize; color: black;text-align: center;">
+                    <h3 class="notr" style="text-transform: capitalize; color: black;text-align: center;">
                                             ${ name }
-                                        </h2>
+                                        </h3>
                                 <div class="box" style="margin: 0;background: white;">
                                     <div class="img-box default-bg">
-                                        <img loading="lazy" src="${ page.image } " alt="">
+                                        <img width="300px" style="width:300px; aspect-ratio: 16/9; object-fit: cover;" loading="lazy" src="${ page.image } " alt="">
                                     </div>
                                 </div>
                         </a>`;
