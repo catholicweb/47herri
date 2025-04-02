@@ -73,10 +73,9 @@ function loadMap() {
                         </a>`;
                     var marker = L.marker(geo, config).addTo(map).bindPopup(htmlContent)
                     if (mapfilter && !name.includes(mapfilter)) {
-                        console.log(marker._icon)
                         marker._icon.style.opacity = '0.3'
                         marker._icon.style.filter = 'grayscale(1)'
-                        marker._icon.style.transform += ' scale(0.5)'
+                        //marker._icon.style.transform += ' scale(0.5)'
                     }
                 }
 
