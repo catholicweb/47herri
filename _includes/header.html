@@ -9,10 +9,14 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
                 <a class="navbar-brand" href="/index.html">
-                    <h3 style="color: #fff">
-                        47 herri
-                    </h3>
+                    <h5 style="color: #fff">
+                        {{ site.title }}
+                    </h5>
                 </a>
+                <h2 style="color: #fff">
+                    {%- assign title2 = page.title | default: page.name | capitalize | replace: '.md', '' | replace: 'Index', 'Ongi Etorri' -%}
+                    {{ title2 }}
+                </h2>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class=""> </span>
                 </button>
