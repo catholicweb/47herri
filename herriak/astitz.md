@@ -6,4 +6,7 @@ video: FOXRrA3WGgk
 layout: parroquia
 title: astitz
 valley: Larraun
+locations:
+  - name: San Pedro
+    geo: 42.97074, -1.87838
 ---

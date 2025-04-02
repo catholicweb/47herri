@@ -4,16 +4,27 @@
     {% include header.html %}
     <!-- about section -->
     <section class="layout_padding" style='max-width: 550px; margin: auto;'>
-        <h1 class="notr">
-            {{ page.title | default: page.name | capitalize | replace: ".md", "" }} - Ongi etorri
-        </h1>
-        {% include module name='facade' yt=page.video %}
+        <div class="container">
+            <h1 class="notr">
+                {{ page.title | default: page.name | capitalize | replace: ".md", "" }}
+            </h1>
+            {% include module name='facade' yt=page.video %}
+        </div>
     </section>
-    <section class="layout_padding">
+    <section class="layout_padding-bottom">
         <div class="container">
             <h2>Azken gertakariak</h2>
             <div class="row">
                 {% include module name='infinite' filter=page.title %}
+            </div>
+        </div>
+    </section>
+    <section class="layout_padding-bottom">
+        <div class="container ">
+            <div class="row">
+                <div class="col-xl-9">
+                    {% include module name='maps' filter=page.title %}
+                </div>
             </div>
         </div>
     </section>

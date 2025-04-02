@@ -23,7 +23,7 @@ image: /media/f1.webp
 video: HdPgPOzptII
 layout: parroquia
 locations:
-  - name: Done Mikel eliza
+  - name: Done Mikel
     geo: 43.07797, -1.91260
   - name: Santa Krutz baseliza
     geo: 43.07968, -1.90440

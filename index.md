@@ -7,6 +7,8 @@ ekitaldi:
 hiletak_default:
   description: Jauna, zure eskuetan uzten dugu maite duguna, eman iezaiozu betiko atsedenaldia, eta betiereko argiak argi diezaion. Goian bego. Amen
   image: /media/hiletak.webp
+image:
+description:
 collaborators:
   - image: /media/inaxio.webp
     title: Inaxio Azcoaga

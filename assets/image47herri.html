@@ -1,0 +1,90 @@
+---
+layout: default
+---
+<section class="food_section layout_padding-bottom">
+    <div class="container" style="max-width: 100% !important;">
+        <div class="heading_container heading_center">
+            <h2>
+                Gure herriak
+            </h2>
+        </div>
+        {%- assign valleys = "" | split: "," -%}
+        {%- for page in site.pages -%}
+        {%- if page.valley -%}
+        {%- assign valley = page.valley | strip -%}
+        {%- unless valleys contains valley -%}
+        {%- assign valleys = valleys | push: valley -%}
+        {%- endunless -%}
+        {%- endif -%}
+        {%- endfor -%}
+        <ul class="filters_menu">
+            <li class="active" data-filter="*">All</li>
+            {% for valley in valleys %}
+            <li data-filter=".{{ valley }}">{{ valley }}</li>
+            {% endfor %}
+        </ul>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="search-container">
+                        <input type="text" class="form-control search-input" placeholder="Bilatu...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filters-content">
+            <div class="row grid" id="captureDiv">
+                {% for page in site.pages %}{% if page.path contains 'herriak' %}
+                <div class="all {{ page.valley | strip }}" style="padding: 0; margin: 5px; flex: 0 0 calc(calc(100% / 8) - 10px); max-width: calc(calc(100% / 8) - 10px); width: 100%;">
+                    <a href="{{page.url}}">
+                        <div class="box" style="padding: 0 !important; margin: 0 !important;">
+                            <div>
+                                <div class="img-box default-bg">
+                                    <img loading="lazy" src="{{ page.image }} " alt="">
+                                </div>
+                                <div style="padding: 20px; text-align: center;">
+                                    <h4 class="notr" style="text-transform: capitalize;">
+                                        {{ page.title | default: page.name | capitalize | replace: ".md", "" }}
+                                    </h4>
+                                    <!--<p>
+                                            Veniam debitis quaerat officiis quasi...
+                                        </p>
+                                        <div class="options">
+                                            <h6>
+                                            </h6>
+                                        </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}{% endfor %}
+            </div>
+        </div>
+        <!--<div class="btn-box">
+                <a href="">
+                    View More
+                </a>
+            </div>-->
+    </div>
+    <button id="captureBtn">Capture Div as Image</button>
+    <div>
+        <h2>Captured Image:</h2>
+        <img id="capturedImage" alt="Captured image will appear here" />
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+    document.getElementById('captureBtn').addEventListener('click', function() {
+        const captureDiv = document.getElementById('captureDiv');
+
+        html2canvas(captureDiv).then(function(canvas) {
+            // Convert the canvas to an image
+            const imgData = canvas.toDataURL('image/png');
+
+            // Display the captured image
+            document.getElementById('capturedImage').src = imgData;
+        });
+    });
+    </script>
+</section>

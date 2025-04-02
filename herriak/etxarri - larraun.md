@@ -6,4 +6,7 @@ video: mhyvWRma7_M
 layout: parroquia
 title: etxarri
 valley: Larraun
+locations:
+  - name: Santa Krutz baseliza
+    geo: 43.00218, -1.87298
 ---

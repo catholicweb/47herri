@@ -8,22 +8,22 @@
     <header class="header_section">
         <div class="container">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
-                <a class="navbar-brand" href="/index.html">
-                    <h5 style="color: #fff">
+                <a class="navbar-brand d-none d-md-block" href="/">
+                    <h3 style="color: #fff">
                         {{ site.title }}
-                    </h5>
+                    </h3>
                 </a>
-                <h2 style="color: #fff">
+                <h3 style="color: #fff">
                     {%- assign title2 = page.title | default: page.name | capitalize | replace: '.md', '' | replace: 'Index', 'Ongi Etorri' -%}
                     {{ title2 }}
-                </h2>
+                </h3>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class=""> </span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav  mx-auto ">
                         <li class="nav-item ">
-                            <a class="nav-link" href="/index.html">47 herri </a>
+                            <a class="nav-link" href="/">47 herri </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/baliabideak.html">Baliabideak</a>
@@ -40,9 +40,9 @@
     <!-- end header section -->
     {% if page.url == "/" or page.path contains 'herriak' %}
     {% if page.url == "/" %}{% assign filter = 'hiletak|ekitaldi|aitortzaren' %}
-    {% else %}{% assign filter = page.title %}{% endif %}
+    {% else %}{% assign filter = page.title | append: "|herri guztiak" %}{% endif %}
     <!-- slider section -->
-    <section class="slider_section" v-scope @vue:mounted="fetchEvents()">
+    <section class="slider_section" style="padding: 0" v-scope @vue:mounted="fetchEvents()">
         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div v-for="(event, index) in groupedEvents(/{{filter}}/i,[])" class="carousel-item" :class="{ active: index == 0 }">

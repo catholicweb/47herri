@@ -6,4 +6,7 @@ video: imRARVKWyTM
 layout: parroquia
 title: jauntsarats
 valley: Basaburua
+locations:
+  - name: Jasokundearen
+    geo: 43.00132, -1.80225
 ---

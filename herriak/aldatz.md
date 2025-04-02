@@ -12,4 +12,9 @@ video: UDePaBt8_ek
 layout: parroquia
 title: aldatz
 valley: Larraun
+locations:
+  - name: San Martin
+    geo: 43.00957, -1.85974
+  - name: Santa Luzia baseliza
+    geo: 43.01042, -1.86074
 ---

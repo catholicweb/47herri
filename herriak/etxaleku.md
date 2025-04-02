@@ -6,4 +6,7 @@ video: nBXyg1L7vTk
 layout: parroquia
 title: etxaleku
 valley: Imotz
+locations:
+  - name: San Esteban
+    geo: 42.96943, -1.79024
 ---

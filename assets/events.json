@@ -10,7 +10,7 @@ layout: null
 [
 {%- assign all_events = "" | split: "" -%}
 {%- for page in site.pages -%}
-{%- assign location = page.title | default: page.name | capitalize | replace: ".md", "" -%}
+{%- assign location = page.title | default: page.name | capitalize | replace: ".md", "" | replace: "Ongi Etorri", "herri guztiak" | replace: "Index", "herri guztiak" -%}
 {%- for subfield in subfields -%}
 {%- assign items = page[subfield] -%}
 {%- if items -%}

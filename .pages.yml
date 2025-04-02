@@ -75,4 +75,4 @@ content:
       - { name: bizum, label: Bizum, type: string }
       - { name: bankaccount, label: Banku-kontu, type: string, list: true }
       - { name: description, label: Webgunearen deskribapena, type: string}
-      - { name: cover, label: Preview image, type: image, description: "Image used in the social preview on social networks (e.g. Facebook, Twitter...)"}
+      - { name: image, label: Preview image, type: image}

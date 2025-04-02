@@ -1,7 +1,9 @@
 <script>
 function loadMap() {
 
-    if (!document.querySelector('#map')) return
+    let mapDiv = document.querySelector('#map')
+    if (!mapDiv) return
+    let mapfilter = mapDiv.dataset.mapfilter
 
 
     var supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
@@ -19,9 +21,12 @@ function loadMap() {
         //iconUrl: '/media/location-sign-svgrepo-com.svg', //
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
         //shadowUrl: '/media/location-sign-svgrepo-com.svg', //'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34]
+        iconSize: [20, 32],
+    });
+
+    let blueIcon = L.icon({
+        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+        iconSize: [20, 32],
     });
 
 
@@ -40,34 +45,7 @@ function loadMap() {
             console.error('Error loading the JSON data:', error);
         });
 
-
-    fetch('/assets/places.json') // Load the JSON file
-        .then(r => r.json()) // Convert the response to JSON
-        .then(data => {
-            for (var i = 0; i < data.elements.length; i++) {
-                let elem = data.elements[i]
-                let config = {}
-                if (!elem.lat) {
-                    elem.lat = (elem.bounds.minlat + elem.bounds.maxlat) / 2
-                    elem.lon = (elem.bounds.minlon + elem.bounds.maxlon) / 2
-                }
-                if (false && JSON.stringify(elem.tags).includes('ermita')) {
-                    config = { icon: redIcon }
-                }
-                elem.tags.geo = `${elem.lat.toFixed(5)}, ${elem.lon.toFixed(5)}`;
-                var marker = L.marker([elem.lat, elem.lon], config).addTo(map).bindPopup(JSON.stringify(elem.tags))
-            }
-        })
-        .catch(error => {
-            console.error('Error loading the JSON data:', error);
-        });
-
-    async function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    sleep(1000).then(
-        fetch('/assets/site.json') // Load the JSON file
+    fetch('/assets/site.json') // Load the JSON file
         .then(r => r.json()) // Convert the response to JSON
         .then(site => {
             let pages = site.pages
@@ -77,13 +55,14 @@ function loadMap() {
                 for (var j = 0; j < page.locations.length; j++) {
                     let loc = page.locations[j]
                     if (!loc.geo || !loc.name) continue
+                    let name = `${loc.name} (${page.title})`
 
-                    let config = {}
-                    if (true || loc.name.includes('baseliza')) {
-                        config = { icon: redIcon }
+                    let config = { icon: redIcon }
+                    if (loc.name.includes('baseliza')) {
+                        config.icon = blueIcon
                     }
                     let geo = loc.geo.split(', ')
-                    let name = `${loc.name} (${page.title})`
+
                     var htmlContent = `<a href="${page.url}">
                     <h3 class="notr" style="text-transform: capitalize; color: black;text-align: center;">
                                             ${ name }
@@ -93,14 +72,19 @@ function loadMap() {
                                 </div>
                         </a>`;
                     var marker = L.marker(geo, config).addTo(map).bindPopup(htmlContent)
-                    console.log(marker)
+                    if (mapfilter && !name.includes(mapfilter)) {
+                        console.log(marker._icon)
+                        marker._icon.style.opacity = '0.3'
+                        marker._icon.style.filter = 'grayscale(1)'
+                        marker._icon.style.transform += ' scale(0.5)'
+                    }
                 }
 
             }
         })
         .catch(error => {
             console.error('Error loading the JSON data:', error);
-        }))
+        })
 }
 window.addEventListener("load", function() {
     loadMap()
@@ -117,8 +101,7 @@ window.addEventListener("load", function() {
     <script defer src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 </footer>
 <template>
-    {%- assign params = include.params -%}
-    <div style="width: 100%; aspect-ratio: 1;" id="map"></div>
+    <div style="width: 100%; aspect-ratio: 1;" id="map" data-mapfilter='{{ include.params.filter }}'></div>
 </template>
 <style>
 .bounce {
