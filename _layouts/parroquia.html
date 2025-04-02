@@ -3,32 +3,42 @@
 <body>
     {% include header.html %}
     <!-- about section -->
-    <section class="layout_padding" style='max-width: 550px; margin: auto;'>
+    <section class="layout_padding">
         <div class="container">
             <h1 class="notr">
-                {{ page.title | default: page.name | capitalize | replace: ".md", "" }}
+                Ezagutu {{ page.title | default: page.name | capitalize | replace: ".md", "" }}
             </h1>
-            {% include module name='facade' yt=page.video %}
+            <div class="row">
+                <div class="col-md-8">
+                    {% include module name='facade' yt=page.video %}
+                </div>
+                <div class="col-md-4">
+                    <div class="detail-box">
+                        {{ content }}
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="layout_padding-bottom">
+    <section class="layout_padding">
         <div class="container">
-            <h2>Azken gertakariak</h2>
+            <h1>Azken gertakariak</h1>
             <div class="row">
                 {% include module name='infinite' filter=page.title %}
             </div>
         </div>
     </section>
-    <section class="layout_padding-bottom">
+    <section class="layout_padding">
         <div class="container ">
+            <h1>Non Gaude</h1>
             <div class="row">
-                <div class="col-xl-9">
+                <div class="col-xl-9" style="margin: auto;">
                     {% include module name='maps' filter=page.title %}
                 </div>
             </div>
         </div>
     </section>
-    <section class="about_section layout_padding">
+    <!--<section class="about_section layout_padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 ">
@@ -36,14 +46,9 @@
                         <img src="/media/about-img.webp" alt="">
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="detail-box">
-                        {{ page.content }}
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- end about section -->
     {% include footer.html %}
 </body>
