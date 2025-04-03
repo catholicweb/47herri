@@ -6,13 +6,6 @@ ekitaldi:
   - date: 16/04/2025 18:00-19:30
     title: Aitortzak
     image: /media/semea.webp
-  - date: 24/05/2025 19.30
-    title: sendotza
-    notes: Gure gazteek sendotzako sakramentua jasoko dute
-    image: /media/sendotza.webp
-  - date: 17/04/2025 11:00
-    title: Aitortzak
-    notes: "Penitentzi ospakizuna "
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
