@@ -4,10 +4,11 @@ mezak:
 image: /media/Iglesia de Gorriti copiar.webp
 video: 0YTZiyiZ1BM
 layout: parroquia
-title: gorriti
 locations:
   - name: San Bartolome
     geo: 43.05145, -1.95463
   - name: Santa Barbara baseliza
     geo: 43.05160, -1.96116
+title: gorriti
+valley: Larraun
 ---
