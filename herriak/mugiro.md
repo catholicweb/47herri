@@ -1,9 +1,9 @@
 ---
-layout: parroquia
-title: mugiro
 video: DHwAmkBhea0
+layout: parroquia
 locations:
   - name: San Pedro
     geo: 42.99143, -1.88167
+title: mugiro
+valley: Larraun
 ---
-
