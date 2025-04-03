@@ -14,6 +14,8 @@ mezak:
   - date: igandea 09.00
   - date: igandea 11.00
 image: /media/f1.webp
+gallery:
+  - /media/Screenshot_20250403_221152_YouTube.jpg
 video: HdPgPOzptII
 layout: parroquia
 locations:
