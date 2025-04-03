@@ -5,6 +5,7 @@ hiletak:
 ekitaldi:
   - date: 16/04/2025 18:00-19:30
     title: Aitortzak
+    notes: Apez bat egongo da elizan arratsaldeko 6etatik 7:30k arte gutxi gora behera
     image: /media/semea.webp
 mezak:
   - date: astegunetan 19.30
