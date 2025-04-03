@@ -6,6 +6,6 @@ video: JBJbOYAKZik
 layout: parroquia
 locations:
   - name: San Lorentzo
-    geo: 43.03463, -2.01012
+    geo: 42,9513991, -1,8715113
 title: oderitz
 ---
