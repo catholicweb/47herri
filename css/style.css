@@ -481,7 +481,7 @@ a:focus {
     transform: scale(1.1);
 }
 
-.food_section .filters_menu {
+.filters_menu {
     padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -495,13 +495,13 @@ a:focus {
     margin: 45px 0 20px 0;
 }
 
-.food_section .filters_menu li {
+.filters_menu li {
     padding: 7px 25px;
     cursor: pointer;
     border-radius: 25px;
 }
 
-.food_section .filters_menu li.active {
+.filters_menu li.active {
     background-color: #222831;
     color: #ffffff;
 }

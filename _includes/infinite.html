@@ -4,7 +4,7 @@
             <div class="infinite-item-wrapper col-lg-4 col-md-5 col-sm-8 col-11" v-for="item in visibleItems" v-cloak style="aspect-ratio: 16/9">
                 <div class="infinite-item facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)' }">
                     <header>[[ item.title ]]</header>
-                    <button type="button" @click="addIframe('youtube', item.videoId)"></button>
+                    <button type="button" @click="addIframe('youtube', item.videoId)">[[ item.title ]]</button>
                 </div>
                 [[ item.publishedAt ]]
                 <div class="infinite-timeline-bullet"></div>
@@ -21,11 +21,11 @@
 let carouselApp = {
     // Lista completa de items (puedes ampliarla según necesites)
     allItems: [],
+    kantak: [],
+    kantakList: [],
     visibleItems: [],
     itemsToLoad: 10,
     async fetchVideos(filter) {
-        //filter = new RegExp(filter, 'gi')
-        console.log('init!')
         let data = await fetch('/assets/videos.json')
         let items = await data.json()
         console.log(filter)
@@ -36,6 +36,12 @@ let carouselApp = {
         }));
         this.loadMoreItems();
     },
+    async fetchKantak() {
+        let data = await fetch('/assets/kantak.json')
+        this.kantak = await data.json()
+        this.kantakList = [...new Set(this.kantak.map(item => item.playlist))];
+        console.log(this.kantak, this.kantakList)
+    },
     parseDateToISO(dateStr) {
         let [day, month, year] = dateStr.split("/").map(num => parseInt(num, 10));
         let now = new Date();
@@ -44,6 +50,7 @@ let carouselApp = {
         return eventDate.toISOString();
     },
     formatDate(isoString) {
+        if (!isoString) return ''
         isoString = isoString.replaceAll('/', '-')
         let date = new Date(isoString)
         let hilabeteak = ["Urtarrilak", "Otsailak", "Martxoak", "Apirilak", "Maiatzak", "Ekainak", "Uztailak", "Abuztuak", "Irailak", "Urriak", "Azaroak", "Abenduak"]
@@ -145,11 +152,6 @@ vueApp = { ...vueApp, ...carouselApp }
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.infinite-item header {
-    font-weight: bold;
-    text-align: center;
 }
 
 .infinite-timeline {

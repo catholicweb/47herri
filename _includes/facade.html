@@ -14,17 +14,11 @@ https://codepen.io/jason-knight/pen/OJBjgNQ -->
     {% elsif params.yt %}
     <div class="facade youtube" style="--aspect-ratio:{{ ratio }}; --video-poster:url(https://img.youtube.com/vi/{{ params.yt }}/hqdefault.jpg)">
         <header>{{ params.title }}</header>
-        <a href="https://www.youtube.com/watch?v={{ params.yt }}" target="_blank">
-            <span>Ver en YouTube</span>
-        </a>
         <button type="button" onclick="addIframe('youtube','{{ params.yt }}')">{{ params.title }}</button>
     </div>
     {% elsif params.vimeo %}
     <div class="facade vimeo" style="--aspect-ratio:{{ ratio }}; --video-poster:url(https://i.vimeocdn.com/video/{{ params.vimeoPoster }})">
         <header>{{ params.title }}</header>
-        <a href="https://vimeo.com/{{ params.vimeo }}" target="_blank">
-            <span>Ver en Vimeo</span>
-        </a>
         <button type="button" onclick="addIframe('vimeo', '{{ params.vimeo }}')">{{ params.title }}</button>
     </div>
     {% endif %}
@@ -115,6 +109,8 @@ function addIframe(source, id) {
     padding: 0.5rem;
     color: #FFF;
     text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+    font-weight: bold;
+    text-align: center;
 }
 
 .facade a b {

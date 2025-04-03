@@ -2,7 +2,7 @@
 mezak:
   - date: astegunetan 09.00
     notes: Agustinetan
-  - date: larunbatetan 09.00
+  - date: larunbata 09.00
     notes: Agustinetan
   - date: larunbata 18.00 1. astea
   - date: igandea 09.00

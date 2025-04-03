@@ -104,7 +104,7 @@ layout: none
             {%- endif -%}
             {%- endfor -%}
             <ul class="filters_menu">
-                <li class="active" data-filter="*">All</li>
+                <li class="active" data-filter="*">Guztiak</li>
                 {% for valley in valleys %}
                 <li data-filter=".{{ valley }}">{{ valley }}</li>
                 {% endfor %}
@@ -133,13 +133,6 @@ layout: none
                                         <h4 class="notr" style="text-transform: capitalize;">
                                             {{ page.title | default: page.name | capitalize | replace: ".md", "" }}
                                         </h4>
-                                        <!--<p>
-                                            Veniam debitis quaerat officiis quasi...
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                            </h6>
-                                        </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -148,11 +141,6 @@ layout: none
                     {% endif %}{% endfor %}
                 </div>
             </div>
-            <!--<div class="btn-box">
-                <a href="">
-                    View More
-                </a>
-            </div>-->
         </div>
     </section>
     <!-- end food section -->

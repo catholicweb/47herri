@@ -5,9 +5,9 @@ hiletak:
 mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
-  - date: larunbat 09.00
+  - date: larunbata 09.00
     notes: Klarisetan
-  - date: larunbat 18.30
+  - date: larunbata 18.30
   - date: igandea 09.00
     notes: Klarisetan
   - date: igandea 11.00

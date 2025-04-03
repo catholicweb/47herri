@@ -1,7 +1,7 @@
 ---
 layout: home
 ekitaldi:
-  - date: Larunbat 18:00 type:mezak
+  - date: Larunbata 18:00 type:mezak
     notes: txandaka
     location: Arribe/Atallu
 hiletak_default:

@@ -16,15 +16,12 @@
         <div class="container">
             <div class="heading_container heading_center">
                 <h2>
-                    Musika
+                    Mezako kantak
                 </h2>
             </div>
-            <ul class="filters_menu">
-                <li class="active" data-filter="*">All</li>
-                <li data-filter=".imotz">grupo 1</li>
-                <li data-filter=".basaburua">grupo 2</li>
-                <li data-filter=".larraun">grupo 3</li>
-                <li data-filter=".leitzaran">grupo 4</li>
+            <ul v-scope class="filters_menu" style="text-transform: capitalize;">
+                <li class="active" data-filter="*">Guztiak</li>
+                <li v-for="item in kantakList" :data-filter="'.'+item.trim().toLowerCase().replaceAll(' ', '-')">[[item.trim().toLowerCase()]]</li>
             </ul>
             <div class="container">
                 <div class="row justify-content-center">
@@ -38,18 +35,14 @@
             </div>
             <div class="filters-content">
                 <div class="row grid">
-                    {% assign items = "imotz, basaburua, larraun, leitzaran" | split: ", " %}
-                    {% assign count = 0 %}
-                    {% for video in site.data.videos %}
-                    {% assign title = video.title | downcase %}
-                    {% if title contains 'leitza' %}
-                    {% assign index = forloop.index0 | modulo: items.size %}
-                    <div class="col-6 col-sm-4 col-lg-3 all {{ items[index] }}">
-                        {% include module name='facade' yt=video.videoId title=video.title style='max-width: 450px;' %}
+                    <div v-scope @vue:mounted="fetchKantak()">
+                        <div class="col-lg-4 col-md-5 col-sm-8 col-11 all" v-for="item in kantak" style="aspect-ratio: 16/9" :class="item.playlist.trim().toLowerCase().replaceAll(' ', '-')" :key="item.videoId">
+                            <div class="facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)' }">
+                                <header>[[ item.title ]]</header>
+                                <button type="button" @click="addIframe('youtube', item.videoId)">[[ item.title ]]</button>
+                            </div>
+                        </div>
                     </div>
-                    {% if count > 10 %} {% break %} {% endif %}
-                    {% assign count = count | plus: 1 %}
-                    {% endif %}{% endfor %}
                 </div>
             </div>
     </section>

@@ -1,7 +1,6 @@
 ---
 layout: null
 ---
-
 window.addEventListener("load", function() {
     // to get current year
     function getYear() {
@@ -14,6 +13,8 @@ window.addEventListener("load", function() {
 
 
     // isotope js
+    setTimeout(() => {
+  
 
     $('.filters_menu li').click(function() {
         $('.filters_menu li').removeClass('active');
@@ -42,6 +43,7 @@ window.addEventListener("load", function() {
             columnWidth: ".all"
         }
     })
+}, 1000);
 
 
     // client section owl carousel
