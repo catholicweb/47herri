@@ -1,16 +1,14 @@
 ---
-layout: home
 ekitaldi:
   - date: Larunbata 18:00 type:mezak
     notes: txandaka
     location: Arribe/Atallu
 hiletak_default:
-  description: Jauna, zure eskuetan uzten dugu maite duguna, eman iezaiozu betiko atsedenaldia, eta betiereko argiak argi diezaion. Goian bego. Amen
   image: /media/hiletak.webp
-image:
-description:
+  description: Jauna, zure eskuetan uzten dugu maite duguna, eman iezaiozu betiko
+    atsedenaldia, eta betiereko argiak argi diezaion. Goian bego. Amen
 collaborators:
-  - image: /media/inaxio.webp
+  - image: /media/20250404_171601-2.jpg
     title: Inaxio Azcoaga
     description: El rey de los tejados
   - image: /media/santi.webp
@@ -19,5 +17,5 @@ collaborators:
   - image: /media/sotil.webp
     title: Jesús Mª Sotil
     description: El abuelo
+layout: home
 ---
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All
