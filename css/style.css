@@ -70,6 +70,7 @@ h2 {
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
+    padding-bottom: 2em;
 }
 
 a,
@@ -492,7 +493,7 @@ a:focus {
     -ms-flex-pack: center;
     justify-content: center;
     list-style-type: none;
-    margin: 45px 0 20px 0;
+    /*margin: 45px 0 20px 0;*/
 }
 
 .filters_menu li {

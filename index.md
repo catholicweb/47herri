@@ -20,3 +20,6 @@ collaborators:
     description: In solidum parrokoa
 layout: home
 ---
+2019an Iruñako elizbarrutian pastoral barrutiak (uap delakoak) eratu ziren. Nafarroako 700 parrokiak 36 pastoral barrutitan kontzentratuz. Berez helburua da pastoralki parroki bakarra osatuko balute bezala lan egitea. Apez talde bat eta pastoral kontseilu bakarra sortuz. Herri guztietako biztanleek sentitu behar dute zirkunskripzio bereko partaide direla.
+
+Juridikoki eta ekonomikoki, ordea, parroki bakoitzak bere burujabetasuna mantentzen du. Gure kasuan pastoral barrutiko 47 herrietatik, 44 parrokietako parroko gara gure in solidum taldea. Beste hiru parrokiak parrokorik gabe daude une honetan. Gure pastoral barrutia Iruñako elizbarrutian dago, mendialdeko zonalde pastoralean eta Aralarko artziprestaldean hain zuzen ere.
