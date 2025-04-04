@@ -14,7 +14,7 @@ collaborators:
   - image: /media/Screenshot_20250404_192119_Gallery.jpg
     title: Santi Garisoain
     description: In solidum parrokoa
-  - image: /media/sotil.webp
+  - image: /media/Screenshot_20250404_192754_Gallery.jpg
     title: Jesús Mª Sotil
     description: In solidum parrokoa
 layout: home
