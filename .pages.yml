@@ -82,3 +82,4 @@ content:
       - { name: bankaccount, label: Banku-kontu, type: string, list: true }
       - { name: description, label: Webgunearen deskribapena, type: string}
       - { name: image, label: Preview image, type: image}
+      - { name: body, label: Body, type: rich-text }
