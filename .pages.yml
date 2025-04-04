@@ -70,7 +70,7 @@ content:
           - { name: image, label: Image, type: image }
           - { name: description, label: Deskribapena, type: text }
       - name: collaborators
-        label: Gure apaizak
+        label: Gure apezak
         type: object
         list: true
         fields:
@@ -78,8 +78,6 @@ content:
           - { name: title, label: Izena, type: string }
           - { name: description, label: Deskribapena, type: string }
       - { name: layout, label: layout, type: string, default: home, hidden: true }
-      - { name: bizum, label: Bizum, type: string }
-      - { name: bankaccount, label: Banku-kontu, type: string, list: true }
       - { name: description, label: Webgunearen deskribapena, type: string}
       - { name: image, label: Preview image, type: image}
       - { name: body, label: Body, type: rich-text }

@@ -115,7 +115,7 @@ let bibleApp = {
             ro: 'BINT09:1506', //romana
             pt: 'BPT09DC:228', // portugues
             ca: 'BCI:335', // catalan
-            //de: '',// deutsch
+            de: 'SCH2000:157', // deutsch
             bu: '%25D0%25A1%25D0%2598:1558' // bulgarian
         }
         lang = Object.keys(translations)[this.tr_test % 9]
@@ -202,7 +202,7 @@ async function downloadGospels(argument) {
         JHN: 21
     };
 
-    let code = '_ajkU6n6X_YHaA68GaRYu'
+    let code = '-IvGWn6Vzc1148Q7y0yUf'
     // Iterate over the languages, gospels, and chapters
     for (const tr in languages) {
         for (const book in gospels) {

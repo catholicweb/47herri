@@ -6,7 +6,7 @@ video: A5xFxCW8NEs
 layout: parroquia
 locations:
   - name: Mariaren Zeruratzea
-    geo: 43,0312209, -1,7858537
+    geo: 43.0312209, -1.7858537
 title: igoa-aizarotz
 valley: Basaburua
 ---

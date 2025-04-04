@@ -6,7 +6,7 @@
     <section class="layout_padding">
         <div class="container">
             <h1 class="notr">
-                Ezagutu {{ page.title | default: page.name | capitalize | replace: ".md", "" }}
+                {{ page.title | default: page.name | capitalize | replace: ".md", "" }} ezagutu
             </h1>
             <div class="row">
                 <div class="col-md-8">
@@ -22,7 +22,7 @@
     </section>
     <section class="layout_padding">
         <div class="container">
-            <h1>Azken gertakariak</h1>
+            <h1>Azken ospakizunak</h1>
             <div class="row">
                 {% include module name='infinite' filter=page.title %}
             </div>
