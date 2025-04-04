@@ -46,6 +46,7 @@ content:
         fields:
           - { name: name, label: izena, type: string}
           - { name: geo, label: Geo (lat/log), type: string }
+          - { name: image, label: Image, type: image }
       - { name: title, label: Izenburua, type: string }
       - { name: valley, label: valle, type: string }
       - { name: body, label: Body, type: rich-text }
