@@ -1,6 +1,6 @@
 ---
 mezak:
-  - date: larunbata 18.00 3. astea
+  - date: larunbatetan 18.00 3. astea
 image: /media/Screenshot_20250330_185413_Samsung Internet.webp
 video: mhyvWRma7_M
 layout: parroquia

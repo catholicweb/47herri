@@ -1,5 +1,5 @@
 ---
-ekitaldi:
+ekitaldiak:
   - {}
 mezak:
   - {}

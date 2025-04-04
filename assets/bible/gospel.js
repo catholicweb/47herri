@@ -190,7 +190,7 @@ async function downloadGospels(argument) {
         ro: 'BINT09:1506', //romana
         pt: 'BPT09DC:228', // portugues
         ca: 'BCI:335', // catalan
-        //de: '',// deutsch
+        de: 'SCH2000:157', // deutsch
         bu: '%25D0%25A1%25D0%2598:1558' // bulgarian
     }
 

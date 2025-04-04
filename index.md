@@ -1,6 +1,6 @@
 ---
-ekitaldi:
-  - date: Larunbata 18:00 type:mezak
+ekitaldiak:
+  - date: larunbatetan 18:00 mezak
     notes: txandaka
     location: Arribe/Atallu
 hiletak_default:

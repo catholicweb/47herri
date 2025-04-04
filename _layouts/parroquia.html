@@ -5,9 +5,10 @@
     <!-- about section -->
     <section class="layout_padding">
         <div class="container">
-            <h1 class="notr">
-                {{ page.title | default: page.name | capitalize | replace: ".md", "" }} ezagutu
-            </h1>
+            <div class="heading_container heading_center">
+                <h2>{{ page.title | default: page.name | capitalize | replace: ".md", "" }} ezagutu
+                </h2>
+            </div>
             <div class="row">
                 <div class="col-md-8">
                     {% include module name='facade' yt=page.video %}
@@ -20,17 +21,22 @@
             </div>
         </div>
     </section>
-    <section class="layout_padding">
+    <section class="layout_padding-bottom">
         <div class="container">
-            <h1>Azken ospakizunak</h1>
+            <div class="heading_container heading_center">
+                <h2>Azken ospakizunak</h2>
+            </div>
             <div class="row">
-                {% include module name='infinite' filter=page.title %}
+                {% assign filter= page.title | replace: 'igoa eta aizarotz' , 'igoa' %}
+                {% include module name='infinite' filter=filter %}
             </div>
         </div>
     </section>
-    <section class="layout_padding">
+    <section class="layout_padding-bottom">
         <div class="container ">
-            <h1>Non Gaude</h1>
+            <div class="heading_container heading_center">
+                <h2>Non Gaude</h2>
+            </div>
             <div class="row">
                 <div class="col-xl-9" style="margin: auto;">
                     {% include module name='maps' filter=page.title %}

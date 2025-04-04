@@ -1,6 +1,6 @@
 ---
 mezak:
-  - date: igandea 10.00 4. astea
+  - date: igandetan 10.00 4. astea
 image: /media/Screenshot_20250330_193829_YouTube.webp
 video: imRARVKWyTM
 layout: parroquia

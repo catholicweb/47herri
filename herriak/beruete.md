@@ -1,10 +1,10 @@
 ---
 hiletak:
   - {}
-ekitaldi:
+ekitaldiak:
   - {}
 mezak:
-  - date: igandea 11.00
+  - date: igandetan 11.00
 image: /media/640px-Beruete.webp
 video: PmiNoRGv7hY
 layout: parroquia

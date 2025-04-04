@@ -48,7 +48,7 @@ const mappers = {
         return event.dates
     },
     weekend(event) {
-        return event.byday.map(el => ['igandea', 'larunbata'].includes(el) ? el : 'astegunetan');
+        return event.byday.map(el => ['igandetan', 'larunbatetan'].includes(el) ? el : 'astegunetan');
     },
     byweek(event) {
         return event.byweek
@@ -65,7 +65,7 @@ const mappers = {
         if (!ordering.includes('byweek') && event.byweek.length && event.byweek.length < 5) {
             arr.push(event.byweek)
         }
-        if (!ordering.includes('weekday') && event.byday.length && !['igandea', 'larunbata', 'astegunetan', 'asteguneta'].includes(event.byday[0])) {
+        if (!ordering.includes('weekday') && event.byday.length && !['igandetan', 'larunbatetan', 'astegunetan', 'asteguneta'].includes(event.byday[0])) {
             arr.push(event.byday)
         }
         let str = arr.join(', ').trim()

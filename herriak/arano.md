@@ -1,6 +1,6 @@
 ---
 mezak:
-  - date: igandea 11.00
+  - date: igandetan 11.00
 image: /media/arano.webp
 video: UdCfCIHmvaU
 layout: parroquia

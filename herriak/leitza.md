@@ -4,7 +4,7 @@ hiletak:
     title: XANTI LARRAZ
   - date: 06/04/2025 11.00
     title: LONTXA OLANO
-ekitaldi:
+ekitaldiak:
   - date: 16/04/2025 18:00-19:30
     title: Aitortzak
     notes: Apez bat egongo da elizan arratsaldeko 6etatik 7:30k arte gutxi gora behera
@@ -12,9 +12,9 @@ ekitaldi:
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
-  - date: larunbata 19.30
-  - date: igandea 09.00
-  - date: igandea 11.00
+  - date: larunbatetan 19.30
+  - date: igandetan 09.00
+  - date: igandetan 11.00
 image: /media/f1.webp
 gallery:
   - /media/Screenshot_20250403_221152_YouTube.jpg
