@@ -4,7 +4,7 @@ ekitaldi:
     notes: txandaka
     location: Arribe/Atallu
 hiletak_default:
-  image: /media/hiletak.webp
+  image: /media/3-estela-lekunberri-min.jpg
   description: Jauna, zure eskuetan uzten dugu maite duguna, eman iezaiozu betiko
     atsedenaldia, eta betiereko argiak argi diezaion. Goian bego. Amen
 collaborators:
