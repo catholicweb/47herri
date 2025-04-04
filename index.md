@@ -9,13 +9,13 @@ hiletak_default:
     atsedenaldia, eta betiereko argiak argi diezaion. Goian bego. Amen
 collaborators:
   - image: /media/20250404_171601-2.jpg
-    title: Inaxio Azcoaga
-    description: El rey de los tejados
-  - image: /media/santi.webp
+    title: Iñazio Azcoaga
+    description: In solidum parrokoa (moderatzailea)
+  - image: /media/Screenshot_20250404_192119_Gallery.jpg
     title: Santi Garisoain
-    description: La paloma
+    description: In solidum parrokoa
   - image: /media/sotil.webp
     title: Jesús Mª Sotil
-    description: El abuelo
+    description: In solidum parrokoa
 layout: home
 ---
