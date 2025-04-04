@@ -2,6 +2,8 @@
 hiletak:
   - date: 01/04/2025 17.00
     title: XANTI LARRAZ
+  - date: 06/04/2025 11.00
+    title: LONTXA OLANO
 ekitaldi:
   - date: 16/04/2025 18:00-19:30
     title: Aitortzak
