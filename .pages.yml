@@ -67,9 +67,16 @@ content:
       - name: hiletak_default
         label: hiletak_default
         type: object
+        fields:
+          - { name: image, label: Image, type: image }
+          - { name: description, label: Deskribapena, type: string }
+      - name: collaborators
+        label: Gure apaizak
+        type: object
         list: true
         fields:
-          - { name: image, label: Image, type: string }
+          - { name: image, label: Image, type: image }
+          - { name: title, label: Izena, type: string }
           - { name: description, label: Deskribapena, type: string }
       - { name: layout, label: layout, type: string, default: home, hidden: true }
       - { name: bizum, label: Bizum, type: string }
