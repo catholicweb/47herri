@@ -69,7 +69,7 @@ content:
         type: object
         fields:
           - { name: image, label: Image, type: image }
-          - { name: description, label: Deskribapena, type: string }
+          - { name: description, label: Deskribapena, type: text }
       - name: collaborators
         label: Gure apaizak
         type: object
