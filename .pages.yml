@@ -14,8 +14,6 @@ content:
         fields:
         - { name: date, type: date, label: Fecha y hora, options: { time: true, format: dd/MM/yyyy HH.mm}}
         - { name: title, label: Hildakoa edo argibideak, type: string }
-        - { name: notes, label: Notes, type: string }
-        - { name: image, label: Image, type: image }
       - name: ekitaldi
         label: Ekitaldi
         type: object
