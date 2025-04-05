@@ -21,6 +21,6 @@ layout: home
 ---
 2019an Iruñako elizbarrutian pastoral barrutiak (uap delakoak) eratu ziren, Nafarroako 700 parrokiak 36 pastoral barrutitan kontzentratuz. Berez helburua da pastoralki parroki bakarra osatuko balute bezala lan egitea. Apez talde bat egon beharko litzateke barruti osorako eta pastoral kontseilu bakarra sortu. Herri guztietako eliztarrek sentitu beharko lukete zirkunskripzio bereko partaide direla.
 
-Juridikoki eta ekonomikoki, ordea, parroki bakoitzak bere burujabetasuna mantentzen du. Gure kasuan pastoral barrutiko 47 herrietatik, 44 parrokietako parroko gara gure in solidum taldea. Beste hiru parrokiak parrokorik gabe daude une honetan.
+Juridikoki eta ekonomikoki, ordea, parroki bakoitzak bere burujabetasuna mantentzen du. Gure kasuan pastoral barrutiko 47 herrietatik, 44 parrokietako parroko gara gure in solidum taldea. Beste hiru parrokiak parrokorik gabe daude une honetan (Baraibar, Mugiro eta Iribas).
 
 Eklesiastikoki gure pastoral barrutia Iruñako elizbarrutian dago, mendialdeko zonalde pastoralean eta Aralarko artziprestaldean hain zuzen ere. Gizarte zibilari dagokionez, Nafarroako hamar udalerrietan gaude: LEITZA, ARESO, GOIZUETA, ARANO,ARAITZ,BETELU, LARRAUN, LEKUNBERRI, BASABURUA ETA IMOTZ.
