@@ -1,4 +1,5 @@
 ---
+image: /media/Screenshot_20250405_182111_YouTube.jpg
 video: DHwAmkBhea0
 layout: parroquia
 locations:
