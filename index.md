@@ -25,4 +25,4 @@ Juridikoki eta ekonomikoki, ordea, parroki bakoitzak bere burujabetasuna mantent
 
 Eklesiastikoki gure pastoral barrutia Iruñako elizbarrutian dago, mendialdeko zonalde pastoralean eta Aralarko artziprestaldean hain zuzen ere. Gizarte zibilari dagokionez, Nafarroako hamar udalerrietan gaude: LEITZA, ARESO, GOIZUETA, ARANO,ARAITZ,BETELU, LARRAUN, LEKUNBERRI, BASABURUA ETA IMOTZ.
 
-Une honetan hiru parroko in solidum gaude aipatutako pastoral barrutian eta asteburutan beste hiru etortzen zaizkigu mezak ematen laguntzera.
+Une honetan hiru parroko in solidum gaude aipatutako pastoral barrutian eta asteburutan beste hiru etortzen zaizkigu mezak ematen laguntzera: Joxe Mari Aleman, Pako Beloki eta Peio Etxabarri.
