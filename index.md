@@ -5,9 +5,8 @@ ekitaldiak:
     location: Arribe/Atallu
 hiletak_default:
   image: /media/3-estela-lekunberri-min.jpg
-  description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, eman
-    iezaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego.
-    Amen
+  description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
+    betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen
 collaborators:
   - image: /media/20250404_171601-2.jpg
     title: Iñazio Azcoaga
