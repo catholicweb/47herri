@@ -19,10 +19,10 @@ collaborators:
     description: In solidum parrokoa
 layout: home
 ---
-2019an Iruñako elizbarrutian pastoral barrutiak (erdaraz "uap" direlakoak) eratu ziren, Nafarroako 700 parrokiak 36 pastoral barrutitan kontzentratuz. Berez helburua da pastoralki parroki bakarra osatuko balute bezala lan egitea. Apez talde bat egon beharko litzateke barruti osorako eta pastoral kontseilu bakarra sortu. Herri guztietako eliztarrek sentitu beharko lukete zirkunskripzio bereko partaide direla.
+2019an Iruñako elizbarrutian pastoral barrutiak (erdaraz "UAP" direlakoak) eratu ziren, Nafarroako 700 parrokiak 36 pastoral barrutitan kontzentratuz. Berez helburua da pastoralki parroki bakarra osatuko balute bezala lan egitea. Apez talde bat egon beharko litzateke barruti osorako eta pastoral kontseilu bakarra sortu. Herri guztietako eliztarrek sentitu beharko lukete zirkunskripzio bereko partaide direla.
 
 Juridikoki eta ekonomikoki, ordea, parroki bakoitzak bere burujabetasuna mantentzen du. Gure kasuan pastoral barrutiko 47 herrietatik, 44 parrokietako parroko gara gure in solidum taldea. Beste hiru parrokiak parrokorik gabe daude une honetan (Baraibar, Mugiro eta Iribas).
 
-Eklesiastikoki gure pastoral barrutia Iruñako elizbarrutian dago, Mendialdeko zonalde pastoralean eta Aralarko artziprestaldean hain zuzen ere. Gizarte zibilari dagokionez, Nafarroako hamar udalerrietan gaude: LEITZA, ARESO, GOIZUETA, ARANO,ARAITZ,BETELU, LARRAUN, LEKUNBERRI, BASABURUA ETA IMOTZ.
+Eklesiastikoki gure pastoral barrutia Iruñako elizbarrutian dago, Mendialdeko zonalde pastoralean eta Aralarko artziprestaldean hain zuzen ere. Lurralde antolakuntza zibilari dagokionez, Nafarroako hamar udalerrietan gaude: LEITZA, ARESO, GOIZUETA, ARANO,ARAITZ,BETELU, LARRAUN, LEKUNBERRI, BASABURUA ETA IMOTZ.
 
-Une honetan hiru parroko in solidum aritzen gara aipatutako pastoral barrutian eta asteburutan beste hiru apez etortzen zaizkigu mezak ematen laguntzera: Joxe Mari Aleman, Pako Beloki eta Peio Etxabarri.
+Une honetan hiru parroko in solidum aritzen gara aipatutako pastoral barrutian: Jesus Mari Sotil, Santiago Garisoain eta Iñazio Azcoaga, eta asteburutan beste hiru apez etortzen zaizkigu mezak ematen laguntzera: Joxe Mari Aleman, Pako Beloki eta Peio Etxabarri.
