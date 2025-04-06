@@ -64,10 +64,10 @@
                 </div>
             </div>
             <div class="filters-content">
-                <div class="row grid">
+                <div class="row grid notr">
                     <div v-scope @vue:mounted="fetchKantak()">
-                        <div class="col-lg-4 col-md-5 col-sm-8 col-11 all" v-for="item in kantak" style="aspect-ratio: 16/9" :class="item.playlist.trim().toLowerCase().replaceAll(' ', '-')" :key="item.videoId">
-                            <div class="facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)' }">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 all" v-for="item in kantak" style="aspect-ratio: 16/9" :class="item.playlist.trim().toLowerCase().replaceAll(' ', '-')" :key="item.videoId" style="padding: 0.4em;">
+                            <div class="facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)', 'border-radius': '8px' }">
                                 <header>[[ item.title ]]</header>
                                 <button type="button" @click="addIframe('youtube', item.videoId)">[[ item.title ]]</button>
                             </div>
