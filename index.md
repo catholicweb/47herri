@@ -19,9 +19,10 @@ collaborators:
     description: In solidum parrokoa
 layout: home
 forcetr:
-  - notes: Bilatu...
-  - notes: Zure helbide elektronikoa
-  - notes: Zure mezua
+  - notes: Oinazezko gartakariak (asteartetan eta ostiraletan)
+  - notes: Aintzazko gartakariak (asteazkenetan eta igandetan)
+  - notes: Pozezko gartakariak (astelehenetan eta larunbatetan)
+  - notes: Argizko gartakariak (ostegunetan)
 ---
 2019an Iruña-Tuterako elizbarrutian pastoral barrutiak (erdaraz "UAP" direlakoak) eratu ziren, Nafarroako 700 parrokiak 36 pastoral barrutitan kontzentratuz. Berez helburua da pastoralki parroki bakarra osatuko balute bezala lan egitea. Apez talde bat egon beharko litzateke barruti osorako eta pastoral kontseilu bakarra sortu. Herri guztietako eliztarrek sentitu beharko lukete zirkunskripzio bereko partaide direla.
 

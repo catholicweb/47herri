@@ -70,7 +70,7 @@ async function translateMissing(valuesArray, language) {
     dictionary[language] = { ...translations, ...dictionary[language] };
 
     // Guardar actualizaciones
-    fs.writeFileSync(dictPath, JSON.stringify(dictionary, null, 2), 'utf-8');
+    fs.writeFileSync(dictPath, JSON.stringify(dictionary), 'utf-8');
 }
 
 // Llamada a OpenAI
