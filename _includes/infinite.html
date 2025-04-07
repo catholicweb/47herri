@@ -63,6 +63,9 @@ let carouselApp = {
         let language = codeToLang[code] || 'basque'
 
         if (!language || !dictionary || !dictionary[language]) return str
+        if (!dictionary[language][str]) {
+            console.log('missing tr', str)
+        }
         return dictionary[language][str] || str
     },
     formatDate(isoString) {

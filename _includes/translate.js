@@ -63,8 +63,8 @@ async function translateMissing(valuesArray, language) {
 
     const translations = await translateWithOpenAI(missing, language)
 
-
     console.log('translations', translations)
+
 
     // Actualiza diccionario y guarda
     dictionary[language] = { ...translations, ...dictionary[language] };
@@ -78,9 +78,11 @@ async function translateWithOpenAI(missing, language) {
     console.log("[translateWithOpenAI]:", language, missing)
 
     if (!missing.length) return {}
+    if (missing.length == 1 && !missing[0]) return {}
 
     let apiKey = process.env.OPENAI_API_KEY
 
+    console.log('calling openai')
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
         headers: {
@@ -91,8 +93,8 @@ async function translateWithOpenAI(missing, language) {
             model: "gpt-4o-mini",
             response_format: { "type": "json_object" },
             messages: [
-                { role: "system", content: "You are a professional translator for a catholic website. Return only a JSON object with translations, ej { word1: translation-word1, ...}" },
-                { role: "user", content: `Translate the values of this json_object from basque to ${language}: ${JSON.stringify(missing, null, 2)}` }
+                { role: "system", content: "You are a professional translator for a catholic website. Return only a JSON object with translations, ej { text-1-as-given: translation-to-text-1, ...}." },
+                { role: "user", content: `Translate this texts from basque to ${language}: ${JSON.stringify(missing, null, 2)}` }
             ],
             temperature: 0.3
         })

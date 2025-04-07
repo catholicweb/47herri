@@ -112,9 +112,9 @@ layout: none
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <div class="search-container">
-                            <input type="text" class="form-control search-input" placeholder="Bilatu...">
-                            <i class="fas fa-search search-icon"></i>
+                        <div class="search-container" v-scope>
+                            <input type="text" class="form-control search-input" :placeholder="tr('Bilatu...')">
+                            <i class="search-icon"></i>
                         </div>
                     </div>
                 </div>
@@ -165,7 +165,7 @@ layout: none
                                 <blockquote>
                                     {{ collab.description }}
                                 </blockquote>
-                                <a href="">Telefonoa</a>
+                                <a href="tel:{{ collab.phonenumber | default: '+34948510080'  }}">Telefonoa</a>
                             </div>
                         </div>
                     </div>
@@ -211,15 +211,15 @@ layout: none
             <div class="row">
                 <div class="col-md-6">
                     <div class="form_container">
-                        <form action="">
+                        <form action="" v-scope>
                             <div>
-                                <input type="text" class="form-control" placeholder="Zure izena" />
+                                <input type="text" class="form-control" :placeholder="tr('Zure izena')" />
                             </div>
                             <div>
-                                <input type="email" class="form-control" placeholder="Zure helbide elektronikoa" />
+                                <input type="email" class="form-control" :placeholder="tr('Zure helbide elektronikoa')" />
                             </div>
                             <div>
-                                <input type="msg" class="form-control" placeholder="Zure mezua" />
+                                <input type="msg" class="form-control" :placeholder="tr('Zure mezua')" />
                             </div>
                             <div class="btn_box">
                                 <button>

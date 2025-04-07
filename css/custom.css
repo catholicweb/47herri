@@ -38,12 +38,16 @@ layout: null
     background-repeat: no-repeat;
 }
 
-
-
-
-
-
-
+.search-icon::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="%23888" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 0.4em;
+}
 
 
 h1,
@@ -83,6 +87,9 @@ blockquote {
     border: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+
+
 
 .search-icon {
     position: absolute;

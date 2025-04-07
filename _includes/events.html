@@ -147,7 +147,7 @@ vueApp = { ...vueApp, ...eventsApp };
                                 <!-- Tercer grupo: elementos en la misma línea -->
                                 <p v-for="(line, lineKey) in row[subKey]" style="margin-right:10px; display: flex;">
                                     [[ lineKey.trim() ]]
-                                    <span v-for="(item, itemKey) in line" :style="/*{ backgroundColor: getColorForKey(itemKey) }*/">[[ itemKey.trim() ]]</span>
+                                    <span v-for="(item, itemKey) in line">[[ itemKey.trim() ]]</span>
                                 </p>
                             </td>
                         </tr>
