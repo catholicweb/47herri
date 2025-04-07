@@ -51,7 +51,7 @@
             </div>
             <ul v-scope class="filters_menu" style="text-transform: capitalize;">
                 <li class="active" data-filter="*">Guztiak</li>
-                <li v-for="item in kantakList" :data-filter="'.'+item.trim().toLowerCase().replaceAll(' ', '-')">[[item.trim().toLowerCase()]]</li>
+                <li v-for="item in kantakList" :data-filter="'.'+item.trim().toLowerCase().replaceAll(' ', '-')">[[tr(item.trim().toLowerCase())]]</li>
             </ul>
             <div class="container">
                 <div class="row justify-content-center">
