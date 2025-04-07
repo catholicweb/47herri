@@ -1,4 +1,5 @@
 {% include head.html %}
+{% assign index_page = site.pages | where: "path", "index.md" | first %}
 
 <body class="sub_page">
     {% include header.html %}
@@ -7,7 +8,7 @@
         <div class="container ">
             <div class="heading_container heading_center">
                 <h2>
-                    Non gaude
+                    Nafarroako Pastoral Barrutiak
                 </h2>
             </div>
             <div class="row">
@@ -15,6 +16,9 @@
                     <img src="/media/uap.webp" width="100%" style="width: 100%; margin-top: -30px; margin-bottom: 30px;">
                 </div>
                 <div class="col-lg-6">
+                    {{ index_page.content }}
+                </div>
+                <div class="col-lg-6" style="margin: auto;">
                     {% include module name='maps' %}
                 </div>
             </div>

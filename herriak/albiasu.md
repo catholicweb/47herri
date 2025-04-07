@@ -8,8 +8,6 @@ gallery:
   - /media/Screenshot_20250329_234618_YouTube.webp
 video: 1aoxA5TDyQI
 layout: parroquia
-locations:
-  - {}
 title: albiasu
 valley: Larraun
 locations:
