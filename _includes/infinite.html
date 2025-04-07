@@ -6,7 +6,7 @@
                     <header>[[ item.title ]]</header>
                     <button type="button" @click="addIframe('youtube', item.videoId)">[[ item.title ]]</button>
                 </div>
-                [[ item.publishedAt ]]
+                [[ formatDate(item.publishedAt) ]]
                 <div class="infinite-timeline-bullet"></div>
             </div>
         </div>
@@ -29,11 +29,7 @@ let carouselApp = {
         let data = await fetch('/assets/videos.json')
         let items = await data.json()
         console.log(filter)
-        items = items.filter(item => filter.test(item.title));
-        this.allItems = items.map(item => ({
-            ...item,
-            publishedAt: this.formatDate(item.publishedAt) // Formatear la fecha
-        }));
+        this.allItems = items.filter(item => filter.test(item.title));
         this.loadMoreItems();
     },
     async fetchKantak() {
@@ -49,25 +45,55 @@ let carouselApp = {
         if (!year && eventDate < now) eventDate.setFullYear(eventDate.getFullYear() + 1);
         return eventDate.toISOString();
     },
+    tr(str) {
+        let code = this.lang || 'eu'
+        let codeToLang = {
+            eu: "basque",
+            es: "spanish",
+            en: "english",
+            bg: "bulgarian",
+            it: "italian",
+            ro: "romanian",
+            pt: "portuguese",
+            ca: "catalan",
+            ar: "arabic",
+            de: "german",
+            fr: "french"
+        };
+        let language = codeToLang[code] || 'basque'
+
+        if (!language || !dictionary || !dictionary[language]) return str
+        return dictionary[language][str] || str
+    },
     formatDate(isoString) {
-        if (!isoString) return ''
-        isoString = isoString.replaceAll('/', '-')
-        let date = new Date(isoString)
-        let hilabeteak = ["Urtarrilak", "Otsailak", "Martxoak", "Apirilak", "Maiatzak", "Ekainak", "Uztailak", "Abuztuak", "Irailak", "Urriak", "Azaroak", "Abenduak"]
-        let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-        let menses = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
-        // Function to convert ISO string to Basque date format
-        const monthIndex = date.getMonth()
-        let now = new Date()
-        let note = ''
-        if (date.getFullYear() < now.getFullYear()) note = ` - ${date.getFullYear()}`;
-        if (!this.lang || this.lang == 'eu') {
-            return `${hilabeteak[monthIndex]} ${date.getDate()} ${note}`.trim();
-        } else if (this.lang == 'es') {
-            return `${date.getDate()} ${meses[monthIndex]} ${note}`.trim();
-        } else {
-            return `${date.getDate()}-${menses[monthIndex]} ${note}`.trim();
-        }
+        if (!isoString) return '';
+        let lang = this.lang || 'eu'
+        isoString = isoString.replaceAll('/', '-');
+        const date = new Date(isoString);
+        const monthIndex = date.getMonth();
+        const now = new Date();
+        const note = date.getFullYear() < now.getFullYear() ? ` (${date.getFullYear()})` : '';
+
+        const months = {
+            eu: ["Urtarrilak", "Otsailak", "Martxoak", "Apirilak", "Maiatzak", "Ekainak", "Uztailak", "Abuztuak", "Irailak", "Urriak", "Azaroak", "Abenduak"],
+            es: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+            en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            bg: ["Януари", "Февруари", "Март", "Април", "Май", "Юни", "Юли", "Август", "Септември", "Октомври", "Ноември", "Декември"],
+            it: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+            ro: ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"],
+            pt: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+            ca: ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"],
+            ar: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+            de: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+            fr: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+            default: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII']
+        };
+
+        const names = months[lang] || months['default'];
+        return lang === 'eu' ?
+            `${names[monthIndex]} ${date.getDate()} ${note}`.trim() :
+            `${date.getDate()} ${names[monthIndex]} ${note}`.trim();
+
     },
     loadMoreItems() {
         const start = this.visibleItems.length;
