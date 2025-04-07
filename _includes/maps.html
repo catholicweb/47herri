@@ -62,13 +62,14 @@ function loadMap() {
                         config.icon = blueIcon
                     }
                     let geo = loc.geo.split(', ')
+                    let image = loc.image || page.image
 
                     var htmlContent = `<a href="${page.url}">
                     <h3 class="notr" style="text-transform: capitalize; color: black;text-align: center;">
                                             ${ name }
                                         </h3>
                                 <div style="margin: 0;background: white;">
-                                        <img width="100%" style="width:100%; aspect-ratio: 16/9; object-fit: cover;" loading="lazy" src="${ page.image } " alt="">
+                                        <img width="100%" style="width:100%; aspect-ratio: 16/9; object-fit: cover;" loading="lazy" src="${ image } " alt="">
                                 </div>
                         </a>`;
                     var marker = L.marker(geo, config).addTo(map).bindPopup(htmlContent)

@@ -25,6 +25,7 @@ locations:
     geo: 43.07797, -1.91260
   - name: Santa Krutz baseliza
     geo: 43.07968, -1.90440
+    image: /media/Screenshot_20250403_221152_YouTube.jpg
 title: leitza
 valley: Leitzaran
 ---
