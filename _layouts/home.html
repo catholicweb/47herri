@@ -203,13 +203,16 @@ layout: none
     <!-- book section -->
     <section class="book_section layout_padding">
         <div class="container">
-            <div class="heading_container">
-                <h2>
-                    Idatz ezazu
-                </h2>
-            </div>
             <div class="row">
+                <div class="col-md-6" style="padding-bottom: 3em;">
+                    {% include module name='maps' %}
+                </div>
                 <div class="col-md-6">
+                    <div class="heading_container">
+                        <h2>
+                            Idatz ezazu
+                        </h2>
+                    </div>
                     <div class="form_container">
                         <form action="" v-scope>
                             <div>
@@ -228,9 +231,6 @@ layout: none
                             </div>
                         </form>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    {% include module name='maps' %}
                 </div>
             </div>
         </div>
