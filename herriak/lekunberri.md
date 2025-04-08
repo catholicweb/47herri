@@ -11,11 +11,11 @@ mezak:
   - date: igandetan 09.00
     notes: Klarisetan
   - date: igandetan 11.00
-image: /media/d3b837671117-282807663138a24a34050o-a.webp
+image: /media/Screenshot_20250409_012001_Gallery.jpg
 video: 2tkabr7el28
 layout: parroquia
 locations:
-  - name: Done Joanes Bataiatzailearen
+  - name: San Joan Bataiatzailea
     geo: 43.00596, -1.89541
   - name: Pilar baseliza
     geo: 43.00672, -1.89805
