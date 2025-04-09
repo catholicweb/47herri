@@ -3,12 +3,13 @@ ekitaldiak:
   - date: larunbatetan 18:00 mezak
     notes: txandaka
     location: Arribe/Atallu
-  - date: 17:00
+  - date: 14/04/2025 17:00
     title: AITORTZAK
     notes: Klaratarren komentuan apez bat egongo da arratsaldeko 5etatik 6:30ak ARTE
       gutxi gora behera.
     image: /media/semea.webp
     location: "LEKUNBERRI "
+  - {}
 hiletak_default:
   image: /media/3-estela-lekunberri-min.jpg
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
