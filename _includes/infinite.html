@@ -45,6 +45,10 @@ let carouselApp = {
         if (!year && eventDate < now) eventDate.setFullYear(eventDate.getFullYear() + 1);
         return eventDate.toISOString();
     },
+    trArr(arr) {
+        if (!arr || !arr.length || (arr.length == 1 && arr[0].trim() == '0')) return ''
+        return '(' + arr.map(str => this.tr(str)).join(', ') + ')'
+    },
     tr(str) {
         let code = this.lang || 'eu'
         let codeToLang = {
@@ -60,6 +64,8 @@ let carouselApp = {
             de: "german",
             fr: "french"
         };
+        if (!str) return ''
+        str = str.trim()
         let language = codeToLang[code] || 'basque'
 
         if (!language || !dictionary || !dictionary[language]) return str

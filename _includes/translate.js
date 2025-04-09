@@ -65,9 +65,10 @@ async function translateMissing(valuesArray, language) {
 
     console.log('translations', translations)
 
+    missing.forEach((text, index) => {
 
-    // Actualiza diccionario y guarda
-    dictionary[language] = { ...translations, ...dictionary[language] };
+        dictionary[language][text] = translations[index];
+    });
 
     // Guardar actualizaciones
     fs.writeFileSync(dictPath, JSON.stringify(dictionary), 'utf-8');
@@ -93,8 +94,8 @@ async function translateWithOpenAI(missing, language) {
             model: "gpt-4o-mini",
             response_format: { "type": "json_object" },
             messages: [
-                { role: "system", content: "You are a professional translator for a catholic website. Return only a JSON object with translations, ej { text-1-as-given: translation-to-text-1, ...}." },
-                { role: "user", content: `Translate this texts from basque to ${language}: ${JSON.stringify(missing, null, 2)}` }
+                { role: "system", content: "You are a professional translator for a catholic website. Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}." },
+                { role: "user", content: `Translate this array of texts from basque to ${language}: ${JSON.stringify(missing, null, 2)}` }
             ],
             temperature: 0.3
         })
@@ -110,18 +111,28 @@ async function translateWithOpenAI(missing, language) {
         throw new Error("Invalid response from OpenAI");
     }
 
-    return JSON.parse(data.choices[0].message.content);
+    return JSON.parse(data.choices[0].message.content).translations;
 }
 
 
 
 async function translateAll(valuesArray) {
+    valuesArray.push('ostirala', 'osteguna')
     let a = await translateMissing(valuesArray, 'spanish');
 
 
     let keys = Object.keys(dictionary.spanish)
     let langs = ["english", "bulgarian", "italian", "romanian", "portuguese", "catalan", "arabic", "german", "french"]
     for (var i = 0; i < langs.length; i++) {
+
+        // delete uneded entries
+        dictionary[langs[i]] = Object.entries(dictionary[langs[i]])
+            .filter(([key]) => keys.includes(key)) // Keep entries where the key is in keysToPreserve
+            .reduce((acc, [key, value]) => {
+                acc[key] = value; // Rebuild the object with the filtered keys
+                return acc;
+            }, {});
+
         let a = await translateMissing(keys, langs[i]);
 
     }

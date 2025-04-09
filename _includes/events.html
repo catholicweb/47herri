@@ -68,8 +68,10 @@ const mappers = {
         if (!ordering.includes('weekday') && event.byday.length && !['igandetan', 'larunbatetan', 'astegunetan', 'asteguneta'].includes(event.byday[0])) {
             arr.push(event.byday)
         }
-        let str = arr.join(', ').trim()
-        return str ? [" (" + str + ")"] : [" "]
+        //if (arr.length == 0) return [' ']
+        return arr
+        /*let str = arr.join(', ').trim()
+        return str ? [" (" + str + ")"] : [" "]*/
     }
 }
 
@@ -125,29 +127,29 @@ vueApp = { ...vueApp, ...eventsApp };
 </script>
 <template>
     {%- assign params = include.params -%}
-    <div class="events" v-scope @vue:mounted="fetchEvents()">
+    <div class="events notr" v-scope @vue:mounted="fetchEvents()">
         <!-- Primer grupo -->
         <div v-for="(group, groupKey) in groupedEvents({{ params.ordering }})" style="margin-bottom:20px;" class="row">
-            <h1 class="col-12 heading_center">[[ groupKey.trim() ]]</h1>
+            <h1 class="col-12 heading_center">[[ tr(groupKey) ]]</h1>
             <!-- Segundo grupo: cada clave genera una tabla -->
             <div v-for="(table, tableKey) in group" style="margin-bottom:20px;" class="col-md-6 col-lg-4" :class="tableKey">
-                <h3>[[ tableKey.trim() ]]</h3>
+                <h3>[[ tr(tableKey) ]]</h3>
                 <table border="1">
                     <thead v-if="getSubKeys(table)[0] != ' '">
                         <tr>
                             <th> </th>
-                            <th v-for="subKey in getSubKeys(table)">[[ subKey.trim() ]]</th>
+                            <th v-for="subKey in getSubKeys(table)">[[ tr(subKey) ]]</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- Segundo grupo -->
                         <tr v-for="(row, rowKey) in table">
-                            <td>[[ rowKey.trim() ]]</td>
+                            <td>[[ tr(rowKey) ]]</td>
                             <td v-for="subKey in getSubKeys(table)">
                                 <!-- Tercer grupo: elementos en la misma línea -->
                                 <p v-for="(line, lineKey) in row[subKey]" style="margin-right:10px; display: flex;">
-                                    [[ lineKey.trim() ]]
-                                    <span v-for="(item, itemKey) in line">[[ itemKey.trim() ]]</span>
+                                    [[ tr(lineKey) ]]
+                                    <span>[[ trArr(Object.keys(line)) ]]</span>
                                 </p>
                             </td>
                         </tr>

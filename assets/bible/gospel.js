@@ -3,6 +3,15 @@ import jsdom from 'jsdom';
 const { JSDOM } = jsdom;
 import fs from 'fs'; // Importar el módulo de sistema de archivos
 
+
+const headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.9,es;q=0.8',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1'
+};
+
 async function fetchCors(url, bypass) {
     if (bypass) {
         let response = await fetch(url, { referrerPolicy: "no-referrer", cache: "force-cache" });
@@ -67,9 +76,11 @@ async function fetchBibleCom(version, reference) {
 
 
 
+
+
 async function fetchBizkeliza(date) {
-    console.log('fetchBizkeliza', date)
-    let formattedDate = date.toLocaleDateString('en-GB').split('/').reverse().join('-');
+    let formattedDate = date.toISOString().split('T')[0].split('-').reverse().join('-');
+    console.log('fetchBizkeliza', formattedDate)
 
     let source = await fetchCors(`https://bizkeliza.org/eu/ebanjelizazinoa/liturgia/ebenjelioa-eta-irakurgaiak/?d=${formattedDate}`)
 
@@ -80,19 +91,33 @@ async function fetchBizkeliza(date) {
         segunda: 'div:nth-last-of-type(3)',
     }, '.evangelio-textos-content')
 
+
+
     if (!readings.primera) {
         readings.primera = readings.segunda
         delete readings.segunda
     }
-    let ref = {}
+    let ref = { date: formattedDate }
     if (readings.primera) ref.primera = readings.primera.split('\n').filter(Boolean)[2]
-    if (readings.evangelio) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[2]
+
     if (readings.salmo) ref.salmo = readings.salmo.split('\n').filter(Boolean)[0]
     if (readings.segunda) ref.segunda = readings.segunda.split('\n').filter(Boolean)[2]
+
+    if (readings.evangelio) {
+        ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[2].replace('', '-').trim()
+        if (ref.evangelio.length > 30 || ref.evangelio.length == 0) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[1].replace('', '-').trim()
+        if (ref.evangelio.length > 30 || ref.evangelio.length == 0) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[3].replace('', '-').trim()
+    }
+
 
     console.log(ref)
     return { ref, readings }
 }
+
+
+
+
+
 
 let bibleApp = {
     readings: {},
@@ -116,7 +141,7 @@ let bibleApp = {
             pt: 'BPT09DC:228', // portugues
             ca: 'BCI:335', // catalan
             de: 'SCH2000:157', // deutsch
-            bu: '%25D0%25A1%25D0%2598:1558' // bulgarian
+            bg: '%25D0%25A1%25D0%2598:1558' // bulgarian
         }
         lang = Object.keys(translations)[this.tr_test % 9]
         if (lang == 'es') {
@@ -148,26 +173,30 @@ let bibleApp = {
 
 async function saveResults() {
     // Start date: March 26, 2025
-    const startDate = new Date(2025, 2, 26); // Month is 0-indexed in JavaScript, so March is month 2
-    const results = {};
+    const results = JSON.parse(fs.readFileSync('ref.json', 'utf8') || '{}') || {};
+    const startDate = new Date(2025, 3, 8); // Month is 0-indexed in JavaScript, so March is month 2
 
     // Iterate over the next 60 days
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 100; i++) {
         // Calculate the date
         const currentDate = new Date(startDate);
         currentDate.setDate(startDate.getDate() + i);
+        // Format the date in the format yyyy-mm-dd
+        const formattedDate = currentDate.toISOString().split('T')[0];
+
+
+        if (results[formattedDate]) continue
 
         // Call the fetchBizaky function with the current date
         const result = await fetchBizkeliza(currentDate);
 
-        // Format the date in the format yyyy-mm-dd
-        const formattedDate = currentDate.toISOString().split('T')[0];
-        // Store the result in the results object
-        results[formattedDate] = result.ref.evangelio;
-    }
 
-    // Write the results to ref.json
-    fs.writeFileSync('ref.json', JSON.stringify(results, null, 2));
+        // Store the result in the results object
+        results[formattedDate] = result.ref.evangelio || '';
+
+        // Write the results to ref.json
+        fs.writeFileSync('ref.json', JSON.stringify(results, null, 2));
+    }
 
     console.log('Results saved to ref.json');
 }
@@ -191,7 +220,7 @@ async function downloadGospels(argument) {
         pt: 'BPT09DC:228', // portugues
         ca: 'BCI:335', // catalan
         de: 'SCH2000:157', // deutsch
-        bu: '%25D0%25A1%25D0%2598:1558' // bulgarian
+        bg: '%25D0%25A1%25D0%2598:1558' // bulgarian
     }
 
     // Define the number of chapters for each Gospel
@@ -258,7 +287,8 @@ function splitJsonData() {
 //splitJsonData()
 
 // Run the function
-//saveResults().catch(err => console.error(err));
+saveResults().catch(err => console.error(err));
 
 // Run the function
-downloadGospels().catch(err => console.error(err));
+
+//downloadGospels().catch(err => console.error(err));
