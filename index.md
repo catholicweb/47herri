@@ -3,6 +3,12 @@ ekitaldiak:
   - date: larunbatetan 18:00 mezak
     notes: txandaka
     location: Arribe/Atallu
+  - date: 17:00
+    title: AITORTZAK
+    notes: Klaratarren komentuan apez bat egongo da arratsaldeko 5etatik 6:30ak ARTE
+      gutxi gora behera.
+    image: /media/semea.webp
+    location: "LEKUNBERRI "
 hiletak_default:
   image: /media/3-estela-lekunberri-min.jpg
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
@@ -18,11 +24,6 @@ collaborators:
     title: Jesús Mª Sotil
     description: In solidum parrokoa
 layout: home
-forcetr:
-  - notes: Oinazezko gartakariak (asteartetan eta ostiraletan)
-  - notes: Aintzazko gartakariak (asteazkenetan eta igandetan)
-  - notes: Pozezko gartakariak (astelehenetan eta larunbatetan)
-  - notes: Argizko gartakariak (ostegunetan)
 ---
 2019an Iruña-Tuterako elizbarrutian pastoral barrutiak (erdaraz "UAP" direlakoak) eratu ziren, Nafarroako 700 parrokiak 36 pastoral barrutitan kontzentratuz. Berez helburua da pastoralki parroki bakarra osatuko balute bezala lan egitea. Apez talde bat egon beharko litzateke barruti osorako eta pastoral kontseilu bakarra sortu. Herri guztietako eliztarrek sentitu beharko lukete zirkunskripzio bereko partaide direla.
 
