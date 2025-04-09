@@ -1,6 +1,7 @@
 ---
 mezak:
   - date: igandetan (1. astea) 12:00
+    language: elebidunean
 image: /media/Screenshot_20250330_003359_YouTube.webp
 video: Rd0UfY7W8EI
 layout: parroquia

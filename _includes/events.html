@@ -68,6 +68,8 @@ const mappers = {
         if (!ordering.includes('weekday') && event.byday.length && !['igandetan', 'larunbatetan', 'astegunetan', 'asteguneta'].includes(event.byday[0])) {
             arr.push(event.byday)
         }
+        // langs
+        arr.push(event.language || 'euskaraz')
         //if (arr.length == 0) return [' ']
         return arr
         /*let str = arr.join(', ').trim()

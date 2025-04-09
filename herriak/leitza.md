@@ -13,6 +13,7 @@ mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
   - date: larunbatetan 19.30
+    language: elebidunean
   - date: igandetan 09.00
   - date: igandetan 11.00
 image: /media/f1.webp

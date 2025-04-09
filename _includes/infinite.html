@@ -47,7 +47,18 @@ let carouselApp = {
     },
     trArr(arr) {
         if (!arr || !arr.length || (arr.length == 1 && arr[0].trim() == '0')) return ''
-        return '(' + arr.map(str => this.tr(str)).join(', ') + ')'
+
+        let map = { 'erderaz': 'c', 'euskaraz': 'e', 'elebidunean': 'b' }
+        let langs = ''
+        Object.keys(map).forEach(str => {
+            if (arr.includes(str)) {
+                arr = arr.filter(item => item !== str);
+                langs = ' (' + map[str] + ')';
+            }
+        });
+
+        if (!arr.length) return langs
+        return ('(' + arr.map(str => this.tr(str)).join(', ') + ')' + langs).trim()
     },
     tr(str) {
         let code = this.lang || 'eu'

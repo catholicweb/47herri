@@ -1,6 +1,7 @@
 ---
 mezak:
   - date: igandetan 12:00 5. astea
+    language: elebidunean
 image: /media/Screenshot_20250330_091555_YouTube.webp
 video: jdU6p_7YVU4
 layout: parroquia

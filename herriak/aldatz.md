@@ -1,12 +1,9 @@
 ---
 mezak:
-  - date: astegunetan 09.00
-    notes: Agustinetan egunero
-  - date: larunbatetan 09.00
+  - date: astegunetan, larunbatetan eta igandetan 09.00
     notes: Agustinetan
+    language: erderaz
   - date: larunbatetan 18.00 1. astea
-  - date: igandetan 09.00
-    notes: Agustinetan
 image: /media/Screenshot_20250329_235624_YouTube.webp
 video: UDePaBt8_ek
 layout: parroquia

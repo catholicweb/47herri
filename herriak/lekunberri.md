@@ -5,12 +5,14 @@ hiletak:
 mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
-  - date: larunbatetan 09.00
+    language: erderaz 
+  - date: larunbatetan eta igandetan 09.00
     notes: Klarisetan
+    language: erderaz
   - date: larunbatetan 18.30
-  - date: igandetan 09.00
-    notes: Klarisetan
+    language: elebidunean
   - date: igandetan 11.00
+    language: elebidunean
 image: /media/Screenshot_20250409_012001_Gallery.jpg
 video: 2tkabr7el28
 layout: parroquia

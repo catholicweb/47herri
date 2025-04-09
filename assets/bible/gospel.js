@@ -174,10 +174,10 @@ let bibleApp = {
 async function saveResults() {
     // Start date: March 26, 2025
     const results = JSON.parse(fs.readFileSync('ref.json', 'utf8') || '{}') || {};
-    const startDate = new Date(2025, 3, 8); // Month is 0-indexed in JavaScript, so March is month 2
+    const startDate = new Date(); // Month is 0-indexed in JavaScript, so March is month 2
 
-    // Iterate over the next 60 days
-    for (let i = 0; i < 100; i++) {
+    // Iterate over the next XYZ days
+    for (let i = 0; i < 200; i++) {
         // Calculate the date
         const currentDate = new Date(startDate);
         currentDate.setDate(startDate.getDate() + i);

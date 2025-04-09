@@ -20,6 +20,7 @@ layout: null
 {%- assign date_long = item.date | append: item.notes | downcase -%}
 {%- assign date_dots = date_long | replace: '.' , ':' | replace: 'tan' , ':00' -%}
 "raw": "{{ item.date }}",
+"language": "{{ item.language }}",
 "byday": {% include brute_regex string=date_long substrings=bydays %},
 "times": {% include brute_regex string=date_dots substrings=times %},
 "byweek": {% include brute_regex string=date_long substrings=byweek %},

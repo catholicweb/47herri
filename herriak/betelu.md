@@ -4,7 +4,9 @@ hiletak:
 mezak:
   - date: ostirala 11.00
     notes: Santa Kruz ermitten
+    language: elebidunean
   - date: igandetan 12.30
+    language: elebidunean
 image: /media/Screenshot_20250324_223949_YouTube-1.webp
 video: 46Wos9wDdpw
 layout: parroquia
