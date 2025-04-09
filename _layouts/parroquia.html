@@ -10,14 +10,21 @@
                 </h2>
             </div>
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-6">
                     {% include module name='facade' yt=page.video %}
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="detail-box">
                         {{ content }}
                     </div>
                 </div>
+                {% comment %}
+                <div class="container">
+                    <div class="row">
+                        {% include module name='gallery' filter=page.title %}
+                    </div>
+                </div>
+                {% endcomment %}
             </div>
         </div>
     </section>
@@ -27,7 +34,7 @@
                 <h2>Azken ospakizunak</h2>
             </div>
             <div class="row">
-                {% assign filter= page.title | replace: 'igoa eta aizarotz' , 'igoa' %}
+                {% assign filter= page.title | replace: 'igoa eta aizarotz' , 'igoa|aizarotz' %}
                 {% include module name='infinite' filter=filter %}
             </div>
         </div>
@@ -44,17 +51,6 @@
             </div>
         </div>
     </section>
-    <!--<section class="about_section layout_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 ">
-                    <div class="img-box">
-                        <img src="/media/about-img.webp" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
     <!-- end about section -->
     {% include footer.html %}
 </body>

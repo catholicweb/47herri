@@ -1,0 +1,112 @@
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+function attachClose() {
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox && lightbox.style.display === 'flex') {
+                lightbox.style.display = 'none';
+            }
+        }
+    });
+    lightbox.addEventListener('click', event => {
+        if (event.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+}
+
+document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+        attachClose()
+    });
+});
+closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+</script>
+<template>
+    {% assign gallery = page.image | append: "|" %}
+    {% for image in page.gallery %}
+    {% assign gallery = gallery | append: image | append: "|" %}
+    {% endfor %}
+    {% for location in page.locations %}
+    {% if location.image %}
+    {% assign gallery = gallery | append: location.image | append: "|" %}
+    {% endif %}
+    {% endfor %}
+    {% assign gallery = gallery | split: '|' %}
+    {% assign unique_string = '' %}
+    <div class="container py-4">
+        <div class="row g-3 gallery">
+            {% for image in gallery %}
+            {% unless unique_string contains image %}
+            {% assign unique_string = unique_string | append: image %}
+            <div class="col-6 col-md-4 col-lg-3 ratio-box">
+                <img loading="lazy" src="{{ image }}" alt="Imagen {{ forloop.index }}" class="img-cover">
+            </div>
+            {% endunless %}
+            {% endfor %}
+        </div>
+    </div>
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" src="" alt="" />
+    </div>
+</template>
+<style>
+.gallery img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    /*transform: rotate(1deg);*/
+}
+
+.ratio-box {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.img-cover {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+</style>

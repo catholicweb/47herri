@@ -27,4 +27,5 @@ modules:
   - analytics
   - translate
   - infinite
+  - gallery
 
