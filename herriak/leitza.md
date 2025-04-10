@@ -14,6 +14,10 @@ ekitaldiak:
     notes: Penitentzi ospakizuna egongo da Leitzako elizan. Gazteei zuzendua izango
       da baino denentzako irekia.
     image: /media/semea.webp
+  - date: 17/04/2025
+    title: "JAUNAREN AZKEN AFARIKO OSPAKIZUNA "
+    notes: Ospakizu bukatutakoan ordu santua egongo da nahi duten guztientzat
+    image: /media/IMG-20250410-WA0023.jpg
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
