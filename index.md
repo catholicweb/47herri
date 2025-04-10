@@ -10,7 +10,7 @@ ekitaldiak:
     image: /media/semea.webp
     location: LEKUNBERRI
   - date: 15/04/2025 18:00
-    title: "AITORTZAK"
+    title: AITORTZAK
     notes: Penitentzi ospakizuna egongo da Goizuetako elizan eta bi apez aitortza
       ospatu ahal izateko.
     image: /media/semea.webp
