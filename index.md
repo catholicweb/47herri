@@ -23,12 +23,15 @@ collaborators:
   - image: /media/20250404_171601-2.jpg
     title: Iñazio Azcoaga
     description: In solidum parrokoa (moderatzailea)
+    phonenumber: 646 11 36 05
   - image: /media/Screenshot_20250404_192119_Gallery.jpg
     title: Santi Garisoain
     description: In solidum parrokoa
+    phonenumber: 648 77 22 11
   - image: /media/Screenshot_20250404_192754_Gallery.jpg
     title: Jesús Mª Sotil
     description: In solidum parrokoa
+    phonenumber: 638 73 95 75
 layout: home
 ---
 2019an Iruña-Tuterako elizbarrutian pastoral barrutiak (erdaraz "UAP" direlakoak) eratu ziren, Nafarroako 700 parrokiak 36 pastoral barrutitan kontzentratuz. Berez helburua da pastoralki parroki bakarra osatuko balute bezala lan egitea. Apez talde bat egon beharko litzateke barruti osorako eta pastoral kontseilu bakarra sortu. Herri guztietako eliztarrek sentitu beharko lukete zirkunskripzio bereko partaide direla.

@@ -165,7 +165,7 @@ layout: none
                                 <blockquote>
                                     {{ collab.description }}
                                 </blockquote>
-                                <a href="tel:{{ collab.phonenumber | default: '+34948510080'  }}">Telefonoa</a>
+                                <a href="tel:+34{{ collab.phonenumber | replace: ' ', '' | default: '948510080'  }}">Deitu</a>
                             </div>
                         </div>
                     </div>
