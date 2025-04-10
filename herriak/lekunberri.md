@@ -2,10 +2,15 @@
 hiletak:
   - date: 04/04/2025 18.00
     title: MARITXU ZUBELDIA
+ekitaldiak:
+  - date: 17/04/2025 18:00
+    title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
+    notes: Arratsaldeko 5etan komentuan eta 6tan parrokian izango dira ospakizunak
+    image: /media/IMG-20250410-WA0023.jpg
 mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
-    language: erderaz 
+    language: erderaz
   - date: larunbatetan eta igandetan 09.00
     notes: Klarisetan
     language: erderaz
