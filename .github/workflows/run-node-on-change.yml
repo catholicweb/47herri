@@ -26,6 +26,11 @@ jobs:
 
       - name: Run custom Node script
         run: node _includes/translate.js
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Run custom Node script
         run: node _includes/youtubelist.js
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          
