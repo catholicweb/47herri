@@ -1,6 +1,11 @@
 ---
 hiletak:
   - {}
+ekitaldiak:
+  - date: 17/04/2025 12:00
+    title: "AITORTZAK "
+    notes: Apez bat egongo da Beteluko elizan
+    image: /media/semea.webp
 mezak:
   - date: ostirala 11.00
     notes: Santa Kruz ermitten
