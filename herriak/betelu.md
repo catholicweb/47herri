@@ -6,6 +6,9 @@ ekitaldiak:
     title: "AITORTZAK "
     notes: Apez bat egongo da Beteluko elizan
     image: /media/semea.webp
+  - date: 17/04/2025 19:30
+    title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
+    image: /media/IMG-20250410-WA0023.jpg
 mezak:
   - date: ostirala 11.00
     notes: Santa Kruz ermitten
