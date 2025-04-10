@@ -9,13 +9,21 @@ ekitaldiak:
     title: Aitortzak
     notes: Apez bat egongo da elizan arratsaldeko 6etatik 7:30k arte gutxi gora behera
     image: /media/semea.webp
+  - date: 17/04/2025 11:00
+    title: AITORTZAK
+    notes: Penitentzi ospakizuna egongo da Leitzako elizan. Gazteei zuzendua izango
+      da baino denentzako irekia.
+    image: /media/semea.webp
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
+    language: euskaraz
   - date: larunbatetan 19.30
     language: elebidunean
   - date: igandetan 09.00
+    language: euskaraz
   - date: igandetan 11.00
+    language: euskaraz
 image: /media/f1.webp
 gallery:
   - /media/Screenshot_20250403_221152_YouTube.jpg
