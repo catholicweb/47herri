@@ -27,7 +27,7 @@ function extractValues(obj, keys) {
             results.push(v.trim());
         }
         if (typeof v === 'object' && v !== null) {
-            results.push(...extractValues(v, keys));
+            results.push(...extractValues(v, [...keys, 'title']));
         }
     }
     return results;
@@ -36,7 +36,6 @@ function extractValues(obj, keys) {
 const files = getMarkdownFiles(dir);
 
 for (const file of files) {
-    console.log(file)
     const content = fs.readFileSync(file, 'utf-8');
     const parsed = matter(content);
     const values = extractValues(parsed.data, keysToExtract);
@@ -78,12 +77,10 @@ async function translateMissing(valuesArray, language) {
 async function translateWithOpenAI(missing, language) {
     console.log("[translateWithOpenAI]:", language, missing)
 
-    if (!missing.length) return {}
-    if (missing.length == 1 && !missing[0]) return {}
+    if (!missing.length) return []
+    if (missing.length == 1 && !missing[0]) return []
 
     let apiKey = process.env.OPENAI_API_KEY
-
-    console.log(apiKey)
 
     console.log('calling openai')
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -144,5 +141,7 @@ async function translateAll(valuesArray) {
 // Convertir a array si lo necesitas
 const valuesArray = [...valueSet];
 console.log(valuesArray);
+
+
 
 translateAll(valuesArray)
