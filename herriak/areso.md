@@ -8,6 +8,9 @@ ekitaldiak:
   - date: 18/04/2025 16:30
     title: JAUNAREN HERIOTZAREN OFIZIOAK
     image: /media/Screenshot_20250411_132224_Samsung Internet.jpg
+  - date: 19/04/2025 20:00
+    title: PAZKO BEILA
+    image: /media/Screenshot_20250411_135255_Samsung Internet.jpg
 mezak:
   - date: igandetan 10.00
     language: euskaraz
