@@ -11,6 +11,10 @@ ekitaldiak:
     title: JAUNAREN HERIOTZAREN OFIZIOAK
     notes: Parrokian 6tan eta komentuan 5etan
     image: /media/Screenshot_20250411_132224_Samsung Internet.jpg
+  - date: 18/04/2025 12:00
+    title: "GURUTZ BIDEA "
+    notes: Parrokiatik abiatuta
+    image: /media/Screenshot_20250411_133316_Samsung Internet.jpg
 mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
