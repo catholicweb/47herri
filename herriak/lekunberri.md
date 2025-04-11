@@ -19,7 +19,7 @@ ekitaldiak:
     title: "PAZKO BEILA "
     notes: Komentuan arratsaldeko zortzitan eta parrokian hamaiketan
     image: /media/Screenshot_20250411_135255_Samsung Internet.jpg
-  - date: 18/04/2025 20:00
+  - date: 17/04/2025 20:00
     title: ORDU SANTUA
     notes: Komentuan izango da.
     image: /media/Screenshot_20250411_144741_Samsung Internet.jpg
