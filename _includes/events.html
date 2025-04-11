@@ -61,7 +61,7 @@ const mappers = {
     },
     long(event) {
         if (event.type == 'ekitaldiak') {
-            return [`${event.times[0]} (${event.location.toLowerCase()})`]
+            return [`${event.times[0]} - ${event.location.toLowerCase()}`]
         }
         return [`${event.times[0]} - ${event.name} (${event.location.toLowerCase() })`]
     },
@@ -128,7 +128,14 @@ let eventsApp = {
         events = this.forgetPastEvents(events)
         const mappingFns = ordering.map(fnc => mappers[fnc])
         return groupEvents(events, mappingFns);
-    }
+    },
+    showTooltip: function(el) {
+        let open = document.querySelectorAll('.tooltip.show')
+        for (var i = 0; i < open.length; i++) {
+            if (open[i] !== el) open[i].classList.remove('show')
+        }
+        el.nextElementSibling.classList.toggle('show')
+    },
 }
 if (!window.vueApp) window.vueApp = {}
 vueApp = { ...vueApp, ...eventsApp };
@@ -157,7 +164,13 @@ vueApp = { ...vueApp, ...eventsApp };
                                 <!-- Tercer grupo: elementos en la misma línea -->
                                 <p v-for="(line, lineKey) in row[subKey]" style="margin-right:10px; display: flex;">
                                     [[ tr(lineKey) ]]
-                                    <span>[[ trArr(Object.keys(line)) ]]</span>
+                                    <span v-if="Array.isArray(line) && line[0].notes">
+                                        <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
+                                        <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(line[0].notes) ]]</span>
+                                    </span>
+                                    <span v-else>
+                                        [[ trArr(Object.keys(line)) ]]
+                                    </span>
                                 </p>
                             </td>
                         </tr>
@@ -172,6 +185,47 @@ vueApp = { ...vueApp, ...eventsApp };
     <script src="https://unpkg.com/petite-vue"></script>
 </head>
 <style>
+/* Info tag style */
+.events .info-tag::before {
+    cursor: pointer;
+    content: '';
+    display: inline-block;
+    padding: 5px;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23000'%3E%3Ccircle cx='12' cy='12' r='10' stroke-width='2'/%3E%3Cline x1='12' y1='8' x2='12' y2='8' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='12' y1='12' x2='12' y2='16' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+
+/* Tooltip style */
+.events .tooltip {
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 8px;
+    padding: 5px 10px;
+    color: #fff;
+    width: 200px;
+    /*padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;*/
+    display: none;
+    /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip visible when toggled */
+.events .tooltip.show {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+
 .events table {
     width: 100%;
     border-collapse: collapse;
@@ -231,6 +285,6 @@ span:empty {
     border-radius: 4px;*/
     font-style: italic;
     padding: 0px 4px;
-    font-size: 0.7em;
+    font-size: 0.75rem;
 }
 </style>
