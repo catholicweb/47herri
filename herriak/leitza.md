@@ -18,6 +18,9 @@ ekitaldiak:
     title: "JAUNAREN AZKEN AFARIKO OSPAKIZUNA "
     notes: Ospakizu bukatutakoan ordu santua egongo da nahi duten guztientzat
     image: /media/IMG-20250410-WA0023.jpg
+  - date: 18/04/2025
+    title: "JAUNAREN HERIOTZAREN OFIZIOAK "
+    image: /media/Screenshot_20250411_132224_Samsung Internet.jpg
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
