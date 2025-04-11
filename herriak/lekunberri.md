@@ -15,6 +15,10 @@ ekitaldiak:
     title: "GURUTZ BIDEA "
     notes: Parrokiatik abiatuta
     image: /media/Screenshot_20250411_133316_Samsung Internet.jpg
+  - date: 19/04/2025 23:00
+    title: "PAZKO BEILA "
+    notes: Komentuan arratsaldeko zortzitan eta parrokian hamaiketan
+    image: /media/Screenshot_20250411_135255_Samsung Internet.jpg
 mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
