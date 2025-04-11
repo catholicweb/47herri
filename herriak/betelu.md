@@ -16,6 +16,9 @@ ekitaldiak:
     title: "GURUTZ BIDEA "
     notes: Parrokian izango da
     image: /media/Screenshot_20250411_133316_Samsung Internet.jpg
+  - date: 19/04/2025 21:00
+    title: PAZKO BEILA
+    image: /media/Screenshot_20250411_135255_Samsung Internet.jpg
 mezak:
   - date: ostirala 11.00
     notes: Santa Kruz ermitten
