@@ -25,6 +25,9 @@ ekitaldiak:
     title: "GURUTZ BIDEA "
     notes: Elizetik abiatuko da goizeko 8tan San Kruz ermitaraino
     image: /media/Screenshot_20250411_133316_Samsung Internet.jpg
+  - date: 19/04/2025 22:00
+    title: PAZKO BEILA
+    image: /media/Screenshot_20250411_135255_Samsung Internet.jpg
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
