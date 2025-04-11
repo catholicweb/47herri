@@ -118,10 +118,10 @@ let eventsApp = {
                 dates: event.dates.map(vueApp.parseDateToISO) // Convert dates
             }))
             .filter(event => !event.dates.length || event.dates.some(date => new Date(date) >= today))
-            .map(event => ({
-                ...event,
-                dates: event.dates.map(vueApp.formatDate) // Convert dates
-            }))
+        /*.map(event => ({
+            ...event,
+            dates: event.dates.map(vueApp.formatDate) // Convert dates
+        }))*/
     },
     groupedEvents: function(filter, ordering) {
         let events = this.events.filter(event => filter.test(JSON.stringify(event)));
@@ -152,7 +152,7 @@ vueApp = { ...vueApp, ...eventsApp };
                     <tbody>
                         <!-- Segundo grupo -->
                         <tr v-for="(row, rowKey) in table">
-                            <td>[[ tr(rowKey) ]]</td>
+                            <td>[[ formatDate(rowKey) ]]</td>
                             <td v-for="subKey in getSubKeys(table)">
                                 <!-- Tercer grupo: elementos en la misma línea -->
                                 <p v-for="(line, lineKey) in row[subKey]" style="margin-right:10px; display: flex;">

@@ -86,6 +86,7 @@ let carouselApp = {
         let lang = this.lang || 'eu'
         isoString = isoString.replaceAll('/', '-');
         const date = new Date(isoString);
+        if (isNaN(date.getTime())) return this.tr(isoString)
         const monthIndex = date.getMonth();
         const now = new Date();
         const note = date.getFullYear() < now.getFullYear() ? ` (${date.getFullYear()})` : '';
