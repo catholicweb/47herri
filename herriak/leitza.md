@@ -21,7 +21,7 @@ ekitaldiak:
   - date: 18/04/2025 18:00
     title: "JAUNAREN HERIOTZAREN OFIZIOAK "
     image: /media/Screenshot_20250411_132224_Samsung Internet.jpg
-  - date: 18/04/2025 8:00
+  - date: 18/04/2025 08:00
     title: "GURUTZ BIDEA "
     notes: Elizetik abiatuko da goizeko 8tan San Kruz ermitaraino
     image: /media/Screenshot_20250411_133316_Samsung Internet.jpg
