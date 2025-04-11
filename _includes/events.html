@@ -36,6 +36,10 @@ const mappers = {
         return [" "];
     },
     type(event) {
+        if (event.type == 'ekitaldiak') {
+            console.log(event.title)
+            return [event.title];
+        }
         return [event.type];
     },
     title(event) {
@@ -57,6 +61,9 @@ const mappers = {
         return event.byday;
     },
     long(event) {
+        if (event.type == 'ekitaldiak') {
+            return [`${event.times[0]} (${event.location})`]
+        }
         return [`${event.times[0]} - ${event.title} (${event.location})`]
     },
     notes(event) {

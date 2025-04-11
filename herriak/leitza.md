@@ -6,7 +6,7 @@ hiletak:
     title: LONTXA OLANO
 ekitaldiak:
   - date: 16/04/2025 18:00-19:30
-    title: Aitortzak
+    title: AITORTZAK
     notes: Apez bat egongo da elizan arratsaldeko 6etatik 7:30k arte gutxi gora behera
     image: /media/semea.webp
   - date: 17/04/2025 11:00
