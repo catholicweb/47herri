@@ -32,7 +32,7 @@ ekitaldiak:
     title: "AITORTZAK "
     notes: Prestakizuna erdaraz izango da.
     image: /media/semea.webp
-  - date: 17/04/2025 20;15
+  - date: 17/04/2025 20:15
     title: ORDU SANTUA
     image: /media/Screenshot_20250411_144741_Samsung Internet.jpg
 mezak:
