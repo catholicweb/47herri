@@ -70,7 +70,7 @@ async function translateMissing(valuesArray, language) {
     });
 
     // Guardar actualizaciones
-    fs.writeFileSync(dictPath, JSON.stringify(dictionary), 'utf-8');
+    fs.writeFileSync(dictPath, JSON.stringify(dictionary).replace('español', 'castellano'), 'utf-8');
 }
 
 // Llamada a OpenAI
