@@ -7,6 +7,9 @@ ekitaldiak:
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
     notes: Arratsaldeko 5etan komentuan eta 6tan parrokian izango dira ospakizunak
     image: /media/IMG-20250410-WA0023.jpg
+  - date: 18/04/2025 18:00
+    title: JAUNAREN HERIOTZAREN OFIZIOAK
+    notes: Parrokian 6tan eta komentuan 5etan
 mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
