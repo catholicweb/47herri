@@ -19,7 +19,7 @@ ekitaldiak:
   - date: 19/04/2025 21:00
     title: PAZKO BEILA
     image: /media/Screenshot_20250411_135255_Samsung Internet.jpg
-  - date: 18/04/2025 21:00
+  - date: 17/04/2025 21:00
     title: ORDU SANTUA ETA GAU GURTZA
     image: /media/Screenshot_20250411_144741_Samsung Internet.jpg
 mezak:
