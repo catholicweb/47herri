@@ -12,6 +12,10 @@ ekitaldiak:
   - date: 18/04/2025 16:30
     title: JAUNAREN HERIOTZAREN OFIZIOAK
     image: /media/Screenshot_20250411_132224_Samsung Internet.jpg
+  - date: 18/04/2025 11:00
+    title: "GURUTZ BIDEA "
+    notes: Parrokian izango da
+    image: /media/Screenshot_20250411_133316_Samsung Internet.jpg
 mezak:
   - date: ostirala 11.00
     notes: Santa Kruz ermitten
