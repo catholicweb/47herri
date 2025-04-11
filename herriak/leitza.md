@@ -30,7 +30,7 @@ ekitaldiak:
     image: /media/Screenshot_20250411_135255_Samsung Internet.jpg
   - date: 18/04/2025 11:00
     title: "AITORTZAK "
-    notes: Prestakizuna erdaraz
+    notes: Prestakizuna erdaraz izango da.
     image: /media/semea.webp
 mezak:
   - date: astegunetan 19.30
