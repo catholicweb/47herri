@@ -10,6 +10,7 @@ ekitaldiak:
   - date: 18/04/2025 18:00
     title: JAUNAREN HERIOTZAREN OFIZIOAK
     notes: Parrokian 6tan eta komentuan 5etan
+    image: /media/Screenshot_20250411_132224_Samsung Internet.jpg
 mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
