@@ -21,15 +21,15 @@ hiletak_default:
     betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen
 collaborators:
   - image: /media/20250404_171601-2.jpg
-    title: Iñazio Azcoaga
+    name: Iñazio Azcoaga
     description: In solidum parrokoa (moderatzailea)
     phonenumber: 646 11 36 05
   - image: /media/Screenshot_20250404_192119_Gallery.jpg
-    title: Santi Garisoain
+    name: Santi Garisoain
     description: In solidum parrokoa
     phonenumber: 648 77 22 11
   - image: /media/Screenshot_20250404_192754_Gallery.jpg
-    title: Jesús Mª Sotil
+    name: Jesús Mª Sotil
     description: In solidum parrokoa
     phonenumber: 638 73 95 75
 layout: home

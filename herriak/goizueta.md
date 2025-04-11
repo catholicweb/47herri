@@ -1,7 +1,7 @@
 ---
 hiletak:
   - date: 24/03/2025 18.00
-    title: Lazaro Perurena
+    name: Lazaro Perurena
 ekitaldiak:
   - date: 17/04/2025 19:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA

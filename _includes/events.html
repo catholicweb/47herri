@@ -27,7 +27,7 @@ function groupEvents(events, mappingFns) {
 
 const mappers = {
     location(event) {
-        return [event.location]
+        return [event.location ? event.location.toLowerCase() : ' ']
     },
     time(event) {
         return event.times
@@ -37,8 +37,7 @@ const mappers = {
     },
     type(event) {
         if (event.type == 'ekitaldiak') {
-            console.log(event.title)
-            return [event.title];
+            return [event.title ? event.title.trim() : ' '];
         }
         return [event.type];
     },
@@ -62,9 +61,9 @@ const mappers = {
     },
     long(event) {
         if (event.type == 'ekitaldiak') {
-            return [`${event.times[0]} (${event.location})`]
+            return [`${event.times[0]} (${event.location.toLowerCase()})`]
         }
-        return [`${event.times[0]} - ${event.title} (${event.location})`]
+        return [`${event.times[0]} - ${event.name} (${event.location.toLowerCase() })`]
     },
     notes(event) {
         let arr = event.notes ? [event.notes] : []

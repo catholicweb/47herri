@@ -50,7 +50,7 @@
                                 <!-- Primer grupo -->
                                 <div class="detail-box" style="margin-bottom: 0px;">
                                     <h2>
-                                        [[ event.title || event.type ]]
+                                        [[ event.name || event.title || event.type ]]
                                     </h2>
                                     <div class="overflow-hidden">
                                         <img v-if="event.image" loading="lazy" class="img-fluid circle-img" :src="event.image" style="width: 40%; float: right;" alt="">

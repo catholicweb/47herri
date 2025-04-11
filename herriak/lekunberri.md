@@ -1,7 +1,7 @@
 ---
 hiletak:
   - date: 04/04/2025 18.00
-    title: MARITXU ZUBELDIA
+    name: MARITXU ZUBELDIA
 ekitaldiak:
   - date: 17/04/2025 18:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
