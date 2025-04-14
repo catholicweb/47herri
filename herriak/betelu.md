@@ -21,7 +21,7 @@ ekitaldiak:
     image: /media/Screenshot_20250411_135255_Samsung Internet.jpg
   - date: 17/04/2025 21:00
     title: ORDU SANTUA
-    notes: " eta gau gurtza"
+    notes: Ordu santua eta gau gurtza
     image: /media/Screenshot_20250411_144741_Samsung Internet.jpg
 mezak:
   - date: ostirala 11.00
