@@ -1,9 +1,8 @@
-name: Run translate on Markdown Change
+name: Update youtube videos on cron
 
 on:
-  push:
-    paths:
-      - '**/*.md'
+  schedule:
+    - cron: '0 * * * *'  # Cada hora (UTC)
   workflow_dispatch:      # Permite lanzarlo manualmente también
 
 jobs:
@@ -22,8 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install --production
 
-      - name: Run translate
-        run: node _includes/translate.js
+      - name: Run youtubelist
+        run: node _includes/youtubelist.js
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
