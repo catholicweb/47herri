@@ -6,6 +6,9 @@ on:
       - '**/*.md'
   workflow_dispatch:      # Permite lanzarlo manualmente también
 
+permissions:
+  contents: write
+
 jobs:
   run-node-script:
     runs-on: ubuntu-latest
@@ -27,3 +30,10 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
+      - name: Commit changes
+        run: |
+          git config user.name "translate"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Update from GitHub Actions - translate" || echo "No changes to commit"
+          git push
