@@ -14,7 +14,7 @@ ekitaldiak:
     notes: Penitentzi ospakizuna egongo da Goizuetako elizan eta bi apez aitortza
       ospatu ahal izateko.
     image: /media/semea.webp
-    location: GOIZUETA
+    location: goizueta
 hiletak_default:
   image: /media/3-estela-lekunberri-min.jpg
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu

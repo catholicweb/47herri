@@ -46,7 +46,7 @@ async function getAllPlaylistId(pageToken = '') {
 }
 
 async function getVideos(playlistId, pageToken = '') {
-    let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=50&key=${API_KEY}`;
+    let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=200&key=${API_KEY}`;
     if (pageToken) url += `&pageToken=${pageToken}`;
 
     const response = await fetch(url);
