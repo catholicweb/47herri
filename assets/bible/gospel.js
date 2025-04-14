@@ -104,7 +104,7 @@ async function fetchBizkeliza(date) {
     if (readings.segunda) ref.segunda = readings.segunda.split('\n').filter(Boolean)[2]
 
     if (readings.evangelio) {
-        ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[2].replace('', '-').trim()
+        ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[2].trim() //.replace('', '-')
         if (ref.evangelio.length > 30 || ref.evangelio.length == 0) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[1].replace('', '-').trim()
         if (ref.evangelio.length > 30 || ref.evangelio.length == 0) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[3].replace('', '-').trim()
     }
