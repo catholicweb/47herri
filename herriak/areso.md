@@ -11,6 +11,10 @@ ekitaldiak:
   - date: 19/04/2025 20:00
     title: PAZKO BEILA
     image: /media/Screenshot_20250411_135255_Samsung Internet.jpg
+  - date: 2025/04/15 16:30
+    title: "AITORTZAK "
+    notes: Lau t'erditatik bostak arte
+    image: /media/semea.webp
 mezak:
   - date: igandetan 10.00
     language: euskaraz
