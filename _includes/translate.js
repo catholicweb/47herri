@@ -82,7 +82,7 @@ async function translateWithOpenAI(missing, language) {
 
     let apiKey = process.env.OPENAI_API_KEY
 
-    console.log('calling openai')
+    console.log('calling openai:', apiKey)
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
         headers: {

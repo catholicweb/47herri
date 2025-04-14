@@ -8,7 +8,7 @@ ekitaldiak:
     notes: Klaratarren komentuan apez bat egongo da arratsaldeko 5etatik 6:30ak ARTE
       gutxi gora behera.
     image: /media/semea.webp
-    location: LEKUNBERRI
+    location: lekunberri
   - date: 15/04/2025  18:00
     title: AITORTZAK
     notes: Penitentzi ospakizuna egongo da Goizuetako elizan eta bi apez aitortza

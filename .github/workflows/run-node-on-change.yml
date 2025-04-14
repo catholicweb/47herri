@@ -24,13 +24,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run youtubelist
+        run: node _includes/youtubelist.js
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+
       - name: Run translate
         run: node _includes/translate.js
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
-      - name: Run youtubelist
-        run: node _includes/youtubelist.js
-        env:
-          YT_API_KEY: ${{ secrets.YT_API_KEY }}
-          
