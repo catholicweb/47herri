@@ -2,7 +2,7 @@
 ekitaldiak:
   - date: 18/04/2025 17:00
     title: "JAUNAREN HERIOTZAREN OFIZIOAK "
-    image: /media/Screenshot_20250411_132224_Samsung Internet.jpg
+    image: /media/Screenshot_20250411_132224_Samsung Internet.webp
 mezak:
   - date: igandetan 10.00 4. astea
     language: elebidunean

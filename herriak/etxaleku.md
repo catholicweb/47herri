@@ -2,7 +2,7 @@
 ekitaldiak:
   - date: 17/04/2025 17:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
-    image: /media/IMG-20250410-WA0023.jpg
+    image: /media/IMG-20250410-WA0023.webp
 mezak:
   - date: igandetan 10.00 1. astea
     language: euskaraz

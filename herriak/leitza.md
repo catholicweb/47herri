@@ -17,24 +17,24 @@ ekitaldiak:
   - date: 17/04/2025 19:30
     title: "JAUNAREN AZKEN AFARIKO OSPAKIZUNA "
     notes: Ospakizu bukatutakoan ordu santua egongo da nahi duten guztientzat
-    image: /media/IMG-20250410-WA0023.jpg
+    image: /media/IMG-20250410-WA0023.webp
   - date: 18/04/2025 18:00
     title: "JAUNAREN HERIOTZAREN OFIZIOAK "
-    image: /media/Screenshot_20250411_132224_Samsung Internet.jpg
+    image: /media/Screenshot_20250411_132224_Samsung Internet.webp
   - date: 18/04/2025 08:00
     title: "GURUTZ BIDEA "
     notes: Elizetik abiatuko da goizeko 8tan San Kruz ermitaraino
-    image: /media/Screenshot_20250411_133316_Samsung Internet.jpg
+    image: /media/Screenshot_20250411_133316_Samsung Internet.webp
   - date: 19/04/2025 22:00
     title: PAZKO BEILA
-    image: /media/Screenshot_20250411_135255_Samsung Internet.jpg
+    image: /media/Screenshot_20250411_135255_Samsung Internet.webp
   - date: 18/04/2025 11:00
     title: "AITORTZAK "
     notes: Prestakizuna erdaraz izango da.
     image: /media/semea.webp
   - date: 17/04/2025 20:15
     title: ORDU SANTUA
-    image: /media/Screenshot_20250411_144741_Samsung Internet.jpg
+    image: /media/Screenshot_20250411_144741_Samsung Internet.webp
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
@@ -47,7 +47,7 @@ mezak:
     language: euskaraz
 image: /media/f1.webp
 gallery:
-  - /media/Screenshot_20250403_221152_YouTube.jpg
+  - /media/Screenshot_20250403_221152_YouTube.webp
 video: HdPgPOzptII
 layout: parroquia
 locations:
@@ -55,7 +55,7 @@ locations:
     geo: 43.07797, -1.91260
   - name: Santa Krutz baseliza
     geo: 43.07968, -1.90440
-    image: /media/Screenshot_20250403_221152_YouTube.jpg
+    image: /media/Screenshot_20250403_221152_YouTube.webp
 title: leitza
 valley: Leitzaran
 ---
