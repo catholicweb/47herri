@@ -214,20 +214,20 @@ layout: none
                         </h2>
                     </div>
                     <div class="form_container">
-                        <form action="" v-scope>
+                        <form id="contactForm" v-scope>
                             <div>
-                                <input type="text" class="form-control" :placeholder="tr('Zure izena')" />
+                                <input type="text" class="form-control" :placeholder="tr('Zure izena')" name="izena" :required="tr('Beharrezko eremua')" />
                             </div>
                             <div>
-                                <input type="email" class="form-control" :placeholder="tr('Zure helbide elektronikoa')" />
+                                <input type="email" class="form-control" :placeholder="tr('Zure helbide elektronikoa')" name="email" :required="tr('Beharrezko eremua')" />
                             </div>
                             <div>
-                                <input type="msg" class="form-control" :placeholder="tr('Zure mezua')" />
+                                <textarea type="msg" class="form-control" rows="4" :placeholder="tr('Zure mezua')" name="mezua" :required="tr('Beharrezko eremua')"></textarea>
                             </div>
                             <div class="btn_box">
-                                <button>
+                                <a onclick="sendForm('#contactForm')">
                                     Bidal ezazu
-                                </button>
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -237,6 +237,74 @@ layout: none
     </section>
     <!-- end book section -->
     {% include footer.html %}
+    <script type="text/javascript">
+    // Contact form
+    function sendForm(selector) {
+        let fields = document.querySelectorAll(selector + ' :is(input, select, textarea)')
+        let message = {}
+        for (var i = 0; i < fields.length; i++) {
+            let key = fields[i].name || fields[i].id
+            if (fields[i].required && !fields[i].value) {
+                fields[i].parentNode.classList.add('required')
+                fields[i].parentNode.dataset.required = vueApp.tr('Beharrezko eremua')
+                return
+            } else {
+                fields[i].parentNode.classList.remove('required')
+            }
+            message[key] = fields[i].value
+        }
+
+        var xhr = new XMLHttpRequest();
+        let url = `https://arrietaeguren.es/api/email47herri?message=${JSON.stringify(message, null, 2)}&from=${message.email}&subject=Mezu berria: ${message.izena}`
+        xhr.open('GET', url, true);
+        xhr.onreadystatechange = function() {
+            let form = document.querySelector(selector)
+            if (this.readyState !== 4 || this.status !== 200) {
+                form.classList.add('success')
+                form.dataset.success = 'Error... ' + this.responseText
+                return; // TODO: smarter error handling
+            }
+            // Clear
+            for (var i = 0; i < fields.length; i++) { fields[i].value = '' }
+            form.classList.add('success')
+            form.dataset.success = vueApp.tr('Eskerrik asko zure mezuagatik!')
+        };
+        xhr.send();
+        console.log(message)
+    }
+    </script>
+    <style type="text/css">
+    form .btn_box a {
+        margin-top: 15px;
+        border: none;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 10px 55px;
+        background-color: #009C46;
+        color: #ffffff !important;
+        cursor: pointer;
+        border-radius: 45px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        border: none;
+    }
+
+    .required :is(input, textarea, select) {
+        border: 1.5px solid red;
+    }
+
+    .required:before {
+        content: attr(data-required);
+        color: red;
+        font-size: small;
+    }
+
+    form.success:after {
+        content: attr(data-success);
+        color: blue;
+        font-size: small;
+    }
+    </style>
 </body>
 
 </html>

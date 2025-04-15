@@ -90,11 +90,11 @@ async function translateWithOpenAI(missing, language) {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            model: "gpt-4o-mini",
+            model: "gpt-4o",
             response_format: { "type": "json_object" },
             messages: [
-                { role: "system", content: "You are a professional translator for a catholic website. Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}." },
-                { role: "user", content: `Translate this array of texts from basque to ${language}: ${JSON.stringify(missing, null, 2)}` }
+                { role: "system", content: "You are a professional translator for a catholic website, texts most likely include catholic event titles, descriptions, timings etc... Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}." },
+                { role: "user", content: `Translate this array of texts from basque (leitza) to ${language}: ${JSON.stringify(missing, null, 2)}` }
             ],
             temperature: 0.3
         })
@@ -116,7 +116,7 @@ async function translateWithOpenAI(missing, language) {
 
 
 async function translateAll(valuesArray) {
-    //valuesArray.push('Jauna')
+    valuesArray.push('Beharrezko eremua', 'Eskerrik asko zure mezuagatik!')
     let a = await translateMissing(valuesArray, 'spanish');
 
 
