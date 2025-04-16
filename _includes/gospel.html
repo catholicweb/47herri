@@ -68,6 +68,7 @@ let bibleApp = {
         }
         this.lang = langMap[lang] || lang || 'eu';
         console.log('new lang!', lang, '->', this.lang)
+        document.querySelector('html').lang = this.lang
         this.fetchTranslation()
     },
     fetchTranslation: async function() {

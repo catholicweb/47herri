@@ -148,7 +148,7 @@ vueApp = { ...vueApp, ...eventsApp };
             <h1 class="col-12 heading_center">[[ tr(groupKey) ]]</h1>
             <!-- Segundo grupo: cada clave genera una tabla -->
             <div v-for="(table, tableKey) in group" style="margin-bottom:20px;" class="col-md-6 col-lg-4" :class="tableKey">
-                <h3>[[ tr(tableKey) ]]</h3>
+                <h3>[[ tr(tableKey).toLowerCase() ]]</h3>
                 <table border="1">
                     <thead v-if="getSubKeys(table)[0] != ' '">
                         <tr>
