@@ -8,6 +8,10 @@ ekitaldiak:
     title: JAUNAREN HERIOTZAREN OFIZIOAK
     notes: Agustinetan
     image: /media/Screenshot_20250411_132224_Samsung Internet.webp
+  - date: 19/04/2025 20:30
+    title: PAZKO BEILA
+    notes: Agustinetan
+    image: /media/Screenshot_20250411_135255_Samsung Internet.webp
 mezak:
   - date: astegunetan, larunbatetan eta igandetan 09.00
     notes: Agustinetan
