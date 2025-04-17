@@ -4,6 +4,10 @@ ekitaldiak:
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
     notes: Agustinetan
     image: /media/IMG-20250410-WA0023-1.webp
+  - date: 18/04/2025 17:00
+    title: JAUNAREN HERIOTZAREN OFIZIOAK
+    notes: Agustinetan
+    image: /media/Screenshot_20250411_132224_Samsung Internet.webp
 mezak:
   - date: astegunetan, larunbatetan eta igandetan 09.00
     notes: Agustinetan
