@@ -12,6 +12,10 @@ ekitaldiak:
     title: PAZKO BEILA
     notes: Agustinetan
     image: /media/Screenshot_20250411_135255_Samsung Internet.webp
+  - date: 17/04/2025 18:00
+    title: "ORDU SANTUA "
+    notes: Agustinetan
+    image: /media/Screenshot_20250411_144741_Samsung Internet.webp
 mezak:
   - date: astegunetan, larunbatetan eta igandetan 09.00
     notes: Agustinetan
