@@ -1,6 +1,10 @@
 ---
+ekitaldiak:
+  - date: 24/04/2025 09:30
+    title: SAN MIGELEN BISITA
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
-  - {}
+  - language: euskaraz
 image: /media/Screenshot_20250330_201915_YouTube.webp
 video: JBJbOYAKZik
 layout: parroquia
