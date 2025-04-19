@@ -23,6 +23,11 @@ ekitaldiak:
     title: ORDU SANTUA
     notes: Komentuan izango da.
     image: /media/Screenshot_20250411_144741_Samsung Internet.webp
+  - date: 22/04/2025 18:00
+    title: SAN MIGELEN BISITA ETA KLARATARREN DESPEDIDA
+    notes: Aurtengoan meza komentuan izango da klaratarren despedida dela eta.
+      Apezpiku jaunak presidituko du.
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
