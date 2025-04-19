@@ -2,9 +2,12 @@
 hiletak:
   - {}
 ekitaldiak:
-  - {}
+  - date: 22/04/2025 08:00
+    title: SAN MIGELEN BISITA
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: larunbatetan 17.00 2. astea
+    language: euskaraz
 image: /media/Screenshot_20250330_185501_YouTube.webp
 video: G7g958WP8FU
 layout: parroquia
