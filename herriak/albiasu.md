@@ -1,6 +1,6 @@
 ---
 ekitaldiak:
-  - date: 21/04/2025 9:00
+  - date: 21/04/2025 09:00
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
