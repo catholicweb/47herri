@@ -3,6 +3,9 @@ ekitaldiak:
   - date: 17/04/2025 17:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
     image: /media/IMG-20250410-WA0023.webp
+  - date: 25/04/2025 12:45
+    title: "SAN MIGELEN BISITA "
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: igandetan 10.00 1. astea
     language: euskaraz
