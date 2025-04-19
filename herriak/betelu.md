@@ -23,6 +23,9 @@ ekitaldiak:
     title: ORDU SANTUA
     notes: Ordu santua eta gau gurtza
     image: /media/Screenshot_20250411_144741_Samsung Internet.webp
+  - date: 21/04/2025 12:30
+    title: "SAN MIGELEN BISITA "
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: ostirala 11.00
     notes: Santa Kruz ermitten
