@@ -1,4 +1,8 @@
 ---
+ekitaldiak:
+  - date: 24/04/2025 19:00
+    title: SAN MIGELEN BISITA
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: larunbatetan 17:00 4. Astea
     language: erderaz
