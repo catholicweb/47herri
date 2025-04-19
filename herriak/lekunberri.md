@@ -28,6 +28,10 @@ ekitaldiak:
     notes: Aurtengoan meza komentuan izango da klaratarren despedida dela eta.
       Apezpiku jaunak presidituko du.
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
+  - date: 19/04/2025 20:00
+    title: "PAZKO BEILA "
+    notes: Klaratarren komentuan
+    image: /media/Screenshot_20250411_135255_Samsung Internet.webp
 mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
