@@ -1,11 +1,14 @@
 ---
+ekitaldiak:
+  - date: 20/04/2025 10:30
+    title: "AITORTZAK "
+    image: /media/semea.webp
 mezak:
   - date: igandetan 11.00
+    language: euskaraz
 image: /media/arano.webp
 video: UdCfCIHmvaU
 layout: parroquia
-title: arano
-valley: Urumea
 locations:
   - name: San Martin
     geo: 43.19951, -1.89462
@@ -13,4 +16,6 @@ locations:
     geo: 43.22057, -1.91492
   - name: San Roke baseliza
     geo: 43.19331, -1.89248
+title: arano
+valley: Urumea
 ---
