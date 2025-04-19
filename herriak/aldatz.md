@@ -16,6 +16,9 @@ ekitaldiak:
     title: "ORDU SANTUA "
     notes: Agustinetan
     image: /media/Screenshot_20250411_144741_Samsung Internet.webp
+  - date: 23/04/2025 19:30
+    title: "SAN MIGELEN BISITA "
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: astegunetan, larunbatetan eta igandetan 09.00
     notes: Agustinetan
