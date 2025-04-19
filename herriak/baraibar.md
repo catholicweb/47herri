@@ -1,4 +1,8 @@
 ---
+ekitaldiak:
+  - date: 20/04/2025 19:00
+    title: SAN MIGELEN BISITA
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 image: /media/Screenshot_20250405_181925_YouTube.webp
 video: YhP9LnlKbTQ
 layout: parroquia
