@@ -50,8 +50,8 @@ content:
       - { name: valley, label: valle, type: string }
       - { name: body, label: Body, type: rich-text }
   - name: index
-    label: Balibideak
-    path: balibideak.md
+    label: Baliabideak
+    path: baliabideak.md
     type: file
     fields:
       - { name: layout, label: layout, type: string, default: baliabideak, hidden: true }
