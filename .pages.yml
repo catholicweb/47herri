@@ -55,12 +55,13 @@ content:
     type: file
     fields:
       - { name: layout, label: layout, type: string, default: baliabideak, hidden: true }
-      - { name: show, label: show, type: boolean, default: true }
       - name: sections
         label: sections
         type: object
         list: true
         fields:
+          - { name: show, label: show, type: boolean, default: true }
+          - { name: title, label: Izenburua, type: string }
           - name: items
             label: items
             type: object
