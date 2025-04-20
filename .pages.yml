@@ -50,6 +50,25 @@ content:
       - { name: valley, label: valle, type: string }
       - { name: body, label: Body, type: rich-text }
   - name: index
+    label: Balibideak
+    path: balibideak.md
+    type: file
+    fields:
+      - { name: layout, label: layout, type: string, default: baliabideak, hidden: true }
+      - { name: show, label: show, type: boolean, default: true }
+      - name: sections
+        label: sections
+        type: object
+        list: true
+        fields:
+          - name: items
+            label: items
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Izenburua, type: string }
+              - { name: yt, label: Youtube code, type: string }
+  - name: index
     label: 47herri
     path: index.md
     type: file

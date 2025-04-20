@@ -3,71 +3,60 @@
 <body class="sub_page">
     {% include header.html %}
     <!-- book section -->
-    <section class="offer_section layout_padding-bottom">
+    <section class="layout_padding-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 pt-5">
                     <div class="heading_container heading_center">
-                        <h2>
-                            Ebanjelioa
-                        </h2>
+                        <h2>Ebanjelioa</h2>
                     </div>
                     <div>
                         {% include module name='gospel' %}
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="heading_container heading_center">
-                        <h2>
-                            Gurutz bidea
-                        </h2>
-                    </div>
+                {% for section in page.sections %}
+                {% if section.show %}
+                <div class="col-md-6 pt-5" style="margin: 0 auto;">
                     <div class="container">
-                        {% include module name='facade' yt='Bpmam96GZno' title='Gurutz bidea' %}
-                    </div>
-                </div>
-                <div class="col-md-6" style="margin: auto;">
-                    <div class="heading_container heading_center">
-                        <h2>
-                            Errosario Santua
-                        </h2>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                {% include module name='facade' yt='h5mZdE6u274' title='Oinazezko gartakariak (asteartetan eta ostiraletan)' %}
-                            </div>
-                            <div class="col-sm-6">
-                                {% include module name='facade' yt='870YjOJqPek' title='Aintzazko gartakariak (asteazkenetan eta igandetan)' %}
-                            </div>
-                            <div class="col-sm-6">
-                                {% include module name='facade' yt='_xjJggHEpQI' title='Pozezko gartakariak (astelehenetan eta larunbatetan)' %}
-                            </div>
-                            <div class="col-sm-6">
-                                {% include module name='facade' yt='7zenKMOnsxs' title='Argizko gartakariak (ostegunetan)' %}
-                            </div>
+                        <div class="heading_container heading_center">
+                            <h2>{{ section.title }}</h2>
                         </div>
+                        {% assign size = section.items | size %}
+                        {% if size > 1 %}
+                        <div class="row">
+                            {% for item in section.items %}
+                            <div class="col-sm-6 p-2">
+                                {% include module name='facade' yt=item.yt title=item.title %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div>
+                            {% assign item = section.items | first %}
+                            {% include module name='facade' yt=item.yt title=item.title %}
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </section>
-    <section class="food_section layout_padding-bottom">
+    <section v-scope class="food_section layout_padding-bottom">
         <div class="container">
             <div class="heading_container heading_center">
-                <h2>
-                    Mezako kantak
-                </h2>
+                <h2>[[tr("Mezako kantak")]]</h2>
             </div>
-            <ul v-scope class="filters_menu" style="text-transform: capitalize;">
+            <ul class="filters_menu" style="text-transform: capitalize;">
                 <li class="active" data-filter="*">Guztiak</li>
                 <li v-for="item in kantakList" :data-filter="'.'+item.trim().toLowerCase().replaceAll(' ', '-')">[[tr(item.trim().toLowerCase())]]</li>
             </ul>
-            <div class="container">
+            <div class="container pb-4">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="search-container">
-                            <input type="text" class="form-control search-input" :placeholder="tr('Bilatu...')">
+                            <input type="text" class="form-control search-input" :placeholder="tr('Bilatu')">
                             <i class="search-icon"></i>
                         </div>
                     </div>
@@ -76,7 +65,7 @@
             <div class="filters-content">
                 <div class="row grid notr">
                     <div v-scope @vue:mounted="fetchKantak()">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 all" v-for="item in kantak" style="aspect-ratio: 16/9" :class="item.playlist.trim().toLowerCase().replaceAll(' ', '-')" :key="item.videoId" style="padding: 0.4em;">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 all p-2" v-for="item in kantak" style="aspect-ratio: 16/9" :class="item.playlist.trim().toLowerCase().replaceAll(' ', '-')" :key="item.videoId">
                             <div class="facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)', 'border-radius': '8px' }">
                                 <header>[[ item.title ]]</header>
                                 <button type="button" @click="addIframe('youtube', item.videoId)">[[ item.title ]]</button>

@@ -116,7 +116,7 @@ async function translateWithOpenAI(missing, language) {
 
 
 async function translateAll(valuesArray) {
-    valuesArray.push('Gurutz bidea')
+    valuesArray.push('imnoak')
     let a = await translateMissing(valuesArray, 'spanish');
 
 
