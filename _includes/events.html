@@ -112,7 +112,7 @@ let eventsApp = {
     forgetPastEvents(events) {
         let today = new Date();
         today.setHours(0, 0, 0, 0);
-        const getDateTime = event => new Date(`${(event.dates[0] || '').split("T")[0]}T${event.times[0] || '00:00'}:00Z`);
+        const getDateTime = event => new Date(`${(event.dates[0] || '9999-12-31').split("T")[0]}T${event.times[0] || '00:00'}:00Z`);
         return events
             .map(event => ({
                 ...event,
