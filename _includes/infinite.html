@@ -2,7 +2,7 @@
     <div class="infinite-carousel-container" v-scope @vue:mounted="fetchVideos(/{{include.params.filter}}/gi)">
         <div class="infinite-carousel" @scroll="onScroll" ref="carousel">
             <div class="infinite-item-wrapper col-lg-4 col-md-5 col-sm-8 col-11" v-for="item in visibleItems" v-cloak style="aspect-ratio: 16/9">
-                <div class="infinite-item facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)' }">
+                <div class="facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)' }">
                     <header>[[ item.title ]]</header>
                     <button type="button" @click="addIframe('youtube', item.videoId)">[[ item.title ]]</button>
                 </div>
@@ -153,6 +153,10 @@ if (!window.vueApp) window.vueApp = {}
 vueApp = { ...vueApp, ...carouselApp }
 </script>
 <style>
+.infinite-item-wrapper .facade {
+    margin-bottom: 0.5em;
+}
+
 .infinite-carousel-container {
     width: calc(100% - 60px);
     max-width: calc(100% - 60px);
@@ -164,7 +168,7 @@ vueApp = { ...vueApp, ...carouselApp }
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    gap: 0.5rem;
+    gap: 1rem;
     padding-bottom: 1rem;
     scroll-behavior: smooth;
     cursor: grab;
@@ -186,15 +190,6 @@ vueApp = { ...vueApp, ...carouselApp }
     align-items: center;
     position: relative;
     z-index: 1;
-}
-
-.infinite-item {
-    flex: 0 0 auto;
-    border-radius: 8px;
-    scroll-snap-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .infinite-timeline {
