@@ -98,15 +98,14 @@ async function fetchBizkeliza(date) {
         delete readings.segunda
     }
     let ref = { date: formattedDate }
-    if (readings.primera) ref.primera = readings.primera.split('\n').filter(Boolean)[2]
-
+    /*if (readings.primera) ref.primera = readings.primera.split('\n').filter(Boolean)[2]
     if (readings.salmo) ref.salmo = readings.salmo.split('\n').filter(Boolean)[0]
-    if (readings.segunda) ref.segunda = readings.segunda.split('\n').filter(Boolean)[2]
+    if (readings.segunda) ref.segunda = readings.segunda.split('\n').filter(Boolean)[2]*/
 
     if (readings.evangelio) {
-        ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[2].trim() //.replace('', '-')
-        if (ref.evangelio.length > 30 || ref.evangelio.length == 0) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[1].replace('', '-').trim()
-        if (ref.evangelio.length > 30 || ref.evangelio.length == 0) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[3].replace('', '-').trim()
+        ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[2].trim().replace('', '–')
+        if (ref.evangelio.length > 30 || ref.evangelio.length == 0) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[1].trim().replace('', '–')
+        if (ref.evangelio.length > 30 || ref.evangelio.length == 0) ref.evangelio = readings.evangelio.split('\n').filter(Boolean)[3].trim().replace('', '–')
     }
 
 
@@ -177,7 +176,7 @@ async function saveResults() {
     const startDate = new Date(); // Month is 0-indexed in JavaScript, so March is month 2
 
     // Iterate over the next XYZ days
-    for (let i = 0; i < 200; i++) {
+    for (let i = -10; i < 200; i++) {
         // Calculate the date
         const currentDate = new Date(startDate);
         currentDate.setDate(startDate.getDate() + i);
