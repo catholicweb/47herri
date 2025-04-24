@@ -257,7 +257,7 @@ async function downloadGospels(argument) {
 
 // Function to split the JSON data and write output files
 function splitJsonData() {
-    const data = fs.readFileSync('../assets/gospel.json', 'utf8');
+    const data = fs.readFileSync('../gospel.json', 'utf8');
     let inputData = JSON.parse(data);
     // Iterate through each book and its chapters
     for (const book in inputData) {
@@ -269,11 +269,11 @@ function splitJsonData() {
             });
 
             // Create the output file name
-            const fileName = `CEE/es-${book}-${chapter.capitulo}.json`;
+            const fileName = `es-${book}-${chapter.capitulo}.json`;
 
             // Create the new chapter object with reformatted versiculos
             let map = { MAT: 'mateo', LUK: 'lucas', JHN: 'juan', MRK: 'marcos' }
-            formattedVersiculos.source = `https://www.conferenciaepiscopal.es/biblia/nuevo-testamento-${map[book]}/`
+            formattedVersiculos.source = `https://www.conferenciaepiscopal.es/biblia/${map[book]}/#cap${chapter.capitulo}`
 
             // Write the new chapter to a file
             fs.writeFileSync(fileName, JSON.stringify(formattedVersiculos, null, 2));
@@ -283,10 +283,10 @@ function splitJsonData() {
 }
 
 
-//splitJsonData()
+splitJsonData()
 
 // Run the function
-saveResults().catch(err => console.error(err));
+//saveResults().catch(err => console.error(err));
 
 // Run the function
 
