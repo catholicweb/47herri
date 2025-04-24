@@ -35,7 +35,7 @@ layout: default
         </div>
         <div class="filters-content">
             <div class="row grid" id="captureDiv">
-                {% for page in site.pages %}{% if page.path contains 'herriak' %}
+                {% for page in site.pages %}{% if page.layout == 'parroquia' %}
                 <div class="all {{ page.valley | strip }}" style="padding: 0; margin: 5px; flex: 0 0 calc(calc(100% / 8) - 10px); max-width: calc(calc(100% / 8) - 10px); width: 100%;">
                     <a href="{{page.url}}">
                         <div class="box" style="padding: 0 !important; margin: 0 !important;">

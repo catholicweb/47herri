@@ -1,0 +1,119 @@
+---
+layout: default
+---
+<div v-scope @vue:mounted="fetchSite()">
+    <section v-for="(page, index) in site.pages.filter( page => page.layout == 'parroquia' ).slice(0,15)" :key="index" class="food_section layout_padding-bottom" :data-herriak="page.title">
+        <div class="container">
+            <div class="heading_container heading_center py-3">
+                <h1 style="text-transform: uppercase; font-size: 3.5rem">
+                    [[ page.title ]] - [[ tr('Ospakizunak') ]]
+                </h1>
+            </div>
+            <div class="container ">
+                <div>
+                    {% include module name='events' ordering="new RegExp('mezak', 'ig'),['none', 'weekend', 'time', 'none', 'location', 'notes']" %}
+                </div>
+            </div>
+        </div>
+        <div class="qrcode" @vue:mounted="createQR( page.url, page.title )">[[ '47herri.eus'+page.url ]]</div>
+    </section>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+    let printApp = {
+        site: {},
+        createQR: function(url, title) {
+            console.log(url, title)
+            // Generate the QR code
+            let div = document.querySelector(`[data-herriak=${title.toLowerCase()}] .qrcode`)
+            const qrcode = new QRCode(div, {
+                text: 'https://47herri.eus'+url+'?qr',
+                width: 128,
+                height: 128,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        },
+        fetchSite: async function(argument) {
+            this.site = await fetch('/assets/site.json').then(r => r.json()) // Convert the response to JSON
+            console.log(this.site)
+        },
+    }
+    if (!window.vueApp) window.vueApp = {}
+    vueApp = { ...vueApp, ...printApp };
+</script>
+<script>
+    function highlight(){
+  document.querySelectorAll('[data-herriak]').forEach(seccion => {
+    const term = seccion.dataset.herriak;
+    const walker = document.createTreeWalker(
+      seccion,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: n => n.nodeValue.includes(term)
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT
+      }
+    );
+    let textNode;
+    while (textNode = walker.nextNode()) {
+      // el parentElement es el elemento más interno que contiene ese fragmento de texto
+    const parent = textNode.parentElement;
+      if (parent && parent.tagName.toLowerCase() === 'p') {
+          parent.classList.add('matched');
+        }
+    }
+  });
+  }
+</script>
+<style type="text/css">
+.matched {
+    /*background: gray;*/
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.matched span {
+    text-transform: capitalize;
+font-weight: initial;
+}
+
+/* ejemplo de estilo */
+@media print {
+
+    /* force layout as large */
+    .col-lg-4 {
+        flex: 0 0 33.333333% !important;
+        max-width: 33.333333% !important;
+    }
+
+    section {
+        page-break-before: always;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    @page {
+        size: A4 portrait;
+        margin: 1.5cm;
+    }
+}
+
+.qrcode {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    text-align: center;
+    /*display: flex;
+    flex-direction: column-reverse;*/
+}
+
+.qrcode img {
+    margin: auto;
+}
+
+section {
+    position: relative;
+}
+</style>

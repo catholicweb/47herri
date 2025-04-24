@@ -40,7 +40,7 @@ let bibleApp = {
             }
             this.gospel.text = text
         } catch (e) {
-            this.gospel.text = 'error! working on it...'
+            this.gospel.text = 'Errorea! Horretan ari gara...'
         }
     },
     parseReference: async function(ref) {
@@ -59,8 +59,8 @@ let bibleApp = {
             return Array.from({ length: end - start + 1 }, (_, i) => start + i);
         }
         return bits.map(b => {
-            const [chapter, versesStr] = b.split(',')
-            let verses = versesStr.replace(/[^0-9\.\,-]/g, '').split('.').map(parseRange).flat()
+            const [chapter, versesStr] = b.replace(/[^0-9\.\,-\;]/g, '').split(',')
+            let verses = versesStr.split('.').map(parseRange).flat()
             return { book, chapter, verses }
         })
     },

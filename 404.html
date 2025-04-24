@@ -1,25 +1,23 @@
 ---
+layout: default
+title: Orrialdea ez da aurkitu
 permalink: /404.html
-layout: page
 ---
-
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<section class="offer_section layout_padding-bottom">
+    <div class="container ">
+        <div class="heading_container heading_center">
+            <h2>
+                <h1>Error 404. Ez da orrialdea aurkitu.</h1>
+            </h2>
+        </div>
+        <p>Bilatzen ari zaren orrialdea ez dago hemen. Saiatu hasierako orrira itzultzen edo esteka zuzena erabiltzen.</p>
+        <a href="/">Hasierako orrira joan</a>
+    </div>
+</section>
+<script>
+const url = window.location.pathname;
+const match = url.match(/^\/herriak\/([^\/]+)/);
+if (match) {
+    window.location.replace('/' + match[1]);
+}
+</script>

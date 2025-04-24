@@ -24,10 +24,10 @@
                             <a class="nav-link" href="/">47 herri </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/baliabideak.html">Baliabideak</a>
+                            <a class="nav-link" href="/baliabideak">Baliabideak</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/parrokiak.html">Parrokiak</a>
+                            <a class="nav-link" href="/parrokiak">Parrokiak</a>
                         </li>
                     </ul>
                     {% include module name='translate' %}
@@ -36,7 +36,7 @@
         </div>
     </header>
     <!-- end header section -->
-    {% if page.url == "/" or page.path contains 'herriak' %}
+    {% if page.url == "/" or page.layout == 'parroquia' %}
     {% if page.url == "/" %}{% assign filter = 'hiletak|ekitaldiak|aitortzaren' %}
     {% else %}{% assign filter = page.title | append: "|" | append: page.valley | append: "|herri guztiak" %}{% endif %}
     <!-- slider section -->
