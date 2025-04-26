@@ -35,6 +35,10 @@ ekitaldiak:
   - date: 17/04/2025 20:15
     title: ORDU SANTUA
     image: /media/Screenshot_20250411_144741_Samsung Internet.webp
+  - date: 03/05/2025 08:00
+    title: MAIATZEKO GURUTZE SANTUA
+    notes: Gurutz bidea eta meza santa kruz ermitten
+    image: /media/Screenshot_20250426_112626_Gallery.jpg
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
