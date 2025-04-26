@@ -34,7 +34,7 @@ ekitaldiak:
     image: /media/Screenshot_20250411_135255_Samsung Internet.webp
 mezak:
   - date: astegunetan 18.30
-    notes: Klarisetan
+    notes: Komentuan
     language: elebidunean
   - date: igandetan 09.00
     notes: Komentuan
