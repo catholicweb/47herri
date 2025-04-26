@@ -35,10 +35,10 @@ ekitaldiak:
 mezak:
   - date: astegunetan 18.30
     notes: Klarisetan
-    language: erderaz
-  - date: larunbatetan eta igandetan 09.00
-    notes: Klarisetan
-    language: erderaz
+    language: elebidunean
+  - date: igandetan 09.00
+    notes: Komentuan
+    language: elebidunean
   - date: larunbatetan 18.30
     language: elebidunean
   - date: igandetan 11.00
