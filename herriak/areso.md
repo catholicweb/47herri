@@ -24,6 +24,8 @@ layout: parroquia
 locations:
   - name: Andre Mariaren Jasokundea
     geo: 43.08272, -1.95200
+  - name: Santa Kruz Baseliza
+    geo: 43.085823, -1.961999
 title: areso
 valley: Leitzaran
 ---
