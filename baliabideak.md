@@ -26,5 +26,5 @@ sections:
     title: ANGELUSA
     items:
       - title: "ANGELUSA EUSKERAZ "
-        yt: eDDOa-8RpzA?si=9rPPuDntwKwj3HeP
+        yt: eDDOa-8RpzA
 ---
