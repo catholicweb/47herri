@@ -12,6 +12,8 @@ layout: parroquia
 locations:
   - name: Santa Krutz baseliza
     geo: 43.00218, -1.87298
+  - name: San Migel
+    geo: 43.0115034, -1.8764097
 title: etxarri
 valley: Larraun
 ---
