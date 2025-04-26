@@ -39,6 +39,7 @@ layout: null
 "image": "{{ item.image }}",
 {%- endif -%}
 "title": "{{ item.title }}",
+"name": "{{ item.name }}",
 "location": "{{ item.location | default: location }}"
 },
 {%- endif -%}
