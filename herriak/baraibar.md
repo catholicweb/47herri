@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 26/04/2025 17.00
+    name: TOMAS GALARZA
 ekitaldiak:
   - date: 20/04/2025 19:00
     title: SAN MIGELEN BISITA
