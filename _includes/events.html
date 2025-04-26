@@ -15,6 +15,7 @@ function groupEvents(events, mappingFns) {
     Object.keys(grouped).forEach(key => {
         grouped[key] = groupEvents(grouped[key], mappingFns.slice(1));
     });
+    return grouped
     // Ordenamos las claves y creamos un nuevo objeto
     const sortedGrouped = {};
     Object.keys(grouped).sort().forEach(key => {
