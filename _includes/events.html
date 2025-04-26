@@ -39,9 +39,6 @@ const mappers = {
         if (event.type == 'ekitaldiak') {
             return [event.title ? event.title.trim() : ' '];
         }
-        if (event.type == 'hiletak') {
-            return [event.name ? event.name.trim() : ' '];
-        }
         return [event.type];
     },
     title(event) {
@@ -67,7 +64,7 @@ const mappers = {
         return event.byday;
     },
     long(event) {
-        if (event.type != 'mezak') {
+        if (event.type == 'ekitaldiak') {
             return [`${event.times[0]} - ${event.location.toLowerCase()}`]
         }
         return [`${event.times[0]} - ${event.name} (${event.location.toLowerCase() })`]
