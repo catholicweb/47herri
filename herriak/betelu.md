@@ -26,6 +26,9 @@ ekitaldiak:
   - date: 21/04/2025 12:30
     title: "SAN MIGELEN BISITA "
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
+  - date: 18/05/2025 12:30
+    title: "LEHEN JAUNARTZEAK "
+    image: /media/Screenshot_20250427_220137_Google.jpg
 mezak:
   - date: ostirala 11.00
     notes: Santa Kruz ermitten
