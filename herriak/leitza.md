@@ -39,7 +39,7 @@ ekitaldiak:
     title: MAIATZEKO GURUTZE SANTUA
     notes: Gurutz bidea eta meza santa kruz ermitten
     image: /media/Screenshot_20250426_112626_Gallery.jpg
-  - date: 24/05/2024 19:30
+  - date: 24/05/2025 19:30
     title: "SENDOTZAK "
     image: /media/sendotza.webp
 mezak:
