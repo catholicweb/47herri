@@ -15,6 +15,10 @@ ekitaldiak:
     title: "AITORTZAK "
     notes: Lau t'erdietatik bostak arte
     image: /media/semea.webp
+  - date: 17/05/2025 10:00
+    title: "MAIATZEKO GURUTZE SANTUA "
+    notes: "Elizetik abiatu eta santa kruz ermitaraino  "
+    image: /media/Screenshot_20250426_114147_YouTube.jpg
 mezak:
   - date: igandetan 10.00
     language: euskaraz
