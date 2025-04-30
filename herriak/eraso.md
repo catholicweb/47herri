@@ -5,7 +5,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: larunbatetan 17.00 2. astea
-    notes: Hilean behin  (bigarren larunbatetan)
+    notes: Hilean behin  bigarren larunbatetan
     language: elebidunean
 image: /media/Screenshot_20250330_010441_YouTube.webp
 video: euzAq4NKPJ0
