@@ -2,7 +2,7 @@
 hiletak:
   - {}
 ekitaldiak:
-  - date: 20/05/2025 20:30
+  - date: 12/05/2025 20:30
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
