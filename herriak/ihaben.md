@@ -1,4 +1,8 @@
 ---
+ekitaldiak:
+  - date: 20/05/2025 18:45
+    title: SAN MIGELEN BISITA
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: igandetan 10.00 2. astea
     language: elebidunean
