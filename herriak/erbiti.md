@@ -5,6 +5,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: igandetan 12:00 5. astea
+    notes: " Urtean lau aldiz (Bosgarren igandetan)"
     language: elebidunean
 image: /media/Screenshot_20250330_091555_YouTube.webp
 video: jdU6p_7YVU4
