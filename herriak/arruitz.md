@@ -3,6 +3,10 @@ ekitaldiak:
   - date: 23/04/2025 11:30
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
+  - date: 11/05/2025 12:30
+    title: SAN MIGELEN AGERPENA
+    notes: San Migeltxo eta Santa Luzia ermitan
+    image: /media/Screenshot_20250430_185407_YouTube.jpg
 mezak:
   - language: euskaraz
 image: /media/Screenshot_20250330_000339_YouTube.webp
