@@ -5,6 +5,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: igandetan 12:00 3. astea
+    notes: Hilean behin  (hirugarren igandetan)
     language: elebidunean
 image: /media/Screenshot_20250330_190717_YouTube.webp
 video: A5xFxCW8NEs
