@@ -3,6 +3,9 @@ ekitaldiak:
   - date: 20/04/2025 10:30
     title: "AITORTZAK "
     image: /media/semea.webp
+  - date: 25/05/2025 12:30
+    title: "SAN MIGELEN BISITA "
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: igandetan 11.00
     language: euskaraz
