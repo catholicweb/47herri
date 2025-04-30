@@ -5,6 +5,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: larunbatetan 18.00 3. astea
+    notes: Hilean behin (hirugarren larunbatetan)
     language: euskaraz
 image: /media/Screenshot_20250330_185413_Samsung Internet.webp
 video: mhyvWRma7_M
