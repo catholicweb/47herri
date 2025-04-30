@@ -2,17 +2,20 @@
 hiletak:
   - {}
 ekitaldiak:
-  - {}
+  - date: 20/05/2025 20:30
+    title: SAN MIGELEN BISITA
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: igandetan 11.00
+    language: euskaraz
 image: /media/640px-Beruete.webp
 video: PmiNoRGv7hY
 layout: parroquia
-title: beruete
-valley: Basaburua
 locations:
   - name: San Joan Bataiatzailearen
     geo: 43.02656, -1.82590
   - name: Santa Krutz baseliza
     geo: 43.02389, -1.82638
+title: beruete
+valley: Basaburua
 ---
