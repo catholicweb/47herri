@@ -12,6 +12,9 @@ ekitaldiak:
   - date: 19/04/2025 19:00
     title: PAZKO BEILA
     image: /media/Screenshot_20250411_135255_Samsung Internet.webp
+  - date: 20/05/2025 18:30
+    title: "SAN MIGELEN BISITA "
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: igandetan 12.30
     language: euskaraz
