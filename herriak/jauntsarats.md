@@ -11,6 +11,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: igandetan 10.00 4. astea
+    notes: Hilean behin (laugarren igandetan)
     language: elebidunean
 image: /media/Screenshot_20250330_193829_YouTube.webp
 video: imRARVKWyTM
