@@ -42,6 +42,11 @@ ekitaldiak:
   - date: 24/05/2025 19:30
     title: "SENDOTZAK "
     image: /media/sendotza.webp
+  - date: 24/05/2025 19:00
+    title: "SAN MIGELEN BISITA "
+    notes: Goiko errotan izango da harrera eta handik prozesioa egingo da herrian
+      barrena elizaraino.
+    image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
