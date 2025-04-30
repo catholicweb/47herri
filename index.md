@@ -17,7 +17,7 @@ ekitaldiak:
     location: goizueta
   - date: 01/06/2025 10:30
     title: ASZENSIO EGUNA
-    notes: Basaburuko herri guztietako gurutzeak abiatuko dira 10etan Itsasok9
+    notes: Basaburuko herri guztietako gurutzeak abiatuko dira 10etan Itsasoko
       elizetik Salbatore ermitaraino eta han meza ospatuko da.
     image: /media/Screenshot_20250430_182630_OneDrive.jpg
     location: "Basaburua "
