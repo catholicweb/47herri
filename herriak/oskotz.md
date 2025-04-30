@@ -7,6 +7,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: larunbatetan 17.00 1. astea
+    notes: Hilean behin  (bigarren larunbatetan)
     language: elebidunean
 image: /media/375115502.webp
 layout: parroquia
