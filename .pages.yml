@@ -49,7 +49,7 @@ content:
       - { name: title, label: Izenburua, type: string }
       - { name: valley, label: valle, type: string }
       - { name: body, label: Body, type: rich-text }
-  - name: index
+  - name: baliabideak
     label: Baliabideak
     path: baliabideak.md
     type: file
