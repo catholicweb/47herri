@@ -21,10 +21,6 @@ ekitaldiak:
   - date: 18/04/2025 18:00
     title: "JAUNAREN HERIOTZAREN OFIZIOAK "
     image: /media/Screenshot_20250411_132224_Samsung Internet.webp
-  - date: 18/04/2025 08:00
-    title: "GURUTZ BIDEA "
-    notes: Elizetik abiatuko da goizeko 8tan San Kruz ermitaraino
-    image: /media/Screenshot_20250411_133316_Samsung Internet.webp
   - date: 19/04/2025 22:00
     title: PAZKO BEILA
     image: /media/Screenshot_20250411_135255_Samsung Internet.webp
@@ -42,10 +38,14 @@ ekitaldiak:
   - date: 24/05/2025 19:30
     title: "SENDOTZAK "
     image: /media/sendotza.webp
+  - date: 18/04/2025 08:00
+    title: "GURUTZ BIDEA "
+    notes: Elizetik abiatuko da goizeko 8tan San Kruz ermitaraino
+    image: /media/Screenshot_20250411_133316_Samsung Internet.webp
   - date: 24/05/2025 19:00
     title: "SAN MIGELEN BISITA "
     notes: Goiko errotan izango da harrera eta handik prozesioa egingo da herrian
-      barrena elizaraino.
+      barrena elizaraino. Igandeko goizeko meza ondorean izango da despedida.
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: astegunetan 19.30
