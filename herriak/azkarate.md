@@ -5,7 +5,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.jpg
 mezak:
   - date: larunbatetan 17.00 1. astea
-    notes: Hilean behin (lehenengo larunbatetan)
+    notes: "Hilean behin lehenengo larunbatetan "
     language: euskaraz
 image: /media/zarate-web-1.webp
 video: bcuyvxWt-7A
