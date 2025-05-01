@@ -21,6 +21,12 @@ ekitaldiak:
       elizetik Salbatore ermitaraino eta han meza ospatuko da.
     image: /media/Screenshot_20250430_182630_OneDrive.jpg
     location: "Basaburua "
+  - date: 15/06/2025 11:00
+    title: TRINITATE IGANDEA
+    notes: Ergako Trinitatearen ermitan. 11tan meza euskaraz eta 12tan erdaraz
+      izango dira
+    image: /media/Screenshot_20250501_185208_Gallery.jpg
+    location: Imotz
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
