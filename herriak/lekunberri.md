@@ -35,6 +35,9 @@ ekitaldiak:
   - date: 08/06/2025 11:00
     title: "LEHEN JAUNARTZEAK "
     image: /media/Screenshot_20250427_220137_Google.jpg
+  - date: 24/06/2025 11:00
+    title: "SENDOTZAK "
+    image: /media/sendotza.webp
 mezak:
   - date: astegunetan 18.30
     notes: Komentuan
