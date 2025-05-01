@@ -34,6 +34,7 @@ mezak:
     notes: Santa Kruz ermitten
     language: elebidunean
   - date: igandetan 12.30
+    notes: "Parrokian "
     language: elebidunean
 image: /media/Screenshot_20250324_223949_YouTube-1.webp
 video: 46Wos9wDdpw
