@@ -40,8 +40,10 @@ mezak:
     notes: Komentuan
     language: elebidunean
   - date: larunbatetan 18.30
+    notes: Parrokian
     language: elebidunean
   - date: igandetan 11.00
+    notes: Parrokian
     language: elebidunean
 image: /media/Screenshot_20250409_012001_Gallery.webp
 video: 2tkabr7el28
