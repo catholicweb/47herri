@@ -32,6 +32,9 @@ ekitaldiak:
     title: "PAZKO BEILA "
     notes: Klaratarren komentuan
     image: /media/Screenshot_20250411_135255_Samsung Internet.webp
+  - date: 08/06/2025 11:00
+    title: "LEHEN JAUNARTZEAK "
+    image: /media/Screenshot_20250427_220137_Google.jpg
 mezak:
   - date: astegunetan 18.30
     notes: Komentuan
