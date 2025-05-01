@@ -52,10 +52,13 @@ mezak:
     notes: Iriarteako kapilan
     language: euskaraz
   - date: larunbatetan 19.30
+    notes: "Parrokian "
     language: elebidunean
   - date: igandetan 09.00
+    notes: Parrokian
     language: euskaraz
   - date: igandetan 11.00
+    notes: Parrokian
     language: euskaraz
 image: /media/f1.webp
 gallery:
