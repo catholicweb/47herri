@@ -15,4 +15,5 @@ locations:
   - name: San Pelayo
     geo: 42.95939, -1.78165
 title: oskotz
+valley: Imotz
 ---
