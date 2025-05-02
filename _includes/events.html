@@ -71,7 +71,7 @@ const mappers = {
         return [`${event.times[0]} - ${event.name} (${event.location.toLowerCase() })`]
     },
     notes(event) {
-        let arr = event.notes ? [event.notes] : []
+        let arr = []//event.notes ? [event.notes] : []
         let ordering = ['none', 'weekend', 'time', 'none', 'location', 'notes'] // TODO: very ugly fix
         if (!ordering.includes('byweek') && event.byweek.length && event.byweek.length < 5) {
             arr.push(event.byweek)
@@ -167,12 +167,16 @@ vueApp = { ...vueApp, ...eventsApp };
                                 <!-- Tercer grupo: elementos en la misma línea -->
                                 <p v-for="(line, lineKey) in row[subKey]" style="margin-right:10px; display: flex;">
                                     [[ tr(lineKey) ]]
-                                    <span v-if="Array.isArray(line) && line[0].notes">
+                                    <span v-if="typeof line === 'object' && !Array.isArray(line)">
+                                        [[ trArr(Object.keys(line)) ]]
+                                    </span>
+                                    <span v-if="Array.isArray(line) && line[0]?.notes">
                                         <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
                                         <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(line[0].notes) ]]</span>
                                     </span>
-                                    <span v-else>
-                                        [[ trArr(Object.keys(line)) ]]
+                                    <span v-else-if="typeof line === 'object' && !Array.isArray(line) && Object.values(line)[0]?.notes">
+                                        <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
+                                        <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(Object.values(line)[0].notes) ]]</span>
                                     </span>
                                 </p>
                             </td>
