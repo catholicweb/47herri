@@ -12,4 +12,5 @@ locations:
     geo: 42.980389, -1.822057
 title: beramendi
 valley: Basaburua
+video: NzMnlR-PaD8
 ---
