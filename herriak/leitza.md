@@ -34,7 +34,7 @@ ekitaldiak:
   - date: 03/05/2025 08:00
     title: MAIATZEKO GURUTZE SANTUA
     notes: Gurutz bidea eta meza santa kruz ermitten
-    image: /media/Screenshot_20250426_112626_Gallery.jpg
+    image: /media/Screenshot_20250426_112626_Gallery.webp
   - date: 24/05/2025 19:30
     title: "SENDOTZAK "
     image: /media/sendotza.webp
@@ -46,7 +46,7 @@ ekitaldiak:
     title: "SAN MIGELEN BISITA "
     notes: Goiko errotan izango da harrera eta handik prozesioa egingo da herrian
       barrena elizaraino. Igandeko goizeko meza ondorean izango da despedida.
-    image: /media/Screenshot_20250419_111110_OneDrive.jpg
+    image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan

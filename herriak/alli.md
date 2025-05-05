@@ -2,7 +2,7 @@
 ekitaldiak:
   - date: 24/04/2025 08:30
     title: SAN MIGELEN BISITA
-    image: /media/Screenshot_20250419_111110_OneDrive.jpg
+    image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - language: euskaraz
 image: /media/Screenshot_20250330_003103_YouTube.webp

@@ -3,7 +3,7 @@ ekitaldiak:
   - date: 24/04/2025 20:00
     title: SAN MIGELEN BISITA
     notes: Ostiral goizean 8:30tan meza eta despedida izango dira
-    image: /media/Screenshot_20250419_111110_OneDrive.jpg
+    image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - date: osteguna 12.30 1. astea
     notes: Hilean behin  (lehenengo ostegunetan)

@@ -2,7 +2,7 @@
 ekitaldiak:
   - date: 22/04/2025 12:45
     title: SAN MIGELEN BISITA
-    image: /media/Screenshot_20250419_111110_OneDrive.jpg
+    image: /media/Screenshot_20250419_111110_OneDrive.webp
 image: /media/Screenshot_20250330_005419_YouTube.webp
 video: lkT9FGSPG04
 layout: parroquia

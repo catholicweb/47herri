@@ -8,7 +8,7 @@ ekitaldiak:
     image: /media/Screenshot_20250411_132224_Samsung Internet.webp
   - date: 12/05/2025 19:30
     title: "SAN MIGELEN BISITA "
-    image: /media/Screenshot_20250419_111110_OneDrive.jpg
+    image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - date: igandetan 10.00 4. astea
     notes: Hilean behin (laugarren igandetan)

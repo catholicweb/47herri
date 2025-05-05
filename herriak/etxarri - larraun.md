@@ -2,7 +2,7 @@
 ekitaldiak:
   - date: 23/04/2025 13:00
     title: SAN MIGELEN BISITA
-    image: /media/Screenshot_20250419_111110_OneDrive.jpg
+    image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - date: larunbatetan 18.00 3. astea
     notes: Hilean behin (hirugarren larunbatetan)

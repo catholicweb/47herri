@@ -18,10 +18,10 @@ ekitaldiak:
   - date: 17/05/2025 10:00
     title: "MAIATZEKO GURUTZE SANTUA "
     notes: "Elizetik abiatu eta santa kruz ermitaraino  "
-    image: /media/Screenshot_20250426_114147_YouTube.jpg
+    image: /media/Screenshot_20250426_114147_YouTube.webp
   - date: 25/05/2025 10:00
     title: "SAN MIGELEN BISITA "
-    image: /media/Screenshot_20250419_111110_OneDrive.jpg
+    image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - date: igandetan 10.00
     language: euskaraz

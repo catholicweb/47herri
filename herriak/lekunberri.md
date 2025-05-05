@@ -27,14 +27,14 @@ ekitaldiak:
     title: SAN MIGELEN BISITA ETA KLARATARREN DESPEDIDA
     notes: Aurtengoan meza komentuan izango da klaratarren despedida dela eta.
       Apezpiku jaunak presidituko du.
-    image: /media/Screenshot_20250419_111110_OneDrive.jpg
+    image: /media/Screenshot_20250419_111110_OneDrive.webp
   - date: 19/04/2025 20:00
     title: "PAZKO BEILA "
     notes: Klaratarren komentuan
     image: /media/Screenshot_20250411_135255_Samsung Internet.webp
   - date: 08/06/2025 11:00
     title: "LEHEN JAUNARTZEAK "
-    image: /media/Screenshot_20250427_220137_Google.jpg
+    image: /media/Screenshot_20250427_220137_Google.webp
   - date: 24/06/2025 11:00
     title: "SENDOTZAK "
     image: /media/sendotza.webp

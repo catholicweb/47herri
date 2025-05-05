@@ -14,7 +14,7 @@ ekitaldiak:
     image: /media/Screenshot_20250411_135255_Samsung Internet.webp
   - date: 25/05/2025 18:30
     title: "SAN MIGELEN BISITA "
-    image: /media/Screenshot_20250419_111110_OneDrive.jpg
+    image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - date: igandetan 12.30
     language: euskaraz

@@ -19,13 +19,13 @@ ekitaldiak:
     title: ASZENSIO EGUNA
     notes: Basaburuko herri guztietako gurutzeak abiatuko dira 10etan Itsasoko
       elizetik Salbatore ermitaraino eta han meza ospatuko da.
-    image: /media/Screenshot_20250430_182630_OneDrive.jpg
+    image: /media/Screenshot_20250430_182630_OneDrive.webp
     location: "Basaburua "
   - date: 15/06/2025 11:00
     title: TRINITATE IGANDEA
     notes: Ergako Trinitatearen ermitan. 11tan meza euskaraz eta 12tan erdaraz
       izango dira
-    image: /media/Screenshot_20250501_185208_Gallery.jpg
+    image: /media/Screenshot_20250501_185208_Gallery.webp
     location: Imotz
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp

@@ -4,7 +4,7 @@ ekitaldiak:
     title: SAN MIGELEN BISITA
     notes: "Aurten aurreratuko da aingeruaren bisita Lekunberrin klaratarren
       despedida izango delako. "
-    image: /media/Screenshot_20250419_111110_OneDrive.jpg
+    image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - date: igandetan 12.30 2. astea
     notes: Hilean behin(bigarren igandetan)
