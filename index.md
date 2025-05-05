@@ -31,6 +31,8 @@ hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
     betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen
+mezak_default:
+  image: /media/mass.webp
 collaborators:
   - image: /media/20250404_171601-2.webp
     name: Iñazio Azcoaga

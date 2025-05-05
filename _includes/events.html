@@ -50,9 +50,12 @@ function buildEvents(pages) {
             for (const item of items) {
                 if (!item.date) continue;
 
-                const raw = item.date;
-                const notesDef = indexPage.hiletak_default || {};
-                const dateLong = item.date + (item.notes || '');
+                const raw = item.date
+                let def = {}
+                if (sub === 'hiletak') def = indexPage.hiletak_default
+                if (sub === 'mezak') def = indexPage.mezak_default
+                def.location = defaultLoc
+                const dateLong = [item.date, item.notes].join(' ')
                 const dateDots = dateLong.replace(/\./g, ':').replace(/tan/g, ':00');
 
                 events.push({
@@ -64,13 +67,14 @@ function buildEvents(pages) {
                     bymonth: Array.from(new Set((dateLong.match(bymonthRe) || []))),
                     dates: Array.from((dateLong.match(dateRe) || [])),
                     type: raw.includes('mezak') ? 'mezak' : sub,
-                    notes: sub === 'hiletak' ?
-                        (item.notes || notesDef.description) : (item.notes || ''),
-                    image: sub === 'hiletak' ?
-                        (item.image || notesDef.image) : (item.image || ''),
+                    notes: item.notes ||
+                        def.description || '',
+                    image: item.image ||
+                        def.image || '',
                     title: item.title,
                     name: item.name,
-                    location: item.location || defaultLoc
+                    location: item.location ||
+                        def.location
                 });
             }
         }

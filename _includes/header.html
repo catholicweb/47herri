@@ -46,13 +46,13 @@
                 <div v-for="(event, index) in groupedEvents(/{{filter}}/i,[])" class="carousel-item" :class="{ active: index == 0 }">
                     <div class="container ">
                         <div class="row">
-                            <div class="col-md-7 col-lg-6 events">
+                            <div class="col-md-6 col-lg-5 events">
                                 <!-- Primer grupo -->
                                 <div class="detail-box overflow-hidden" style="margin-bottom: 0px;">
                                     <h2 style="display: inline;">
                                         [[ event.name || tr(event.title) || tr(event.type) ]]
                                     </h2>
-                                    <img v-if="event.image" loading="lazy" class="img-fluid circle-img" :src="event.image" style="width: 50%; float: right; shape-outside: circle(); margin: 0.2em; border: 4px solid #009c46;" alt="">
+                                    <img v-if="event.image" loading="lazy" class="img-fluid circle-img" :src="event.image" style="width: 55%; float: right; shape-outside: circle(); margin: 0.2em; border: 4px solid #009c46;" alt="">
                                     <p class="location-mark" style=" margin-top: 15px">[[ event.location ]]</p>
                                     <p class="calendar-mark">[[ formatDate(event.dates[0]) || tr(event.byday[0]) ]]</p>
                                     <p class="time-mark">[[ event.times[0] ]]</p>

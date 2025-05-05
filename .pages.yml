@@ -90,6 +90,11 @@ content:
         fields:
           - { name: image, label: Image, type: image }
           - { name: description, label: Deskribapena, type: text }
+      - name: mezak_default
+        label: mezak_default
+        type: object
+        fields:
+          - { name: image, label: Image, type: image }
       - name: collaborators
         label: Gure apezak
         type: object
