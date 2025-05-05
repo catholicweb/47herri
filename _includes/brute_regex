@@ -1,1 +1,0 @@
-{% assign matches = "" %}{% for substring in include.substrings %}{% if include.string contains substring %}{% if matches != "" %}{% assign matches = matches | append: "," %}{% endif %}{% assign matches = matches | append: '"' | append: substring | append: '"' %}{% endif %}{% endfor %}{{ "[" | append: matches | append: "]" }}

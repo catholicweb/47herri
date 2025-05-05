@@ -230,10 +230,10 @@ vueApp = { ...vueApp, ...eventsApp };
                                         <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
                                         <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(line[0].notes) ]]</span>
                                     </span>
-                                    <span v-if="typeof line === 'object' && !Array.isArray(line) && Object.values(line)[0]?.notes">
+                                    <!--<span v-if="typeof line === 'object' && !Array.isArray(line) && Object.values(line)[0][0]?.notes">
                                         <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
-                                        <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(Object.values(line)[0].notes) ]]</span>
-                                    </span>
+                                        <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(Object.values(line)[0][0].notes) ]]</span>
+                                    </span>-->
                                 </p>
                             </td>
                         </tr>
