@@ -26,6 +26,61 @@ function groupEvents(events, mappingFns) {
 }
 
 
+function buildEvents(pages) {
+    const indexPage = pages.find(p => p.path === 'index.md');
+
+    // regex estáticos
+    const bydaysRe = /(?:astelehena|asteartea|asteazkena|osteguna|ostirala|larunbatetan|igandetan|asteguneta|bezpera)/gi;
+    const byweekRe = /(?:1\. astea|2\. astea|3\. astea|4\. astea|5\. astea)/gi;
+    const timesRe = /(?:[01]\d|2[0-3]):(?:00|15|30|45)/g;
+    const bymonthRe = /(?:pazkoa|urtarrila|otsaila|martxoa|apirila|maiatza|ekaina|uztaila|abuztua|iraila|urria|azaroa|abendua)/gi;
+    const dateRe = /(\d{1,2}\/\d{1,2}\/\d{2,4})/g;
+
+    const subfields = ['mezak', 'hiletak', 'ekitaldiak'];
+    const events = [];
+
+    for (const page of pages) {
+        const defaultLoc = (page.title || page.name)
+            .replace(/\.md$/, '')
+            .replace(/Ongi Etorri|Index/gi, 'herri guztiak')
+            .replace(/^./, c => c.toUpperCase());
+
+        for (const sub of subfields) {
+            const items = page[sub] || [];
+            for (const item of items) {
+                if (!item.date) continue;
+
+                const raw = item.date;
+                const notesDef = indexPage.hiletak_default || {};
+                const dateLong = item.date + (item.notes || '');
+                const dateDots = dateLong.replace(/\./g, ':').replace(/tan/g, ':00');
+
+                events.push({
+                    raw,
+                    language: item.language,
+                    byday: Array.from(new Set((dateLong.match(bydaysRe) || []))),
+                    times: Array.from(new Set((dateDots.match(timesRe) || []))),
+                    byweek: Array.from(new Set((dateLong.match(byweekRe) || []))),
+                    bymonth: Array.from(new Set((dateLong.match(bymonthRe) || []))),
+                    dates: Array.from((dateLong.match(dateRe) || [])),
+                    type: raw.includes('mezak') ? 'mezak' : sub,
+                    notes: sub === 'hiletak' ?
+                        (item.notes || notesDef.description) : (item.notes || ''),
+                    image: sub === 'hiletak' ?
+                        (item.image || notesDef.image) : (item.image || ''),
+                    title: item.title,
+                    name: item.name,
+                    location: item.location || defaultLoc
+                });
+            }
+        }
+    }
+
+    return events;
+}
+
+
+
 const mappers = {
     location(event) {
         return [event.location ? event.location.toLowerCase() : ' ']
@@ -71,7 +126,7 @@ const mappers = {
         return [`${event.times[0]} - ${event.name} (${event.location.toLowerCase() })`]
     },
     notes(event) {
-        let arr = []//event.notes ? [event.notes] : []
+        let arr = [] //event.notes ? [event.notes] : []
         let ordering = ['none', 'weekend', 'time', 'none', 'location', 'notes'] // TODO: very ugly fix
         if (!ordering.includes('byweek') && event.byweek.length && event.byweek.length < 5) {
             arr.push(event.byweek)
@@ -109,9 +164,10 @@ let eventsApp = {
         return Array.from(keys);
     },
     fetchEvents: async function() {
-        let response = await fetch("/assets/events.json")
-        let events = await response.json()
-        this.events = events.slice(0, -1)
+        let site = await fetch("/assets/site.json").then(r => r.json())
+        this.events = buildEvents(site.pages)
+        /*let events = await response.json()
+        this.events = events.slice(0, -1)*/
     },
     events: [],
     forgetPastEvents(events) {
