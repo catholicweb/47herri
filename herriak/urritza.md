@@ -4,7 +4,7 @@ ekitaldiak:
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
-  - date: larunbatetan 17:00 4. Astea
+  - date: larunbatetan 17:00 4. astea
     notes: Hilean behin (laugarren larunbatetan)
     language: erderaz
 image: /media/Screenshot_20250330_205912_YouTube-1.webp
