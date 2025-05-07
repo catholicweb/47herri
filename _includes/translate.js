@@ -90,7 +90,8 @@ async function translateWithOpenAI(missing, language) {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            model: "gpt-4o",
+            model: "gpt-4.1",
+            //model: "gpt-4o",
             response_format: { "type": "json_object" },
             messages: [
                 { role: "system", content: "You are a professional translator for a catholic website, texts most likely include catholic event titles, descriptions, timings etc... Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}." },
@@ -116,7 +117,7 @@ async function translateWithOpenAI(missing, language) {
 
 
 async function translateAll(valuesArray) {
-    valuesArray.push('Ospakizunak')
+    valuesArray.push('mezen ordutegia')
     let a = await translateMissing(valuesArray, 'spanish');
 
 
