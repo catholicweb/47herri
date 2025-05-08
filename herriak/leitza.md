@@ -47,6 +47,9 @@ ekitaldiak:
     notes: Goiko errotan izango da harrera eta handik prozesioa egingo da herrian
       barrena elizaraino. Igandeko goizeko meza ondorean izango da despedida.
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 24/05/2025 12:00
+    title: "LEHEN JAUNARTZEAK "
+    image: /media/Screenshot_20250427_220137_Google.webp
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
