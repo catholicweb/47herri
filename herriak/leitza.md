@@ -50,6 +50,9 @@ ekitaldiak:
   - date: 24/05/2025 12:00
     title: "LEHEN JAUNARTZEAK "
     image: /media/Screenshot_20250427_220137_Google.webp
+  - date: 29/06/2025 10:00
+    title: SAN PEDRO
+    notes: Gorriztarango eskolako kapilan
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
