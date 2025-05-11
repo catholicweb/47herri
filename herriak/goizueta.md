@@ -14,6 +14,8 @@ ekitaldiak:
     image: /media/Screenshot_20250411_135255_Samsung Internet.webp
   - date: 25/05/2025 18:30
     title: "SAN MIGELEN BISITA "
+    notes: Astelehen goizean gaixoengana eramango dugu san Migel eta 12:30tan
+      errosarioa, konjuruak eta despedida izango dira.
     image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - date: igandetan 12.30
