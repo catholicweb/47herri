@@ -1,7 +1,7 @@
 ---
 hiletak:
   - date: 13/05/2025 18.30
-    name: JAVIER ERASO
+    name: XABIER ERASO
 ekitaldiak:
   - date: 21/04/2025 18:00
     title: SAN MIGELEN BISITA
