@@ -60,6 +60,31 @@
             </p>
         </div>
     </div>
+    <button id="install-btn" title="Instalar app" style="display: none;">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2h14v2H5v-2z" />
+        </svg>
+    </button>
+    <style type="text/css">
+    #install-btn {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        padding: 0.75rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 999;
+        transition: background-color 0.2s;
+    }
+
+    #install-btn:hover {
+        background-color: #f0f0f0;
+    }
+    </style>
+    </button>
 </footer>
 <!-- footer section -->
 <script defer src="/js/custom.js"></script>
@@ -80,6 +105,31 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');
 }
+
+let deferredPrompt;
+const installBtn = document.getElementById('install-btn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault(); // Prevent the default install prompt
+    deferredPrompt = e; // Save the event for later use
+    console.log('beforeinstallprompt!')
+    installBtn.style.display = 'block'; // Show the install button
+});
+
+installBtn.addEventListener('click', () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt(); // Show the install prompt
+        deferredPrompt.userChoice.then(choiceResult => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null; // Reset the prompt
+            installBtn.style.display = 'none'; // Hide the button again
+        });
+    }
+});
 </script>
 <!-- custom js -->
 {% include module tag='footer' %}
