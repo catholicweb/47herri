@@ -76,5 +76,10 @@
 </script>
 <!-- isotope js -->
 <script defer src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+<script type="text/javascript">
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+}
+</script>
 <!-- custom js -->
 {% include module tag='footer' %}
