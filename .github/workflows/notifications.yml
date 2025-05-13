@@ -1,0 +1,46 @@
+name: Notificación Push
+
+on:
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Instalar dependencias
+        run: npm install web-push
+
+      - name: Obtener subscripciones descifradas
+        run: curl "https://arrietaeguren.es/subscriptions?token=${{ secrets.NOTIF_TOKEN }}" -o subs.json
+
+      - name: Enviar notificaciones
+        env:
+          VAPID_PUBLIC: ${{ secrets.VAPID_PUBLIC }}
+          VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
+        run: |
+          node <<EOF
+          const webpush = require('web-push');
+          const subs = require('./subs.json');
+
+          webpush.setVapidDetails(
+            'mailto:admin@47herri.eus',
+            process.env.VAPID_PUBLIC,
+            process.env.VAPID_PRIVATE
+          );
+
+          const notif = {
+            title: '47 herri!',
+            options: {
+              body: `This is a test!`,
+              icon: '/icon-192.png',
+              data: { url: '/' }
+            }
+          };
+
+          for (const sub of subs) {
+            webpush.sendNotification(sub, JSON.stringify(notif))
+              .catch(err => console.error('Error con suscripción:', err));
+          }
+          EOF

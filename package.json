@@ -10,6 +10,7 @@
     "criticalcss": "^2.1.0",
     "jsdom": "^26.0.0",
     "undici": "^7.5.0",
+    "web-push": "^3.6.7",
     "web-streams-polyfill": "^4.1.0"
   }
 }
