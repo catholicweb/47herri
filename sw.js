@@ -28,6 +28,7 @@ self.addEventListener('activate', event => {
 
 // Determina si la petición es de un recurso inmutable
 function isImmutable(url) {
+    return false
     return url.pathname.startsWith('/media/') || (!url.origin.includes('47herri') && !url.origin.includes('localhost'))
     //url.pathname.match(/\.[a-f0-9]{8}\.(js|css)$/); // hashed files tipo main.89abc123.js
 }

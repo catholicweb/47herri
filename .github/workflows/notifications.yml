@@ -40,7 +40,6 @@ jobs:
           };
 
           for (const sub of subs) {
-            console.log(sub)
             webpush.sendNotification(sub, JSON.stringify(notif))
               .catch(err => console.error('Error con suscripción:', err));
           }
