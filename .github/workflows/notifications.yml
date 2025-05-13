@@ -33,7 +33,7 @@ jobs:
           const notif = {
             title: '47 herri!',
             options: {
-              body: `This is a test!`,
+              body: 'This is a test!',
               icon: '/icon-192.png',
               data: { url: '/' }
             }
