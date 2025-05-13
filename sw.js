@@ -66,3 +66,19 @@ self.addEventListener('fetch', event => {
         );
     }
 });
+
+
+self.addEventListener('push', event => {
+    const data = event.data ? .json();
+
+    event.waitUntil(
+        self.registration.showNotification(data.title, data.options)
+    );
+});
+
+
+self.addEventListener('notificationclick', event => {
+    const url = event.notification.data ? .url || '/';
+    event.notification.close();
+    event.waitUntil(clients.openWindow(url));
+});
