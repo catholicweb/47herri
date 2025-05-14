@@ -30,7 +30,7 @@ ekitaldiak:
     title: "LEHEN JAUNARTZEAK "
     image: /media/Screenshot_20250427_220137_Google.webp
 mezak:
-  - date: ostirala 11.00
+  - date: ostiraletan 11.00
     notes: Santa Kruz ermitten
     language: elebidunean
   - date: igandetan 12.30
