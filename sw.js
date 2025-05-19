@@ -1,81 +1,101 @@
-const CACHE_DYNAMIC = 'dynamic-v1';
-const CACHE_IMMUTABLE = 'immutable-v1';
+const CACHE_STATIC = 'dynamic-v1';
 
-// Opcional: pre-cache de la shell mínima
 const PRECACHE_URLS = [
-    '/', // home
-    '/index.html'
+    '/',
+    '/index.html',
+    '/baliabideak.html'
 ];
 
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(CACHE_DYNAMIC).then(cache => cache.addAll(PRECACHE_URLS))
+        caches.open(CACHE_STATIC).then(cache => cache.addAll(PRECACHE_URLS))
     );
     self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
-    const allowedCaches = [CACHE_DYNAMIC, CACHE_IMMUTABLE];
     event.waitUntil(
         caches.keys().then(keys =>
             Promise.all(
-                keys.filter(k => !allowedCaches.includes(k)).map(k => caches.delete(k))
+                keys.filter(k => k !== CACHE_STATIC).map(k => caches.delete(k))
             )
         )
     );
     self.clients.claim();
 });
 
-// Determina si la petición es de un recurso inmutable
-function isImmutable(url) {
-    return false
-    return url.pathname.startsWith('/media/') || (!url.origin.includes('47herri') && !url.origin.includes('localhost'))
-    //url.pathname.match(/\.[a-f0-9]{8}\.(js|css)$/); // hashed files tipo main.89abc123.js
-}
-
 self.addEventListener('fetch', event => {
-    const req = event.request;
-    const url = new URL(req.url);
+    const { request } = event;
+    let strategy = request.headers.get('x-cache-strategy') || 'stale-while-revalidate';
+    if (request.url.includes('.json') && !request.url.includes('/bible')) strategy = 'network-first'
+    //return url.pathname.startsWith('/media/') || (!url.origin.includes('47herri') && !url.origin.includes('localhost'))
 
-    // Solo GET, ignoramos POST, etc.
-    if (req.method !== 'GET') return;
+    let responsePromise;
 
-    if (isImmutable(url)) {
-        // Estrategia Cache-First
-        event.respondWith(
-            caches.open(CACHE_IMMUTABLE).then(cache =>
-                cache.match(req).then(cached =>
-                    cached || fetch(req).then(res => {
-                        if (res.ok) cache.put(req, res.clone());
-                        return res;
-                    })
-                )
-            )
-        );
+    if (strategy === 'network-first') {
+        responsePromise = networkFirst(request);
+    } else if (strategy === 'cache-first') {
+        responsePromise = cacheFirst(request);
+    } else if (strategy === 'cache-only') {
+        responsePromise = cacheOnly(request);
     } else {
-        // Estrategia Stale-While-Revalidate
-        event.respondWith(
-            caches.open(CACHE_DYNAMIC).then(cache =>
-                cache.match(req).then(cached => {
-                    const fetchPromise = fetch(req).then(res => {
-                        if (res.ok) cache.put(req, res.clone());
-                        return res;
-                    }).catch(() => cached); // Si red falla y no hay cache, se queda en undefined
-                    return cached || fetchPromise;
-                })
-            )
-        );
+        responsePromise = staleWhileRevalidate(request);
     }
+
+    event.respondWith(responsePromise);
 });
 
+// --- Estrategias ---
+
+async function networkFirst(request) {
+    try {
+        const response = await fetch(request);
+        const cache = await caches.open(CACHE_STATIC);
+        cache.put(request, response.clone());
+        return response;
+    } catch {
+        return (await caches.match(request)) || Response.error();
+    }
+}
+
+async function cacheFirst(request) {
+    const cached = await caches.match(request);
+    if (cached) return cached;
+
+    const response = await fetch(request);
+    const cache = await caches.open(CACHE_STATIC);
+    cache.put(request, response.clone());
+    return response;
+}
+
+async function staleWhileRevalidate(request) {
+    const cache = await caches.open(CACHE_STATIC);
+    const cached = await cache.match(request);
+
+    const fetchPromise = fetch(request).then(response => {
+        cache.put(request, response.clone());
+        return response;
+    });
+
+    return cached || fetchPromise;
+}
+
+async function cacheOnly(request) {
+    const cached = await caches.match(request);
+    return cached || Response.error();
+}
+
+
+
+
 /* beautify ignore:start */
+/* NOTIFICATIONS */
 self.addEventListener('push', event => {
     const data = event.data?.json() ?? {};
     event.waitUntil(
         self.registration.showNotification(data.title, data.options)
     );
 });
-
 
 self.addEventListener('notificationclick', event => {
     const url = event.notification.data?.url || '/';

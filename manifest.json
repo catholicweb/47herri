@@ -3,7 +3,7 @@
     "short_name": "47herri",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#009c46",
+    "background_color": "#008e4a",
     "theme_color": "#009c46",
     "icons": [
     {
@@ -25,5 +25,18 @@
         "src": "/media/android-chrome-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
+    }],
+    "shortcuts": [
+    {
+        "name": "Baliabideak",
+        "short_name": "Baliabideak",
+        "description": "Ireki Baliabideak orria",
+        "url": "/baliabideak"
+    },
+    {
+        "name": "Parrokiak",
+        "short_name": "Parrokiak",
+        "description": "Ireki Parrokiak orria",
+        "url": "/parrokiak"
     }]
 }
