@@ -23,6 +23,7 @@ jobs:
           node <<EOF
           const webpush = require('web-push');
           const subs = require('./subs.json');
+          const notifications = require('./notifications.json');
 
           webpush.setVapidDetails(
             'mailto:admin@47herri.eus',
@@ -30,17 +31,10 @@ jobs:
             process.env.VAPID_PRIVATE
           );
 
-          const notif = {
-            title: '47 herri!',
-            options: {
-              body: 'This is a test!',
-              icon: '/icon-192.png',
-              data: { url: '/' }
-            }
-          };
-
           for (const sub of subs) {
-            webpush.sendNotification(sub, JSON.stringify(notif))
-              .catch(err => console.error('Error con suscripción:', err));
+            for (const not of notifications) {
+              webpush.sendNotification(sub, JSON.stringify(not))
+                .catch(err => console.error('Error con suscripción:', err));
+            }
           }
           EOF
