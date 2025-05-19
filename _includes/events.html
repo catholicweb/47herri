@@ -84,6 +84,11 @@ function buildEvents(pages) {
 }
 
 
+function getMappers() {
+    return mappers
+}
+
+
 
 const mappers = {
     location(event) {
@@ -170,8 +175,6 @@ let eventsApp = {
     fetchEvents: async function() {
         let site = await fetch("/assets/site.json").then(r => r.json())
         this.events = buildEvents(site.pages)
-        /*let events = await response.json()
-        this.events = events.slice(0, -1)*/
     },
     events: [],
     forgetPastEvents(events) {
