@@ -31,12 +31,24 @@
         "name": "Baliabideak",
         "short_name": "Baliabideak",
         "description": "Ireki Baliabideak orria",
-        "url": "/baliabideak"
+        "url": "/baliabideak",
+        "icons": [
+        {
+            "src": "https://img.icons8.com/fluency-systems-regular/96/000000/open-book--v1.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }]
     },
     {
         "name": "Parrokiak",
         "short_name": "Parrokiak",
         "description": "Ireki Parrokiak orria",
-        "url": "/parrokiak"
+        "url": "/parrokiak",
+        "icons": [
+        {
+            "src": "https://img.icons8.com/fluency-systems-regular/96/000000/church.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }]
     }]
 }
