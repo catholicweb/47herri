@@ -1,6 +1,8 @@
 name: Notificación Push
 
 on:
+  schedule:
+    - cron: '0 17 * * *'  # This runs the action every day at 17 PM UTC (summer 19, winter 18 in basque country)
   workflow_dispatch:
 
 jobs:
