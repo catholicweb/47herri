@@ -42,7 +42,7 @@ async function main() {
 
     const now = new Date();
     const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-    const basqueDaysOn = [
+    const basqueDays = [
         "Igandean", // on Sunday
         "Astelehenean", // on Monday
         "Asteartean", // on Tuesday
