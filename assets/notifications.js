@@ -42,7 +42,7 @@ context.vueApp.parseDateToISO = function(dateStr) {
 
 function isTomorrow(date) {
     const now = new Date();
-    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 5);
+    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
     const input = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     return input.getTime() === tomorrow.getTime();
 }

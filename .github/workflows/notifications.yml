@@ -12,6 +12,9 @@ jobs:
       - name: Instalar dependencias
         run: npm install web-push
 
+      - name: Get notifications
+        run: node assets/notifications.js
+
       - name: Obtener subscripciones descifradas
         run: curl "https://arrietaeguren.es/subscriptions?token=${{ secrets.NOTIF_TOKEN }}" -o subs.json
 
@@ -33,6 +36,7 @@ jobs:
 
           for (const sub of subs) {
             for (const not of notifications) {
+              console.log(not)
               webpush.sendNotification(sub, JSON.stringify(not))
                 .catch(err => console.error('Error con suscripción:', err));
             }
