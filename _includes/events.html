@@ -89,6 +89,16 @@ function getMappers() {
 }
 
 
+function slugify(str) {
+return str
+.toLowerCase()
+.trim()
+.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+.replace(/\s+/g, '-') // collapse whitespace and replace by -
+.replace(/-+/g, '-'); // collapse dashes
+}
+
+
 
 const mappers = {
     location(event) {
@@ -211,10 +221,10 @@ vueApp = { ...vueApp, ...eventsApp };
     <div class="events notr" v-scope @vue:mounted="fetchEvents()">
         <!-- Primer grupo -->
         <div v-for="(group, groupKey) in groupedEvents({{ params.ordering }})" style="margin-bottom:20px;" class="row">
-            <h1 class="col-12 heading_center">[[ tr(groupKey) ]]</h1>
+            <h1 :id="slugify(tableKey)" class="col-12 heading_center">[[ tr(groupKey) ]]</h1>
             <!-- Segundo grupo: cada clave genera una tabla -->
             <div v-for="(table, tableKey) in group" style="margin-bottom:20px;" class="col-md-6 col-lg-4" :class="tableKey">
-                <h3>[[ formatDate(tableKey).toLowerCase() ]]</h3>
+                <h3 :id="slugify(tableKey)">[[ formatDate(tableKey).toLowerCase() ]]</h3>
                 <table border="1">
                     <thead v-if="getSubKeys(table)[0] != ' '">
                         <tr>

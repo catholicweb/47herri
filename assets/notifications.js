@@ -40,9 +40,11 @@ async function main() {
         return eventDate.toISOString();
     }
 
+    const now = new Date();
+    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    const tomorrow_str = `(${tomorrow.getDate() } / ${tomorrow.getMonth()})`
+
     function isTomorrow(date) {
-        const now = new Date();
-        const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
         const input = new Date(date.getFullYear(), date.getMonth(), date.getDate());
         return input.getTime() === tomorrow.getTime();
     }
@@ -69,10 +71,11 @@ async function main() {
             if (!image) image = notify[title][i].image
         }
         return {
-            title: title,
+            title: title + ' ' + tomorrow_str,
             options: {
                 body: body,
-                icon: image
+                image: image,
+                data: { url: '/#' + context.slugify(title) }
             }
         }
     })
