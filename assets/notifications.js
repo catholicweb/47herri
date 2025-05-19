@@ -42,7 +42,16 @@ async function main() {
 
     const now = new Date();
     const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-    const tomorrow_str = `(${tomorrow.getDate() } / ${tomorrow.getMonth()})`
+    const basqueDaysOn = [
+        "Igandean", // on Sunday
+        "Astelehenean", // on Monday
+        "Asteartean", // on Tuesday
+        "Asteazkenean", // on Wednesday
+        "Ostegunean", // on Thursday
+        "Ostiralean", // on Friday
+        "Larunbatetan" // on Saturday
+    ];
+    const tomorrow_str = '(' + basqueDays[tomorrow.getDay()] + ')'
 
     function isTomorrow(date) {
         const input = new Date(date.getFullYear(), date.getMonth(), date.getDate());
@@ -74,7 +83,8 @@ async function main() {
             title: title + ' ' + tomorrow_str,
             options: {
                 body: body,
-                image: image,
+                icon: image,
+                badge: 'https://img.icons8.com/fluency-systems-regular/48/000000/church.png',
                 data: { url: '/#' + context.slugify(title) }
             }
         }
