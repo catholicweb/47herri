@@ -34,7 +34,7 @@ jobs:
           VAPID_PUBLIC: ${{ secrets.VAPID_PUBLIC }}
           VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
           NOTIF_TOKEN: ${{ secrets.NOTIF_TOKEN }}
-        run: node notify.js
+        run: node _includes/notify.js
 
       - name: Commit changes
         run: |
