@@ -9,8 +9,12 @@ async function main() {
     const subsRes = await fetch(`https://arrietaeguren.es/subscriptions?token=${NOTIF_TOKEN}`);
     const subs = (await subsRes.json()).slice(0, 1);
 
-    const notificationsData = await fs.readFile('./notifications.json', 'utf-8');
-    const notifications = JSON.parse(notificationsData);
+    let notifications;
+    try {
+        notifications = JSON.parse(await fs.readFile('./notifications.json', 'utf-8'));
+    } catch (err) {
+        return
+    }
 
     webpush.setVapidDetails(
         'mailto:admin@47herri.eus',
