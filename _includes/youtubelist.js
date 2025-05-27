@@ -4,6 +4,8 @@ import fs from 'fs/promises';
 const API_KEY = process.env.YT_API_KEY; // Leer API Key de env
 const CHANNEL_ID = 'UCB6hZ1l2VYWu955Fz09Ouzw'; // Reemplázalo por el ID del canal
 
+let newImportantVideos = []
+
 if (!API_KEY) {
     console.error('Error: La API Key no está definida. Asegúrate de exportarla.');
     process.exit(1);
@@ -66,6 +68,8 @@ async function getNewVideos(playlistId, cachedIds, pageToken = '') {
             return { newVideos, nextPageToken: null };
         }
         newVideos.push(video);
+        // Add the video if it is important
+        if (cachedIds && cachedIds.size && video.title.includes('')) newImportantVideos.push(video)
     }
     return { newVideos, nextPageToken: data.nextPageToken || null };
 }
@@ -111,6 +115,24 @@ async function saveVideosToFile(videos, file) {
     }
 }
 
+
+async function writeNotification(newImportantVideos) {
+    if (!newImportantVideos || !newImportantVideos.length) return
+    let notifications = newImportantVideos.map(video => {
+        return {
+            title: video.title,
+            options: {
+                body: 'YouTuben bideo berria! Klikatu eta ikusi!',
+                image: `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`,
+                badge: 'https://img.icons8.com/fluency-systems-regular/48/000000/church.png',
+                data: { url: '/#video-' + video.videoId }
+            }
+        }
+    })
+    console.log('writeNotification...')
+    return fs.writeFile('notifications.json', JSON.stringify(notifications));
+}
+
 (async () => {
     try {
         const playlistId = await getUploadsPlaylistId();
@@ -118,6 +140,7 @@ async function saveVideosToFile(videos, file) {
         let cachedVideos = await loadCachedVideos('assets/videos.json')
         const videos = await updateVideos(playlistId, cachedVideos);
         await saveVideosToFile(videos, 'assets/videos.json'); // Guardar el resultado en un archivo
+        await writeNotification(newImportantVideos)
 
         const playlists = await getAllPlaylistId()
         let kantak = []

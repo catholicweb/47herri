@@ -2,7 +2,7 @@
     <div class="infinite-carousel-container" v-scope @vue:mounted="fetchVideos(/{{include.params.filter}}/gi)">
         <div class="infinite-carousel" @scroll="onScroll" ref="carousel">
             <div class="infinite-item-wrapper col-lg-4 col-md-5 col-sm-8 col-11" v-for="item in visibleItems" v-cloak style="aspect-ratio: 16/9">
-                <div class="facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)' }">
+                <div class="facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)' }" :id="'video-'+item.videoId">
                     <header>[[ item.title ]]</header>
                     <button type="button" @click="addIframe('youtube', item.videoId)">[[ item.title ]]</button>
                 </div>
@@ -31,6 +31,19 @@ let carouselApp = {
         console.log(filter)
         this.allItems = items.filter(item => filter.test(item.title));
         this.loadMoreItems();
+        this.goToHash()
+    },
+    async goToHash() {
+        await new Promise(r => setTimeout(r, 250));
+        const hash = window.location.hash.substring(1);
+        const elem = document.getElementById(hash)
+        let y = elem.getBoundingClientRect().top + window.scrollY;
+        if (elem.querySelector('button')) {
+            y -= 80
+            await new Promise(r => setTimeout(r, 250));
+            elem.querySelector('button').click()
+        }
+        window.scrollTo({ top: y, behavior: 'smooth' });
     },
     async fetchKantak() {
         let data = await fetch('/assets/kantak.json')
