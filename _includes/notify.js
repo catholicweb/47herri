@@ -7,7 +7,7 @@ const NOTIF_TOKEN = process.env.NOTIF_TOKEN;
 
 async function main() {
     const subsRes = await fetch(`https://arrietaeguren.es/subscriptions?token=${NOTIF_TOKEN}`);
-    const subs = (await subsRes.json()).slice(0, 1);
+    const subs = (await subsRes.json()).slice(0, 3);
 
     let notifications;
     try {
