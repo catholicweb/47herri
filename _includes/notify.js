@@ -1,7 +1,7 @@
 // notify.js
-const webpush = require('web-push');
-const fs = require('fs/promises');
-const fetch = require('node-fetch');
+import webpush from 'web-push';
+import fs from 'fs/promises';
+import fetch from 'node-fetch';
 
 const NOTIF_TOKEN = process.env.NOTIF_TOKEN;
 
