@@ -29,32 +29,12 @@ jobs:
         env:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
 
-      - name: Obtener subscripciones descifradas y enviar notificaciones
+      - name: Enviar notificaciones push
         env:
           VAPID_PUBLIC: ${{ secrets.VAPID_PUBLIC }}
           VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
-        run: |
-          curl "https://arrietaeguren.es/subscriptions?token=${{ secrets.NOTIF_TOKEN }}" -o subs.json
-          node <<EOF
-          const webpush = require('web-push');
-          const subs = require('./subs.json').slice(0, 1);
-          const notifications = require('./notifications.json');
-
-          webpush.setVapidDetails(
-            'mailto:admin@47herri.eus',
-            process.env.VAPID_PUBLIC,
-            process.env.VAPID_PRIVATE
-          );
-
-          for (const not of notifications) {
-              for (const sub of subs) {
-              webpush.sendNotification(sub, JSON.stringify(not))
-                .catch(err => console.error('Error con suscripción:', err));
-            }
-          }
-          EOF
-          rm notifications.json
-          rm subs.json
+          NOTIF_TOKEN: ${{ secrets.NOTIF_TOKEN }}
+        run: node notify.js
 
       - name: Commit changes
         run: |
