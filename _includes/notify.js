@@ -6,8 +6,10 @@ import fetch from 'node-fetch';
 const NOTIF_TOKEN = process.env.NOTIF_TOKEN;
 
 async function main() {
-    const subsRes = await fetch(`https://arrietaeguren.es/subscriptions?token=${NOTIF_TOKEN}`);
-    const subs = (await subsRes.json()).slice(0, 3);
+    const subsRes = await fetch(`https://arrietaeguren.es/subscriptions?token=${NOTIF_TOKEN}&test=true`);
+    let subs = await subsRes.json()
+
+    if (subs.length > 1) return
 
     let notifications;
     try {
@@ -23,6 +25,7 @@ async function main() {
     );
 
     for (const not of notifications) {
+        console.log(not)
         for (const sub of subs) {
             try {
                 await webpush.sendNotification(sub, JSON.stringify(not));
