@@ -2,6 +2,8 @@
 hiletak:
   - date: 13/05/2025 17.30
     name: ASENSIO ALSUA HUARTE
+  - date: 31/05/2025 19.30
+    name: ASENSIO ARANO HUARTE
 ekitaldiak:
   - date: 20/05/2025 08:30
     title: SAN MIGELEN BISITA
