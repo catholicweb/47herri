@@ -22,6 +22,10 @@ ekitaldiak:
   - date: 25/05/2025 10:00
     title: "SAN MIGELEN BISITA "
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 29/06/2025 11:00
+    title: "SAN PEDRO "
+    notes: Meza ondoren prozesioa egingo da
+    image: /media/Screenshot_20250530_093310_Gallery.jpg
 mezak:
   - date: igandetan 10.00
     language: euskaraz
