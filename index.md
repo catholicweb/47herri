@@ -27,6 +27,10 @@ ekitaldiak:
       izango dira
     image: /media/Screenshot_20250501_185208_Gallery.webp
     location: Imotz
+  - date: 07/06/2025 12:00
+    title: LARUNBETLARI
+    image: /media/Screenshot_20250530_094045_Gallery.jpg
+    location: "Beruete/Goldaratz "
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
