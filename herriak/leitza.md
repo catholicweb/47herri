@@ -6,6 +6,8 @@ hiletak:
     name: LONTXA OLANO
   - date: 17/05/2025 19.30
     name: JUAN TELLECHEA ALBISTUR
+  - date: 02/06/2025 17.00
+    name: ARANTXA ZUBELDIA
 ekitaldiak:
   - date: 16/04/2025 18:00-19:30
     title: AITORTZAK
