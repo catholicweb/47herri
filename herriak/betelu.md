@@ -1,6 +1,7 @@
 ---
 hiletak:
-  - {}
+  - date: 07/06/2025 19.30
+    name: MILAGROS BULDAIN JAKA
 ekitaldiak:
   - date: 17/04/2025 12:00
     title: "AITORTZAK "
