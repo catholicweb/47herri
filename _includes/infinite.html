@@ -38,12 +38,10 @@ let carouselApp = {
         const hash = window.location.hash.substring(1);
         const elem = document.getElementById(hash)
         let y = elem.getBoundingClientRect().top + window.scrollY;
-        if (elem.querySelector('button')) {
-            y -= 80
-            await new Promise(r => setTimeout(r, 250));
-            elem.querySelector('button').click()
-        }
+        if (elem.querySelector('button')) y -= 80
         window.scrollTo({ top: y, behavior: 'smooth' });
+        await new Promise(r => setTimeout(r, 250));
+        elem.querySelector('button').click()
     },
     async fetchKantak() {
         let data = await fetch('/assets/kantak.json')

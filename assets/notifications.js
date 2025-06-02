@@ -75,14 +75,25 @@ async function main() {
     let notifications = Object.keys(notify).map(title => {
         let body = ''
         let image = ''
+        let hiletak = []
         for (var i = 0; i < notify[title].length; i++) {
-            body += notify[title][i].times[0] + ' - ' + notify[title][i].location + '\n'
+            if (notify[title][i].type == 'hiletak') {
+                body += notify[title][i].times[0] + ' - ' + notify[title][i].name + ' (' + notify[title][i].location + ')\n'
+                hiletak.push(notify[title][i].name)
+            } else {
+                body += notify[title][i].times[0] + ' - ' + notify[title][i].location + '\n'
+            }
             if (!image) image = notify[title][i].image
         }
+
+        let longTitle = title + ' ' + tomorrow_str
+        if (hiletak.length) {
+            longTitle = title.toUpperCase() + ' - ' + hiletak.join(' - ') + ' ' + tomorrow_str
+        }
         return {
-            title: title + ' ' + tomorrow_str,
+            title: longTitle.replaceAll('aizarotz', 'Aizarotz'),
             options: {
-                body: body,
+                body: body.replaceAll('aizarotz', 'Aizarotz'),
                 icon: image,
                 badge: 'https://img.icons8.com/fluency-systems-regular/48/000000/church.png',
                 data: { url: '/#' + context.slugify(title) }
