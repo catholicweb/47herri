@@ -69,7 +69,7 @@ async function getNewVideos(playlistId, cachedIds, pageToken = '') {
         }
         newVideos.push(video);
         // Add the video if it is important
-        if (cachedIds && cachedIds.size && video.title.includes('')) newImportantVideos.push(video)
+        if (cachedIds && cachedIds.size && video.title.includes('*')) newImportantVideos.push(video)
     }
     return { newVideos, nextPageToken: data.nextPageToken || null };
 }

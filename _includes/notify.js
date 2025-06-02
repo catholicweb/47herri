@@ -6,10 +6,8 @@ import fetch from 'node-fetch';
 const NOTIF_TOKEN = process.env.NOTIF_TOKEN;
 
 async function main() {
-    const subsRes = await fetch(`https://arrietaeguren.es/subscriptions?token=${NOTIF_TOKEN}&test=true`);
+    const subsRes = await fetch(`https://arrietaeguren.es/subscriptions?token=${NOTIF_TOKEN}`);
     let subs = await subsRes.json()
-
-    if (subs.length > 1) return
 
     let notifications;
     try {
