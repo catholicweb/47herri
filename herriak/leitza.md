@@ -8,6 +8,8 @@ hiletak:
     name: JUAN TELLECHEA ALBISTUR
   - date: 02/06/2025 17.00
     name: ARANTXA ZUBELDIA
+  - date: 06/06/2025 18.00
+    name: MARIA TERESA URROZ ZUBIETA
 ekitaldiak:
   - date: 16/04/2025 18:00-19:30
     title: AITORTZAK
