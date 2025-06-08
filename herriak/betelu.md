@@ -36,10 +36,10 @@ ekitaldiak:
     title: SAN DONATOKO ERROMERIA
     notes: 11:30tan abiatuko da prozesioa elizetik eta 12:30tan meza egongo da
       ermitan.
-    image: /media/Screenshot_20250531_002422_YouTube.jpg
+    image: /media/Screenshot_20250531_002422_YouTube.webp
   - date: 29/06/2025 12:30
     title: SAN PEDRO
-    image: /media/Screenshot_20250531_004252_YouTube.jpg
+    image: /media/Screenshot_20250531_004252_YouTube.webp
 mezak:
   - date: ostirala 11.00
     notes: Santa Kruz ermitten

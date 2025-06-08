@@ -1,0 +1,1919 @@
+<html>
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <script type="text/javascript">
+    function load() {
+        const indexContainer = document.querySelector('.indice');
+        if (!indexContainer) return;
+
+        document.querySelectorAll('h1').forEach((heading, i) => {
+            const id = heading.id || `section-${i}`;
+            heading.id = id; // assign an ID so we can link to it
+
+            const link = document.createElement('div');
+            link.classList.add('c1', 'link'); // or whatever classes you want
+            link.textContent = heading.textContent.trim();
+
+            link.addEventListener('click', () => {
+                document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            });
+
+            indexContainer.appendChild(link);
+        });
+    }
+    </script>
+    <style>
+    html {
+        padding: 5px !important;
+        max-width: 750px !important;
+        margin: auto;
+    }
+
+    .indice * {
+        color: blue !important;
+        cursor: pointer;
+    }
+
+    .c25.c30.c22 {
+        scroll-margin-top: 35rem;
+    }
+
+    #font-controls {
+        position: fixed;
+        bottom: 2em;
+        right: 2em;
+        display: flex;
+        gap: 0.5em;
+        z-index: 9999;
+        font-size: 8rem;
+    }
+
+    #font-controls button {
+        padding: 0.5em;
+        font-size: 1.5em;
+        border: none;
+        border-radius: 0.5em;
+        background: #333;
+        color: white;
+        cursor: pointer;
+    }
+    </style>
+    <script>
+        let currentSize = parseFloat(localStorage.getItem('fontSize')) || 1.5;
+    
+
+  function changeFontSize(delta) {
+    currentSize = Math.max(0.25, Math.min(4, currentSize + delta));
+    localStorage.setItem('fontSize', currentSize.toFixed(2));
+    document.documentElement.style.fontSize = `${currentSize}px`;
+  }
+
+  changeFontSize(0)
+</script>
+    <style type="text/css">
+    @import url(https://themes.googleusercontent.com/fonts/css?kit=fpjTOVmNbO4Lz34iLyptLaIg6ghpHn1vhFthO1ORc0-H4gUIUjZTH34PuvJkbTJT);
+
+    ol.lst-kix_list_7-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_14-1>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_14-3>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_1-0 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_list_9-0.start {
+        counter-reset: lst-ctn-kix_list_9-0 0
+    }
+
+    .lst-kix_list_14-0>li:before {
+        content: "\0025cf   "
+    }
+
+    .lst-kix_list_14-4>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_14-5>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_14-7>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_14-6>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_9-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_9-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_9-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_9-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_9-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_9-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_9-5 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_5-0>li {
+        counter-increment: lst-ctn-kix_list_5-0
+    }
+
+    .lst-kix_list_7-0>li {
+        counter-increment: lst-ctn-kix_list_7-0
+    }
+
+    .lst-kix_list_9-0>li {
+        counter-increment: lst-ctn-kix_list_9-0
+    }
+
+    ul.lst-kix_list_9-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_1-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_1-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_1-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_1-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_1-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_1-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_1-5 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_14-2>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_1-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_14-8>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_5-0>li:before {
+        content: ""counter(lst-ctn-kix_list_5-0, decimal) ". "
+    }
+
+    ol.lst-kix_list_6-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_5-3>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_5-2>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_5-1>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_5-7>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_8-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_8-5 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_5-6>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_5-8>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_8-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_8-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_8-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_8-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_8-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_5-4>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_5-5>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_8-1 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_6-1>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_6-3>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_6-0>li:before {
+        content: ""counter(lst-ctn-kix_list_6-0, decimal) ". "
+    }
+
+    .lst-kix_list_6-4>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_6-2>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_6-8>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_6-5>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_6-7>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_6-6>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_2-7>li:before {
+        content: "o  "
+    }
+
+    .lst-kix_list_7-4>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_7-6>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_2-5>li:before {
+        content: "\0025aa   "
+    }
+
+    .lst-kix_list_7-2>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_3-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_3-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_10-1>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_13-7>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_3-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_3-2 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_7-8>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_3-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_3-5 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_list_9-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_3-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_3-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_3-4 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_10-7>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_10-5>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_10-3>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_11-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_11-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_4-1>li:before {
+        content: "o  "
+    }
+
+    ul.lst-kix_list_11-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_11-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_11-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_11-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_11-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_11-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_9-2>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_4-3>li:before {
+        content: "\0025cf   "
+    }
+
+    .lst-kix_list_4-5>li:before {
+        content: "\0025aa   "
+    }
+
+    ul.lst-kix_list_11-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_9-0>li:before {
+        content: ""counter(lst-ctn-kix_list_9-0, decimal) ". "
+    }
+
+    .lst-kix_list_9-6>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_9-4>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_11-3>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_2-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_12-3>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_11-5>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_12-1>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_2-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_2-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_2-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_2-1 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_list_8-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_9-8>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_2-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_1-1>li:before {
+        content: "o  "
+    }
+
+    ul.lst-kix_list_2-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_11-7>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_2-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_2-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_10-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_1-3>li:before {
+        content: "\0025cf   "
+    }
+
+    .lst-kix_list_13-3>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_10-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_10-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_1-7>li:before {
+        content: "o  "
+    }
+
+    ul.lst-kix_list_10-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_10-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_10-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_10-3 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_1-5>li:before {
+        content: "\0025aa   "
+    }
+
+    ul.lst-kix_list_10-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_10-1 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_13-5>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_12-5>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_12-7>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_2-1>li:before {
+        content: "o  "
+    }
+
+    ol.lst-kix_list_6-0.start {
+        counter-reset: lst-ctn-kix_list_6-0 0
+    }
+
+    .lst-kix_list_2-3>li:before {
+        content: "\0025cf   "
+    }
+
+    .lst-kix_list_13-1>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_3-0>li:before {
+        content: "\002014   "
+    }
+
+    ul.lst-kix_list_5-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_5-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_3-1>li:before {
+        content: "o  "
+    }
+
+    .lst-kix_list_3-2>li:before {
+        content: "\0025aa   "
+    }
+
+    ul.lst-kix_list_5-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_5-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_8-1>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_8-2>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_6-0>li {
+        counter-increment: lst-ctn-kix_list_6-0
+    }
+
+    .lst-kix_list_8-0>li {
+        counter-increment: lst-ctn-kix_list_8-0
+    }
+
+    .lst-kix_list_3-5>li:before {
+        content: "\0025aa   "
+    }
+
+    .lst-kix_list_3-4>li:before {
+        content: "o  "
+    }
+
+    ul.lst-kix_list_5-3 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_3-3>li:before {
+        content: "\0025cf   "
+    }
+
+    ul.lst-kix_list_5-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_5-1 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_8-0>li:before {
+        content: ""counter(lst-ctn-kix_list_8-0, decimal) ". "
+    }
+
+    ul.lst-kix_list_5-2 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_8-7>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_3-8>li:before {
+        content: "\0025aa   "
+    }
+
+    .lst-kix_list_8-5>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_8-6>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_8-3>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_13-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_13-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_13-3 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_3-6>li:before {
+        content: "\0025cf   "
+    }
+
+    ul.lst-kix_list_13-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_13-1 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_3-7>li:before {
+        content: "o  "
+    }
+
+    ul.lst-kix_list_13-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_8-4>li:before {
+        content: " "
+    }
+
+    ol.lst-kix_list_5-0.start {
+        counter-reset: lst-ctn-kix_list_5-0 0
+    }
+
+    .lst-kix_list_11-2>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_13-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_11-1>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_13-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_13-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_11-0>li:before {
+        content: "\0025cf   "
+    }
+
+    .lst-kix_list_8-8>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_4-8>li:before {
+        content: "\0025aa   "
+    }
+
+    .lst-kix_list_4-7>li:before {
+        content: "o  "
+    }
+
+    ul.lst-kix_list_4-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_4-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_4-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_4-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_4-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_4-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_4-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_4-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_4-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_12-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_12-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_12-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_12-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_12-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_12-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_12-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_12-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_12-7 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_list_8-0.start {
+        counter-reset: lst-ctn-kix_list_8-0 0
+    }
+
+    .lst-kix_list_7-0>li:before {
+        content: ""counter(lst-ctn-kix_list_7-0, decimal) ". "
+    }
+
+    ol.lst-kix_list_5-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_2-6>li:before {
+        content: "\0025cf   "
+    }
+
+    .lst-kix_list_2-4>li:before {
+        content: "o  "
+    }
+
+    .lst-kix_list_2-8>li:before {
+        content: "\0025aa   "
+    }
+
+    .lst-kix_list_7-1>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_7-5>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_7-3>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_7-5 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_10-0>li:before {
+        content: "\0025cf   "
+    }
+
+    ul.lst-kix_list_7-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_7-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_7-4 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_13-6>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_13-8>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_7-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_7-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_7-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_7-2 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_7-7>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_10-4>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_10-8>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_4-0>li:before {
+        content: "\002014   "
+    }
+
+    .lst-kix_list_10-2>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_4-4>li:before {
+        content: "o  "
+    }
+
+    .lst-kix_list_4-2>li:before {
+        content: "\0025aa   "
+    }
+
+    .lst-kix_list_4-6>li:before {
+        content: "\0025cf   "
+    }
+
+    .lst-kix_list_9-3>li:before {
+        content: " "
+    }
+
+    ol.lst-kix_list_7-0.start {
+        counter-reset: lst-ctn-kix_list_7-0 0
+    }
+
+    .lst-kix_list_10-6>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_9-1>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_9-7>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_11-4>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_12-4>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_9-5>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_6-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_6-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_6-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_6-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_6-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_12-2>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_11-6>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_1-0>li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_list_6-2 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_11-8>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_6-3 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_1-2>li:before {
+        content: "\0025aa   "
+    }
+
+    .lst-kix_list_12-0>li:before {
+        content: "\0025cf   "
+    }
+
+    ul.lst-kix_list_6-1 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_1-4>li:before {
+        content: "o  "
+    }
+
+    .lst-kix_list_13-0>li:before {
+        content: "\0025cf   "
+    }
+
+    ul.lst-kix_list_14-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_14-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_14-2 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_13-4>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_14-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_14-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_1-6>li:before {
+        content: "\0025cf   "
+    }
+
+    ul.lst-kix_list_14-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_14-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_2-0>li:before {
+        content: "-  "
+    }
+
+    .lst-kix_list_12-6>li:before {
+        content: " "
+    }
+
+    ul.lst-kix_list_14-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_list_14-5 {
+        list-style-type: none
+    }
+
+    .lst-kix_list_1-8>li:before {
+        content: "\0025aa   "
+    }
+
+    .lst-kix_list_2-2>li:before {
+        content: "\0025aa   "
+    }
+
+    .lst-kix_list_13-2>li:before {
+        content: " "
+    }
+
+    .lst-kix_list_12-8>li:before {
+        content: " "
+    }
+
+    ol {
+        margin: 0;
+        padding: 0
+    }
+
+    table td,
+    table th {
+        padding: 0
+    }
+
+    .c24 {
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 10rem;
+        font-family: "Times New Roman";
+        font-style: normal
+    }
+
+    .c38 {
+        padding-top: 0rem;
+        padding-bottom: 6rem;
+        line-height: 1.1500000000000001;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: center
+    }
+
+    .c25 {
+        color: #000000;
+        font-weight: 700;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 20rem;
+        font-family: "Times New Roman";
+        font-style: normal
+    }
+
+    .c17 {
+        color: #000000;
+        font-weight: 700;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 23rem;
+        font-family: "Times New Roman";
+        font-style: normal
+    }
+
+    .c6 {
+        padding-top: 18rem;
+        padding-bottom: 12rem;
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: center
+    }
+
+    .c7 {
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 11rem;
+        font-family: "Calibri";
+        font-style: normal
+    }
+
+    .c0 {
+        color: #ff0000;
+        font-weight: 700;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 12rem;
+        font-family: "Times New Roman";
+        font-style: normal
+    }
+
+    .c19 {
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 11rem;
+        font-family: "Calibri";
+        font-style: italic
+    }
+
+    .c18 {
+        padding-top: 24rem;
+        padding-bottom: 6rem;
+        line-height: 1.1500000000000001;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: center
+    }
+
+    .c1 {
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 12rem;
+        font-family: "Times New Roman";
+        font-style: normal
+    }
+
+    .c15 {
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 11rem;
+        font-family: "Times New Roman";
+        font-style: normal
+    }
+
+    .c11 {
+        padding-top: 0rem;
+        padding-bottom: 10rem;
+        line-height: 1.1500000000000001;
+        orphans: 2;
+        widows: 2;
+        text-align: center
+    }
+
+    .c22 {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+        line-height: 1.1500000000000001;
+        orphans: 2;
+        widows: 2;
+        text-align: center
+    }
+
+    .c14 {
+        padding-top: 0rem;
+        padding-bottom: 10rem;
+        line-height: 1.1500000000000001;
+        orphans: 2;
+        widows: 2;
+        text-align: justify
+    }
+
+    .c2 {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+        line-height: 1.15;
+        orphans: 2;
+        widows: 2;
+        text-align: center
+    }
+
+    .c4 {
+        padding-top: 0rem;
+        padding-bottom: 5rem;
+        line-height: 1.15;
+        orphans: 2;
+        widows: 2;
+        text-align: center
+    }
+
+    .c30 {
+        padding-top: 0rem;
+        padding-bottom: 10rem;
+        line-height: 1.1500000000000001;
+        orphans: 2;
+        widows: 2;
+        text-align: right
+    }
+
+    .c8 {
+        padding-top: 0rem;
+        padding-bottom: 10rem;
+        line-height: 1.1500000000000001;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    .c3 {
+        padding-top: 0rem;
+        padding-bottom: 5rem;
+        line-height: 1.15;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    .c34 {
+        color: #222222;
+        font-weight: 700;
+        vertical-align: baseline;
+        font-size: 11.5rem;
+        font-family: "Open Sans"
+    }
+
+    .c16 {
+        vertical-align: baseline;
+        font-size: 12rem;
+        font-family: "Times New Roman";
+        font-weight: 700
+    }
+
+    .c32 {
+        font-weight: 400;
+        vertical-align: baseline;
+        font-size: 9rem;
+        font-family: "Calibri"
+    }
+
+    .c21 {
+        font-size: 12rem;
+        font-family: "Times New Roman";
+        font-style: italic;
+        font-weight: 700
+    }
+
+    .c5 {
+        vertical-align: baseline;
+        font-size: 12rem;
+        font-family: "Times New Roman";
+        font-weight: 400
+    }
+
+    .c23 {
+        font-size: 12rem;
+        font-family: "Times New Roman";
+        font-weight: 700
+    }
+
+    .c13 {
+        font-weight: 400;
+        font-family: "Times New Roman";
+        font-style: italic
+    }
+
+    .c20 {
+        color: #000000;
+        text-decoration: none;
+        font-style: italic
+    }
+
+    .c9 {
+        font-size: 12rem;
+        font-weight: 400;
+        font-family: "Times New Roman"
+    }
+
+    .c35 {
+        background-color: #ffffff;
+        max-width: 334.6rem;
+        padding: 42.5pt 42.5pt 42.5pt 42.5pt
+    }
+
+    .c36 {
+        vertical-align: baseline;
+        font-size: 11pt
+    }
+
+    .c27 {
+        text-decoration: none;
+        font-style: normal
+    }
+
+    .c26 {
+        font-weight: 400;
+        font-style: italic
+    }
+
+    .c12 {
+        color: #ff0000
+    }
+
+    .c33 {
+        text-decoration: none
+    }
+
+    .c28 {
+        font-size: 12pt
+    }
+
+    .c31 {
+        font-style: italic
+    }
+
+    .c29 {
+        color: #000000
+    }
+
+    .c37 {
+        height: 20pt
+    }
+
+    .c10 {
+        height: 11pt
+    }
+
+    .title {
+        padding-top: 24rem;
+        color: #000000;
+        font-weight: 700;
+        font-size: 36rem;
+        padding-bottom: 6rem;
+        font-family: "Calibri";
+        line-height: 1.1500000000000001;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    .subtitle {
+        padding-top: 18rem;
+        color: #666666;
+        font-size: 24rem;
+        padding-bottom: 4rem;
+        font-family: "Georgia";
+        line-height: 1.1500000000000001;
+        page-break-after: avoid;
+        font-style: italic;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    li {
+        color: #000000;
+        font-size: 11rem;
+        font-family: "Calibri"
+    }
+
+    p {
+        margin: 0;
+        color: #000000;
+        font-size: 11rem;
+        font-family: "Calibri"
+    }
+
+    h1 {
+        padding-top: 24rem;
+        color: #000000;
+        font-weight: 700;
+        font-size: 20rem;
+        padding-bottom: 6rem;
+        font-family: "Times New Roman";
+        line-height: 1.1500000000000001;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: center
+    }
+
+    h2 {
+        padding-top: 18rem;
+        color: #000000;
+        font-weight: 700;
+        font-size: 18rem;
+        padding-bottom: 4rem;
+        font-family: "Calibri";
+        line-height: 1.1500000000000001;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    h3 {
+        padding-top: 18rem;
+        color: #ff0000;
+        font-weight: 700;
+        font-size: 12rem;
+        padding-bottom: 12rem;
+        font-family: "Times New Roman";
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: center
+    }
+
+    h4 {
+        padding-top: 12rem;
+        color: #000000;
+        font-weight: 700;
+        font-size: 12rem;
+        padding-bottom: 2rem;
+        font-family: "Calibri";
+        line-height: 1.1500000000000001;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    h5 {
+        padding-top: 11rem;
+        color: #000000;
+        font-weight: 700;
+        font-size: 11rem;
+        padding-bottom: 2rem;
+        font-family: "Calibri";
+        line-height: 1.1500000000000001;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    h6 {
+        padding-top: 10rem;
+        color: #000000;
+        font-weight: 700;
+        font-size: 10rem;
+        padding-bottom: 2rem;
+        font-family: "Calibri";
+        line-height: 1.1500000000000001;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+    </style>
+</head>
+
+<body class="doc-content" onload="load()">
+    <!-- Floating buttons -->
+    <div id="font-controls">
+        <button onclick="changeFontSize(0.1)">A+</button>
+        <button onclick="changeFontSize(-0.1)">A-</button>
+    </div>
+    <p class="c22"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 560.00px; height: 831.76px;"><img alt="" src="media/image2.webp" style="width: 560.00px; height: 831.76px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <h2 class="c38"><span class="c17">Indice</span></h2>
+    <p class="indice"></p>
+    <h1 class="c38" id="h.vwxoh7o2fmd3"><span class="c17">Santa Misa / Meza Santua</span></h1>
+    <p class="c11"><span class="c24">Se celebrar&aacute; la Misa de san Pedro y san Pablo y ser&aacute; con V&iacute;speras integradas.</span></p>
+    <h3 class="c6" id="h.9kti33ed0e"><span class="c0">Canto de entrada</span></h3>
+    <p class="c22"><span class="c1">BIHOTZ BATEZ, ELKARTURIK</span></p>
+    <p class="c22"><span class="c1">ZUGANA GATOZ, JAUNA (2)</span></p>
+    <p class="c22"><span class="c1">EMAIGUZU ZURE ARGI, GRAZI TA MAITASUNA,</span></p>
+    <p class="c22"><span class="c1">ENTZUN ARREN, JAUNA</span></p>
+    <h3 class="c6" id="h.p652dtiagyso"><span class="c0">Invocaci&oacute;n inicial</span></h3>
+    <p class="c8"><span class="c9 c12">Presidente:</span><span class="c1">&nbsp;Dios m&iacute;o, ven en mi auxilio</span></p>
+    <p class="c8"><span class="c9 c12">Todos:</span><span class="c9">&nbsp;Se&ntilde;or date prisa en socorrerme; Gloria al Padre&hellip;.</span></p>
+    <h3 class="c6" id="h.yn1mr2zl5k2"><span>Salmo 116</span></h3>
+    <p class="c8"><span class="c5 c12">Ant.</span><span class="c5">&nbsp;</span><span class="c9">Lur osoa, egiozu irrintzi jainkoari</span></p>
+    <p class="c8"><span class="c1">Alabad al Se&ntilde;or, todas las naciones, <br>aclamadlo, todos los pueblos.</span></p>
+    <p class="c8"><span class="c1">Firme es su misericordia con nosotros,<br>su fidelidad dura por siempre.</span></p>
+    <p class="c8"><span class="c1">Gloria al Padre al Hijo y al Esp&iacute;ritu Santo<br>Como era en el principio, ahora y siempre,<br>por los siglos de los siglos.</span></p>
+    <p class="c8"><span class="c9 c12">Ant.</span><span class="c5">&nbsp;</span><span class="c9">Lur osoa, egiozu irrintzi jainkoari</span></p>
+    <h3 class="c6" id="h.o834dtxnym2s"><span class="c23 c12">Salmo 147</span></h3>
+    <p class="c8"><span class="c9 c12">Ant.</span><span class="c5">&nbsp;</span><span class="c9">Jauna, zure maitasuna abestuko dut betiren beti.</span></p>
+    <p class="c8"><span class="c1">Glorifica al Se&ntilde;or, Jerusal&eacute;n;<br>alaba a tu Dios, Si&oacute;n:<br>que ha reforzado los cerrojos de tus puertas,<br>y ha bendecido a tus hijos dentro de ti;<br>ha puesto paz en tus fronteras,<br>te sacia con flor de harina.</span></p>
+    <p class="c8"><span class="c1">&Eacute;l env&iacute;a su mensaje a la tierra,<br>y su palabra corre veloz;<br>manda la nieve como lana,<br>esparce la escarcha como ceniza;</span></p>
+    <p class="c8"><span class="c1">hace caer el hielo como migajas<br>y con el fr&iacute;o congela las aguas;<br>env&iacute;a una orden, y se derriten;<br>sopla su aliento, y corren.</span></p>
+    <p class="c8"><span class="c1">Anuncia su palabra a Jacob,<br>sus decretos y mandatos a Israel;<br>con ninguna naci&oacute;n obr&oacute; as&iacute;,<br>ni les dio a conocer sus mandatos.</span></p>
+    <p class="c8"><span class="c1">Gloria al Padre al Hijo y al Esp&iacute;ritu Santo<br>Como era en el principio, ahora y siempre,<br>por los siglos de los siglos.</span></p>
+    <p class="c8"><span class="c5 c12">Ant.</span><span class="c9">&nbsp;Jauna, zure maitasuna abestuko dut betiren beti.</span></p>
+    <h3 class="c6" id="h.u6wkdgg50o73"><span class="c12 c16">C</span><span class="c12 c23">&aacute;ntico efesios</span></h3>
+    <p class="c8"><span class="c9 c12">Ant.</span><span class="c5">&nbsp;B</span><span class="c9">ertan dago jauna, zintzoki deitzen duten guztiengandik.</span></p>
+    <p class="c8"><span class="c1">Bendito sea Dios,<br>Padre de nuestro Se&ntilde;or Jesucristo,<br>que nos ha bendecido en la persona de Cristo<br>con toda clase de bienes espirituales y celestiales.</span></p>
+    <p class="c8"><span class="c1">&Eacute;l nos eligi&oacute; en la persona de Cristo,<br>antes de crear el mundo,<br>para que fu&eacute;semos santos<br>e irreprochables ante &Eacute;l por el amor.</span></p>
+    <p class="c8"><span class="c1">&Eacute;l nos ha destinado en la persona de Cristo<br>por pura iniciativa suya,<br>a ser sus hijos,<br>para que la gloria de su gracia,<br>que tan generosamente nos ha concedido<br>en su querido Hijo,<br>redunde en alabanza suya.</span></p>
+    <p class="c8"><span class="c1">Por este Hijo, por su sangre,<br>hemos recibido la redenci&oacute;n,<br>el perd&oacute;n de los pecados.<br>El tesoro de su gracia, sabidur&iacute;a y prudencia<br>ha sido un derroche para con nosotros,<br>d&aacute;ndonos a conocer el misterio de su voluntad.</span></p>
+    <p class="c8"><span class="c1">Este es el plan<br>que hab&iacute;a proyectado realizar por Cristo<br>cuando llegase el momento culminante:<br>recapitular en Cristo todas las cosas<br>del cielo y de la tierra.</span></p>
+    <p class="c8"><span class="c1">Gloria al Padre al Hijo y al Esp&iacute;ritu Santo<br>Como era en el principio, ahora y siempre,<br>por los siglos de los siglos.</span></p>
+    <p class="c8"><span class="c9 c12">Ant.</span><span class="c5">&nbsp;</span><span class="c1">Bertan dago jauna, zintzoki deitzen duten guztiengandik.</span></p>
+    <h3 class="c6" id="h.hn3yib8s1ij8"><span class="c0">Canto de Ofertorio</span></h3>
+    <p class="c22"><span class="c1">AMA MAITE MARIA, EGIGUZU LAGUN, ZURE BITARTEZ JESUS IKUSI DEZAGUN (2)<br>AINGERUZKO LIRIO, ESTIMAGARRIA<br>USAI GOZOZKO LORE, ZERUTIK JETSIA,<br>GORDE NAZAZU AMA, GUZTIZ MAITATIA,<br>EZ DEZADAN ZIKINDU BIRTUTE GARBIA.</span></p>
+    <h3 class="c6" id="h.ppiis1by5igq"><span>Padre nuestro</span></h3>
+    <p class="c22"><span class="c9">GURE AITA ZERUETAN ZERANA.</span><span class="c1"><br>SANTU IZAN BEDI ZURE IZENA.<br>ETOR BEDI ZURE ERREINUA.<br>EGIN BEDI ZURE NAHIA<br>ZERUAN BEZALA LURREAN ERE.</span></p>
+    <p class="c22"><span class="c1">EMAIGUZU GAUR EGUN HONTAKO OGIA.<br>BARKATU GURE ZORRAK<br>GUK ERE GURE ZORDUNEI BARKATZEN DIEGUNEZ GERO.<br>ETA EZ GU TENTALDIRA ERAMAN,<br>BAINAN ATERA GAITZAZU GAITZETIK</span></p>
+    <p class="c22 c10"><span class="c1"></span></p>
+    <h3 class="c6" id="h.67bg4hsn0w8u"><span class="c0">Kanta dezagun</span></h3>
+    <p class="c4"><span class="c1">KANTA DEZAGUN AINGERUEKIN<br>ZERUKO KANTA EDERRENA:<br>SANTUA, SANTU, SANTUA ZERA,<br>JAINGOKO GURE JAUN ONENA.<br>ZERU TA LURRAK GORESTEN DUTE,<br>GORESTEN ZURE AHALMENA.</span></p>
+    <p class="c4"><span class="c1">HOSANNA ZURI ZERU GOIETAN,<br>HOSANNA TA GORALPENA.<br>BEDEINKATUA ORAIN TA BETI<br>GUREGANA DATORRENA.</span></p>
+    <h3 class="c6" id="h.6f4o9by7kj46"><span class="c23 c12">Canto durante la Comuni&oacute;n</span></h3>
+    <p class="c2"><span class="c1">SINISTEN DUT JAUNA, </span></p>
+    <p class="c2"><span class="c1">SINISTEN DUT</span></p>
+    <p class="c2"><span class="c1">BIHOTZ BARRENEAN</span></p>
+    <p class="c2"><span class="c1">GORDERIK ZAITUT, </span></p>
+    <p class="c2"><span class="c1">NAHIGABEAN ERE, </span></p>
+    <p class="c2"><span class="c1">HAUXE ESANGO DIZUT</span></p>
+    <p class="c2"><span class="c1">SINISTEN DUT, JAUNA</span></p>
+    <p class="c2"><span class="c1">SINISTEN DUT.</span></p>
+    <p class="c2 c10"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">ITXARO DUT JAUNA,</span></p>
+    <p class="c2"><span class="c1">ITXARO DUT</span></p>
+    <p class="c2"><span class="c1">ZUGAN USTE DUNIK</span></p>
+    <p class="c2"><span class="c1">UZTEN EZ DUZU</span></p>
+    <p class="c2"><span class="c1">POZ TA ATSEKABEAN</span></p>
+    <p class="c2"><span class="c1">DEI EGINGO DIZUT</span></p>
+    <p class="c2"><span class="c1">ITXARO DUT JAUNA</span></p>
+    <p class="c2"><span class="c1">ITXARO DUT.</span></p>
+    <p class="c2 c10"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">MAITE ZAITUT JAUNA,</span></p>
+    <p class="c2"><span class="c1">MAITE ZAITUT</span></p>
+    <p class="c2"><span class="c1">NAIZEN OSO OSOA</span></p>
+    <p class="c2"><span class="c1">ZURI DAMAIZUT</span></p>
+    <p class="c2"><span class="c1">ZUREKIN ZERURA</span></p>
+    <p class="c2"><span class="c1">BIZITZERA NAHI DUT</span></p>
+    <p class="c2"><span class="c1">MAITE ZAITUT, JAUNA</span></p>
+    <p class="c2"><span class="c1">MAITE ZAITUT.</span></p>
+    <h3 class="c6" id="h.97gta385glv0"><span class="c23 c12">Magnificat</span><span class="c13 c28">&nbsp;</span><span class="c5 c20">(de pie, a dos coros)</span></h3>
+    <p class="c8"><span class="c13 c12 c28">&nbsp;Ant.</span><span class="c5 c20">&nbsp;(todos) Cumplid los mandatos del Se&ntilde;or, porque ellos son vuestra sabidur&iacute;a y vuestra inteligencia a los ojos de los pueblos</span></p>
+    <p class="c8"><span class="c1">Proclama mi alma la grandeza del Se&ntilde;or, se alegra mi esp&iacute;ritu en Dios, mi Salvador; porque ha mirado la humillaci&oacute;n de su esclava.</span></p>
+    <p class="c8"><span class="c1">Desde ahora me felicitar&aacute;n todas las generaciones, porque el Poderoso ha hecho obras grandes por m&iacute;: su nombre es Santo, y su misericordia llega a sus fieles de generaci&oacute;n en generaci&oacute;n.</span></p>
+    <p class="c8"><span class="c1">&Eacute;l hace proezas con su brazo; dispersa a los soberbios de coraz&oacute;n, derriba del trono a los poderosos, y enaltece a los humildes, a los hambrientos los colma de bienes y a los ricos los despide vac&iacute;os.</span></p>
+    <p class="c8"><span class="c1">Auxilia a Israel su siervo, acord&aacute;ndose de la misericordia, como lo hab&iacute;a prometido a nuestros padres en favor de Abraham y su descendencia por siempre.</span></p>
+    <p class="c8"><span class="c1">Gloria al Padre,...</span></p>
+    <p class="c8"><span class="c9 c12">Ant.</span><span class="c9">. (todos), Cumplid los mandatos del Se&ntilde;or, porque ellos son vuestra sabidur&iacute;a y vuestra inteligencia a los ojos de los pueblos</span>
+        <hr style="page-break-before:always;display:none;">
+    </p>
+    <h1 class="c18" id="h.tmtd88pdeips"><span>EXPOSICI&Oacute;N DEL SANT&Iacute;SIMO</span></h1>
+    <h3 class="c6" id="h.djqy0oime2gv"><span class="c0">Pange lingua</span></h3>
+    <p class="c11"><span class="c9">PANGE, LINGUA, GLORI&Oacute;SI C&Oacute;RPORIS MYST&Eacute;RIUM, SANGUIN&Iacute;SQUE PRETI&Oacute;SI, QUEM IN MUNDI PR&Eacute;TIUM FRUSTUS VENTRIS GENER&Oacute;SI REX EFF&Uacute;DIT G&Eacute;NTIUM.</span></p>
+    <p class="c11"><span class="c1">NOBIS DATUS, NOBIS NATUS EX INT&Aacute;CTA VIRGINE, ES IN MUNDO CONVERS&Aacute;TUS, SPARSO VERBI S&Eacute;MINE, SUI MORAS INCOL&Aacute;TUS MIRO CLAUSIT &Oacute;DINE. AMEN.</span></p>
+    <h3 class="c6" id="h.nwzu9skq3ujn"><span>Oraci&oacute;n de presentaci&oacute;n de adoradores </span><span class="c26 c29">(Todos juntos, de rodillas)</span></h3>
+    <p class="c14"><span class="c1">Bendito seas, Jes&uacute;s, realmente presente en la Eucarist&iacute;a. Por un don muy especial de tu misericordia, por obra del Esp&iacute;ritu Santo, has mantenido en Leitza encendida la llama de la devoci&oacute;n eucar&iacute;stica desde hace 75 a&ntilde;os en la Adoraci&oacute;n Nocturna masculina y desde hace 50 en la Adoraci&oacute;n Nocturna Femenina.</span></p>
+    <p class="c14"><span class="c1">Nos has concedido as&iacute; durante estos a&ntilde;os, contempl&aacute;ndote en la custodia, experimentar largamente la dulzura de tu presencia amorosa, expiar por los pecados nuestros y por los del mundo, y santificados por tu gracia, ser introducidos en la intimidad de tu amor.</span></p>
+    <p class="c14"><span class="c1">Despu&eacute;s de que la Adoraci&oacute;n Nocturna, sostenida siempre por tu gracia, ha perdurado en nuestro pueblo, hacemos memoria de los cientos de vigilias de hermanos y hermanas nuestros, que han respondido fielmente a la llamada de Jes&uacute;s y le han acompa&ntilde;ado en adoraci&oacute;n durante todos estos a&ntilde;os.</span></p>
+    <p class="c14"><span class="c1">Hoy, de nuevo nos juntamos con muchos hermanos nuestros de diferentes Di&oacute;cesis y secciones de la Adoraci&oacute;n Nocturna, que han querido unirse a la de Leitza , para celebrar con nosotros esta efem&eacute;rides, agradeciendo a Dios tantas gracias que nos ha concedido en este tiempo.</span></p>
+    <p class="c14"><span class="c1">Y lo hacemos en esta Cena del Se&ntilde;or, en este Sacrificio de la Nueva Alianza, donde actualizamos el Memorial de la Pasi&oacute;n y de la Resurrecci&oacute;n de nuestro Se&ntilde;or y Salvador Jesucristo.</span></p>
+    <p class="c14"><span class="c1">Por intercesi&oacute;n de la sant&iacute;sima Virgen Mar&iacute;a, madre y modelo de adoradores, danos perseverar en la Adoraci&oacute;n Nocturna con una fe y un amor siempre crecientes, y conc&eacute;deles a otros la alegr&iacute;a de ser tambi&eacute;n adoradores de tu presencia sacramental, para que el reino de tu amor y de tu gracia se extienda m&aacute;s y m&aacute;s entre los hombres.</span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <hr style="page-break-before:always;display:none;">
+    <h1 class="c18 c37" id="h.jfya31cetckq"><span class="c25"></span></h1>
+    <h1 class="c18" id="h.7t7u8m1urzw1"><span>OFICIO DE LECTURA</span></h1>
+    <h3 class="c6" id="h.awauiw3pyc4x"><span>Invitatorio</span><span>&nbsp;</span><span class="c26 c29">(de pie)</span></h3>
+    <p class="c3"><span class="c9 c12">V.</span><span class="c1">&nbsp; Se&ntilde;or, &aacute;breme los labios.</span></p>
+    <p class="c3"><span class="c9 c12">R.</span><span class="c1">&nbsp;Y mi boca proclamar&aacute; tu alabanza.</span></p>
+    <p class="c3"><span class="c9 c12">V.</span><span class="c1">&nbsp;Pueblo del Se&ntilde;or, reba&ntilde;o que el gu&iacute;a, venid, ador&eacute;mosle. Aleluya.</span></p>
+    <p class="c3"><span class="c9 c12">R.</span><span class="c1">&nbsp;Pueblo del Se&ntilde;or, reba&ntilde;o que el gu&iacute;a, venid, ador&eacute;mosle. Aleluya.</span></p>
+    <p class="c3"><span class="c9 c12">V.</span><span class="c1">&nbsp;Venid, aclamemos al Se&ntilde;or, demos v&iacute;tores a la Roca que nos salva; entremos a su presencia d&aacute;ndole gracias, aclam&aacute;ndolo con c&aacute;nticos.</span></p>
+    <p class="c3"><span class="c9 c12">R.</span><span class="c1">&nbsp;Pueblo del Se&ntilde;or, reba&ntilde;o que el gu&iacute;a, venid, ador&eacute;mosle. Aleluya.</span></p>
+    <p class="c3"><span class="c9 c12">V.</span><span class="c1">&nbsp;Entrad, postr&eacute;monos por tierra, bendiciendo al Se&ntilde;or, creador nuestro. Porque El es nuestro Dios y nosotros su pueblo, el reba&ntilde;o que El gu&iacute;a.</span></p>
+    <p class="c3"><span class="c9 c12">R</span><span class="c1">. Pueblo del Se&ntilde;or, reba&ntilde;o que el gu&iacute;a, venid, ador&eacute;mosle. Aleluya.</span></p>
+    <p class="c3"><span class="c9 c12">V.</span><span class="c1">&nbsp;Ojal&aacute; escuch&eacute;is hoy su voz: &laquo;No endurezc&aacute;is el coraz&oacute;n como en Merib&aacute;, como el d&iacute;a de Mas&aacute; en el desierto; cuando vuestros padres me pusieron a prueba y me tentaron, aunque hab&iacute;an visto mis obras&raquo;.</span></p>
+    <p class="c3"><span class="c9 c12">R.</span><span class="c1">&nbsp;Pueblo del Se&ntilde;or, reba&ntilde;o que el gu&iacute;a, venid, ador&eacute;mosle. Aleluya.</span></p>
+    <p class="c3"><span class="c9 c12">V.</span><span class="c1">&nbsp;Durante cuarenta a&ntilde;os aquella generaci&oacute;n me asque&oacute;, y dije: &laquo;Es un pueblo de coraz&oacute;n extraviado, que no reconoce mi camino; por eso he jurado en mi c&oacute;lera que no entrar&aacute;n en mi descanso&raquo;.</span></p>
+    <p class="c3"><span class="c9 c12">R.</span><span class="c1">&nbsp;Pueblo del Se&ntilde;or, reba&ntilde;o que el gu&iacute;a, venid, ador&eacute;mosle. Aleluya.</span></p>
+    <p class="c3"><span class="c9 c12">V.</span><span class="c1">&nbsp;Gloria al Padre, y al Hijo, y al Esp&iacute;ritu Santo. Como era en el principio, ahora y siempre, por los siglos de los siglos. Am&eacute;n.</span></p>
+    <p class="c3"><span class="c9 c12">R</span><span class="c1">. Pueblo del Se&ntilde;or, reba&ntilde;o que el gu&iacute;a, venid, ador&eacute;mosle. Aleluya.</span></p>
+    <p class="c3 c10"><span class="c1"></span></p>
+    <p class="c30"><span class="c13">El Oficio de lectura se celebrar&aacute; en dos turnos sucesivos de cuarenta y cinco minutos. Una vez enumeradas las secciones que har&aacute;n la vigilia en el primero y en el segundo turno, se retiran en silencio de la iglesia los adoradores del segundo turno</span></p>
+    <h3 class="c6" id="h.q6kp773tf69g"><span>Himno</span><span class="c29 c31">&nbsp;</span><span class="c5 c20">(de pie, lo cantan todos)</span></h3>
+    <p class="c8"><span class="c1">Pedro, roca; Pablo, espada.<br>Pedro, la red en las manos;<br>Pablo, tajante palabra.</span></p>
+    <p class="c8"><span class="c1">Pedro, llaves; Pablo, andanzas.<br>y un trotar por los caminos<br>con cansancio en las pisadas.</span></p>
+    <p class="c8"><span class="c5">Cristo tras los dos andaba:<br>a uno lo tumb&oacute; en Damasco,<br>y al otro lo hiri&oacute; con l&aacute;grimas.</span></p>
+    <p class="c8"><span class="c5">Roma se visti&oacute; de gracia:<br>crucificada la roca,<br>y la espada muerta a espada. Am&eacute;n.</span></p>
+    <h3 class="c6" id="h.m2a5tnhpo5w"><span class="c0">Salmo 18 A</span></h3>
+    <p class="c8"><span class="c5 c12">Ant. 1:</span><span class="c1">&nbsp;Si me amas, Sim&oacute;n Pedro, apacienta mis ovejas.</span></p>
+    <p class="c8"><span class="c1">El cielo proclama la gloria de Dios,<br>el firmamento pregona la obra de sus manos:<br>el d&iacute;a al d&iacute;a le pasa el mensaje,<br>la noche a la noche se lo murmura.</span></p>
+    <p class="c8"><span class="c5">Sin que hablen, sin que pronuncien,<br>sin que resuene su voz,<br>a toda la tierra alcanza su preg&oacute;n<br>y hasta los l&iacute;mites del orbe su lenguaje.</span></p>
+    <p class="c8"><span class="c5">All&iacute; le ha puesto su tienda al sol:<br>&eacute;l sale como el esposo de su alcoba,<br>contento como un h&eacute;roe, a recorrer su camino.</span></p>
+    <p class="c8"><span class="c5">Asoma por un extremo del cielo,<br>y su &oacute;rbita llega al otro extremo:<br>nada se libra de su calor.</span></p>
+    <p class="c8"><span class="c5 c12">Ant. 1:</span><span class="c1">&nbsp;Si me amas, Sim&oacute;n Pedro, apacienta mis ovejas.</span></p>
+    <h3 class="c6" id="h.8h4gdnxlnhh4"><span>Salmo 63</span></h3>
+    <p class="c8"><span class="c9 c12">Ant. 2</span><span class="c5">:&nbsp;Para m&iacute; la vida es Cristo, y la muerte una ganancia; l&iacute;breme Dios de gloriarme si no es en la cruz de nuestro Se&ntilde;or Jesucristo.</span></p>
+    <p class="c8"><span class="c1">Escucha, &iexcl;oh Dios!, la voz de mi lamento,<br>protege mi vida del terrible enemigo;<br>esc&oacute;ndeme de la conjura de los perversos<br>y del mot&iacute;n de los malhechores:</span></p>
+    <p class="c8"><span class="c5">afilan sus lenguas como espadas<br>y disparan como flechas palabras venenosas,<br>para herir a escondidas al inocente,<br>para herirlo por sorpresa y sin riesgo.</span></p>
+    <p class="c8"><span class="c5">Se animan al delito,<br>calculan c&oacute;mo esconder trampas, y dicen:<br>&laquo;&iquest;Qui&eacute;n lo descubrir&aacute;?&raquo;<br>Inventan maldades y ocultan sus invenciones,<br>porque su mente y su coraz&oacute;n no tienen fondo.</span></p>
+    <p class="c8"><span class="c5">Pero Dios los acribilla a flechazos,<br>por sorpresa los cubre de heridas;<br>su misma lengua los lleva a la ruina,<br>y los que lo ven menean la cabeza.</span></p>
+    <p class="c8"><span class="c5">Todo el mundo se atemoriza,<br>proclama la obra de Dios<br>y medita sus acciones.</span></p>
+    <p class="c8"><span class="c5">El justo se alegra con el Se&ntilde;or,<br>se refugia en &eacute;l,<br>y se felicitan los rectos de coraz&oacute;n.</span></p>
+    <p class="c8"><span class="c9 c12">Ant. 2:</span><span class="c5">&nbsp;Para m&iacute; la vida es Cristo, y la muerte una ganancia; l&iacute;breme Dios de gloriarme si no es en la cruz de nuestro Se&ntilde;or Jesucristo.</span></p>
+    <h3 class="c6" id="h.2xsm7tqngbn9"><span class="c0">Salmo 96</span></h3>
+    <p class="c8"><span class="c9 c12">Ant. 3</span><span class="c1">:&nbsp;Se&ntilde;or, si eres t&uacute;, m&aacute;ndame ir por encima del agua hasta donde est&aacute;s.</span></p>
+    <p class="c8"><span class="c1">El Se&ntilde;or reina, la tierra goza,<br>se alegran las islas innumerables.<br>Tiniebla y nube lo rodean,<br>justicia y derecho sostienen su trono.</span></p>
+    <p class="c8"><span class="c1">Delante de &eacute;l avanza fuego<br>abrasando en torno a los enemigos;<br>sus rel&aacute;mpagos deslumbran el orbe,<br>y, vi&eacute;ndolos, la tierra se estremece.</span></p>
+    <p class="c8"><span class="c5">Los montes se derriten como cera<br>ante el due&ntilde;o de toda la tierra;<br>los cielos pregonan su justicia,<br>y todos los pueblos contemplan su gloria.</span></p>
+    <p class="c8"><span class="c1">Los que adoran estatuas se sonrojan,<br>los que ponen su orgullo en los &iacute;dolos;<br>ante &eacute;l se postran todos los dioses.</span></p>
+    <p class="c8"><span class="c1">Lo oye Si&oacute;n y se alegra,<br>se regocijan las ciudades de Jud&aacute;<br>por tus sentencias, Se&ntilde;or;</span></p>
+    <p class="c8"><span class="c1">porque t&uacute; eres, Se&ntilde;or,<br>alt&iacute;simo sobre toda la tierra,<br>encumbrado sobre todos los dioses.</span></p>
+    <p class="c8"><span class="c5">El Se&ntilde;or ama al que aborrece el mal,<br>protege la vida de sus fieles<br>y los libra de los malvados</span></p>
+    <p class="c8"><span class="c1">Amanece la luz para el justo,<br>y la alegr&iacute;a para los rectos de coraz&oacute;n.<br>Alegraos, justos, con el Se&ntilde;or,<br>celebrad su santo nombre.</span></p>
+    <p class="c8"><span class="c9 c12">Ant. 3:</span><span class="c1">&nbsp;Se&ntilde;or, si eres t&uacute;, m&aacute;ndame ir por encima del agua hasta donde est&aacute;s.</span></p>
+    <p class="c8"><span class="c9 c12">V</span><span class="c5">.&nbsp;La palabra del Se&ntilde;or permanece eternamente.<br></span><span class="c9 c12">R.</span><span class="c5">&nbsp;Y &eacute;sta es la Buena Noticia anunciada a vosotros.</span></p>
+    <h3 class="c6" id="h.kktbrk7msgpi"><span class="c0">Primera lectura</span></h3>
+    <p class="c30"><span class="c13 c12 c28">De la carta del ap&oacute;stol san Pablo a los G&aacute;latas 1,15-2, 10</span></p>
+    <p class="c14"><span class="c5">&nbsp; &nbsp; Hermanos: Cuando aquel que me eligi&oacute; desde el seno de mi madre me llam&oacute; por su gracia y tuvo a bien revelarme a su Hijo para que lo anunciara a los gentiles, en seguida, sin pedir consejo a hombre alguno y sin subir a Jerusal&eacute;n para hablar con los que eran ap&oacute;stoles antes que yo, part&iacute; hacia Arabia, de donde luego volv&iacute; a Damasco. Tres a&ntilde;os m&aacute;s tarde, sub&iacute; a Jerusal&eacute;n a visitar a Cefas, y estuve con &eacute;l quince d&iacute;as. No vi a ninguno otro de los ap&oacute;stoles, fuera de Santiago, el hermano del Se&ntilde;or. Por el Dios que me est&aacute; viendo, que no miento en lo que os escribo.</span></p>
+    <p class="c14"><span class="c1">&nbsp; &nbsp; Despu&eacute;s vine a las regiones de Siria y de Cilicia, pero las Iglesias de Judea, que est&aacute;n en Cristo, no me conoc&iacute;an personalmente. S&oacute;lo o&iacute;an decir: &laquo;El que anta&ntilde;o nos persegu&iacute;a ahora va anunciando la Buena Nueva de la fe, que en otro tiempo quer&iacute;a destruir.&raquo; Y glorificaban a Dios, reconociendo su obra en m&iacute;.</span></p>
+    <p class="c14"><span class="c5">&nbsp; &nbsp; Luego, al cabo de catorce a&ntilde;os, sub&iacute; otra vez a Jerusal&eacute;n con Bernab&eacute;, llevando tambi&eacute;n a Tito. Y sub&iacute; por motivo de una revelaci&oacute;n. Les expuse el Evangelio que predico entre los gentiles y trat&eacute; en particular con los m&aacute;s calificados, no fuera a ser que hubiese corrido en vano.</span></p>
+    <p class="c14"><span class="c5">&nbsp; &nbsp; Pues bien, ni siquiera a Tito, mi compa&ntilde;ero, con todo y que era griego, lo obligaron a circuncidarse. Y esto a pesar de los intrusos, de los falsos hermanos, que solapadamente se hab&iacute;an infiltrado, para espiar arteramente la libertad de que gozamos en Cristo Jes&uacute;s, y que quer&iacute;an esclavizamos. Pero nosotros ni por un momento cedimos terreno para someternos a ellos, a fin de salvaguardar firmemente para vosotros la verdad del Evangelio.</span></p>
+    <p class="c14"><span class="c5">&nbsp; &nbsp; Las personas de m&aacute;s consideraci&oacute;n -nada me interesa lo que hubieran sido antes, pues en Dios no hay acepci&oacute;n de personas- no me impusieron ninguna nueva obligaci&oacute;n.&nbsp;</span></p>
+    <p class="c14"><span class="c1">&nbsp; &nbsp; Al contrario, reconocieron que yo hab&iacute;a recibido la misi&oacute;n de predicar el Evangelio a los gentiles, como Pedro la de predicarlo a los jud&iacute;os; porque aquel que dio poder a Pedro para ejercer el apostolado entre los jud&iacute;os me lo dio a m&iacute; para ejercerlo entre los gentiles.</span></p>
+    <p class="c14"><span class="c5">&nbsp; &nbsp; De este modo reconocieron que Dios me hab&iacute;a dado esa gracia. Y Santiago, Cefas y Juan, los considerados como columnas, nos dieron la mano a Bernab&eacute; y a m&iacute; en se&ntilde;al de comuni&oacute;n y conformidad: nosotros nos dirigir&iacute;amos a los gentiles, ellos a los jud&iacute;os. S&oacute;lo nos pidieron que nos acord&aacute;semos de los pobres, cosa que he procurado yo cumplir con toda solicitud.</span></p>
+    <p class="c8"><span class="c9 c12">Responsorio</span><span class="c5">&nbsp;&nbsp; &nbsp;</span><span class="c5 c12 c27">&nbsp;Mt 16, 18-19</span></p>
+    <p class="c8"><span class="c9 c12">R.</span><span class="c5">&nbsp;T&uacute; eres Pedro, y sobre esta piedra edificar&eacute; mi Iglesia, y los poderes del infierno no la derrotar&aacute;n;&nbsp;*&nbsp;yo te dar&eacute; las llaves del reino de los cielos.</span></p>
+    <p class="c8"><span class="c9 c12">V</span><span class="c5">.&nbsp;Todo lo que atares sobre la tierra ser&aacute; atado en el cielo, y todo lo que desatares sobre la tierra ser&aacute; desatado en el cielo.</span></p>
+    <p class="c8"><span class="c9 c12">R.&nbsp;</span><span class="c1">Yate dar&eacute; las llaves del reino de los cielos.</span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <h3 class="c6" id="h.u5qeq119cuqz"><span class="c0">Segunda lectura</span></h3>
+    <p class="c30"><span class="c13 c12 c28">De los Sermones de san Agust&iacute;n, obispo</span></p>
+    <p class="c14"><span class="c5">&nbsp; &nbsp; El d&iacute;a de hoy es para nosotros sagrado, porque en &eacute;l celebramos el martirio de los santos ap&oacute;stoles Pedro y Pablo. No nos referimos, ciertamente, a unos m&aacute;rtires desconocidos.&nbsp;A toda la tierra alcanza su preg&oacute;n y hasta los l&iacute;mites del orbe su lenguaje. Estos m&aacute;rtires, en su predicaci&oacute;n, daban testimonio de lo que hab&iacute;an visto y, con un desinter&eacute;s absoluto, dieron a conocer la verdad hasta morir por ella</span></p>
+    <p class="c14"><span class="c1">&nbsp; &nbsp; San Pedro, el primero de los ap&oacute;stoles, que amaba ardientemente a Cristo, y que lleg&oacute; a o&iacute;r de &eacute;l estas palabras:&nbsp;Y yo te digo que t&uacute; eres Pedro. &Eacute;l hab&iacute;a dicho antes:&nbsp;T&uacute; eres el Mes&iacute;as, el Hijo de Dios vivo. Y Cristo le replic&oacute;:&nbsp;&laquo;Y yo te digo que t&uacute; eres Pedro, y sobre esta piedra edificar&eacute; mi Iglesia. Sobre esta piedra edificar&eacute; esta misma fe que profesas. Sobre esta afirmaci&oacute;n que t&uacute; has hecho:&nbsp;T&uacute; eres el Mes&iacute;as, el Hijo de Dios vivo, edificar&eacute; mi Iglesia. Porque t&uacute; eres Pedro.&raquo; &laquo;Pedro&raquo; es una palabra que se deriva de &laquo;piedra&raquo;, y no al rev&eacute;s. &laquo;Pedro&raquo; viene de &laquo;piedra&raquo;, del mismo modo que &laquo;cristiano&raquo; viene de &laquo;Cristo&raquo;.</span></p>
+    <p class="c14"><span class="c1">&nbsp; &nbsp; El Se&ntilde;or Jes&uacute;s, antes de su pasi&oacute;n, como sab&eacute;is, eligi&oacute; a sus disc&iacute;pulos, a los que dio el nombre de ap&oacute;stoles. Entre ellos, Pedro fue el &uacute;nico que represent&oacute; la totalidad de la Iglesia casi en todas partes. Por ello, en cuanto que &eacute;l solo representaba en su persona a la totalidad de la Iglesia, pudo escuchar estas palabras:&nbsp;Yo te dar&eacute; las llaves del reino de los cielos. Porque estas llaves las recibi&oacute; no un hombre &uacute;nico, sino la Iglesia &uacute;nica. De ah&iacute; la excelencia de la persona de Pedro, en cuanto que &eacute;l representaba la universalidad y la unidad de la Iglesia, cuando se le dijo:&nbsp;Yo te entrego, trat&aacute;ndose de algo que ha sido entregado a todos. Pues, para que sep&aacute;is que la Iglesia ha recibido las llaves del reino de los cielos, escuchad lo que el Se&ntilde;or dice en otro lugar a todos sus ap&oacute;stoles:&nbsp;Recibid el Esp&iacute;ritu Santo. Y a continuaci&oacute;n:&nbsp;Quedan perdonados los pecados a quienes los perdon&eacute;is; quedan retenidos a quienes los reteng&aacute;is.</span></p>
+    <p class="c14"><span class="c1">&nbsp; &nbsp; En este mismo sentido, el Se&ntilde;or, despu&eacute;s de su resurrecci&oacute;n, encomend&oacute; tambi&eacute;n a Pedro sus ovejas para que las apacentara. No es que &eacute;l fuera el &uacute;nico de los disc&iacute;pulos que tuviera el encargo de apacentar las ovejas del Se&ntilde;or; es que Cristo, por el hecho de referirse a uno solo, quiso significar con ello la unidad de la Iglesia; y, si se dirige a Pedro con preferencia a los dem&aacute;s, es porque Pedro es el primero entre los ap&oacute;stoles.</span></p>
+    <p class="c14"><span class="c1">&nbsp; &nbsp; No te entristezcas, ap&oacute;stol; responde una vez, responde dos, responde tres. Venza por tres veces tu profesi&oacute;n de amor, ya que por tres veces el temor venci&oacute; tu presunci&oacute;n. Tres veces ha de ser desatado lo que por tres veces hab&iacute;as ligado. Desata por el amor lo que hab&iacute;as ligado por el temor.</span></p>
+    <p class="c14"><span class="c1">&nbsp; &nbsp; A pesar de su debilidad, por primera, por segunda y por tercera vez encomend&oacute; el Se&ntilde;or sus ovejas a Pedro.</span></p>
+    <p class="c14"><span class="c5">&nbsp; &nbsp; En un solo d&iacute;a celebramos el martirio de los dos ap&oacute;stoles. Es que ambos eran en realidad una sola cosa, aunque fueran martirizados en d&iacute;as diversos. Primero lo fue Pedro, luego Pablo. Celebramos la fiesta del d&iacute;a de hoy, sagrado para nosotros, por la sangre de los ap&oacute;stoles. Procuremos imitar su fe, su vida, sus trabajos, sus sufrimientos, su testimonio y su doctrina.<br><br></span><span class="c9 c12">R.</span><span class="c1">&nbsp;Ap&oacute;stol san Pablo, predicador de la verdad y maestro de los gentiles,&nbsp;*&nbsp;verdaderamente que eres digno de ser glorificado.</span></p>
+    <p class="c14"><span class="c9 c12">V.</span><span class="c1">&nbsp;Por ti conocieron la gracia de Dios todas las naciones.</span></p>
+    <p class="c14"><span class="c9 c12">R.</span><span class="c5">&nbsp;Verdaderamente que eres digno de ser glorificado.</span></p>
+    <h3 class="c6" id="h.xqcjnuunayxt"><span class="c0">Himno final</span></h3>
+    <p class="c8"><span class="c1">Se&ntilde;or, Dios eterno, alegres te cantamos,<br>&nbsp; &nbsp; a ti nuestra alabanza,<br>&nbsp; &nbsp; a ti, Padre del cielo, te aclama la creaci&oacute;n.</span></p>
+    <p class="c8"><span class="c1">Postrados ante ti, los &aacute;ngeles te adoran<br>&nbsp; &nbsp; y cantan sin cesar:</span></p>
+    <p class="c8"><span class="c5">Santo, santo, santo es el Se&ntilde;or,<br>&nbsp; &nbsp; Dios del universo;<br>&nbsp; &nbsp; llenos est&aacute;n el cielo y la tierra de tu gloria.</span></p>
+    <p class="c8"><span class="c1">A ti, Se&ntilde;or, te alaba el coro celestial de los ap&oacute;stoles,<br>&nbsp; &nbsp; la multitud de los profetas te enaltece,<br>&nbsp; &nbsp; y el ej&eacute;rcito glorioso de los m&aacute;rtires te aclama.</span></p>
+    <p class="c8"><span class="c1">A ti la Iglesia santa,<br>&nbsp; &nbsp; por todos los confines extendida,<br>&nbsp; &nbsp; con j&uacute;bilo te adora y canta tu grandeza:</span></p>
+    <p class="c8"><span class="c1">Padre, infinitamente santo,<br>&nbsp; &nbsp; Hijo eterno, unig&eacute;nito de Dios,<br>&nbsp; &nbsp; Santo Esp&iacute;ritu de amor y de consuelo.</span></p>
+    <p class="c8"><span class="c1">Oh Cristo, t&uacute; eres el Rey de la gloria,<br>&nbsp; &nbsp; t&uacute; el Hijo y Palabra del Padre,<br>&nbsp; &nbsp; t&uacute; el Rey de toda la creaci&oacute;n.</span></p>
+    <p class="c8"><span class="c1">T&uacute;, para salvar al hombre,<br>&nbsp; &nbsp; tomaste la condici&oacute;n de esclavo<br>&nbsp; &nbsp; en el seno de una virgen.</span></p>
+    <p class="c8"><span class="c1">T&uacute; destruiste la muerte<br>&nbsp; &nbsp; y abriste a los creyentes las puertas de la gloria.</span></p>
+    <p class="c8"><span class="c1">T&uacute; vives ahora,<br>&nbsp; &nbsp; inmortal y glorioso, en el reino del Padre.</span></p>
+    <p class="c8"><span class="c1">T&uacute; vendr&aacute;s alg&uacute;n d&iacute;a,<br>&nbsp; &nbsp; como juez universal.</span></p>
+    <p class="c8"><span class="c5">Mu&eacute;strate, pues, amigo y defensor<br>&nbsp; &nbsp; de los hombres que salvaste.</span></p>
+    <p class="c8"><span class="c5">y rec&iacute;belos por siempre all&aacute; en tu reino,<br>&nbsp; &nbsp; con tus santos y elegidos.</span></p>
+    <p class="c8"><span class="c1">Salva a tu pueblo, Se&ntilde;or,<br>&nbsp; &nbsp; y bendice a tu heredad.</span></p>
+    <p class="c8"><span class="c5">S&eacute; su pastor,<br>&nbsp; &nbsp; y gu&iacute;alos por siempre.</span></p>
+    <p class="c8"><span class="c5">D&iacute;a tras d&iacute;a te bendeciremos<br>&nbsp; &nbsp; y alabaremos tu nombre por siempre jam&aacute;s.</span></p>
+    <p class="c8"><span class="c1">D&iacute;gnate, Se&ntilde;or,<br>&nbsp; &nbsp; guardamos de pecado en este d&iacute;a.</span></p>
+    <p class="c8"><span class="c1">Ten piedad de nosotros, Se&ntilde;or,<br>&nbsp; &nbsp; ten piedad de nosotros.</span></p>
+    <p class="c8"><span class="c1">Que tu misericordia, Se&ntilde;or, venga sobre nosotros,<br>&nbsp; &nbsp; como lo esperamos de ti.</span></p>
+    <p class="c8"><span class="c1">A ti, Se&ntilde;or, me acojo,<br>no quede yo nunca defraudado.</span></p>
+    <h3 class="c6" id="h.xg3n7xn76ld5"><span class="c0">Oraci&oacute;n</span></h3>
+    <p class="c8"><span class="c5">Dios nuestro, que nos llenas de santa alegr&iacute;a con la solemnidad de los santos ap&oacute;stoles Pedro y Pablo, haz que tu Iglesia se mantenga siempre fiel a las ense&ntilde;anzas de estos ap&oacute;stoles, de quienes recibi&oacute; el primer anuncio de la fe. Por nuestro Se&ntilde;or Jesucristo, tu Hijo.<br><br></span><span class="c1">llenan de vida, se nos llenan de paz.</span></p>
+    <p class="c8"><span class="c1">2.- Buen amigo, qu&eacute;date a nuestro lado, pues el d&iacute;a ya sin luces se ha quedado; con nosotros qu&eacute;date para cenar y comparte mi </span></p>
+    <p class="c8"><span class="c9 c12">Ant 1.</span><span class="c1">&nbsp;(todos) Se&ntilde;or, Dios m&iacute;o, te vistes de belleza y majestad, la luz te envuelve como un manto. Aleluya.</span></p>
+    <h3 class="c6" id="h.v5moy5uhtxit"><span class="c0">Salmo 103</span></h3>
+    <p class="c8"><span class="c1">[Himno al Dios creador.]</span></p>
+    <p class="c30"><span class="c13">Terminados los dos Turnos de vela, se juntan todos los adoradores para el rezo del Te Deum y de Completas</span></p>
+    <h3 class="c6" id="h.qykmpkpbnt49"><span>Te Deum</span><span class="c26">&nbsp;</span><span class="c26 c29">(</span><span class="c5 c20">De &nbsp;pie, semitonado a dos coros)</span></h3>
+    <p class="c3"><span class="c1">A Ti, oh Dios, te alabamos, a TI, Se&ntilde;or, te reconocemos.</span></p>
+    <p class="c3"><span class="c1">A Ti, eterno Padre, te venera toda la creaci&oacute;n.</span></p>
+    <p class="c3"><span class="c1">Los &aacute;ngeles todos, los cielos y todas las potestades te honran.</span></p>
+    <p class="c3"><span class="c1">Los querubines y serafines te cantan sin cesar:</span></p>
+    <p class="c3"><span class="c1">Santo, Santo, Santo es el Se&ntilde;or, Dios del universo.</span></p>
+    <p class="c3"><span class="c1">Los cielos y la tierra est&aacute;n llenos de la majestad de tu gloria.</span></p>
+    <p class="c3"><span class="c1">A Ti te ensalza el glorioso coro de los ap&oacute;stoles, la multitud admirable de los profetas, el blanco ej&eacute;rcito de los m&aacute;rtires.</span></p>
+    <p class="c3"><span class="c1">A Ti la Iglesia santa, extendida por toda la tierra, te proclama:</span></p>
+    <p class="c3"><span class="c1">Padre de inmensa majestad, Hijo &uacute;nico y verdadero, digno de adoraci&oacute;n, Esp&iacute;ritu Santo, Defensor.</span></p>
+    <p class="c3"><span class="c1">T&uacute; eres el Rey de la gloria, Cristo.</span></p>
+    <p class="c3"><span class="c1">T&uacute; eres el Hijo &uacute;nico del Padre.</span></p>
+    <p class="c3"><span class="c1">T&uacute;, para liberar al hombre, aceptaste la condici&oacute;n humana sin desde&ntilde;ar el seno de la Virgen.</span></p>
+    <p class="c3"><span class="c1">T&uacute;, rotas las cadenas de la muerte, abriste a los creyentes el reino del cielo.</span></p>
+    <p class="c3"><span class="c1">T&uacute; te sientas a la derecha de Dios en la gloria del Padre.</span></p>
+    <p class="c3"><span class="c1">Creemos que un d&iacute;a has de venir como juez.</span></p>
+    <p class="c3"><span class="c1">Te rogamos, pues, que vengas en ayuda de tus siervos, a quienes redimiste con tu preciosa sangre.</span></p>
+    <p class="c3"><span class="c1">Haz que en la gloria eterna nos asociemos a tus santos.</span></p>
+    <p class="c3"><span class="c1">Salva a tu pueblo, Se&ntilde;or, y bendice tu heredad.</span></p>
+    <p class="c3"><span class="c1">S&eacute; su pastor y ens&aacute;lzalo eternamente.</span></p>
+    <p class="c3"><span class="c1">D&iacute;a tras d&iacute;a te bendecimos y alabamos tu nombre para siempre, por eternidad de eternidades.</span></p>
+    <p class="c3"><span class="c1">D&iacute;gnate, Se&ntilde;or, en este d&iacute;a guardarnos del pecado.</span></p>
+    <p class="c3"><span class="c1">Ten piedad de nosotros, Se&ntilde;or, ten piedad de nosotros.</span></p>
+    <p class="c3"><span class="c1">Que tu misericordia, Se&ntilde;or, venga sobre nosotros, como lo esperamos de TI.</span></p>
+    <p class="c3"><span class="c1">En Ti, Se&ntilde;or, confi&eacute;, no me ver&eacute; defraudado para siempre.</span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <h3 class="c6" id="h.sh8rgsns0d9g"><span class="c0">ORACI&Oacute;N</span></h3>
+    <p class="c8"><span class="c9 c12">Sacerdote:</span><span class="c1">&nbsp;Dios todopoderoso, de quien procede todo bien, siembra en nuestros corazones el amor de tu nombre, para que, haciendo m&aacute;s religiosa nuestra vida, acrecientes el bien en nosotros y con solicitud amorosa lo conserves. Por nuestro Se&ntilde;or Jesucristo.</span></p>
+    <p class="c8"><span class="c9 c12">Todos:</span><span class="c1">&nbsp;Am&eacute;n</span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <hr style="page-break-before:always;display:none;">
+    <h1 class="c18 c37" id="h.jucfflcppvaz"><span class="c25"></span></h1>
+    <h1 class="c18" id="h.uadivymzruat"><span>COMPLETAS</span></h1>
+    <p class="c8"><span class="c9 c12">Sacerdote</span><span class="c1">. Dios m&iacute;o, ven en mi auxilio.</span></p>
+    <p class="c8"><span class="c9 c12">Todos</span><span class="c1">. Se&ntilde;or, date prisa en socorrerme. Gloria al Padre, y al Hijo, y al Esp&iacute;ritu Santo. Como era en el principio, ahora y siempre, por los siglos de los siglos. Am&eacute;n.</span></p>
+    <h3 class="c6" id="h.vfac2xool8zl"><span>Himno</span><span class="c5 c20">&nbsp;(de pie, lo cantamos todos)</span></h3>
+    <p class="c11"><span class="c9">EL SE&Ntilde;OR ES MI LUZ Y MI SALVACI&Oacute;N, EL SE&Ntilde;OR ES LA DEFENSA DE MI VIDA. SI EL SE&Ntilde;OR ES MI LUZ, &iquest;A QUI&Eacute;N TEMER&Eacute;, QUI&Eacute;N ME HAR&Aacute; TEMBLAR?</span></p>
+    <p class="c11"><span class="c1">1.- UNA COSA PIDO AL SE&Ntilde;OR, HABITAR POR SIEMPRE EN SU CASA; GOZAR DE LA DULZURA DEL SE&Ntilde;OR CONTEMPLANDO SU TEMPLO SANTO.</span></p>
+    <p class="c11"><span class="c1">2.- NO ME ESCONDAS TU ROSTRO SE&Ntilde;OR, BUSCAR&Eacute; TODO EL D&Iacute;A TU ROSTRO; SI MI PADRE Y MI MADRE ME ABANDONAN EL SE&Ntilde;OR ME RECOGER&Aacute;.</span></p>
+    <p class="c11"><span class="c1">3.- OH SE&Ntilde;OR, ENS&Eacute;&Ntilde;AME EL CAMINO, GU&Iacute;AME POR LA SENDA VERDADERA; GOZAR&Eacute; DE LA DICHA DEL SE&Ntilde;OR EN LA TIERRA DE LA VIDA.</span></p>
+    <h3 class="c6" id="h.jv023cvm2y1o"><span class="c0">Salmo 4</span></h3>
+    <p class="c8"><span class="c9 c12">Ant.</span><span class="c1">&nbsp;(todos) Ten piedad de m&iacute;, Se&ntilde;or, y escucha mi oraci&oacute;n.</span></p>
+    <p class="c8"><span class="c1">Esc&uacute;chame cuando te invoco, Dios, defensor m&iacute;o; t&uacute; que en el aprieto me diste anchura, ten piedad de m&iacute; y escucha mi oraci&oacute;n.</span></p>
+    <p class="c8"><span class="c1">Y vosotros, &iquest;hasta cu&aacute;ndo ultrajar&eacute;is mi honor, amar&eacute;is la falsedad y buscar&eacute;is el enga&ntilde;o? Sabedlo: el Se&ntilde;or hizo milagros en &nbsp;mi favor, y el Se&ntilde;or me escuchar&aacute; cuando lo invoque.</span></p>
+    <p class="c8"><span class="c1">Temblad y no pequ&eacute;is, reflexionad en el silencio de vuestro lecho; ofreced sacrificios leg&iacute;timos y confiad en el Se&ntilde;or.</span></p>
+    <p class="c8"><span class="c1">Hay muchos que dicen &laquo;&iquest;Qui&eacute;n nos har&aacute; ver la dicha, si la luz de tu rostro ha huido de nosotros?&raquo;</span></p>
+    <p class="c8"><span class="c1">Pero t&uacute;, Se&ntilde;or, has puesto en mi coraz&oacute;n m&aacute;s alegr&iacute;a que si abundara en trigo y en vino.</span></p>
+    <p class="c8"><span class="c1">En paz me acuesto y en seguida me duermo, porque t&uacute; solo, se&ntilde;or, me haces vivir tranquilo.</span></p>
+    <p class="c8"><span class="c1">Gloria al Padre, al Hijo,..</span></p>
+    <p class="c8"><span class="c9 c12">Ant.</span><span class="c1">&nbsp;Ten piedad de m&iacute;, Se&ntilde;or, y escucha mi oraci&oacute;n.</span></p>
+    <h3 class="c6" id="h.3cjrzz4q29vr"><span class="c0">Salmo 133</span></h3>
+    <p class="c8"><span class="c9 c12">Ant. 2:</span><span class="c9">&nbsp;</span><span class="c1">&nbsp;Durante la noche, bendecid al Se&ntilde;or.</span></p>
+    <p class="c8"><span class="c1">Y ahora bendecid al Se&ntilde;or, los siervos del Se&ntilde;or, los que pas&aacute;is la noche en la casa del Se&ntilde;or.</span></p>
+    <p class="c8"><span class="c1">Levantad las manos hacia el santuario y bendecid al Se&ntilde;or.</span></p>
+    <p class="c8"><span class="c1">El Se&ntilde;or te bendiga desde Si&oacute;n, el que hizo cielo y tierra.</span></p>
+    <p class="c8"><span class="c1">Gloria al Padre, al Hijo,&hellip;.</span></p>
+    <p class="c8"><span class="c9 c12">Ant.</span><span class="c1">&nbsp;Durante la noche, bendecid al Se&ntilde;or.</span></p>
+    <h3 class="c6" id="h.h7xm0afm8f2o"><span class="c0">Lectura breve &nbsp;(Dt 6, 4-7)</span></h3>
+    <p class="c8"><span class="c1">Escucha, Israel: El Se&ntilde;or, nuestro Dios, es solamente uno. Amar&aacute;s al Se&ntilde;or, tu Dios, con todo el coraz&oacute;n, con toda el alma, con todas las fuerzas. Las palabras que hoy te digo quedar&aacute;n en tu memoria, se las repetir&aacute;s a tus hijos y hablar&aacute;s de ellas estando en casa y yendo de camino, acostado y levantado.</span></p>
+    <h3 class="c6" id="h.zcmwhtnfr3e"><span>Responsorio</span></h3>
+    <p class="c3"><span class="c9 c12">V</span><span class="c1">. A tus manos, Se&ntilde;or, encomiendo mi esp&iacute;ritu.</span></p>
+    <p class="c3"><span class="c9 c12">R. </span><span class="c1">A tus manos, Se&ntilde;or, encomiendo mi esp&iacute;ritu.</span></p>
+    <p class="c3"><span class="c9 c12">V. </span><span class="c1">T&uacute;, el Dios leal, nos librar&aacute;s.</span></p>
+    <p class="c3"><span class="c9 c12">R.</span><span class="c1">&nbsp;Encomiendo mi esp&iacute;ritu.</span></p>
+    <p class="c3"><span class="c9 c12">V.</span><span class="c1">&nbsp;Gloria al Padre, y al Hijo, y &eacute;l Esp&iacute;ritu Santo.</span></p>
+    <p class="c3"><span class="c9 c12">R.</span><span class="c1">&nbsp;A tus manos, Se&ntilde;or, encomiendo mi esp&iacute;ritu.</span></p>
+    <h3 class="c6" id="h.r5meq6jc6y1d"><span class="c0">Nunc dimittis (Lc 2, 29-32)</span></h3>
+    <p class="c8"><span class="c9 c12">Ant.</span><span class="c1">&nbsp;(todos) S&aacute;lvanos, Se&ntilde;or, despiertos, prot&eacute;genos mientras dormimos, para que velemos con Cristo y descansemos en paz.</span></p>
+    <p class="c8"><span class="c1">(De pie) Ahora, Se&ntilde;or, seg&uacute;n tu promesa, puedes dejar a tu siervo irse en paz. Porque mis ojos han visto a tu Salvador, a quien has presentado ante todos los pueblos: luz para alumbrar a las naciones y gloria de tu pueblo Israel.</span></p>
+    <p class="c8"><span class="c1">Gloria al Padre...</span></p>
+    <p class="c8"><span class="c9 c12">Ant.</span><span class="c1">&nbsp;S&aacute;lvanos, Se&ntilde;or, despiertos, prot&eacute;genos mientras dormimos, para que velemos con Cristo y descansemos en paz.</span></p>
+    <h3 class="c6" id="h.9pv617esgn6e"><span>Oraci&oacute;n</span></h3>
+    <p class="c8"><span class="c9 c12">Sacerdote.</span><span class="c1">&nbsp;Gu&aacute;rdanos, Se&ntilde;or, durante esta noche y haz que ma&ntilde;ana, ya al clarear el nuevo d&iacute;a, la celebraci&oacute;n del domingo nos llene con la alegr&iacute;a de la resurrecci&oacute;n de tu Hijo. Que vive y reina por los siglos de los siglos.</span></p>
+    <p class="c8"><span class="c9 c12">Todos.</span><span class="c9">&nbsp;Am&eacute;n.</span>
+        <hr style="page-break-before:always;display:none;">
+    </p>
+    <h1 class="c18" id="h.moxw6go7bd02"><span class="c25">Procesi&oacute;n eucar&iacute;stica</span></h1>
+    <p class="c11"><span class="c13 c33 c29 c36">Acabado el rezo de Completas, se dispone el Palio frente al presbiterio, y una vez llevada a &eacute;l la Custodia, se inicia la procesi&oacute;n por las calles de la localidad, para terminar en la plaza, donde se dar&aacute; la Bendici&oacute;n final</span></p>
+    <h3 class="c6" id="h.ex8etjldm2cd"><span class="c0">Cantemos al amor de los amores</span></h3>
+    <p class="c11"><span class="c1">CANTEMOS AL AMOR DE LOS AMORES, CANTEMOS AL SE&Ntilde;OR; DIOS EST&Aacute; AQU&Iacute;: VENID, ADORADORES, ADOREMOS A CRISTO REDENTOR.</span></p>
+    <p class="c11"><span class="c1">GLORIA A CRISTO JES&Uacute;S, CIELOS Y TIERRA, BENDECID AL SE&Ntilde;OR. HONOR Y GLORIA A TI, REY DE LA GLORIA. AMOR POR SIEMPRE A TI, DIOS DEL AMOR.</span></p>
+    <h3 class="c6" id="h.5y9lxwkm034k"><span>Christus Vincit</span></h3>
+    <p class="c11"><span class="c1">CHRISTUS VINCIT, CHRISTUS REGNAT, CHRISTUS, CHRISTUS IMPERAT.</span></p>
+    <p class="c11"><span class="c1">LAUDATE DOMINUM OMNES GENTES, LAUDATE EUM OMNES POPULI.</span></p>
+    <p class="c11"><span class="c1">QUONIAM CONFIRMATA EST SUPER NOS MISERICORDIA EIUS, ET VERITAS DOMINI MANET IN AETERNUM.</span></p>
+    <h3 class="c6" id="h.qq9bcdzeitf2"><span>Jesus Maite</span></h3>
+    <p class="c4"><span class="c1">JESUS MAITE, MAITE MAITEA IZAN BETI GURE JABEA</span></p>
+    <p class="c4"><span class="c9">EZ DA ZERURAKO BESTE BIDERIK JESUSEN BIHOTZA BEZALAKORIK</span>
+        <hr style="page-break-before:always;display:none;">
+    </p>
+    <h1 class="c18" id="h.m03xa2flex3l"><span class="c25">Bendici&oacute;n con el Sant&iacute;simo</span></h1>
+    <h3 class="c6" id="h.8mcw5alihcj"><span class="c0">Canto antes de la bendici&oacute;n</span></h3>
+    <p class="c11"><span class="c1">TANTUM ERGO SACRAMENTUM VENERUMUR CERNUI, ET ANTIQUUM DOCUMENTUM NOVO CEDAT RITUI; PR&AElig;STET FIEDES SUPLEMENTUM SENSUUM DEFECTUI.</span></p>
+    <p class="c11"><span class="c1">GENITORI, GENITOQUE LAUS ET IUBILATIO, SALUS, HONOR, VIRTUS QUOQUE SIT ET BENEDICTIO; PROCEDENTI AB UTROQUE COMPAR SIT LAUDATIO. AMEN.</span></p>
+    <p class="c8"><span class="c9 c12">Sacerdote.</span><span class="c1">&nbsp;Les diste Pan del cielo.</span></p>
+    <p class="c8"><span class="c9 c12">Todos.</span><span class="c1">&nbsp;Que contiene en s&iacute; todo deleite.</span></p>
+    <h3 class="c6" id="h.hoeridy32877"><span>Oraci&oacute;n</span></h3>
+    <p class="c8"><span class="c9 c12">Sacerdote.</span><span class="c1">&nbsp;Oh Dios, que en este admirable Sacramento nos dejaste el memorial de tu Pasi&oacute;n, te pedimos nos concedas venerar de tal modo los sagrados misterios de tu Cuerpo y de tu Sangre, que experimentemos continuamente en nosotros el fruto de tu Redenci&oacute;n. T&uacute;, que vives y reinas por los siglos de los siglos.</span></p>
+    <p class="c8"><span class="c9 c12">Todos.</span><span class="c1">&nbsp;Am&eacute;n</span></p>
+    <h3 class="c6" id="h.akd5g5h29r1t"><span class="c0">Alabanzas de desagravio</span></h3>
+    <p class="c3"><span class="c1">Bendito sea Dios.</span></p>
+    <p class="c3"><span class="c1">Bendito sea su santo Nombre.</span></p>
+    <p class="c3"><span class="c1">Bendito sea Jesucristo, verdadero Dios y verdadero Hombre.</span></p>
+    <p class="c3"><span class="c1">Bendito sea el Nombre de Jes&uacute;s.</span></p>
+    <p class="c3"><span class="c1">Bendito sea su Sacrat&iacute;simo Coraz&oacute;n.</span></p>
+    <p class="c3"><span class="c1">Bendita sea su Precios&iacute;sima Sangre.</span></p>
+    <p class="c3"><span class="c1">Bendito sea Jes&uacute;s en el Sant&iacute;simo Sacramento del Altar.</span></p>
+    <p class="c3"><span class="c1">Bendito sea el Esp&iacute;ritu Santo Par&aacute;clito.</span></p>
+    <p class="c3"><span class="c1">Bendita sea la excelsa Madre de Dios, Mar&iacute;a Sant&iacute;sima.</span></p>
+    <p class="c3"><span class="c1">Bendita sea su Santa e Inmaculada Concepci&oacute;n.</span></p>
+    <p class="c3"><span class="c1">Bendita sea su gloriosa Asunci&oacute;n.</span></p>
+    <p class="c3"><span class="c1">Bendito sea el nombre de Mar&iacute;a, Virgen y Madre.</span></p>
+    <p class="c3"><span class="c1">Bendito sea San Jos&eacute;, su cast&iacute;simo Esposo.</span></p>
+    <p class="c3"><span class="c1">Bendito sea Dios en sus &aacute;ngeles y en sus santos</span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <h3 class="c6" id="h.mwd76bujcw65"><span>Canto despu&eacute;s de la bendici&oacute;n</span></h3>
+    <p class="c4"><span class="c1">KRISTORENAK, </span></p>
+    <p class="c4"><span class="c1">KRISTORENAK GERA</span></p>
+    <p class="c4"><span class="c1">KRISTORENAK BETIKO IZANGO GERA..</span></p>
+    <p class="c4"><span class="c1">KRISTORENAK ZIRADEN</span></p>
+    <p class="c4"><span class="c1">GURE GURASOAK</span></p>
+    <p class="c4"><span class="c1">BAITA ERE EUSKALDUN</span></p>
+    <p class="c4"><span class="c1">BEN-BENETAKOAK (2)</span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <h3 class="c6" id="h.4fygs2fyijlt"><span class="c0">Canto final a la virgen</span></h3>
+    <p class="c4"><span class="c1">AGUR, JESUSEN AMA</span></p>
+    <p class="c4"><span class="c1">BIRJINA MAITEA</span></p>
+    <p class="c4"><span class="c1">AGUR ITSASOKO IZAR</span></p>
+    <p class="c4"><span class="c1">DISTIRATZAILEA</span></p>
+    <p class="c4"><span class="c1">AGUR ZERUKO EGUZKI</span></p>
+    <p class="c4"><span class="c1">POZKIDAZ BETEA</span></p>
+    <p class="c4"><span class="c1">AGUR PEKATARION</span></p>
+    <p class="c4"><span class="c1">KAIA TA ESTALPEA (2)</span></p>
+    <p class="c4"><span class="c1">BAINAN ZUGANDIK ALDE</span></p>
+    <p class="c4"><span class="c1">BIHOTZAK EZIN DU</span></p>
+    <p class="c4"><span class="c1">ZUREGANA DIJOA</span></p>
+    <p class="c4"><span class="c1">ZUGAN BIZI NAHI DU</span></p>
+    <p class="c4"><span class="c1">BIRJIN PAREGABEA</span></p>
+    <p class="c4"><span class="c1">BEDEINKA NAZAZU</span></p>
+    <p class="c4"><span class="c1">AGUR AMA NEREA,</span></p>
+    <p class="c4"><span class="c1">AGUR, AGUR, AGUR (2)</span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <p class="c11"><span class="c16 c20">Gurtua izan bedi beti Aldareko Sakramentu Santua</span></p>
+    <p class="c11"><span class="c21">Agur Maria, Sortzez garbia</span></p>
+    <hr style="page-break-before:always;display:none;">
+    <p class="c8 c10"><span class="c1"></span></p>
+    <p class="c8"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 561.10px; height: 832.67px;"><img alt="" src="media/image1.webp" style="width: 561.10px; height: 832.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <p class="c8 c10"><span class="c1"></span></p>
+    <div>
+        <p class="c11"><span class="c27 c29 c32">&nbsp;-</span></p>
+    </div>
+</body>
+
+</html>

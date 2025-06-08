@@ -31,7 +31,7 @@ ekitaldiak:
     title: LARUNBETLARI
     notes: Aralarko santutegian izango da Pentekoste bezperan ohizkoa den urteroko
       meza.
-    image: /media/Screenshot_20250530_094045_Gallery.jpg
+    image: /media/Screenshot_20250530_094045_Gallery.webp
     location: "Beruete/Goldaratz "
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
