@@ -59,6 +59,7 @@ ekitaldiak:
   - date: 29/06/2025 10:00
     title: SAN PEDRO
     notes: Gorriztarango eskolako kapilan
+    image: /media/Screenshot_20250611_072956_Gallery.jpg
   - date: 28/06/2025 19:30
     title: "GAU GURTZA BEILA "
     notes: "Leitzako gizonen adorazioak 75 urte eta emakumezkoenak 50 urte betetzwen
