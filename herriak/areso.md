@@ -26,6 +26,11 @@ ekitaldiak:
     title: "SAN PEDRO "
     notes: Meza ondoren prozesioa egingo da
     image: /media/Screenshot_20250530_093310_Gallery.webp
+  - date: 21/06/2025 19:30
+    title: CORPUS CHRISTI
+    notes: Bezperan ospatuko da 7:30tan meza eta ondoren prozesioa egingo da herrian
+      zehar.
+    image: /media/Screenshot_20250614_151557_Gallery.jpg
 mezak:
   - date: igandetan 10.00
     language: euskaraz
