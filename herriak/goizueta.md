@@ -19,6 +19,10 @@ ekitaldiak:
     notes: Astelehen goizean gaixoengana eramango dugu san Migel eta 12:30tan
       errosarioa, konjuruak eta despedida izango dira.
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 22/06/2025 12:30
+    title: "CORPUS CHRISTI "
+    notes: Meza nagusiaren ondoren ohizko prozesioa burutuko da
+    image: /media/Screenshot_20250616_202439_Gallery.jpg
 mezak:
   - date: igandetan 12.30
     language: euskaraz
