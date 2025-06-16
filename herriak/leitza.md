@@ -65,6 +65,10 @@ ekitaldiak:
     notes: "Leitzako gizonen adorazioak 75 urte eta emakumezkoenak 50 urte betetzwen
       dituztela eta, beila berezia egingo da. "
     image: /media/Screenshot_20250531_002514_WhatsApp.webp
+  - date: 22/06/2025 11:00
+    title: CORPUS CHRISTI
+    notes: Meza nagusiaren ondoren prozesioa burutuko da.
+    image: /media/Screenshot_20250614_152228_OneDrive.jpg
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
