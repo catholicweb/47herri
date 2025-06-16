@@ -40,6 +40,10 @@ ekitaldiak:
   - date: 29/06/2025 12:30
     title: SAN PEDRO
     image: /media/Screenshot_20250531_004252_YouTube.webp
+  - date: 22/06/2025 12:30
+    title: "CORPUS CHRISTI "
+    notes: Meza nagusiaren ondoren ohizko prozesioa burutuko da
+    image: /media/Screenshot_20250616_202620_Gallery.jpg
 mezak:
   - date: ostirala 11.00
     notes: Santa Kruz ermitten
