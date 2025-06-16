@@ -6,7 +6,7 @@ sections:
     items:
       - title: Gurutz bidea
         yt: Bpmam96GZno
-  - show: true
+  - show: false
     title: Zeru lurren erregina
     items:
       - title: Zeru lurren erregina
@@ -22,7 +22,7 @@ sections:
         yt: _xjJggHEpQI
       - title: Argizko gartakariak (ostegunetan)
         yt: 7zenKMOnsxs
-  - show: false
+  - show: true
     title: ANGELUSA
     items:
       - title: "ANGELUSA EUSKERAZ "
