@@ -38,6 +38,10 @@ ekitaldiak:
   - date: 24/06/2025 11:00
     title: "SENDOTZAK "
     image: /media/sendotza.webp
+  - date: 22/06/2025 11:00
+    title: "CORPUS CHRISTI "
+    notes: "Meza nagusiaren ondoren ohizko prozesioa burutuko da. "
+    image: /media/Screenshot_20250616_202439_Gallery.jpg
 mezak:
   - date: astegunetan 18.30
     notes: Komentuan
