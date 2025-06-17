@@ -11,7 +11,7 @@ hiletak:
   - date: 06/06/2025 18.00
     name: MARIA TERESA URROZ ZUBIETA
   - date: 19/06/2025 17.00
-    name: MARGARITA ZABALETA
+    name: MARGARI ZABALETA
 ekitaldiak:
   - date: 16/04/2025 18:00-19:30
     title: AITORTZAK
