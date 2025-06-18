@@ -37,7 +37,7 @@ ekitaldiak:
     notes: 11:30tan abiatuko da prozesioa elizetik eta 12:30tan meza egongo da
       ermitan.
     image: /media/Screenshot_20250531_002422_YouTube.webp
-  - date: 29/06/2025 12:30
+  - date: 29/06/2025 12:00
     title: SAN PEDRO
     image: /media/Screenshot_20250531_004252_YouTube.webp
   - date: 22/06/2025 12:30
