@@ -34,7 +34,7 @@ ekitaldiak:
 mezak:
   - date: igandetan 10.00
     language: euskaraz
-image: /media/f2.webp
+image: /media/Screenshot_20250620_202222_Gallery.jpg
 video: 6RONQJ-46eE
 layout: parroquia
 locations:
