@@ -20,7 +20,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{title}" 
+            summary: "{fields.title}" 
         fields:
           - { name: date, label: Eguna eta ordua (adib. astelehena 19:00 edo 25/12/2025), type: string }
           - { name: title, label: Izenburua, type: string }
