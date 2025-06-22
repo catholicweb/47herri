@@ -70,14 +70,20 @@ content:
       - name: sections
         label: sections
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title}"
         fields:
           - { name: show, label: show, type: boolean, default: true }
           - { name: title, label: Izenburua, type: string }
           - name: items
             label: items
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.title}" 
             fields:
               - { name: title, label: Izenburua, type: string }
               - { name: yt, label: Youtube code, type: string }
@@ -89,7 +95,10 @@ content:
       - name: ekitaldiak
         label: Ekitaldiak
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title}" 
         fields:
           - { name: date, label: Eguna eta ordua (adib. astelehena 19:00 edo 25/12/2025), type: string }
           - { name: title, label: Izenburua, type: string }
@@ -110,7 +119,10 @@ content:
       - name: collaborators
         label: Gure apezak
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.name}" 
         fields:
           - { name: image, label: Image, type: image }
           - { name: name, label: Izena, type: string }
