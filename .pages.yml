@@ -27,7 +27,7 @@ content:
         fields:
           - { name: date, label: Eguna eta ordua (adib. astelehena 19:00 edo 25/12/2025), type: string }
           - { name: title, label: Izenburua, type: string }
-          - { name: notes, label: Notes, type: string }
+          - { name: notes, label: Notes, type: text }
           - { name: image, label: Image, type: image }
       - name: mezak
         label: Mezak
@@ -102,7 +102,7 @@ content:
         fields:
           - { name: date, label: Eguna eta ordua (adib. astelehena 19:00 edo 25/12/2025), type: string }
           - { name: title, label: Izenburua, type: string }
-          - { name: notes, label: Notes, type: string }
+          - { name: notes, label: Notes, type: text }
           - { name: image, label: Image, type: image }
           - { name: location, label: Herria, type: string }
       - name: hiletak_default
