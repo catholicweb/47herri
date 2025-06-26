@@ -3,6 +3,9 @@ ekitaldiak:
   - date: 23/04/2025 17:00
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 29/06/2025 11:00
+    title: SAN PEDRO
+    image: /media/Screenshot_20250626_093633_YouTube.jpg
 image: /media/Screenshot_20250405_182111_YouTube.webp
 video: DHwAmkBhea0
 layout: parroquia
