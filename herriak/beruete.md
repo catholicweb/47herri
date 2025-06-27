@@ -1,6 +1,7 @@
 ---
 hiletak:
-  - {}
+  - date: 28/06/2025 17.00
+    name: MERCEDES AZPIROZ GARRO
 ekitaldiak:
   - date: 12/05/2025 20:30
     title: SAN MIGELEN BISITA
