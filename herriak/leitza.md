@@ -14,7 +14,7 @@ hiletak:
     name: MARGARI ZABALETA
   - date: 23/06/2025 17.00
     name: "AGUSTIN GOIZUETA "
-  - date: 01/08/2025 19.30
+  - date: 01/07/2025 19.30
     name: JEXUX PERURENA
 ekitaldiak:
   - date: 16/04/2025 18:00-19:30
