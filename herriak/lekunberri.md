@@ -2,6 +2,8 @@
 hiletak:
   - date: 04/04/2025 18.00
     name: MARITXU ZUBELDIA
+  - date: 03/07/2025 18.00
+    name: ALBERTO LANSALOT
 ekitaldiak:
   - date: 17/04/2025 18:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
