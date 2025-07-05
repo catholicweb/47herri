@@ -49,15 +49,45 @@ layout: null
 }
 
 .search-icon::before {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="%23888" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>');
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-top: 0.4em;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="%23888" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 0.4em;
 }
+
+.phone-icon::before {
+    content: "";
+    display: inline-block;
+    padding: 0.5em;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.54.76 3.91.76a1 1 0 011 1V20a1 1 0 01-1 1C9.83 21 3 14.17 3 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.37.27 2.7.76 3.91a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.envelope-icon::before {
+    content: "";
+    display: inline-block;
+    padding: 0.5em;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.youtube-icon::before {
+    content: "";
+    display: inline-block;
+    padding: 1em;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='159' height='110'><path d='M154 17.5c-1.82-6.73-7.07-12-13.8-13.8-9.04-3.49-96.6-5.2-122 0.1-6.73 1.82-12 7.07-13.8 13.8-4.08 17.9-4.39 56.6 0.1 74.9 1.82 6.73 7.07 12 13.8 13.8 17.9 4.12 103 4.7 122 0 6.73-1.82 12-7.07 13.8-13.8 4.35-19.5 4.66-55.8-0.1-75z' fill='white'/><path d='M105 55 64.2 31.6v46.8z' fill='%23222831'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
 
 
 h1,
