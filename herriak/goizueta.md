@@ -23,6 +23,10 @@ ekitaldiak:
     title: "CORPUS CHRISTI "
     notes: Meza nagusiaren ondoren ohizko prozesioa burutuko da
     image: /media/Screenshot_20250616_202439_Gallery.jpg
+  - date: 22/07/2025 11:00
+    title: SANTA MARIA MAGDALENA
+    notes: Meza ermitan izango da.
+    image: /media/Screenshot_20250705_202514_YouTube.jpg
 mezak:
   - date: igandetan 12.30
     language: euskaraz
