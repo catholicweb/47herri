@@ -6,6 +6,9 @@ ekitaldiak:
   - date: 25/05/2025 12:30
     title: "SAN MIGELEN BISITA "
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 25/07/2025 11:00
+    title: SANTIAGO
+    image: /media/Screenshot_20250705_202322_YouTube.jpg
 mezak:
   - date: igandetan 11.00
     language: euskaraz
