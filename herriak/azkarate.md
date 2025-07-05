@@ -5,7 +5,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.webp
   - date: 07/07/2025 11:00
     title: SAN FERMIN
-    notes: 10:30tan abiatuko da elizetik prozesioa eta 11tan meza izango da ermitan.
+    notes: 10:45tan abiatuko da elizetik prozesioa eta 11tan meza izango da ermitan.
     image: /media/Screenshot_20250611_073024_Gallery.jpg
 mezak:
   - date: larunbatetan 17.00 1. astea
