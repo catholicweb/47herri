@@ -33,6 +33,16 @@ ekitaldiak:
       meza.
     image: /media/Screenshot_20250530_094045_Gallery.webp
     location: "Beruete/Goldaratz "
+  - date: 07/09/2025 12:30
+    title: GURUTZEEN EGUNA
+    notes: >-
+      Gure Pastoral barrutiko parroki guztietako gurutzeak 11:45tan abiatuko
+      dira Uhartetik datorren bide gurutzetik prozesioan san Migelen
+      santitegiraino. 
+
+      12:00tan aitortzak egongo dira eta 12:30tan meza
+    image: /media/Screenshot_20250706_214844_Gallery.jpg
+    location: LARRAUN, URUMEA, LEITZARAN, ARAITZ, BASABURUA, IMOTZ
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
