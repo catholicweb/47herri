@@ -3,6 +3,9 @@ ekitaldiak:
   - date: 21/04/2025 11:15
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 06/08/2025 12:30
+    title: TRANSFIGURAZIOA
+    image: /media/Screenshot_20250706_213657_YouTube-1.jpg
 mezak:
   - date: igandetan 12.30 1. astea
     notes: Hilean behin (lehenengo igandetan)
