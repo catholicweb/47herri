@@ -3,6 +3,11 @@ ekitaldiak:
   - date: 23/04/2025 09:00
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 03/08/2025 13:00
+    title: SANTA BARBARA
+    notes: Meza izango da Santa Barbara ermitan eguerdiko ordubata aldera eta
+      ondoren herri bazkaria.
+    image: /media/Screenshot_20250706_191003_Gallery.jpg
 mezak:
   - date: igandetan 12.30 3. astea
     notes: Hilean behin  (hirugarren igandetan)
