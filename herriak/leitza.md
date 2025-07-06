@@ -75,6 +75,9 @@ ekitaldiak:
     title: CORPUS CHRISTI
     notes: Meza nagusiaren ondoren prozesioa burutuko da.
     image: /media/Screenshot_20250614_152228_OneDrive.jpg
+  - date: 11/08/2025 10:30
+    title: "SAN TIBURTZIO "
+    image: /media/Screenshot_20250706_191424_YouTube.jpg
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
