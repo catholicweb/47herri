@@ -6,6 +6,10 @@ ekitaldiak:
   - date: 21/04/2025 18:00
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 20/07/2025 12:30
+    title: ARRIBEKO FESTAK
+    notes: Meza ondorean patata tortila txapelketa eta dastaketa izango da.
+    image: /media/Screenshot_20250330_004022_YouTube.webp
 image: /media/Screenshot_20250330_004022_YouTube.webp
 video: 853drMvd_2Q
 layout: parroquia
