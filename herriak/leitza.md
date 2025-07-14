@@ -79,7 +79,7 @@ ekitaldiak:
     title: "SAN TIBURTZIO "
     image: /media/Screenshot_20250706_191424_YouTube.jpg
   - date: 14/07/2025 19:30
-    title: JOXE JABIER MUGICAREN ALDEKO MEZA
+    title: JOSE JAVIER MUGICAREN ALDEKO MEZA
     notes: 19:00tan erresponsoa egingo da hil zuten tokian eta 19:30tan meza parrokian
     image: /media/Screenshot_20250713_170036_OneDrive-2.jpg
 mezak:
