@@ -16,6 +16,8 @@ hiletak:
     name: "AGUSTIN GOIZUETA "
   - date: 01/07/2025 19.30
     name: JEXUX PERURENA
+  - date: 19/07/2025 19.30
+    name: ESTEBAN HUICI IPARRAGUIRRE
 ekitaldiak:
   - date: 16/04/2025 18:00-19:30
     title: AITORTZAK
