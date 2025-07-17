@@ -27,6 +27,10 @@ ekitaldiak:
     title: SANTA MARIA MAGDALENA
     notes: Meza ermitan izango da.
     image: /media/Screenshot_20250705_202514_YouTube.jpg
+  - date: 15/08/2025 10:30
+    title: "AMA BIRJINAREN ZERURATZEA "
+    notes: Meza eta prozesioa egingo dira.
+    image: /media/Screenshot_20250717_211619_WhatsApp.jpg
 mezak:
   - date: igandetan 12.30
     language: euskaraz
