@@ -31,6 +31,9 @@ ekitaldiak:
     notes: Bezperan ospatuko da 7:30tan meza eta ondoren prozesioa egingo da herrian
       zehar.
     image: /media/Screenshot_20250614_151557_Gallery.jpg
+  - date: 15/08/2025 11:00
+    title: AMA BIRJINAREN ZERURATZEA
+    image: /media/Screenshot_20250717_211257_Gallery.jpg
 mezak:
   - date: igandetan 10.00
     language: euskaraz
