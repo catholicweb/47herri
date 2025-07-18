@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 19/07/2025 18.00
+    name: MERTXE ALBERDI
 ekitaldiak:
   - date: 25/04/2025 19:00
     title: SAN MIGELEN BISITA
