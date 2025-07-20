@@ -20,6 +20,8 @@ hiletak:
     name: ESTEBAN HUICI IPARRAGUIRRE
   - date: 20/07/2025 17.00
     name: GREGORIO OIARTZUN SAGASTIBELTZA
+  - date: 21/07/2025 19.30
+    name: JUSTO MIURA
 ekitaldiak:
   - date: 16/04/2025 18:00-19:30
     title: AITORTZAK
