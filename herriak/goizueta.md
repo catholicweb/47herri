@@ -31,6 +31,11 @@ ekitaldiak:
     title: "AMA BIRJINAREN ZERURATZEA "
     notes: Meza eta prozesioa egingo dira.
     image: /media/Screenshot_20250717_211619_WhatsApp.jpg
+  - date: 28/08/2025 11:00
+    title: SAN AGUSTIN (ARTIKUTZA)
+    notes: Artikutza denentzako zabalik egoten den egun bakarra da. 11tan meza
+      izango da.
+    image: /media/Screenshot_20250721_182132_YouTube.jpg
 mezak:
   - date: igandetan 12.30
     language: euskaraz
