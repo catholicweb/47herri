@@ -7,6 +7,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.webp
   - date: 03/08/2025 12:30
     title: SAN ESTEBANEN INBENTZIOA
+    image: /media/Screenshot_20250721_141752_YouTube.jpg
 mezak:
   - date: igandetan 12.30 2. astea
     notes: Hilean behin(bigarren igandetan)
