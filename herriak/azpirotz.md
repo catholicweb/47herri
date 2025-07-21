@@ -5,6 +5,8 @@ ekitaldiak:
     notes: "Aurten aurreratuko da aingeruaren bisita Lekunberrin klaratarren
       despedida izango delako. "
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 03/08/2025 12:30
+    title: SAN ESTEBANEN INBENTZIOA
 mezak:
   - date: igandetan 12.30 2. astea
     notes: Hilean behin(bigarren igandetan)
