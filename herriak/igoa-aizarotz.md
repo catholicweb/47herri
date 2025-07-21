@@ -4,6 +4,8 @@ hiletak:
     name: ASENSIO ALSUA HUARTE
   - date: 31/05/2025 19.30
     name: ASENSIO ARANO HUARTE
+  - date: 23/07/2025 17.00
+    name: ANGEL MARTINICORENA
 ekitaldiak:
   - date: 20/05/2025 08:30
     title: SAN MIGELEN BISITA
