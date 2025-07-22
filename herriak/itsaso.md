@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 23/07/2025 16.00
+    name: ROSALIA ILARREGUI ALDAREGUIA
 ekitaldiak:
   - date: 12/05/2025 18:00
     title: SAN MIGELEN BISITA
