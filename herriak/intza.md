@@ -6,6 +6,9 @@ ekitaldiak:
   - date: 21/04/2025 19:30
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 08/09/2025 10:00
+    title: AMA BIRJINAREN JAIOTZA
+    image: /media/Screenshot_20250723_140841_OneDrive.jpg
 mezak:
   - date: larunbatetan 17.00 4. astea
     notes: Hilean behin (laugarren larunbatetan)
