@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 18/07/2025 17.00
+    name: MARTIN MANUEL OTERMIN
 ekitaldiak:
   - date: 21/04/2025 19:30
     title: SAN MIGELEN BISITA
