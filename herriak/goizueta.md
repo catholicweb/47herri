@@ -4,6 +4,8 @@ hiletak:
     name: Lazaro Perurena
   - date: 13/06/2025 18.00
     name: JUANA ELIZALDE ALSUA
+  - date: 29/07/2025 17.00
+    name: JOSE MANUEL ZABALA
 ekitaldiak:
   - date: 17/04/2025 19:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
