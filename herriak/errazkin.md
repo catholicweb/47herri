@@ -6,6 +6,8 @@ ekitaldiak:
   - date: 06/08/2025 12:30
     title: TRANSFIGURAZIOA
     image: /media/Screenshot_20250706_213657_YouTube-1.jpg
+  - date: 03/08/2025 10:30
+    title: FESTETAKO MEZA
 mezak:
   - date: igandetan 12.30 1. astea
     notes: Hilean behin (lehenengo igandetan)
