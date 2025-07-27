@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 28/07/2025 18.00
+    name: JUAN MARTIN GOIKOETXEA
 ekitaldiak:
   - date: 23/04/2025 09:00
     title: SAN MIGELEN BISITA
