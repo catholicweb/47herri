@@ -8,6 +8,8 @@ ekitaldiak:
     image: /media/Screenshot_20250706_213657_YouTube-1.jpg
   - date: 03/08/2025 10:30
     title: FESTETAKO MEZA
+    notes: Igandean 10:30tan izango da meza eta trasfigurazione egunean
+      (asteazkenean) 12:30tan
 mezak:
   - date: igandetan 12.30 1. astea
     notes: Hilean behin (lehenengo igandetan)
