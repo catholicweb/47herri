@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 01/08/2025 17.00
+    name: BLANCA ESTHER JAUNARENA
 ekitaldiak:
   - date: 20/05/2025 12:00
     title: SAN MIGELEN BISITA
