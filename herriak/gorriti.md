@@ -11,9 +11,10 @@ ekitaldiak:
     notes: Meza izango da Santa Barbara ermitan eguerdiko ordubata aldera eta
       ondoren herri bazkaria.
     image: /media/Screenshot_20250706_191003_Gallery.jpg
-  - date: 24/08/2025 12:30
+  - date: 24/08/2025 12:00
     title: SAN BARTOLOME
-    notes: Meza ondorean hamaiketakoa izango da
+    notes: Meza ondorean hamaiketakoa izango da. Meza aurretik eta mezako garaian
+      ere txistulariak izango dira.
     image: /media/Screenshot_20250729_130806_Gallery.jpg
 mezak:
   - date: igandetan 12.30 3. astea
