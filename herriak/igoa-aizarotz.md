@@ -6,6 +6,8 @@ hiletak:
     name: ASENSIO ARANO HUARTE
   - date: 23/07/2025 17.00
     name: ANGEL MARTINICORENA
+  - date: 09/08/2025 18.00
+    name: MARTIN OLAZABAL
 ekitaldiak:
   - date: 20/05/2025 08:30
     title: SAN MIGELEN BISITA
