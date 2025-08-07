@@ -4,6 +4,10 @@ ekitaldiak:
     title: SAN MIGELEN BISITA
     notes: Ostiral goizean 8:30tan meza eta despedida izango dira
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 08/09/2025 12:30
+    title: AMA BIRJINAREN JAIOTZA
+    notes: "Meza ondorean prozesioa burutuko da herrian zehar. "
+    image: /media/Screenshot_20250807_191124_OneDrive.jpg
 mezak:
   - date: osteguna 12.30 1. astea
     notes: Hilean behin  (lehenengo ostegunetan)
