@@ -4,6 +4,8 @@ hiletak:
     name: MILAGROS BULDAIN JAKA
   - date: 05/06/2025 18.00
     name: TERESA GORRITI GOLDARACENA
+  - date: 13/08/2025 20.00
+    name: BEATRIZ GOLDARAZ
 ekitaldiak:
   - date: 17/04/2025 12:00
     title: "AITORTZAK "
