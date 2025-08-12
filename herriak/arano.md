@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 13/08/2025 18.00
+    name: JOAQUINA MINDEGUIA CESTAU
 ekitaldiak:
   - date: 20/04/2025 10:30
     title: "AITORTZAK "
