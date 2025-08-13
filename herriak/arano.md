@@ -12,6 +12,9 @@ ekitaldiak:
   - date: 25/07/2025 11:00
     title: SANTIAGO
     image: /media/Screenshot_20250705_202322_YouTube.jpg
+  - date: 16/08/2025
+    title: SAN ROKE
+    image: /media/Screenshot_20250813_183809_Gallery.jpg
 mezak:
   - date: igandetan 11.00
     language: euskaraz
