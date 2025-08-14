@@ -7,13 +7,14 @@ hiletak:
   - date: 23/07/2025 17.00
     name: ANGEL MARTINICORENA
   - date: 09/08/2025 18.00
-    name: MARTIN OLAZABAL
+    name: MARTIN OLAZAR
 ekitaldiak:
   - date: 20/05/2025 08:30
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
   - date: 08/09/2025 12:00
     title: "AMA BIRJINAREN JAIOTZA "
+    image: /media/Screenshot_20250814_073232_YouTube.jpg
 mezak:
   - date: igandetan 12:00 3. astea
     notes: Hilean behin  (hirugarren igandetan)
