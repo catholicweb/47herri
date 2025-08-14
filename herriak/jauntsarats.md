@@ -11,6 +11,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.webp
   - date: 15/08/2025 12:30
     title: "AMA BIRJINAREN ZERURATZEA "
+    image: /media/Screenshot_20250814_072834_YouTube.jpg
 mezak:
   - date: igandetan 10.00 4. astea
     notes: Hilean behin (laugarren igandetan)
