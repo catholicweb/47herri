@@ -8,6 +8,8 @@ hiletak:
     name: BEATRIZ GOLDARAZ
   - date: 16/08/2025 17.00
     name: TEODORO OTAMENDI ARTOLA
+  - date: 17/08/2025 18.00
+    name: SERGIO SALABERRIA ZINKUNEGI
 ekitaldiak:
   - date: 17/04/2025 12:00
     title: "AITORTZAK "
