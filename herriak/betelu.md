@@ -6,6 +6,8 @@ hiletak:
     name: TERESA GORRITI GOLDARACENA
   - date: 13/08/2025 20.00
     name: BEATRIZ GOLDARAZ
+  - date: 16/08/2025 17.00
+    name: TEODORO OTAMENDI ARTOLA
 ekitaldiak:
   - date: 17/04/2025 12:00
     title: "AITORTZAK "
