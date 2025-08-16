@@ -7,7 +7,7 @@ hiletak:
   - date: 23/07/2025 18.30
     name: MARITXU ECHARRI
   - date: 17/08/2025 19.30
-    name: MANOLO ANDORENA
+    name: MANOLI ANSORENA
 ekitaldiak:
   - date: 17/04/2025 18:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
