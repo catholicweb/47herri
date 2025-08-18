@@ -8,7 +8,7 @@ ekitaldiak:
     image: /media/Screenshot_20250605_153309_YouTube.jpg
   - date: 29/08/2025 12:00
     title: SAN JOAN BATAIATZAILEAREN MARTIRITZA
-    image: /media/Screenshot_20250819_002513_YouTube.jpg
+    image: /media/Screenshot_20250819_003421_YouTube.jpg
 image: /media/Screenshot_20250330_005419_YouTube.webp
 video: lkT9FGSPG04
 layout: parroquia
