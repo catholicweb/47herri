@@ -22,6 +22,8 @@ hiletak:
     name: GREGORIO OIARTZUN SAGASTIBELTZA
   - date: 21/07/2025 19.30
     name: JUSTO MIHURA MASCOTENA
+  - date: 23/08/2025 18.30
+    name: MARIA LUISA GARRO MUÑOA
 ekitaldiak:
   - date: 16/04/2025 18:00-19:30
     title: AITORTZAK
