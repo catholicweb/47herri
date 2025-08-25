@@ -8,6 +8,8 @@ hiletak:
     name: MARITXU ECHARRI
   - date: 17/08/2025 19.30
     name: MANOLI ANSORENA MARTICORENA
+  - date: 26/08/2025 18.30
+    name: ANDRES LEANDRO MESA MEJIA
 ekitaldiak:
   - date: 17/04/2025 18:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
