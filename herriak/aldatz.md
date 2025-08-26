@@ -19,6 +19,10 @@ ekitaldiak:
   - date: 23/04/2025 19:30
     title: "SAN MIGELEN BISITA "
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 28/08/2025 17:00
+    title: SAN AGUSTIN
+    notes: Agustindarren komentuan
+    image: /media/Screenshot_20250826_102826_YouTube.jpg
 mezak:
   - date: astegunetan, larunbatetan eta igandetan 09.00
     notes: Agustinetan
