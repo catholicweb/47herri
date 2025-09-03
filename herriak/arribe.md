@@ -10,6 +10,9 @@ ekitaldiak:
     title: ARRIBEKO FESTAK
     notes: Meza ondorean patata tortila txapelketa eta dastaketa izango da.
     image: /media/Screenshot_20250330_004022_YouTube.webp
+  - date: 29/09/2025 12:30
+    title: SAN MIGEL
+    image: /media/Screenshot_20250903_130422_YouTube.jpg
 image: /media/Screenshot_20250330_004022_YouTube.webp
 video: 853drMvd_2Q
 layout: parroquia
