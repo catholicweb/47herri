@@ -90,6 +90,10 @@ ekitaldiak:
     title: JOSE JAVIER MUGICAREN ALDEKO MEZA
     notes: 19:00tan erresponsoa egingo da hil zuten tokian eta 19:30tan meza parrokian
     image: /media/Screenshot_20250713_170036_OneDrive-2.jpg
+  - date: 09/09/2025 18:30
+    title: ARANTZAZUKO AMA BIRJINA
+    notes: Gorriztarango eskola zaharreko kaperatxoan meza izango da
+    image: /media/Screenshot_20250904_082609_YouTube.jpg
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
