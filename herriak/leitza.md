@@ -94,6 +94,11 @@ ekitaldiak:
     title: ARANTZAZUKO AMA BIRJINA
     notes: Gorriztarango eskola zaharreko kaperatxoan meza izango da
     image: /media/Screenshot_20250904_082609_YouTube.jpg
+  - date: 13/09/2025 8:00
+    title: GURUTZE SANTUAREN GORALPENA
+    notes: Gurutz bidea goizeko 8tan elizetik abiatuta santa kruz ermiteraino eta
+      meza hara iritsitakoan.
+    image: /media/Screenshot_20250907_184537_OneDrive.jpg
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
