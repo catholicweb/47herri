@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 20/09/2025 18.00
+    name: MARIA PILAR ALVAREZ GUEMBE
 ekitaldiak:
   - date: 24/04/2025 09:30
     title: SAN MIGELEN BISITA
