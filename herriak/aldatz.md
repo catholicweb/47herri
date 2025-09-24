@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 25/09/2025 18.00
+    name: JOSE MIGEL BARBERIA GOIKOETXEA
 ekitaldiak:
   - date: 17/04/2025 17:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
