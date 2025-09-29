@@ -8,8 +8,6 @@ ekitaldiak:
     title: AMA BIRJINAREN JAIOTZA
     notes: "Meza ondorean prozesioa burutuko da herrian zehar. "
     image: /media/Screenshot_20250807_191124_OneDrive.jpg
-  - date: 12:30 2/9/25
-    title: Meza
 mezak:
   - date: osteguna 12.30 1. astea
     notes: Hilean behin  (lehenengo ostegunetan)
