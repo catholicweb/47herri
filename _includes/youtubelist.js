@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import fs from 'fs/promises';
 
 const API_KEY = process.env.YT_API_KEY; // Leer API Key de env
-const CHANNEL_ID = 'UCB6hZ1l2VYWu955Fz09Ouzw'; // Reemplázalo por el ID del canal
+const CHANNEL_ID = 'UCYibdEdQAPs55xBnIElKLkQ'; // Reemplázalo por el ID del canal
 
 let newImportantVideos = []
 
@@ -142,7 +142,7 @@ async function writeNotification(newImportantVideos) {
         await saveVideosToFile(videos, 'assets/videos.json'); // Guardar el resultado en un archivo
         await writeNotification(newImportantVideos)
 
-        const playlists = await getAllPlaylistId()
+        /*const playlists = await getAllPlaylistId()
         let kantak = []
         for (var i = 0; i < playlists.length; i++) {
             if (!playlists[i].title.includes('MEZAKO KANTAK')) continue
@@ -154,6 +154,7 @@ async function writeNotification(newImportantVideos) {
             kantak = kantak.concat(g)
         }
         await saveVideosToFile(kantak, 'assets/kantak.json'); // Guardar el resultado en un archivo
+        */
         //console.log('Lista de vídeos:', videos);
     } catch (error) {
         console.error('Error:', error.message);
