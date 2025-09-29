@@ -50,10 +50,10 @@ hiletak_default:
 mezak_default:
   image: /media/mass.webp
 collaborators:
-  - image: /media/20250404_171601-2.webp
-    name: Iñazio Azcoaga
+  - image: /media/IMG-20250927-WA0005.jpg
+    name: Patxi Izco
     description: In solidum parrokoa (moderatzailea)
-    phonenumber: 646 11 36 05
+    phonenumber: 690 99 49 17
   - image: /media/Screenshot_20250404_192119_Gallery.webp
     name: Santi Garisoain
     description: In solidum parrokoa
