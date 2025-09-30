@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 01/10/2025 17.00
+    name: Isabel Goikoetxea Lascaray
 ekitaldiak:
   - date: 22/04/2025 09:30
     title: SAN MIGELEN BISITA
