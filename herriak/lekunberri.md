@@ -50,7 +50,7 @@ ekitaldiak:
     title: "CORPUS CHRISTI "
     notes: "Meza nagusiaren ondoren ohizko prozesioa burutuko da. "
     image: /media/Screenshot_20250616_202439_Gallery.jpg
-  - date: 4/12/2025 12/10/2025 08:00
+  - date: 12/10/2025 08:00
     title: Pilareko Amaren Bederatziurrena
     notes: Arrosarioa eta Meza. Urriaren 4tik 12ra, goizeko 8etan
     image: /media/Screenshot_20251003-065406_Maps.jpg
