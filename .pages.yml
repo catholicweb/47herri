@@ -25,7 +25,7 @@ content:
             collapsed: true
             summary: "{fields.title}" 
         fields:
-          - { name: date, label: Eguna eta ordua (adib. astelehena 19:00 edo 25/12/2025), type: string }
+          - { name: date, type: date, label: Fecha y hora, options: { time: true, format: dd/MM/yyyy HH.mm}}
           - { name: title, label: Izenburua, type: string }
           - { name: notes, label: Notes, type: text }
           - { name: image, label: Image, type: image }
