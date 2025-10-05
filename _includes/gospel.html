@@ -1,110 +1,111 @@
 <script>
-let bibleApp = {
+  let bibleApp = {
     gospel: {},
     references: {},
     date: new Date(),
-    lang: 'eu',
-    changeDate: function(diff) {
-        this.date.setDate(this.date.getDate() + diff)
-        this.fetchTranslation()
+    lang: "eu",
+    changeDate: function (diff) {
+      this.date.setDate(this.date.getDate() + diff);
+      this.fetchTranslation();
     },
-    changeLang: function(lang) {
-        let langMap = {
-            basque: "eu",
-            spanish: "es",
-            english: "en",
-            bulgarian: "bg",
-            italian: "it",
-            romanian: "ro",
-            portuguese: "pt",
-            catalan: "ca",
-            arabic: "ar",
-            german: "de",
-            french: "fr"
+    changeLang: function (lang) {
+      let langMap = {
+        basque: "eu",
+        spanish: "es",
+        english: "en",
+        bulgarian: "bg",
+        italian: "it",
+        romanian: "ro",
+        portuguese: "pt",
+        catalan: "ca",
+        arabic: "ar",
+        german: "de",
+        french: "fr",
+      };
+      this.lang = langMap[lang] || lang || "eu";
+      console.log("new lang!", lang, "->", this.lang);
+      document.querySelector("html").lang = this.lang;
+      this.fetchTranslation();
+    },
+    fetchTranslation: async function () {
+      try {
+        this.gospel.ref = await this.fetchReference();
+        const parsed = await this.parseReference(this.gospel.ref);
+        let text = "";
+        for (var i = 0; i < parsed.length; i++) {
+          let { book, chapter, verses } = parsed[i];
+          let chapterVerses = await fetch(`/assets/bible/${this.lang}-${book}-${chapter}.json`, { "x-cache-strategy": "cache-first" }).then((r) => r.json());
+          this.gospel.source = chapterVerses.source;
+          text += verses
+            .map((verse) => chapterVerses["v" + verse])
+            .join(" ")
+            .replace(/ +\./g, ".");
         }
-        this.lang = langMap[lang] || lang || 'eu';
-        console.log('new lang!', lang, '->', this.lang)
-        document.querySelector('html').lang = this.lang
-        this.fetchTranslation()
+        this.gospel.text = text;
+      } catch (e) {
+        this.gospel.text = "Errorea! Horretan ari gara...";
+      }
     },
-    fetchTranslation: async function() {
-        try {
-            this.gospel.ref = await this.fetchReference()
-            const parsed = await this.parseReference(this.gospel.ref)
-            let text = ''
-            for (var i = 0; i < parsed.length; i++) {
-                let { book, chapter, verses } = parsed[i]
-                let chapterVerses = await fetch(`/assets/bible/${this.lang}-${book}-${chapter}.json`, { cache: 'force-cache' }).then(r => r.json())
-                this.gospel.source = chapterVerses.source
-                text += verses.map(verse => chapterVerses['v' + verse]).join(' ').replace(/ +\./g, '.')
-            }
-            this.gospel.text = text
-        } catch (e) {
-            this.gospel.text = 'Errorea! Horretan ari gara...'
-        }
-    },
-    parseReference: async function(ref) {
-        // Split book name from rest
-        let [, book, rest] = ref.replaceAll(' ', '').toLowerCase().match(/^(\d*?[a-z]+)(.+)/)
-        const bookMap = { "mt": "MAT", "mk": "MRK", "lk": "LUK", "jn": "JHN" };
-        book = bookMap[book] || book;
+    parseReference: async function (ref) {
+      // Split book name from rest
+      let [, book, rest] = ref
+        .replaceAll(" ", "")
+        .toLowerCase()
+        .match(/^(\d*?[a-z]+)(.+)/);
+      const bookMap = { mt: "MAT", mk: "MRK", lk: "LUK", jn: "JHN" };
+      book = bookMap[book] || book;
 
-        // Expand multi chapter references
-        let bits = rest.replace(/–(\d+),/g, `-60;$1,1-`).split(';')
+      // Expand multi chapter references
+      let bits = rest.replace(/–(\d+),/g, `-60;$1,1-`).split(";");
 
-        // Parse ranges
-        const parseRange = r => {
-            const [start, end] = r.split('-').map(Number);
-            if (!end) return [start]
-            return Array.from({ length: end - start + 1 }, (_, i) => start + i);
-        }
-        return bits.map(b => {
-            const [chapter, versesStr] = b.replace(/[^0-9\.\,-\;]/g, '').split(',')
-            let verses = versesStr.split('.').map(parseRange).flat()
-            return { book, chapter, verses }
-        })
+      // Parse ranges
+      const parseRange = (r) => {
+        const [start, end] = r.split("-").map(Number);
+        if (!end) return [start];
+        return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+      };
+      return bits.map((b) => {
+        const [chapter, versesStr] = b.replace(/[^0-9\.\,-\;]/g, "").split(",");
+        let verses = versesStr.split(".").map(parseRange).flat();
+        return { book, chapter, verses };
+      });
     },
-    fetchReference: async function() {
-        if (Object.keys(this.references).length === 0) {
-            let data = await fetch('/assets/bible/ref.json')
-            this.references = await data.json()
-        }
-        this.gospel.date = this.date.toISOString().split('T')[0];
-        return this.references[this.gospel.date]
-    }
-}
-if (!window.vueApp) window.vueApp = {}
-vueApp = { ...vueApp, ...bibleApp };
+    fetchReference: async function () {
+      if (Object.keys(this.references).length === 0) {
+        let data = await fetch("/assets/bible/ref.json");
+        this.references = await data.json();
+      }
+      this.gospel.date = this.date.toISOString().split("T")[0];
+      return this.references[this.gospel.date];
+    },
+  };
+  if (!window.vueApp) window.vueApp = {};
+  vueApp = { ...vueApp, ...bibleApp };
 </script>
 <template>
-    <div id="ebanjelioa" v-scope v-scope @vue:mounted="fetchTranslation()">
-        <h4 class="notr">[[ gospel.ref ]]
-            <span style="float: right;">
-                <button @click="changeDate(-1)">
-                    <</button> [[ formatDate(gospel.date) ]] <button @click="changeDate(+1)">>
-                </button>
-            </span>
-        </h4>
-        <div class="notr">
-            [[ gospel.text ]]
-        </div>
-        <a v-if="gospel.source" target="_blank" :href="gospel.source">[[ tr('Iturria') ]]</a>
-    </div>
+  <div id="ebanjelioa" v-scope v-scope @vue:mounted="fetchTranslation()">
+    <h4 class="notr">
+      [[ gospel.ref ]]
+      <span style="float: right"> <button @click="changeDate(-1)"><</button> [[ formatDate(gospel.date) ]] <button @click="changeDate(+1)">></button> </span>
+    </h4>
+    <div class="notr">[[ gospel.text ]]</div>
+    <a v-if="gospel.source" target="_blank" :href="gospel.source">[[ tr('Iturria') ]]</a>
+  </div>
 </template>
 
 <head disable="already included">
-    <script src="https://unpkg.com/petite-vue"></script>
+  <script src="https://unpkg.com/petite-vue"></script>
 </head>
 <style>
-[v-scope] {
+  [v-scope] {
     display: none;
-}
+  }
 
-#ebanjelioa {
+  #ebanjelioa {
     /*white-space: pre-line;*/
-}
+  }
 
-#ebanjelioa button {
+  #ebanjelioa button {
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
@@ -114,9 +115,9 @@ vueApp = { ...vueApp, ...bibleApp };
     font-size: small;
     border-radius: 5px;
     vertical-align: bottom;
-}
+  }
 
-#ebanjelioa button:hover {
-    background: #009C46;
-}
+  #ebanjelioa button:hover {
+    background: #009c46;
+  }
 </style>

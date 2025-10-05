@@ -175,8 +175,9 @@
       return Array.from(keys);
     },
     fetchEvents: async function () {
+      let that = this;
       fetchCacheAndNetwork("assets/site.json", function (site) {
-        this.events = buildEvents(site.pages);
+        that.events = buildEvents(site.pages);
       });
     },
     events: [],

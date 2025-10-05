@@ -1,24 +1,24 @@
 <template>
-    <div class="infinite-carousel-container" v-scope @vue:mounted="fetchVideos(/{{include.params.filter}}/gi)">
-        <div class="infinite-carousel" @scroll="onScroll" ref="carousel">
-            <div class="infinite-item-wrapper col-lg-4 col-md-5 col-sm-8 col-11" v-for="item in visibleItems" v-cloak style="aspect-ratio: 16/9">
-                <div class="facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)' }" :id="'video-'+item.videoId">
-                    <header>[[ item.title ]]</header>
-                    <button type="button" @click="addIframe('youtube', item.videoId)">[[ item.title ]]</button>
-                </div>
-                [[ formatDate(item.publishedAt) ]]
-                <div class="infinite-timeline-bullet"></div>
-            </div>
+  <div class="infinite-carousel-container" v-scope @vue:mounted="fetchVideos(/{{include.params.filter}}/gi)">
+    <div class="infinite-carousel" @scroll="onScroll" ref="carousel">
+      <div class="infinite-item-wrapper col-lg-4 col-md-5 col-sm-8 col-11" v-for="item in visibleItems" v-cloak style="aspect-ratio: 16/9">
+        <div class="facade youtube" :style="{ width: '100%', '--aspect-ratio': 16/9, '--video-poster': 'url(https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg)' }" :id="'video-'+item.videoId">
+          <header>[[ item.title ]]</header>
+          <button type="button" @click="addIframe('youtube', item.videoId)">[[ item.title ]]</button>
         </div>
-        <div class="infinite-timeline"></div>
-        <div class="controls">
-            <button id="prev">&#10094;</button>
-            <button id="next">&#10095;</button>
-        </div>
+        [[ formatDate(item.publishedAt) ]]
+        <div class="infinite-timeline-bullet"></div>
+      </div>
     </div>
+    <div class="infinite-timeline"></div>
+    <div class="controls">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+  </div>
 </template>
 <script>
-let carouselApp = {
+  let carouselApp = {
     // Lista completa de items (puedes ampliarla según necesites)
     allItems: [],
     kantak: [],
@@ -26,156 +26,156 @@ let carouselApp = {
     visibleItems: [],
     itemsToLoad: 10,
     async fetchVideos(filter) {
-        let data = await fetch('/assets/videos.json')
-        let items = await data.json()
-        console.log(filter)
-        this.allItems = items.filter(item => filter.test(item.title));
-        this.loadMoreItems();
-        this.goToHash()
+      let that = this;
+      fetchCacheAndNetwork("assets/videos.json", function (items) {
+        console.error(filter);
+        that.allItems = items.filter((item) => filter.test(item.title));
+        that.loadMoreItems();
+        that.goToHash();
+      });
     },
     async goToHash() {
-        await new Promise(r => setTimeout(r, 250));
-        const hash = window.location.hash.substring(1);
-        const elem = document.getElementById(hash)
-        let y = elem.getBoundingClientRect().top + window.scrollY;
-        if (elem.querySelector('button')) y -= 80
-        window.scrollTo({ top: y, behavior: 'smooth' });
-        await new Promise(r => setTimeout(r, 250));
-        elem.querySelector('button').click()
+      await new Promise((r) => setTimeout(r, 250));
+      const hash = window.location.hash.substring(1);
+      const elem = document.getElementById(hash);
+      let y = elem.getBoundingClientRect().top + window.scrollY;
+      if (elem.querySelector("button")) y -= 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+      await new Promise((r) => setTimeout(r, 250));
+      elem.querySelector("button").click();
     },
     async fetchKantak() {
-        let data = await fetch('/assets/kantak.json')
-        this.kantak = await data.json()
-        this.kantakList = [...new Set(this.kantak.map(item => item.playlist))];
-        console.log(this.kantak, this.kantakList)
+      let that = this;
+      fetchCacheAndNetwork("assets/kantak.json", function (data) {
+        that.kantak = data;
+        that.kantakList = [...new Set(that.kantak.map((item) => item.playlist))];
+        console.log(that.kantak, that.kantakList);
+      });
     },
     parseDateToISO(dateStr) {
-        let [day, month, year] = dateStr.split("/").map(num => parseInt(num, 10));
-        let now = new Date();
-        let eventDate = new Date(year || now.getFullYear(), month - 1, day);
-        if (!year && eventDate < now) eventDate.setFullYear(eventDate.getFullYear() + 1);
-        return eventDate.toISOString();
+      let [day, month, year] = dateStr.split("/").map((num) => parseInt(num, 10));
+      let now = new Date();
+      let eventDate = new Date(year || now.getFullYear(), month - 1, day);
+      if (!year && eventDate < now) eventDate.setFullYear(eventDate.getFullYear() + 1);
+      return eventDate.toISOString();
     },
     trArr(arr) {
-        if (!arr || !arr.length || (arr.length == 1 && arr[0].trim() == '0')) return ''
+      if (!arr || !arr.length || (arr.length == 1 && arr[0].trim() == "0")) return "";
 
-        let map = { 'erderaz': 'c', 'euskaraz': 'e', 'elebidunean': 'b' }
-        let langs = ''
-        Object.keys(map).forEach(str => {
-            if (arr.includes(str)) {
-                arr = arr.filter(item => item !== str);
-                langs = ' (' + map[str] + ')';
-            }
-        });
+      let map = { erderaz: "c", euskaraz: "e", elebidunean: "b" };
+      let langs = "";
+      Object.keys(map).forEach((str) => {
+        if (arr.includes(str)) {
+          arr = arr.filter((item) => item !== str);
+          langs = " (" + map[str] + ")";
+        }
+      });
 
-        if (!arr.length) return langs
-        return ('(' + arr.map(str => this.tr(str)).join(', ') + ')' + langs).trim()
+      if (!arr.length) return langs;
+      return ("(" + arr.map((str) => this.tr(str)).join(", ") + ")" + langs).trim();
     },
     tr(str) {
-        let code = this.lang || 'eu'
-        let codeToLang = {
-            eu: "basque",
-            es: "spanish",
-            en: "english",
-            bg: "bulgarian",
-            it: "italian",
-            ro: "romanian",
-            pt: "portuguese",
-            ca: "catalan",
-            ar: "arabic",
-            de: "german",
-            fr: "french"
-        };
-        if (!str) return ''
-        str = str.trim()
-        let language = codeToLang[code] || 'basque'
-        if (!language || !dictionary || !dictionary[language]) return str
-        return dictionary[language][str] || str
+      let code = this.lang || "eu";
+      let codeToLang = {
+        eu: "basque",
+        es: "spanish",
+        en: "english",
+        bg: "bulgarian",
+        it: "italian",
+        ro: "romanian",
+        pt: "portuguese",
+        ca: "catalan",
+        ar: "arabic",
+        de: "german",
+        fr: "french",
+      };
+      if (!str) return "";
+      str = str.trim();
+      let language = codeToLang[code] || "basque";
+      if (!language || !dictionary || !dictionary[language]) return str;
+      return dictionary[language][str] || str;
     },
     formatDate(isoString) {
-        if (!isoString) return '';
-        let lang = this.lang || 'eu'
-        isoString = isoString.replaceAll('/', '-');
-        const date = new Date(isoString);
-        if (isNaN(date.getTime())) return this.tr(isoString)
-        const monthIndex = date.getMonth();
-        const now = new Date();
-        const note = date.getFullYear() < now.getFullYear() ? ` (${date.getFullYear()})` : '';
+      if (!isoString) return "";
+      let lang = this.lang || "eu";
+      isoString = isoString.replaceAll("/", "-");
+      const date = new Date(isoString);
+      if (isNaN(date.getTime())) return this.tr(isoString);
+      const monthIndex = date.getMonth();
+      const now = new Date();
+      const note = date.getFullYear() < now.getFullYear() ? ` (${date.getFullYear()})` : "";
 
-        const months = {
-            eu: ["Urtarrilak", "Otsailak", "Martxoak", "Apirilak", "Maiatzak", "Ekainak", "Uztailak", "Abuztuak", "Irailak", "Urriak", "Azaroak", "Abenduak"],
-            es: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-            en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-            bg: ["Януари", "Февруари", "Март", "Април", "Май", "Юни", "Юли", "Август", "Септември", "Октомври", "Ноември", "Декември"],
-            it: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
-            ro: ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"],
-            pt: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
-            ca: ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"],
-            ar: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
-            de: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
-            fr: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-            default: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII']
-        };
+      const months = {
+        eu: ["Urtarrilak", "Otsailak", "Martxoak", "Apirilak", "Maiatzak", "Ekainak", "Uztailak", "Abuztuak", "Irailak", "Urriak", "Azaroak", "Abenduak"],
+        es: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+        en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        bg: ["Януари", "Февруари", "Март", "Април", "Май", "Юни", "Юли", "Август", "Септември", "Октомври", "Ноември", "Декември"],
+        it: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+        ro: ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"],
+        pt: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        ca: ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"],
+        ar: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+        de: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+        fr: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+        default: ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"],
+      };
 
-        const names = months[lang] || months['default'];
-        return lang === 'eu' ?
-            `${names[monthIndex]} ${date.getDate()} ${note}`.trim() :
-            `${date.getDate()} ${names[monthIndex]} ${note}`.trim();
-
+      const names = months[lang] || months["default"];
+      return lang === "eu" ? `${names[monthIndex]} ${date.getDate()} ${note}`.trim() : `${date.getDate()} ${names[monthIndex]} ${note}`.trim();
     },
     loadMoreItems() {
-        const start = this.visibleItems.length;
-        const end = start + this.itemsToLoad;
-        this.visibleItems.push(...this.allItems.slice(start, end));
+      const start = this.visibleItems.length;
+      const end = start + this.itemsToLoad;
+      this.visibleItems.push(...this.allItems.slice(start, end));
     },
     onScroll(e) {
-        const el = e.target;
-        // Si nos acercamos al final, carga más ítems
-        if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 50) {
-            if (this.visibleItems.length < this.allItems.length) {
-                this.loadMoreItems();
-            }
+      const el = e.target;
+      // Si nos acercamos al final, carga más ítems
+      if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 50) {
+        if (this.visibleItems.length < this.allItems.length) {
+          this.loadMoreItems();
         }
-    }
-}
+      }
+    },
+  };
 
-const carousel = document.querySelector(".infinite-carousel");
-let next = document.querySelector('#next')
-let prev = document.querySelector('#prev')
+  const carousel = document.querySelector(".infinite-carousel");
+  let next = document.querySelector("#next");
+  let prev = document.querySelector("#prev");
 
-if (next) {
-    next.addEventListener("click", () => { scrollCarousel(+1) });
-    prev.addEventListener("click", () => { scrollCarousel(-1) });
-}
+  if (next) {
+    next.addEventListener("click", () => {
+      scrollCarousel(+1);
+    });
+    prev.addEventListener("click", () => {
+      scrollCarousel(-1);
+    });
+  }
 
-function scrollCarousel(multiplier = 1) {
-    console.log('scrollCarousel')
+  function scrollCarousel(multiplier = 1) {
+    console.log("scrollCarousel");
     carousel.scrollLeft += carousel.childNodes[1].offsetWidth * multiplier;
     if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
-        carousel.scrollLeft = 0;
+      carousel.scrollLeft = 0;
     }
-}
+  }
 
-
-
-
-
-if (!window.vueApp) window.vueApp = {}
-vueApp = { ...vueApp, ...carouselApp }
+  if (!window.vueApp) window.vueApp = {};
+  vueApp = { ...vueApp, ...carouselApp };
 </script>
 <style>
-.infinite-item-wrapper .facade {
+  .infinite-item-wrapper .facade {
     margin-bottom: 0.5em;
-}
+  }
 
-.infinite-carousel-container {
+  .infinite-carousel-container {
     width: calc(100% - 60px);
     max-width: calc(100% - 60px);
     margin: 0 auto;
     position: relative;
-}
+  }
 
-.infinite-carousel {
+  .infinite-carousel {
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
@@ -184,58 +184,58 @@ vueApp = { ...vueApp, ...carouselApp }
     scroll-behavior: smooth;
     cursor: grab;
     position: relative;
-}
+  }
 
-.infinite-carousel:active {
+  .infinite-carousel:active {
     cursor: grabbing;
-}
+  }
 
-.infinite-carousel::-webkit-scrollbar {
+  .infinite-carousel::-webkit-scrollbar {
     display: none;
-}
+  }
 
-.infinite-item-wrapper {
+  .infinite-item-wrapper {
     display: flex;
     padding: 0;
     flex-direction: column;
     align-items: center;
     position: relative;
     z-index: 1;
-}
+  }
 
-.infinite-timeline {
+  .infinite-timeline {
     height: 3px;
     margin-top: -8px;
-    background: #009C46;
-}
+    background: #009c46;
+  }
 
-.infinite-timeline-bullet {
+  .infinite-timeline-bullet {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #009C46;
+    background: #009c46;
     position: absolute;
     bottom: -16px;
-}
+  }
 
-.controls {
+  .controls {
     position: absolute;
     top: calc(50% - 16px);
     width: 100%;
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
-}
+  }
 
-.controls #prev {
+  .controls #prev {
     transform: translateX(-25px);
-}
+  }
 
-.controls #next {
+  .controls #next {
     transform: translateX(25px);
-}
+  }
 
-.controls button {
+  .controls button {
     background: #222831;
     color: white;
     border: none;
@@ -244,5 +244,5 @@ vueApp = { ...vueApp, ...carouselApp }
     line-height: normal;
     font-size: 18px;
     border-radius: 5px;
-}
+  }
 </style>
