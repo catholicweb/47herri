@@ -1,33 +1,34 @@
 <script>
-function groupEvents(events, mappingFns) {
+  function groupEvents(events, mappingFns) {
     if (mappingFns.length === 0) return events;
     const currentFn = mappingFns[0];
     const grouped = events.reduce((acc, event) => {
-        const key_array = currentFn(event);
-        for (var i = 0; i < key_array.length; i++) {
-            let key = key_array[i]
-            if (!acc[key]) acc[key] = [];
-            acc[key].push(event);
-        }
-        return acc;
+      const key_array = currentFn(event);
+      for (var i = 0; i < key_array.length; i++) {
+        let key = key_array[i];
+        if (!acc[key]) acc[key] = [];
+        acc[key].push(event);
+      }
+      return acc;
     }, {});
     // Se aplica recursivamente con el resto de funciones
-    Object.keys(grouped).forEach(key => {
-        grouped[key] = groupEvents(grouped[key], mappingFns.slice(1));
+    Object.keys(grouped).forEach((key) => {
+      grouped[key] = groupEvents(grouped[key], mappingFns.slice(1));
     });
-    return grouped
+    return grouped;
     // Ordenamos las claves y creamos un nuevo objeto
     const sortedGrouped = {};
-    Object.keys(grouped).sort().forEach(key => {
+    Object.keys(grouped)
+      .sort()
+      .forEach((key) => {
         sortedGrouped[key] = grouped[key];
-    });
+      });
 
     return sortedGrouped;
-}
+  }
 
-
-function buildEvents(pages) {
-    const indexPage = pages.find(p => p.path === 'index.md');
+  function buildEvents(pages) {
+    const indexPage = pages.find((p) => p.path === "index.md");
 
     // regex estáticos
     const bydaysRe = /(?:astelehena|asteartea|asteazkena|osteguna|ostirala|larunbatetan|igandetan|asteguneta|bezpera)/gi;
@@ -36,239 +37,229 @@ function buildEvents(pages) {
     const bymonthRe = /(?:pazkoa|urtarrila|otsaila|martxoa|apirila|maiatza|ekaina|uztaila|abuztua|iraila|urria|azaroa|abendua)/gi;
     const dateRe = /(\d{1,2}\/\d{1,2}\/\d{2,4})/g;
 
-    const subfields = ['mezak', 'hiletak', 'ekitaldiak'];
+    const subfields = ["mezak", "hiletak", "ekitaldiak"];
     const events = [];
 
     for (const page of pages) {
-        const defaultLoc = (page.title || page.name)
-            .replace(/\.md$/, '')
-            .replace(/Ongi Etorri|Index/gi, 'herri guztiak')
-            .replace(/^./, c => c.toUpperCase());
+      const defaultLoc = (page.title || page.name)
+        .replace(/\.md$/, "")
+        .replace(/Ongi Etorri|Index/gi, "herri guztiak")
+        .replace(/^./, (c) => c.toUpperCase());
 
-        for (const sub of subfields) {
-            const items = page[sub] || [];
-            for (const item of items) {
-                if (!item.date) continue;
+      for (const sub of subfields) {
+        const items = page[sub] || [];
+        for (const item of items) {
+          if (!item.date) continue;
 
-                const raw = item.date
-                let def = {}
-                if (sub === 'hiletak') def = indexPage.hiletak_default
-                if (sub === 'mezak') def = indexPage.mezak_default
-                def.location = defaultLoc
-                const dateLong = [item.date, item.notes].join(' ')
-                const dateDots = dateLong.replace(/\./g, ':').replace(/tan/g, ':00');
+          const raw = item.date;
+          let def = {};
+          if (sub === "hiletak") def = indexPage.hiletak_default;
+          if (sub === "mezak") def = indexPage.mezak_default;
+          def.location = defaultLoc;
+          const dateLong = [item.date, item.notes].join(" ");
+          const dateDots = dateLong.replace(/\./g, ":").replace(/tan/g, ":00");
 
-                events.push({
-                    raw,
-                    language: item.language,
-                    byday: Array.from(new Set((dateLong.match(bydaysRe) || []))),
-                    times: Array.from(new Set((dateDots.match(timesRe) || []))),
-                    byweek: Array.from(new Set((dateLong.match(byweekRe) || []))),
-                    bymonth: Array.from(new Set((dateLong.match(bymonthRe) || []))),
-                    dates: Array.from((dateLong.match(dateRe) || [])),
-                    type: raw.includes('mezak') ? 'mezak' : sub,
-                    notes: item.notes ||
-                        def.description || '',
-                    image: item.image ||
-                        def.image || '',
-                    title: item.title,
-                    name: item.name,
-                    location: item.location ||
-                        def.location
-                });
-            }
+          events.push({
+            raw,
+            language: item.language,
+            byday: Array.from(new Set(dateLong.match(bydaysRe) || [])),
+            times: Array.from(new Set(dateDots.match(timesRe) || [])),
+            byweek: Array.from(new Set(dateLong.match(byweekRe) || [])),
+            bymonth: Array.from(new Set(dateLong.match(bymonthRe) || [])),
+            dates: Array.from(dateLong.match(dateRe) || []),
+            type: raw.includes("mezak") ? "mezak" : sub,
+            notes: item.notes || def.description || "",
+            image: item.image || def.image || "",
+            title: item.title,
+            name: item.name,
+            location: item.location || def.location,
+          });
         }
+      }
     }
 
     return events;
-}
+  }
 
+  function getMappers() {
+    return mappers;
+  }
 
-function getMappers() {
-    return mappers
-}
+  function slugify(str) {
+    return str
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9 -]/g, "") // remove invalid chars
+      .replace(/\s+/g, "-") // collapse whitespace and replace by -
+      .replace(/-+/g, "-"); // collapse dashes
+  }
 
-
-function slugify(str) {
-return str
-.toLowerCase()
-.trim()
-.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
-.replace(/\s+/g, '-') // collapse whitespace and replace by -
-.replace(/-+/g, '-'); // collapse dashes
-}
-
-
-
-const mappers = {
+  const mappers = {
     location(event) {
-        return [event.location ? event.location.toLowerCase() : ' ']
+      return [event.location ? event.location.toLowerCase() : " "];
     },
     time(event) {
-        return event.times
+      return event.times;
     },
     none(event) {
-        return [" "];
+      return [" "];
     },
     type(event) {
-        if (event.type == 'ekitaldiak') {
-            return [event.title ? event.title.trim() : ' '];
-        }
-        return [event.type];
+      if (event.type == "ekitaldiak") {
+        return [event.title ? event.title.trim() : " "];
+      }
+      return [event.type];
     },
     title(event) {
-        return [event.title];
+      return [event.title];
     },
     datetime(event) {
-        return [`${event.times[0]} - ${event.dates[0]}`]
+      return [`${event.times[0]} - ${event.dates[0]}`];
     },
     dates(event) {
-        return event.dates
+      return event.dates;
     },
     noiz(event) {
-        if (event.dates && event.dates[0]) return event.dates
-        return this.weekend(event)
+      if (event.dates && event.dates[0]) return event.dates;
+      return this.weekend(event);
     },
     weekend(event) {
-        return event.byday.map(el => ['igandetan', 'larunbatetan'].includes(el) ? el : 'astegunetan');
+      return event.byday.map((el) => (["igandetan", "larunbatetan"].includes(el) ? el : "astegunetan"));
     },
     byweek(event) {
-        return event.byweek
+      return event.byweek;
     },
     weekday(event) {
-        return event.byday;
+      return event.byday;
     },
     long(event) {
-        if (event.type == 'ekitaldiak') {
-            return [`${event.times[0]} - ${event.location.toLowerCase()}`]
-        }
-        return [`${event.times[0]} - ${event.name} (${event.location.toLowerCase() })`]
+      if (event.type == "ekitaldiak") {
+        return [`${event.times[0]} - ${event.location.toLowerCase()}`];
+      }
+      return [`${event.times[0]} - ${event.name} (${event.location.toLowerCase()})`];
     },
     notes(event) {
-        let arr = [] //event.notes ? [event.notes] : []
-        let ordering = ['none', 'weekend', 'time', 'none', 'location', 'notes'] // TODO: very ugly fix
-        if (!ordering.includes('byweek') && event.byweek.length && event.byweek.length < 5) {
-            arr.push(event.byweek)
-        }
-        if (!ordering.includes('weekday') && event.byday.length && !['igandetan', 'larunbatetan', 'astegunetan', 'asteguneta'].includes(event.byday[0])) {
-            arr.push(event.byday)
-        }
-        // langs
-        arr.push(event.language || 'euskaraz')
-        //if (arr.length == 0) return [' ']
-        return arr
-        /*let str = arr.join(', ').trim()
+      let arr = []; //event.notes ? [event.notes] : []
+      let ordering = ["none", "weekend", "time", "none", "location", "notes"]; // TODO: very ugly fix
+      if (!ordering.includes("byweek") && event.byweek.length && event.byweek.length < 5) {
+        arr.push(event.byweek);
+      }
+      if (!ordering.includes("weekday") && event.byday.length && !["igandetan", "larunbatetan", "astegunetan", "asteguneta"].includes(event.byday[0])) {
+        arr.push(event.byday);
+      }
+      // langs
+      arr.push(event.language || "euskaraz");
+      //if (arr.length == 0) return [' ']
+      return arr;
+      /*let str = arr.join(', ').trim()
         return str ? [" (" + str + ")"] : [" "]*/
-    }
-}
+    },
+  };
 
+  const colorMap = { " ": "none" };
 
-const colorMap = { ' ': 'none' };
-
-function getColorForKey(key) {
+  function getColorForKey(key) {
     const colors = ["#007bff", "#28a745", "#dc3545", "#ffc107", "#17a2b8", "#6f42c1", "#e83e8c", "#fd7e14"];
     if (!colorMap[key]) {
-        colorMap[key] = colors[Object.keys(colorMap).length % colors.length];
+      colorMap[key] = colors[Object.keys(colorMap).length % colors.length];
     }
     return colorMap[key];
-}
+  }
 
-
-let eventsApp = {
-    getSubKeys: function(table) {
-        const keys = new Set();
-        for (const row in table) {
-            for (const subKey in table[row]) keys.add(subKey);
-        }
-        return Array.from(keys);
+  let eventsApp = {
+    getSubKeys: function (table) {
+      const keys = new Set();
+      for (const row in table) {
+        for (const subKey in table[row]) keys.add(subKey);
+      }
+      return Array.from(keys);
     },
-    fetchEvents: async function() {
-        let site = await fetch("/assets/site.json").then(r => r.json())
-        this.events = buildEvents(site.pages)
+    fetchEvents: async function () {
+      fetchCacheAndNetwork("assets/site.json", function (site) {
+        this.events = buildEvents(site.pages);
+      });
     },
     events: [],
     forgetPastEvents(events) {
-        let today = new Date();
-        today.setHours(0, 0, 0, 0);
-        const getDateTime = event => new Date(`${(event.dates[0] || '9999-12-31').split("T")[0]}T${event.times[0] || '00:00'}:00Z`);
-        return events
-            .map(event => ({
-                ...event,
-                dates: event.dates.map(vueApp.parseDateToISO) // Convert dates
-            }))
-            .filter(event => !event.dates.length || event.dates.some(date => new Date(date) >= today))
-            .sort((a, b) => getDateTime(a) - getDateTime(b))
+      let today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const getDateTime = (event) => new Date(`${(event.dates[0] || "9999-12-31").split("T")[0]}T${event.times[0] || "00:00"}:00Z`);
+      return events
+        .map((event) => ({
+          ...event,
+          dates: event.dates.map(vueApp.parseDateToISO), // Convert dates
+        }))
+        .filter((event) => !event.dates.length || event.dates.some((date) => new Date(date) >= today))
+        .sort((a, b) => getDateTime(a) - getDateTime(b));
     },
-    groupedEvents: function(filter, ordering) {
-        let events = this.events.filter(event => filter.test(JSON.stringify(event)));
-        events = this.forgetPastEvents(events)
-        const mappingFns = ordering.map(fnc => mappers[fnc])
-        return groupEvents(events, mappingFns);
+    groupedEvents: function (filter, ordering) {
+      let events = this.events.filter((event) => filter.test(JSON.stringify(event)));
+      events = this.forgetPastEvents(events);
+      const mappingFns = ordering.map((fnc) => mappers[fnc]);
+      return groupEvents(events, mappingFns);
     },
-    showTooltip: function(el) {
-        let open = document.querySelectorAll('.tooltip.show')
-        for (var i = 0; i < open.length; i++) {
-            if (open[i] !== el) open[i].classList.remove('show')
-        }
-        el.nextElementSibling.classList.toggle('show')
+    showTooltip: function (el) {
+      let open = document.querySelectorAll(".tooltip.show");
+      for (var i = 0; i < open.length; i++) {
+        if (open[i] !== el) open[i].classList.remove("show");
+      }
+      el.nextElementSibling.classList.toggle("show");
     },
-}
-if (!window.vueApp) window.vueApp = {}
-vueApp = { ...vueApp, ...eventsApp };
+  };
+  if (!window.vueApp) window.vueApp = {};
+  vueApp = { ...vueApp, ...eventsApp };
 </script>
 <template>
-    {%- assign params = include.params -%}
-    <div class="events notr" v-scope @vue:mounted="fetchEvents()">
-        <!-- Primer grupo -->
-        <div v-for="(group, groupKey) in groupedEvents({{ params.ordering }})" style="margin-bottom:20px;" class="row">
-            <h1 :id="slugify(groupKey)" class="col-12 heading_center">[[ tr(groupKey) ]]</h1>
-            <!-- Segundo grupo: cada clave genera una tabla -->
-            <div v-for="(table, tableKey) in group" style="margin-bottom:20px;" class="col-md-6 col-lg-4" :class="tableKey">
-                <h3 :id="slugify(tableKey)">[[ formatDate(tableKey).toLowerCase() ]]</h3>
-                <table border="1">
-                    <thead v-if="getSubKeys(table)[0] != ' '">
-                        <tr>
-                            <th> </th>
-                            <th v-for="subKey in getSubKeys(table)">[[ tr(subKey) ]]</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Segundo grupo -->
-                        <tr v-for="(row, rowKey) in table">
-                            <td>[[ formatDate(rowKey) ]]</td>
-                            <td v-for="subKey in getSubKeys(table)">
-                                <!-- Tercer grupo: elementos en la misma línea -->
-                                <p v-for="(line, lineKey) in row[subKey]" style="margin-right:10px; display: flex;">
-                                    [[ tr(lineKey) ]]
-                                    <span v-if="typeof line === 'object' && !Array.isArray(line)">
-                                        [[ trArr(Object.keys(line)) ]]
-                                    </span>
-                                    <span v-if="Array.isArray(line) && line[0]?.notes">
-                                        <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
-                                        <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(line[0].notes) ]]</span>
-                                    </span>
-                                    <!--<span v-if="typeof line === 'object' && !Array.isArray(line) && Object.values(line)[0][0]?.notes">
+  {%- assign params = include.params -%}
+  <div class="events notr" v-scope @vue:mounted="fetchEvents()">
+    <!-- Primer grupo -->
+    <div v-for="(group, groupKey) in groupedEvents({{ params.ordering }})" style="margin-bottom: 20px" class="row">
+      <h1 :id="slugify(groupKey)" class="col-12 heading_center">[[ tr(groupKey) ]]</h1>
+      <!-- Segundo grupo: cada clave genera una tabla -->
+      <div v-for="(table, tableKey) in group" style="margin-bottom: 20px" class="col-md-6 col-lg-4" :class="tableKey">
+        <h3 :id="slugify(tableKey)">[[ formatDate(tableKey).toLowerCase() ]]</h3>
+        <table border="1">
+          <thead v-if="getSubKeys(table)[0] != ' '">
+            <tr>
+              <th></th>
+              <th v-for="subKey in getSubKeys(table)">[[ tr(subKey) ]]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Segundo grupo -->
+            <tr v-for="(row, rowKey) in table">
+              <td>[[ formatDate(rowKey) ]]</td>
+              <td v-for="subKey in getSubKeys(table)">
+                <!-- Tercer grupo: elementos en la misma línea -->
+                <p v-for="(line, lineKey) in row[subKey]" style="margin-right: 10px; display: flex">
+                  [[ tr(lineKey) ]]
+                  <span v-if="typeof line === 'object' && !Array.isArray(line)"> [[ trArr(Object.keys(line)) ]] </span>
+                  <span v-if="Array.isArray(line) && line[0]?.notes">
+                    <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
+                    <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(line[0].notes) ]]</span>
+                  </span>
+                  <!--<span v-if="typeof line === 'object' && !Array.isArray(line) && Object.values(line)[0][0]?.notes">
                                         <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
                                         <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(Object.values(line)[0][0].notes) ]]</span>
                                     </span>-->
-                                </p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </template>
 
 <head disable="already included">
-    <script src="https://unpkg.com/petite-vue"></script>
+  <script src="https://unpkg.com/petite-vue"></script>
 </head>
 <style>
-/* Info tag style */
-.events .info-tag::before {
+  /* Info tag style */
+  .events .info-tag::before {
     cursor: pointer;
-    content: '';
+    content: "";
     display: inline-block;
     padding: 5px;
     width: 12px;
@@ -278,11 +269,10 @@ vueApp = { ...vueApp, ...eventsApp };
     background-repeat: no-repeat;
     vertical-align: middle;
     margin-right: 4px;
-}
+  }
 
-
-/* Tooltip style */
-.events .tooltip {
+  /* Tooltip style */
+  .events .tooltip {
     transform: translateX(-70%);
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 8px;
@@ -299,68 +289,66 @@ vueApp = { ...vueApp, ...eventsApp };
     /* Initially hidden */
     opacity: 0;
     transition: opacity 0.3s;
-}
+  }
 
-/* Tooltip visible when toggled */
-.events .tooltip.show {
+  /* Tooltip visible when toggled */
+  .events .tooltip.show {
     display: block;
     visibility: visible;
     opacity: 1;
-}
+  }
 
-
-.events table {
+  .events table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
     border-radius: 8px;
     overflow: hidden;
-}
+  }
 
-.events {
+  .events {
     text-transform: capitalize;
-}
+  }
 
-.events th,
-.events td {
+  .events th,
+  .events td {
     padding: 12px 16px;
     text-align: left;
-}
+  }
 
-.events th {
+  .events th {
     background-color: #007bff;
     color: white;
     font-weight: bold;
-}
+  }
 
-.events tr:nth-child(even) {
+  .events tr:nth-child(even) {
     background-color: #f8f9fa;
-}
+  }
 
-.events p {
+  .events p {
     margin: 0;
-}
+  }
 
-h1:empty,
-h3:empty,
-td:empty,
-th:empty,
-tr:empty,
-span:empty {
+  h1:empty,
+  h3:empty,
+  td:empty,
+  th:empty,
+  tr:empty,
+  span:empty {
     display: none !important;
-}
+  }
 
-.events h3 {
+  .events h3 {
     color: #333;
-    border-bottom: 3px solid #009C46;
+    border-bottom: 3px solid #009c46;
     padding-bottom: 5px;
     margin-top: 20px;
     font-size: 1.4em;
-}
+  }
 
-
-.events span {
+  .events span {
     /*display: inline-block;
     background-color: #007bff;
     color: white;
@@ -369,5 +357,5 @@ span:empty {
     font-style: italic;
     padding: 0px 4px;
     font-size: 0.75rem;
-}
+  }
 </style>

@@ -1,71 +1,104 @@
 <script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.querySelector(".lightbox-img");
-const closeBtn = document.querySelector(".close");
+let galleryApp = {
+    allImages: [],
+    lightboxVisible: false,
+    currentImage: '',
 
-function attachClose() {
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            const lightbox = document.getElementById('lightbox');
-            if (lightbox && lightbox.style.display === 'flex') {
-                lightbox.style.display = 'none';
-            }
-        }
-    });
-    lightbox.addEventListener('click', event => {
-        if (event.target === lightbox) {
-            lightbox.style.display = 'none';
-        }
-    });
+    openLightbox(image) {
+        this.currentImage = image;
+        this.lightboxVisible = true;
+        console.log(this.currentImage, this.lightboxVisible)
+    },
+
+    closeLightbox() {
+        this.lightboxVisible = false;
+        this.currentImage = '';
+    },
+
+    nextImage(diff) {
+        let len = this.allImages.length
+        let index = this.allImages.indexOf(this.currentImage);
+        this.currentImage = this.allImages[(index + diff + len) % len]
+    },
+
+
+    getGallery() {
+
+        fetch('/assets/site.json') // Load the JSON file
+            .then(r => r.json()) // Convert the response to JSON
+            .then(site => {
+                let pages = site.pages
+                let page = pages[0]
+                // Escape key to close
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'Escape') this.closeLightbox();
+                });
+
+                // Populate images from page
+                const images = [];
+
+                if (page.image) images.push(page.image);
+
+                if (Array.isArray(page.gallery)) {
+                    images.push(...page.gallery);
+                }
+
+                if (Array.isArray(page.locations)) {
+                    for (const loc of page.locations) {
+                        if (loc.image) images.push(loc.image);
+                    }
+                }
+
+                let uniqueImages = [...new Set(images.filter(Boolean))];
+
+                this.allImages = uniqueImages;
+                this.allImages = Array(10).fill(uniqueImages).flat();
+            })
+    }
 }
 
-document.querySelectorAll(".gallery img").forEach(img => {
-    img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
-        attachClose()
-    });
-});
-if (closeBtn) closeBtn.addEventListener("click", () => {
-    lightbox.style.display = "none";
-});
+
+if (!window.vueApp) window.vueApp = {}
+vueApp = { ...vueApp, ...galleryApp };
 </script>
 <template>
-    {% assign gallery = page.image | append: "|" %}
-    {% for image in page.gallery %}
-    {% assign gallery = gallery | append: image | append: "|" %}
-    {% endfor %}
-    {% for location in page.locations %}
-    {% if location.image %}
-    {% assign gallery = gallery | append: location.image | append: "|" %}
-    {% endif %}
-    {% endfor %}
-    {% assign gallery = gallery | split: '|' %}
-    {% assign unique_string = '' %}
-    <div class="container py-4">
-        <div class="row g-3 gallery">
-            {% for image in gallery %}
-            {% unless unique_string contains image %}
-            {% assign unique_string = unique_string | append: image %}
-            <div class="col-6 col-md-4 col-lg-3 ratio-box">
-                <img loading="lazy" src="{{ image }}" alt="Imagen {{ forloop.index }}" class="img-cover">
+    <div v-scope @vue:mounted="getGallery()" class="col-md-12">
+        <div class="gallery-scroll flex-nowrap overflow-auto row gallery">
+            <div v-for="(image, index) in allImages" class="col-6 col-md-4 col-lg-3 p-1">
+                <img loading="lazy" :src="image" :alt="'Imagen ' + (index + 1)" class="ratio-box img-cover" @click="openLightbox(image)">
             </div>
-            {% endunless %}
-            {% endfor %}
         </div>
-    </div>
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-img" src="" alt="" />
+        <div id="lightbox" class="lightbox" v-show="lightboxVisible" @click.self="closeLightbox">
+            <span class="close-button" @click="closeLightbox">&times;</span>
+            <span class="arrow left" @click.stop="nextImage(-1)">&#10094;</span>
+            <img :src="currentImage" alt="Imagen ampliada">
+            <span class="arrow right" @click.stop="nextImage(+1)">&#10095;</span>
+        </div>
     </div>
 </template>
 <style>
 .gallery img {
-    width: 100%;
     height: auto;
     cursor: pointer;
+    width: 100%;
     transition: transform 0.3s ease;
 }
+
+.gallery-scroll {
+    /*scroll-snap-type: x mandatory;*/
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+
+.gallery-scroll>div {
+    /*scroll-snap-align: start;*/
+    flex: 0 0 auto;
+    width: 200px;
+    /* o ajusta según gusto */
+}
+
 
 .gallery img:hover {
     transform: scale(1.03);
@@ -86,27 +119,82 @@ if (closeBtn) closeBtn.addEventListener("click", () => {
 
 
 .lightbox {
-    display: none;
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 2000;
 }
 
-.lightbox-img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
+.lightbox img {
+    height: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
 }
 
-.close {
+.close-button {
     position: absolute;
-    top: 20px;
+    top: 0;
     right: 30px;
-    font-size: 40px;
+    font-weight: bold;
+    font-size: 3rem;
     color: white;
     cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.arrow.left {
+    left: 5px;
+}
+
+.arrow.right {
+    right: 5px;
+}
+
+.arrow:hover,
+.close-button:hover {
+    color: #ccc;
+}
+
+/* Scrollbar base */
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+/* Track (fondo) */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Thumb (barra) */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(150, 150, 150, 0.4);
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Hover más visible */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(150, 150, 150, 0.7);
 }
 </style>

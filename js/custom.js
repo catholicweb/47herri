@@ -75,9 +75,27 @@ window.addEventListener("load", function() {
 })
 
 
-/* beautify ignore:start */
+async function fetchCacheAndNetwork(url, callback) {
+  // 1. Primero obtenemos los datos de la caché (cache-only)
+    const cacheResponse = await fetch(url, { headers: { 'x-cache-strategy': 'cache-only' }     });
+    if (cacheResponse.ok) {
+        let data = await cacheResponse.json()
+        callback(data);
+    }
+
+  // 2. Luego, realizamos un fetch con network-first para obtener los datos más recientes
+    const networkResponse = await fetch(url, { headers: { 'x-cache-strategy': 'network-first' } });
+    if (networkResponse.ok) {
+        let data = await networkResponse.json()
+        callback(data);
+    }
+}
+
+
+
+// prettier-ignore
 {% include module tag='script' %}
-/* beautify ignore:end */
+
 
 function vueMount() {
     vueApp.$delimiters = ['[[', ']]']
