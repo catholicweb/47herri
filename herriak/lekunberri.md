@@ -56,6 +56,7 @@ ekitaldiak:
     image: /media/Screenshot_20251003-065406_Maps.jpg
   - date: 12:00 8/10/25
     title: Lekunberriko eta Larraungo jubilatuen meza
+    image: /media/f0.webp
 mezak:
   - date: astegunetan 18.30
     notes: Komentuan
