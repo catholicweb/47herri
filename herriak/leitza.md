@@ -25,9 +25,9 @@ hiletak:
   - date: 23/08/2025 18.30
     name: MARIA LUISA GARRO MUÑOA
 ekitaldiak:
-  - date: 16/04/2025 18:00-19:30
-    title: AITORTZAK
-    notes: Apez bat egongo da elizan arratsaldeko 6etatik 7:30k arte gutxi gora behera
+  - title: AITORTZAK
+    notes: Apez bat egongo da elizan arratsaldeko 6etatik 7:30k arte gutxi gora
+      behera.
     image: /media/semea.webp
   - date: 17/04/2025 11:00
     title: AITORTZAK
@@ -94,7 +94,7 @@ ekitaldiak:
     title: ARANTZAZUKO AMA BIRJINA
     notes: Gorriztarango eskola zaharreko kaperatxoan meza izango da
     image: /media/Screenshot_20250904_082609_YouTube.jpg
-  - date: 13/09/2025 8:00
+  - date: 13/09/2025 08:00
     title: GURUTZE SANTUAREN GORALPENA
     notes: Gurutz bidea goizeko 8tan elizetik abiatuta santa kruz ermiteraino eta
       meza hara iritsitakoan.
