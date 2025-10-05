@@ -72,7 +72,7 @@
     },
     fetchReference: async function () {
       if (Object.keys(this.references).length === 0) {
-        let data = await fetch("/assets/bible/ref.json");
+        let data = await fetch("/assets/bible/ref.json", { "x-cache-strategy": "stale-while-revalidate" });
         this.references = await data.json();
       }
       this.gospel.date = this.date.toISOString().split("T")[0];
