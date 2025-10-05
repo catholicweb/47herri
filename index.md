@@ -50,10 +50,10 @@ hiletak_default:
 mezak_default:
   image: /media/mass.webp
 collaborators:
-  - image: /media/IMG-20250927-WA0005.jpg
-    name: Patxi Izco
-    description: In solidum parrokoa (moderatzailea)
-    phonenumber: 690 99 49 17
+  #  - image: /media/IMG-20250927-WA0005.jpg
+  #    name: Patxi Izco
+  #    description: In solidum parrokoa (moderatzailea)
+  #    phonenumber: 690 99 49 17
   - image: /media/Screenshot_20250404_192119_Gallery.webp
     name: Santi Garisoain
     description: In solidum parrokoa
@@ -64,6 +64,7 @@ collaborators:
     phonenumber: 638 73 95 75
 layout: home
 ---
+
 2019an Iruña-Tuterako elizbarrutian pastoral barrutiak (erdaraz "UAP" direlakoak) eratu ziren, Nafarroako 700 parrokiak 36 pastoral barrutitan kontzentratuz. Berez helburua da pastoralki parroki bakarra osatuko balute bezala lan egitea. Apez talde bat egon beharko litzateke barruti osorako eta pastoral kontseilu bakarra sortu. Herri guztietako eliztarrek sentitu beharko lukete zirkunskripzio bereko partaide direla.
 
 Juridikoki eta ekonomikoki, ordea, parroki bakoitzak bere burujabetasuna mantentzen du. Gure kasuan pastoral barrutiko 47 herrietatik, 44 parrokietako parroko gara gure in solidum taldea. Beste hiru parrokiak parrokorik gabe daude une honetan (Baraibar, Mugiro eta Iribas).

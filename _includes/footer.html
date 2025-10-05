@@ -1,89 +1,88 @@
 <!-- footer section -->
 <footer class="footer_section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 footer-col">
-                <div class="footer_contact">
-                    <h4>
-                        Kontaktatzeko
-                    </h4>
-                    <div class="contact_link_box">
-                        <a href="tel:+34948510080">
-                            <i class="phone-icon" aria-hidden="true"></i>
-                            <span>948510080</span>
-                        </a>
-                        <a href="tel:+34948504205">
-                            <i class="phone-icon" aria-hidden="true"></i>
-                            <span>948504205</span>
-                        </a>
-                        <a href="mailto:insolidumlarraun@gmail.com">
-                            <i class="envelope-icon" aria-hidden="true"></i>
-                            <span>insolidumlarraun@gmail.com</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 footer-col">
-                <div class="footer_detail">
-                    <h4>
-                        47 Herri
-                    </h4>
-                    <p>
-                        {{ site.description }}
-                    </p>
-                    <a target="_blank" href="https://www.youtube.com/@taytaobispowasimanta8521">
-                        <i class="youtube-icon" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 footer-col">
-                <h4>
-                    Ekonomikoki laguntzeko
-                </h4>
-                <p>
-                    <b>Bizum:</b> 11995 <br>
-                    <b>Caixa:</b> ES15 2100 4941 1222 0005 0326<br>
-                    <b>Laboral:</b> ES66 3035 0118 8811 8000 2943<br>
-                    <!--<b>Popular:</b> ES95 0075 4651 3007 0027 7442<br>-->
-                    <b>Rural:</b> ES17 3008 0179 2436 5465 8818<br>
-                </p>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 footer-col">
+        <div class="footer_contact">
+          <h4>Kontaktatzeko</h4>
+          <div class="contact_link_box">
+            {% assign index_page = site.pages | where: "path", "index.md" | first %} {% for collab in index_page.collaborators %}
+            <a href="tel:+34{{ collab.phonenumber | replace: ' ', '' | default: '948510080'  }}">
+              <i class="phone-icon" aria-hidden="true"></i>
+              <span>{{ collab.name }}</span>
+            </a>
+            {% endfor %}
+            <!--
+            <a href="tel:+34948510080">
+              <i class="phone-icon" aria-hidden="true"></i>
+              <span>Bulegoa</span>
+            </a>
+            <a href="tel:+34948504205">
+              <i class="phone-icon" aria-hidden="true"></i>
+              <span>948504205</span>
+            </a>-->
+            <a href="mailto:insolidumlarraun@gmail.com">
+              <i class="envelope-icon" aria-hidden="true"></i>
+              <span>insolidumlarraun@gmail.com</span>
+            </a>
+          </div>
         </div>
-        <div class="footer-info">
-            <p>
-                <small><i>
-                        &copy; <span id="displayYear"></span>
-                        Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon.</a>
-                        All Rights Reserved By <a href="https://html.design/" target="_blank">Free Html Templates</a>
-                    </i></small>
-            </p>
+      </div>
+      <div class="col-md-4 footer-col">
+        <div class="footer_detail">
+          <h4>47 Herri</h4>
+          <p>{{ site.description }}</p>
+          <a target="_blank" href="https://www.youtube.com/@47herri">
+            <i class="youtube-icon" aria-hidden="true"></i>
+          </a>
         </div>
+      </div>
+      <div class="col-md-4 footer-col">
+        <h4>Ekonomikoki laguntzeko</h4>
+        <p>
+          <b>Bizum:</b> 11995 <br />
+          <b>Caixa:</b> ES15 2100 4941 1222 0005 0326<br />
+          <b>Laboral:</b> ES66 3035 0118 8811 8000 2943<br />
+          <!--<b>Popular:</b> ES95 0075 4651 3007 0027 7442<br>-->
+          <b>Rural:</b> ES17 3008 0179 2436 5465 8818<br />
+        </p>
+      </div>
     </div>
-    <button id="install-btn" title="Instalar app" style="display: none;">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2h14v2H5v-2z" />
-        </svg>
-    </button>
-    <style type="text/css">
+    <div class="footer-info">
+      <p>
+        <small
+          ><i>
+            &copy; <span id="displayYear"></span> Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon.</a> All Rights Reserved By
+            <a href="https://html.design/" target="_blank">Free Html Templates</a>
+          </i></small
+        >
+      </p>
+    </div>
+  </div>
+  <button id="install-btn" title="Instalar app" style="display: none">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2h14v2H5v-2z" />
+    </svg>
+  </button>
+  <style type="text/css">
     #install-btn {
-        position: fixed;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        background-color: #ffffff;
-        border: 1px solid #ccc;
-        border-radius: 50%;
-        padding: 0.75rem;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        z-index: 999;
-        transition: background-color 0.2s;
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      padding: 0.75rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 999;
+      transition: background-color 0.2s;
     }
 
     #install-btn:hover {
-        background-color: #f0f0f0;
+      background-color: #f0f0f0;
     }
-    </style>
-    </button>
+  </style>
 </footer>
 <!-- footer section -->
 <script defer src="/js/custom.js"></script>
@@ -91,72 +90,75 @@
 <!-- jQery -->
 <script defer src="/js/jquery-3.4.1.min.js"></script>
 <!-- popper js -->
-<script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+  crossorigin="anonymous"
+></script>
 <!-- bootstrap js -->
 <script defer src="/js/bootstrap.js"></script>
 <!-- owl slider -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <!-- isotope js -->
 <script defer src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
 <script type="text/javascript">
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
-}
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js");
+  }
 
-let deferredPrompt;
-const installBtn = document.getElementById('install-btn');
+  let deferredPrompt;
+  const installBtn = document.getElementById("install-btn");
 
-window.addEventListener('beforeinstallprompt', (e) => {
+  window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault(); // Prevent the default install prompt
     deferredPrompt = e; // Save the event for later use
-    console.log('beforeinstallprompt!')
-    installBtn.style.display = 'block'; // Show the install button
-});
+    console.log("beforeinstallprompt!");
+    installBtn.style.display = "block"; // Show the install button
+  });
 
-installBtn.addEventListener('click', () => {
+  installBtn.addEventListener("click", () => {
     if (deferredPrompt) {
-        deferredPrompt.prompt(); // Show the install prompt
-        deferredPrompt.userChoice.then(choiceResult => {
-            if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the install prompt');
-            } else {
-                console.log('User dismissed the install prompt');
-            }
-            deferredPrompt = null; // Reset the prompt
-            installBtn.style.display = 'none'; // Hide the button again
-        });
+      deferredPrompt.prompt(); // Show the install prompt
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+          console.log("User accepted the install prompt");
+        } else {
+          console.log("User dismissed the install prompt");
+        }
+        deferredPrompt = null; // Reset the prompt
+        installBtn.style.display = "none"; // Hide the button again
+      });
     }
-});
+  });
 
-if (window.matchMedia('(display-mode: standalone)').matches) {
+  if (window.matchMedia("(display-mode: standalone)").matches) {
     setupNotifications();
-}
+  }
 
-async function setupNotifications() {
+  async function setupNotifications() {
     const sw = await navigator.serviceWorker.ready;
     const existing = await sw.pushManager.getSubscription();
     if (existing) return;
 
     const sub = await sw.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: urlBase64ToUint8Array('BMmcvUGPuJ2n3Ri1kNPmbOiMuN62RSNfMcDv7QHJd8MZveNj_KPTOXdSkzj7vNOQinq8h4b-Tdv-TpnN4YpF-hM')
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array("BMmcvUGPuJ2n3Ri1kNPmbOiMuN62RSNfMcDv7QHJd8MZveNj_KPTOXdSkzj7vNOQinq8h4b-Tdv-TpnN4YpF-hM"),
     });
 
-    await fetch('https://arrietaeguren.es/subscriptions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ subscription: sub })
+    await fetch("https://arrietaeguren.es/subscriptions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ subscription: sub }),
     });
-}
+  }
 
-function urlBase64ToUint8Array(base64String) {
-    const padding = '='.repeat((4 - base64String.length % 4) % 4);
-    const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+  function urlBase64ToUint8Array(base64String) {
+    const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+    const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
     const raw = atob(base64);
-    return Uint8Array.from([...raw].map(c => c.charCodeAt(0)));
-}
+    return Uint8Array.from([...raw].map((c) => c.charCodeAt(0)));
+  }
 </script>
 <!-- custom js -->
 {% include module tag='footer' %}
