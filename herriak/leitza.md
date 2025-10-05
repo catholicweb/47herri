@@ -25,9 +25,9 @@ hiletak:
   - date: 23/08/2025 18.30
     name: MARIA LUISA GARRO MUÑOA
 ekitaldiak:
-  - title: AITORTZAK
-    notes: Apez bat egongo da elizan arratsaldeko 6etatik 7:30k arte gutxi gora
-      behera.
+  - date: 16/04/2025 18:00
+    title: AITORTZAK
+    notes: Apez bat egongo da elizan arratsaldeko 6etatik 7:30k arte gutxi gora behera
     image: /media/semea.webp
   - date: 17/04/2025 11:00
     title: AITORTZAK
@@ -126,6 +126,7 @@ locations:
 title: leitza
 valley: Leitzaran
 ---
+
 Leitza, Nafarroako ipar-mendebaldean kokatua, 3.011 biztanle zituen 2024ko urtarrilaren 1ean. Herria mendi eta basoz inguratuta dago, eta Plazaolako Bide Berdea zeharkatzen du, naturaz gozatzeko aukera bikaina eskainiz.
 
 Herriko ondare erlijioso nabarmenena San Migel Goiaingeruaren parrokia-eliza da, XVII. mendearen azken laurdenean eraikia. Latindar gurutze formako oinplanoa du, eta kontrahormarteetan kapera txikiak ditu. Eraikina harriz egina dago, eta ganga eta lunetaz estalita dago; gurutzaduraren zatian, berriz, gurutze-ganga du. Sarrera nagusia 1770. urtekoa da, eta alboetako transeptuetan beste bi sarrera daude. Elizaren atarian, pórtico sakon bat nabarmentzen da, alboetara luzatzen dena, eta eskailera monumentalen bidez iristen zaio. Barrualdean, hainbat erretaula moderno ditu, horien artean nagusia barrokoa da, XVII. mendearen bigarren erdialdekoa, Miguel de Bengoechea eta bere semearen lana izanik.

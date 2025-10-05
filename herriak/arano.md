@@ -4,10 +4,10 @@ hiletak:
     name: JOAQUINA MINDEGUIA CESTAU
 ekitaldiak:
   - date: 20/04/2025 10:30
-    title: "AITORTZAK "
+    title: AITORTZAK
     image: /media/semea.webp
   - date: 25/05/2025 12:30
-    title: "SAN MIGELEN BISITA "
+    title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
   - date: 25/07/2025 11:00
     title: SANTIAGO
