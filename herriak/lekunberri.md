@@ -54,6 +54,8 @@ ekitaldiak:
     title: Pilareko Amaren Bederatziurrena
     notes: Arrosarioa eta Meza. Urriaren 4tik 12ra, goizeko 8etan
     image: /media/Screenshot_20251003-065406_Maps.jpg
+  - date: 12:00 8/10/25
+    title: Lekunberriko eta Larraungo jubilatuen meza
 mezak:
   - date: astegunetan 18.30
     notes: Komentuan
