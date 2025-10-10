@@ -154,7 +154,7 @@
         const inputDate = new Date(year, month - 1, day+1); // month is zero-indexed
         return inputDate >= new Date() && inputDate <= new Date().setDate(new Date().getDate() + 7);
       };
-      if (event.cancelled && isWithinNext7Days(event.cancelled)) arr.push('Ez ospatuko: '+ vueApp.formatDate(vueApp.parseDateToISO(event.cancelled)))
+      if (event.cancelled && isWithinNext7Days(event.cancelled)) arr.push('Salbu '+ vueApp.formatDate(vueApp.parseDateToISO(event.cancelled)))
       // langs
       let map = { erderaz: "castellano", elebidunean: "bilingüe" } //euskaraz: "e",
       let code = map[event.language] // || e
@@ -242,7 +242,7 @@
                 <p v-for="(line, lineKey) in row[subKey]" style="margin-right: 10px; display: flex">
                   [[ tr(lineKey) ]]
                   <span v-if="typeof line === 'object' && !Array.isArray(line)">
-                    <i v-for="(item, index) in Object.keys(line)" :key="index" :class="{'cancelled': item.includes('Ez ospatuko')}">([[ tr(item) ]]) </i>
+                    <i v-for="(item, index) in Object.keys(line)" :key="index" :class="{'cancelled': item.includes('Salbu')}">([[ tr(item) ]]) </i>
                   </span>
                   <span v-if="Array.isArray(line) && line[0]?.notes">
                     <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
