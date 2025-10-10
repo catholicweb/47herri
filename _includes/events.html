@@ -72,6 +72,7 @@
             image: item.image || def.image || "",
             title: item.title,
             name: item.name,
+            cancelled: item.cancelled,
             location: item.location || def.location,
           });
         }
@@ -147,12 +148,18 @@
       if (!ordering.includes("weekday") && event.byday.length && !["igandetan", "larunbatetan", "astegunetan", "asteguneta"].includes(event.byday[0])) {
         arr.push(event.byday);
       }
+      // cancelled
+      const isWithinNext7Days = (dateString) => {
+        const [day, month, year] = dateString.split('/').map(Number);
+        const inputDate = new Date(year, month - 1, day+1); // month is zero-indexed
+        return inputDate >= new Date() && inputDate <= new Date().setDate(new Date().getDate() + 7);
+      };
+      if (event.cancelled && isWithinNext7Days(event.cancelled)) arr.push('Ez ospatuko: '+ vueApp.formatDate(vueApp.parseDateToISO(event.cancelled)))
       // langs
-      arr.push(event.language || "euskaraz");
-      //if (arr.length == 0) return [' ']
-      return arr;
-      /*let str = arr.join(', ').trim()
-        return str ? [" (" + str + ")"] : [" "]*/
+      let map = { erderaz: "castellano", elebidunean: "bilingüe" } //euskaraz: "e",
+      let code = map[event.language] // || e
+      if (code) arr.push(code);
+      return arr
     },
   };
 
@@ -234,15 +241,13 @@
                 <!-- Tercer grupo: elementos en la misma línea -->
                 <p v-for="(line, lineKey) in row[subKey]" style="margin-right: 10px; display: flex">
                   [[ tr(lineKey) ]]
-                  <span v-if="typeof line === 'object' && !Array.isArray(line)"> [[ trArr(Object.keys(line)) ]] </span>
+                  <span v-if="typeof line === 'object' && !Array.isArray(line)">
+                    <i v-for="(item, index) in Object.keys(line)" :key="index" :class="{'cancelled': item.includes('Ez ospatuko')}">([[ tr(item) ]]) </i>
+                  </span>
                   <span v-if="Array.isArray(line) && line[0]?.notes">
                     <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
                     <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(line[0].notes) ]]</span>
                   </span>
-                  <!--<span v-if="typeof line === 'object' && !Array.isArray(line) && Object.values(line)[0][0]?.notes">
-                                        <span class="info-tag" @click="showTooltip($el)">&nbsp;</span>
-                                        <span class="tooltip" @click="$el.classList.remove('show')">[[ tr(Object.values(line)[0][0].notes) ]]</span>
-                                    </span>-->
                 </p>
               </td>
             </tr>
@@ -258,6 +263,10 @@
 </head>
 <style>
   /* Info tag style */
+  .cancelled {
+    color: red;
+  }
+
   .events .info-tag::before {
     cursor: pointer;
     content: "";

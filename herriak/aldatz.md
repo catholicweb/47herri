@@ -27,7 +27,11 @@ ekitaldiak:
     notes: Agustindarren komentuan
     image: /media/Screenshot_20250826_102826_YouTube.jpg
 mezak:
-  - date: astegunetan, larunbatetan eta igandetan 09.00
+  - date: astegunetan eta larunbatetan 09.00
+    notes: Agustinetan
+    language: erderaz
+  - date: igandetan 09.00
+    cancelled: 12/10/2025
     notes: Agustinetan
     language: erderaz
   - date: larunbatetan 18.00 1. astea
