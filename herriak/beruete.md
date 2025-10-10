@@ -10,6 +10,7 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - date: igandetan 11.00
+    cancelled: 12/10/2025
     language: euskaraz
 image: /media/640px-Beruete.webp
 video: PmiNoRGv7hY
