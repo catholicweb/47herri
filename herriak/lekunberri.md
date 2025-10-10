@@ -62,6 +62,7 @@ mezak:
     notes: Komentuan
     language: elebidunean
   - date: igandetan 09.00
+    cancelled: 12/10/2025
     notes: Komentuan
     language: elebidunean
   - date: larunbatetan 18.30
