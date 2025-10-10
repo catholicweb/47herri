@@ -31,7 +31,7 @@ mezak:
     notes: Agustinetan
     language: erderaz
   - date: igandetan 09.00
-    cancelled: 12/10/2025
+    cancelled: 09/10/2025
     notes: Agustinetan
     language: erderaz
   - date: larunbatetan 18.00 1. astea
