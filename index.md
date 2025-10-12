@@ -53,6 +53,8 @@ hiletak_default:
 mezak_default:
   image: /media/mass.webp
 collaborators:
+  - name: David Galarza
+    description: In solidum parrokoa (moderatzailea)
   - image: /media/Screenshot_20250404_192119_Gallery.webp
     name: Santi Garisoain
     description: In solidum parrokoa
@@ -69,4 +71,4 @@ Juridikoki eta ekonomikoki, ordea, parroki bakoitzak bere burujabetasuna mantent
 
 Eklesiastikoki gure pastoral barrutia Iruñako elizbarrutian dago, Mendialdeko zonalde pastoralean eta Aralarko artziprestaldean hain zuzen ere. Lurralde antolakuntza zibilari dagokionez, Nafarroako hamar udalerrietan gaude: LEITZA, ARESO, GOIZUETA, ARANO, ARAITZ, BETELU, LARRAUN, LEKUNBERRI, BASABURUA ETA IMOTZ.
 
-Une honetan hiru parroko in solidum aritzen gara aipatutako pastoral barrutian: Jesus Mari Sotil, Santiago Garisoain eta Iñazio Azcoaga, eta asteburutan beste hiru apez etortzen zaizkigu mezak ematen laguntzera: Joxe Mari Aleman, Pako Beloki eta Peio Etxabarri.
+Une honetan hiru parroko in solidum aritzen gara aipatutako pastoral barrutian: Jesus Mari Sotil, Santiago Garisoain eta David Galarza, eta asteburutan beste hiru apez etortzen zaizkigu mezak ematen laguntzera: Joxe Mari Aleman, Pako Beloki eta Peio Etxabarri.
