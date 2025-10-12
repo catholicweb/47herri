@@ -10,6 +10,8 @@ hiletak:
     name: TEODORO OTAMENDI ARTOLA
   - date: 17/08/2025 18.00
     name: SERGIO SALABERRIA ZINKUNEGI
+  - date: 13/10/2025 17.00
+    name: Ramón Garmendia Insausti
 ekitaldiak:
   - date: 17/04/2025 12:00
     title: "AITORTZAK "
