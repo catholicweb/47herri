@@ -1,6 +1,7 @@
 ---
 hiletak:
-  - {}
+  - date: 20/10/2025 17.00
+    name: GENOVEVA TELLETXEA ELIZALDE
 ekitaldiak:
   - date: 17/04/2025 18:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
