@@ -47,17 +47,35 @@ ekitaldiak:
     image: /media/Screenshot_20250706_214844_Gallery.jpg
     location: LARRAUN, URUMEA, LEITZARAN, ARAITZ, BASABURUA, IMOTZ
   - date: 09:00 02/11/2025
-    title: Difunten guztiak eguna
+    title: Difuntuen guztiak eguna
     notes: Beti-betiko zoriona GURE hileri eman, Jauna. Betiko argi zabalean zure
       argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
-    location: ALDATZ, LEITZA, LEKUNBERRI
+    location: Aldatz, Leitza, Lekunberri
   - date: 10:00 02/11/2025
-    title: Difunten guztiak eguna
+    title: Difuntuen guztiak eguna
     notes: Beti-betiko zoriona GURE hileri eman, Jauna. Betiko argi zabalean zure
       argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
-    location: ARESO, ETXALEKU
+    location: Areso, Etxaleku
+  - date: 11:00 02/12/2025
+    title: Difuntuen guztiak eguna
+    notes: Beti-betiko zoriona GURE hileri eman, Jauna. Betiko argi zabalean zure
+      argiak argi ditzan.
+    image: /media/3-estela-lekunberri-min.webp
+    location: Lekunberri, Leitza, Arano, Beruete
+  - date: 12:00 02/11/2025
+    title: Difuntuen guztiak eguna
+    notes: Beti-betiko zoriona GURE hileri eman, Jauna. Betiko argi zabalean zure
+      argiak argi ditzan.
+    image: /media/3-estela-lekunberri-min.webp
+    location: Arrarats
+  - date: 12:30 02/11/2025
+    title: Difuntuen guztiak eguna
+    notes: Beti-betiko zoriona GURE hileri eman, Jauna. Betiko argi zabalean zure
+      argiak argi ditzan.
+    image: /media/3-estela-lekunberri-min.webp
+    location: Betelu, Errazkin, Goizueta
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
