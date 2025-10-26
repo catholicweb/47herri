@@ -48,10 +48,14 @@ ekitaldiak:
     location: LARRAUN, URUMEA, LEITZARAN, ARAITZ, BASABURUA, IMOTZ
   - date: 09:00 02/11/2025
     title: Difunten guztiak eguna
+    notes: Beti-betiko zoriona GURE hileri eman, Jauna. Betiko argi zabalean zure
+      argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
     location: ALDATZ, LEITZA, LEKUNBERRI
   - date: 10:00 02/11/2025
     title: Difunten guztiak eguna
+    notes: Beti-betiko zoriona GURE hileri eman, Jauna. Betiko argi zabalean zure
+      argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
     location: ARESO, ETXALEKU
 hiletak_default:
