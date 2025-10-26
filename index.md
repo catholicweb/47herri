@@ -80,6 +80,26 @@ ekitaldiak:
     title: "Santu guztien eguna "
     image: /media/All-Saints.jpg
     location: Aldatz, Leitza, Lekunberri
+  - date: 10:00 01/11/2025
+    title: Santu guztien eguna
+    image: /media/All-Saints.jpg
+    location: Areso
+  - date: 11:00 01/11/2025
+    title: Santu guztien eguna
+    image: /media/All-Saints.jpg
+    location: Lekunberri, Leitza
+  - date: 12.30 01/11/2025
+    title: Santu guztien eguna
+    image: /media/All-Saints.jpg
+    location: Betelu, Baraibar
+  - date: 17:00 01/11/2025
+    title: Santu guztien eguna
+    image: /media/All-Saints.jpg
+    location: Oskotz, Azkarate
+  - date: 18:00 01/11/2025
+    title: Santu guztien eguna
+    image: /media/All-Saints.jpg
+    location: Arribe, Aldatz
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
