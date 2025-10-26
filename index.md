@@ -46,6 +46,10 @@ ekitaldiak:
       12:00tan aitortzak egongo dira eta 12:30tan meza
     image: /media/Screenshot_20250706_214844_Gallery.jpg
     location: LARRAUN, URUMEA, LEITZARAN, ARAITZ, BASABURUA, IMOTZ
+  - date: 09:00
+    title: Difunten Guztiak
+    image: /media/3-estela-lekunberri-min.webp
+    location: ALDATZ, LEITZA, LEKUNBERRI
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
