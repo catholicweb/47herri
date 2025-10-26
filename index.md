@@ -58,7 +58,7 @@ ekitaldiak:
       argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
     location: Areso, Etxaleku
-  - date: 11:00 02/12/2025
+  - date: 11:00 02/11/2025
     title: Difuntuen guztiak eguna
     notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
       argiak argi ditzan.
@@ -76,6 +76,10 @@ ekitaldiak:
       argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
     location: Betelu, Errazkin, Goizueta
+  - date: 09:00 01/11/2025
+    title: "Santu guztien eguna "
+    image: /media/All-Saints.jpg
+    location: Aldatz, Leitza, Lekunberri
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
   description: Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu
