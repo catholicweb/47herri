@@ -47,37 +47,37 @@ ekitaldiak:
     image: /media/Screenshot_20250706_214844_Gallery.jpg
     location: LARRAUN, URUMEA, LEITZARAN, ARAITZ, BASABURUA, IMOTZ
   - date: 09:00 02/11/2025
-    title: Difuntuen guztiak eguna
+    title: Hildako guztien eguna
     notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
       argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
     location: Aldatz, Leitza, Lekunberri
   - date: 10:00 02/11/2025
-    title: Difuntuen guztiak eguna
+    title: Hildako guztien eguna
     notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
       argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
     location: Areso, Etxaleku
   - date: 11:00 02/11/2025
-    title: Difuntuen guztiak eguna
+    title: Hildako guztien eguna
     notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
       argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
     location: Lekunberri, Leitza, Arano, Beruete
   - date: 12:00 02/11/2025
-    title: Difuntuen guztiak eguna
+    title: Hildako guztien eguna
     notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
       argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
     location: Arrarats
   - date: 12:30 02/11/2025
-    title: Difuntuen guztiak eguna
+    title: Hildako guztien eguna
     notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
       argiak argi ditzan.
     image: /media/3-estela-lekunberri-min.webp
     location: Betelu, Errazkin, Goizueta
   - date: 09:00 01/11/2025
-    title: "Santu guztien eguna "
+    title: Santu guztien eguna
     image: /media/All-Saints.jpg
     location: Aldatz, Leitza, Lekunberri
   - date: 10:00 01/11/2025
@@ -119,6 +119,7 @@ collaborators:
     phonenumber: 638 73 95 75
 layout: home
 ---
+
 2019an Iruña-Tuterako elizbarrutian pastoral barrutiak (erdaraz "UAP" direlakoak) eratu ziren, Nafarroako 700 parrokiak 36 pastoral barrutitan kontzentratuz. Berez helburua da pastoralki parroki bakarra osatuko balute bezala lan egitea. Apez talde bat egon beharko litzateke barruti osorako eta pastoral kontseilu bakarra sortu. Herri guztietako eliztarrek sentitu beharko lukete zirkunskripzio bereko partaide direla.
 
 Juridikoki eta ekonomikoki, ordea, parroki bakoitzak bere burujabetasuna mantentzen du. Gure kasuan pastoral barrutiko 47 herrietatik, 44 parrokietako parroko gara gure in solidum taldea. Beste hiru parrokiak parrokorik gabe daude une honetan (Baraibar, Mugiro eta Iribas).
