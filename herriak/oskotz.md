@@ -7,7 +7,8 @@ ekitaldiak:
     image: /media/Screenshot_20250419_111110_OneDrive.webp
 mezak:
   - date: larunbatetan 17.00 1. astea
-    notes: Hilean behin  (bigarren larunbatetan)
+    cancelled: 01/11/2025
+    notes: Hilean behin (bigarren larunbatetan)
     language: elebidunean
 image: /media/375115502.webp
 layout: parroquia
