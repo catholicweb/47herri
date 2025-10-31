@@ -83,7 +83,7 @@ ekitaldiak:
   - date: 10:00 01/11/2025
     title: Santu guztien eguna
     image: /media/All-Saints.jpg
-    location: Areso
+    location: Areso, Ihaben
   - date: 11:00 01/11/2025
     title: Santu guztien eguna
     image: /media/All-Saints.jpg
