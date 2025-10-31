@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 01/12/2025 16.30
+    name: Bonifacia Noain Irañeta
 ekitaldiak:
   - date: 20/05/2025 11:00
     title: SAN MIGELEN BISITA
