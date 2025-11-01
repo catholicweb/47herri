@@ -1,6 +1,7 @@
 ---
 hiletak:
-  - {}
+  - date: 02/11/2025 18.00
+    name: Benita Sasturain Alberro
   - {}
 ekitaldiak:
   - date: 18/04/2025 17:00
