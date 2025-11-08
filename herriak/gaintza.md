@@ -6,8 +6,7 @@ ekitaldiak:
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
   - date: 09/11/2025 12:30
-    title: San Martin
-    notes: Mezak
+    title: San Martín
     image: /media/martin-tours2.jpg
   - date: 11/11/2025 12:00
     title: San Martín
