@@ -5,6 +5,10 @@ ekitaldiak:
   - date: 22/04/2025 08:00
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 09/11/2025 12:30
+    title: San Martin
+    notes: Mezak
+    image: /media/martin-tours2.jpg
 mezak:
   - date: larunbatetan 17.00 2. astea
     cancelled: 11/10/2025
