@@ -1,9 +1,4 @@
 ---
-hiletak:
-  - date: 25/09/2025 18.00
-    name: JOSE MIGEL BARBERIA GOIKOETXEA
-  - date: 09/11/2025 17.00
-    name: "MARIA JOSEFA ARREGUI ARREGUI "
 ekitaldiak:
   - date: 17/04/2025 17:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
