@@ -9,6 +9,9 @@ ekitaldiak:
     title: San Martin
     notes: Mezak
     image: /media/martin-tours2.jpg
+  - date: 11/11/2025 12:00
+    title: San Martín
+    image: /media/martin-tours2.jpg
 mezak:
   - date: larunbatetan 17.00 2. astea
     cancelled: 11/10/2025
