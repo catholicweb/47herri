@@ -10,6 +10,7 @@ ekitaldiak:
     image: /media/Screenshot_20250721_141752_YouTube.jpg
 mezak:
   - date: igandetan 12.30 2. astea
+    cancelled: 09/11/2025
     notes: Hilean behin(bigarren igandetan)
     language: euskaraz
 image: /media/Screenshot_20250330_010046_YouTube.webp
