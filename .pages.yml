@@ -99,19 +99,19 @@ content:
             collapsed: true
             summary: "{fields.title}" 
         fields:
-          - { name: date, type: date, label: Fecha y hora, options: { time: true, format: dd/MM/yyyy HH:mm, step: 300 }}
+          - { name: date, type: string, label: "Día y hora, ej: 15/08/2025 19:00 (Kontuz! usar formato literal)" }
           - { name: title, label: Izenburua, type: string }
           - { name: notes, label: Notes, type: text }
           - { name: image, label: Image, type: image }
           - { name: location, label: Herria, type: string }
       - name: hiletak_default
-        label: hiletak_default
+        label: Texto/imagen por defecto de los funerales
         type: object
         fields:
-          - { name: image, label: Image, type: image }
-          - { name: description, label: Deskribapena, type: text }
+          - { name: image, label: Imagen, type: image }
+          - { name: description, label: Oración, type: text }
       - name: mezak_default
-        label: mezak_default
+        label: Imagen por defecto para horarios de misas
         type: object
         fields:
           - { name: image, label: Image, type: image }
@@ -123,11 +123,11 @@ content:
             collapsed: true
             summary: "{fields.name}" 
         fields:
-          - { name: image, label: Image, type: image }
-          - { name: name, label: Izena, type: string }
-          - { name: description, label: Deskribapena, type: string }
-          - { name: phonenumber, label: Telefonoa, type: string }          
+          - { name: image, label: Imagen, type: image }
+          - { name: name, label: Nombre, type: string }
+          - { name: description, label: Descriptión/cargo/..., type: string }
+          - { name: phonenumber, label: Telefono, type: string }          
       - { name: layout, label: layout, type: string, default: home, hidden: true }
-      - { name: description, label: Webgunearen deskribapena, type: string}
-      - { name: image, label: Preview image, type: image}
+      - { name: description, label: Descripción de la web, type: string}
+      - { name: image, label: Imagen, type: image}
       - { name: body, label: Body, type: rich-text }
