@@ -1,24 +1,24 @@
 media: media
 content:
   - name: herriak
-    label: Herriak
+    label: Pueblos
     type: collection
     path: herriak
     view:
       fields: [ title, location, name, filename ]
     fields:
       - name: hiletak
-        label: Hiletak
+        label: Funerales
         type: object
         list:
           collapsible:
             collapsed: true
             summary: "{fields.name}" 
         fields:
-        - { name: date, type: date, label: Fecha y hora, options: { time: true, format: dd/MM/yyyy HH.mm}}
-        - { name: name, label: Hildakoa, type: string }
+        - { name: date, type: date, label: Fecha y hora, options: { time: true, format: dd/MM/yyyy HH.mm, step: 300 }}
+        - { name: name, label: Difunto, type: string }
       - name: ekitaldiak
-        label: Ekitaldiak
+        label: Celebraciones
         type: object
         list:
           collapsible:
@@ -26,39 +26,37 @@ content:
             summary: "{fields.title}" 
         fields:
           - { name: date, type: date, label: Fecha y hora, options: { time: true, format: dd/MM/yyyy HH:mm}}
-          - { name: title, label: Izenburua, type: string }
-          - { name: notes, label: Notes, type: text }
-          - { name: image, label: Image, type: image }
+          - { name: title, label: Titulo, type: string }
+          - { name: notes, label: Anotaciones, type: text }
+          - { name: image, label: Imagen, type: image }
       - name: mezak
-        label: Mezak
+        label: Misas regulares
         type: object
         list:
           collapsible:
             collapsed: true
             summary: "{fields.date}" 
         fields:
-          - { name: date, type: string, label: "Eguna eta ordua (adib. astelehena 19:00)", patternn: {
-            message: Formatu zorrotza izan behar du: astelehenan|astegunetan|... - 09.30 - 3. astea - pazkoa - urtarrila|otsaila|... - 3. astean|hilean|urtean behin,
-            regex: '^(astelehenan?|asteartean?|asteazkenan?|ostegunan?|ostiralan?|larunbatetan|igandetan?|astegunetan?|bezperan?)*([ ,-]?([0-9]|0[0-9]|1[0-9]|2[0-3])[:.]([0-5][0-9]))?[ ,-]?([12345]\. astea)?[ ,-]?(pazkoa|urtarrila?k?|otsaila?k?|martxoa?k?|apirila?k?|maiatza?k?|ekaina?k?|uztaila?k?|abuztua?k?|iraila?k?|urria?k?|azaroa?k?|abendua?k?)?[ ,-]?([1-9] (astea?n?|hilea?n?|urtea?n?) behin)?$' } }
-          - { name: cancelled, type: date, label: Ez ospatuko, options: { time: false, format: dd/MM/yyyy}}
-          - { name: notes, label: Argibideak, type: string }
-          - { name: language, label: hizkuntza,   type: select, default: 'euskaraz', options: { values: [ 'euskaraz', 'erderaz', 'elebidunean' ] } }
-      - { name: description, label: Deskribapena, type: string }
+          - { name: date, type: string, label: "Eguna eta ordua (adib. astelehena 19:00)" }
+          - { name: cancelled, type: date, label: Cancelaciones, options: { time: false, format: dd/MM/yyyy}}
+          - { name: notes, label: Anotaciones, type: string }
+          - { name: language, label: Idioma,   type: select, default: 'euskaraz', options: { values: [ 'euskaraz', 'erderaz', 'elebidunean' ] } }
+      - { name: description, label: Descripcion, type: string }
       - { name: image, label: Cover image, type: image }
-      - { name: gallery, label: Gallery, type: image, list: true }
+      - { name: gallery, label: Galeria, type: image, list: true }
       - { name: video, label: Youtube, type: string }
       - { name: layout, label: layout, type: string, default: parroquia, hidden: true }
       - name: locations
-        label: Tenplu
+        label: Templos
         type: object
         list:
           collapsible:
             collapsed: true
             summary: "{fields.name}" 
         fields:
-          - { name: name, label: izena, type: string}
+          - { name: name, label: Nombre, type: string}
           - { name: geo, label: Geo (lat/log), type: string }
-          - { name: image, label: Image, type: image }
+          - { name: image, label: Imagen, type: image }
       - { name: title, label: Izenburua, type: string }
       - { name: valley, label: valle, type: string }
       - { name: body, label: Body, type: rich-text }
@@ -89,12 +87,13 @@ content:
               - { name: title, label: Izenburua, type: string }
               - { name: yt, label: Youtube code, type: string }
   - name: index
-    label: 47herri
+    label: Portada
     path: index.md
     type: file
     fields:
       - name: ekitaldiak
-        label: Ekitaldiak
+        label: Celebraciones
+        description: (añadir evento aqui o en el pueblo especifico, no en ambas)
         type: object
         list:
           collapsible:
