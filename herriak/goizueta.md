@@ -6,6 +6,9 @@ hiletak:
     name: JUANA ELIZALDE ALSUA
   - date: 29/07/2025 17.00
     name: JOSE MANUEL ZABALA
+  - date: 10/11/2025 17.00
+    name: "José Ramón Zubieta Uría "
+  - {}
 ekitaldiak:
   - date: 17/04/2025 19:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
