@@ -92,8 +92,7 @@ content:
     type: file
     fields:
       - name: ekitaldiak
-        label: Celebraciones
-        description: (añadir evento aqui o en el pueblo especifico, no en ambas)
+        label: Celebraciones (añadir evento aqui o en el pueblo especifico, no en ambas)
         type: object
         list:
           collapsible:
