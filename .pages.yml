@@ -100,10 +100,10 @@ content:
             summary: "{fields.title}" 
         fields:
           - { name: date, type: string, label: "Día y hora, ej: 15/08/2025 19:00 (Kontuz! usar formato literal)" }
-          - { name: title, label: Izenburua, type: string }
-          - { name: notes, label: Notes, type: text }
-          - { name: image, label: Image, type: image }
-          - { name: location, label: Herria, type: string }
+          - { name: title, label: Titulo, type: string }
+          - { name: notes, label: Notas, type: text }
+          - { name: image, label: Imagen, type: image }
+          - { name: location, label: Pueblos, type: string }
       - name: hiletak_default
         label: Texto/imagen por defecto de los funerales
         type: object
