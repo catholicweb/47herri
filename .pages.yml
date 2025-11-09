@@ -61,7 +61,7 @@ content:
       - { name: valley, label: valle, type: string }
       - { name: body, label: Body, type: rich-text }
   - name: baliabideak
-    label: Baliabideak
+    label: Recursos
     path: baliabideak.md
     type: file
     fields:
