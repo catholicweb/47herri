@@ -52,7 +52,7 @@
         .replaceAll(" ", "")
         .toLowerCase()
         .match(/^(\d*?[a-z]+)(.+)/);
-      const bookMap = { mt: "MAT", mk: "MRK", lk: "LUK", jn: "JHN" };
+      const bookMap = { mt: "MAT", mk: "MRK", mc: "MRK", lc: "LUK", lk: "LUK", jn: "JHN" };
       book = bookMap[book] || book;
 
       // Expand multi chapter references
@@ -93,9 +93,6 @@
   </div>
 </template>
 
-<head disable="already included">
-  <script src="https://unpkg.com/petite-vue"></script>
-</head>
 <style>
   [v-scope] {
     display: none;
