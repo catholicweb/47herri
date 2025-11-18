@@ -10,6 +10,8 @@ hiletak:
     name: MANOLI ANSORENA MARTICORENA
   - date: 26/08/2025 18.30
     name: ANDRES LEANDRO MESA MEJIA
+  - date: 22/11/2025 18.30
+    name: María Susana Eguzkiza Etxarri
 ekitaldiak:
   - date: 17/04/2025 18:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
