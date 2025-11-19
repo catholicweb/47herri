@@ -73,7 +73,11 @@ mezak:
   - date: igandetan 11.00
     notes: Parrokian
     language: elebidunean
-image: /media/Screenshot_20250409_012001_Gallery.webp
+  - date: Osteguna 18.00
+    notes: "Osteguna eukaristikoa "
+    language: elebidunean
+description: "Otoit bat ostegunero Jesús sakramentaruekin Lekumberriko komentuan "
+image: /media/images.jpeg
 video: 2tkabr7el28
 layout: parroquia
 locations:
