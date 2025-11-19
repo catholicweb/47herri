@@ -59,6 +59,10 @@ ekitaldiak:
   - date: 08/10/2025 12:00
     title: Lekunberriko eta Larraungo jubilatuen meza
     image: /media/f0.webp
+  - date: 20/11/2025 18:00
+    title: "Ostegun eukaristikoa "
+    notes: "Otoitza bat Jesús sakramentaruekin Lekumberriko komentuan "
+    image: /media/images.jpeg
 mezak:
   - date: astegunetan 18.30
     notes: Komentuan
