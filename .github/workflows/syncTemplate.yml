@@ -2,9 +2,12 @@ name: Sync from Template
 
 on:
   schedule:
-    # Runs at 3:00 AM UTC every day
-    - cron: "0 3 * * *"
-  workflow_dispatch: # Allows manual trigger from Actions tab
+    - cron: "0 3 * * *" # 03:00 UTC cada día
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
 
 jobs:
   sync:
@@ -21,8 +24,7 @@ jobs:
       - name: Checkout child repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetch all history for proper merging
-          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Configure Git
         run: |
@@ -34,12 +36,17 @@ jobs:
           git remote add upstream https://github.com/catholicweb/web-template.git || true
           git fetch upstream
 
-      - name: Merge template changes (template wins on conflicts)
+      - name: Merge template changes (excluding workflows)
         run: |
-          git merge upstream/main -X theirs --no-edit
+          # Merge sin commit automático, usando "theirs" en conflictos
+          git merge upstream/main --no-commit -X theirs --allow-unrelated-histories || true
+
+          # Quita del staging todos los workflows para que no se incluyan en el commit
+          git reset .github/workflows || true
+
+          # Haz commit de los cambios restantes
+          git commit -m "Sync template changes (excluding workflows)" || echo "No changes to commit"
 
       - name: Push changes to child repository
         run: |
           git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
