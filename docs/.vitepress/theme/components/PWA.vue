@@ -1,186 +1,105 @@
 <template>
   <div>
     <!-- Banner (solo si autoReload = false) -->
-    <transition name="slide-down">
-      <div v-if="showUpdateBanner" class="fixed top-0 left-0 right-0 z-[9999] bg-blue-600 text-white p-4 flex gap-3 justify-center items-center shadow">
-        <span>{{ updateMessage }}</span>
-        <button @click="handleRefresh" class="px-3 py-1 bg-white text-blue-600 font-semibold rounded">Refrescar</button>
-        <button @click="dismissUpdate" class="px-3 py-1 border border-white rounded">Cerrar</button>
-      </div>
-    </transition>
-
+    <div v-if="state.showUpdateBanner" class="fixed top-0 left-0 right-0 z-[9999] bg-blue-600 text-white p-4 flex gap-3 justify-center items-center shadow">
+      <span>Nueva versión disponible</span>
+      <button @click="reloadPage" class="px-3 py-1 bg-white text-blue-600 font-semibold rounded cursor-pointer">Refrescar</button>
+      <button @click="state.showUpdateBanner = false" class="px-3 py-1 border border-white rounded cursor-pointer">Cerrar</button>
+    </div>
     <!-- Botón instalar -->
-    <transition name="fade">
-      <button v-if="showInstallButton" @click="handleInstall" class="fixed bottom-6 right-6 bg-white border border-neutral-300 rounded-full p-3 shadow hover:bg-neutral-100 active:scale-95" title="Instalar app">
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-          <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2h14v2H5v-2z" />
-        </svg>
-      </button>
-    </transition>
+    <button v-if="state.showInstallButton" @click="handleInstall" class="fixed bottom-6 right-6 bg-white border border-neutral-300 rounded-full p-3 shadow hover:bg-neutral-100 active:scale-95 cursor-pointer" title="Instalar app">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+        <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2h14v2H5v-2z" />
+      </svg>
+    </button>
   </div>
 </template>
 
-<script>
-export default {
-  name: "PWAManager",
+<script setup>
+import { ref } from "vue";
+import { useData } from "vitepress";
 
-  props: {
-    autoReload: {
-      type: Boolean,
-      default: true,
-    },
-    vapidKey: {
-      type: String,
-      required: true,
-    },
-    subscriptionEndpoint: {
-      type: String,
-      required: true,
-    },
-  },
+const { theme } = useData();
+const state = ref({ showInstallButton: false, showUpdateBanner: false });
+let deferredPrompt;
 
-  data() {
-    return {
-      showInstallButton: false,
-      showUpdateBanner: false,
-      updateMessage: "",
-      deferredPrompt: null,
-      registration: null,
-    };
-  },
+function reloadPage() {
+  window.location.reload();
+}
 
-  mounted() {
-    this.initPWA();
-  },
+if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+  try {
+    // Register
+    navigator.serviceWorker.register("/sw.js");
 
-  methods: {
-    async initPWA() {
-      // --- SERVICE WORKER ----------------------------------------------
-      if ("serviceWorker" in navigator) {
-        try {
-          this.registration = await navigator.serviceWorker.register("/sw.js");
-
-          // Check updates cada minuto
-          setInterval(() => this.registration.update(), 60000);
-
-          // Escuchar mensajes del SW
-          navigator.serviceWorker.addEventListener("message", (event) => {
-            if (!event.data) return;
-
-            if (event.data.type === "SW_UPDATED" || event.data.type === "CONTENT_UPDATED") {
-              if (this.autoReload) {
-                // Berriro kargatu (recargar)
-                window.location.reload();
-              } else {
-                this.showUpdate("Nueva versión disponible");
-              }
-            }
-          });
-        } catch (err) {
-          console.error("SW registration failed:", err);
+    // Escuchar mensajes del SW
+    navigator.serviceWorker.addEventListener("message", (event) => {
+      if (!event.data) return;
+      if (event.data.type === "SW_UPDATED" || event.data.type === "CONTENT_UPDATED") {
+        if (theme.value.pwa?.autoReload) {
+          window.location.reload();
+        } else {
+          state.value.showUpdateBanner = true;
         }
       }
+    });
+  } catch (err) {
+    console.error("SW registration failed:", err);
+  }
 
-      // --- BEFOREINSTALLPROMPT -----------------------------------------
-      window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
-        this.deferredPrompt = e;
-        this.showInstallButton = true;
-      });
+  // --- BEFOREINSTALLPROMPT -----------------------------------------
+  window.addEventListener("beforeinstallprompt", (e) => {
+    return;
+    e.preventDefault();
+    deferredPrompt = e;
+    state.value.showInstallButton = true;
+  });
 
-      // --- INSTALLED ---------------------------------------------------
-      window.addEventListener("appinstalled", () => {
-        this.showInstallButton = false;
-        this.deferredPrompt = null;
-      });
+  // --- INSTALLED ---------------------------------------------------
+  window.addEventListener("appinstalled", () => {
+    state.value.showInstallButton = false;
+    deferredPrompt = null;
+  });
 
-      // --- PUSH NOTIFICATION IF INSTALLED ------------------------------
-      if (window.matchMedia("(display-mode: standalone)").matches) {
-        await this.setupNotifications();
-      }
-    },
+  // --- PUSH NOTIFICATION IF INSTALLED ------------------------------
+  if (window.matchMedia("(display-mode: standalone)").matches) {
+    setupNotifications();
+  }
+}
 
-    // -------------------------------------------------------------------
-    async handleInstall() {
-      if (!this.deferredPrompt) return;
+async function setupNotifications() {
+  try {
+    const sw = await navigator.serviceWorker.ready;
+    const existing = await sw.pushManager.getSubscription();
+    if (existing) return;
 
-      this.deferredPrompt.prompt();
-      await this.deferredPrompt.userChoice;
+    const sub = await sw.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array("BMmcvUGPuJ2n3Ri1kNPmbOiMuN62RSNfMcDv7QHJd8MZveNj_KPTOXdSkzj7vNOQinq8h4b-Tdv-TpnN4YpF-hM"),
+    });
 
-      this.showInstallButton = false;
-      this.deferredPrompt = null;
-    },
+    await fetch("https://arrietaeguren.es/subscriptions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ subscription: sub }),
+    });
+  } catch (err) {
+    console.error("Notification setup failed:", err);
+  }
+}
 
-    async setupNotifications() {
-      if (!("Notification" in window) || !("PushManager" in window)) return;
+function urlBase64ToUint8Array(base64String) {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+  const raw = atob(base64);
+  return Uint8Array.from([...raw].map((c) => c.charCodeAt(0)));
+}
 
-      try {
-        const perm = await Notification.requestPermission();
-        if (perm !== "granted") return;
-
-        const sw = await navigator.serviceWorker.ready;
-
-        let sub = await sw.pushManager.getSubscription();
-        if (!sub) {
-          sub = await sw.pushManager.subscribe({
-            userVisibleOnly: true,
-            applicationServerKey: this.urlBase64ToUint8Array(this.vapidKey),
-          });
-        }
-
-        await fetch(this.subscriptionEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ subscription: sub }),
-        });
-      } catch (err) {
-        console.error("Notification setup failed:", err);
-      }
-    },
-
-    // -------------------------------------------------------------------
-    showUpdate(message) {
-      this.updateMessage = message;
-      this.showUpdateBanner = true;
-    },
-
-    handleRefresh() {
-      window.location.reload();
-    },
-
-    dismissUpdate() {
-      this.showUpdateBanner = false;
-    },
-
-    urlBase64ToUint8Array(base64) {
-      const pad = "=".repeat((4 - (base64.length % 4)) % 4);
-      const str = (base64 + pad).replace(/-/g, "+").replace(/_/g, "/");
-      const raw = atob(str);
-      return Uint8Array.from([...raw].map((c) => c.charCodeAt(0)));
-    },
-  },
-};
+async function handleInstall() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  state.value.showInstallButton = false;
+  deferredPrompt = null;
+}
 </script>
-
-<style scoped>
-.slide-down-enter-active,
-.slide-down-leave-active {
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-}
-.slide-down-enter-from,
-.slide-down-leave-to {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

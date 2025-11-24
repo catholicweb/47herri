@@ -1,27 +1,29 @@
 <!-- .vitepress/theme/Layout.vue -->
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col max-w-screen overflow-hidden">
     <!-- Navbar Component -->
     <component :is="components.Navbar" />
 
-    <component :is="components.Hero" :block="page.frontmatter" />
+    <!-- Hero Component (optional?) -->
+    <component :is="components.Hero" :block="$frontmatter" />
 
     <!-- Main Content - Block System -->
-    <main class="flex-1" v-if="page.frontmatter.sections">
-      <section v-for="(section, index) in page.frontmatter.sections">
+    <main class="flex-1" v-if="$frontmatter.sections">
+      <section v-for="(section, index) in $frontmatter.sections">
         <component :key="index" :is="getBlockComponent(section._block)" :block="section" />
       </section>
     </main>
 
     <!-- Footer Component -->
     <component :is="components.Footer" />
+
+    <!-- PWA Component -->
+    <component :is="components.PWA" />
   </div>
 </template>
 
 <script setup>
-import { useData } from "vitepress";
 import components from "./components";
-const { page } = useData();
 
 // Get the component matching the block type
 function getBlockComponent(block = "gallery") {
