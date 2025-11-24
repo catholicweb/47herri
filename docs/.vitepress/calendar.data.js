@@ -4,9 +4,13 @@ import fs from "fs";
 import matter from "gray-matter";
 
 function readFrontmatter(filePath) {
-  console.log(filePath);
   if (!fs.existsSync(filePath)) return {};
   const content = fs.readFileSync(filePath, "utf8");
+
+  if (filePath.endsWith(".json")) {
+    return JSON.parse(content || "{}");
+  }
+
   return matter(content).data || {};
 }
 
@@ -42,7 +46,7 @@ function intersectOptions(options, field) {
 
 export default {
   async load() {
-    let config = readFrontmatter("./docs/events.md");
+    let config = readFrontmatter("./docs/events.json");
     console.log(config);
 
     const events = [];

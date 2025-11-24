@@ -3,10 +3,15 @@
 name: Deploy VitePress site to Pages
 
 on:
-  # Runs on pushes targeting the `main` branch. Change this to `master` if you're
-  # using the `master` branch as the default branch.
+  # Runs on pushes targeting the `main` branch on .json or .md files
   push:
     branches: [main]
+    paths:
+      - "**/*.json"
+      - "**/*.md"
+  # Cada hora, al minuto 0
+  schedule:
+    - cron: "0 * * * *"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 

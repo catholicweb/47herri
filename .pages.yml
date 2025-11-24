@@ -117,7 +117,7 @@ content:
       fields: [image, title]
       primary: title
     filename: "{primary}.md"
-    exclude: [.vitepress, public, aviso-legal.md, config.md, events.md, theme-builder.md]
+    exclude: [.vitepress, public, aviso-legal.md, config.json, events.json, theme-builder.md]
     fields:
       - { name: title, label: Título, type: string }
       - { name: description, label: Subtitulo, type: string }
@@ -198,7 +198,8 @@ content:
   - name: events
     type: file
     label: Eventos
-    path: docs/events.md
+    format: json
+    path: docs/events.json
     fields:
       - { name: urls, type: string, list: true, label: URL calendarios (terminadas en .ics) }
       - name: events
@@ -214,7 +215,8 @@ content:
   - name: config
     type: file
     label: Configuración
-    path: docs/config.md
+    path: docs/config.json
+    format: json
     fields:
       - { name: title, label: Titulo sitio, type: string }
       - { name: description, label: Description del sitio, type: text }

@@ -7,10 +7,14 @@ import sharp from "sharp";
 
 const md = new MarkdownIt({ html: true, linkify: true });
 
-/* MODIFY LINKS */
 function readFrontmatter(filePath) {
   if (!fs.existsSync(filePath)) return {};
   const content = fs.readFileSync(filePath, "utf8");
+
+  if (filePath.endsWith(".json")) {
+    return JSON.parse(content || "{}");
+  }
+
   return matter(content).data || {};
 }
 
@@ -302,7 +306,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 export async function generate() {
-  let config = readFrontmatter("./docs/config.md");
+  let config = readFrontmatter("./docs/config.json");
 
   config.languages = [
     { code: "es", label: "Español", path: "/" },
