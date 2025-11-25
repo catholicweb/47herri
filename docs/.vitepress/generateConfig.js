@@ -21,11 +21,12 @@ function readFrontmatter(filePath) {
 async function createManifest(config) {
   let manifest = {
     name: config.title,
-    short_name: config.description,
+    short_name: config.title,
+    description: config.description,
     start_url: "/",
     display: "standalone",
     background_color: config.theme.accentColor,
-    theme_color: "#333",
+    theme_color: config.theme.accentColor,
     icons: [
       { src: "/icon-192.png", sizes: "192x192", type: "image/png" },
       { src: "/icon-512.png", sizes: "512x512", type: "image/png" },
