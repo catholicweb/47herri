@@ -1,113 +1,15 @@
 ---
 ekitaldiak:
+  - date: 03/12/2025 10.30
+    title: Izotz Pista
+    image: /media/WhatsApp Image 2025-11-21 at 17.24.01.jpeg
+    location: donostia
+mezak:
   - date: larunbatetan 18:00 mezak
     notes: >+
       Txandaka. Meza Arriben izango da hile bikoitietan, eta Atallun hile
       bakoitietan.
-
     location: Arribe/Atallu
-  - date: 14/04/2025 17:00
-    title: AITORTZAK
-    notes: Klaratarren komentuan apez bat egongo da arratsaldeko 5etatik 6:30ak ARTE
-      gutxi gora behera.
-    image: /media/semea.webp
-    location: lekunberri
-  - date: 15/04/2025 18:00
-    title: AITORTZAK
-    notes: Penitentzi ospakizuna egongo da Goizuetako elizan eta bi apez aitortza
-      ospatu ahal izateko.
-    image: /media/semea.webp
-    location: goizueta
-  - date: 01/06/2025 10:30
-    title: ASZENSIO EGUNA
-    notes: Basaburuko herri guztietako gurutzeak abiatuko dira 10:30etan Itsasoko
-      elizetik Salbatore ermitaraino eta han meza ospatuko da.
-    image: /media/Screenshot_20250430_182630_OneDrive.webp
-    location: "Basaburua "
-  - date: 15/06/2025 11:00
-    title: TRINITATE IGANDEA
-    notes: Ergako Trinitatearen ermitan. 11tan meza euskaraz eta 12tan erdaraz
-      izango dira
-    image: /media/Screenshot_20250501_185208_Gallery.webp
-    location: Imotz
-  - date: 07/06/2025 12:00
-    title: LARUNBETLARI
-    notes: Aralarko santutegian izango da Pentekoste bezperan ohizkoa den urteroko
-      meza.
-    image: /media/Screenshot_20250530_094045_Gallery.webp
-    location: "Beruete/Goldaratz "
-  - date: 07/09/2025 12:30
-    title: GURUTZEEN EGUNA
-    notes: >-
-      Gure Pastoral barrutiko parroki guztietako gurutzeak 11:45tan abiatuko
-      dira Uhartetik datorren bide gurutzetik prozesioan san Migelen
-      santitegiraino. 
-
-      12:00tan aitortzak egongo dira eta 12:30tan meza
-    image: /media/Screenshot_20250706_214844_Gallery.jpg
-    location: LARRAUN, URUMEA, LEITZARAN, ARAITZ, BASABURUA, IMOTZ
-  - date: 02/11/2025 09:00
-    title: Hildako guztien eguna
-    notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
-      argiak argi ditzan.
-    image: /media/3-estela-lekunberri-min.webp
-    location: Aldatz, Leitza, Lekunberri
-  - date: 02/11/2025 10:00
-    title: Hildako guztien eguna
-    notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
-      argiak argi ditzan.
-    image: /media/3-estela-lekunberri-min.webp
-    location: Areso, Etxaleku
-  - date: 02/11/2025 11:00
-    title: Hildako guztien eguna
-    notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
-      argiak argi ditzan.
-    image: /media/3-estela-lekunberri-min.webp
-    location: Lekunberri, Leitza, Arano, Beruete
-  - date: 02/11/2025 12:00
-    title: Hildako guztien eguna
-    notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
-      argiak argi ditzan.
-    image: /media/3-estela-lekunberri-min.webp
-    location: Arrarats
-  - date: 02/11/2025 12:30
-    title: Hildako guztien eguna
-    notes: Beti-betiko zoriona gure hileri eman, Jauna. Betiko argi zabalean zure
-      argiak argi ditzan.
-    image: /media/3-estela-lekunberri-min.webp
-    location: Betelu, Errazkin, Goizueta
-  - date: 01/11/2025 09:00
-    title: Santu guztien eguna
-    image: /media/All-Saints.jpg
-    location: Aldatz, Leitza, Lekunberri
-  - date: 01/11/2025 10:00
-    title: Santu guztien eguna
-    image: /media/All-Saints.jpg
-    location: Areso, Ihaben
-  - date: 01/11/2025 11:00
-    title: Santu guztien eguna
-    image: /media/All-Saints.jpg
-    location: Lekunberri, Leitza
-  - date: 01/11/2025 12:30
-    title: Santu guztien eguna
-    image: /media/All-Saints.jpg
-    location: Betelu, Baraibar
-  - date: 01/11/2025 17:00
-    title: Santu guztien eguna
-    image: /media/All-Saints.jpg
-    location: Azkarate
-  - date: 01/11/2025 18:00
-    title: Santu guztien eguna
-    image: /media/All-Saints.jpg
-    location: Arribe, Aldatz, Oskotz
-  - date: 01/11/2025 12:00
-    title: Santu guztien eguna
-    image: /media/All-Saints.jpg
-    location: Arruitz
-  - date: 03/12/2025
-    title: Izotz Pista
-    image: /media/WhatsApp Image 2025-11-21 at 17.24.01.jpeg
-    location: donostia
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
   description: >
