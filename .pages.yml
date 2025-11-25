@@ -103,7 +103,7 @@ content:
           - { name: title, label: Titulo, type: string }
           - { name: notes, label: Notas, type: text }
           - { name: image, label: Imagen, type: image }
-          - { name: location, label: Pueblos, type: reference, options: { collection: herriak, multiple: true, creatable: true, label: "{title}" } }
+          - { name: location, label: Pueblos, type: reference, options: { collection: herriak, multiple: true, creatable: true, label: "{title}", value: "{title}" } }
       - name: hiletak_default
         label: Texto/imagen por defecto de los funerales
         type: object
