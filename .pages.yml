@@ -216,9 +216,9 @@ content:
         fields:
           - { name: title, label: Nombre del difunto, type: string, default: Misa, hidden: true }
           - { name: location, label: Ubicación, component: location }
-          - { name: date, type: string, label: Fecha y hora de inicio, default: "25/12/2025 10:00", hidden: true }
+          - { name: date, type: date, label: Fecha y hora de inicio, options: { time: true, format: dd/MM/yyyy HH:mm, step: 300 } }
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
-          - { name: except, type: date, label: Excepto, options: { time: true, format: dd/MM/yyyy HH:mm, step: 300 }, list: true }
+          - { name: except, type: date, label: Excepto, options: { format: dd/MM/yyyy }, list: { collapsible: { collapsed: true } } }
       - name: events-group
         label: Catequesis
         type: object
@@ -228,7 +228,7 @@ content:
           - { name: location, label: Ubicación, component: location }
           - { name: date, type: string, label: Fecha y hora de inicio, default: "25/12/2025 10:00", hidden: true }
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
-          - { name: except, type: date, label: Excepto, options: { time: true, format: dd/MM/yyyy HH:mm, step: 300 }, list: true }
+          - { name: except, type: date, label: Excepto, options: { format: dd/MM/yyyy }, list: { collapsible: { collapsed: true } } }
       - name: events-custom
         label: Otros eventos
         type: object
@@ -239,8 +239,8 @@ content:
           - { name: location, label: Ubicación, component: location }
           - { name: date, type: date, label: Fecha y hora de inicio, options: { time: true, format: dd/MM/yyyy HH:mm, step: 300 } }
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
-          - { name: except, type: date, label: Excepto, options: { time: true, format: dd/MM/yyyy HH:mm, step: 300 }, list: true }
-      - { name: urls, type: string, list: true, label: Calendarios externos (ej. Google Calendar) a importar (urls terminadas en .ics) }
+          - { name: except, type: date, label: Excepto, options: { format: dd/MM/yyyy }, list: { collapsible: { collapsed: true } } }
+      - { name: urls, type: string, list: true, label: Calendarios externos a importar (ej. url de Google Calendar terminada en .ics) }
   - name: config
     type: file
     label: Configuración
