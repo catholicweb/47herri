@@ -29,7 +29,6 @@ content:
           - { name: date, type: string, label: "Día y hora, ej: 15/08/2025 19:00 (Kontuz! usar formato literal)" }
           - { name: title, label: Titulo, type: string }
           - { name: notes, label: Notas, type: text }
-          - { name: image, label: Imagen, type: image }
           - { name: location, label: Pueblos, type: reference, options: { collection: herriak, creatable: true, label: "{title}", value: "{title}" } }
       - name: hiletak_default
         label: Texto/imagen por defecto de los funerales
