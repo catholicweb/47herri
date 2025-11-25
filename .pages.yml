@@ -1,3 +1,5 @@
+settings:
+  hide: true
 media: media
 content:
   - name: index
