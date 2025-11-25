@@ -1,5 +1,50 @@
 media: media
 content:
+  - name: index
+    label: Eventos
+    path: index.md
+    type: file
+    fields:
+      - name: ekitaldiak
+        label: Celebraciones (añadir evento aqui o en el pueblo especifico, no en ambas)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title}" 
+        fields:
+          - { name: date, type: string, label: "Día y hora, ej: 15/08/2025 19:00 (Kontuz! usar formato literal)" }
+          - { name: title, label: Titulo, type: string }
+          - { name: notes, label: Notas, type: text }
+          - { name: image, label: Imagen, type: image }
+          - { name: location, label: Pueblos, type: reference, options: { collection: herriak, creatable: true, label: "{title}", value: "{title}" } }
+      - name: hiletak_default
+        label: Texto/imagen por defecto de los funerales
+        type: object
+        fields:
+          - { name: image, label: Imagen, type: image }
+          - { name: description, label: Oración, type: text }
+      - name: mezak_default
+        label: Imagen por defecto para horarios de misas
+        type: object
+        fields:
+          - { name: image, label: Image, type: image }
+      - name: collaborators
+        label: Gure apezak
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.name}" 
+        fields:
+          - { name: image, label: Imagen, type: image }
+          - { name: name, label: Nombre, type: string }
+          - { name: description, label: Descriptión/cargo/..., type: string }
+          - { name: phonenumber, label: Telefono, type: string }          
+      - { name: layout, label: layout, type: string, default: home, hidden: true }
+      - { name: description, label: Descripción de la web, type: string}
+      - { name: image, label: Imagen, type: image}
+      - { name: body, label: Body, type: rich-text }
   - name: herriak
     label: Pueblos
     type: collection
@@ -86,48 +131,3 @@ content:
             fields:
               - { name: title, label: Titulo video, type: string }
               - { name: yt, label: Código Youtube, type: string }
-  - name: index
-    label: Portada
-    path: index.md
-    type: file
-    fields:
-      - name: ekitaldiak
-        label: Celebraciones (añadir evento aqui o en el pueblo especifico, no en ambas)
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{fields.title}" 
-        fields:
-          - { name: date, type: string, label: "Día y hora, ej: 15/08/2025 19:00 (Kontuz! usar formato literal)" }
-          - { name: title, label: Titulo, type: string }
-          - { name: notes, label: Notas, type: text }
-          - { name: image, label: Imagen, type: image }
-          - { name: location, label: Pueblos, type: reference, options: { collection: herriak, creatable: true, label: "{title}", value: "{title}" } }
-      - name: hiletak_default
-        label: Texto/imagen por defecto de los funerales
-        type: object
-        fields:
-          - { name: image, label: Imagen, type: image }
-          - { name: description, label: Oración, type: text }
-      - name: mezak_default
-        label: Imagen por defecto para horarios de misas
-        type: object
-        fields:
-          - { name: image, label: Image, type: image }
-      - name: collaborators
-        label: Gure apezak
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{fields.name}" 
-        fields:
-          - { name: image, label: Imagen, type: image }
-          - { name: name, label: Nombre, type: string }
-          - { name: description, label: Descriptión/cargo/..., type: string }
-          - { name: phonenumber, label: Telefono, type: string }          
-      - { name: layout, label: layout, type: string, default: home, hidden: true }
-      - { name: description, label: Descripción de la web, type: string}
-      - { name: image, label: Imagen, type: image}
-      - { name: body, label: Body, type: rich-text }
