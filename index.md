@@ -104,6 +104,10 @@ ekitaldiak:
     title: Santu guztien eguna
     image: /media/All-Saints.jpg
     location: Arruitz
+  - date: 03/12/2025
+    title: Izotz Pista
+    image: /media/WhatsApp Image 2025-11-21 at 17.24.01.jpeg
+    location: donostia
 hiletak_default:
   image: /media/3-estela-lekunberri-min.webp
   description: >
@@ -125,7 +129,6 @@ collaborators:
     phonenumber: 638 73 95 75
 layout: home
 ---
-
 2019an Iruña-Tuterako elizbarrutian pastoral barrutiak (erdaraz "UAP" direlakoak) eratu ziren, Nafarroako 700 parrokiak 36 pastoral barrutitan kontzentratuz. Berez helburua da pastoralki parroki bakarra osatuko balute bezala lan egitea. Apez talde bat egon beharko litzateke barruti osorako eta pastoral kontseilu bakarra sortu. Herri guztietako eliztarrek sentitu beharko lukete zirkunskripzio bereko partaide direla. Juridikoki eta ekonomikoki, ordea, parroki bakoitzak bere burujabetasuna mantentzen du.
 
 Eklesiastikoki gure pastoral barrutia Iruñako elizbarrutian dago, Mendialdeko zonalde pastoralean eta Aralarko artziprestaldean hain zuzen ere. Lurralde antolakuntza zibilari dagokionez, Nafarroako hamar udalerrietan gaude: LEITZA, ARESO, GOIZUETA, ARANO, ARAITZ, BETELU, LARRAUN, LEKUNBERRI, BASABURUA ETA IMOTZ.
