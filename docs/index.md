@@ -1,5 +1,5 @@
 ---
-title: Theme builder
+title: Portada
 image: https://cdn.pixabay.com/photo/2017/07/22/21/36/church-2530017_1280.jpg
 sections:
   - _block: gallery
