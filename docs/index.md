@@ -51,7 +51,7 @@ sections:
   - _block: hero
     title: Hero image
     description: Ey!
-    image: https://cdn.pixabay.com/photo/2016/11/29/03/53/beach-1867288_1280.jpg
+    image: https://cdn.pixabay.com/photo/2016/08/31/14/35/saint-pierre-1633682_1280.jpg
     elements:
       - title: Apuntate!
         link: ...
@@ -59,9 +59,9 @@ sections:
         link: ...
   - _block: links
     links:
-      - docs/seminario.md
-      - docs/5-pasos.md
-      - docs/seminario.md
-      - docs/5-pasos.md
-      - docs/seminario.md
+      - docs/index.md
+      - docs/index.md
+      - docs/index.md
+      - docs/index.md
+      - docs/index.md
 ---

@@ -50,14 +50,9 @@ concurrency:
 jobs:
   # Build job
   build:
+    if: github.repository != 'catholicweb/web-template'
     runs-on: ubuntu-latest
     steps:
-      - name: Check if this is the template repo
-        run: |
-          if [ "${{ github.repository }}" == "catholicweb/web-template" ]; then
-            echo "This is the template repository. Skipping sync."
-            exit 0
-          fi
       - name: Checkout
         uses: actions/checkout@v4
         with:
