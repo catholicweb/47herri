@@ -2,6 +2,8 @@
 hiletak:
   - date: 13/08/2025 18.00
     name: JOAQUINA MINDEGUIA CESTAU
+  - date: 07/12/2025 11.00
+    name: Luis Narbarte Petrikorena
 ekitaldiak:
   - date: 20/04/2025 10:30
     title: AITORTZAK
