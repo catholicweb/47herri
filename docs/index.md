@@ -33,10 +33,12 @@ sections:
         description: "no lo se y tu"
   - _block: video
     title: super videos!
-    urls:
+    links:
       - https://www.youtube.com/watch?v=3TdPxF5dZuk
       - https://www.youtube.com/watch?v=ZtXakyjfYfw
       - https://www.youtube.com/watch?v=3TdPxF5dZuk
+      - https://open.spotify.com/show/7LonKVvfQIsCp45TM58h7y?si=5d4c7a4937e043f4
+      - https://open.spotify.com/playlist/4mhqBBKSB0Qm6bR6YGkAiG?si=PmOHN7SKSKmrNaHUkHP3VQ
   - _block: map-alt
     title: Conocenos!
     name: Parroquia de ...
