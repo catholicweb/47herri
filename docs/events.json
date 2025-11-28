@@ -1,4 +1,17 @@
 {
-  "urls": [],
-  "events": []
+  "events-masses": [
+    {
+      "title": "Misa",
+      "location": [
+        "Parroquia de la Asunción"
+      ],
+      "times": [
+        "07:30",
+        "09:30"
+      ],
+      "rrule": [
+        "mo,tu,we,th,fr"
+      ]
+    }
+  ]
 }
