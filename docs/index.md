@@ -39,22 +39,6 @@ sections:
       Nosotros te damos la libertad de elegir qué mostrar en tu web, y lo
       hacemos fácil y rápido. Además, personalizamos todo para que tu página
       tenga el estilo único de tu parroquia.
-
-
-      **¿Qué puedes incluir?**
-
-
-      *   **Horarios de misas y eventos**: Que no haya excusas para perderse la
-      misa del domingo.
-          
-      *   **Información sobre sacramentos**: Bautizos, bodas, confirmaciones…
-      todo al alcance de un clic.
-          
-      *   **Noticias y anuncios**: ¡Para que tu comunidad siempre esté al tanto
-      de lo que sucede!
-          
-      *   **Galería de fotos**: Muestra las fotos de tus actividades, ¡para que
-      todos se sientan parte de la familia parroquial!
           
 
       ### **Todo lo que necesitas, sin complicaciones**
