@@ -11,7 +11,23 @@ components:
       multiple: true
       creatable: true
       values: ["06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"]
-
+  podcast:
+    label: Podcast católicos
+    type: select
+    options:
+      multiple: true
+      creatable: true
+      values:
+        [
+          { value: "https://open.spotify.com/show/1sq2MYlTyXKwVvMDqpA3uF?si=f94300ed0c2d498d", label: "Seamos Santos (Sofía Carreón)" },
+          { value: "https://youtube.com/playlist?list=PLco5FD9I9WmIbbQTBKMqaMq1kjwiZoO6B", label: "Homilias (Mons. Munilla)" },
+          { value: "https://open.spotify.com/show/1oX36lcEOra7ADQCUlE2LY?si=e177f860f0164661", label: "Hablemos Sin Filtro" },
+          { value: "https://open.spotify.com/show/6y1J3OXyuHGivMhIy7LB4Q?si=23fdbfd73b6645c7", label: "Es de Humanos" },
+          { value: "https://open.spotify.com/show/7LonKVvfQIsCp45TM58h7y?si=5974a35003ef4ecb", label: "10 minutos con Jesús" },
+          { value: "https://open.spotify.com/show/2stzE1aIR8elv3tEIHNosr?si=f5f8c6b65d82421a", label: "Radio María" },
+          { value: "https://open.spotify.com/show/1zR5ODOgjx1lGObG2gJvox", label: "Homilias Papa León XIV (Igles-IA)" },
+          { value: "https://youtube.com/playlist?list=PL2fBaIU3WZ23ahmPx34yYXDu3yrp-yASO", label: "Rosario desde Lourdes" },
+        ]
   languages:
     label: Idioma
     type: select
@@ -159,6 +175,11 @@ content:
             fields:
               - { name: title, type: string, label: Titulo sección }
               - { name: filter, label: Filtro. Incluir solo eventos que contengan, type: string }
+          - name: video-podcast
+            label: Podcast católicos
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: links, label: Podcast, component: podcast }
           - name: video
             label: Youtube/Vimeo/Spotify/....
             fields:

@@ -34,11 +34,14 @@ sections:
   - _block: video
     title: super videos!
     links:
-      - https://www.youtube.com/watch?v=3TdPxF5dZuk
-      - https://www.youtube.com/watch?v=ZtXakyjfYfw
-      - https://www.youtube.com/watch?v=3TdPxF5dZuk
-      - https://open.spotify.com/show/7LonKVvfQIsCp45TM58h7y?si=5d4c7a4937e043f4
-      - https://open.spotify.com/playlist/4mhqBBKSB0Qm6bR6YGkAiG?si=PmOHN7SKSKmrNaHUkHP3VQ
+      - "https://youtube.com/playlist?list=PLco5FD9I9WmIbbQTBKMqaMq1kjwiZoO6B"
+      - "https://open.spotify.com/show/1sq2MYlTyXKwVvMDqpA3uF?si=f94300ed0c2d498d"
+      - "https://open.spotify.com/show/1oX36lcEOra7ADQCUlE2LY?si=e177f860f0164661"
+      - "https://open.spotify.com/show/6y1J3OXyuHGivMhIy7LB4Q?si=23fdbfd73b6645c7"
+      - "https://open.spotify.com/show/7LonKVvfQIsCp45TM58h7y?si=5974a35003ef4ecb"
+      - "https://open.spotify.com/show/2stzE1aIR8elv3tEIHNosr?si=f5f8c6b65d82421a"
+      - "https://open.spotify.com/show/1zR5ODOgjx1lGObG2gJvox"
+      - "https://youtube.com/playlist?list=PL2fBaIU3WZ23ahmPx34yYXDu3yrp-yASO"
   - _block: map-alt
     title: Conocenos!
     name: Parroquia de ...
