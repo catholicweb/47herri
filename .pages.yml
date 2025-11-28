@@ -154,6 +154,17 @@ content:
         type: block
         list: { collapsible: { collapsed: false, summary: "{fields.title}" } }
         blocks:
+          - name: accordion
+            label: FAQ
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - name: elements
+                label: Preguntas y respuestas
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+                fields:
+                  - { name: title, label: Pregunta, type: string }
+                  - { name: description, label: Respuesta, type: rich-text }
           - name: gallery
             label: Galeria de imagenes
             fields:
