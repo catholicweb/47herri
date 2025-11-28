@@ -222,8 +222,10 @@ content:
               - { name: goal, type: number, label: Total a recaudar }
               - { name: image, type: image, label: Imagen }
           - name: hero
-            label: Hero (cabezera)
+            label: Cabezera de sección
             component: hero
+          - name: teammembers
+            label: Miembros del equipo (soon)
           - name: links
             label: Enlaces internos
             fields:
