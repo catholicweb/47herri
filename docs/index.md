@@ -17,7 +17,7 @@ sections:
     gospel: true
     readings: false
     audio: false
-  - _block: fundraising-alt
+  - _block: fundraising
     title: fundraising
     name: Tejado parroquial!
     description: Necestimaos un nuevo tejado en la parroquia.....
@@ -31,7 +31,7 @@ sections:
         description: "muchos y tu"
       - title: ¿como te llmass?
         description: "no lo se y tu"
-  - _block: video
+  - _block: video-podcast
     title: super videos!
     links:
       - "https://youtube.com/playlist?list=PLco5FD9I9WmIbbQTBKMqaMq1kjwiZoO6B"
@@ -42,7 +42,7 @@ sections:
       - "https://open.spotify.com/show/2stzE1aIR8elv3tEIHNosr?si=f5f8c6b65d82421a"
       - "https://open.spotify.com/show/1zR5ODOgjx1lGObG2gJvox"
       - "https://youtube.com/playlist?list=PL2fBaIU3WZ23ahmPx34yYXDu3yrp-yASO"
-  - _block: map-alt
+  - _block: map
     title: Conocenos!
     name: Parroquia de ...
     geo: "42.80194149934182, -1.645660573514554"
@@ -50,9 +50,6 @@ sections:
   - _block: calendar
     title: No te pierdas nuestros eventos!
     filter: ""
-
-  - _block: pope
-    summary: true
   - _block: hero
     title: Hero image
     description: Ey!
