@@ -18,7 +18,7 @@ async function main() {
   const today = new Date();
   const results = {};
 
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 30; i++) {
     const d = new Date(today);
     d.setDate(today.getDate() + i);
     const dateStr = d.toISOString().split("T")[0];
