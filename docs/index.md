@@ -58,6 +58,7 @@ sections:
       - title: O mejor no...
         link: ...
   - _block: links
+    title: También te puede interesar
     links:
       - docs/index.md
       - docs/index.md
