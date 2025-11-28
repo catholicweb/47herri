@@ -76,13 +76,13 @@ sections:
     title: FAQ
     elements:
       - title: ¿Cómo puedo solicitar el sacramento del Bautismo para mi hijo/a?
-        description: "**Respuesta**: Para solicitar el Bautismo, debes ponerte en
+        html: Para solicitar el Bautismo, debes ponerte en
           contacto con la parroquia al menos dos semanas antes de la fecha
           deseada. Los padres y padrinos deben participar en una breve
           preparación, que se puede hacer de forma presencial o online. ¡Es un
-          momento hermoso, así que asegúrate de planificar con antelación!"
+          momento hermoso, así que asegúrate de planificar con antelación!
       - title: ¿Puedo añadir preguntas y respuestas a mi web?
-        description: >-
+        html: >-
           Sí, claro. Añadir una sección de **FAQ** (preguntas frecuentes) a la
           web de tu parroquia es una excelente manera de hacerla más accesible y
           ayudar a los feligreses con dudas comunes. Aquí te dejo algunos

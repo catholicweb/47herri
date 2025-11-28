@@ -31,6 +31,5 @@ npm run docs:build
 | Enable alternative grid configurations                       | 2          |
 | Enable PWA push notifications                                | 3          |
 | **LOW PRIORITY**                                             |            |
-| Parse HTML in FAQ                                            | 1          |
 | Enable autotranslate                                         | 4          |
 | Import youtube/spotify full channels                         | 4          |

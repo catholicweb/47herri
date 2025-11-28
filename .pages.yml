@@ -164,7 +164,7 @@ content:
                 list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
                 fields:
                   - { name: title, label: Pregunta, type: string }
-                  - { name: description, label: Respuesta, type: rich-text }
+                  - { name: html, label: Respuesta, type: rich-text }
           - name: gallery
             label: Galeria de imagenes
             fields:
