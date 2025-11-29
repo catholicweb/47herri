@@ -8,6 +8,10 @@ ekitaldiak:
     title: Maria sortzez garbia
     image: /media/a4ff124d345047c34d4240ed5c53e229.jpg
     location: Aldatz, Leitza, Lekunberri
+  - date: 08/12/2025 10.00
+    title: Maria sortzez garbia
+    image: /media/a4ff124d345047c34d4240ed5c53e229.jpg
+    location: Areso, Jauntsarats
 mezak:
   - date: larunbatetan 18:00 mezak
     notes: >
