@@ -36,7 +36,7 @@ ekitaldiak:
     title: AMA BIRJINAREN ZERURATZEA
     image: /media/Screenshot_20250717_211257_Gallery.jpg
   - date: 03/12/2025 10:00
-    title: S.FRANCISCO XABIER
+    title: S.Francisco Xabier
 mezak:
   - date: igandetan 10.00
     language: euskaraz
