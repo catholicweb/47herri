@@ -4,9 +4,12 @@ ekitaldiak:
     title: Izotz Pista
     image: /media/WhatsApp Image 2025-11-21 at 17.24.01.jpeg
     location: donostia
+  - date: 08/12/2025 09.00
+    title: Maria sortzez garbia
+    location: leitza
 mezak:
   - date: larunbatetan 18:00 mezak
-    notes: >+
+    notes: >
       Txandaka. Meza Arriben izango da hile bikoitietan, eta Atallun hile
       bakoitietan.
     location: Arribe/Atallu
