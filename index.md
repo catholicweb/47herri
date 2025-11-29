@@ -6,7 +6,7 @@ ekitaldiak:
     location: donostia
   - date: 08/12/2025 09.00
     title: Maria sortzez garbia
-    location: leitza
+    location: Aldatz, Leitza, Lekunberri
 mezak:
   - date: larunbatetan 18:00 mezak
     notes: >
