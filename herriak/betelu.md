@@ -52,6 +52,8 @@ ekitaldiak:
     title: "CORPUS CHRISTI "
     notes: Meza nagusiaren ondoren ohizko prozesioa burutuko da
     image: /media/Screenshot_20250616_202620_Gallery.jpg
+  - date: 03/12/2025 12:30
+    title: S.FRANCISCO XABIER
 mezak:
   - date: ostirala 11.00
     notes: Santa Kruz ermitten
