@@ -3,8 +3,6 @@ ekitaldiak:
   - date: 12/05/2025 18:45
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
-  - date: 03/12/2025 10:00
-    title: S.Francisco Xabier
 mezak:
   - date: igandetan 10.00 2. astea
     notes: Hilean behin (bigarren igandetan)
