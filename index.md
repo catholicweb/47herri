@@ -30,7 +30,8 @@ hiletak_default:
 mezak_default:
   image: /media/mass.webp
 collaborators:
-  - name: David Galarza
+  - image: /media/20251129_093926.jpg
+    name: David Galarza
     description: In solidum parrokoa (moderatzailea)
     phonenumber: 690 08 15 84
   - image: /media/Screenshot_20250404_192119_Gallery.webp
