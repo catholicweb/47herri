@@ -30,6 +30,9 @@ ekitaldiak:
     title: Maria sortzez garbia
     image: /media/a4ff124d345047c34d4240ed5c53e229.jpg
     location: Betelu, Goizueta
+  - date: 03/12/2025 11.00
+    title: S.Francisco Xabier
+    location: Areso, Ihaben
 mezak:
   - date: larunbatetan 18:00 mezak
     notes: >
