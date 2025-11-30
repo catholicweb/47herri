@@ -26,6 +26,10 @@ ekitaldiak:
     title: Maria sortzez garbia
     image: /media/a4ff124d345047c34d4240ed5c53e229.jpg
     location: arrarats
+  - date: 08/12/2025 12.30
+    title: Maria sortzez garbia
+    image: /media/a4ff124d345047c34d4240ed5c53e229.jpg
+    location: Betelu, Goizueta
 mezak:
   - date: larunbatetan 18:00 mezak
     notes: >
