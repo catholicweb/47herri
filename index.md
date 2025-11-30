@@ -19,6 +19,9 @@ ekitaldiak:
   - date: 03/12/2025 11.00
     title: S.Francisco Xabier
     location: Lekunberri, Leitza, Beruete
+  - date: 03/12/2025 09.00
+    title: S.Francisco Xabier
+    location: Aldatz, Leitza, Lekunberri
 mezak:
   - date: larunbatetan 18:00 mezak
     notes: >
