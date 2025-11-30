@@ -80,8 +80,8 @@ mezak:
   - date: Osteguna 18.00
     notes: "Osteguna eukaristikoa "
     language: elebidunean
-description: "Otoit bat ostegunero Jesús sakramentaruekin Lekumberriko komentuan "
-image: /media/images.jpeg
+description: " "
+image: /media/f0.webp
 video: 2tkabr7el28
 layout: parroquia
 locations:
