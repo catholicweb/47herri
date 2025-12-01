@@ -109,14 +109,14 @@ const goToCard = (index) => {
 <template>
   <div class="fundraising max-w-3xl mx-auto p-6 my-6">
     <div v-if="block.title" class="text-center">
-      <h2 class="my-4 text-4xl font-bold">{{ block.title }}</h2>
+      <h2 class="my-2 text-4xl font-bold">{{ block.title }}</h2>
     </div>
-    <div class="flex flex-col items-center justify-center p-4 my-2 overflow-hidden">
+    <div class="flex flex-col items-center justify-center px-4 overflow-hidden">
       <!-- 3D Carousel Container -->
-      <div class="relative w-full mt-2 max-w-6xl h-[500px] flex items-center justify-center">
+      <div class="relative w-full max-w-6xl h-[500px] flex items-center justify-center">
         <!-- Cards -->
         <div class="relative w-full" @touchstart.passive="handleTouchStart" @touchend.passive="handleTouchEnd">
-          <div v-for="(card, index) in cards" :key="card.id" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-70 transition-all duration-700 ease-out cursor-pointer" :style="getCardStyle(index)" @click="goToCard(index)">
+          <div v-for="(card, index) in cards" :key="card.id" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 transition-all duration-700 ease-out cursor-pointer" :style="getCardStyle(index)" @click="goToCard(index)">
             <div class="w-full max-w-md bg-white rounded-2xl shadow-lg overflow-hidden">
               <!-- Image Section -->
               <div class="relative aspect-16/9 overflow-hidden">
@@ -126,14 +126,14 @@ const goToCard = (index) => {
               </div>
 
               <!-- Content Section -->
-              <div class="p-6">
-                <h2 class="text-2xl font-bold text-slate-900 mb-2">{{ card.name }}</h2>
+              <div class="p-3">
+                <h2 class="text-2xl font-bold text-slate-900 mb-1">{{ card.name }}</h2>
                 <p class="text-slate-600 mb-4">{{ card.description }}</p>
 
                 <!-- Progress Stats -->
                 <div class="mb-4">
                   <div class="flex justify-between items-baseline mb-2">
-                    <span class="text-xl font-bold text-slate-900">{{ card.raised }}€</span>
+                    <span class="text-lg font-bold">{{ card.raised }}€</span>
                     <span class="text-slate-500 text-sm"> de {{ card.goal }}€</span>
                   </div>
 
