@@ -23,11 +23,10 @@ npm run docs:build
 | Improve events display (upgrade events input) | 3          |
 | Improve spacing between headers               | 1          |
 
-| **MEDIUM PRIORITY**                                       | Complexity |
-| --------------------------------------------------------- | ---------- |
-| Fix video gallery height/aspect ratio on certain elements | 2          |
-| Enable alternative grid configurations                    | 2          |
-| Enable PWA push notifications                             | 3          |
+| **MEDIUM PRIORITY**                    | Complexity |
+| -------------------------------------- | ---------- |
+| Enable alternative grid configurations | 2          |
+| Enable PWA push notifications          | 3          |
 
 | **LOW PRIORITY**                     | Complexity |
 | ------------------------------------ | ---------- |
