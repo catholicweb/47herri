@@ -4,7 +4,12 @@
   "image": "",
   "icon": "",
   "social": {},
-  "bank": [],
+  "bank": [
+    {
+      "title": "Dono a mi Iglesia",
+      "account": "https://www.donoamiiglesia.es"
+    }
+  ],
   "nav": [],
   "theme": {
     "bodyFont": "Quicksand",
