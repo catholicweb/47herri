@@ -34,7 +34,7 @@ export async function generateNav(config) {
   const nav = files.map((f) => {
     const raw = fs.readFileSync("docs/" + f, "utf8");
     const { data } = matter(raw);
-    const baseLink = f.replace(/index\.md$/, "").replace(/\.md$/, "");
+    const baseLink = "./" + f.replace(/index\.md$/, "").replace(/\.md$/, "");
 
     const items = (data.sections ?? [])
       .filter((s) => s?.title && s.title.trim() !== "")
