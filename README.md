@@ -18,15 +18,13 @@ npm run docs:build
 
 ## TODO
 
-| **HIGH PRIORITY**                                            | Complexity |
-| ------------------------------------------------------------ | ---------- |
-| Improve events display (upgrade events input)                | 3          |
-| Do something with the donate button on fundraising campaigns | 2          |
-| Improve spacing between headers                              | 1          |
+| **HIGH PRIORITY**                             | Complexity |
+| --------------------------------------------- | ---------- |
+| Improve events display (upgrade events input) | 3          |
+| Improve spacing between headers               | 1          |
 
 | **MEDIUM PRIORITY**                                       | Complexity |
 | --------------------------------------------------------- | ---------- |
-| Increase card size on maps                                | 1          |
 | Fix video gallery height/aspect ratio on certain elements | 2          |
 | Enable alternative grid configurations                    | 2          |
 | Enable PWA push notifications                             | 3          |
