@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted } from "vue";
 import { data } from "./../../blocks.data.js";
 
 const props = defineProps({
@@ -70,16 +70,8 @@ onMounted(async () => {
 
   markersLayer = L.layerGroup().addTo(map);
 
-  var redIcon = L.icon({ iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png" });
-
-  let blueIcon = L.icon({
-    iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-    iconSize: [20, 32],
-  });
-
   data.maps.forEach((m) => {
     const g = m.geo.split(",").map((s) => Number(s.trim()));
-    let config = { icon: redIcon };
     const html = `<a href="${m.url}">
                     <h3 class="text-xl font-bold text-center text-accent">
                                             ${m.name}
@@ -88,7 +80,7 @@ onMounted(async () => {
                                         <img width="100%" style="width:100%; aspect-ratio: 16/9; object-fit: cover;" loading="lazy" src="${m.image} " alt="">
                                 </div>
                         </a>`;
-    const marker = L.marker(g, config).addTo(markersLayer).bindPopup(html);
+    const marker = L.marker(g).addTo(markersLayer).bindPopup(html);
     if (m.geo != props.block.geo) {
       marker._icon.style.opacity = "0.4";
       //marker._icon.style.filter = "grayscale(1)";
@@ -99,6 +91,10 @@ onMounted(async () => {
 </script>
 
 <style>
+.leaflet-pane .leaflet-marker-pane img {
+  filter: hue-rotate(calc(var(--accent-angle) - 204deg));
+}
+
 .leaflet-popup-content-wrapper {
   padding: 0px !important;
   overflow: hidden;

@@ -126,6 +126,18 @@ function googleFont(theme, weights = "400,700", styles = "normal,italic") {
   return `${baseURL}?family=${theme.bodyFont.replace(/\s+/g, "+")}&family=${theme.headingFont.replace(/\s+/g, "+")}&display=swap`;
 }
 
+const getHue = (hex) => {
+  const r = parseInt(hex.slice(1, 3), 16) / 255;
+  const g = parseInt(hex.slice(3, 5), 16) / 255;
+  const b = parseInt(hex.slice(5, 7), 16) / 255;
+  const max = Math.max(r, g, b),
+    min = Math.min(r, g, b),
+    d = max - min;
+  if (d === 0) return 0;
+  let h = max === r ? (g - b) / d + (g < b ? 6 : 0) : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  return h * 60;
+};
+
 async function printCSS(config) {
   let css = `/* global.css or in your <style> block */
 
@@ -139,6 +151,7 @@ async function printCSS(config) {
   --border-radius-mult: ${config.theme.borderRadius};
   --border-width-mult: ${config.theme.borderWidth};
   --shadow-depth-mult: ${config.theme.shadowDepth};
+  --accent-angle: ${getHue(config.theme.accentColor)}deg;
 
     
   /* === Derived Tailwind vars (reactive) === */
