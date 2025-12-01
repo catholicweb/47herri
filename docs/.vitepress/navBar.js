@@ -29,16 +29,12 @@ const docsDir = path.resolve("./docs");
 export async function generateNav(config) {
   console.log(config, config?.nav, config?.nav?.length);
   if (config?.nav?.length) return generateManualNav(config);
-  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: docsDir, absolute: true });
+  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: docsDir, absolute: false });
 
   const nav = files.map((f) => {
-    const raw = fs.readFileSync(f, "utf8");
+    const raw = fs.readFileSync("docs/" + f, "utf8");
     const { data } = matter(raw);
-    const rel = path
-      .relative(docsDir, f)
-      .replace(/index\.md$/, "")
-      .replace(/\.md$/, "");
-    const baseLink = "/" + rel;
+    const baseLink = f.replace(/index\.md$/, "").replace(/\.md$/, "");
 
     const items = (data.sections ?? [])
       .filter((s) => s?.title && s.title.trim() !== "")
