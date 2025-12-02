@@ -1,6 +1,6 @@
 ---
 title: Portada
-image: https://cdn.pixabay.com/photo/2017/07/22/21/36/church-2530017_1280.jpg
+image: /media/church-2530017_1280.webp
 sections:
   - _block: text
     title: Crea tu propia web parroquial
@@ -39,7 +39,7 @@ sections:
       Nosotros te damos la libertad de elegir qué mostrar en tu web, y lo
       hacemos fácil y rápido. Además, personalizamos todo para que tu página
       tenga el estilo único de tu parroquia.
-          
+
 
       ### **Todo lo que necesitas, sin complicaciones**
 
@@ -76,11 +76,11 @@ sections:
     title: FAQ
     elements:
       - title: ¿Cómo puedo solicitar el sacramento del Bautismo para mi hijo/a?
-        html: Para solicitar el Bautismo, debes ponerte en
-          contacto con la parroquia al menos dos semanas antes de la fecha
-          deseada. Los padres y padrinos deben participar en una breve
-          preparación, que se puede hacer de forma presencial o online. ¡Es un
-          momento hermoso, así que asegúrate de planificar con antelación!
+        html: Para solicitar el Bautismo, debes ponerte en contacto con la parroquia al
+          menos dos semanas antes de la fecha deseada. Los padres y padrinos
+          deben participar en una breve preparación, que se puede hacer de forma
+          presencial o online. ¡Es un momento hermoso, así que asegúrate de
+          planificar con antelación!
       - title: ¿Puedo añadir preguntas y respuestas a mi web?
         html: >-
           Sí, claro. Añadir una sección de **FAQ** (preguntas frecuentes) a la
