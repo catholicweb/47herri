@@ -1,9 +1,9 @@
 <template>
-  <div v-if="block.title" class="text-center">
-    <h2 class="mt-8 text-4xl font-bold">{{ block.title }}</h2>
+  <div v-if="block.title" class="text-center pt-12 px-6">
+    <h2 class="my-2 text-4xl font-bold">{{ block.title }}</h2>
   </div>
 
-  <div class="video" :class="block.grid">
+  <div class="video mb-8" :class="block.grid">
     <div v-for="(item, i) in block.elements" :key="i">
       <div class="rounded-lg overflow-hidden cursor-pointer aspect-[16/9]">
         <div v-if="playingVideo === item.src" class="w-full h-full items-center">

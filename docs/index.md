@@ -68,7 +68,7 @@ sections:
   - _block: fundraising
     title: Añade campañas de financiación
     name: Tejado parroquial!
-    description: Necestimaos un nuevo tejado en la parroquia.....
+    description: Necestimaos un nuevo tejado en la parroquia...
     raised: 3500
     goal: 40000
     image: https://cdn.pixabay.com/photo/2016/08/31/14/35/saint-pierre-1633682_1280.jpg
