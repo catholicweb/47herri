@@ -181,6 +181,7 @@ content:
               - { name: title, type: string, label: Titulo sección }
               - { name: readings, label: Mostrar primera/segunda y salmo, type: boolean, default: false }
               - { name: audio, label: Añadir audio, type: boolean, default: false }
+              - { name: images, label: Mostrar imagenes, type: boolean, default: true }
           - name: calendar
             label: Eventos
             fields:
