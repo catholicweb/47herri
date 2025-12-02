@@ -249,7 +249,8 @@ content:
         fields:
           - { name: title, label: Nombre del difunto, type: string }
           - { name: location, label: Ubicación, component: location }
-          - { name: date, type: date, label: Fecha y hora, options: { time: true, format: dd/MM/yyyy HH:mm, step: "300" } }
+          - { name: date, type: date, label: Fecha del funeral }
+          - { name: times, label: Horas, component: times, options: { multiple: false }}
       - name: events-masses
         label: Horario de misas
         type: object
