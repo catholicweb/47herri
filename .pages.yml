@@ -292,7 +292,8 @@ content:
           - { name: image, label: Image, type: image }
           - { name: title, label: Titulo, type: string }
           - { name: location, label: Ubicación, component: location }
-          - { name: date, type: date, label: Fecha y hora de inicio, options: { time: true, format: dd/MM/yyyy HH:mm, step: 300 } }
+          - { name: date, type: date, label: Fechas, list: { collapsible: { collapsed: true } } }
+          - { name: times, label: Hora de fin, component: times, options: { multiple: false }}
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
           - { name: except, type: date, label: Excepto, options: { format: dd/MM/yyyy }, list: { collapsible: { collapsed: true } } }
       - { name: urls, type: string, list: true, label: Calendarios externos a importar (ej. url de Google Calendar terminada en .ics) }
