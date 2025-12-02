@@ -250,7 +250,7 @@ content:
           - { name: title, label: Nombre del difunto, type: string }
           - { name: location, label: Ubicación, component: location }
           - { name: date, type: date, label: Fecha del funeral }
-          - { name: times, label: Horas, component: times, options: { multiple: false }}
+          - { name: times, label: Hora del funeral, component: times, options: { multiple: false }}
       - name: events-masses
         label: Horario de misas
         type: object
@@ -261,6 +261,19 @@ content:
           - { name: times, label: Horas, component: times }
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
           - { name: except, type: date, label: Excepto, options: { format: dd/MM/yyyy }, list: { collapsible: { collapsed: true } } }
+      - name: events-feast
+        label: Festividades especiales
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+        fields:
+        - { name: title, label: "Nombre festividad (ej: Navidad, Pascua...)", type: string }
+        - { name: date, type: date, label: Fecha de la festividad }
+        - { name: image, label: "Image", type: image }
+        - name: Celebraciones
+          list: { collapsible: { collapsed: true, summary: "{fields.location} - {fields.times}" } }
+          fields:
+            - { name: location, label: Ubicación, component: location }
+            - { name: times, label: Horas, component: times }
       - name: events-group
         label: Catequesis
         type: object
