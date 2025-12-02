@@ -70,7 +70,7 @@ components:
     options:
       multiple: true
       creatable: true
-      values: ["a", "b"]
+      values: ["Parroquia Nª Sra Asunción", "Ermita Virgen del Olmo"]
   rrule:
     label: Fechas
     type: select
@@ -270,7 +270,7 @@ content:
         - { name: date, type: date, label: Fecha de la festividad }
         - { name: image, label: "Image", type: image }
         - name: Celebraciones
-          list: { collapsible: { collapsed: true, summary: "-------------------------" } }
+          list: { collapsible: { collapsed: true, summary: "{fields.location}" } }
           fields:
             - { name: location, label: Ubicación, component: location }
             - { name: times, label: Horas, component: times }
