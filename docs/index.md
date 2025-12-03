@@ -63,7 +63,7 @@ sections:
       - https://cdn.pixabay.com/photo/2017/07/22/21/36/church-2530017_1280.jpg
   - _block: gospel
     title: Muestra el evangelio del día
-    readings: true
+    readings: false
     audio: false
     images: true
   - _block: fundraising
