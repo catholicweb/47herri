@@ -62,7 +62,7 @@ sections:
       - https://cdn.pixabay.com/photo/2012/10/03/12/58/catholic-parish-church-59093_1280.jpg
       - https://cdn.pixabay.com/photo/2017/07/22/21/36/church-2530017_1280.jpg
   - _block: gospel
-    title: Muestra el evangelio del día
+    title: Lecturas.
     readings: false
     audio: false
     images: true
