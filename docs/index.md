@@ -113,6 +113,10 @@ sections:
       - https://open.spotify.com/show/2stzE1aIR8elv3tEIHNosr?si=f5f8c6b65d82421a
       - https://youtube.com/playlist?list=PL2fBaIU3WZ23ahmPx34yYXDu3yrp-yASO
       - https://youtube.com/playlist?list=PLco5FD9I9WmIbbQTBKMqaMq1kjwiZoO6B
+      - https://open.spotify.com/show/2z0RRDpp9rP6urEwdBrGpe?si=256c183f69e0457f
+      - https://open.spotify.com/show/1OUhu57FCAscICoEMwyONY?si=5f7ea6ad49394828
+      - https://open.spotify.com/show/6FJFJ46Q4aPXIWWDKY9tYf?si=c17c97479bbb4fbe
+      - https://open.spotify.com/show/6mpihPJzRA61GEdomhzGqq?si=b59a6acf96104988
   - _block: map
     title: Conócenos
     geo: 42.80194, -1.645660
