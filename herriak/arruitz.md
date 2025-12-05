@@ -7,6 +7,8 @@ ekitaldiak:
     title: SAN MIGELEN AGERPENA
     notes: San Migeltxo eta Santa Luzia ermitan
     image: /media/Screenshot_20250430_185407_YouTube.webp
+  - date: 14/12/2025 12:30
+    title: "Santa Lucía "
 mezak:
   - language: euskaraz
 image: /media/Screenshot_20250330_000339_YouTube.webp
