@@ -6,6 +6,8 @@ ekitaldiak:
   - date: 29/06/2025 11:00
     title: SAN PEDRO
     image: /media/Screenshot_20250626_093633_YouTube.jpg
+  - date: 08/12/2025 12:30
+    title: "Inmaculada "
 image: /media/Screenshot_20250405_182111_YouTube.webp
 video: DHwAmkBhea0
 layout: parroquia
