@@ -7,7 +7,8 @@ ekitaldiak:
     title: SAN PEDRO
     image: /media/Screenshot_20250626_093633_YouTube.jpg
   - date: 08/12/2025 12:30
-    title: "Inmaculada "
+    title: Maria Sortzez Garbia
+    image: /media/a4ff124d345047c34d4240ed5c53e229.jpg
 image: /media/Screenshot_20250405_182111_YouTube.webp
 video: DHwAmkBhea0
 layout: parroquia
