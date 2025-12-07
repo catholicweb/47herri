@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 07/12/2025 17.00
+    name: Lorentza Gorostegi Zabala
 ekitaldiak:
   - date: 27/04/2025 12:30
     title: SANTA ENGRAZIA
