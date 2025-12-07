@@ -1,4 +1,7 @@
 ---
+hiletak:
+  - date: 08/12/2025 16.30
+    name: Mª Esperanza López Valles
 ekitaldiak:
   - date: 22/04/2025 12:45
     title: SAN MIGELEN BISITA
