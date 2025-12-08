@@ -71,6 +71,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           EVENT_NAME: ${{ github.event_name }}
           EVENT_SCHEDULE: ${{ github.event.schedule }}
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
       - name: Build with VitePress
         run: npm run docs:build
       - name: Upload artifact

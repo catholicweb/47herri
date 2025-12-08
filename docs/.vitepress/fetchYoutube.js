@@ -16,7 +16,7 @@ let newImportantVideos = [];
 
 if (!API_KEY) {
   console.error("Error: La API Key no está definida. Asegúrate de exportarla.");
-  process.exit(1);
+  return;
 }
 console.log("Fetching videos...");
 
