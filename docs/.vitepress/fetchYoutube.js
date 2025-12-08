@@ -14,12 +14,6 @@ function readFrontmatter(filePath) {
 const API_KEY = process.env.YT_API_KEY; // Leer API Key de env
 let newImportantVideos = [];
 
-if (!API_KEY) {
-  console.error("Error: La API Key no está definida. Asegúrate de exportarla.");
-  return;
-}
-console.log("Fetching videos...");
-
 async function getUploadsPlaylistId(CHANNEL_ID) {
   const url = `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${CHANNEL_ID}&key=${API_KEY}`;
 
@@ -199,6 +193,11 @@ async function getChannelIdFromUrl(channelUrl) {
 
 (async () => {
   try {
+    if (!API_KEY) {
+      console.error("Error: La API Key no está definida. Asegúrate de exportarla.");
+      return;
+    }
+    console.log("Fetching videos...");
     const config = readFrontmatter("./docs/config.json");
     let videos = await loadCachedVideos("./docs/public/videos.json");
     const CHANNEL_ID = await getChannelIdFromUrl(config.social.youtube);
