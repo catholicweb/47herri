@@ -3,7 +3,9 @@
   "description": "Descripción del sitio",
   "image": "",
   "icon": "",
-  "social": {},
+  "social": {
+    "youtube": "https://www.youtube.com/@seminariopamplona"
+  },
   "bank": [
     {
       "title": "Dono a mi Iglesia",
