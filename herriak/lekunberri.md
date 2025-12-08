@@ -12,6 +12,8 @@ hiletak:
     name: ANDRES LEANDRO MESA MEJIA
   - date: 22/11/2025 18.30
     name: María Susana Eguzkiza Etxarri
+  - date: 09/12/2025 18.30
+    name: "Mikeli Ezkurdia Otamendi "
 ekitaldiak:
   - date: 17/04/2025 18:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
