@@ -20,7 +20,7 @@ const docsDir = path.resolve("./docs");
 export async function generateNav(config) {
   console.log(config, config?.nav, config?.nav?.length);
   if (config?.nav?.length) return generateManualNav(config);
-  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: docsDir, absolute: false });
+  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: docsDir, absolute: false, onlyFiles: true, deep: 0 });
 
   const nav = files.map((f) => {
     const raw = fs.readFileSync("docs/" + f, "utf8");

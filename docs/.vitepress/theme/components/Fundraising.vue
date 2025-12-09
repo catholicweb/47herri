@@ -146,11 +146,11 @@ const goToCard = (index) => {
                 </div>
                 <!-- Action Buttons -->
                 <div class="flex gap-3">
-                  <button @click.stop="donate = true" v-if="donate == false || index != currentIndex" class="flex-1 bg-accent text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg hover:scale-101 transition-all duration-200 cursor-pointer">Donar</button>
+                  <button @click.stop="donate = true" v-if="donate == false || index != currentIndex" class="flex-1 bg-accent text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg hover:scale-101 transition-all duration-200 cursor-pointer">{{ card.actionName }}</button>
 
                   <div v-else v-for="bank in config.bank" class="text-accent">
                     <p v-if="bank.account.includes('https://')">
-                      <strong>{{ bank.title }}: </strong><a :href="bank.account">Donar</a>
+                      <strong>{{ bank.title }}: </strong><a :href="bank.account">{{ card.actionName }}</a>
                     </p>
                     <p v-else>
                       <strong>{{ bank.title }}: </strong>{{ bank.account }}
