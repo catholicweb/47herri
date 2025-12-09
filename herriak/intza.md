@@ -2,6 +2,8 @@
 hiletak:
   - date: 18/07/2025 17.00
     name: MARTIN MANUEL OTERMIN
+  - date: 10/12/2025 16.30
+    name: "Imanol De Marcos Ibáñez "
 ekitaldiak:
   - date: 21/04/2025 19:30
     title: SAN MIGELEN BISITA
