@@ -241,7 +241,7 @@ content:
               - { name: description, type: string, label: Descripcion }
               - { name: raised, type: number, label: Recaudado hasta la fecha }
               - { name: goal, type: number, label: Total a recaudar }
-              - { name: actionName, type: string, label: Nombre acción, hidden: true, default: Donar }
+              - { name: action, type: string, label: Nombre acción, hidden: true, default: Donar }
               - { name: image, type: image, label: Imagen }
           - name: hero
             label: Cabezera de sección

@@ -12,6 +12,7 @@
       "account": "https://www.donoamiiglesia.es"
     }
   ],
+  "languages": ["Español", "Catalán", "Gallego", "Euskera", "Inglés"],
   "nav": [],
   "theme": {
     "bodyFont": "Quicksand",

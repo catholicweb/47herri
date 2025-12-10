@@ -4,8 +4,18 @@ import path from "path";
 import matter from "gray-matter";
 
 const dictPath = "./docs/public/dictionary.json";
-const keysToExtract = ["description", "html", "title", "name", "actionName"];
+const keysToExtract = ["description", "html", "title", "name", "action"];
 const valueSet = new Set();
+
+function readFrontmatter(filePath) {
+  if (!fs.existsSync(filePath)) return {};
+  const content = fs.readFileSync(filePath, "utf8");
+
+  if (filePath.endsWith(".json")) {
+    return JSON.parse(content || "{}");
+  }
+  return matter(content).data || {};
+}
 
 // Añade esta función para recorrer objetos recursivamente
 function extractValues(obj, keys) {
@@ -22,11 +32,12 @@ function extractValues(obj, keys) {
 }
 
 async function run() {
-  const docsDir = path.resolve("./docs");
-  const files = await fg(["*.md", "!aviso-legal.md"], { cwd: docsDir, absolute: false });
+  const files = await fg(["*.md", "!aviso-legal.md"], { cwd: "./pages", absolute: false });
+
+  let config = readFrontmatter("./pages/config.json");
 
   for (const file of files) {
-    const content = fs.readFileSync("./docs/" + file, "utf-8");
+    const content = fs.readFileSync("./pages/" + file, "utf-8");
     const parsed = matter(content);
     const values = extractValues(parsed.data, keysToExtract);
     values.forEach((v) => valueSet.add(v));
@@ -38,7 +49,8 @@ async function run() {
   }
   // Convertir a array
   const valuesArray = [...valueSet];
-  for (const lang of ["basque", "english"]) {
+  let languages = config.languages?.length ? config.languages : ["Español"];
+  for (const lang of languages) {
     await translateMissing(valuesArray, lang);
   }
 }
@@ -47,18 +59,46 @@ async function run() {
 
 const dictionary = fs.existsSync(dictPath) ? JSON.parse(fs.readFileSync(dictPath, "utf-8")) : {};
 
+function getCode(lang) {
+  const languageToCodeMap = {
+    // Romance Languages (Ibero-Romance)
+    Español: "es", // Spanish
+    Catalán: "ca", // Catalan
+    Gallego: "ga", // Galician
+    Portugués: "pt", // Portuguese
+    Rumano: "ro", // Romanian
+
+    // Germanic Languages
+    Inglés: "en", // English
+    Alemán: "de", // German
+
+    // Other European Languages
+    Euskera: "eus", // Basque
+    Francés: "fr", // French
+    Italiano: "it", // Italian
+    Búlgaro: "bg", // Bulgarian
+    Polaco: "pl", // Polish
+
+    // Other Global Languages
+    Árabe: "ar", // Arabic
+    Chino: "zh", // Chinese (often zh-Hans or zh-Hant is preferred for clarity)
+  };
+  return languageToCodeMap[lang] || lang.slice(0, 2).toLowerCase();
+}
+
 // Traducir entradas faltantes
 async function translateMissing(valuesArray, language) {
-  if (!dictionary[language]) dictionary[language] = {};
+  let code = getCode(language);
+  if (!dictionary[code]) dictionary[code] = {};
 
-  const missing = valuesArray.filter((phrase) => !dictionary[language][phrase]);
+  const missing = valuesArray.filter((phrase) => !dictionary[code][phrase]);
 
   const translations = await translateWithOpenAI(missing, language);
 
   console.log("translations", translations);
 
   missing.forEach((text, index) => {
-    dictionary[language][text] = translations[index];
+    dictionary[code][text] = translations[index];
   });
 
   // Guardar actualizaciones
