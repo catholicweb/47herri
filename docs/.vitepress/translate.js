@@ -6,6 +6,7 @@ import matter from "gray-matter";
 const dictPath = "./docs/public/dictionary.json";
 const keysToExtract = ["description", "html", "title", "name", "action"];
 const valueSet = new Set();
+const dictionary = fs.existsSync(dictPath) ? JSON.parse(fs.readFileSync(dictPath, "utf-8")) : {};
 
 function readFrontmatter(filePath) {
   if (!fs.existsSync(filePath)) return {};
@@ -31,64 +32,9 @@ function extractValues(obj, keys) {
   return results;
 }
 
-async function run() {
-  const files = await fg(["*.md", "!aviso-legal.md"], { cwd: "./pages", absolute: false });
-
-  let config = readFrontmatter("./pages/config.json");
-
-  for (const file of files) {
-    const content = fs.readFileSync("./pages/" + file, "utf-8");
-    const parsed = matter(content);
-    const values = extractValues(parsed.data, keysToExtract);
-    values.forEach((v) => valueSet.add(v));
-
-    if (parsed.content?.trim()) {
-      let bits = parsed.content.trim().split("\n");
-      bits.forEach((b) => valueSet.add(b));
-    }
-  }
-  // Convertir a array
-  const valuesArray = [...valueSet];
-  let languages = config.languages?.length ? config.languages : ["Español"];
-  for (const lang of languages) {
-    await translateMissing(valuesArray, lang);
-  }
-}
-
-// Cargar diccionario existente (o inicializarlo)
-
-const dictionary = fs.existsSync(dictPath) ? JSON.parse(fs.readFileSync(dictPath, "utf-8")) : {};
-
-function getCode(lang) {
-  const languageToCodeMap = {
-    // Romance Languages (Ibero-Romance)
-    Español: "es", // Spanish
-    Catalán: "ca", // Catalan
-    Gallego: "ga", // Galician
-    Portugués: "pt", // Portuguese
-    Rumano: "ro", // Romanian
-
-    // Germanic Languages
-    Inglés: "en", // English
-    Alemán: "de", // German
-
-    // Other European Languages
-    Euskera: "eus", // Basque
-    Francés: "fr", // French
-    Italiano: "it", // Italian
-    Búlgaro: "bg", // Bulgarian
-    Polaco: "pl", // Polish
-
-    // Other Global Languages
-    Árabe: "ar", // Arabic
-    Chino: "zh", // Chinese (often zh-Hans or zh-Hant is preferred for clarity)
-  };
-  return languageToCodeMap[lang] || lang.slice(0, 2).toLowerCase();
-}
-
 // Traducir entradas faltantes
 async function translateMissing(valuesArray, language) {
-  let code = getCode(language);
+  let code = language;
   if (!dictionary[code]) dictionary[code] = {};
 
   const missing = valuesArray.filter((phrase) => !dictionary[code][phrase]).slice(0, 10);
@@ -151,4 +97,30 @@ async function translateWithOpenAI(missing, language) {
   return JSON.parse(data.choices[0].message.content).translations;
 }
 
-run();
+(async () => {
+  try {
+    // Get values
+    const files = await fg(["*.md", "!aviso-legal.md"], { cwd: "./pages", absolute: false });
+    for (const file of files) {
+      const content = fs.readFileSync("./pages/" + file, "utf-8");
+      const parsed = matter(content);
+      const values = extractValues(parsed.data, keysToExtract);
+      values.forEach((v) => valueSet.add(v));
+
+      if (parsed.content?.trim()) {
+        let bits = parsed.content.trim().split("\n");
+        bits.forEach((b) => valueSet.add(b));
+      }
+    }
+    const valuesArray = [...valueSet];
+
+    //
+    let config = readFrontmatter("./pages/config.json");
+    let languages = config.languages?.length ? config.languages : ["Español"];
+    for (const lang of languages) {
+      await translateMissing(valuesArray, lang);
+    }
+  } catch (error) {
+    console.error("Error loading translating data:", error);
+  }
+})();

@@ -7,11 +7,11 @@ import { slugify } from "./helpers.js";
 
 const ROOT = "./pages/";
 const OUT = "./docs/";
-const DICTIONARY = readFrontmatter("./docs/public/dictionary.json");
+const DICTIONARY = read("./docs/public/dictionary.json");
 
-const config = readFrontmatter("./pages/config.json");
+const config = read("./pages/config.json");
 // Lista de lenguas a generar
-const TARGET_LANGS = (config.languages?.length ? config.languages : ["Español"]).map(getCode);
+const TARGET_LANGS = config.languages?.length ? config.languages : ["Español"];
 
 // Campos que quieres traducir
 const FIELDS = ["title", "description", "html", "name", "action"];
@@ -21,14 +21,14 @@ function translateValue(value, dict) {
   return value;
 }
 
-function readFrontmatter(filePath, fallback = {}) {
+function read(filePath, fallback = {}) {
   if (!fs.existsSync(filePath)) return {};
   const content = fs.readFileSync(filePath, "utf8");
 
   if (filePath.endsWith(".json")) {
     return JSON.parse(content || `${fallback}`);
   }
-  return matter(content).data || fallback;
+  return matter(content) || fallback;
 }
 
 // Recursivo
@@ -48,10 +48,42 @@ function translateObject(obj, dict) {
   return obj;
 }
 
+async function write(filename, data) {
+  let outContent = {};
+  if (filename.endsWith(".md")) {
+    outContent = matter.stringify(data.content || "", data.data || {}, { language: "yaml", yamlOptions: { lineWidth: -1 } });
+  } else {
+    outContent = JSON.stringify(data);
+  }
+  fs.mkdirSync(path.dirname(filename), { recursive: true });
+  fs.writeFileSync(filename, outContent, "utf8");
+}
+
 async function cleanDir(dir) {
   const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: OUT, absolute: true });
   for (const file of files) {
-    fs.unlinkSync(file);
+    try {
+      const data = read(file, {}).data;
+      const source = read(data.source, {}).data;
+      const targetUrl = filename(file, source.title, data.lang) + ".md";
+      const redirect = {
+        source: data.source,
+        lang: data.lang,
+        head: [
+          [
+            "meta",
+            {
+              "http-equiv": "refresh",
+              content: `0; url=${targetUrl}`,
+            },
+          ],
+        ],
+      };
+      write(file, { data: redirect });
+    } catch (e) {
+      console.log(e);
+      fs.unlinkSync(file);
+    }
   }
 }
 
@@ -83,7 +115,7 @@ function getCode(lang) {
 }
 
 function filename(file, title, lang) {
-  let code = TARGET_LANGS[0] == lang ? "" : lang + "/";
+  let code = TARGET_LANGS[0] == lang ? "" : getCode(lang) + "/";
   if (path.basename(file) == "index.md") return code + path.parse(file).name;
   const dict = DICTIONARY[lang] || {};
   return code + slugify(translateValue(title, dict));
@@ -91,17 +123,18 @@ function filename(file, title, lang) {
 
 async function run() {
   await cleanDir("./docs/");
-  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: ROOT, absolute: true });
+  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: ROOT, absolute: false });
 
   for (const file of files) {
-    const original = matter.read(file);
+    const original = read(ROOT + file);
 
     for (const lang of TARGET_LANGS) {
       const dict = DICTIONARY[lang] || {};
       const translatedData = translateObject(original.data, dict);
       translatedData.lang = lang;
+      translatedData.source = ROOT + file;
       translatedData.equiv = TARGET_LANGS.map((lan) => {
-        return { lang: lan, href: "/" + filename(file, original.data.title, lan) };
+        return { lang: lan, href: "/" + filename(file, original.data.title, lan), code: getCode(lan) };
       });
 
       const outContent = matter.stringify(original.content, translatedData, { language: "yaml", yamlOptions: { lineWidth: -1 } });

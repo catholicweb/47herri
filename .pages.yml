@@ -37,7 +37,7 @@ components:
     type: select
     options:
       multiple: true
-      values: ["Español", "Catalán", "Gallego", "Euskera", "Inglés", "Francés", "Alemán", "Italiano", "Portugués", "Rumano", "Árabe", "Chino", "Búlgaro", "Polaco"]
+      values: ["Español", "Català", "Galego", "Euskara", "English", "Français", "Deutsch", "Italiano", "Português", "Română", "العربية", "中文", "Български", "Polski"]
   font:
     label: Tipo letra
     type: select
