@@ -133,7 +133,8 @@ function addMeta(fm, config) {
   fm.head.push(["meta", { property: "og:title", content: fm.title || config.title }]);
   fm.head.push(["meta", { property: "og:description", content: fm.description || config.description }]);
   fm.head.push(["meta", { property: "og:image", content: absoluteURL(fm.image || config.image, config) }]);
-  fm.head.push(["name", { property: "twitter:card", content: absoluteURL(fm.image || config.image, config) }]);
+  fm.head.push(["name", { property: "twitter:card", content: "summary_large_image" }]);
+  fm.head.push(["name", { property: "twitter:image", content: absoluteURL(fm.image || config.image, config) }]);
 
   if (!fm?.equiv) return;
   for (var i = 0; i < fm.equiv.length; i++) {
