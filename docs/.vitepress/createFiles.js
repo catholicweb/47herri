@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import fg from "fast-glob";
 import matter from "gray-matter";
-import yaml from "js-yaml";
 import { slugify } from "./helpers.js";
 
 const ROOT = "./pages/";
@@ -11,7 +10,7 @@ const DICTIONARY = read("./docs/public/dictionary.json");
 
 const config = read("./pages/config.json");
 // Lista de lenguas a generar
-const TARGET_LANGS = config.languages?.length ? config.languages : ["Español"];
+const TARGET_LANGS = config.languages?.length ? config.languages : ["Español:es"];
 
 // Campos que quieres traducir
 const FIELDS = ["title", "description", "html", "name", "action"];
@@ -65,7 +64,7 @@ async function cleanDir(dir) {
     try {
       const data = read(file, {}).data;
       const source = read(data.source, {}).data;
-      const targetUrl = filename(file, source.title, data.lang) + ".md";
+      const targetUrl = "/" + filename(file, source.title, data.lang).replace("index", "");
       const redirect = {
         source: data.source,
         lang: data.lang,
@@ -88,30 +87,7 @@ async function cleanDir(dir) {
 }
 
 function getCode(lang) {
-  const languageToCodeMap = {
-    // Romance Languages (Ibero-Romance)
-    Español: "es", // Spanish
-    Catalán: "ca", // Catalan
-    Gallego: "ga", // Galician
-    Portugués: "pt", // Portuguese
-    Rumano: "ro", // Romanian
-
-    // Germanic Languages
-    Inglés: "en", // English
-    Alemán: "de", // German
-
-    // Other European Languages
-    Euskera: "eus", // Basque
-    Francés: "fr", // French
-    Italiano: "it", // Italian
-    Búlgaro: "bg", // Bulgarian
-    Polaco: "pl", // Polish
-
-    // Other Global Languages
-    Árabe: "ar", // Arabic
-    Chino: "zh", // Chinese (often zh-Hans or zh-Hant is preferred for clarity)
-  };
-  return languageToCodeMap[lang] || lang.slice(0, 2).toLowerCase();
+  return lang.split(":")[1] || lang.slice(0, 2).toLowerCase();
 }
 
 function filename(file, title, lang) {
@@ -134,7 +110,7 @@ async function run() {
       translatedData.lang = lang;
       translatedData.source = ROOT + file;
       translatedData.equiv = TARGET_LANGS.map((lan) => {
-        return { lang: lan, href: "/" + filename(file, original.data.title, lan), code: getCode(lan) };
+        return { lang: lan, href: "/" + filename(file, original.data.title, lan) };
       });
 
       const outContent = matter.stringify(original.content, translatedData, { language: "yaml", yamlOptions: { lineWidth: -1 } });

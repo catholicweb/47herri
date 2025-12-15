@@ -3,16 +3,15 @@
   "description": "Descripción del sitio",
   "image": "",
   "icon": "",
-  "social": {
-    "youtube": "https://www.youtube.com/@seminariopamplona"
-  },
+  "social": ["https://www.youtube.com/@seminariopamplona"],
   "bank": [
     {
       "title": "Dono a mi Iglesia",
       "account": "https://www.donoamiiglesia.es"
     }
   ],
-  "languages": ["Español", "Català", "Galego", "Euskara", "English"],
+  "siteurl": "https://parroquia.app",
+  "languages": ["Español:es", "Català:ca", "Galego:gl", "Euskara:eu", "English:en"],
   "nav": [],
   "theme": {
     "bodyFont": "Quicksand",
