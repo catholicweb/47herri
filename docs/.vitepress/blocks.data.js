@@ -1,5 +1,4 @@
-import fg from "fast-glob";
-import { read, write } from "./node_helpers.js";
+import { read, write, fg } from "./node_helpers.js";
 
 export default {
   async load() {
@@ -10,7 +9,7 @@ export default {
     const files = await fg("**/*.md", { cwd: "./docs", absolute: false });
 
     for (const file of files) {
-      const content = read("./docs/" + file).data;
+      const { data } = read("./docs/" + file);
       // Chequea si existe data.sections._block
       if (data.sections && Array.isArray(data.sections)) {
         data.sections.forEach((section) => {

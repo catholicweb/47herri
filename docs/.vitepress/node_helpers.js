@@ -5,6 +5,10 @@ import matter from "gray-matter";
 
 export { fg };
 
+export { path };
+
+export { fs };
+
 export function read(filename, fallback = {}) {
   if (!fs.existsSync(filename)) return {};
   const content = fs.readFileSync(filename, "utf8");

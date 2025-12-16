@@ -1,8 +1,4 @@
-import fs from "fs";
-import path from "path";
-import fg from "fast-glob";
-import matter from "gray-matter";
-import { read, write } from "./node_helpers.js";
+import { read, write, fg, fs, path } from "./node_helpers.js";
 import { slugify } from "./helpers.js";
 
 const ROOT = "./pages/";
@@ -12,7 +8,6 @@ const DICTIONARY = read("./docs/public/dictionary.json");
 const config = read("./pages/config.json");
 // Lista de lenguas a generar
 const TARGET_LANGS = config.languages?.length ? config.languages : ["Español:es"];
-
 // Campos que quieres traducir
 const FIELDS = ["title", "description", "html", "name", "action"];
 
@@ -45,7 +40,7 @@ function translateObject(obj, dict) {
 }
 
 async function cleanDir(dir) {
-  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: OUT, absolute: true });
+  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: dir, absolute: true });
   for (const file of files) {
     try {
       const data = read(file, {}).data;
@@ -75,7 +70,7 @@ function filename(file, title, lang) {
 }
 
 async function run() {
-  await cleanDir("./docs/");
+  await cleanDir(OUT);
   const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: ROOT, absolute: false });
 
   for (const file of files) {

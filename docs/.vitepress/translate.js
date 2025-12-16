@@ -3,7 +3,7 @@ import { read, write, fg } from "./node_helpers.js";
 const dictPath = "./docs/public/dictionary.json";
 const keysToExtract = ["description", "html", "title", "name", "action"];
 const valueSet = new Set();
-const dictionary = read(dictPath, {});
+const dictionary = read(dictPath);
 
 // Añade esta función para recorrer objetos recursivamente
 function extractValues(obj, keys) {

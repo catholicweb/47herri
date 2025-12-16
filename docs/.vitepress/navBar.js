@@ -1,7 +1,5 @@
-import fg from "fast-glob";
-import path from "path";
 import { slugify } from "./helpers.js";
-import { read, write } from "./node_helpers.js";
+import { read, write, fg, path } from "./node_helpers.js";
 
 const docsDir = path.resolve("./docs");
 
@@ -11,7 +9,7 @@ export async function generateNav(config) {
   // Otherwise, generate automatically
   const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: docsDir, absolute: false });
   const nav = files.reduce((acc, f) => {
-    const data = read(`docs/${f}`).data;
+    const { data } = read(`docs/${f}`);
     if (!data.lang) return acc;
 
     const base = "/" + f.replace(/index\.md$/, "").replace(/\.md$/, "");
