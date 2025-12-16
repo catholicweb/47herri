@@ -21,7 +21,7 @@ export default {
             section.lang = data.lang;
             section.image = section.image || data.image;
             section.name = section.name || data.title;
-            section.url = "./" + file.replace(/index\.md$/, "").replace(/\.md$/, "");
+            section.url = "/" + file.replace(/index\.md$/, "").replace(/\.md$/, "");
             maps.push(section);
           }
         });
