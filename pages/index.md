@@ -136,9 +136,9 @@ sections:
   - _block: links
     title: Links a a otras secciones interesantes
     links:
-      - docs/index.md
-      - docs/ermita.md
-      - docs/index.md
-      - docs/san-frutos.md
-      - docs/ermita.md
+      - pages/index.md
+      - pages/ermita.md
+      - pages/index.md
+      - pages/san-frutos.md
+      - pages/ermita.md
 ---
