@@ -13,8 +13,6 @@ const DICTIONARY = read("./docs/public/dictionary.json");
 const config = read("./pages/config.json");
 // Lista de lenguas a generar
 const TARGET_LANGS = config.languages?.length ? config.languages : ["Español:es"];
-// Campos que quieres traducir
-const FIELDS = ["title", "description", "html", "name", "action"];
 import MarkdownIt from "markdown-it";
 import sharp from "sharp";
 
