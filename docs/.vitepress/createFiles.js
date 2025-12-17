@@ -1,6 +1,10 @@
-import { read, write, fg, fs, path } from "./node_helpers.js";
-import { slugify } from "./helpers.js";
+import { read, write, fg, fs, path } from "./node_utils.js";
+import { slugify } from "./utils.js";
 import { getPreview } from "./oembed.js";
+import { fetchVideos } from "./youtube.js";
+import { buildDictionary, translateObject, translateValue } from "./translate.js";
+import { createImages } from "./images.js";
+import { fetchUpstream, commit } from "./git.js";
 
 const ROOT = "./pages/";
 const OUT = "./docs/";
@@ -16,7 +20,7 @@ import sharp from "sharp";
 
 const md = new MarkdownIt({ html: true, linkify: true });
 
-async function createManifest(config) {
+async function createManifest() {
   let manifest = {
     name: config.title,
     short_name: config.title,
@@ -51,7 +55,7 @@ async function createManifest(config) {
     .toFile(`./docs/public/favicon.ico`);
 }
 
-async function postComplete(fm, config) {
+async function postComplete(fm) {
   if (!fm.sections) return;
   for (var i = 0; i < fm.sections.length; i++) {
     if (typeof fm.sections[i].html === "string") {
@@ -75,10 +79,10 @@ async function postComplete(fm, config) {
   }
 }
 
-async function autocomplete(fm, config) {
+async function autocomplete(fm) {
   console.log("autocomplete: ", fm.title);
   if (!fm.sections) return;
-  addMeta(fm, config);
+  addMeta(fm);
   for (var i = 0; i < fm.sections.length; i++) {
     fm.sections[i].index = i;
     if (fm.sections[i].links) {
@@ -123,7 +127,7 @@ function grid(section) {
   return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-full *:sm:w-1/2 *:md:w-1/3 *:p-2 px-2";
 }
 
-function absoluteURL(url, config) {
+function absoluteURL(url) {
   if (url.startsWith("/")) {
     const siteurl = config.siteurl || "";
     return siteurl + url;
@@ -131,48 +135,20 @@ function absoluteURL(url, config) {
   return url;
 }
 
-function addMeta(fm, config) {
+function addMeta(fm) {
   fm.head ??= [];
   fm.head.push(["meta", { property: "og:type", content: "website" }]);
   fm.head.push(["meta", { property: "og:title", content: fm.title || config.title }]);
   fm.head.push(["meta", { property: "og:description", content: fm.description || config.description }]);
-  fm.head.push(["meta", { property: "og:image", content: absoluteURL(fm.image || config.image, config) }]);
+  fm.head.push(["meta", { property: "og:image", content: absoluteURL(fm.image || config.image) }]);
   fm.head.push(["name", { property: "twitter:card", content: "summary_large_image" }]);
-  fm.head.push(["name", { property: "twitter:image", content: absoluteURL(fm.image || config.image, config) }]);
+  fm.head.push(["name", { property: "twitter:image", content: absoluteURL(fm.image || config.image) }]);
 
   if (!fm?.equiv) return;
   for (var i = 0; i < fm.equiv.length; i++) {
     const hreflang = i == 0 ? "x-default" : fm.equiv[i].lang.split(":").pop();
-    fm.head.push(["link", { rel: "alternate", hreflang, href: absoluteURL(fm.equiv[i].href, config).replace(/index$/, "") }]);
+    fm.head.push(["link", { rel: "alternate", hreflang, href: absoluteURL(fm.equiv[i].href).replace(/index$/, "") }]);
   }
-}
-
-function translateValue(value, dict) {
-  if (typeof value === "string") {
-    const list = value
-      .replace(/\n +\n/g, "\n\n")
-      .split("\n\n")
-      .map((s) => s.trim());
-    return list.map((v) => dict[v] || v).join("\n\n");
-  }
-  return value;
-}
-
-// Recursivo
-function translateObject(obj, dict) {
-  if (Array.isArray(obj)) {
-    return obj.map((v) => translateObject(v, dict));
-  }
-  if (obj && typeof obj === "object") {
-    const out = {};
-    for (const k of Object.keys(obj)) {
-      const v = obj[k];
-      if (FIELDS.includes(k)) out[k] = translateValue(v, dict);
-      else out[k] = translateObject(v, dict);
-    }
-    return out;
-  }
-  return obj;
 }
 
 async function cleanDir(dir) {
@@ -207,13 +183,22 @@ function filename(file, title, lang) {
 }
 
 async function run() {
-  await createManifest(config);
+  await fetchUpstream();
+  await fetchVideos();
+
+  await buildDictionary();
+
+  await createImages();
+
+  await commit();
+
+  await createManifest();
   await cleanDir(OUT);
   const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: ROOT, absolute: false });
 
   for (const file of files) {
     const { data, content } = read(ROOT + file);
-    await autocomplete(data, config);
+    await autocomplete(data);
 
     for (const lang of TARGET_LANGS) {
       const dict = DICTIONARY[lang] || {};
@@ -224,7 +209,7 @@ async function run() {
         return { lang: lan, href: "/" + filename(file, data.title, lan) };
       });
 
-      await postComplete(translatedData, config);
+      await postComplete(translatedData);
 
       const dest = OUT + filename(file, data.title, lang) + ".md";
       write(dest, translatedData);

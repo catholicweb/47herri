@@ -1,4 +1,4 @@
-import { read, write, fs, path } from "./node_helpers.js";
+import { read, write, fs, path } from "./node_utils.js";
 import { generateNav } from "./navBar.js";
 
 const getHue = (hex) => {

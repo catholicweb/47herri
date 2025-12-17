@@ -1,4 +1,4 @@
-import { read, write } from "./node_helpers.js";
+import { read, write } from "./node_utils.js";
 
 const API_KEY = process.env.YT_API_KEY; // Leer API Key de env
 let newImportantVideos = [];
@@ -160,7 +160,7 @@ async function getChannelIdFromUrl(channelUrl) {
   }
 }
 
-(async () => {
+export async function fetchVideos(channelUrl) {
   try {
     if (!API_KEY) {
       console.error("Error: La API Key no está definida. Asegúrate de exportarla.");
@@ -188,4 +188,4 @@ async function getChannelIdFromUrl(channelUrl) {
   } catch (error) {
     console.error("Error loading youtube data:", error);
   }
-})();
+}
