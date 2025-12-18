@@ -3,6 +3,8 @@ ekitaldiak:
   - date: 24/04/2025 11:30
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 25/12/2025 12:00
+    title: Eguberria
 image: /media/Screenshot_20250405_182010_YouTube.webp
 video: ihDsCf3reeY
 layout: parroquia
