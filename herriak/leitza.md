@@ -99,6 +99,8 @@ ekitaldiak:
     notes: Gurutz bidea goizeko 8tan elizetik abiatuta santa kruz ermiteraino eta
       meza hara iritsitakoan.
     image: /media/Screenshot_20250907_184537_OneDrive.jpg
+  - date: 25/12/2025 11:00
+    title: Eguberria , belén biziduna
 mezak:
   - date: astegunetan 19.30
     notes: Iriarteako kapilan
@@ -126,7 +128,6 @@ locations:
 title: leitza
 valley: Leitzaran
 ---
-
 Leitza, Nafarroako ipar-mendebaldean kokatua, 3.011 biztanle zituen 2024ko urtarrilaren 1ean. Herria mendi eta basoz inguratuta dago, eta Plazaolako Bide Berdea zeharkatzen du, naturaz gozatzeko aukera bikaina eskainiz.
 
 Herriko ondare erlijioso nabarmenena San Migel Goiaingeruaren parrokia-eliza da, XVII. mendearen azken laurdenean eraikia. Latindar gurutze formako oinplanoa du, eta kontrahormarteetan kapera txikiak ditu. Eraikina harriz egina dago, eta ganga eta lunetaz estalita dago; gurutzaduraren zatian, berriz, gurutze-ganga du. Sarrera nagusia 1770. urtekoa da, eta alboetako transeptuetan beste bi sarrera daude. Elizaren atarian, pórtico sakon bat nabarmentzen da, alboetara luzatzen dena, eta eskailera monumentalen bidez iristen zaio. Barrualdean, hainbat erretaula moderno ditu, horien artean nagusia barrokoa da, XVII. mendearen bigarren erdialdekoa, Miguel de Bengoechea eta bere semearen lana izanik.
