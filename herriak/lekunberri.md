@@ -67,6 +67,7 @@ ekitaldiak:
     title: "Ostegun eukaristikoa "
     notes: "Otoitza bat Jesús sakramentaruekin Lekumberriko komentuan "
     image: /media/images.jpeg
+  - title: Eguberria, Belengo pakearen argia
 mezak:
   - date: astegunetan 18.30
     notes: Komentuan
