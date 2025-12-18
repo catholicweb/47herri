@@ -6,6 +6,8 @@ ekitaldiak:
   - date: 25/04/2025 13:00
     title: "SAN MIGELEN BISITA "
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - date: 25/12/2025 10:00
+    title: Eguberria
 mezak:
   - date: igandetan 10.00 1. astea
     notes: Hilean behin (lehenengo igandetan)
