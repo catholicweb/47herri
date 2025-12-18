@@ -3,6 +3,7 @@ ekitaldiak:
   - date: 12/05/2025 18:45
     title: SAN MIGELEN BISITA
     image: /media/Screenshot_20250419_111110_OneDrive.webp
+  - title: Santa María, Jaungoikoaren ama
 mezak:
   - date: igandetan 10.00 2. astea
     notes: Hilean behin (bigarren igandetan)
