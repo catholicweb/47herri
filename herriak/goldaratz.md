@@ -8,6 +8,8 @@ ekitaldiak:
     title: AMA BIRJINAREN JAIOTZA
     notes: "Meza ondorean prozesioa burutuko da herrian zehar. "
     image: /media/Screenshot_20250807_191124_OneDrive.jpg
+  - date: 24/12/2025 18:00
+    title: Eguberria
 mezak:
   - date: osteguna 12.30 1. astea
     notes: Hilean behin  (lehenengo ostegunetan)
