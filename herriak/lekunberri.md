@@ -67,7 +67,8 @@ ekitaldiak:
     title: "Ostegun eukaristikoa "
     notes: "Otoitza bat Jesús sakramentaruekin Lekumberriko komentuan "
     image: /media/images.jpeg
-  - title: Eguberria, Belengo pakearen argia
+  - date: 25/12/2025 11:00
+    title: Eguberria, Belengo pakearen argia
 mezak:
   - date: astegunetan 18.30
     notes: Komentuan
