@@ -2,6 +2,8 @@
 hiletak:
   - date: 01/11/2025 16.30
     name: Bonifacia Noain Irañeta
+  - date: 21/12/2025 12.00
+    name: "Trinidad Echeguia Cenoz "
 ekitaldiak:
   - date: 20/05/2025 11:00
     title: SAN MIGELEN BISITA
