@@ -1,0 +1,388 @@
+settings:
+  hide: true
+components:
+  text:
+    label: Text Content
+    type: rich-text
+  times:
+    label: horas
+    type: select
+    options:
+      multiple: true
+      creatable: true
+      values: ["06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"]
+  podcast:
+    label: Podcast católicos
+    type: select
+    options:
+      multiple: true
+      creatable: true
+      values:
+        [
+          { value: "https://open.spotify.com/show/1sq2MYlTyXKwVvMDqpA3uF?si=f94300ed0c2d498d", label: "Seamos Santos (Sofía Carreón)" },
+          { value: "https://youtube.com/playlist?list=PLco5FD9I9WmIbbQTBKMqaMq1kjwiZoO6B", label: "Homilias (Mons. Munilla)" },
+          { value: "https://open.spotify.com/show/1oX36lcEOra7ADQCUlE2LY?si=e177f860f0164661", label: "Hablemos Sin Filtro" },
+          { value: "https://open.spotify.com/show/6y1J3OXyuHGivMhIy7LB4Q?si=23fdbfd73b6645c7", label: "Es de Humanos" },
+          { value: "https://open.spotify.com/show/7LonKVvfQIsCp45TM58h7y?si=5974a35003ef4ecb", label: "10 minutos con Jesús (Opus Dei)" },
+          { value: "https://open.spotify.com/show/2stzE1aIR8elv3tEIHNosr?si=f5f8c6b65d82421a", label: "Radio María" },
+          { value: "https://open.spotify.com/show/1zR5ODOgjx1lGObG2gJvox", label: "Homilias Papa León XIV (Igles-IA)" },
+          { value: "https://youtube.com/playlist?list=PL2fBaIU3WZ23ahmPx34yYXDu3yrp-yASO", label: "Rosario desde Lourdes" },
+          { value: "https://open.spotify.com/show/2z0RRDpp9rP6urEwdBrGpe?si=256c183f69e0457f", label: "Rezando voy (Jesuitas)" },
+          { value: "https://open.spotify.com/show/6FJFJ46Q4aPXIWWDKY9tYf?si=c17c97479bbb4fbe", label: "Evangelio del día (sercreyente.com)" },
+          { value: "https://open.spotify.com/show/1OUhu57FCAscICoEMwyONY?si=5f7ea6ad49394828", label: "Liturgia de las horas (litur pro)" },
+          { value: "https://open.spotify.com/show/6mpihPJzRA61GEdomhzGqq?si=b59a6acf96104988", label: "Jose Camacho Cotto" },
+        ]
+  languages:
+    label: "Idioma"
+    type: select
+    options:
+      multiple: true
+      creatable: true
+      values: ["Español:es", "Català:ca", "Galego:gl", "Euskara:eu", "English:en", "Français:fr", "Deutsch:de", "Italiano:it", "Português:pt", "Română:ro", "العربية:ar", "中文:zh", "Български:bg", "Polski:pl"]
+
+  font:
+    label: Tipo letra
+    type: select
+    options:
+      creatable: true
+      values: ["Roboto", "Open Sans", "Lato", "Montserrat", "Poppins", "Merriweather", "Raleway", "Oswald", "Playfair Display", "Source Sans Pro", "Nunito", "Quicksand", "Work Sans", "Bebas Neue", "Muli", "Roboto Slab", "Lora", "Josefin Sans", "Droid Serif", "Cabin", "Arimo", "Ubuntu", "Zilla Slab", "Tisa", "Anton", "Fira Sans", "Varela Round", "Crimson Pro", "Spectral", "Exo 2", "Bitter", "Archivo", "Dosis", "PT Sans", "Lobster", "Pacifico", "Dancing Script", "Sacramento", "Tangerine", "Unbounded", "Pangolin", "Bree Serif", "Vollkorn", "Monda", "Be Vietnam", "Karla", "Noto Sans", "Kalam"]
+  selector:
+    label: Selector
+    type: select
+    options:
+      creatable: true
+      values: ["h1", "h2", "h3", "h4", "h5", "h6", "p", "img", "blockquote", "a", "ul", "ol", "li", "div", "span", "strong", "em", "br", "hr", "table", "tr", "td", "th", "form", "input", "button", "label", "select", "option", "textarea", "iframe", "header", "footer", "nav", "article", "section", "aside", "details", "summary", "video", "audio", "canvas", "svg"]
+  blocktype:
+    label: Selector
+    type: select
+    options:
+      creatable: false
+      values: ["card-full", "gallery", "resource-list", "video-grid", "hero-banner", "portfolio", "product-cards", "article-list", "team-cards", "compact-list", "text", "timeline", "calendar-cards", "carousel", "accordion"]
+  color:
+    label: Colors
+    type: select
+    options:
+      creatable: true
+      values: ["white", "black", "red", "green", "blue", "yellow", "orange", "purple", "pink", "brown", "gray", "lightgray", "darkgray", "beige", "ivory", "teal", "coral", "slateblue", "rgb(255, 99, 71)", "hsl(180, 100%, 25%)"]
+  multiplier:
+    label: Multiplier
+    type: select
+    options:
+      creatable: true
+      values: ["0.25", "0.5", "0.75", "1", "1.25", "1.50", "2", "4"]
+  location:
+    label: Lugares
+    type: select
+    options:
+      multiple: true
+      creatable: true
+      values: ["Parroquia Nª Sra Asunción", "Ermita Virgen del Olmo"]
+  rrule:
+    label: Fechas
+    type: select
+    options:
+      multiple: true
+      values:
+        [
+          { value: "mo", label: "Lunes" },
+          { value: "tu", label: "Martes" },
+          { value: "we", label: "Miércoles" },
+          { value: "th", label: "Jueves" },
+          { value: "fr", label: "Viernes" },
+          { value: "sa", label: "Sábado" },
+          { value: "su", label: "Domingo" },
+          { value: "mo,tu,we,th,fr", label: "Lunes a viernes" },
+          { value: "yearly", label: "Anualmente" },
+          { value: "monthly", label: "Mensualmente" },
+          { value: "biweekly", label: "Cada dos semanas" },
+          { value: "week1", label: "1ª semana del mes" },
+          { value: "week2", label: "2ª semana del mes" },
+          { value: "week3", label: "3ª semana del mes" },
+          { value: "week4", label: "4ª semana del mes" },
+          { value: "week5", label: "5ª semana del mes" },
+        ]
+  effect:
+    label: Efectos CSS
+    type: select
+    options:
+      creatable: true
+      values: ["opacity: 0;", "opacity: 0.5;", "transform: scale(0.8);", "transform: scale(1.2);", "transform: scaleX(1.5);", "transform: scaleY(.5);", "transform: rotate(6deg);", "transform: rotate(-6deg);", "transform: translateX(-20%);", "transform: translateX(20%);", "transform: translateY(-20%);", "transform: translateY(20%);", "transform: translate(-50%, -50%);", "filter: blur(5px);", "filter: brightness(1.2);", "filter: contrast(150%);", "filter: grayscale(100%);", "filter: invert(100%);", "color: rgb(var(--color-accent));"]
+  hero:
+    label: Hero
+    type: object
+    fields:
+      - { name: title, label: Título, type: string }
+      - { name: description, label: Subtitulo, type: string }
+      - { name: image, label: Image, type: image }
+      - name: elements
+        label: Acciones
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+        fields:
+          - { name: title, label: Título, type: string }
+          - { name: link, label: Accion, type: string }
+  gallery:
+    label: Galleria imagenes
+    type: object
+    fields:
+      - { name: title, label: Título, type: string }
+      - { name: description, label: Subtitulo, type: string }
+      - name: elements
+        label: Elementos
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+        fields:
+          - { name: title, label: Título, type: string }
+          - { name: description, label: Subtitulo, type: string }
+          - { name: image, label: Imagen, type: image }
+          - { name: type, label: tipo de bloque, component: blocktype }
+media:
+  input: docs/public/media
+  output: /media
+  categories: ["image", "document"]
+content:
+  - name: pages
+    label: Paginas
+    type: collection
+    subfolders: false
+    path: pages
+    view:
+      fields: [image, title]
+      primary: title
+    filename: "{primary}.md"
+    exclude: [.vitepress, public, aviso-legal.md, config.json, events.json, theme-builder.md]
+    fields:
+      - { name: title, label: Título, type: string }
+      - { name: description, label: Subtitulo, type: string }
+      - { name: image, label: Imagen, type: image }
+      - name: sections
+        label: Secciones de la página
+        type: block
+        list: { collapsible: { collapsed: false, summary: "{fields.title}" } }
+        blocks:
+          - name: accordion
+            label: FAQ
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - name: elements
+                label: Preguntas y respuestas
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+                fields:
+                  - { name: title, label: Pregunta, type: string }
+                  - { name: html, label: Respuesta, type: rich-text }
+          - name: scrollyTelling
+            label: Narración interactiva
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - name: elements
+                label: Viñetas
+                type: object
+                list: { collapsible: { collapsed: true } }
+                fields:
+                  - { name: text, label: Texto, type: rich-text }
+                  - { name: image, label: Imagen, type: image }
+          - name: gallery
+            label: Galeria de imagenes
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: list, type: image, label: Seleccion de imagenes, options: { multiple: true } }
+          - name: text
+            label: Texto
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: html, label: Texto largo, type: rich-text }
+          - name: gospel
+            label: Evangelio del día
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: readings, label: Mostrar primera/segunda y salmo, type: boolean, default: false }
+              - { name: audio, label: Añadir audio, type: boolean, default: false }
+              - { name: images, label: Mostrar imagenes, type: boolean, default: true }
+          - name: calendar
+            label: Eventos
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: filter, label: Filtro. Incluir solo eventos que contengan, type: string }
+          - name: video-podcast
+            label: Podcast católicos
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: links, label: Podcast, component: podcast }
+          - name: video-channel
+            label: Últimos videos de tu canal de Youtube
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: filter, label: Filtro. Incluir solo videos que contengan, type: string }
+          - name: video
+            label: Youtube/Vimeo/Spotify/....
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: links, label: Enlaces externos, type: string, list: { collapsible: { collapsed: true } } }
+
+          - name: map
+            label: Mapa
+            fields:
+              - { name: title, type: string, label: Título sección }
+              - { name: geo, type: string, label: "Coordenadas (ej: 42.801941, -1.645660)" }
+              - { name: name, type: string, label: Nombre (opcional) }
+              - { name: address, type: string, label: Dirección postal (opcional) }
+              - { name: phone, type: string, label: Telefono (opcional) }
+              - { name: email, type: string, label: Email (opcional) }
+              - { name: image, type: image, label: Imagen (opcional) }
+          - name: form
+            label: Formulario (coming soon)
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: field, type: string, label: Pregunta, list: true }
+          - name: fundraising
+            label: Campaña financiación
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: name, type: string, label: "Nombre causa (ej: Nuevo tejado)" }
+              - { name: description, type: string, label: Descripcion }
+              - { name: raised, type: number, label: Recaudado hasta la fecha }
+              - { name: goal, type: number, label: Total a recaudar }
+              - { name: action, type: string, label: Nombre acción, hidden: true, default: Donar }
+              - { name: image, type: image, label: Imagen }
+          - name: hero
+            label: Cabezera de sección
+            component: hero
+          - name: teammembers
+            label: Miembros del equipo (soon)
+          - name: links
+            label: Enlaces internos
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - name: links
+                label: Enlaces internos
+                type: reference
+                options: { collection: pages, multiple: true, label: "{title}" }
+
+  - name: events
+    type: file
+    label: Eventos
+    format: json
+    path: pages/events.json
+    fields:
+      - name: events-funerals
+        label: Funerales
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.location}" } }
+        fields:
+          - { name: title, label: Nombre del difunto, type: string }
+          - { name: location, label: Ubicación, component: location }
+          - { name: date, type: date, label: Fecha del funeral }
+          - { name: times, label: Hora del funeral, component: times, options: { multiple: false } }
+      - name: events-masses
+        label: Horario de misas
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.location} - {fields.rrule}" } }
+        fields:
+          - { name: title, label: Nombre del difunto, type: string, default: Misa, hidden: true }
+          - { name: location, label: Ubicación, component: location }
+          - { name: times, label: Horas, component: times }
+          - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
+          - { name: except, type: date, label: Excepto, list: { collapsible: { collapsed: true } } }
+      - name: events-feast
+        label: Festividades especiales
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+        fields:
+          - { name: title, label: "Nombre festividad (ej: Navidad, Pascua...)", type: string }
+          - { name: date, type: date, label: Fecha de la festividad }
+          - { name: image, label: "Image", type: image }
+          - name: custom
+            label: Celebraciones
+            list: { collapsible: { collapsed: true, summary: "{fields.location}" } }
+            fields:
+              - { name: location, label: Ubicación, component: location }
+              - { name: times, label: Horas, component: times }
+      - name: events-group
+        label: Catequesis
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.location} - {fields.rrule}" } }
+        fields:
+          - { name: title, label: Título del evento, type: string }
+          - { name: location, label: Ubicación, component: location }
+          - { name: date, type: string, label: Fecha y hora de inicio, default: "25/12/2025 10:00", hidden: true }
+          - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
+          - { name: except, type: date, label: Excepto, list: { collapsible: { collapsed: true } } }
+      - name: events-custom
+        label: Otros eventos
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.location} - {fields.date} - {fields.rrule}" } }
+        fields:
+          - { name: image, label: Image, type: image }
+          - { name: title, label: Titulo, type: string }
+          - { name: location, label: Ubicación, component: location }
+          - { name: date, type: date, label: Fechas, list: { collapsible: { collapsed: true } } }
+          - { name: times, label: Hora de fin, component: times, options: { multiple: false } }
+          - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
+          - { name: except, type: date, label: Excepto, list: { collapsible: { collapsed: true } } }
+      - { name: urls, type: string, list: true, label: Calendarios externos a importar (ej. url de Google Calendar terminada en .ics) }
+  - name: config
+    type: file
+    label: Configuración
+    path: pages/config.json
+    format: json
+    fields:
+      - { name: title, label: Titulo sitio, type: string }
+      - { name: description, label: Description del sitio, type: text }
+      - { name: image, label: Imagen del sitio, type: image }
+      - { name: icon, label: Icono del sitio, type: image }
+      - name: social
+        label: Social links
+        type: string
+        list: { collapsible: { collapsed: true } }
+      - name: collaborators
+        label: Colaboradores
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+        fields:
+          - { name: title, label: Nombre, type: string }
+          - { name: phonenumber, label: Numero de telefono (opcional), type: string }
+          - { name: email, label: Correo electrónico (opcional), type: string }
+          - { name: image, label: Image, type: image }
+      - name: bank
+        label: Bizum y cuentas bancarias
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+        fields:
+          - { name: title, label: "Nombre (ej: BIZUM/BBVA/...)", type: string }
+          - { name: account, label: Numero de cuenta/bizum, type: string }
+      - name: nav
+        label: Menu de navegación
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+        fields:
+          - { name: title, label: Titulo sección, type: string }
+          - name: links
+            label: Enlaces
+            type: reference
+            options: { collection: pages, multiple: true, label: "{title}" }
+      - name: languages
+        label: Idiomas de la web
+        component: languages
+      - name: theme
+        label: Tema visual
+        type: object
+        fields:
+          - { name: bodyFont, label: Tipo de letra del cuerpo (cualquiera de https://fonts.google.com/), component: font }
+          - { name: headingFont, label: Tipo de letra de los titulos (cualquiera de https://fonts.google.com/), component: font }
+          - { name: accentColor, label: Color elementos acentuados, component: color }
+          - { name: accentPrimary, label: Color elementos secundario, component: color }
+          - { name: borderRadius, label: Redondeado de borders, component: multiplier }
+          - { name: borderWidth, label: Grosor de los borders, component: multiplier }
+          - { name: shadowDepth, label: Profundidaz de las sombras, component: multiplier }
+          - name: styles
+            label: Estilos y efectos individuales
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.selector}" } }
+            fields:
+              - { name: selector, label: "Elemento", component: selector }
+              - { name: cssClass, label: "Efecto a aplicar", component: effect }
+              - { name: scroll, label: "Aplicar al hacer scroll", type: boolean, default: false }
+      - name: siteurl
+        label: "URL absoluta del sitio web, ej: https://parroquia.app"
+        type: string
