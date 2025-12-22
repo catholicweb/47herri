@@ -156,7 +156,7 @@
     </div>
 
     <!-- 11. HTML text -->
-    <div v-if="block.type === 'text'">
+    <div v-if="block.type === 'text'" class="[&_img]:mx-auto [&_img]:w-2/3 [&_img]:sm:w-1/2">
       <div v-if="block.html" class="prose p-2 max-w-2xl mx-auto" v-html="block.html"></div>
     </div>
 

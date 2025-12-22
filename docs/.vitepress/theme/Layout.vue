@@ -9,7 +9,7 @@
 
     <!-- Main Content - Block System -->
     <main class="flex-1" v-if="$frontmatter.sections">
-      <section v-for="(section, index) in $frontmatter.sections" :id="slugify(section.title)">
+      <section v-for="(section, index) in $frontmatter.sections" :id="slugify(section.title)" :class="section.tags?.includes('dark') ? '[&_*]:text-white bg-[#222831] pt-4' : ''" v-if="!section?.hidden">
         <component :key="index" :is="getBlockComponent(section._block)" :block="section" />
       </section>
     </main>

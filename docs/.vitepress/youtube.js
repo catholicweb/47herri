@@ -168,7 +168,7 @@ export async function fetchVideos(channelUrl) {
     }
     console.log("Fetching videos...");
     const config = read("./pages/config.json");
-    let videos = read("./docs/src/videos.json", []);
+    let videos = read("./docs/public/videos.json", []);
     const youtubeStr = config.social.find((s) => s.toLowerCase().includes("youtube"));
     const CHANNEL_ID = await getChannelIdFromUrl(youtubeStr);
     // Get main videos
@@ -183,7 +183,7 @@ export async function fetchVideos(channelUrl) {
 
     console.log("Fetched ", videos.length, " videos.");
     // Save videos
-    write("./docs/src/videos.json", videos); // Guardar el resultado en un archivo
+    write("./docs/public/videos.json", videos); // Guardar el resultado en un archivo
     await writeNotification(newImportantVideos);
   } catch (error) {
     console.error("Error loading youtube data:", error);

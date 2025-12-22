@@ -8,14 +8,16 @@ const nav = computed(() => {
   return nav.length === 1 ? nav[0].items : nav;
 });
 
+const navStyle = ref(site?.value?.themeConfig?.config?.theme?.navStyle);
+
 const hasItems = (item) => item.items && item.items.length > 0;
 const isActive = (item) => item.link && (route.path === item.link || route.path.startsWith(item.link + "/"));
 const mobileMenuOpen = ref(false);
 </script>
 
 <template>
-  <div class="sticky top-0 z-50 shadow-sm transition-colors bg-white">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="top-0 z-50 transition-colors" :class="[navStyle == '47herri' ? 'absolute w-full text-white' : 'sticky bg-white shadow-sm']">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" :class="[navStyle == '47herri' ? '' : 'bg-white']">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex items-center">
@@ -25,7 +27,7 @@ const mobileMenuOpen = ref(false);
         </div>
 
         <!-- Desktop Menu -->
-        <div class="hidden lg:flex items-center space-x-1 font-medium text-md bg-white">
+        <div class="hidden lg:flex items-center space-x-1 font-medium text-md" :class="[navStyle == '47herri' ? 'text-white' : 'bg-white']">
           <template v-for="item in nav" :key="item.text">
             <!-- Simple link -->
             <div v-if="!hasItems(item)">

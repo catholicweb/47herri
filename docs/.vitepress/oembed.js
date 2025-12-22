@@ -42,10 +42,21 @@ const KNOWN_PROVIDERS = [
 ];
 
 export async function getPreview(url) {
-  if (url.endsWith(".md")) {
-    return localLinks(url);
-  } else {
-    return getOEmbed(url);
+  try {
+    if (url.endsWith(".md")) {
+      return await localLinks(url);
+    } else {
+      return await getOEmbed(url);
+    }
+  } catch (e) {
+    console.log(e);
+    return {
+      type: "link",
+      src: url,
+      title: "",
+      image: "",
+      aspect: 16 / 9,
+    };
   }
 }
 

@@ -115,6 +115,16 @@ function locales(languages) {
 }
 
 async function getFontCSS(theme) {
+  if (theme.headingFont == "Basque Smile") {
+    return `@font-face {
+  font-family: 'Basque Smile';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://47herri.eus/fonts/BasqueSmile.woff);
+}`;
+  }
+
   const url = googleFont(theme);
   const res = await fetch(url);
   let css = await res.text();
