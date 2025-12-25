@@ -5,6 +5,9 @@ export default {
     // Arrays donde almacenarás los bloques
     const fundraisings = [];
     const maps = [];
+    const pages = [];
+    const videos = read("./docs/public/videos.json", []);
+    const events = read("./docs/public/calendar.json", []);
 
     const files = await fg("**/*.md", { cwd: "./docs", absolute: false });
 
@@ -12,6 +15,13 @@ export default {
       const { data } = read("./docs/" + file);
       // Chequea si existe data.sections._block
       if (data.sections && Array.isArray(data.sections)) {
+        pages.push({
+          title: data.title,
+          image: data.image,
+          tags: data.tags,
+          description: data.description,
+          url: "/" + file.replace(/index\.md$/, "").replace(/\.md$/, ""),
+        });
         data.sections.forEach((section) => {
           if (section._block === "fundraising") {
             section.lang = data.lang;
@@ -28,6 +38,6 @@ export default {
       }
     }
 
-    return { fundraisings, maps };
+    return { fundraisings, maps, pages, videos, events };
   },
 };

@@ -20,7 +20,7 @@
     </div>
 
     <!-- 2. Image Gallery (Pinterest/Instagram style) -->
-    <div v-if="block.type === 'gallery'" :class="block.grid">
+    <div v-if="block.type === 'gallery'" :class="grid(block)">
       <div v-for="(item, i) in block.elements" :key="i">
         <div class="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
           <Image :src="item.image" :alt="item.title" :index="block.index" class="w-full h-full object-cover transition-transform group-hover:scale-110" />
@@ -130,7 +130,7 @@
     </div>
 
     <!-- 9. Team Members/People Cards -->
-    <div v-if="block.type === 'team-cards'" :class="block.grid">
+    <div v-if="block.type === 'team-cards'" :class="grid(block)">
       <a v-for="(item, i) in block.elements" :key="i" :href="item.link">
         <div class="relative mb-4 inline-block">
           <Image :index="block.index" :src="item.image" :alt="'team-cards ' + item.title" class="w-40 h-40 rounded-full object-cover border-4 border-accent shadow-lg group-hover:scale-105 transition-transform" />
@@ -156,8 +156,8 @@
     </div>
 
     <!-- 11. HTML text -->
-    <div v-if="block.type === 'text'">
-      <div v-if="block.html" class="prose p-2 max-w-2xl mx-auto" v-html="block.html"></div>
+    <div v-if="block.type === 'text'" class="[&_img]:mx-auto [&_img]:w-2/3 [&_img]:sm:w-1/2">
+      <div v-if="block.html" class="prose p-2 max-w-2xl mx-auto whitespace-pre-line" v-html="block.html"></div>
     </div>
 
     <!-- 12. Vertical Timeline -->
@@ -220,6 +220,7 @@
 </template>
 
 <script setup>
+import { grid } from "./../../utils.js";
 import Image from "./Image.vue";
 import { ref } from "vue";
 

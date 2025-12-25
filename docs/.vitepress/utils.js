@@ -1,10 +1,87 @@
+export function toArray(value) {
+  if (Array.isArray(value)) {
+    if (value.length) return value;
+    return [];
+  }
+  if (typeof value === "string") return [value];
+  return [];
+}
+
+export function accessMultikey(obj, multikey) {
+  let result = [];
+
+  // 1. Split by '+' to get additive groups
+  const groups = multikey.split("+");
+
+  for (const group of groups) {
+    // 2. Split by '/' for fallbacks
+    const fallbacks = group.split("/");
+
+    for (const fallback of fallbacks) {
+      // 3. Split by '-' for subtractions within this fallback
+      const [mainKey, ...keysToSubtract] = fallback.split("-");
+
+      let value = toArray(obj[mainKey]);
+      if (mainKey == "weekday") value = weekday(obj.byday);
+
+      if (value.length > 0) {
+        // If there are subtraction keys, filter the current values
+        for (const subKey of keysToSubtract) {
+          let subtractValues = toArray(obj[subKey]);
+          if (!subtractValues.length) subtractValues = [subKey];
+          value = value.filter((val) => !subtractValues.includes(val));
+        }
+
+        result = result.concat(value);
+        break; // Found a valid fallback, stop looking in this group
+      }
+    }
+  }
+  return result.length ? result : [""];
+}
+
+export function applyComplexFilter(obj, filter) {
+  // Normalizamos y limpiamos el filtro
+  const normalizedFilter = filter.toLowerCase().trim();
+
+  // Primero, manejamos el caso de "!notinclude"
+  if (normalizedFilter.startsWith("!")) {
+    const excludeTerm = normalizedFilter.slice(1);
+    return !JSON.stringify(obj).toLowerCase().includes(excludeTerm);
+  }
+
+  // División y lógica de AND/OR
+  // Separamos por AND (&) primero
+  const andParts = normalizedFilter.split("&").map((part) => part.trim());
+
+  // Evaluamos cada parte con OR (|) para que cualquier parte que contenga un `|` se maneje como OR
+  const andResults = andParts.map((part) => {
+    // Evaluamos por OR
+    const orParts = part.split("|").map((subPart) => subPart.trim());
+    return orParts.some((term) => JSON.stringify(obj).toLowerCase().includes(term));
+  });
+
+  // La evaluación final será verdadera si todos los AND son verdaderos (&&)
+  return andResults.every(Boolean);
+}
+
+function weekday(days) {
+  const w = [];
+  if (days.join(",").toLowerCase().includes("su")) w.push("su");
+  if (days.join(",").toLowerCase().includes("sa")) w.push("sa");
+  if (days.join(",").match(/mo|tu|we|th|fr/i)) {
+    w.push("mo,tu,we,th,fr");
+  }
+  return w;
+}
+
 export function formatDate(isoString, lang = "Español:es") {
   if (typeof lang !== "string") return isoString;
   if (!isoString) return "";
   const langCode = lang.split(":")[1];
   isoString = isoString.replaceAll("-", "-");
   const date = new Date(isoString);
-  if (isNaN(date.getTime())) return isoString;
+  if (isNaN(date.getTime())) return tr(isoString, lang);
   const monthIndex = date.getMonth();
   const now = new Date();
   const note = date.getFullYear() < now.getFullYear() ? ` (${date.getFullYear()})` : "";
@@ -28,13 +105,245 @@ export function formatDate(isoString, lang = "Español:es") {
   return langCode === "eu" ? `${names[monthIndex]} ${date.getDate()} ${note}`.trim() : `${date.getDate()} ${names[monthIndex]} ${note}`.trim();
 }
 
+function tr(str, lang = "Español:es") {
+  if (!str) return "";
+  const langCode = lang.split(":")[1];
+  const map = {
+    eu: {
+      mo: "Astelehena",
+      tu: "Asteartea",
+      we: "Asteazkena",
+      th: "Osteguna",
+      fr: "Ostirala",
+      sa: "Larunbata",
+      su: "Igandea",
+      "mo,tu,we,th,fr": "Astelehenetik ostiralera",
+      yearly: "Urtero",
+      monthly: "Hilero",
+      biweekly: "Bi astetik behin",
+      week1: "1. astea",
+      week2: "2. astea",
+      week3: "3. astea",
+      week4: "4. astea",
+      week5: "5. astea",
+    },
+    es: {
+      mo: "Lunes",
+      tu: "Martes",
+      we: "Miércoles",
+      th: "Jueves",
+      fr: "Viernes",
+      sa: "Sábado",
+      su: "Domingo",
+      "mo,tu,we,th,fr": "Lunes a viernes",
+      yearly: "Anualmente",
+      monthly: "Mensualmente",
+      biweekly: "Cada dos semanas",
+      week1: "1ª semana",
+      week2: "2ª semana",
+      week3: "3ª semana",
+      week4: "4ª semana",
+      week5: "5ª semana",
+    },
+    ca: {
+      mo: "Dilluns",
+      tu: "Dimarts",
+      we: "Dimecres",
+      th: "Dijous",
+      fr: "Divendres",
+      sa: "Dissabte",
+      su: "Diumenge",
+      "mo,tu,we,th,fr": "De dilluns a divendres",
+      yearly: "Anualment",
+      monthly: "Mensualment",
+      biweekly: "Cada dues setmanes",
+      week1: "1a setmana",
+      week2: "2a setmana",
+      week3: "3a setmana",
+      week4: "4a setmana",
+      week5: "5a setmana",
+    },
+    en: {
+      mo: "Monday",
+      tu: "Tuesday",
+      we: "Wednesday",
+      th: "Thursday",
+      fr: "Friday",
+      sa: "Saturday",
+      su: "Sunday",
+      "mo,tu,we,th,fr": "Monday to Friday",
+      yearly: "Yearly",
+      monthly: "Monthly",
+      biweekly: "Biweekly",
+      week1: "1st week",
+      week2: "2nd week",
+      week3: "3rd week",
+      week4: "4th week",
+      week5: "5th week",
+    },
+    fr: {
+      mo: "Lundi",
+      tu: "Mardi",
+      we: "Mercredi",
+      th: "Jeudi",
+      fr: "Vendredi",
+      sa: "Samedi",
+      su: "Dimanche",
+      "mo,tu,we,th,fr": "Du lundi au vendredi",
+      yearly: "Annuellement",
+      monthly: "Mensuellement",
+      biweekly: "Toutes les deux semaines",
+      week1: "1re semaine",
+      week2: "2e semaine",
+      week3: "3e semaine",
+      week4: "4e semaine",
+      week5: "5e semaine",
+    },
+    de: {
+      mo: "Montag",
+      tu: "Dienstag",
+      we: "Mittwoch",
+      th: "Donnerstag",
+      fr: "Freitag",
+      sa: "Samstag",
+      su: "Sonntag",
+      "mo,tu,we,th,fr": "Montag bis Freitag",
+      yearly: "Jährlich",
+      monthly: "Monatlich",
+      biweekly: "Alle zwei Wochen",
+      week1: "1. Woche",
+      week2: "2. Woche",
+      week3: "3. Woche",
+      week4: "4. Woche",
+      week5: "5. Woche",
+    },
+    it: {
+      mo: "Lunedì",
+      tu: "Martedì",
+      we: "Mercoledì",
+      th: "Giovedì",
+      fr: "Venerdì",
+      sa: "Sabato",
+      su: "Domenica",
+      "mo,tu,we,th,fr": "Da lunedì a venerdì",
+      yearly: "Annualmente",
+      monthly: "Mensilmente",
+      biweekly: "Ogni due settimane",
+      week1: "1ª settimanae",
+      week2: "2ª settimanae",
+      week3: "3ª settimanae",
+      week4: "4ª settimanae",
+      week5: "5ª settimanae",
+    },
+    pt: {
+      mo: "Segunda-feira",
+      tu: "Terça-feira",
+      we: "Quarta-feira",
+      th: "Quinta-feira",
+      fr: "Sexta-feira",
+      sa: "Sábado",
+      su: "Domingo",
+      "mo,tu,we,th,fr": "De segunda a sexta-feira",
+      yearly: "Anualmente",
+      monthly: "Mensalmente",
+      biweekly: "A cada duas semanas",
+      week1: "1ª semana",
+      week2: "2ª semana",
+      week3: "3ª semana",
+      week4: "4ª semana",
+      week5: "5ª semana",
+    },
+    ro: {
+      mo: "Luni",
+      tu: "Marți",
+      we: "Miercuri",
+      th: "Joi",
+      fr: "Vineri",
+      sa: "Sâmbătă",
+      su: "Duminică",
+      "mo,tu,we,th,fr": "De luni până vineri",
+      yearly: "Anual",
+      monthly: "Lunar",
+      biweekly: "La fiecare două săptămâni",
+      week1: "Prima săptămână",
+      week2: "A doua săptămână",
+      week3: "A treia săptămână",
+      week4: "A patra săptămână",
+      week5: "A cincea săptămână",
+    },
+    ar: {
+      mo: "الاثنين",
+      tu: "الثلاثاء",
+      we: "الأربعاء",
+      th: "الخميس",
+      fr: "الجمعة",
+      sa: "السبت",
+      su: "الأحد",
+      "mo,tu,we,th,fr": "من الاثنين إلى الجمعة",
+      yearly: "سنوياً",
+      monthly: "شهرياً",
+      biweekly: "كل أسبوعين",
+      week1: "الأسبوع الأول من الشهر",
+      week2: "الأسبوع الثاني من الشهر",
+      week3: "الأسبوع الثالث من الشهر",
+      week4: "الأسبوع الرابع من الشهر",
+      week5: "الأسبوع الخامس من الشهر",
+    },
+    bg: {
+      mo: "Понеделник",
+      tu: "Вторник",
+      we: "Сряда",
+      th: "Четвъртък",
+      fr: "Петък",
+      sa: "Събота",
+      su: "Неделя",
+      "mo,tu,we,th,fr": "От понеделник до петък",
+      yearly: "Годишно",
+      monthly: "Месечно",
+      biweekly: "На всеки две седмици",
+      week1: "Първа седмица",
+      week2: "Втора седмица",
+      week3: "Трета седмица",
+      week4: "Четвърта седмица",
+      week5: "Пета седмица",
+    },
+  };
+  return map[langCode]?.[str.toLowerCase()] || str;
+}
+
 export function slugify(str) {
   if (!str) return "";
-  return str
-    .normalize("NFD") // separa acentos
-    .replace(/[\u0300-\u036f]/g, "") // quita acentos
+
+  const slug = str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .trim()
-    .replace(/[^a-z0-9]+/g, "-") // cualquier cosa rara → guion
-    .replace(/^-+|-+$/g, ""); // limpia bordes
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  return slug || `file-${hash(str)}`;
+}
+
+function hash(s) {
+  let h = 0;
+  for (const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return h.toString(36);
+}
+
+export function grid(section) {
+  if (section.grid == "tiny") {
+    return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-1/3 *:sm:w-1/4 *:md:w-1/5 *:p-1";
+  }
+  if (section.grid == "small") {
+    return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-1/2 *:sm:w-1/3 *:md:w-1/4 *:p-2";
+  }
+  if (section.elements?.length == 1) {
+    return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-full *:sm:w-2/3 *:p-2";
+  }
+  if (section._block == "video-channel") {
+    if (section.filters?.length) return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-1/2 *:sm:w-1/3 *:md:w-1/4 *:p-2";
+    return "container mx-auto flex flex-nowrap overflow-x-scroll *:flex-shrink-0 py-4 *:w-full *:sm:w-1/2 *:md:w-1/3 *:p-2 px-2 video-channel";
+  }
+  return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-full *:sm:w-1/2 *:md:w-1/3 *:p-2 px-2";
 }

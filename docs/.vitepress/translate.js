@@ -31,6 +31,8 @@ async function translateMissing(valuesArray, language) {
 
   const translations = await translateWithOpenAI(missing, language.split(":")[0]);
 
+  if (translations.length != missing.length) return console.log("Wow, dicitionaries are different sizes....");
+
   missing.forEach((text, index) => {
     dictionary[language][text] = translations[index].replaceAll("\\n", "\n").replaceAll("\\\\", "");
   });
@@ -70,9 +72,9 @@ async function translateWithOpenAI(missing, targetLanguage) {
       input: [
         {
           role: "system",
-          content: "You are a professional translator for a Catholic website. " + "Texts most likely include catholic event titles, descriptions, timings etc..." + "Translate the given texts preserving HTML or Markdown. Do not scape or modify new lines, tags... anything that is not text must be returned as it is. " + "If a text is already written in the target language, do NOT translate it, just fix ortography" + "Do NOT include explanations or reasoning." + "Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}.",
+          content: "You are a professional translator for a Catholic website. " + "Texts most likely include catholic event titles, descriptions, timings etc..." + "Translate the given texts preserving HTML or Markdown. Do not scape or modify new lines, tags... anything that is not text must be returned as it is. " + "If a text is already written in the target language, do NOT translate it, just fix obvious ortographic typos." + "Do NOT include explanations or reasoning." + "Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}.",
         },
-        { role: "user", content: `Translate this array of texts to ${targetLanguage}: ${JSON.stringify(missing)}` },
+        { role: "user", content: `Translate this array of texts to ${targetLanguage.replace("Euskara", "Euskara from Leitza")}: ${JSON.stringify(missing)}` },
       ],
     }),
   });
@@ -98,6 +100,7 @@ export function translateValue(value, dict) {
   if (typeof value === "string") {
     const list = value
       .replace(/\n +\n/g, "\n\n")
+      .replace(/\n\n+/g, "\n\n")
       .split("\n\n")
       .map((s) => s.trim());
     return list.map((v) => dict[v] || v).join("\n\n");

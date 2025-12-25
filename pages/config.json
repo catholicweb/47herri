@@ -1,46 +1,53 @@
 {
-  "title": "Nombre parroquias",
-  "description": "Descripción del sitio",
+  "title": "47 herri",
+  "description": "Nafarroako ipar-mendebaldeko hamar udalerrietako 47 parrokiek osatzen duten pastoral barruti katolikoa gara gu iruñako elizbarrutian.",
   "image": "",
   "icon": "",
-  "social": ["https://www.youtube.com/@seminariopamplona"],
+  "social": ["https://www.youtube.com/@47herri"],
   "bank": [
     {
-      "title": "Dono a mi Iglesia",
-      "account": "https://www.donoamiiglesia.es"
+      "title": "Bizum",
+      "account": "11995"
+    },
+    {
+      "title": "Caixa",
+      "account": "ES15 2100 4941 1222 0005 0326"
+    },
+    {
+      "title": "Laboral",
+      "account": "ES66 3035 0118 8811 8000 2943"
+    },
+    {
+      "title": "Rural",
+      "account": "ES17 3008 0179 2436 5465 8818"
     }
   ],
   "siteurl": "https://parroquia.app",
-  "languages": ["Español:es", "Català:ca", "Galego:gl", "Euskara:eu", "English:en"],
-  "nav": [],
+  "languages": ["Euskara:eu", "Castellano:es", "Català:ca", "English:en", "Français:fr", "Deutsch:de", "Italiano:it", "Português:pt", "Română:ro", "العربية:ar", "Български:bg"],
+  "nav": [
+    {
+      "title": "Menu",
+      "links": ["pages/index.md", "pages/recursos.md", "pages/parroquias.md"]
+    }
+  ],
+  "collaborators": [
+    {
+      "image": "/media/20251129_093926.jpg",
+      "name": "David Galarza",
+      "description": "In solidum parrokoa (moderatzailea)",
+      "phonenumber": "690 08 15 84"
+    },
+    { "image": "/media/Screenshot_20250404_192119_Gallery.webp", "name": "Santi Garisoain", "description": "In solidum parrokoa", "phonenumber": "648 77 22 11" },
+    { "image": "/media/Screenshot_20250404_192754_Gallery.webp", "name": "Jesús Mª Sotil", "description": "In solidum parrokoa", "phonenumber": "638 73 95 75" }
+  ],
   "theme": {
-    "bodyFont": "Quicksand",
-    "headingFont": "Story Script",
-    "accentColor": "#2e7d32",
+    "bodyFont": "Open Sans",
+    "navStyle": "47herri",
+    "headingFont": "Basque Smile",
+    "accentColor": "#009c46",
     "borderRadius": "1",
     "borderWidth": "1.25",
     "shadowDepth": "1.50",
-    "styles": [
-      {
-        "selector": "blockquote",
-        "cssClass": "opacity: 0;",
-        "scroll": true
-      },
-      {
-        "selector": "h2",
-        "cssClass": "@apply hover:text-accent",
-        "scroll": false
-      },
-      {
-        "selector": "li, ul",
-        "cssClass": "opacity: 0.5; transform: scale(0.80);",
-        "scroll": true
-      },
-      {
-        "selector": ".card",
-        "cssClass": "@apply hover:scale-110 hover:rotate-3",
-        "scroll": false
-      }
-    ]
+    "styles": []
   }
 }

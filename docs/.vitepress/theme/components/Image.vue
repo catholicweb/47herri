@@ -12,6 +12,8 @@ const isExternal = computed(() => /^(https?:)?\/\//.test(props.src));
 
 const isMedia = computed(() => props.src?.startsWith("/media/"));
 
+console.log(props.src, isMedia.value);
+
 const basePath = computed(() => {
   const p = props.src?.replace(/^\/media\//, "");
   return p?.replace(/\.[^/.]+$/, ".webp");

@@ -2,8 +2,33 @@
   <div v-if="block.title" class="text-center pt-12 px-6">
     <h2 class="my-2 text-4xl font-bold">{{ block.title }}</h2>
   </div>
-  <div class="video mb-8" :class="block.grid">
-    <div v-for="(item, i) in videos" :key="i">
+
+  <div v-if="block.filters" class="flex flex-wrap justify-center gap-4 my-8">
+    <button
+      v-for="(filter, index) in block.filters"
+      :key="index"
+      @click="
+        searchQuery = '';
+        selectedFilter = index;
+      "
+      class="px-6 py-2 rounded-full transition-colors duration-200 text-sm cursor-pointer font-bold"
+      :class="[selectedFilter === index ? 'bg-[#2d3436] text-white' : 'bg-transparent text-gray-700 hover:bg-gray-200']"
+    >
+      {{ filter }}
+    </button>
+  </div>
+
+  <div v-if="block.query" class="relative max-w-md mx-auto mb-5">
+    <span class="absolute inset-y-0 left-4 flex items-center text-gray-400">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </span>
+    <input v-model="searchQuery" type="text" placeholder="Bilatu" class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all shadow-sm" />
+  </div>
+
+  <div class="video mb-8" :class="grid(block)">
+    <div v-for="(item, i) in filteredItems" :key="i">
       <div class="relative">
         <div v-if="playingVideo === item.src" class="w-full h-full items-center rounded-lg overflow-hidden cursor-pointer aspect-[16/9]">
           <iframe :src="item.src" data-testid="embed-iframe" width="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" class="w-full h-full rounded-lg overflow-hidden"></iframe>
@@ -13,14 +38,14 @@
           <img :src="item.image" :alt="`Thumbnail for ${item.title}`" :fetchpriority="block.index >= 1 ? 'low' : 'high'" :loading="block.index >= 1 ? 'lazy' : 'eager'" class="absolute inset-0 w-full h-full object-cover rounded-lg" />
 
           <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 text-center to-transparent flex items-end">
-            <h3 class="text-xl font-bold text-white mb-2 w-full px-4">{{ item.title }}</h3>
+            <h3 class="text-lg font-bold text-white mb-2 w-full px-4">{{ item.title }}</h3>
           </div>
 
           <div class="absolute inset-0 flex items-center justify-center logo" :class="logo(item)"></div>
         </div>
       </div>
 
-      <div v-if="item.publishedAt" class="pt-2 text-center w-full text-black">
+      <div v-if="item.publishedAt && !block.filters?.length" class="pt-2 text-center w-full text-black">
         {{ formatDate(item.publishedAt, $frontmatter.lang) }}
         <div class="w-[14px] h-[14px] mx-auto rounded-full bg-accent"></div>
         <div class="h-[4px] -mt-[8px] bg-accent -mx-[8px]"></div>
@@ -30,9 +55,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { formatDate } from "./../../utils.js";
-import youtube from "./../../../src/videos.json";
+import { ref, computed } from "vue";
+import { formatDate, grid } from "./../../utils.js";
+import { data } from "./../../blocks.data.js";
 
 const props = defineProps({
   block: {
@@ -40,19 +65,38 @@ const props = defineProps({
     required: true,
   },
 });
-const videos = ref(props.block.elements);
+let videos = props.block.elements;
 
 // Load channel data when needed :)
 if (props.block._block == "video-channel") {
-  //  const { default: youtube } = await import("./../../../src/videos.json");
-  videos.value = youtube
+  console.log(data.videos.length);
+  videos = data.videos
     .filter((obj) =>
       JSON.stringify(obj)
         .toLowerCase()
         .includes((props.block.filter || "").toLowerCase()),
     )
+    .filter((item) => {
+      const haystack = JSON.stringify(item).toLowerCase();
+      if (!props.block.filters) return true;
+      return props.block.filters.some((word) => haystack.includes(word?.toLowerCase()));
+    })
     .map((v) => ({ ...v, src: `https://www.youtube.com/embed/${v.videoId}?autoplay=1`, image: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg` }));
 }
+
+const searchQuery = ref("");
+const selectedFilter = ref(0);
+// Filter logic: combining Category + Search Text
+const filteredItems = computed(() => {
+  return videos
+    .filter((item) => {
+      const haystack = JSON.stringify(item).toLowerCase();
+      const matchesfilter = selectedFilter.value === 0 || haystack.includes(props.block.filters?.[selectedFilter.value]?.toLowerCase());
+      const matchesSearch = haystack.includes(searchQuery.value.toLowerCase());
+      return matchesfilter && matchesSearch;
+    })
+    .slice(0, 50);
+});
 
 function logo(item) {
   if (item.src.includes("youtube")) return "youtube-logo";

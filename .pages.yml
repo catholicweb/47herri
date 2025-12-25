@@ -77,6 +77,13 @@ components:
       multiple: true
       creatable: true
       values: ["Parroquia Nª Sra Asunción", "Ermita Virgen del Olmo"]
+  tags:
+    label: Options
+    type: select
+    options:
+      multiple: true
+      creatable: false
+      values: ["dark", "twocol", "small", "tiny", "large"]
   rrule:
     label: Fechas
     type: select
@@ -155,6 +162,7 @@ content:
       - { name: title, label: Título, type: string }
       - { name: description, label: Subtitulo, type: string }
       - { name: image, label: Imagen, type: image }
+      - { name: hideHero, label: Esconder cabezera por defecto, type: boolean, default: false }
       - name: sections
         label: Secciones de la página
         type: block
@@ -187,11 +195,13 @@ content:
             fields:
               - { name: title, type: string, label: Titulo sección }
               - { name: list, type: image, label: Seleccion de imagenes, options: { multiple: true } }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: text
             label: Texto
             fields:
               - { name: title, type: string, label: Titulo sección }
               - { name: html, label: Texto largo, type: rich-text }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: gospel
             label: Evangelio del día
             fields:

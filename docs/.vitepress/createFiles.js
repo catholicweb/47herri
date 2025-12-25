@@ -5,18 +5,20 @@ import { fetchVideos } from "./youtube.js";
 import { buildDictionary, translateObject, translateValue } from "./translate.js";
 import { createImages } from "./images.js";
 import { fetchUpstream, commit } from "./git.js";
+import { getBibleReadings } from "./gospel.js";
+import { printCSS } from "./css.js";
+import { fetchCalendar } from "./calendar.js";
 
-const ROOT = "./pages/";
-const OUT = "./docs/";
+import MarkdownIt from "markdown-it";
+import sharp from "sharp";
+
 const DICTIONARY = read("./docs/public/dictionary.json");
 
 const config = read("./pages/config.json");
 // Lista de lenguas a generar
 const TARGET_LANGS = config.languages?.length ? config.languages : ["Español:es"];
-import MarkdownIt from "markdown-it";
-import sharp from "sharp";
 
-const md = new MarkdownIt({ html: true, linkify: true });
+const md = new MarkdownIt({ html: true, linkify: true, breaks: true });
 
 async function createManifest() {
   try {
@@ -60,6 +62,7 @@ async function createManifest() {
 
 async function postComplete(fm) {
   if (!fm.sections) return;
+  addMeta(fm);
   for (var i = 0; i < fm.sections.length; i++) {
     if (typeof fm.sections[i].html === "string") {
       fm.sections[i].html = md.render(fm.sections[i].html);
@@ -79,13 +82,15 @@ async function postComplete(fm) {
         return elem;
       });
     }
+    if (fm.sections[i]._block == "gospel") {
+      fm.sections[i].gospel = await getBibleReadings({ lang: fm.lang.split(":")[1], date: new Date(), gospelOnly: !fm.sections[i].readings });
+    }
   }
 }
 
 async function autocomplete(fm) {
   console.log("autocomplete: ", fm.title);
   if (!fm.sections) return;
-  addMeta(fm);
   for (var i = 0; i < fm.sections.length; i++) {
     fm.sections[i].index = i;
     if (fm.sections[i].links) {
@@ -95,7 +100,6 @@ async function autocomplete(fm) {
       fm.sections[i]._block = "gallery-feature";
       fm.sections[i].type = fm.sections[i].type || "team-cards";
     }
-
     if (fm.sections[i]._block == "gallery-feature") {
       fm.sections[i].type = "team-cards";
       fm.sections[i].grid = "small";
@@ -105,29 +109,9 @@ async function autocomplete(fm) {
       });
       fm.sections[i].type = "gallery";
       fm.sections[i].grid = "tiny";
-    } else if (fm.sections[i]._block == "gospel") {
-      const today = new Date();
-      const dateStr = today.toISOString().split("T")[0];
-      try {
-        const data = await fetch(`https://gxvchjojub.execute-api.eu-west-1.amazonaws.com/production/getmissafreecontent?lang=es&day=${dateStr}`);
-        fm.sections[i].gospel = await data.json();
-      } catch (e) {}
+      fm.sections[i].hidden = !fm.sections[i].elements?.length;
     }
-    fm.sections[i].grid = grid(fm.sections[i]);
   }
-}
-
-function grid(section) {
-  if (section.grid == "tiny") {
-    return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-1/3 *:sm:w-1/4 *:md:w-1/5 *:p-1";
-  }
-  if (section.grid == "small") {
-    return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-1/2 *:sm:w-1/3 *:md:w-1/4 *:p-2";
-  }
-  if (section._block == "video-channel") {
-    return "container mx-auto flex flex-nowrap overflow-x-scroll *:flex-shrink-0 py-4 *:w-full *:sm:w-1/2 *:md:w-1/3 *:p-2 px-2 video-channel";
-  }
-  return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-full *:sm:w-1/2 *:md:w-1/3 *:p-2 px-2";
 }
 
 function absoluteURL(url) {
@@ -186,36 +170,38 @@ function filename(file, title, lang) {
 }
 
 async function run() {
+  // Fetch upstream changes (if any)
   await fetchUpstream();
+  // Create some basic files
+  await printCSS();
+  await fetchCalendar();
+  await createManifest();
   await fetchVideos();
-
   await buildDictionary();
-
   await createImages();
-
   await commit();
 
-  await createManifest();
-  await cleanDir(OUT);
-  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: ROOT, absolute: false });
+  // Clean output dir and repopulate
+  await cleanDir("./docs/");
 
+  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: "./pages/", absolute: false });
   for (const file of files) {
-    const { data, content } = read(ROOT + file);
+    const { data, content } = read("./pages/" + file);
     await autocomplete(data);
 
     for (const lang of TARGET_LANGS) {
       const dict = DICTIONARY[lang] || {};
       const translatedData = translateObject(data, dict);
       translatedData.lang = lang;
-      translatedData.source = ROOT + file;
+      translatedData.source = "./pages/" + file;
       translatedData.equiv = TARGET_LANGS.map((lan) => {
         return { lang: lan, href: "/" + filename(file, data.title, lan) };
       });
 
       await postComplete(translatedData);
 
-      const dest = OUT + filename(file, data.title, lang) + ".md";
-      write(dest, translatedData);
+      const dest = "./docs/" + filename(file, data.title, lang) + ".md";
+      write(dest, translatedData, content);
     }
   }
 }

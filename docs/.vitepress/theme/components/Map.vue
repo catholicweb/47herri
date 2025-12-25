@@ -58,11 +58,21 @@ onMounted(async () => {
   await loadCSS("https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css");
   await import("https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js");
 
+  // Try load the geojson file (if any)
+  fetch("/map.geojson")
+    .then((response) => response.json()) // Convert the response to JSON
+    .then((data) => {
+      L.geoJSON(data).addTo(map);
+    })
+    .catch((error) => {
+      console.info("Unable to load geoJSON");
+    });
+
   var supportsTouch = "ontouchstart" in window || navigator.msMaxTouchPoints;
 
   const map = L.map(mapContainer.value, { fullscreenControl: true, zoomControl: !supportsTouch });
 
-  const latLngBounds = data.maps.map((m) => m.geo.split(",").map((s) => Number(s.trim())));
+  const latLngBounds = data.maps.map((m) => m.geo?.split(",").map((s) => Number(s.trim())));
 
   var bounds = L.latLngBounds(latLngBounds);
 
@@ -81,7 +91,7 @@ function renderMarkers(lang) {
   markersLayer.clearLayers();
 
   data.maps
-    .filter((m) => m.lang === lang)
+    .filter((m) => m.lang === lang && m.geo)
     .forEach((m) => {
       const g = m.geo.split(",").map((s) => Number(s.trim()));
 
@@ -99,6 +109,9 @@ function renderMarkers(lang) {
       if (m.geo !== props.block.geo) {
         marker._icon.style.opacity = "0.4";
       }
+      if (m.name?.includes("san")) {
+        marker._icon.classlist.add("special");
+      }
     });
 }
 </script>
@@ -106,6 +119,10 @@ function renderMarkers(lang) {
 <style>
 .leaflet-pane .leaflet-marker-pane img {
   filter: hue-rotate(calc(var(--accent-angle) - 204deg));
+}
+
+.leaflet-pane .leaflet-marker-pane img.special {
+  filter: hue-rotate(calc(var(--accent-angle) - 104deg));
 }
 
 .leaflet-popup-content-wrapper {
