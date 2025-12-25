@@ -16,6 +16,8 @@ hiletak:
     name: "Mikeli Ezkurdia Otamendi "
   - date: 16/12/2025 17.00
     name: Luis María Beguiristain Madoz
+  - date: 26/12/2025 18.30
+    name: "Puri Domenech Gainza "
 ekitaldiak:
   - date: 17/04/2025 18:00
     title: JAUNAREN AZKEN AFARIKO OSPAKIZUNA
