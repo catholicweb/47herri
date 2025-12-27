@@ -83,7 +83,7 @@ components:
     options:
       multiple: true
       creatable: false
-      values: ["dark", "twocol", "small", "tiny", "large"]
+      values: ["dark", "twocol", "small", "tiny", "large", "hidden"]
   rrule:
     label: Fechas
     type: select

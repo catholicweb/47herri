@@ -185,7 +185,9 @@ export async function fetchVideos(channelUrl) {
     // Save videos
     write("./docs/public/videos.json", videos); // Guardar el resultado en un archivo
     await writeNotification(newImportantVideos);
+    return videos || [];
   } catch (error) {
     console.error("Error loading youtube data:", error);
+    return videos || [];
   }
 }

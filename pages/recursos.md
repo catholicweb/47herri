@@ -11,20 +11,17 @@ sections:
     audio: false
     images: false
   - _block: video
-    tags: ["twocols"]
-    hidden: true
+    tags: ["twocols", "hidden"]
     title: Gurutz bidea
     links:
       - "https://www.youtube.com/watch?v=Bpmam96GZno"
   - _block: video
-    tags: ["twocols"]
-    hidden: true
+    tags: ["twocols", "hidden"]
     title: Zeru lurren erregina
     links:
       - "https://www.youtube.com/watch?v=W0PbRzsxue0"
   - _block: video
-    tags: ["twocols"]
-    hidden: false
+    tags: ["twocols", "small"]
     title: Errosario Santua
     links:
       - "https://www.youtube.com/watch?v=h5mZdE6u274"
@@ -32,8 +29,7 @@ sections:
       - "https://www.youtube.com/watch?v=_xjJggHEpQI"
       - "https://www.youtube.com/watch?v=7zenKMOnsxs"
   - _block: video
-    tags: ["twocols"]
-    hidden: false
+    tags: ["twocols", "small"]
     title: Angelusa
     links:
       - "https://www.youtube.com/watch?v=eDDOa-8RpzA"

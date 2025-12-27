@@ -83,6 +83,28 @@ async function postComplete(fm) {
         return elem;
       });
     }
+    if (fm.sections[i]._block == "video-channel") {
+      fm.sections[i].elements = videos
+        .filter((obj) =>
+          JSON.stringify(obj)
+            .toLowerCase()
+            .includes((fm.sections[i].filter || "").toLowerCase()),
+        )
+        .filter((item) => {
+          const haystack = JSON.stringify(item).toLowerCase();
+          if (!fm.sections[i].filters) return true;
+          return fm.sections[i].filters.some((word) => haystack.includes(word?.toLowerCase()));
+        })
+        .map((v) => ({ ...v, src: `https://www.youtube.com/embed/${v.videoId}?autoplay=1`, image: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg` }))
+        .slice(0, 75);
+
+      if (fm.sections[i].filters?.length) {
+        (fm.sections[i].tags ??= []).push("vertical", "small");
+      } else {
+        (fm.sections[i].tags ??= []).push("horizontal", "medium");
+      }
+    }
+
     if (fm.sections[i]._block == "gospel") {
       fm.sections[i].gospel = await getBibleReadings({ lang: fm.lang.split(":")[1], date: new Date(), gospelOnly: !fm.sections[i].readings });
     }
@@ -103,13 +125,13 @@ async function autocomplete(fm) {
     }
     if (fm.sections[i]._block == "gallery-feature") {
       fm.sections[i].type = "team-cards";
-      fm.sections[i].grid = "small";
+      (fm.sections[i].tags ??= []).push("small");
     } else if (fm.sections[i].list) {
       fm.sections[i].elements = fm.sections[i].list.map((i) => {
         return { title: "", description: "", image: i };
       });
       fm.sections[i].type = "gallery";
-      fm.sections[i].grid = "tiny";
+      (fm.sections[i].tags ??= []).push("tiny");
       fm.sections[i].hidden = !fm.sections[i].elements?.length;
     }
   }
@@ -170,6 +192,8 @@ function filename(file, title, lang) {
   return code + slugify(translateValue(title, dict));
 }
 
+let videos = [];
+
 async function run() {
   // Fetch upstream changes (if any)
   await fetchUpstream();
@@ -178,7 +202,7 @@ async function run() {
   await fetchCalendar();
   await sendNotifications();
   await createManifest();
-  await fetchVideos();
+  videos = await fetchVideos();
   await buildDictionary();
   await createImages();
   await commit();

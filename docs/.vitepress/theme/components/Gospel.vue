@@ -1,7 +1,7 @@
 <template>
-	<div class="gospel max-w-3xl mx-auto p-6 my-6">
+	<div class="gospel max-w-5xl mx-auto p-4 my-6">
 		<div v-if="block.title" class="text-center">
-			<h2 class="my-4 text-4xl font-bold">{{ block.title }} {{ readings?.day_title }}</h2>
+			<h2 class="my-4 text-3xl font-bold">{{ block.title }} {{ readings?.day_title }}</h2>
 		</div>
 		<template v-for="(reading, key) in readings.list" :key="key">
 			<div v-if="block.images" class="relative w-full sm:w-1/2 mx-auto rounded-lg overflow-hidden my-4 mt-8">

@@ -10,7 +10,7 @@
     <!-- Main Content - Block System -->
     <main class="flex-1 flex flex-wrap" v-if="$frontmatter.sections">
       <template v-for="(section, index) in $frontmatter.sections">
-        <section :id="slugify(section.title)" v-if="!section.hidden" :class="getSectionClasses(section.tags)">
+        <section :id="slugify(section.title)" v-if="!section.tags?.includes('hidden')" :class="getSectionClasses(section.tags)">
           <component :key="index" :is="getBlockComponent(section._block)" :block="section" />
         </section>
       </template>

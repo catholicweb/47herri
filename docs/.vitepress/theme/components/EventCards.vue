@@ -72,7 +72,7 @@ watch(activeIndex, () => {
 <template>
   <div class="relative z-10 pt-11 pb-20 font-medium">
     <div class="container mx-auto px-4">
-      <div class="overflow-hidden min-h-60 relative max-w-xl" @touchstart.passive="onStart" @touchend.passive="onEnd">
+      <div class="overflow-hidden min-h-50 relative max-w-xl" @touchstart.passive="onStart" @touchend.passive="onEnd">
         <!-- TRACK -->
         <div class="flex transition-transform duration-500 ease-out" :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
           <!-- SLIDES -->

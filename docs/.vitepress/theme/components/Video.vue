@@ -1,9 +1,9 @@
 <template>
-  <div v-if="block.title" class="text-center pt-12 px-6">
+  <div v-if="block.title" class="max-w-3xl mx-auto text-center pt-12 px-6">
     <h2 class="my-2 text-4xl font-bold">{{ block.title }}</h2>
   </div>
 
-  <div v-if="block.filters" class="flex flex-wrap justify-center gap-4 my-8">
+  <div v-if="block.filters" class="max-w-4xl mx-auto px-6 flex flex-wrap justify-center gap-2 my-5">
     <button
       v-for="(filter, index) in block.filters"
       :key="index"
@@ -11,7 +11,7 @@
         searchQuery = '';
         selectedFilter = index;
       "
-      class="px-6 py-2 rounded-full transition-colors duration-200 text-sm cursor-pointer font-bold"
+      class="px-2 py-2 rounded-full transition-colors duration-200 text-sm cursor-pointer font-bold"
       :class="[selectedFilter === index ? 'bg-[#2d3436] text-white' : 'bg-transparent text-gray-700 hover:bg-gray-200']"
     >
       {{ filter }}
@@ -27,7 +27,7 @@
     <input v-model="searchQuery" type="text" placeholder="Bilatu" class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all shadow-sm" />
   </div>
 
-  <div class="video mb-8" :class="grid(block)">
+  <div class="video mb-8 px-2" :class="grid(block)">
     <div v-for="(item, i) in filteredItems" :key="i">
       <div class="relative">
         <div v-if="playingVideo === item.src" class="w-full h-full items-center rounded-lg overflow-hidden cursor-pointer aspect-[16/9]">
@@ -57,7 +57,6 @@
 <script setup>
 import { ref, computed } from "vue";
 import { formatDate, grid } from "./../../utils.js";
-import { data } from "./../../blocks.data.js";
 
 const props = defineProps({
   block: {
@@ -66,23 +65,6 @@ const props = defineProps({
   },
 });
 let videos = props.block.elements;
-
-// Load channel data when needed :)
-if (props.block._block == "video-channel") {
-  console.log(data.videos.length);
-  videos = data.videos
-    .filter((obj) =>
-      JSON.stringify(obj)
-        .toLowerCase()
-        .includes((props.block.filter || "").toLowerCase()),
-    )
-    .filter((item) => {
-      const haystack = JSON.stringify(item).toLowerCase();
-      if (!props.block.filters) return true;
-      return props.block.filters.some((word) => haystack.includes(word?.toLowerCase()));
-    })
-    .map((v) => ({ ...v, src: `https://www.youtube.com/embed/${v.videoId}?autoplay=1`, image: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg` }));
-}
 
 const searchQuery = ref("");
 const selectedFilter = ref(0);
@@ -165,7 +147,7 @@ function handleClick(item) {
   transform: scale(1.1);
 }
 
-.video-channel::-webkit-scrollbar {
+.hidescrollbar::-webkit-scrollbar {
   display: none;
 }
 </style>

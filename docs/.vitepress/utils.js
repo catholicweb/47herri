@@ -136,13 +136,11 @@ export function splitRRuleByDay(byDayArray) {
   return { simpleByDay: formatWeekdays(simpleByDay), simpleByWeek };
 }
 
-function weekday(days, split) {
+function weekday(days) {
   days = splitRRuleByDay(days).simpleByDay;
 
   const w = [];
-  if (days.join(",").match(/mo|tu|we|th|fr/i)) {
-    w.push(..."MO,TU,WE,TH,FR".split(split));
-  }
+  if (days.join(",").match(/mo|tu|we|th|fr/i)) w.push("MO,TU,WE,TH,FR");
   if (days.join(",").toLowerCase().includes("sa")) w.push("SA");
   if (days.join(",").toLowerCase().includes("su")) w.push("SU");
   return w;
@@ -404,18 +402,25 @@ function hash(s) {
 }
 
 export function grid(section) {
-  if (section.grid == "tiny") {
-    return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-1/3 *:sm:w-1/4 *:md:w-1/5 *:p-1";
-  }
-  if (section.grid == "small") {
-    return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-1/2 *:sm:w-1/3 *:md:w-1/4 *:p-2";
-  }
-  if (section.elements?.length == 1) {
-    return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-full *:sm:w-2/3 *:p-2";
-  }
-  if (section._block == "video-channel") {
-    if (section.filters?.length) return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-1/2 *:sm:w-1/3 *:md:w-1/4 *:p-2";
-    return "container mx-auto flex flex-nowrap overflow-x-scroll *:flex-shrink-0 py-4 *:w-full *:sm:w-1/2 *:md:w-1/3 *:p-2 px-2 video-channel";
-  }
-  return "container mx-auto flex flex-wrap justify-center text-center py-4 *:w-full *:sm:w-1/2 *:md:w-1/3 *:p-2 px-2";
+  let { tags = [], elements = [] } = section;
+
+  // 1. Layout Base
+  const base = "container mx-auto flex";
+  const directions = {
+    horizontal: "flex-nowrap overflow-x-scroll *:flex-shrink-0 hidescrollbar",
+    vertical: "flex-wrap justify-center text-center",
+  };
+  const sizes = {
+    tiny: "py-4 *:w-1/3 *:sm:w-1/4 *:md:w-1/5 *:p-1",
+    small: "py-4 *:w-1/2 *:md:w-1/3 *:lg:w-1/4 *:p-2",
+    medium: "py-4 *:w-full *:sm:w-1/2 *:md:w-1/3 *:p-2 px-2",
+    large: "py-4 *:w-full *:sm:w-2/3 *:p-2",
+  };
+
+  // 3. Logic: Find the active size
+  const defaultSize = elements.length == 1 ? "large" : "medium";
+  const activeSize = Object.keys(sizes).find((s) => tags.includes(s)) || defaultSize;
+  const activeDirection = Object.keys(directions).find((s) => tags.includes(s)) || "vertical";
+
+  return `${base} ${directions[activeDirection]} ${sizes[activeSize]}`;
 }
