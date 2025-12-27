@@ -168,7 +168,7 @@ export async function fetchCalendar() {
         let exceptions = [];
         // Infer type
         const validTypes = Object.keys(input.default || {}).map((key) => key.replace(/^event-/, ""));
-        const type = validTypes.find((typeKey) => `${event.summary} ${event.description}`.toLowerCase().includes(typeKey.toLowerCase())) || "ics";
+        const type = validTypes.find((typeKey) => `${event.summary} ${event.description}`?.toLowerCase()?.includes(typeKey?.toLowerCase())) || "ics";
 
         const dates = toArray(getNextOccurrence(event));
         if (!dates.length) return;

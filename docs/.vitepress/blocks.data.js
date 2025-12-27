@@ -20,6 +20,7 @@ export default {
           image: data.image,
           tags: data.tags,
           description: data.description,
+          lang: data.lang,
           url: "/" + file.replace(/index\.md$/, "").replace(/\.md$/, ""),
         });
         data.sections.forEach((section) => {

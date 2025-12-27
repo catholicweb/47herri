@@ -394,7 +394,7 @@ export function slugify(str) {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-  return slug || `file-${hash(str)}`;
+  return slug || `${hash(str)}`;
 }
 
 function hash(s) {

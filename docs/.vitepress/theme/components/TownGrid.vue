@@ -1,7 +1,9 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 
 import { data } from "./../../blocks.data.js";
+import { useData } from "vitepress";
+const { page } = useData();
 
 // Props allow you to pass the data from VitePress data loaders or a simple array
 const props = defineProps({
@@ -10,7 +12,14 @@ const props = defineProps({
 
 const searchQuery = ref("");
 const selectedFilter = ref(props.block.filters[0]);
-const allItems = props.block.category == "pages" ? data.pages : data.videos;
+let allItems = data.pages.filter((f) => f.lang === page.value.frontmatter.lang);
+
+watch(
+  () => page.value.frontmatter.lang,
+  (lang, from) => {
+    allItems = data.pages.filter((f) => f.lang === lang);
+  },
+);
 
 // Filter logic: combining Category + Search Text
 const filteredItems = computed(() => {
@@ -28,7 +37,7 @@ const filteredItems = computed(() => {
   <div v-if="block.title" class="text-center pt-12 px-6">
     <h2 class="my-2 text-4xl font-bold">{{ block.title }}</h2>
   </div>
-  <div class="w-full max-w-3xl mx-auto p-4 mb-8">
+  <div class="w-full max-w-6xl mx-auto p-4 mb-8">
     <div class="flex flex-wrap justify-center gap-4 mb-8">
       <button
         v-for="filter in block.filters"
@@ -55,7 +64,7 @@ const filteredItems = computed(() => {
 
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
       <a v-for="item in filteredItems" :key="item.url" :href="item.url" class="group flex flex-col overflow-hidden rounded-xl bg-[#2d3436] transition-transform">
-        <div class="aspect-[4/3] overflow-hidden bg-gray-200">
+        <div class="aspect-square overflow-hidden bg-gray-200">
           <img :src="item.image" :alt="item.title" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
         </div>
         <div class="p-4 text-center">

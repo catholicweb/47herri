@@ -7,7 +7,7 @@ const { theme, site, page } = useData();
 const route = useRoute();
 const nav = computed(() => {
   let nav = theme.value.nav[page.value.frontmatter.lang] || [];
-  console.log(nav, theme.value.nav);
+  console.log(page.value.filePath);
   return nav.length === 1 ? nav[0].items : nav;
 });
 
