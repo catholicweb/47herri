@@ -4,11 +4,16 @@ image: /media/hero-bg.webp
 
 sections:
   - _block: calendar
-    title: No te pierdas nuestros eventos!
     groups:
-      - title: Horario de Misas
-        filter: "Misa"
-        order: ["byweekend", "times", "", "locations", "exceptions+byweek"]
+      - title: "Próximas celebraciones"
+        filter: '"byday":[]'
+        order: ["title", "dates", "", "times", "locations+rrule-byday+language-euskaraz"]
+      - title: "Horario de Misas"
+        filter: "mass"
+        order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
+      - title: "Otros eventos periódicos"
+        filter: '!"byday":[]&!mass'
+        order: ["title", "locations", "", "times", "byday+byweek+language-euskaraz"]
   - _block: video-channel
     title: Eguneroko Meza
     filter: ""

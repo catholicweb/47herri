@@ -78,11 +78,11 @@ function intersectOptions(options, field) {
   const validSet = new Set(validValues[field]);
   let valid = options.filter((opt) => validSet.has(opt));
 
-  /*if (field == "BYDAY") {
+  if (field == "BYDAY") {
     const weekMatch = options.join(",").match(/WEEK(\d+)/);
     if (!weekMatch) return valid;
     return valid.map((opt) => weekMatch[1] + opt);
-  }*/
+  }
   if (field == "FREQ" && !valid.length) {
     const weekMatch = options.join(",").match(/WEEK(\d+)/);
     if (weekMatch) return ["MONTHLY"];
@@ -133,11 +133,11 @@ export async function fetchCalendar() {
           title: e.title || e.summary || "",
           times: toArray(e.times),
           dates: dates,
-          rrule: toArray(e.rrule).map((r) => r.toUpperCase()),
+          //rrule: toArray(e.rrule).map((r) => r.toUpperCase()),
           images: toArray(e.image || input.default?.[type]?.image),
           byday: intersectOptions(toArray(e.rrule), "BYDAY"),
-          byweek: intersectOptions(toArray(e.rrule), "BYWEEK"),
-          freq: intersectOptions(toArray(e.rrule), "FREQ"),
+          //byweek: intersectOptions(toArray(e.rrule), "BYWEEK"),
+          //freq: intersectOptions(toArray(e.rrule), "FREQ"),
           notes: toArray(e.notes || input.default?.[type]?.description),
           language: e.language,
           //end: [],
@@ -183,7 +183,6 @@ export async function fetchCalendar() {
             return p.getFirstValue().toJSDate();
           });
         }
-
         events.push({
           type: type,
           title: event.summary?.split("-")[0].trim() || "",
@@ -192,10 +191,11 @@ export async function fetchCalendar() {
           //end: event.endDate.toJSDate(),
           images: toArray(getEventAttachments(eventComp) || input.default?.[type]?.image),
           notes: toArray(event.description || input.default?.[type]?.description),
-          locations: toArray(event.location?.split(",")[0]), // Usually "Leitza, Navarre, Spain"
-          byday: toArray(rrule?.byday),
+          locations: toArray(event.location?.split(",")[0]), // Usually "Leitza, Navarre, Spain" -> "Leitza"
+          byday: toArray(rrule?.parts?.BYDAY),
+          //...JSON.parse(JSON.stringify(rrule || {})),
           exceptions: toArray(exceptions),
-          freq: [],
+          //freq: toArray(rrule?.freq),
         });
         console.log(events[events.length - 1]);
       });
@@ -206,7 +206,7 @@ export async function fetchCalendar() {
   function comp(a, b, key, def = "") {
     return (a[key]?.[0] || def).localeCompare(b[key]?.[0] || def);
   }
-  const sorted = events.toSorted((a, b) => comp(a, b, "dates") || comp(a, b, "times") || comp(a, b, "byweek") || comp(a, b, "title"));
+  const sorted = events.toSorted((a, b) => comp(a, b, "dates") || comp(a, b, "times") || comp(a, b, "byday", -100) || comp(a, b, "title"));
   exportCalendar(sorted);
   console.log("Events parsed ", sorted?.length);
   return { sorted };

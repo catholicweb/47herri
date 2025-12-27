@@ -1,43 +1,12 @@
 <script setup>
 import { data } from "./../../blocks.data.js";
-import { formatDate, slugify, applyComplexFilter, accessMultikey, toArray } from "./../../utils.js";
+import { formatDate, slugify, applyComplexFilter, accessMultikey, groupEvents } from "./../../utils.js";
 const props = defineProps({ block: { type: Object, required: true } });
-
-function groupEvents(events, fields) {
-  if (fields.length === 0) return events;
-  const field = fields[0];
-  const grouped = events.reduce((acc, event) => {
-    const key_array = accessMultikey(event, field);
-    for (const key of key_array) {
-      if (!acc[key]) acc[key] = [];
-      if (fields.length > 1) acc[key].push(event);
-    }
-    return acc;
-  }, {});
-  Object.keys(grouped).forEach((key) => {
-    grouped[key] = groupEvents(grouped[key], fields.slice(1));
-  });
-  return grouped;
-}
 
 function groupData(data, filter, order) {
   const filtered = data.filter((obj) => applyComplexFilter(obj, filter));
-
   return groupEvents(filtered, order);
 }
-
-let groups = [
-  {
-    title: "Próximas celebraciones",
-    filter: "!masses",
-    order: ["title", "dates", "", "times", "locations+rrule-byday+language-euskaraz"],
-  },
-  {
-    title: "Horario de Misas",
-    filter: "masses",
-    order: ["weekday", "times", "", "locations", "exceptions+rrule-byday+language-euskaraz"],
-  },
-];
 
 function getSubKeys(table) {
   const keys = new Set();
@@ -51,7 +20,7 @@ function getSubKeys(table) {
 <template>
   <h2 class="text-4xl text-center font-bold py-6">{{ block.title }}</h2>
   <div class="calendar container mx-auto px-4 pb-8 flex flex-wrap gap-4">
-    <div v-for="group in groups" class="w-full py-4">
+    <div v-for="group in block.groups" class="w-full py-4">
       <h2 :id="slugify(group.title)" class="text-4xl text-center mx-auto font-bold my-3 w-full">
         {{ formatDate(group.title, $frontmatter.lang) }}
       </h2>

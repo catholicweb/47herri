@@ -121,6 +121,6 @@ const mobileMenuOpen = ref(false);
       </div>
     </nav>
 
-    <EventCards v-if="navStyle == '47herri' && !$frontmatter.hideHero" :block="{ filter: $frontmatter.source == './pages/index.md' ? '!masses' : $frontmatter.title }" class="w-full" />
+    <EventCards v-if="navStyle == '47herri' && !$frontmatter.hideHero" :block="{ filter: $frontmatter.title, source: $frontmatter.source }" class="w-full" />
   </div>
 </template>

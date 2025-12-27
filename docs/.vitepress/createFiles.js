@@ -8,6 +8,7 @@ import { fetchUpstream, commit } from "./git.js";
 import { getBibleReadings } from "./gospel.js";
 import { printCSS } from "./css.js";
 import { fetchCalendar } from "./calendar.js";
+import { sendNotifications } from "./notify.js";
 
 import MarkdownIt from "markdown-it";
 import sharp from "sharp";
@@ -175,6 +176,7 @@ async function run() {
   // Create some basic files
   await printCSS();
   await fetchCalendar();
+  await sendNotifications();
   await createManifest();
   await fetchVideos();
   await buildDictionary();

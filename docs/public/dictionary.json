@@ -159,7 +159,9 @@
     "Uztegi": "Uztegi",
     "Uztegi ezagutu": "Ezagutu Uztegi",
     "Zarrantz": "Zarrantz",
-    "Zarrantz ezagutu": "Ezagutu Zarrantz"
+    "Zarrantz ezagutu": "Ezagutu Zarrantz",
+    "Próximas celebraciones": "Hurrengo ospakizunak",
+    "Otros eventos periódicos": "Beste aldizkako ekitaldiak"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -321,7 +323,9 @@
     "Uztegi": "Uztegi",
     "Uztegi ezagutu": "Conocer Uztegi",
     "Zarrantz": "Zarrantz",
-    "Zarrantz ezagutu": "Conocer Zarrantz"
+    "Zarrantz ezagutu": "Conocer Zarrantz",
+    "Próximas celebraciones": "Próximas celebraciones",
+    "Otros eventos periódicos": "Otros eventos periódicos"
   },
   "Català:ca": {
     "Albiasu": "Albiasu",
@@ -483,7 +487,9 @@
     "Uztegi": "Uztegi",
     "Uztegi ezagutu": "Coneix Uztegi",
     "Zarrantz": "Zarrantz",
-    "Zarrantz ezagutu": "Coneix Zarrantz"
+    "Zarrantz ezagutu": "Coneix Zarrantz",
+    "Próximas celebraciones": "Properes celebracions",
+    "Otros eventos periódicos": "Altres esdeveniments periòdics"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -645,7 +651,9 @@
     "Uztegi": "Uztegi",
     "Uztegi ezagutu": "Discover Uztegi",
     "Zarrantz": "Zarrantz",
-    "Zarrantz ezagutu": "Discover Zarrantz"
+    "Zarrantz ezagutu": "Discover Zarrantz",
+    "Próximas celebraciones": "Upcoming celebrations",
+    "Otros eventos periódicos": "Other recurring events"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -807,7 +815,9 @@
     "Uztegi": "Uztegi",
     "Uztegi ezagutu": "Découvrir Uztegi",
     "Zarrantz": "Zarrantz",
-    "Zarrantz ezagutu": "Découvrir Zarrantz"
+    "Zarrantz ezagutu": "Découvrir Zarrantz",
+    "Próximas celebraciones": "Prochaines célébrations",
+    "Otros eventos periódicos": "Autres événements périodiques"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -969,7 +979,9 @@
     "Uztegi": "Uztegi",
     "Uztegi ezagutu": "Uztegi kennenlernen",
     "Zarrantz": "Zarrantz",
-    "Zarrantz ezagutu": "Zarrantz kennenlernen"
+    "Zarrantz ezagutu": "Zarrantz kennenlernen",
+    "Próximas celebraciones": "Nächste Feierlichkeiten",
+    "Otros eventos periódicos": "Weitere regelmäßige Veranstaltungen"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1131,7 +1143,9 @@
     "Uztegi": "Uztegi",
     "Uztegi ezagutu": "Conosci Uztegi",
     "Zarrantz": "Zarrantz",
-    "Zarrantz ezagutu": "Conosci Zarrantz"
+    "Zarrantz ezagutu": "Conosci Zarrantz",
+    "Próximas celebraciones": "Prossime celebrazioni",
+    "Otros eventos periódicos": "Altri eventi periodici"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1293,7 +1307,9 @@
     "Uztegi": "Uztegi",
     "Uztegi ezagutu": "Conhecer Uztegi",
     "Zarrantz": "Zarrantz",
-    "Zarrantz ezagutu": "Conhecer Zarrantz"
+    "Zarrantz ezagutu": "Conhecer Zarrantz",
+    "Próximas celebraciones": "Próximas celebrações",
+    "Otros eventos periódicos": "Outros eventos periódicos"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -1455,7 +1471,9 @@
     "Uztegi": "Uztegi",
     "Uztegi ezagutu": "Cunoaște Uztegi",
     "Zarrantz": "Zarrantz",
-    "Zarrantz ezagutu": "Cunoaște Zarrantz"
+    "Zarrantz ezagutu": "Cunoaște Zarrantz",
+    "Próximas celebraciones": "Următoarele celebrații",
+    "Otros eventos periódicos": "Alte evenimente periodice"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -1617,7 +1635,9 @@
     "Uztegi": "أوستجي",
     "Uztegi ezagutu": "التعرف على أوستجي",
     "Zarrantz": "زارانتز",
-    "Zarrantz ezagutu": "التعرف على زارانتز"
+    "Zarrantz ezagutu": "التعرف على زارانتز",
+    "Próximas celebraciones": "الاحتفالات القادمة",
+    "Otros eventos periódicos": "فعاليات دورية أخرى"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -1779,6 +1799,8 @@
     "Uztegi": "Uztegi",
     "Uztegi ezagutu": "Запознайте се с Uztegi",
     "Zarrantz": "Zarrantz",
-    "Zarrantz ezagutu": "Запознайте се с Zarrantz"
+    "Zarrantz ezagutu": "Запознайте се с Zarrantz",
+    "Próximas celebraciones": "Предстоящи тържества",
+    "Otros eventos periódicos": "Други периодични събития"
   }
 }

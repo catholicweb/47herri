@@ -1,3 +1,20 @@
+export function groupEvents(events, fields) {
+  if (fields.length === 0) return events;
+  const field = fields[0];
+  const grouped = events.reduce((acc, event) => {
+    const key_array = accessMultikey(event, field);
+    for (const key of key_array) {
+      if (!acc[key]) acc[key] = [];
+      acc[key].push(event);
+    }
+    return acc;
+  }, {});
+  Object.keys(grouped).forEach((key) => {
+    grouped[key] = groupEvents(grouped[key], fields.slice(1));
+  });
+  return grouped;
+}
+
 export function toArray(value) {
   if (Array.isArray(value)) {
     if (value.length) return value;
@@ -23,11 +40,16 @@ export function accessMultikey(obj, multikey) {
 
       let value = toArray(obj[mainKey]);
       if (mainKey == "weekday") value = weekday(obj.byday);
+      if (mainKey == "byday") value = splitRRuleByDay(obj.byday).simpleByDay;
+      if (mainKey == "byweek") value = splitRRuleByDay(obj.byday).simpleByWeek;
 
       if (value.length > 0) {
         // If there are subtraction keys, filter the current values
         for (const subKey of keysToSubtract) {
           let subtractValues = toArray(obj[subKey]);
+          if (subKey == "weekday") subtractValues = weekday(obj.byday);
+          if (subKey == "byday") subtractValues = splitRRuleByDay(obj.byday).simpleByDay;
+          if (subKey == "byweek") subtractValues = splitRRuleByDay(obj.byday).simpleByWeek;
           if (!subtractValues.length) subtractValues = [subKey];
           value = value.filter((val) => !subtractValues.includes(val));
         }
@@ -37,41 +59,92 @@ export function accessMultikey(obj, multikey) {
       }
     }
   }
-  return result.length ? result : [""];
+  return result.length ? result.filter(Boolean) : [""];
 }
 
 export function applyComplexFilter(obj, filter) {
-  // Normalizamos y limpiamos el filtro
-  const normalizedFilter = filter.toLowerCase().trim();
+  if (!filter) return true;
 
-  // Primero, manejamos el caso de "!notinclude"
-  if (normalizedFilter.startsWith("!")) {
-    const excludeTerm = normalizedFilter.slice(1);
-    return !JSON.stringify(obj).toLowerCase().includes(excludeTerm);
-  }
+  const content = JSON.stringify(obj).toLowerCase();
 
-  // División y lógica de AND/OR
-  // Separamos por AND (&) primero
-  const andParts = normalizedFilter.split("&").map((part) => part.trim());
+  // 1. Split by OR (|) - Any one of these groups must be true
+  const orParts = filter.toLowerCase().split("|");
 
-  // Evaluamos cada parte con OR (|) para que cualquier parte que contenga un `|` se maneje como OR
-  const andResults = andParts.map((part) => {
-    // Evaluamos por OR
-    const orParts = part.split("|").map((subPart) => subPart.trim());
-    return orParts.some((term) => JSON.stringify(obj).toLowerCase().includes(term));
+  return orParts.some((orPart) => {
+    // 2. Split by AND (&) - All of these terms must be true
+    const andTerms = orPart.split("&");
+
+    return andTerms.every((term) => {
+      let searchTerm = term.trim();
+      let isNegated = false;
+
+      // 3. Handle the negation (!) at the start of any term
+      if (searchTerm.startsWith("!")) {
+        isNegated = true;
+        searchTerm = searchTerm.slice(1).trim();
+      }
+
+      const found = content.includes(searchTerm);
+
+      // If negated, we want NOT found. Otherwise, we want found.
+      return isNegated ? !found : found;
+    });
   });
-
-  // La evaluación final será verdadera si todos los AND son verdaderos (&&)
-  return andResults.every(Boolean);
 }
 
-function weekday(days) {
-  const w = [];
-  if (days.join(",").toLowerCase().includes("su")) w.push("su");
-  if (days.join(",").toLowerCase().includes("sa")) w.push("sa");
-  if (days.join(",").match(/mo|tu|we|th|fr/i)) {
-    w.push("mo,tu,we,th,fr");
+function formatWeekdays(days) {
+  // 1. Define the reference order
+  const order = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"];
+
+  // 2. Sort the array based on the reference order
+  const sortedDays = [...days].sort((a, b) => order.indexOf(a) - order.indexOf(b));
+
+  // 3. Check for the "mo" through "fr" sequence
+  const workDays = ["MO", "TU", "WE", "TH", "FR"];
+  const hasAllWorkDays = workDays.every((day) => sortedDays.includes(day));
+
+  if (hasAllWorkDays) {
+    // Remove mo, tu, we, th, fr and replace with the string
+    const others = sortedDays.filter((day) => !workDays.includes(day));
+    return ["MO,TU,WE,TH,FR", ...others];
   }
+
+  return sortedDays;
+}
+
+export function splitRRuleByDay(byDayArray) {
+  const simpleByDay = [];
+  const simpleByWeek = [];
+
+  byDayArray.forEach((item) => {
+    // Regex logic:
+    // ^(-?\d+)? matches an optional positive or negative number at the start
+    // ([A-Z]{2})$ matches exactly two uppercase letters at the end
+    const match = item.match(/^(-?\d+)?([A-Z]{2})$/);
+
+    if (match) {
+      const weekNum = match[1]; // e.g., "3", "-1", or undefined
+      const dayAbbr = match[2]; // e.g., "SA", "SU"
+
+      simpleByDay.push(dayAbbr);
+
+      // If no number is present (like "SU"), we'll store an empty string or null
+      simpleByWeek.push(weekNum ? `WEEK${weekNum}` : "");
+    }
+  });
+
+  return { simpleByDay: formatWeekdays(simpleByDay), simpleByWeek };
+}
+
+function weekday(days, split) {
+  days = splitRRuleByDay(days).simpleByDay;
+
+  const w = [];
+  if (days.join(",").match(/mo|tu|we|th|fr/i)) {
+    w.push(..."MO,TU,WE,TH,FR".split(split));
+  }
+  if (days.join(",").toLowerCase().includes("sa")) w.push("SA");
+  if (days.join(",").toLowerCase().includes("su")) w.push("SU");
   return w;
 }
 
@@ -79,8 +152,7 @@ export function formatDate(isoString, lang = "Español:es") {
   if (typeof lang !== "string") return isoString;
   if (!isoString) return "";
   const langCode = lang.split(":")[1];
-  isoString = isoString.replaceAll("-", "-");
-  const date = new Date(isoString);
+  const date = new Date(isoString.split("/").toReversed().join("-"));
   if (isNaN(date.getTime())) return tr(isoString, lang);
   const monthIndex = date.getMonth();
   const now = new Date();

@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { data } from "./../../blocks.data.js";
-import { formatDate, applyComplexFilter } from "./../../utils.js";
+import { formatDate, applyComplexFilter, splitRRuleByDay } from "./../../utils.js";
 
 const props = defineProps({
   block: { type: Object, required: true },
@@ -18,6 +18,7 @@ const isDragging = ref(false);
 // --- Events ---
 const filteredEvents = computed(() => {
   let filter = props.block.filter.toLowerCase();
+  if (props.block.source == "./pages/index.md") filter = '"byday":[]';
   if (!data?.events) return [];
   return data.events.filter((event) => applyComplexFilter(event, filter));
 });
@@ -33,6 +34,11 @@ const startSlider = () => {
 const stopSlider = () => {
   if (timer) clearInterval(timer);
 };
+
+function byday(event) {
+  let s = splitRRuleByDay(event.byday);
+  return [...s.simpleByDay, ...s.simpleByWeek].filter(Boolean);
+}
 
 // --- Swipe handlers ---
 const onStart = (e) => {
@@ -73,7 +79,7 @@ watch(activeIndex, () => {
           <div v-for="(event, index) in filteredEvents" :key="index" class="min-w-full px-2">
             <div class="bg-black/50 backdrop-blur-xl p-5 rounded-xl text-white">
               <div class="flex flex-row-reverse items-start">
-                <img v-if="event.images" :src="event.images[0]" class="w-[45%] aspect-square rounded-full border-4 border-[#009c46] object-cover ml-2" />
+                <img v-if="event.images?.[0]" :src="event.images[0]" class="w-[45%] aspect-square rounded-full border-4 border-[#009c46] object-cover ml-2" />
                 <div class="flex-1">
                   <h2 class="text-3xl font-bold mb-4">
                     {{ event.name || event.title || formatDate(event.type, $frontmatter.lang) }}
@@ -84,7 +90,11 @@ watch(activeIndex, () => {
                       {{ event.locations.join(", ") }}
                     </p>
                     <p class="calendar-mark">
-                      {{ event.dates?.map((i) => formatDate(i, $frontmatter.lang)).join(", ") || event.rrule?.map((i) => formatDate(i, $frontmatter.lang)).join(", ") }}
+                      {{
+                        byday(event)
+                          .map((i) => formatDate(i, $frontmatter.lang, "byday"))
+                          .join(", ") || event.dates?.map((i) => formatDate(i, $frontmatter.lang)).join(", ")
+                      }}
                     </p>
                     <p class="time-mark">
                       {{ event.times[0] }}
