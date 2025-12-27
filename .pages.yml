@@ -278,7 +278,7 @@ content:
       - name: events-funeral
         label: Funerales
         type: object
-        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.location}" } }
+        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.location} - {fields.times}" } }
         fields:
           - { name: title, label: Nombre del difunto, type: string }
           - { name: location, label: Ubicación, component: location }
@@ -287,7 +287,7 @@ content:
       - name: events-mass
         label: Horario de misas
         type: object
-        list: { collapsible: { collapsed: true, summary: "{fields.location} - {fields.rrule}" } }
+        list: { collapsible: { collapsed: true, summary: "{fields.location} - {fields.rrule} - {fields.times}" } }
         fields:
           - { name: title, label: Nombre del difunto, type: string, default: Misa, hidden: true }
           - { name: location, label: Ubicación, component: location }
@@ -297,27 +297,26 @@ content:
       - name: events-feast
         label: Festividades especiales
         type: object
-        list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.date}" } }
         fields:
           - { name: title, label: "Nombre festividad (ej: Navidad, Pascua...)", type: string }
           - { name: date, type: date, label: Fecha de la festividad }
           - { name: image, label: "Image", type: image }
           - name: custom
             label: Celebraciones
-            list: { collapsible: { collapsed: true, summary: "{fields.location}" } }
+            list: { collapsible: { collapsed: true, summary: "{fields.location} - {fields.times}" } }
             fields:
               - { name: location, label: Ubicación, component: location }
               - { name: times, label: Horas, component: times }
       - name: events-group
-        label: Catequesis
+        label: Catequesis y grupos
         type: object
-        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.location} - {fields.rrule}" } }
+        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.location} - {fields.times} - {fields.rrule}" } }
         fields:
           - { name: title, label: Título del evento, type: string }
           - { name: location, label: Ubicación, component: location }
-          - { name: date, type: string, label: Fecha y hora de inicio, default: "25/12/2025 10:00", hidden: true }
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
-          - { name: except, type: date, label: Excepto, list: { collapsible: { collapsed: true } } }
+          - { name: times, label: Hora, component: times }
       - name: events-custom
         label: Otros eventos
         type: object
@@ -327,7 +326,7 @@ content:
           - { name: title, label: Titulo, type: string }
           - { name: location, label: Ubicación, component: location }
           - { name: date, type: date, label: Fechas, list: { collapsible: { collapsed: true } } }
-          - { name: times, label: Hora de fin, component: times, options: { multiple: false } }
+          - { name: times, label: Horas, component: times, options: { multiple: false } }
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
           - { name: except, type: date, label: Excepto, list: { collapsible: { collapsed: true } } }
       - { name: urls, type: string, list: true, label: Calendarios externos a importar (ej. url de Google Calendar terminada en .ics) }
