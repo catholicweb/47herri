@@ -162,13 +162,13 @@ async function getChannelIdFromUrl(channelUrl) {
 
 export async function fetchVideos(channelUrl) {
   try {
+    let videos = read("./docs/public/videos.json", []);
+    const config = read("./pages/config.json");
     if (!API_KEY) {
       console.error("Error: La API Key no está definida. Asegúrate de exportarla.");
-      return;
+      return videos;
     }
     console.log("Fetching videos...");
-    const config = read("./pages/config.json");
-    let videos = read("./docs/public/videos.json", []);
     const youtubeStr = config.social.find((s) => s.toLowerCase().includes("youtube"));
     const CHANNEL_ID = await getChannelIdFromUrl(youtubeStr);
     // Get main videos
