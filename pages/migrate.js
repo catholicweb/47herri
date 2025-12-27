@@ -150,7 +150,7 @@ async function migrateMarkdown(directory) {
     console.log(`Updated: ${filePath} -> ${newPath}`);
   });
 
-  const events = JSON.stringify({ "events-feast": ekitaldiak, "events-masses": mezak });
+  const events = JSON.stringify({ "events-feast": ekitaldiak, "events-mass": mezak });
   fs.writeFileSync("./pages/events.json", events, "utf-8");
 }
 

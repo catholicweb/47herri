@@ -31,12 +31,7 @@
     }
   ],
   "collaborators": [
-    {
-      "image": "/media/20251129_093926.jpg",
-      "name": "David Galarza",
-      "description": "In solidum parrokoa (moderatzailea)",
-      "phonenumber": "690 08 15 84"
-    },
+    { "image": "/media/20251129_093926.jpg", "name": "David Galarza", "description": "In solidum parrokoa (moderatzailea)", "phonenumber": "690 08 15 84" },
     { "image": "/media/Screenshot_20250404_192119_Gallery.webp", "name": "Santi Garisoain", "description": "In solidum parrokoa", "phonenumber": "648 77 22 11" },
     { "image": "/media/Screenshot_20250404_192754_Gallery.webp", "name": "Jesús Mª Sotil", "description": "In solidum parrokoa", "phonenumber": "638 73 95 75" }
   ],

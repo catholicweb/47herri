@@ -7,10 +7,68 @@ function exportCalendar(events) {
   write("./docs/public/calendar.json", events);
 }
 
+function getEventAttachments(vevent) {
+  const allAttachments = [];
+
+  vevent.getAllProperties("attach").forEach((attach) => {
+    // 2. Extract the value (usually a URL)
+    let url = attach.getFirstValue();
+
+    // 3. Handle Binary Attachments
+    // Some providers embed the file. If it's binary, we create a Data URI.
+    const encoding = attach.getParameter("encoding");
+    const fmttype = attach.getParameter("fmttype") || "application/octet-stream";
+
+    if (encoding && encoding.toUpperCase() === "BASE64") {
+      url = `data:${fmttype};base64,${url}`;
+    } else if (url.includes("drive.google.com")) {
+      const fileId = url.match(/\/d\/([^/]+)/)?.[1];
+      if (fileId) {
+        url = `https://drive.google.com/thumbnail?id=${fileId}&sz=s4000`;
+      } else {
+        url = url.replace("open", "thumbnail") + "&sz=s4000";
+      }
+    }
+
+    allAttachments.push(url);
+  });
+
+  if (!allAttachments.length) return;
+
+  return allAttachments;
+}
+
+function getNextOccurrence(event, relativeTo = ICAL.Time.now()) {
+  // 1. If it's not recurring, just check if the start date is in the future
+  if (!event.isRecurring()) {
+    return event.startDate.compare(relativeTo) >= 0 ? parseDateToISO(event.startDate.toJSDate().toLocaleDateString("es-ES")) : null;
+  }
+
+  // 2. Setup the expansion engine
+  const iterator = new ICAL.RecurExpansion({
+    component: event.component,
+    dtstart: event.startDate,
+  });
+
+  // 3. Skip all occurrences that happened before "relativeTo"
+  let next;
+  while ((next = iterator.next())) {
+    if (next.compare(relativeTo) >= 0) {
+      return parseDateToISO(next.toJSDate().toLocaleDateString("es-ES")); // This is the first occurrence in the future
+    }
+
+    // Safety break: Prevent infinite loops on poorly formed rules
+    // (Optional: stop after 1000 iterations or a specific end date)
+    if (iterator.last && iterator.last.year > relativeTo.year + 10) break;
+  }
+
+  return null; // No future occurrences found
+}
+
 function intersectOptions(options, field) {
   options = options.join(",").toUpperCase().split(",");
   const validValues = {
-    FREQ: ["YEARLY", "MONTHLY", "WEEKLY", "DAILY", "HOURLY", "MINUTELY", "SECONDLY"],
+    FREQ: ["YEARLY", "MONTHLY", "WEEKLY", "DAILY"],
     BYDAY: ["MO", "TU", "WE", "TH", "FR", "SA", "SU", "1MO", "-1FR" /* etc */],
     BYMONTH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     BYMONTHDAY: Array.from({ length: 31 }, (_, i) => i + 1),
@@ -80,15 +138,19 @@ export async function fetchCalendar() {
           byday: intersectOptions(toArray(e.rrule), "BYDAY"),
           byweek: intersectOptions(toArray(e.rrule), "BYWEEK"),
           freq: intersectOptions(toArray(e.rrule), "FREQ"),
-          notes: toArray(e.notes || input.default?.[type]?.notes),
+          notes: toArray(e.notes || input.default?.[type]?.description),
           language: e.language,
-          end: "",
+          //end: [],
           locations: toArray(e.location),
           exceptions: toArray(e.except),
         });
       }
     }
   });
+
+  /*
+  Import external .ics calendars
+  */
 
   for (var i = 0; i < input.urls?.length; i++) {
     const url = input.urls[i];
@@ -99,52 +161,43 @@ export async function fetchCalendar() {
       const comp = new ICAL.Component(jcalData);
       const vevents = comp.getAllSubcomponents("vevent");
 
-      const oneOffEvents = [];
-
+      console.log("Parsing ics events", vevents?.length);
       vevents.forEach((eventComp, index) => {
         const event = new ICAL.Event(eventComp);
-        const attach = event.component.getFirstProperty("attach");
-        const image = attach?.getParameter("FMTTYPE") || null;
+        let rrule = [];
+        let exceptions = [];
+        // Infer type
+        const validTypes = Object.keys(input.default || {}).map((key) => key.replace(/^event-/, ""));
+        const type = validTypes.find((typeKey) => `${event.summary} ${event.description}`.toLowerCase().includes(typeKey.toLowerCase())) || "ics";
+
+        const dates = toArray(getNextOccurrence(event));
+        if (!dates.length) return;
 
         if (event.isRecurring()) {
           // Get the recurrence rule
           const rruleProp = event.component.getFirstProperty("rrule");
-          const rrule = rruleProp ? rruleProp.getFirstValue() : null;
+          rrule = rruleProp ? rruleProp.getFirstValue() : null;
 
           // Get exception dates
-          const exdates = event.component.getAllProperties("exdate").map((p) => {
-            const val = p.getFirstValue();
-            return val.toJSDate();
-          });
-
-          events.push({
-            type: "ics",
-            title: event.summary || "",
-            times: toArray(event.startDate.toJSDate().toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" })),
-            dates: toArray(event.startDate.toJSDate().toLocaleDateString("es-ES")),
-            end: event.endDate.toJSDate(),
-            images: toArray(image),
-            locations: toArray(event.location),
-            ...JSON.parse(JSON.stringify(rrule)),
-            exceptions: toArray(exdates),
-          });
-        } else {
-          const now = ICAL.Time.now();
-          const isPast = event.endDate ? event.endDate.compare(now) < 50 : false;
-
-          if (isPast) return;
-          events.push({
-            title: event.summary || "",
-            times: toArray(event.startDate.toJSDate().toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" })),
-            dates: toArray(toevent.startDate.toJSDate().toLocaleDateString("es-ES")),
-            images: toArray(image),
-            byday: [],
-            freq: ["oneoff"],
-            end: event.endDate.toJSDate(),
-            locations: toArray(event.location),
-            exceptions: [],
+          exceptions = event.component.getAllProperties("exdate").map((p) => {
+            return p.getFirstValue().toJSDate();
           });
         }
+
+        events.push({
+          type: type,
+          title: event.summary?.split("-")[0].trim() || "",
+          times: toArray(event.startDate.toJSDate().toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" })),
+          dates: dates,
+          //end: event.endDate.toJSDate(),
+          images: toArray(getEventAttachments(eventComp) || input.default?.[type]?.image),
+          notes: toArray(event.description || input.default?.[type]?.description),
+          locations: toArray(event.location?.split(",")[0]), // Usually "Leitza, Navarre, Spain"
+          byday: toArray(rrule?.byday),
+          exceptions: toArray(exceptions),
+          freq: [],
+        });
+        console.log(events[events.length - 1]);
       });
     } catch (error) {
       console.error("Error loading calendar data:", error);
