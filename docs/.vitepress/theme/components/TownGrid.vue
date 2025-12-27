@@ -24,10 +24,10 @@ watch(
 // Filter logic: combining Category + Search Text
 const filteredItems = computed(() => {
   return allItems.filter((item) => {
-    const haystack = JSON.stringify(item).toLowerCase();
+    const haystack = JSON.stringify(item)?.toLowerCase() || "";
     const needle = selectedFilter.value === "Todos" ? props.block.filters : [selectedFilter.value];
-    const matchesfilter = needle.some((word) => haystack.includes(word.toLowerCase()));
-    const matchesSearch = haystack.includes(searchQuery.value.toLowerCase());
+    const matchesfilter = needle.some((word) => haystack.includes(word?.toLowerCase()));
+    const matchesSearch = haystack.includes(searchQuery.value?.toLowerCase());
     return matchesfilter && matchesSearch;
   });
 });

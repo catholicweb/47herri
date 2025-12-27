@@ -17,7 +17,7 @@ const isDragging = ref(false);
 
 // --- Events ---
 const filteredEvents = computed(() => {
-  let filter = props.block.filter.toLowerCase();
+  let filter = props.block.filter?.toLowerCase();
   if (props.block.source == "./pages/index.md") filter = '"byday":[]';
   if (!data?.events) return [];
   return data.events.filter((event) => applyComplexFilter(event, filter));
