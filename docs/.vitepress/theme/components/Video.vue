@@ -30,7 +30,7 @@
           <iframe :src="item.src" data-testid="embed-iframe" width="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" class="w-full h-full rounded-lg overflow-hidden"></iframe>
         </div>
 
-        <div v-else @click="handleClick(item)" class="w-full h-full relative facade rounded-lg overflow-hidden cursor-pointer aspect-[16/9]">
+        <div v-else @click="playingVideo = item.src" class="w-full h-full relative facade rounded-lg overflow-hidden cursor-pointer aspect-[16/9]">
           <img :src="item.image" :alt="`Thumbnail for ${item.title}`" :fetchpriority="block.index >= 1 ? 'low' : 'high'" :loading="block.index >= 1 ? 'lazy' : 'eager'" class="absolute inset-0 w-full h-full object-cover rounded-lg" />
 
           <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 text-center to-transparent flex items-end">
@@ -53,20 +53,14 @@
 <script setup>
 import { ref, computed } from "vue";
 import { formatDate, grid } from "./../../utils.js";
-
-const props = defineProps({
-  block: {
-    type: Object,
-    required: true,
-  },
-});
-let videos = props.block.elements;
+const props = defineProps({ block: { type: Object, required: true } });
+const videos = computed(() => props.block.elements);
 
 const searchQuery = ref("");
 const selectedFilter = ref(0);
 // Filter logic: combining Category + Search Text
 const filteredItems = computed(() => {
-  return videos
+  return videos.value
     .filter((item) => {
       const haystack = JSON.stringify(item).toLowerCase();
       const matchesfilter = selectedFilter.value === 0 || haystack.includes(props.block.filters?.[selectedFilter.value]?.toLowerCase());
@@ -97,10 +91,6 @@ function ratio(ratio) {
 }
 
 const playingVideo = ref(null);
-
-function handleClick(item) {
-  playingVideo.value = item.src;
-}
 </script>
 
 <style>

@@ -14,7 +14,7 @@
           <div v-if="section.title && section._block != 'Hero'" class="text-center mt-8 mb-4 container">
             <h2 :id="slugify(section.title)" class="text-4xl font-bold">{{ section.title }}</h2>
           </div>
-          <component :key="index" :is="getBlockComponent(section._block)" :block="section" />
+          <component :key="slugify(section.title)" :is="getBlockComponent(section._block)" :block="section" />
         </section>
       </template>
     </main>
