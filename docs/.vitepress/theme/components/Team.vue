@@ -1,15 +1,6 @@
 <script setup>
-defineProps({
-  block: {
-    type: Object,
-    required: true,
-  },
-});
+defineProps({ block: { type: Object, required: true } });
 
-// Helper to clean phone numbers for the tel: link
-const formatTel = (phone) => {
-  return phone ? phone.replace(/\s+/g, "") : "";
-};
 import { ref } from "vue";
 import { useData } from "vitepress";
 const { theme } = useData();
@@ -17,12 +8,8 @@ const config = ref(theme.value.config || {});
 </script>
 
 <template>
-  <div v-if="block.title" class="text-center pt-12 px-6">
-    <h2 class="my-2 text-4xl font-bold">{{ block.title }}</h2>
-  </div>
-
   <div class="w-full max-w-6xl mx-auto p-4 mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-bold">
-    <div v-for="(collab, index) in config.collaborators" :key="index" class="flex items-center p-2 pb-4 rounded-xl bg-[#1e252b] shadow-lg transition-transform">
+    <div v-for="(collab, index) in config.collaborators" :key="index" class="flex items-center px-2 py-6 rounded-xl bg-[#1e252b] shadow-lg transition-transform">
       <div class="relative flex-shrink-0 w-1/3 md:w-1/2 rounded-full border-4 border-accent overflow-hidden aspect-square">
         <img loading="lazy" :src="collab.image" :alt="'Foto de ' + collab.name" class="w-full h-full object-cover hover:scale-[1.05]" />
       </div>

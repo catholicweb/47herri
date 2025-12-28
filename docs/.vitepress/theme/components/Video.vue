@@ -1,8 +1,4 @@
 <template>
-  <div v-if="block.title" class="max-w-3xl mx-auto text-center pt-12 px-6">
-    <h2 class="my-2 text-4xl font-bold">{{ block.title }}</h2>
-  </div>
-
   <div v-if="block.filters" class="max-w-4xl mx-auto px-6 flex flex-wrap justify-center gap-2 my-5">
     <button
       v-for="(filter, index) in block.filters"

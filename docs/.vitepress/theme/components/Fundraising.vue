@@ -13,14 +13,8 @@ watch(
   },
 );
 
-const props = defineProps({
-  block: {
-    type: Object,
-    required: true,
-  },
-});
+const props = defineProps({ block: { type: Object, required: true } });
 
-const isDragging = ref(false);
 const startX = ref(0);
 const currentX = ref(0);
 const donate = ref(false);
@@ -109,9 +103,6 @@ const goToCard = (index) => {
 
 <template>
   <div class="fundraising max-w-3xl mx-auto p-6 my-6">
-    <div v-if="block.title" class="text-center">
-      <h2 class="my-2 text-4xl font-bold">{{ block.title }}</h2>
-    </div>
     <div class="flex flex-col items-center justify-center px-4 overflow-hidden">
       <!-- 3D Carousel Container -->
       <div class="relative w-full max-w-6xl h-[500px] flex items-center justify-center">

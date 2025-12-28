@@ -1,7 +1,4 @@
 <template>
-  <div v-if="block.title" class="text-center">
-    <h2 class="mt-8 text-4xl font-bold">{{ block.title }}</h2>
-  </div>
   <div class="map py-8 max-w-3xl mx-auto md:px-4">
     <div class="w-full h-96 overflow-hidden md:shadow-md">
       <div ref="mapContainer" class="w-full h-full z-0"></div>

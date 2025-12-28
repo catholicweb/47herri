@@ -1,6 +1,6 @@
 <script setup>
 import { data } from "./../../blocks.data.js";
-import { formatDate, slugify, applyComplexFilter, accessMultikey, groupEvents } from "./../../utils.js";
+import { formatDate, slugify, applyComplexFilter, groupEvents, grid } from "./../../utils.js";
 const props = defineProps({ block: { type: Object, required: true } });
 
 function groupData(data, filter, order) {
@@ -18,54 +18,46 @@ function getSubKeys(table) {
 </script>
 
 <template>
-  <h2 class="text-4xl text-center font-bold py-6">{{ block.title }}</h2>
-  <div class="calendar container mx-auto px-4 pb-8 flex flex-wrap gap-4">
-    <div v-for="group in block.groups" class="w-full py-4">
-      <h2 :id="slugify(group.title)" class="text-4xl text-center mx-auto font-bold my-3 w-full">
-        {{ formatDate(group.title, $frontmatter.lang) }}
-      </h2>
-      <!-- Primer grupo dividir en headers -->
-      <div class="flex flex-row flex-wrap justify-center">
-        <div v-for="(table, tableKey) in groupData(data.events, group.filter, group.order)" class="w-full md:w-1/2 lg:w-1/3 my-4 px-4" :class="tableKey">
-          <h3 :id="slugify(tableKey)" class="text-xl text-gray-800 mb-3 border-b-3 border-accent pb-1">
-            {{ formatDate(tableKey, $frontmatter.lang) }}
-          </h3>
-          <div class="overflow-x-auto bg-white">
-            <table class="min-w-full border-collapse [border-style:hidden]">
-              <!-- Añadir cabezera a la tabla (solo si hay hay subfields)-->
-              <thead v-if="getSubKeys(table)[0] != ''" class="bg-gray-50 text-gray-600 uppercase text-xs tracking-wide">
-                <tr>
-                  <th class="px-4 py-2 text-left w-36">&nbsp;</th>
-                  <th v-for="subKey in getSubKeys(table)" class="px-4 py-2 text-left">
-                    {{ formatDate(subKey, $frontmatter.lang) }}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Añadir columnas a la tabla -->
-                <tr v-for="(row, rowKey, rowIndex) in table" class="odd:bg-white even:bg-gray-50">
-                  <td class="px-4 py-3 border-1">
-                    {{ formatDate(rowKey, $frontmatter.lang) }}
-                  </td>
-                  <!-- Añadir filas -->
-                  <td v-for="subKey in getSubKeys(table)" class="px-4 py-3 align-top border-1">
-                    <!-- Cada fila de la tabla puede tener múltiples elementos -->
-                    <p v-for="(line, lineKey) in row[subKey]" class="flex items-center gap-2 mb-1 mr-2">
-                      {{ formatDate(lineKey, $frontmatter.lang) }}
-                      <span class="extra italic text-sm">
-                        {{
-                          Object.keys(line)
-                            .map((i) => formatDate(i, $frontmatter.lang))
-                            .join(", ")
-                        }}</span
-                      >
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+  <div class="calendar" :class="grid(block)">
+    <!-- Primer grupo dividir en headers -->
+    <div v-for="(table, tableKey) in groupData(data.events, block.filter, block.order)" :class="tableKey" class="mb-6">
+      <h3 :id="slugify(tableKey)" class="text-xl text-gray-800 mb-3 border-b-3 border-accent pb-1">
+        {{ formatDate(tableKey, $frontmatter.lang) }}
+      </h3>
+      <div class="overflow-x-auto bg-white">
+        <table class="min-w-full border-collapse [border-style:hidden]">
+          <!-- Añadir cabezera a la tabla (solo si hay subfields)-->
+          <thead v-if="getSubKeys(table)[0] != ''" class="bg-gray-50 text-gray-600 uppercase text-xs tracking-wide">
+            <tr>
+              <th class="px-4 py-2 text-left w-36">&nbsp;</th>
+              <th v-for="subKey in getSubKeys(table)" class="px-4 py-2 text-left">
+                {{ formatDate(subKey, $frontmatter.lang) }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Añadir columnas a la tabla -->
+            <tr v-for="(row, rowKey, rowIndex) in table" class="odd:bg-white even:bg-gray-50">
+              <td class="px-4 py-3 border-1">
+                {{ formatDate(rowKey, $frontmatter.lang) }}
+              </td>
+              <!-- Añadir filas -->
+              <td v-for="subKey in getSubKeys(table)" class="px-4 py-3 align-top border-1">
+                <!-- Cada fila de la tabla puede tener múltiples elementos -->
+                <p v-for="(line, lineKey) in row[subKey]" class="flex items-center gap-2 mb-1 mr-2">
+                  {{ formatDate(lineKey, $frontmatter.lang) }}
+                  <span class="extra italic text-sm">
+                    {{
+                      Object.keys(line)
+                        .map((i) => formatDate(i, $frontmatter.lang))
+                        .join(", ")
+                    }}</span
+                  >
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

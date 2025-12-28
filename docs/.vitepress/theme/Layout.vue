@@ -10,7 +10,10 @@
     <!-- Main Content - Block System -->
     <main class="flex-1 flex flex-wrap" v-if="$frontmatter.sections">
       <template v-for="(section, index) in $frontmatter.sections">
-        <section :id="slugify(section.title)" v-if="!section.tags?.includes('hidden')" :class="getSectionClasses(section.tags)">
+        <section v-if="!section.tags?.includes('hidden')" :class="getSectionClasses(section.tags)">
+          <div v-if="section.title && section._block != 'Hero'" class="text-center mt-8 mb-4 container">
+            <h2 :id="slugify(section.title)" class="text-4xl font-bold">{{ section.title }}</h2>
+          </div>
           <component :key="index" :is="getBlockComponent(section._block)" :block="section" />
         </section>
       </template>
