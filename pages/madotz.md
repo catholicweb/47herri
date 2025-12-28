@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: San Juan Bautista
     geo: '42.9378197, -1.8761211'
-    hidden: false
+    tags: []
 ---
 

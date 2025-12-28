@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: Orellako baseliza
     geo: '43.03161, -1.98289'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: San Migel
     geo: '43.03777, -1.98410'
-    hidden: true
+    tags:
+      - hidden
 ---
 

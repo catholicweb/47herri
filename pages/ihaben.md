@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: Mariaren Jaiotza
     geo: '42.9871091, -1.8071447'
-    hidden: false
+    tags: []
 ---
 

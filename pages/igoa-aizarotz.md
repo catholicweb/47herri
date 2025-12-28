@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: Mariaren Zeruratzea
     geo: '43.0312209, -1.7858537'
-    hidden: false
+    tags: []
 ---
 

@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: San Joan Bataiatzailearen
     geo: '42.98863, -1.90418'
-    hidden: false
+    tags: []
 ---
 

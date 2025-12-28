@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: San Joan Bataiatzailearen
     geo: '43.02656, -1.82590'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: Santa Krutz baseliza
     geo: '43.02389, -1.82638'
-    hidden: true
+    tags:
+      - hidden
 ---
 

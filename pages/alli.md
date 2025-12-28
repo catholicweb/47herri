@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: Donibane eta Done Pauloren
     geo: '42.99151, -1.89673'
-    hidden: false
+    tags: []
 ---
 

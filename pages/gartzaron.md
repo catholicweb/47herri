@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: Jasokundearen
     geo: '42.99744, -1.77401'
-    hidden: false
+    tags: []
 ---
 

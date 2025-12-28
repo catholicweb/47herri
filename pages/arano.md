@@ -17,16 +17,18 @@ sections:
     title: Non Gaude
     name: San Martin
     geo: '43.19951, -1.89462'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: Santiagoko baseliza
     geo: '43.22057, -1.91492'
-    hidden: true
+    tags:
+      - hidden
   - _block: map
     title: Non Gaude
     name: San Roke baseliza
     geo: '43.19331, -1.89248'
-    hidden: true
+    tags:
+      - hidden
 ---
 

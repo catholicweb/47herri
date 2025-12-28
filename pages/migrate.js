@@ -106,7 +106,7 @@ async function migrateMarkdown(directory) {
         title: "Non Gaude",
         name: data.locations[i].name,
         geo: data.locations[i].geo,
-        hidden: i != 0,
+        tags: [...(i !== 0 ? ["hidden"] : [])], // Spreads ['hidden'] if true, nothing if false
       });
     }
 
@@ -145,13 +145,13 @@ async function migrateMarkdown(directory) {
 
     // 6. Save back to disk
     const newPath = filePath.replace("/home/miguel/Tech/47herri-old/herriak/", "./pages/");
-    //fs.writeFileSync(newPath, newContent, "utf-8");
+    fs.writeFileSync(newPath, newContent, "utf-8");
 
     console.log(`Updated: ${filePath} -> ${newPath}`);
   });
 
   const events = JSON.stringify({ "events-feast": ekitaldiak, "events-mass": mezak });
-  fs.writeFileSync("./pages/events.json", events, "utf-8");
+  //fs.writeFileSync("./pages/events.json", events, "utf-8");
 }
 
 migrateMarkdown("/home/miguel/Tech/47herri-old/herriak/"); // Path to your markdown folder

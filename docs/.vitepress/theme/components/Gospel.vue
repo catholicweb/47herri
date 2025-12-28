@@ -22,13 +22,13 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
 //import { getBibleReadings } from "./../../gospel.js";
 
 //getBibleReadings({ lang: "es", date: new Date() });
 
 const props = defineProps({ block: { type: Object, required: true } });
-const readings = ref(props.block.gospel || props.block);
+const readings = computed(props.block.gospel || props.block);
 </script>
 
 <style>

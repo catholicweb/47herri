@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: San Pedro
     geo: '42.97074, -1.87838'
-    hidden: false
+    tags: []
 ---
 

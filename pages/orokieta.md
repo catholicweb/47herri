@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: San Tiburtzio
     geo: '43.01357, -1.75797'
-    hidden: false
+    tags: []
 ---
 

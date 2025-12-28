@@ -17,16 +17,18 @@ sections:
     title: Non Gaude
     name: Santa Krutz baseliza
     geo: '43.02259, -1.97616'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: San Pedro eliza
     geo: '43.02606, -1.98006'
-    hidden: true
+    tags:
+      - hidden
   - _block: map
     title: Non Gaude
     name: San Donato baseliza
     geo: '43.01433, -1.96472'
-    hidden: true
+    tags:
+      - hidden
 ---
 

@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: San Martin
     geo: '43.00957, -1.85974'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: Santa Luzia baseliza
     geo: '43.01042, -1.86074'
-    hidden: true
+    tags:
+      - hidden
 ---
 

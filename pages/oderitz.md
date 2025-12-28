@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: San Lorentzo
     geo: '42.9513991, -1.8715113'
-    hidden: false
+    tags: []
 ---
 

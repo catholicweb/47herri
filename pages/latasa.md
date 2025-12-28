@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: San Esteban
     geo: '42.9544555, -1.8221520'
-    hidden: false
+    tags: []
 ---
 

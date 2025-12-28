@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: Arrosarioko Andre Mariadena
     geo: '42.97462, -1.82702'
-    hidden: false
+    tags: []
 ---
 

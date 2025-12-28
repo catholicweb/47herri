@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: Santa Ageda baseliza
     geo: '43.04072, -1.98852'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: San Juan Bataiatzailea
     geo: '43.04151, -1.98730'
-    hidden: true
+    tags:
+      - hidden
 ---
 

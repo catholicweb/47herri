@@ -13,6 +13,7 @@
   --border-width-mult: 1.25;
   --shadow-depth-mult: 1.50;
   --accent-angle: 146.92307692307693deg;
+  --primary-angle: 0deg;
 
     
   /* === Derived Tailwind vars (reactive) === */

@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: San Migel
     geo: '42.9508406, -1.8054720'
-    hidden: false
+    tags: []
 ---
 

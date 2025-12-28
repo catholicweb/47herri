@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: Andre Mariaren Jasokundea
     geo: '43.08272, -1.95200'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: Santa Kruz baseliza
     geo: '43.085823, -1.961999'
-    hidden: true
+    tags:
+      - hidden
 ---
 

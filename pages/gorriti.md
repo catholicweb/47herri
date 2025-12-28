@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: San Bartolome
     geo: '43.05145, -1.95463'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: Santa Barbara baseliza
     geo: '43.05160, -1.96116'
-    hidden: true
+    tags:
+      - hidden
 ---
 

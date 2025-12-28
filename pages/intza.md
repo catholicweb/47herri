@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: Santiago
     geo: '43.01714, -1.99244'
-    hidden: false
+    tags: []
 ---
 

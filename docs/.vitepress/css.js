@@ -48,15 +48,19 @@ export async function getFontCSS(theme) {
 }
 
 const getHue = (hex) => {
-  const r = parseInt(hex.slice(1, 3), 16) / 255;
-  const g = parseInt(hex.slice(3, 5), 16) / 255;
-  const b = parseInt(hex.slice(5, 7), 16) / 255;
-  const max = Math.max(r, g, b),
-    min = Math.min(r, g, b),
-    d = max - min;
-  if (d === 0) return 0;
-  let h = max === r ? (g - b) / d + (g < b ? 6 : 0) : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
-  return h * 60;
+  try {
+    const r = parseInt(hex.slice(1, 3), 16) / 255;
+    const g = parseInt(hex.slice(3, 5), 16) / 255;
+    const b = parseInt(hex.slice(5, 7), 16) / 255;
+    const max = Math.max(r, g, b),
+      min = Math.min(r, g, b),
+      d = max - min;
+    if (d === 0) return 0;
+    let h = max === r ? (g - b) / d + (g < b ? 6 : 0) : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+    return h * 60;
+  } catch (e) {
+    return 0;
+  }
 };
 
 export async function printCSS() {
@@ -75,6 +79,7 @@ export async function printCSS() {
   --border-width-mult: ${config.theme.borderWidth};
   --shadow-depth-mult: ${config.theme.shadowDepth};
   --accent-angle: ${getHue(config.theme.accentColor)}deg;
+  --primary-angle: ${getHue(config.theme.primaryColor)}deg;
 
     
   /* === Derived Tailwind vars (reactive) === */

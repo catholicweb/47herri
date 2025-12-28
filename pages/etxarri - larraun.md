@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: Santa Krutz baseliza
     geo: '43.00218, -1.87298'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: San Migel
     geo: '43.0115034, -1.8764097'
-    hidden: true
+    tags:
+      - hidden
 ---
 

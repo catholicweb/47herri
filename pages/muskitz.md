@@ -17,6 +17,6 @@ sections:
     title: Non Gaude
     name: San Martín
     geo: '42.9359167, -1.7493240'
-    hidden: false
+    tags: []
 ---
 

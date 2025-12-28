@@ -18,12 +18,13 @@ sections:
     title: Non Gaude
     name: Done Mikel
     geo: '43.07797, -1.91260'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: Santa Krutz baseliza
     geo: '43.07968, -1.90440'
-    hidden: true
+    tags:
+      - hidden
 ---
 Leitza, Nafarroako ipar-mendebaldean kokatua, 3.011 biztanle zituen 2024ko urtarrilaren 1ean. Herria mendi eta basoz inguratuta dago, eta Plazaolako Bide Berdea zeharkatzen du, naturaz gozatzeko aukera bikaina eskainiz.
 

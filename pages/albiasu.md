@@ -18,6 +18,6 @@ sections:
     title: Non Gaude
     name: Done Laurendi
     geo: '43.00878, -1.93683'
-    hidden: false
+    tags: []
 ---
 

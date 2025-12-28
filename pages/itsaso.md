@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: San Salvador baseliza
     geo: '42.99201, -1.83304'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: San Pedro
     geo: '42.99141, -1.82171'
-    hidden: true
+    tags:
+      - hidden
 ---
 

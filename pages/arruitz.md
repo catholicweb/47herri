@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: Santa Luzia baseliza
     geo: '42.98189, -1.85630'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: San Kristobal
     geo: '42.99340, -1.86156'
-    hidden: true
+    tags:
+      - hidden
 ---
 

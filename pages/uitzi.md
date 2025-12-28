@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: Gurutze Santuaren baseliza
     geo: '43.04080, -1.92649'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: Santa Engraziako
     geo: '43.04156, -1.88827'
-    hidden: true
+    tags:
+      - hidden
 ---
 

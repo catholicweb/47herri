@@ -17,11 +17,12 @@ sections:
     title: Non Gaude
     name: San Joan Bataiatzailea
     geo: '43.00596, -1.89541'
-    hidden: false
+    tags: []
   - _block: map
     title: Non Gaude
     name: Pilar baseliza
     geo: '43.00672, -1.89805'
-    hidden: true
+    tags:
+      - hidden
 ---
 
