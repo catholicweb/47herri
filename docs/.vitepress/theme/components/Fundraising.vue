@@ -3,16 +3,16 @@ import { ref, computed } from "vue";
 import { data } from "./../../blocks.data.js";
 import { useData } from "vitepress";
 const { theme, page } = useData();
-const config = computed(theme.value.config || {});
+const config = computed(() => theme.value.config || {});
 const props = defineProps({ block: { type: Object, required: true } });
 
 const startX = ref(0);
 const currentX = ref(0);
 const donate = ref(false);
 
-const cards = computed(data.fundraisings.filter((f) => f.lang === page.value.frontmatter.lang));
+const cards = computed(() => data.fundraisings.filter((f) => f.lang === page.value.frontmatter.lang));
 
-const numCards = computed(cards.value.length);
+const numCards = computed(() => cards.value.length);
 const currentIndex = ref(cards.value.findIndex((item) => item.name === props.block.name) || 0);
 
 const getCardClass = (index) => {
