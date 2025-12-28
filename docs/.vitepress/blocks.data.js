@@ -7,7 +7,7 @@ export default {
     const maps = [];
     const pages = [];
     //const videos = read("./docs/public/videos.json", []);
-    const events = read("./docs/public/calendar.json", []);
+    //const events = read("./docs/public/calendar.json", []);
 
     const files = await fg("**/*.md", { cwd: "./docs", absolute: false });
 
@@ -39,6 +39,6 @@ export default {
       }
     }
 
-    return { fundraisings, maps, pages, events };
+    return { fundraisings, maps, pages };
   },
 };

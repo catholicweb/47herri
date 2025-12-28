@@ -1,5 +1,5 @@
 import { read, write, fg, fs, path } from "./node_utils.js";
-import { slugify } from "./utils.js";
+import { slugify, applyComplexFilter, groupEvents } from "./utils.js";
 import { getPreview } from "./oembed.js";
 import { fetchVideos } from "./youtube.js";
 import { buildDictionary, translateObject, translateValue } from "./translate.js";
@@ -84,29 +84,15 @@ async function postComplete(fm) {
       });
     }
     if (fm.sections[i]._block == "video-channel") {
-      fm.sections[i].elements = videos
-        .filter((obj) =>
-          JSON.stringify(obj)
-            .toLowerCase()
-            .includes((fm.sections[i].filter || "").toLowerCase()),
-        )
-        .filter((item) => {
-          const haystack = JSON.stringify(item).toLowerCase();
-          if (!fm.sections[i].filters) return true;
-          return fm.sections[i].filters.some((word) => haystack.includes(word?.toLowerCase()));
-        })
-        .map((v) => ({ ...v, src: `https://www.youtube.com/embed/${v.videoId}?autoplay=1`, image: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg` }))
-        .slice(0, 75);
-
       if (fm.sections[i].filters?.length) {
         (fm.sections[i].tags ??= []).push("vertical", "small");
       } else {
         (fm.sections[i].tags ??= []).push("horizontal", "medium");
       }
-    }
-
-    if (fm.sections[i]._block == "gospel") {
-      fm.sections[i].gospel = await getBibleReadings({ lang: fm.lang.split(":")[1], date: new Date(), gospelOnly: !fm.sections[i].readings });
+    } else if (fm.sections[i]._block == "calendar") {
+      fm.sections[i].events = groupEvents(fm.sections[i].events, fm.sections[i].order);
+    } else if (fm.sections[i]._block == "gospel") {
+      fm.sections[i].gospel = await getBibleReadings({ lang: getCode(fm.lang), date: new Date(), gospelOnly: !fm.sections[i].readings });
     }
   }
 }
@@ -122,8 +108,7 @@ async function autocomplete(fm) {
     if (fm.sections[i]._block == "links") {
       fm.sections[i]._block = "gallery-feature";
       fm.sections[i].type = fm.sections[i].type || "team-cards";
-    }
-    if (fm.sections[i]._block == "gallery-feature") {
+    } else if (fm.sections[i]._block == "gallery-feature") {
       fm.sections[i].type = "team-cards";
       (fm.sections[i].tags ??= []).push("small");
     } else if (fm.sections[i].list) {
@@ -132,9 +117,18 @@ async function autocomplete(fm) {
       });
       fm.sections[i].type = "gallery";
       (fm.sections[i].tags ??= []).push("tiny");
-      fm.sections[i].hidden = !fm.sections[i].elements?.length;
+      if (!fm.sections[i].elements.length) (fm.sections[i].tags ??= []).push("hidden");
+    } else if (fm.sections[i]._block == "calendar") {
+      fm.sections[i].events = calendar.filter((obj) => applyComplexFilter(obj, fm.sections[i].filter));
+      if (!fm.sections[i].events?.length) (fm.sections[i].tags ??= []).push("hidden");
+    }
+    if (config.theme.navStyle == "47herri") {
+      let filter = fm.source == "./pages/index.md" ? "byday:empty" : fm.title;
+      fm.events = calendar.filter((obj) => applyComplexFilter(obj, filter));
     }
   }
+  // remove hidden sections
+  fm.sections = fm.sections.filter((obj) => !obj.tags?.includes("hidden"));
 }
 
 function absoluteURL(url) {
@@ -156,7 +150,7 @@ function addMeta(fm) {
 
   if (!fm?.equiv) return;
   for (var i = 0; i < fm.equiv.length; i++) {
-    const hreflang = i == 0 ? "x-default" : fm.equiv[i].lang.split(":").pop();
+    const hreflang = i == 0 ? "x-default" : getCode(fm.equiv[i].lang);
     fm.head.push(["link", { rel: "alternate", hreflang, href: absoluteURL(fm.equiv[i].href).replace(/index$/, "") }]);
   }
 }
@@ -193,13 +187,14 @@ function filename(file, title, lang) {
 }
 
 let videos = [];
+let calendar = [];
 
 async function run() {
   // Fetch upstream changes (if any)
   await fetchUpstream();
   // Create some basic files
   await printCSS();
-  await fetchCalendar();
+  calendar = await fetchCalendar();
   await sendNotifications();
   await createManifest();
   videos = await fetchVideos();
@@ -209,17 +204,16 @@ async function run() {
 
   // Clean output dir and repopulate
   await cleanDir("./docs/");
-
   const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: "./pages/", absolute: false });
   for (const file of files) {
     const { data, content } = read("./pages/" + file);
+    data.source = "./pages/" + file;
     await autocomplete(data);
 
     for (const lang of TARGET_LANGS) {
       const dict = DICTIONARY[lang] || {};
       const translatedData = translateObject(data, dict);
       translatedData.lang = lang;
-      translatedData.source = "./pages/" + file;
       translatedData.equiv = TARGET_LANGS.map((lan) => {
         return { lang: lan, href: "/" + filename(file, data.title, lan) };
       });

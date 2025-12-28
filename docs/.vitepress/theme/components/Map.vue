@@ -114,7 +114,7 @@ function renderMarkers(lang) {
       if (m.url == route.path) {
         marker._icon.classList.add("special");
       } else {
-        marker._icon.classList.add("grayscale opacity-50");
+        marker._icon.classList.add("grayscale", "opacity-50");
       }
     });
 }

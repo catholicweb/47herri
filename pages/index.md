@@ -5,7 +5,7 @@ image: /media/hero-bg.webp
 sections:
   - _block: calendar
     title: "Próximas celebraciones"
-    filter: '"byday":[]'
+    filter: "byday:empty"
     order: ["title", "dates", "", "times", "locations+rrule-byday+language-euskaraz"]
   - _block: calendar
     title: "Horario de Misas"
@@ -13,7 +13,7 @@ sections:
     order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
   - _block: calendar
     title: "Otros eventos periódicos"
-    filter: '!"byday":[]&!mass'
+    filter: "!byday:empty&!mass"
     order: ["title", "locations", "", "times", "byday+byweek+language-euskaraz"]
   - _block: video-channel
     title: Eguneroko Meza

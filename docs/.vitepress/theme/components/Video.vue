@@ -24,7 +24,7 @@
   </div>
 
   <div class="video mb-8 px-2" :class="grid(block)">
-    <div v-for="(item, i) in filteredItems" :key="i">
+    <LazyItem v-for="item in filteredItems" :key="item.src">
       <div class="relative">
         <div v-if="playingVideo === item.src" class="w-full h-full items-center rounded-lg overflow-hidden cursor-pointer aspect-[16/9]">
           <iframe :src="item.src" data-testid="embed-iframe" width="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" class="w-full h-full rounded-lg overflow-hidden"></iframe>
@@ -46,28 +46,48 @@
         <div class="w-[14px] h-[14px] mx-auto rounded-full bg-accent"></div>
         <div class="h-[4px] -mt-[8px] bg-accent -mx-[8px]"></div>
       </div>
-    </div>
+    </LazyItem>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
+import LazyItem from "./LazyItem.vue";
 import { formatDate, grid } from "./../../utils.js";
 const props = defineProps({ block: { type: Object, required: true } });
-const videos = computed(() => props.block.elements);
+const videos = ref(props.block.elements || []);
 
 const searchQuery = ref("");
 const selectedFilter = ref(0);
 // Filter logic: combining Category + Search Text
 const filteredItems = computed(() => {
-  return videos.value
-    .filter((item) => {
-      const haystack = JSON.stringify(item).toLowerCase();
-      const matchesfilter = selectedFilter.value === 0 || haystack.includes(props.block.filters?.[selectedFilter.value]?.toLowerCase());
-      const matchesSearch = haystack.includes(searchQuery.value.toLowerCase());
-      return matchesfilter && matchesSearch;
-    })
-    .slice(0, 50);
+  return videos.value.filter((item) => {
+    const haystack = JSON.stringify(item).toLowerCase();
+    const matchesfilter = selectedFilter.value === 0 || haystack.includes(props.block.filters?.[selectedFilter.value]?.toLowerCase());
+    const matchesSearch = haystack.includes(searchQuery.value.toLowerCase());
+    return matchesfilter && matchesSearch;
+  });
+});
+
+onMounted(async () => {
+  if (props.block._block == "video-channel") {
+    const res = await fetch("/videos.json");
+    const v = await res.json();
+
+    videos.value = (v || [])
+      .filter((obj) =>
+        JSON.stringify(obj)
+          .toLowerCase()
+          .includes((props.block.filter || "").toLowerCase()),
+      )
+      .filter((item) => {
+        const haystack = JSON.stringify(item).toLowerCase();
+        if (!props.block.filters) return true;
+        return props.block.filters.some((word) => haystack.includes(word?.toLowerCase()));
+      })
+      .map((v) => ({ ...v, src: `https://www.youtube.com/embed/${v.videoId}?autoplay=1`, image: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg` }))
+      .slice(0, 200);
+  }
 });
 
 function logo(item) {
@@ -75,19 +95,6 @@ function logo(item) {
   if (item.src.includes("spotify")) return "spotify-logo";
   if (item.src.includes("videmo")) return "vimeo-logo";
   return "generic-logo";
-}
-
-function ratio(ratio) {
-  const validRatios = {
-    "aspect-[9/16]": 0.5625,
-    "aspect-[16/9]": 1.777,
-    "aspect-[3/1]": 3,
-    "aspect-[4/3]": 1.333,
-    "aspect-[1/1]": 1.0,
-  };
-  return Object.keys(validRatios).reduce((closest, key) => {
-    return Math.abs(validRatios[key] - ratio) < Math.abs(validRatios[closest] - ratio) ? key : closest;
-  });
 }
 
 const playingVideo = ref(null);

@@ -3,17 +3,10 @@ import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { data } from "./../../blocks.data.js";
 import { formatDate, applyComplexFilter, splitRRuleByDay } from "./../../utils.js";
 
-const props = defineProps({
-  block: { type: Object, required: true },
-});
+const props = defineProps({ block: { type: Object, required: true } });
 
 // --- Events ---
-const filteredEvents = computed(() => {
-  let filter = props.block.filter?.toLowerCase();
-  if (props.block.source == "./pages/index.md") filter = '"byday":[]';
-  if (!data?.events) return [];
-  return data.events.filter((event) => applyComplexFilter(event, filter));
-});
+const filteredEvents = computed(() => props.block.events);
 
 // --- Autoplay ---
 const startSlider = () => {

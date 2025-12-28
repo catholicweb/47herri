@@ -5,7 +5,7 @@ export function groupEvents(events, fields) {
     const key_array = accessMultikey(event, field);
     for (const key of key_array) {
       if (!acc[key]) acc[key] = [];
-      acc[key].push(event);
+      if (fields.length > 1 || field == "all") acc[key].push(event);
     }
     return acc;
   }, {});
@@ -65,7 +65,7 @@ export function accessMultikey(obj, multikey) {
 export function applyComplexFilter(obj, filter) {
   if (!filter) return true;
 
-  const content = JSON.stringify(obj).toLowerCase();
+  const content = JSON.stringify(obj).toLowerCase().replaceAll('":[]', ":empty");
 
   // 1. Split by OR (|) - Any one of these groups must be true
   const orParts = filter.toLowerCase().split("|");

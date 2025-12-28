@@ -103,7 +103,7 @@ async function migrateMarkdown(directory) {
     for (var i = 0; i < data.locations?.length || 0; i++) {
       updatedData.sections.push({
         _block: "map",
-        title: "Non Gaude",
+        title: "Non gaude",
         name: data.locations[i].name,
         geo: data.locations[i].geo,
         tags: [...(i !== 0 ? ["hidden"] : [])], // Spreads ['hidden'] if true, nothing if false

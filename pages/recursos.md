@@ -21,7 +21,7 @@ sections:
     links:
       - "https://www.youtube.com/watch?v=W0PbRzsxue0"
   - _block: video
-    tags: ["twocols", "small"]
+    tags: ["twocols"]
     title: Errosario Santua
     links:
       - "https://www.youtube.com/watch?v=h5mZdE6u274"
@@ -29,7 +29,7 @@ sections:
       - "https://www.youtube.com/watch?v=_xjJggHEpQI"
       - "https://www.youtube.com/watch?v=7zenKMOnsxs"
   - _block: video
-    tags: ["twocols", "small"]
+    tags: ["twocols"]
     title: Angelusa
     links:
       - "https://www.youtube.com/watch?v=eDDOa-8RpzA"

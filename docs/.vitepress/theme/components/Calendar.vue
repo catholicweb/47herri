@@ -20,7 +20,7 @@ function getSubKeys(table) {
 <template>
   <div class="calendar" :class="grid(block)">
     <!-- Primer grupo dividir en headers -->
-    <div v-for="(table, tableKey) in groupData(data.events, block.filter, block.order)" :class="tableKey" class="mb-6">
+    <div v-for="(table, tableKey) in block.events" :class="tableKey" class="mb-6">
       <h3 :id="slugify(tableKey)" class="text-xl text-gray-800 mb-3 border-b-3 border-accent pb-1">
         {{ formatDate(tableKey, $frontmatter.lang) }}
       </h3>

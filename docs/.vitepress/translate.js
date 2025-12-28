@@ -1,26 +1,74 @@
 import { read, write, fg } from "./node_utils.js";
 
 const dictPath = "./docs/public/dictionary.json";
-const FIELDS = ["title", "description", "html", "name", "action"];
+const FIELDS = ["title", "description", "html", "name", "action", "notes"];
 const valueSet = new Set();
 const dictionary = read(dictPath);
 
-// Añade esta función para recorrer objetos recursivamente
-function extractValues(obj, keys) {
-  const results = [];
-  for (const [k, v] of Object.entries(obj)) {
-    if (keys.includes(k) && typeof v === "string") {
-      const list = v
+/**
+ * Recorre recursivamente un objeto/array y aplica una función
+ * solo a los valores cuyas claves estén en FIELDS.
+ */
+function walkAndApply(value, key, handler) {
+  // Caso array
+  if (Array.isArray(value)) {
+    return value.map((v) => walkAndApply(v, key, handler));
+  }
+
+  // Caso objeto plano
+  if (value && typeof value === "object" && value.constructor === Object) {
+    const out = {};
+    for (const [k, v] of Object.entries(value)) {
+      if (FIELDS.includes(k)) {
+        out[k] = handler(v);
+      } else {
+        out[k] = walkAndApply(v, k, handler);
+      }
+    }
+    return out;
+  }
+
+  // Primitivos
+  return value;
+}
+
+/**
+ * Extrae strings de los campos indicados, incluso dentro de arrays.
+ */
+export function extractValues(obj) {
+  const acc = [];
+
+  walkAndApply(obj, null, (v) => {
+    if (typeof v === "string") {
+      const parts = v
         .replace(/\n +\n/g, "\n\n")
         .split("\n\n")
         .map((s) => s.trim());
-      results.push(...list);
+      acc.push(...parts);
+    } else if (Array.isArray(v)) {
+      v.forEach((x) => {
+        if (typeof x === "string") acc.push(x.trim());
+      });
     }
-    if (typeof v === "object" && v !== null) {
-      results.push(...extractValues(v, keys));
+    return v; // no transformamos, solo extraemos
+  });
+
+  return acc;
+}
+
+/**
+ * Traduce los campos indicados usando un diccionario.
+ */
+export function translateObject(obj, dict) {
+  return walkAndApply(obj, null, (v) => {
+    if (Array.isArray(v)) {
+      return v.map((x) => (typeof x === "string" ? translateValue(x, dict) : x));
     }
-  }
-  return results;
+    if (typeof v === "string") {
+      return translateValue(v, dict);
+    }
+    return v;
+  });
 }
 
 // Traducir entradas faltantes
@@ -86,7 +134,7 @@ async function translateWithOpenAI(missing, targetLanguage) {
 
   const data = await response.json();
 
-  console.log(JSON.stringify(data));
+  //console.log(JSON.stringify(data));
 
   try {
     return JSON.parse(data.output[1].content[0].text).translations;
@@ -108,30 +156,14 @@ export function translateValue(value, dict) {
   return value;
 }
 
-// Recursivo
-export function translateObject(obj, dict) {
-  if (Array.isArray(obj)) {
-    return obj.map((v) => translateObject(v, dict));
-  }
-  if (obj && typeof obj === "object") {
-    const out = {};
-    for (const k of Object.keys(obj)) {
-      const v = obj[k];
-      if (FIELDS.includes(k)) out[k] = translateValue(v, dict);
-      else out[k] = translateObject(v, dict);
-    }
-    return out;
-  }
-  return obj;
-}
-
 export async function buildDictionary() {
   try {
     // Get values
-    const files = await fg(["*.md", "!aviso-legal.md"], { cwd: "./pages", absolute: false });
+    let files = await fg(["*.md", "!aviso-legal.md"], { cwd: "./pages", absolute: true });
+    files.push("./docs/public/calendar.json", "./pages/config.json");
     for (const file of files) {
-      const parsed = read("./pages/" + file);
-      const values = extractValues(parsed.data, FIELDS);
+      const parsed = read(file);
+      const values = extractValues(parsed.data || parsed, FIELDS);
       values.forEach((v) => valueSet.add(v));
 
       if (parsed.content?.trim()) {

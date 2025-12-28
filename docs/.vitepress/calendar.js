@@ -139,7 +139,7 @@ export async function fetchCalendar() {
           //byweek: intersectOptions(toArray(e.rrule), "BYWEEK"),
           //freq: intersectOptions(toArray(e.rrule), "FREQ"),
           notes: toArray(e.notes || input.default?.[type]?.description),
-          language: e.language,
+          language: e.language || null,
           //end: [],
           locations: toArray(e.location),
           exceptions: toArray(e.except),
@@ -209,5 +209,5 @@ export async function fetchCalendar() {
   const sorted = events.toSorted((a, b) => comp(a, b, "dates") || comp(a, b, "times") || comp(a, b, "byday", -100) || comp(a, b, "title"));
   exportCalendar(sorted);
   console.log("Events parsed ", sorted?.length);
-  return { sorted };
+  return sorted;
 }

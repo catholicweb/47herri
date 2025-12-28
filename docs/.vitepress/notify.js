@@ -28,8 +28,8 @@ function tomorrow_str() {
 function builNotifications() {
   let calendar = read("./docs/public/calendar.json");
 
-  const filtered = calendar.filter((event) => applyComplexFilter(event, '"byday":[]') && isTomorrow(event.dates[0]));
-  let grouped = groupEvents(filtered, ["title"]);
+  const filtered = calendar.filter((event) => applyComplexFilter(event, "byday:empty") && isTomorrow(event.dates[0]));
+  let grouped = groupEvents(filtered, ["title", "all"]);
 
   let notifications = [];
 
