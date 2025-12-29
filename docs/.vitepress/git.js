@@ -14,7 +14,6 @@ sh(`git config user.name "github-actions[bot]"`);
 sh(`git config user.email "github-actions[bot]@users.noreply.github.com"`);
 
 export function fetchUpstream() {
-  return;
   if (repository == "catholicweb/web-template") {
     return console.log("Do not fecth ourself", repository);
   } else if (schedule != "0 3 * * *" && eventName != "workflow_dispatch") {
