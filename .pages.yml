@@ -1,4 +1,6 @@
 settings:
+  content:
+    merge: true
   hide: true
 components:
   text:
