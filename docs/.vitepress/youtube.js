@@ -51,7 +51,7 @@ async function getNewVideos(playlistId, cachedIds, pageToken = "") {
       videoId: item.snippet.resourceId.videoId,
       title: item.snippet.title,
       publishedAt: item.snippet.publishedAt,
-      playlistId: playlistId,
+      //playlistId: playlistId,
     };
     // Si el vídeo ya existe en caché, se asume que el resto ya se descargó previamente.
     if (cachedIds.has(video.videoId)) {
@@ -65,7 +65,7 @@ async function getNewVideos(playlistId, cachedIds, pageToken = "") {
 }
 
 // Función de actualización que realiza llamadas de forma iterativa
-async function updateVideos(playlistId, cachedVideos, playlistName = "main") {
+async function updateVideos(playlistId, cachedVideos, playlist) {
   // Usamos un Set con los IDs ya guardados para búsqueda rápida
   const cachedIds = new Set(cachedVideos.map((v) => v.videoId));
   let allNewVideos = [];
@@ -78,7 +78,7 @@ async function updateVideos(playlistId, cachedVideos, playlistName = "main") {
     if (!nextPageToken) stop = true;
     else pageToken = nextPageToken;
   }
-  allNewVideos = allNewVideos.map((v) => ({ ...v, playlistName }));
+  if (playlist) allNewVideos = allNewVideos.map((v) => ({ ...v, playlist }));
   // Como los nuevos vídeos vienen primero, los concatenamos delante
   return [...allNewVideos, ...cachedVideos];
 }
