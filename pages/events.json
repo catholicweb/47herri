@@ -8,14 +8,7 @@
 			"image": "/media/mass.webp"
 		}
 	},
-	"events-funeral": [
-		{
-			"title": "María Luisa Fdz",
-			"location": ["Parroquia Nª Sra Asunción"],
-			"date": "2026-12-04",
-			"times": "20:30"
-		}
-	],
+	"events-funeral": [],
 	"events-mass": [
 		{
 			"title": "Misa",

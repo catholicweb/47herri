@@ -1,8 +1,8 @@
 {
   "title": "47 herri",
   "description": "Nafarroako ipar-mendebaldeko hamar udalerrietako 47 parrokiek osatzen duten pastoral barruti katolikoa gara gu iruñako elizbarrutian.",
-  "image": "",
-  "icon": "",
+  "image": "/media/hero-bg.webp",
+  "icon": "/media/android-chrome-512x512.png",
   "social": ["https://www.youtube.com/@47herri"],
   "bank": [
     {
@@ -22,7 +22,7 @@
       "account": "ES17 3008 0179 2436 5465 8818"
     }
   ],
-  "siteurl": "https://parroquia.app",
+  "siteurl": "https://47herri.eus",
   "languages": ["Euskara:eu", "Castellano:es", "Català:ca", "English:en", "Français:fr", "Deutsch:de", "Italiano:it", "Português:pt", "Română:ro", "العربية:ar", "Български:bg"],
   "nav": [
     {

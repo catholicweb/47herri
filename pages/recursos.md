@@ -36,6 +36,6 @@ sections:
   - _block: video-channel
     title: Mezako kantak
     query: true
-    filter: ""
+    filter: "playlist"
     filters: ["Guztiak", "Imnoak", "Ofertorioa", "San Migel", "Jesusen Bihotza", "Ama Birjina", "Hiletak", "Pazkoa", "Garizuma", "Eguberrialdia", "Abendualdia", "Irteera", "Jaunartzea", "Bakea", "Sanctus", "Salmoak", "Aintza", "Sarrera"]
 ---

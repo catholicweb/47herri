@@ -1,5 +1,5 @@
 <template>
-	<div class="gospel max-w-5xl mx-auto p-4 my-6">
+	<div class="gospel max-w-5xl mx-auto p-4 mb-6">
 		<template v-for="(reading, key) in readings.list" :key="key">
 			<div v-if="block.images" class="relative w-full sm:w-1/2 mx-auto rounded-lg overflow-hidden my-4 mt-8">
 				<img :src="reading.image" loading="lazy" :alt="`${reading.title} icon`" class="w-full aspect-square object-cover" />
@@ -12,9 +12,13 @@
 				</div>
 				<div class="absolute bottom-2 right-2 text-xs text-white">&copy; <a href="https://igles-ia.es/">Igles-IA.es</a></div>
 			</div>
-			<div v-else>
+			<div v-else-if="readings.list.length > 1">
 				<h2 class="text-lg text-center font-semibold mb-1 mt-6">{{ reading.title }} - {{ reading.cita }}</h2>
 				<p class="text-sm mb-2 italic" style="color: #b30838">{{ reading.resum }}</p>
+			</div>
+			<div v-else class="flex justify-between items-center">
+				<span class="text-sm mb-2 font-bold">{{ reading.cita }}</span>
+				<span class="text-sm mb-2 italic" style="color: #b30838">{{ reading.resum }}</span>
 			</div>
 			<div class="prose max-w-none mb-2" v-html="reading.text"></div>
 		</template>

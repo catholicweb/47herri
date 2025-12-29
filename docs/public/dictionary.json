@@ -160,7 +160,7 @@
     "Uztegi ezagutu": "Ezagutu Uztegi",
     "Zarrantz": "Zarrantz",
     "Zarrantz ezagutu": "Ezagutu Zarrantz",
-    "Próximas celebraciones": "Hurrengo ospakizunak",
+    "Próximas celebraciones": "Datozen ospakizunak",
     "Otros eventos periódicos": "Beste aldizkako ekitaldiak",
     "Misa": "Meza",
     "Katekesia": "Katekesi",
@@ -183,7 +183,9 @@
     "Jesús Mª Sotil": "Jesús Mª Sotil",
     "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen": "Jauna, zure eskuetan utzi dugu maite dugun senide hau; eman iezaiozu betiko atsedena, eta beti- betiko argiak izan diezaiola beretzat. Goian bego. Amen",
     "This is a very quick event": "Hau ekitaldi oso azkarra da",
-    "Elurrera Aralarren": "Elurrera Aralarren"
+    "Elurrera Aralarren": "Elurrera Aralarren",
+    "Igoa eta Aizarotz": "Igoa eta Aizarotz",
+    "Igoa eta Aizarotz ezagutu": "Igoa eta Aizarotz ezagutu"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -369,7 +371,9 @@
     "Jesús Mª Sotil": "Jesús Mª Sotil",
     "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen": "Señor, en tus manos ponemos a este ser querido que amamos, concédele el descanso eterno y que la luz perpetua brille sobre él. Descansa en paz. Amén",
     "This is a very quick event": "Este es un evento muy breve",
-    "Elurrera Aralarren": "Elurrera Aralarren"
+    "Elurrera Aralarren": "Elurrera Aralarren",
+    "Igoa eta Aizarotz": "Igoa y Aizarotz",
+    "Igoa eta Aizarotz ezagutu": "Conoce Igoa y Aizarotz"
   },
   "Català:ca": {
     "Albiasu": "Albiasu",
@@ -555,7 +559,9 @@
     "Jesús Mª Sotil": "Jesús Mª Sotil",
     "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen": "Senyor, en les teves mans encomanem aquest familiar que estimem, concedeix-li el repòs etern i que la llum perpetua l'enllumini. Descansi en pau. Amén",
     "This is a very quick event": "Aquesta és una activitat molt breu",
-    "Elurrera Aralarren": "Elurrera Aralarren"
+    "Elurrera Aralarren": "Elurrera Aralarren",
+    "Igoa eta Aizarotz": "Igoa i Aizarotz",
+    "Igoa eta Aizarotz ezagutu": "Descobreix Igoa i Aizarotz"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -741,7 +747,9 @@
     "Jesús Mª Sotil": "Jesús Mª Sotil",
     "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen": "We entrust this beloved family member to you, give them eternal rest, and may the light of eternity shine upon them. Rest in peace. Amen",
     "This is a very quick event": "This is a very quick event",
-    "Elurrera Aralarren": "Elurrera Aralarren"
+    "Elurrera Aralarren": "Elurrera Aralarren",
+    "Igoa eta Aizarotz": "Igoa and Aizarotz",
+    "Igoa eta Aizarotz ezagutu": "Get to know Igoa and Aizarotz"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -927,7 +935,9 @@
     "Jesús Mª Sotil": "Jesús Mª Sotil",
     "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen": "Jeune, nous remettons entre tes mains ce membre de la famille que nous aimons, donne-lui le repos éternel, et que la lumière éternelle brille sur lui. Requiescat in pace. Amen",
     "This is a very quick event": "Ceci est un événement très court",
-    "Elurrera Aralarren": "Elurrera Aralarren"
+    "Elurrera Aralarren": "Elurrera Aralarren",
+    "Igoa eta Aizarotz": "Igoa eta Aizarotz",
+    "Igoa eta Aizarotz ezagutu": "Découvrir Igoa et Aizarotz"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -1113,7 +1123,9 @@
     "Santi Garisoain": "Santi Garisoain",
     "In solidum parrokoa": "In solidum Pfarrer",
     "Jesús Mª Sotil": "Jesús Mª Sotil",
-    "Elurrera Aralarren": "Elurrera Aralarren"
+    "Elurrera Aralarren": "Elurrera Aralarren",
+    "Igoa eta Aizarotz": "Igoa eta Aizarotz",
+    "Igoa eta Aizarotz ezagutu": "Igoa eta Aizarotz kennenlernen"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1299,7 +1311,9 @@
     "Jesús Mª Sotil": "Jesús Mª Sotil",
     "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen": "Giovane, nelle tue mani affidiamo questo nostro caro familiare; concedigli il riposo eterno e splenda su di lui la luce perpetua. Riposi in pace. Amen",
     "This is a very quick event": "Questo è un evento molto breve",
-    "Elurrera Aralarren": "Elurrera Aralarren"
+    "Elurrera Aralarren": "Elurrera Aralarren",
+    "Igoa eta Aizarotz": "Igoa eta Aizarotz",
+    "Igoa eta Aizarotz ezagutu": "Conoscere Igoa e Aizarotz"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1485,7 +1499,9 @@
     "Santi Garisoain": "Santi Garisoain",
     "In solidum parrokoa": "Pároco in solidum",
     "Jesús Mª Sotil": "Jesús Mª Sotil",
-    "Elurrera Aralarren": "Elurrera Aralarren"
+    "Elurrera Aralarren": "Elurrera Aralarren",
+    "Igoa eta Aizarotz": "Igoa e Aizarotz",
+    "Igoa eta Aizarotz ezagutu": "Conhecer Igoa e Aizarotz"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -1671,7 +1687,9 @@
     "Jesús Mª Sotil": "Jesús Mª Sotil",
     "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen": "Doamnă, în mâinile tale lăsăm pe acest membru al familiei pe care îl iubim; dă-i odihnă veșnică și luminează-i lumina veșnică. Odihnească-se în pace. Amin",
     "This is a very quick event": "Acesta este un eveniment foarte scurt",
-    "Elurrera Aralarren": "Elurrera Aralarren"
+    "Elurrera Aralarren": "Elurrera Aralarren",
+    "Igoa eta Aizarotz": "Igoa și Aizarotz",
+    "Igoa eta Aizarotz ezagutu": "Cunoaște-I pe Igoa și Aizarotz"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -1857,7 +1875,9 @@
     "Jesús Mª Sotil": "خيسوس مª سوتيل",
     "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen": "يا رب، نودع بين يديك هذا القريب الذي نحبه، امنحه الراحة الأبدية، ولتضيء له أنوار الأبدية. ارحمه في علّيين. آمين",
     "This is a very quick event": "هذا حدث سريع جدًا",
-    "Elurrera Aralarren": "إلورا أرالارين"
+    "Elurrera Aralarren": "إلورا أرالارين",
+    "Igoa eta Aizarotz": "إيجوا و أيزاروتز",
+    "Igoa eta Aizarotz ezagutu": "التعرف على إيجوا وأيزاروتز"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2043,6 +2063,8 @@
     "Jesús Mª Sotil": "Jesús Mª Sotil",
     "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen": "Младият, в твоите ръце предаваме този наш любим роднина; дарувай му вечен покой и нека вечната светлина да му свети. Почивай в мир. Амин",
     "This is a very quick event": "Това е много кратко събитие",
-    "Elurrera Aralarren": "Elurrera Aralarren"
+    "Elurrera Aralarren": "Elurrera Aralarren",
+    "Igoa eta Aizarotz": "Igoa eta Aizarotz",
+    "Igoa eta Aizarotz ezagutu": "Запознайте се с Igoa и Aizarotz"
   }
 }

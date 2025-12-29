@@ -21,7 +21,7 @@ function getSubKeys(table) {
   <div class="calendar" :class="grid(block)">
     <!-- Primer grupo dividir en headers -->
     <div v-for="(table, tableKey) in block.events" :class="tableKey" class="mb-6">
-      <h3 :id="slugify(tableKey)" class="text-xl text-gray-800 mb-3 border-b-3 border-accent pb-1">
+      <h3 :id="slugify(tableKey)" class="text-xl text-left text-gray-800 mb-3 border-b-3 border-accent pb-1">
         {{ formatDate(tableKey, $frontmatter.lang) }}
       </h3>
       <div class="overflow-x-auto bg-white">
@@ -44,7 +44,7 @@ function getSubKeys(table) {
               <!-- Añadir filas -->
               <td v-for="subKey in getSubKeys(table)" class="px-4 py-3 align-top border-1">
                 <!-- Cada fila de la tabla puede tener múltiples elementos -->
-                <p v-for="(line, lineKey) in row[subKey]" class="flex items-center gap-2 mb-1 mr-2">
+                <p v-for="(line, lineKey) in row[subKey]" class="flex items-center gap-1 mb-0 mr-2">
                   {{ formatDate(lineKey, $frontmatter.lang) }}
                   <span class="extra italic text-sm">
                     {{

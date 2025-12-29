@@ -69,25 +69,27 @@ const filteredItems = computed(() => {
   });
 });
 
-onMounted(async () => {
-  if (props.block._block == "video-channel") {
-    const res = await fetch("/videos.json");
-    const v = await res.json();
+onMounted(() => {
+  setTimeout(async () => {
+    if (props.block._block == "video-channel") {
+      const res = await fetch("/videos.json");
+      const v = await res.json();
 
-    videos.value = (v || [])
-      .filter((obj) =>
-        JSON.stringify(obj)
-          .toLowerCase()
-          .includes((props.block.filter || "").toLowerCase()),
-      )
-      .filter((item) => {
-        const haystack = JSON.stringify(item).toLowerCase();
-        if (!props.block.filters) return true;
-        return props.block.filters.some((word) => haystack.includes(word?.toLowerCase()));
-      })
-      .map((v) => ({ ...v, src: `https://www.youtube.com/embed/${v.videoId}?autoplay=1`, image: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg` }))
-      .slice(0, 200);
-  }
+      videos.value = (v || [])
+        .filter((obj) =>
+          JSON.stringify(obj)
+            .toLowerCase()
+            .includes((props.block.filter || "").toLowerCase()),
+        )
+        .filter((item) => {
+          const haystack = JSON.stringify(item).toLowerCase();
+          if (!props.block.filters) return true;
+          return props.block.filters.some((word) => haystack.includes(word?.toLowerCase()));
+        })
+        .map((v) => ({ ...v, src: `https://www.youtube.com/embed/${v.videoId}?autoplay=1`, image: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg` }))
+        .slice(0, 200);
+    }
+  }, 0);
 });
 
 function logo(item) {

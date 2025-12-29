@@ -20,7 +20,7 @@ import { ref } from "vue";
 import { useData } from "vitepress";
 
 const { theme } = useData();
-const state = ref({ showInstallButton: false, showUpdateBanner: false });
+const state = ref({ showInstallButton: true, showUpdateBanner: false });
 let deferredPrompt;
 
 function reloadPage() {
