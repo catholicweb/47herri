@@ -65,7 +65,7 @@ onUnmounted(stopSlider);
         <div class="flex transition-transform duration-500 ease-out" :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
           <div v-for="(event, index) in filteredEvents" :key="index" class="min-w-full px-2">
             <div class="bg-black/50 backdrop-blur-xl p-6 rounded-xl text-white overflow-hidden">
-              <img v-if="event.images?.[0]" :src="event.images[0]" class="float-right w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-accent object-cover ml-4 mb-2" />
+              <img v-if="event.images?.[0]" :src="event.images[0]" class="float-right w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-accent object-cover ml-4 mb-2" crossorigin="anonymous" loading="lazy" />
 
               <div class="block">
                 <h2 class="text-3xl font-bold mb-4 leading-tight">
