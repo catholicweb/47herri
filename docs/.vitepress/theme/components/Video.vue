@@ -31,7 +31,7 @@
         </div>
 
         <div v-else @click="playingVideo = item.src" class="w-full h-full relative facade rounded-lg overflow-hidden cursor-pointer aspect-[16/9]">
-          <img :src="item.image" :alt="`Thumbnail for ${item.title}`" :fetchpriority="block.index >= 1 ? 'low' : 'high'" :loading="block.index >= 1 ? 'lazy' : 'eager'" class="absolute inset-0 w-full h-full object-cover rounded-lg" />
+          <img :src="item.image" :alt="`Thumbnail for ${item.title}`" :fetchpriority="block.index >= 1 ? 'low' : 'high'" :loading="block.index >= 1 ? 'lazy' : 'eager'" crossorigin="anonymous" class="absolute inset-0 w-full h-full object-cover rounded-lg" />
 
           <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 text-center to-transparent flex items-end">
             <h3 class="text-lg font-bold text-white mb-2 w-full px-4">{{ item.title }}</h3>

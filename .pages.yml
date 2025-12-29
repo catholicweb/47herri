@@ -1,4 +1,6 @@
 settings:
+  content:
+    merge: true
   hide: true
 components:
   text:
@@ -163,6 +165,22 @@ content:
           - { name: location, label: Ubicación, component: location }
           - { name: date, type: date, label: Fecha del funeral }
           - { name: times, label: Hora del funeral, component: times, options: { multiple: false } }
+          - { name: notes, label: Notas sobre el evento (opcional), type: string }
+      - name: events-feast
+        label: Festividades especiales
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.date}" } }
+        fields:
+          - { name: title, label: "Nombre festividad (ej: Navidad, Pascua...)", type: string }
+          - { name: date, type: date, label: Fecha de la festividad }
+          - { name: image, label: "Image", type: image }
+          - name: custom
+            label: Celebraciones/Eventos
+            list: { collapsible: { collapsed: true, summary: "{fields.location} - {fields.times}" } }
+            fields:
+              - { name: location, label: Ubicación, component: location }
+              - { name: times, label: Horas, component: times }
+              - { name: notes, label: Notas sobre el evento (opcional), type: string }
       - name: events-mass
         label: Horario de misas
         type: object
@@ -173,20 +191,7 @@ content:
           - { name: times, label: Horas, component: times }
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
           - { name: except, type: date, label: Excepto, list: { collapsible: { collapsed: true } } }
-      - name: events-feast
-        label: Festividades especiales
-        type: object
-        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.date}" } }
-        fields:
-          - { name: title, label: "Nombre festividad (ej: Navidad, Pascua...)", type: string }
-          - { name: date, type: date, label: Fecha de la festividad }
-          - { name: image, label: "Image", type: image }
-          - name: custom
-            label: Celebraciones
-            list: { collapsible: { collapsed: true, summary: "{fields.location} - {fields.times}" } }
-            fields:
-              - { name: location, label: Ubicación, component: location }
-              - { name: times, label: Horas, component: times }
+          - { name: notes, label: Notas sobre el evento (opcional), type: string }
       - name: events-group
         label: Catequesis y grupos
         type: object
@@ -196,6 +201,7 @@ content:
           - { name: location, label: Ubicación, component: location }
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
           - { name: times, label: Hora, component: times }
+          - { name: notes, label: Notas sobre el evento (opcional), type: string }
       - name: events-custom
         label: Otros eventos
         type: object
@@ -208,6 +214,7 @@ content:
           - { name: times, label: Horas, component: times, options: { multiple: false } }
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
           - { name: except, type: date, label: Excepto, list: { collapsible: { collapsed: true } } }
+          - { name: notes, label: Notas sobre el evento (opcional), type: string }
       - { name: urls, type: string, list: true, label: Calendarios externos a importar (ej. url de Google Calendar terminada en .ics) }
 
   - name: pages
@@ -298,9 +305,6 @@ content:
               - { name: title, type: string, label: Título sección }
               - { name: geo, type: string, label: "Coordenadas (ej: 42.801941, -1.645660)" }
               - { name: name, type: string, label: Nombre (opcional) }
-              - { name: address, type: string, label: Dirección postal (opcional) }
-              - { name: phone, type: string, label: Telefono (opcional) }
-              - { name: email, type: string, label: Email (opcional) }
               - { name: image, type: image, label: Imagen (opcional) }
           - name: form
             label: Formulario (coming soon)

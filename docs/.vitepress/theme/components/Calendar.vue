@@ -1,12 +1,7 @@
 <script setup>
 import { data } from "./../../blocks.data.js";
-import { formatDate, slugify, applyComplexFilter, groupEvents, grid } from "./../../utils.js";
+import { formatDate, slugify, grid } from "./../../utils.js";
 const props = defineProps({ block: { type: Object, required: true } });
-
-function groupData(data, filter, order) {
-  const filtered = data.filter((obj) => applyComplexFilter(obj, filter));
-  return groupEvents(filtered, order);
-}
 
 function getSubKeys(table) {
   const keys = new Set();

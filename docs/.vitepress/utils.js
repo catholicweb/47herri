@@ -1,4 +1,4 @@
-export function groupEvents(events, fields) {
+export function groupEvents(events, fields = []) {
   if (fields.length === 0) return events;
   const field = fields[0];
   const grouped = events.reduce((acc, event) => {
@@ -147,10 +147,10 @@ function weekday(days) {
 }
 
 export function formatDate(isoString, lang = "Español:es") {
+  if (typeof isoString !== "string") return "";
   if (typeof lang !== "string") return isoString;
-  if (!isoString) return "";
   const langCode = lang.split(":")[1];
-  const date = new Date(isoString.split("/").toReversed().join("-"));
+  const date = new Date(isoString.split("/")?.toReversed()?.join("-"));
   if (isNaN(date.getTime())) return tr(isoString, lang);
   const monthIndex = date.getMonth();
   const now = new Date();

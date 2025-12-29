@@ -15,6 +15,7 @@ self.addEventListener("fetch", (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
+  if (url.origin !== location.origin) return;
   if (request.method !== "GET") return;
 
   // Determine if it's a page navigation/HTML request

@@ -5,14 +5,14 @@
 
 @theme {
   /* === Your core parameters === */
-  --font-body: 'Open Sans', sans-serif;
-  --font-heading: 'Basque Smile', sans-serif;
-  --color-accent: #009c46;
+  --font-body: 'Quicksand', sans-serif;
+  --font-heading: 'Story Script', sans-serif;
+  --color-accent: #2e7d32;
   --color-primary: undefined;
   --border-radius-mult: 1;
   --border-width-mult: 1.25;
   --shadow-depth-mult: 1.50;
-  --accent-angle: 146.92307692307693deg;
+  --accent-angle: 123.03797468354429deg;
   --primary-angle: 0deg;
 
     
@@ -72,4 +72,22 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1) rotate(0) translate(0); /* no scaling or translation */
   }
 }
+
+blockquote {
+  opacity: 0;;
+  animation: scrolled linear both;
+  animation-timeline: view();
+  animation-range: entry 30% cover 30%;
+}
+
+h2 {  @apply hover:text-accent; }
+
+li, ul {
+  opacity: 0.5; transform: scale(0.80);;
+  animation: scrolled linear both;
+  animation-timeline: view();
+  animation-range: entry 30% cover 30%;
+}
+
+.card {  @apply hover:scale-110 hover:rotate-3; }
 

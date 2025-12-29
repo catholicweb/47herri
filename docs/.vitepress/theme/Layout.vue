@@ -4,14 +4,14 @@
     <!-- Navbar Component -->
     <component :is="components.Navbar" />
 
-    <!-- Hero Component (optional?) -- >
-    <component :is="components.Hero" :block="$frontmatter" v-if="!$frontmatter.hideHero" />-->
+    <!-- Hero Component (optional?) -->
+    <component :is="components.Hero" :block="$frontmatter" v-if="!$frontmatter.hideHero && navStyle != '47herri'" />
 
     <!-- Main Content - Block System -->
     <main class="flex-1 flex flex-wrap" v-if="$frontmatter.sections">
       <template v-for="(section, index) in $frontmatter.sections">
         <section :class="getSectionClasses(section.tags)">
-          <div v-if="section.title && section._block != 'Hero'" class="text-center mt-8 mb-4 container">
+          <div v-if="section.title && section._block != 'hero'" class="text-center mt-8 mb-4 container mx-auto">
             <h2 :id="slugify(section.title)" class="text-4xl font-bold">{{ section.title }}</h2>
           </div>
           <component :key="slugify(section.title)" :is="getBlockComponent(section._block)" :block="section" />
@@ -30,6 +30,11 @@
 <script setup>
 import components from "./components";
 import { slugify } from "./../utils.js";
+
+import { ref } from "vue";
+import { useData } from "vitepress";
+const { site } = useData();
+const navStyle = ref(site?.value?.themeConfig?.config?.theme?.navStyle);
 
 function getSectionClasses(tags = []) {
   const classes = [];
