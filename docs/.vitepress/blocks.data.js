@@ -6,7 +6,8 @@ export default {
     const fundraisings = [];
     const maps = [];
     const pages = [];
-    const videos = read("./docs/public/videos.json", []);
+    //const videos = read("./docs/public/videos.json", []);
+    //const events = read("./docs/public/calendar.json", []);
 
     const files = await fg("**/*.md", { cwd: "./docs", absolute: false });
 
@@ -19,6 +20,7 @@ export default {
           image: data.image,
           tags: data.tags,
           description: data.description,
+          lang: data.lang,
           url: "/" + file.replace(/index\.md$/, "").replace(/\.md$/, ""),
         });
         data.sections.forEach((section) => {
@@ -37,6 +39,6 @@ export default {
       }
     }
 
-    return { fundraisings, maps, pages, videos };
+    return { fundraisings, maps, pages };
   },
 };

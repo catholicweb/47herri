@@ -1,74 +1,30 @@
 <script setup>
-import { ref, watch } from "vue";
+import { ref, computed } from "vue";
 import { data } from "./../../blocks.data.js";
 import { useData } from "vitepress";
 const { theme, page } = useData();
-const config = ref(theme.value.config || {});
+const config = computed(() => theme.value.config || {});
+const props = defineProps({ block: { type: Object, required: true } });
 
-watch(
-  () => page.value.frontmatter.lang,
-  (lang, from) => {
-    cards.value = data.fundraisings.filter((f) => f.lang === lang);
-    numCards.value = cards.value.length;
-  },
-);
-
-const props = defineProps({
-  block: {
-    type: Object,
-    required: true,
-  },
-});
-
-const isDragging = ref(false);
 const startX = ref(0);
 const currentX = ref(0);
 const donate = ref(false);
 
-const numCards = ref(0);
-const cards = ref(data.fundraisings.filter((f) => f.lang === page.value.frontmatter.lang));
+const cards = computed(() => data.fundraisings.filter((f) => f.lang === page.value.frontmatter.lang));
+
+const numCards = computed(() => cards.value.length);
 const currentIndex = ref(cards.value.findIndex((item) => item.name === props.block.name) || 0);
 
-const getCardStyle = (index) => {
-  const offset = index - currentIndex.value;
-  const absOffset = Math.abs(offset);
+const getCardClass = (index) => {
+  const diff = index - currentIndex.value;
 
-  if (absOffset === 0) {
-    // Center card - full color, full size
-    return {
-      transform: "translateX(0%) scale(1) translateZ(0)",
-      opacity: 1,
-      zIndex: 15,
-      filter: "grayscale(0%)",
-    };
-  } else if (absOffset === 1) {
-    // Adjacent cards
-    const translateX = offset > 0 ? 35 : -35;
-    return {
-      transform: `translateX(${translateX}%) scale(0.85) translateZ(-100px)`,
-      opacity: 0.6,
-      zIndex: 10,
-      filter: "grayscale(80%)",
-    };
-  } else if (absOffset === 2) {
-    // Second level cards
-    const translateX = offset > 0 ? 60 : -60;
-    return {
-      transform: `translateX(${translateX}%) scale(0.7) translateZ(-200px)`,
-      opacity: 0.3,
-      zIndex: 5,
-      filter: "grayscale(100%)",
-    };
-  } else {
-    // Hidden cards
-    const translateX = offset > 0 ? 80 : -80;
-    return {
-      transform: `translateX(${translateX}%) scale(0.6) translateZ(-300px)`,
-      opacity: 0,
-      zIndex: 0,
-      filter: "grayscale(100%)",
-    };
-  }
+  if (diff === 0) return "card-active";
+  if (diff === 1) return "card-next-1";
+  if (diff === -1) return "card-prev-1";
+  if (diff === 2) return "card-next-2";
+  if (diff === -2) return "card-prev-2";
+
+  return diff > 0 ? "card-hidden-right" : "card-hidden-left";
 };
 
 const nextCard = () => {
@@ -90,13 +46,11 @@ const handleTouchStart = (e) => {
 };
 
 const handleTouchEnd = (e) => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX.value - endX;
-  const threshold = 50;
+  const diff = startX.value - e.changedTouches[0].clientX;
 
-  if (diff > threshold) {
+  if (diff > 50) {
     nextCard();
-  } else if (diff < -threshold) {
+  } else if (diff < -50) {
     prevCard();
   }
 };
@@ -109,15 +63,12 @@ const goToCard = (index) => {
 
 <template>
   <div class="fundraising max-w-3xl mx-auto p-6 my-6">
-    <div v-if="block.title" class="text-center">
-      <h2 class="my-2 text-4xl font-bold">{{ block.title }}</h2>
-    </div>
     <div class="flex flex-col items-center justify-center px-4 overflow-hidden">
       <!-- 3D Carousel Container -->
       <div class="relative w-full max-w-6xl h-[500px] flex items-center justify-center">
         <!-- Cards -->
         <div class="relative w-full" @touchstart.passive="handleTouchStart" @touchend.passive="handleTouchEnd">
-          <div v-for="(card, index) in cards" :key="card.id" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 transition-all duration-700 ease-out cursor-pointer" :style="getCardStyle(index)" @click="goToCard(index)">
+          <div v-for="(card, index) in cards" :key="card.id" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 transition-all duration-700 ease-out cursor-pointer" :style="getCardClass(index)" @click="goToCard(index)">
             <div class="w-full max-w-md bg-white rounded-2xl shadow-lg overflow-hidden">
               <!-- Image Section -->
               <div class="relative aspect-16/9 overflow-hidden">
@@ -183,3 +134,68 @@ const goToCard = (index) => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.fundraising {
+  perspective: 1000px; /* Essential for 3D translateZ to work */
+}
+
+/* Base card state */
+.card-active,
+.card-prev-1,
+.card-next-1,
+.card-prev-2,
+.card-next-2,
+.card-hidden-left,
+.card-hidden-right {
+  position: absolute;
+  will-change: transform, opacity;
+}
+
+.card-active {
+  transform: translateX(0%) scale(1) translateZ(0);
+  opacity: 1;
+  z-index: 15;
+  filter: grayscale(0%);
+}
+
+.card-prev-1 {
+  transform: translateX(-35%) scale(0.85) translateZ(-100px);
+  opacity: 0.6;
+  z-index: 10;
+  filter: grayscale(80%);
+}
+
+.card-next-1 {
+  transform: translateX(35%) scale(0.85) translateZ(-100px);
+  opacity: 0.6;
+  z-index: 10;
+  filter: grayscale(80%);
+}
+
+.card-prev-2 {
+  transform: translateX(-60%) scale(0.7) translateZ(-200px);
+  opacity: 0.3;
+  z-index: 5;
+  filter: grayscale(100%);
+}
+
+.card-next-2 {
+  transform: translateX(60%) scale(0.7) translateZ(-200px);
+  opacity: 0.3;
+  z-index: 5;
+  filter: grayscale(100%);
+}
+
+.card-hidden-left {
+  transform: translateX(-80%) scale(0.6) translateZ(-300px);
+  opacity: 0;
+  z-index: 0;
+}
+
+.card-hidden-right {
+  transform: translateX(80%) scale(0.6) translateZ(-300px);
+  opacity: 0;
+  z-index: 0;
+}
+</style>

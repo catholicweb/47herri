@@ -1,7 +1,4 @@
 <template>
-  <div v-if="block.title" class="text-center">
-    <h2 class="mt-12 text-4xl font-bold">{{ block.title }}</h2>
-  </div>
   <div class="gallery pb-6 pt-4 container mx-auto px-4">
     <!-- 1. Card Full - Image with Overlay (YouTube style) -->
     <div v-if="block.type === 'card-full'" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -20,7 +17,7 @@
     </div>
 
     <!-- 2. Image Gallery (Pinterest/Instagram style) -->
-    <div v-if="block.type === 'gallery'" :class="block.grid">
+    <div v-if="block.type === 'gallery'" :class="grid(block)">
       <div v-for="(item, i) in block.elements" :key="i">
         <div class="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
           <Image :src="item.image" :alt="item.title" :index="block.index" class="w-full h-full object-cover transition-transform group-hover:scale-110" />
@@ -130,7 +127,7 @@
     </div>
 
     <!-- 9. Team Members/People Cards -->
-    <div v-if="block.type === 'team-cards'" :class="block.grid">
+    <div v-if="block.type === 'team-cards'" :class="grid(block)">
       <a v-for="(item, i) in block.elements" :key="i" :href="item.link">
         <div class="relative mb-4 inline-block">
           <Image :index="block.index" :src="item.image" :alt="'team-cards ' + item.title" class="w-40 h-40 rounded-full object-cover border-4 border-accent shadow-lg group-hover:scale-105 transition-transform" />
@@ -220,6 +217,7 @@
 </template>
 
 <script setup>
+import { grid } from "./../../utils.js";
 import Image from "./Image.vue";
 import { ref } from "vue";
 

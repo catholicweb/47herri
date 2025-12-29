@@ -8,6 +8,8 @@ sections:
     name: Nuestra ermita
   - _block: calendar
     title: No te pierdas nuestros eventos!
+    filter: "!byday:empty&!mass"
+    order: ["title", "locations", "", "times", "byday+byweek+language-euskaraz"]
   - _block: video-channel
     title: Últimos videos en nuestro canal
     filter:

@@ -124,6 +124,8 @@ sections:
     image: https://cdn.pixabay.com/photo/2016/08/31/14/35/saint-pierre-1633682_1280.jpg
   - _block: calendar
     title: No te pierdas nuestros eventos!
+    filter: "!byday:empty&!mass"
+    order: ["title", "locations", "", "times", "byday+byweek+language-euskaraz"]
   - _block: hero
     title: Cambio de sección
     description: Con una imagen de fondo. Y llamadas a la acción
