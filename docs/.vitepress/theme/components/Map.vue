@@ -1,7 +1,7 @@
 <template>
   <div class="map py-8 max-w-3xl mx-auto md:px-4">
     <div class="w-full h-96 overflow-hidden md:shadow-md">
-      <LazyItem>
+      <LazyItem class="w-full h-full z-0">
         <div ref="mapContainer" class="w-full h-full z-0"></div>
       </LazyItem>
     </div>
@@ -38,9 +38,12 @@ async function loadCSS(url) {
   });
 }
 
-watch(page.value.frontmatter.lang, (lang) => {
-  renderMarkers(lang);
-});
+watch(
+  () => page.value.frontmatter.lang,
+  (lang) => {
+    renderMarkers(lang);
+  },
+);
 
 watch(mapContainer, (newVal) => {
   if (newVal) loadMap();
@@ -49,6 +52,7 @@ watch(mapContainer, (newVal) => {
 const allMaps = ref([]);
 
 async function loadMap() {
+  console.log("loadMap");
   if (!mapContainer.value) return;
 
   await loadCSS("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
@@ -70,7 +74,7 @@ async function loadMap() {
 
   var supportsTouch = "ontouchstart" in window || navigator.msMaxTouchPoints;
 
-  const map = L.map(mapContainer.value, { fullscreenControl: true, zoomControl: !supportsTouch });
+  map = L.map(mapContainer.value, { fullscreenControl: true, zoomControl: !supportsTouch });
 
   const latLngBounds = data.maps.map((m) => m.geo?.split(",").map((s) => Number(s.trim())));
 
@@ -83,9 +87,11 @@ async function loadMap() {
   markersLayer = L.layerGroup().addTo(map);
 
   renderMarkers(page.value.frontmatter.lang);
+  console.log("finished loading");
 }
 
 function renderMarkers(lang) {
+  console.log("renderMarkers");
   if (!markersLayer) return;
 
   // Create a smaller icon
