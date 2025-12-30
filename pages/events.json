@@ -674,6 +674,19 @@
           "times": [
             "11:00"
           ]
+        },
+        {
+          "location": [
+            "Betelu"
+          ]
+        },
+        {
+          "location": [
+            "Goizueta"
+          ],
+          "times": [
+            "12:30"
+          ]
         }
       ]
     }
