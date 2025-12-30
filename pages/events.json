@@ -497,6 +497,19 @@
         "sa",
         "week4"
       ]
+    },
+    {
+      "title": "Misa",
+      "location": [
+        "Mugiro"
+      ],
+      "times": [
+        "18:00"
+      ],
+      "rrule": [
+        "sa",
+        "week2"
+      ]
     }
   ],
   "events-group": [
