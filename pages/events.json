@@ -67,6 +67,19 @@
     {
       "title": "Misa",
       "location": [
+        "Latasa"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week3"
+      ]
+    },
+    {
+      "title": "Misa",
+      "location": [
         "Azkarate"
       ],
       "times": [
@@ -458,19 +471,6 @@
         "sa",
         "week3"
       ]
-    },
-    {
-      "title": "Misa",
-      "location": [
-        "Latasa"
-      ],
-      "times": [
-        "17:00"
-      ],
-      "rrule": [
-        "sa",
-        "week3"
-      ]
     }
   ],
   "events-group": [
@@ -561,5 +561,18 @@
   ],
   "urls": [
     "https://calendar.google.com/calendar/ical/bfae575354c7f6c2411c32f7d957eaa96bd1c413cfbc6ec80408a40904b533e9%40group.calendar.google.com/public/basic.ics"
+  ],
+  "events-feast": [
+    {
+      "title": "Urte berria",
+      "date": "2026-01-01",
+      "custom": [
+        {
+          "times": [
+            "12.00"
+          ]
+        }
+      ]
+    }
   ]
 }
