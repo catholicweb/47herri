@@ -84,7 +84,7 @@ onUnmounted(stopSlider);
                     }}
                   </p>
                   <p class="time-mark">
-                    {{ event.times[0] }}
+                    {{ event.times.join(", ") }}
                   </p>
                 </div>
 

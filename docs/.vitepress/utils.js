@@ -9,6 +9,16 @@ export function groupEvents(events, fields = []) {
     }
     return acc;
   }, {});
+
+  if (field == "times") {
+    return Object.keys(grouped)
+      .sort((a, b) => a.localeCompare(b))
+      .reduce((acc, key) => {
+        acc[key] = groupEvents(grouped[key], fields.slice(1));
+        return acc;
+      }, {});
+  }
+
   Object.keys(grouped).forEach((key) => {
     grouped[key] = groupEvents(grouped[key], fields.slice(1));
   });

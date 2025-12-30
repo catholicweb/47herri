@@ -39,7 +39,7 @@ function getSubKeys(table) {
               <!-- Añadir filas -->
               <td v-for="subKey in getSubKeys(table)" class="px-4 py-3 align-top border-1">
                 <!-- Cada fila de la tabla puede tener múltiples elementos -->
-                <p v-for="(line, lineKey) in row[subKey]" class="flex items-center gap-1 mb-0 mr-2">
+                <p v-for="(line, lineKey) in row[subKey]" class="text-left pl-8 -indent-8">
                   {{ formatDate(lineKey, $frontmatter.lang) }}
                   <span class="extra italic text-sm">
                     {{
