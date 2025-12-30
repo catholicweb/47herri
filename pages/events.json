@@ -607,6 +607,9 @@
       "date": "2026-01-01",
       "custom": [
         {
+          "location": [
+            "Erbiti"
+          ],
           "times": [
             "12.00"
           ]
