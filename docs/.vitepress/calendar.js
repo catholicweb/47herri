@@ -65,6 +65,18 @@ function getNextOccurrence(event, relativeTo = ICAL.Time.now()) {
   return null; // No future occurrences found
 }
 
+function getTime(t) {
+  t.isUTC = true;
+  return t.toJSDate().toLocaleTimeString("es-ES", {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Europe/Madrid",
+  });
+  /*const hora = String(t.hour).padStart(2, "0");
+  const minuto = String(t.minute).padStart(2, "0");
+  return `${hora}:${minuto}`;*/
+}
+
 function intersectOptions(options, field) {
   options = options.join(",").toUpperCase().split(",");
   const validValues = {
@@ -183,11 +195,10 @@ export async function fetchCalendar() {
             return p.getFirstValue().toJSDate();
           });
         }
-        event.startDate.isUTC = true;
         events.push({
           type: type,
           title: event.summary?.split("-")[0].trim() || "",
-          times: toArray(event.startDate.toJSDate().toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" })),
+          times: toArray(getTime(event.startDate)),
           dates: dates,
           //end: event.endDate.toJSDate(),
           images: toArray(getEventAttachments(eventComp) || input.default?.[type]?.image),
