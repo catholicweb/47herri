@@ -725,6 +725,15 @@
           "times": [
             "10:00"
           ]
+        },
+        {
+          "location": [
+            "Betelu",
+            "Goizueta"
+          ],
+          "times": [
+            "12:30"
+          ]
         }
       ]
     }
