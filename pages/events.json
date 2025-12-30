@@ -484,6 +484,19 @@
         "sa",
         "week5"
       ]
+    },
+    {
+      "title": "Misa",
+      "location": [
+        "Baraibar"
+      ],
+      "times": [
+        "18:00"
+      ],
+      "rrule": [
+        "sa",
+        "week4"
+      ]
     }
   ],
   "events-group": [
