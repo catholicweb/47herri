@@ -608,32 +608,8 @@
       "custom": [
         {
           "location": [
-            "Erbiti"
-          ],
-          "times": [
-            "12.00"
-          ]
-        },
-        {
-          "location": [
-            "Leitza"
-          ],
-          "times": [
-            "11:00",
-            "09:00"
-          ]
-        },
-        {
-          "location": [
-            "Lekunberri"
-          ],
-          "times": [
-            "09:00",
-            "11:00"
-          ]
-        },
-        {
-          "location": [
+            "Leitza",
+            "Lekunberri",
             "Aldatz"
           ],
           "times": [
@@ -642,14 +618,7 @@
         },
         {
           "location": [
-            "Areso"
-          ],
-          "times": [
-            "10:00"
-          ]
-        },
-        {
-          "location": [
+            "Areso",
             "Ihaben"
           ],
           "times": [
@@ -658,14 +627,9 @@
         },
         {
           "location": [
-            "Beruete"
-          ],
-          "times": [
-            "11:00"
-          ]
-        },
-        {
-          "location": [
+            "Lekunberri",
+            "Leitza",
+            "Beruete",
             "Arano"
           ],
           "times": [
@@ -674,14 +638,15 @@
         },
         {
           "location": [
-            "Betelu"
+            "Erbiti"
           ],
           "times": [
-            "12:30"
+            "12.00"
           ]
         },
         {
           "location": [
+            "Betelu",
             "Goizueta"
           ],
           "times": [
