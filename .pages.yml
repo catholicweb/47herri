@@ -289,10 +289,12 @@ content:
               - { name: title, type: string, label: Titulo sección }
               - { name: links, label: Podcast, component: podcast }
           - name: video-channel
-            label: Últimos videos de tu canal de Youtube
+            label: Canal de Youtube
             fields:
               - { name: title, type: string, label: Titulo sección }
               - { name: filter, label: Filtro. Incluir solo videos que contengan, type: string }
+          - name: townGrid
+            label: Lista de pueblos
           - name: video
             label: Youtube/Vimeo/Spotify/....
             fields:
@@ -324,8 +326,8 @@ content:
           - name: hero
             label: Cabezera de sección
             component: hero
-          - name: teammembers
-            label: Miembros del equipo (soon)
+          - name: team
+            label: Miembros del equipo
           - name: links
             label: Enlaces internos
             fields:
