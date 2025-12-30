@@ -131,7 +131,7 @@ export async function fetchCalendar() {
         events.push({
           type: type,
           title: e.title || e.summary || "",
-          times: toArray(e.times),
+          times: toArray(e.times).join("||").replaceAll(".", ":").split("||"),
           dates: dates,
           //rrule: toArray(e.rrule).map((r) => r.toUpperCase()),
           images: toArray(e.image || input.default?.[type]?.image),
