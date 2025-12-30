@@ -458,6 +458,19 @@
         "sa",
         "week3"
       ]
+    },
+    {
+      "title": "Misa",
+      "location": [
+        "Latasa"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week3"
+      ]
     }
   ],
   "events-group": [
