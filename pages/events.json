@@ -471,6 +471,19 @@
         "sa",
         "week3"
       ]
+    },
+    {
+      "title": "Misa",
+      "location": [
+        "Iribas"
+      ],
+      "times": [
+        "18:00"
+      ],
+      "rrule": [
+        "sa",
+        "week5"
+      ]
     }
   ],
   "events-group": [
