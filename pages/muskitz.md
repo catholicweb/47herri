@@ -9,7 +9,10 @@ sections:
     links:
       - 'https://www.youtube.com/watch?v=uLeTqOArA-g'
   - _block: gallery
-    list: []
+    list:
+      - /media/jmetayo/Muskiz1.webp
+      - /media/jmetayo/Muskiz3.webp
+      - /media/jmetayo/Muskiz7.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: muskitz

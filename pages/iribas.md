@@ -9,7 +9,8 @@ sections:
     links:
       - 'https://www.youtube.com/watch?v=ihDsCf3reeY'
   - _block: gallery
-    list: []
+    list:
+      - /media/jmetayo/Iribas.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: iribas

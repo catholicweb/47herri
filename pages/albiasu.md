@@ -11,6 +11,7 @@ sections:
   - _block: gallery
     list:
       - /media/Screenshot_20250329_234618_YouTube.webp
+      - /media/jmetayo/Albiasu12.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: albiasu

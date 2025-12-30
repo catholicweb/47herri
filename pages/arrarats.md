@@ -9,7 +9,8 @@ sections:
     links:
       - 'https://www.youtube.com/watch?v=Rd0UfY7W8EI'
   - _block: gallery
-    list: []
+    list:
+      - /media/jmetayo/Zarrantz5.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: arrarats

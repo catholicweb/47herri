@@ -9,7 +9,13 @@ sections:
     links:
       - 'https://www.youtube.com/watch?v=S_glc18h9uE'
   - _block: gallery
-    list: []
+    list:
+      - /media/jmetayo/Madotz01.webp
+      - /media/jmetayo/Madotz02.webp
+      - /media/jmetayo/Madotz08.webp
+      - /media/jmetayo/Madotz13.webp
+      - /media/jmetayo/Madoz2.webp
+      - /media/jmetayo/Madoz3.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: madotz

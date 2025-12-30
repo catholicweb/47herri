@@ -9,7 +9,11 @@ sections:
     links:
       - 'https://www.youtube.com/watch?v=mhyvWRma7_M'
   - _block: gallery
-    list: []
+    list:
+      - /media/jmetayo/Etxarri01a.webp
+      - /media/jmetayo/Etxarri02a.webp
+      - /media/jmetayo/Etxarri03a.webp
+      - /media/jmetayo/Etxarri16a.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: etxarri

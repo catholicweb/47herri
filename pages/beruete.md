@@ -9,7 +9,10 @@ sections:
     links:
       - 'https://www.youtube.com/watch?v=PmiNoRGv7hY'
   - _block: gallery
-    list: []
+    list:
+      - /media/jmetayo/Beruete04a.webp
+      - /media/jmetayo/Beruete08a.webp
+      - /media/jmetayo/Beruete10a.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: beruete

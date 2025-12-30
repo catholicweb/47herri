@@ -9,7 +9,8 @@ sections:
     links:
       - 'https://www.youtube.com/watch?v=YhP9LnlKbTQ'
   - _block: gallery
-    list: []
+    list:
+      - /media/jmetayo/Baraibar.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: baraibar

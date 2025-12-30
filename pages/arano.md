@@ -9,7 +9,8 @@ sections:
     links:
       - 'https://www.youtube.com/watch?v=UdCfCIHmvaU'
   - _block: gallery
-    list: []
+    list:
+      - /media/jmetayo/Echarri Aranaz3.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: arano

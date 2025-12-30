@@ -9,7 +9,10 @@ sections:
     links:
       - 'https://www.youtube.com/watch?v=imRARVKWyTM'
   - _block: gallery
-    list: []
+    list:
+      - /media/jmetayo/Jaunsaras2.webp
+      - /media/jmetayo/Jaunsaras3.webp
+      - /media/jmetayo/Jaunsaras4.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: jauntsarats
