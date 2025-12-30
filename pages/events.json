@@ -2,6 +2,9 @@
   "events-mass": [
     {
       "title": "Misa",
+      "location": [
+        "Agustinas Aldatz"
+      ],
       "times": [
         "09:00"
       ],
