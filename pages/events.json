@@ -689,6 +689,27 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Erregeen eguna Epifania ",
+      "date": "2026-01-06",
+      "custom": [
+        {
+          "times": [
+            "09:00",
+            "11:30"
+          ]
+        },
+        {
+          "location": [
+            "Lekunberri"
+          ],
+          "times": [
+            "09:00",
+            "11:00"
+          ]
+        }
+      ]
     }
   ]
 }
