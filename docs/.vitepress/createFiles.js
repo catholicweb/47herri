@@ -143,7 +143,7 @@ async function autocomplete(fm) {
     }
   }
   // remove hidden sections
-  fm.sections = fm.sections.filter((obj) => !obj.tags?.includes("hidden"));
+  //fm.sections = fm.sections.filter((obj) => !obj.tags?.includes("hidden"));
 }
 
 function absoluteURL(url) {
