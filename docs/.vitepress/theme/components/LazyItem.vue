@@ -6,12 +6,14 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+const props = defineProps({ alwaysVisible: { type: Boolean } });
 
-const visible = ref(false);
+const visible = ref(!!props.alwaysVisible);
 const el = ref(null);
 let observer;
 
 onMounted(() => {
+  if (visible.value) return;
   observer = new IntersectionObserver(
     ([e]) => {
       if (e.isIntersecting) {

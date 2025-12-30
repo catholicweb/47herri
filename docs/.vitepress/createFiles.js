@@ -96,7 +96,7 @@ async function postComplete(fm) {
           return fm.sections[i].filters.some((word) => haystack.includes(word?.toLowerCase()));
         })
         .map((v) => ({ ...v, src: `https://www.youtube.com/embed/${v.videoId}?autoplay=1`, image: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg` }))
-        .slice(0, 5);
+        .slice(0, 150);
       // TODO: Decide if we want the videos to be added here or on the Video.vue component (not on both...)
 
       if (fm.sections[i].filters?.length) {
@@ -165,8 +165,8 @@ function addMeta(fm) {
   fm.head.push(["meta", { property: "og:title", content: fm.title || config.title }]);
   fm.head.push(["meta", { property: "og:description", content: fm.description || config.description }]);
   fm.head.push(["meta", { property: "og:image", content: imageURL(fm.image || config.image) }]);
-  fm.head.push(["name", { property: "twitter:card", content: "summary_large_image" }]);
-  fm.head.push(["name", { property: "twitter:image", content: imageURL(fm.image || config.image) }]);
+  fm.head.push(["meta", { property: "twitter:card", content: "summary_large_image" }]);
+  fm.head.push(["meta", { property: "twitter:image", content: imageURL(fm.image || config.image) }]);
 
   if (!fm?.equiv) return;
   for (var i = 0; i < fm.equiv.length; i++) {
