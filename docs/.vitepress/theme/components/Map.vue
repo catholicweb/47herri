@@ -1,21 +1,22 @@
 <template>
   <div class="map py-8 max-w-3xl mx-auto md:px-4">
     <div class="w-full h-96 overflow-hidden md:shadow-md">
-      <div ref="mapContainer" class="w-full h-full z-0"></div>
+      <LazyItem>
+        <div ref="mapContainer" class="w-full h-full z-0"></div>
+      </LazyItem>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, watch } from "vue";
+import LazyItem from "./LazyItem.vue";
 import { data } from "./../../blocks.data.js";
 import { useData, useRoute } from "vitepress";
 const { page } = useData();
 const route = useRoute();
 
-const props = defineProps({
-  block: { type: Object, required: true },
-});
+const props = defineProps({ block: { type: Object, required: true } });
 
 const mapContainer = ref(null);
 let map = null;
@@ -37,14 +38,17 @@ async function loadCSS(url) {
   });
 }
 
-watch(
-  () => page.value.frontmatter.lang,
-  (lang) => renderMarkers(lang),
-);
+watch(page.value.frontmatter.lang, (lang) => {
+  renderMarkers(lang);
+});
+
+watch(mapContainer, (newVal) => {
+  if (newVal) loadMap();
+});
 
 const allMaps = ref([]);
 
-onMounted(async () => {
+async function loadMap() {
   if (!mapContainer.value) return;
 
   await loadCSS("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
@@ -79,7 +83,7 @@ onMounted(async () => {
   markersLayer = L.layerGroup().addTo(map);
 
   renderMarkers(page.value.frontmatter.lang);
-});
+}
 
 function renderMarkers(lang) {
   if (!markersLayer) return;

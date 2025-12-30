@@ -183,6 +183,7 @@ export async function fetchCalendar() {
             return p.getFirstValue().toJSDate();
           });
         }
+        event.startDate.isUTC = true;
         events.push({
           type: type,
           title: event.summary?.split("-")[0].trim() || "",
