@@ -13,6 +13,10 @@ sections:
     filter: mass
     order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
   - _block: calendar
+    title: Agustinas -  Aldatz (Larraun)
+    filter: mass
+    order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
+  - _block: calendar
     title: Donibane eta Done Pauloren -  Alli (Larraun)
     filter: mass
     order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
@@ -145,7 +149,11 @@ sections:
     filter: mass
     order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
   - _block: calendar
-    title:  Lezaeta (Larraun)
+    title: Komentu -  Lekunberri (Larraun)
+    filter: mass
+    order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
+  - _block: calendar
+    title: Lezaeta (Larraun)
     filter: mass
     order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
   - _block: calendar
@@ -181,15 +189,15 @@ sections:
     filter: mass
     order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
   - _block: calendar
-    title:  Urritza (Imotz)
+    title: Urritza (Imotz)
     filter: mass
     order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
   - _block: calendar
-    title:  Uztegi (Araitz)
+    title: Uztegi (Araitz)
     filter: mass
     order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
   - _block: calendar
-    title:  Zarrantz (Imotz)
+    title: Zarrantz (Imotz)
     filter: mass
     order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
 ---
