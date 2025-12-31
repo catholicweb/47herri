@@ -248,6 +248,7 @@ content:
                 fields:
                   - { name: title, label: Pregunta, type: string }
                   - { name: html, label: Respuesta, type: rich-text }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: scrollyTelling
             label: Narración interactiva
             fields:
@@ -259,6 +260,7 @@ content:
                 fields:
                   - { name: text, label: Texto, type: rich-text }
                   - { name: image, label: Imagen, type: image }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: gallery
             label: Galeria de imagenes
             fields:
@@ -278,29 +280,38 @@ content:
               - { name: readings, label: Mostrar primera/segunda y salmo, type: boolean, default: false }
               - { name: audio, label: Añadir audio, type: boolean, default: false }
               - { name: images, label: Mostrar imagenes, type: boolean, default: true }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: calendar
             label: Eventos
             fields:
               - { name: title, type: string, label: Titulo sección }
               - { name: filter, label: Filtro. Incluir solo eventos que contengan, type: string }
+              - { name: order, label: Agrupación de eventos, type: string }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: video-podcast
             label: Podcast católicos
             fields:
               - { name: title, type: string, label: Titulo sección }
               - { name: links, label: Podcast, component: podcast }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: video-channel
             label: Canal de Youtube
             fields:
               - { name: title, type: string, label: Titulo sección }
               - { name: filter, label: Filtro. Incluir solo videos que contengan, type: string }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: townGrid
             label: Lista de pueblos
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: filters, label: Filtros a mostrar, type: string }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: video
-            label: Youtube/Vimeo/Spotify/....
+            label: Videos concretos de Youtube/Vimeo/Spotify/....
             fields:
               - { name: title, type: string, label: Titulo sección }
               - { name: links, label: Enlaces externos, type: string, list: { collapsible: { collapsed: true } } }
-
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: map
             label: Mapa
             fields:
@@ -313,6 +324,7 @@ content:
             fields:
               - { name: title, type: string, label: Titulo sección }
               - { name: field, type: string, label: Pregunta, list: true }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: fundraising
             label: Campaña financiación
             fields:
@@ -323,11 +335,15 @@ content:
               - { name: goal, type: number, label: Total a recaudar }
               - { name: action, type: string, label: Nombre acción, hidden: true, default: Donar }
               - { name: image, type: image, label: Imagen }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: hero
             label: Cabezera de sección
             component: hero
           - name: team
             label: Miembros del equipo
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: links
             label: Enlaces internos
             fields:
@@ -336,6 +352,7 @@ content:
                 label: Enlaces internos
                 type: reference
                 options: { collection: pages, multiple: true, label: "{title}" }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
 
   - name: config
     type: file
