@@ -9,9 +9,6 @@ const props = defineProps({
   block: { type: Object, required: true },
 });
 
-// VitePress built-in page data
-const { page } = useData();
-
 const tagMap = {
   Larraun: ["Albiasu", "Aldatz", "Alli", "Arruitz", "Astitz", "Azpirotz", "Baraibar", "Errazkin", "Etxarri", "Gorriti", "Iribas", "Lekunberri", "Lezaeta", "Madotz", "Mugiro", "Oderitz", "Uitzi"],
   Urumea: ["Arano", "Goizueta"],
@@ -20,9 +17,6 @@ const tagMap = {
   Araitz: ["Arribe", "Atallu", "Azkarate", "Betelu", "Gaintza", "Intza", "Uztegi"],
   Imotz: ["Eraso", "Etxaleku", "Goldaratz", "Latasa", "Muskitz", "Oskotz", "Urritza", "Zarrantz"],
 };
-
-// Helper for translations (assuming a global helper or provide/inject)
-const tr = (text) => text;
 
 function highlightRelatedTitles() {
   document.querySelectorAll("section").forEach((section) => {
@@ -117,6 +111,7 @@ async function generateQR(section, title) {
 }
 
 onMounted(() => {
+  document.body.classList.add("print");
   highlightRelatedTitles();
 });
 </script>
@@ -146,38 +141,38 @@ onMounted(() => {
 </template>
 
 <style>
-canvas {
-  margin: auto;
-}
-
-.calendar > div {
-  padding: 0 20px;
-}
-
-.calendar {
-  max-width: 110vw;
-}
-.contact {
-  position: absolute;
-  bottom: 275px;
-  left: 100px;
-}
-
-.qr-print-container {
-  position: absolute;
-  bottom: 50px;
-  left: 150px;
-}
-
-section {
-  position: relative;
-}
-
-section h2 {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
 @media print {
+  .print canvas {
+    margin: auto;
+  }
+
+  .print .calendar > div {
+    padding: 0 20px;
+  }
+
+  .print .calendar {
+    max-width: 110vw;
+  }
+  .print .contact {
+    position: absolute;
+    bottom: 275px;
+    left: 100px;
+  }
+
+  .print .qr-print-container {
+    position: absolute;
+    bottom: 50px;
+    left: 150px;
+  }
+
+  .print section {
+    position: relative;
+  }
+
+  .print section h2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
   /* Force each section to start on a new page */
   section {
     page-break-before: always; /* Legacy support */

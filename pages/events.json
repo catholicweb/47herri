@@ -2,314 +2,657 @@
   "events-mass": [
     {
       "title": "Misa",
-      "location": ["Agustinas Aldatz"],
-      "times": ["09:00"],
-      "rrule": ["sa", "su", "mo,tu,we,th,fr"]
+      "location": [
+        "Agustinas Aldatz"
+      ],
+      "times": [
+        "09:00"
+      ],
+      "rrule": [
+        "sa",
+        "su",
+        "mo,tu,we,th,fr"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Aldatz"],
-      "times": ["18:00"],
-      "rrule": ["sa", "week1"]
+      "location": [
+        "Aldatz"
+      ],
+      "times": [
+        "18:00"
+      ],
+      "rrule": [
+        "sa",
+        "week1"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Arano"],
-      "times": ["11:00"],
-      "rrule": ["su"]
+      "location": [
+        "Arano"
+      ],
+      "times": [
+        "11:00"
+      ],
+      "rrule": [
+        "su"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Areso"],
-      "times": ["10:00"],
-      "rrule": ["su"]
+      "location": [
+        "Areso"
+      ],
+      "times": [
+        "10:00"
+      ],
+      "rrule": [
+        "su"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Arrarats"],
-      "times": ["12:00"],
-      "rrule": ["su", "week1"]
+      "location": [
+        "Arrarats"
+      ],
+      "times": [
+        "12:00"
+      ],
+      "rrule": [
+        "su",
+        "week1"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Latasa"],
-      "times": ["17:00"],
-      "rrule": ["sa", "week3"]
+      "location": [
+        "Latasa"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week3"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Azkarate"],
-      "times": ["17:00"],
-      "rrule": ["sa", "week1"]
+      "location": [
+        "Azkarate"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week1"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Azpirotz"],
-      "times": ["12:30"],
-      "rrule": ["su", "week2"]
+      "location": [
+        "Azpirotz"
+      ],
+      "times": [
+        "12:30"
+      ],
+      "rrule": [
+        "su",
+        "week2"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Beruete"],
-      "times": ["11:00"],
-      "rrule": ["su"]
+      "location": [
+        "Beruete"
+      ],
+      "times": [
+        "11:00"
+      ],
+      "rrule": [
+        "su"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Betelu"],
-      "times": ["11:00"],
-      "rrule": ["fr"]
+      "location": [
+        "Betelu"
+      ],
+      "times": [
+        "11:00"
+      ],
+      "rrule": [
+        "fr"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Betelu"],
-      "times": ["12:30"],
-      "rrule": ["su"]
+      "location": [
+        "Betelu"
+      ],
+      "times": [
+        "12:30"
+      ],
+      "rrule": [
+        "su"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Eraso"],
-      "times": ["17:00"],
-      "rrule": ["sa", "week2"]
+      "location": [
+        "Eraso"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week2"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Erbiti"],
-      "times": ["12:00"],
-      "rrule": ["su", "week5"]
+      "location": [
+        "Erbiti"
+      ],
+      "times": [
+        "12:00"
+      ],
+      "rrule": [
+        "su",
+        "week5"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Errazkin"],
-      "times": ["12:30"],
-      "rrule": ["su", "week1"]
+      "location": [
+        "Errazkin"
+      ],
+      "times": [
+        "12:30"
+      ],
+      "rrule": [
+        "su",
+        "week1"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Etxaleku"],
-      "times": ["10:00"],
-      "rrule": ["su", "week1"]
+      "location": [
+        "Etxaleku"
+      ],
+      "times": [
+        "10:00"
+      ],
+      "rrule": [
+        "su",
+        "week1"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Etxarri"],
-      "times": ["18:00"],
-      "rrule": ["sa", "week3"]
+      "location": [
+        "Etxarri"
+      ],
+      "times": [
+        "18:00"
+      ],
+      "rrule": [
+        "sa",
+        "week3"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Gaintza"],
-      "times": ["17:00"],
-      "rrule": ["sa", "week2"]
+      "location": [
+        "Gaintza"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week2"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Gartzaron"],
-      "times": ["12:00"],
-      "rrule": ["su", "week4"]
+      "location": [
+        "Gartzaron"
+      ],
+      "times": [
+        "12:00"
+      ],
+      "rrule": [
+        "su",
+        "week4"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Goizueta"],
-      "times": ["12:30"],
-      "rrule": ["su"]
+      "location": [
+        "Goizueta"
+      ],
+      "times": [
+        "12:30"
+      ],
+      "rrule": [
+        "su"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Goldaratz"],
-      "times": ["12:30"],
-      "rrule": ["th", "week1"]
+      "location": [
+        "Goldaratz"
+      ],
+      "times": [
+        "12:30"
+      ],
+      "rrule": [
+        "th",
+        "week1"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Gorriti"],
-      "times": ["12:30"],
-      "rrule": ["su", "week3"]
+      "location": [
+        "Gorriti"
+      ],
+      "times": [
+        "12:30"
+      ],
+      "rrule": [
+        "su",
+        "week3"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Igoa eta Aizarotz"],
-      "times": ["12:00"],
-      "rrule": ["su", "week3"]
+      "location": [
+        "Igoa eta aizarotz"
+      ],
+      "times": [
+        "12:00"
+      ],
+      "rrule": [
+        "su",
+        "week3"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Ihaben"],
-      "times": ["10:00"],
-      "rrule": ["su", "week2"]
+      "location": [
+        "Ihaben"
+      ],
+      "times": [
+        "10:00"
+      ],
+      "rrule": [
+        "su",
+        "week2"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Intza"],
-      "times": ["17:00"],
-      "rrule": ["sa", "week4"]
+      "location": [
+        "Intza"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week4"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Itsaso"],
-      "times": ["10:00"],
-      "rrule": ["su", "week3"]
+      "location": [
+        "Itsaso"
+      ],
+      "times": [
+        "10:00"
+      ],
+      "rrule": [
+        "su",
+        "week3"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Jauntsarats"],
-      "times": ["10:00"],
-      "rrule": ["su", "week4"]
+      "location": [
+        "Jauntsarats"
+      ],
+      "times": [
+        "10:00"
+      ],
+      "rrule": [
+        "su",
+        "week4"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Leitza"],
-      "times": ["19:30"],
-      "rrule": ["mo,tu,we,th,fr", "sa"]
+      "location": [
+        "Leitza"
+      ],
+      "times": [
+        "19:30"
+      ],
+      "rrule": [
+        "mo,tu,we,th,fr",
+        "sa"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Leitza"],
-      "times": ["09:00"],
-      "rrule": ["su"]
+      "location": [
+        "Leitza"
+      ],
+      "times": [
+        "09:00"
+      ],
+      "rrule": [
+        "su"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Leitza"],
-      "times": ["11:00"],
-      "rrule": ["su"]
+      "location": [
+        "Leitza"
+      ],
+      "times": [
+        "11:00"
+      ],
+      "rrule": [
+        "su"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Lekunberri"],
-      "times": ["18:30"],
-      "rrule": ["mo,tu,we,th,fr", "sa"]
+      "location": [
+        "Lekunberri"
+      ],
+      "times": [
+        "18:30"
+      ],
+      "rrule": [
+        "mo,tu,we,th,fr",
+        "sa"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Lekunberri"],
-      "times": ["09:00"],
-      "rrule": ["su"]
+      "location": [
+        "Lekunberri"
+      ],
+      "times": [
+        "09:00"
+      ],
+      "rrule": [
+        "su"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Lekunberri"],
-      "times": ["11:00"],
-      "rrule": ["su"]
+      "location": [
+        "Lekunberri"
+      ],
+      "times": [
+        "11:00"
+      ],
+      "rrule": [
+        "su"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Orokieta"],
-      "times": ["12:00"],
-      "rrule": ["su", "week2"]
+      "location": [
+        "Orokieta"
+      ],
+      "times": [
+        "12:00"
+      ],
+      "rrule": [
+        "su",
+        "week2"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Oskotz"],
-      "times": ["17:00"],
-      "rrule": ["sa", "week1"]
+      "location": [
+        "Oskotz"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week1"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Uitzi"],
-      "times": ["12:30"],
-      "rrule": ["su", "week4"]
+      "location": [
+        "Uitzi"
+      ],
+      "times": [
+        "12:30"
+      ],
+      "rrule": [
+        "su",
+        "week4"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Urritza"],
-      "times": ["17:00"],
-      "rrule": ["sa", "week4"]
+      "location": [
+        "Urritza"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week4"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Uztegi"],
-      "times": ["17:00"],
-      "rrule": ["sa", "week3"]
+      "location": [
+        "Uztegi"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week3"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Iribas"],
-      "times": ["18:00"],
-      "rrule": ["sa", "week5"]
+      "location": [
+        "Iribas"
+      ],
+      "times": [
+        "18:00"
+      ],
+      "rrule": [
+        "sa",
+        "week5"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Baraibar"],
-      "times": ["18:00"],
-      "rrule": ["sa", "week4"]
+      "location": [
+        "Baraibar"
+      ],
+      "times": [
+        "18:00"
+      ],
+      "rrule": [
+        "sa",
+        "week4"
+      ]
     },
     {
       "title": "Misa",
-      "location": ["Mugiro"],
-      "times": ["18:00"],
-      "rrule": ["sa", "week2"]
+      "location": [
+        "Mugiro"
+      ],
+      "times": [
+        "18:00"
+      ],
+      "rrule": [
+        "sa",
+        "week2"
+      ]
     }
   ],
   "events-group": [
     {
       "title": "Katekesia",
-      "location": ["Leitza"],
-      "rrule": ["fr"],
-      "times": ["16:00"]
+      "location": [
+        "Leitza"
+      ],
+      "rrule": [
+        "fr"
+      ],
+      "times": [
+        "16:00"
+      ]
     },
     {
       "title": "Katekesia",
-      "location": ["Leitza"],
-      "rrule": ["fr"],
-      "times": ["18:00"]
+      "location": [
+        "Leitza"
+      ],
+      "rrule": [
+        "fr"
+      ],
+      "times": [
+        "18:00"
+      ]
     },
     {
       "title": "Katekesia",
-      "location": ["Leitza"],
-      "rrule": ["su"],
-      "times": ["10:00"]
+      "location": [
+        "Leitza"
+      ],
+      "rrule": [
+        "su"
+      ],
+      "times": [
+        "10:00"
+      ]
     },
     {
       "title": "Katekesia",
-      "location": ["Lekunberri"],
-      "rrule": ["we"],
-      "times": ["15:45"]
+      "location": [
+        "Lekunberri"
+      ],
+      "rrule": [
+        "we"
+      ],
+      "times": [
+        "15:45"
+      ]
     },
     {
       "title": "Katekesia",
-      "location": ["Betelu"],
-      "rrule": ["fr"],
-      "times": ["19:00"]
+      "location": [
+        "Betelu"
+      ],
+      "rrule": [
+        "fr"
+      ],
+      "times": [
+        "19:00"
+      ]
     },
     {
       "title": "Katekesia",
-      "location": ["Areso"],
-      "rrule": ["mo"],
-      "times": ["16:30"]
+      "location": [
+        "Areso"
+      ],
+      "rrule": [
+        "mo"
+      ],
+      "times": [
+        "16:30"
+      ]
     },
     {
       "title": "Katekesia",
-      "location": ["Areso"],
-      "rrule": ["tu"],
-      "times": ["15:45"]
+      "location": [
+        "Areso"
+      ],
+      "rrule": [
+        "tu"
+      ],
+      "times": [
+        "15:45"
+      ]
     }
   ],
-  "urls": ["https://calendar.google.com/calendar/ical/bfae575354c7f6c2411c32f7d957eaa96bd1c413cfbc6ec80408a40904b533e9%40group.calendar.google.com/public/basic.ics"],
+  "urls": [
+    "https://calendar.google.com/calendar/ical/bfae575354c7f6c2411c32f7d957eaa96bd1c413cfbc6ec80408a40904b533e9%40group.calendar.google.com/public/basic.ics"
+  ],
   "events-feast": [
     {
       "title": "Urte berria",
       "date": "2026-01-01",
       "custom": [
         {
-          "location": ["Leitza", "Lekunberri", "Aldatz"],
-          "times": ["09:00"]
+          "location": [
+            "Leitza",
+            "Lekunberri",
+            "Aldatz"
+          ],
+          "times": [
+            "09:00"
+          ]
         },
         {
-          "location": ["Areso", "Ihaben"],
-          "times": ["10:00"]
+          "location": [
+            "Areso",
+            "Ihaben"
+          ],
+          "times": [
+            "10:00"
+          ]
         },
         {
-          "location": ["Lekunberri", "Leitza", "Beruete", "Arano"],
-          "times": ["11:00"]
+          "location": [
+            "Lekunberri",
+            "Leitza",
+            "Beruete",
+            "Arano"
+          ],
+          "times": [
+            "11:00"
+          ]
         },
         {
-          "location": ["Erbiti"],
-          "times": ["12.00"]
+          "location": [
+            "Erbiti"
+          ],
+          "times": [
+            "12.00"
+          ]
         },
         {
-          "location": ["Betelu", "Goizueta"],
-          "times": ["12:30"]
+          "location": [
+            "Betelu",
+            "Goizueta",
+            "Goldaratz"
+          ],
+          "times": [
+            "12:30"
+          ]
         }
       ]
     },
@@ -318,28 +661,64 @@
       "date": "2026-01-06",
       "custom": [
         {
-          "location": ["Leitza"],
-          "times": ["09:00", "11:00"]
+          "location": [
+            "Leitza"
+          ],
+          "times": [
+            "09:00",
+            "11:00"
+          ]
         },
         {
-          "location": ["Lekunberri"],
-          "times": ["09:00", "11:00"]
+          "location": [
+            "Lekunberri"
+          ],
+          "times": [
+            "09:00",
+            "11:00"
+          ]
         },
         {
-          "location": ["Arano", "Beruete"],
-          "times": ["11:00"]
+          "location": [
+            "Arano",
+            "Beruete"
+          ],
+          "times": [
+            "11:00"
+          ]
         },
         {
-          "location": ["Areso"],
-          "times": ["10:00"]
+          "location": [
+            "Areso"
+          ],
+          "times": [
+            "10:00"
+          ]
         },
         {
-          "location": ["Betelu", "Goizueta"],
-          "times": ["12:30"]
+          "location": [
+            "Betelu",
+            "Goizueta"
+          ],
+          "times": [
+            "12:30"
+          ]
         },
         {
-          "location": ["Aldatz"],
-          "times": ["09:00"]
+          "location": [
+            "Aldatz"
+          ],
+          "times": [
+            "09:00"
+          ]
+        },
+        {
+          "location": [
+            "Itsaso"
+          ],
+          "times": [
+            "10:00"
+          ]
         }
       ]
     }
