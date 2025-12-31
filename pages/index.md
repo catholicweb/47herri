@@ -10,11 +10,11 @@ sections:
   - _block: calendar
     title: "Horario de Misas"
     filter: "mass"
-    order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz"]
+    order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz+notes"]
   - _block: calendar
     title: "Otros eventos periódicos"
     filter: "!byday:empty&!mass"
-    order: ["title", "locations", "", "times", "byday+byweek+language-euskaraz"]
+    order: ["title", "locations", "", "times", "byday+byweek+language-euskaraz+notes"]
   - _block: video-channel
     title: Eguneroko Meza
     filter: ""

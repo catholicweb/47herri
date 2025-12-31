@@ -291,11 +291,12 @@
     "San Pelayo -  Oskotz (Imotz)": "San Pelayo - Oskotz (Imotz)",
     "Arrosarioko Andre Mariadena -  Udabe (Basaburua)": "Arrosarioko Andre Mariarena - Udabe (Basaburua)",
     "Santa Engraziako -  Uitzi (Larraun)": "Santa Engraziako - Uitzi (Larraun)",
+    "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
+    "Komentu -  Lekunberri (Larraun)": "Komentu - Lekunberri (Larraun)",
     "Urritza (Imotz)": "Urritza (Imotz)",
     "Uztegi (Araitz)": "Uztegi (Araitz)",
     "Zarrantz (Imotz)": "Zarrantz (Imotz)",
-    "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
-    "Komentu -  Lekunberri (Larraun)": "Komentu - Lekunberri (Larraun)",
+    "Hilabetero txandaka": "Hilabetero txandaka",
     "Txandaka": "Txandaka"
   },
   "Castellano:es": {
@@ -460,7 +461,6 @@
     "Zarrantz ezagutu": "Conoce Zarrantz",
     "Próximas celebraciones": "Próximas celebraciones",
     "Otros eventos periódicos": "Otros eventos periódicos",
-    "Non Gaude": "Non Gaude",
     "Misa": "Misa",
     "Katekesia": "Catequesis",
     "Clausura año jubileo": "Clausura año jubilar",
@@ -590,12 +590,14 @@
     "San Pelayo -  Oskotz (Imotz)": "San Pelayo - Oskotz (Imotz)",
     "Arrosarioko Andre Mariadena -  Udabe (Basaburua)": "Nuestra Señora del Rosario - Udabe (Basaburua)",
     "Santa Engraziako -  Uitzi (Larraun)": "Santa Engracia - Uitzi (Larraun)",
+    "Non Gaude": "Non Gaude",
+    "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
+    "Komentu -  Lekunberri (Larraun)": "Monasterio - Lekunberri (Larraun)",
     "Urritza (Imotz)": "Urritza (Imotz)",
     "Uztegi (Araitz)": "Uztegi (Araitz)",
     "Zarrantz (Imotz)": "Zarrantz (Imotz)",
-    "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
-    "Komentu -  Lekunberri (Larraun)": "Convento - Lekunberri (Larraun)",
-    "Txandaka": "Txandaka"
+    "Hilabetero txandaka": "Cada dos meses por turnos",
+    "Txandaka": "Alternativamente"
   },
   "Català:ca": {
     "Albiasu": "Albiasu",
@@ -894,7 +896,8 @@
     "Zarrantz (Imotz)": "Zarrantz (Imotz)",
     "Agustinas -  Aldatz (Larraun)": "Agustines - Aldatz (Larraun)",
     "Komentu -  Lekunberri (Larraun)": "Convent - Lekunberri (Larraun)",
-    "Txandaka": "Txandaka"
+    "Txandaka": "Txandaka",
+    "Hilabetero txandaka": "Hilabetero per torns"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -1193,7 +1196,8 @@
     "Zarrantz (Imotz)": "Zarrantz (Imotz)",
     "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
     "Komentu -  Lekunberri (Larraun)": "Komentu - Lekunberri (Larraun)",
-    "Txandaka": "Txandaka"
+    "Txandaka": "Txandaka",
+    "Hilabetero txandaka": "Monday on rotation"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -1492,7 +1496,8 @@
     "Zarrantz (Imotz)": "Zarrantz (Imotz)",
     "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
     "Komentu -  Lekunberri (Larraun)": "Kmonte - Lekunberri (Larraun)",
-    "Txandaka": "Txandaka"
+    "Txandaka": "Txandaka",
+    "Hilabetero txandaka": "Hilabetero txandaka"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -1791,7 +1796,8 @@
     "Zarrantz (Imotz)": "Zarrantz (Imotz)",
     "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
     "Komentu -  Lekunberri (Larraun)": "Komentu - Lekunberri (Larraun)",
-    "Txandaka": "Txandaka"
+    "Txandaka": "Txandaka",
+    "Hilabetero txandaka": "Anboteazko erantzukizuna"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -2090,7 +2096,8 @@
     "Zarrantz (Imotz)": "Zarrantz (Imotz)",
     "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
     "Komentu -  Lekunberri (Larraun)": "Komeno - Lekunberri (Larraun)",
-    "Txandaka": "Txandaka"
+    "Txandaka": "Txandaka",
+    "Hilabetero txandaka": "Hilabetero a turno"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -2389,7 +2396,8 @@
     "Zarrantz (Imotz)": "Zarrantz (Imotz)",
     "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
     "Komentu -  Lekunberri (Larraun)": "Convento - Lekunberri (Larraun)",
-    "Txandaka": "Txandaka"
+    "Txandaka": "Txandaka",
+    "Hilabetero txandaka": "Hilabetero txandaka"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -2688,7 +2696,8 @@
     "Zarrantz (Imotz)": "Zarrantz (Imotz)",
     "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
     "Komentu -  Lekunberri (Larraun)": "Comentariu - Lekunberri (Larraun)",
-    "Txandaka": "Txandaka"
+    "Txandaka": "Txandaka",
+    "Hilabetero txandaka": "Hilabetero în ture"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2987,7 +2996,8 @@
     "Zarrantz (Imotz)": "زارانتز (إيموتز)",
     "Agustinas -  Aldatz (Larraun)": "أوغستيناس - ألداتز (لارراون)",
     "Komentu -  Lekunberri (Larraun)": "كومينتو - ليكونبيري (لارراون)",
-    "Txandaka": "Txandaka"
+    "Txandaka": "Txandaka",
+    "Hilabetero txandaka": "هيلابيتيرو تناوبي"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -3286,6 +3296,7 @@
     "Zarrantz (Imotz)": "Zarrantz (Imotz)",
     "Agustinas -  Aldatz (Larraun)": "Agustinas - Aldatz (Larraun)",
     "Komentu -  Lekunberri (Larraun)": "Komentu - Lekunberri (Larraun)",
-    "Txandaka": "Txandaka"
+    "Txandaka": "Txandaka",
+    "Hilabetero txandaka": "Hilabetero txandaka"
   }
 }

@@ -120,7 +120,7 @@ async function translateWithOpenAI(missing, targetLanguage) {
       input: [
         {
           role: "system",
-          content: "You are a professional translator for a Catholic website. " + "Texts most likely include catholic event titles, descriptions, timings etc..." + "Translate the given texts preserving HTML or Markdown. Do not scape or modify new lines, tags... anything that is not text must be returned as it is. " + "If a text is already written in the target language, do NOT translate it, just fix obvious ortographic typos." + "Do NOT include explanations or reasoning." + "Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}.",
+          content: "You are a professional translator for a Catholic website. " + "Texts most likely include catholic event titles, descriptions, timings, names etc..." + "Translate the given texts preserving HTML or Markdown. Do not scape or modify new lines, tags... anything that is not text must be returned as it is. " + "If a text is already written in the target language, just fix ortographic typos." + "Do NOT include explanations or reasoning." + "Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}.",
         },
         { role: "user", content: `Translate this array of texts to ${targetLanguage.replace("Euskara", "Euskara from Leitza")}: ${JSON.stringify(missing)}` },
       ],

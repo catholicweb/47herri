@@ -176,6 +176,7 @@ function addMeta(fm) {
 }
 
 async function cleanDir(dir) {
+  console.log("TODO: since ./docs is no longer stored on git, this should be rethinked...");
   console.log("Cleaning directory (writing redirects)");
   const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: dir, absolute: true });
   for (const file of files) {
