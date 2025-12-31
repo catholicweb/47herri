@@ -510,6 +510,19 @@
         "sa",
         "week2"
       ]
+    },
+    {
+      "title": "Misa",
+      "location": [
+        "Arribe/Atallu"
+      ],
+      "times": [
+        "18:00"
+      ],
+      "rrule": [
+        "sa"
+      ],
+      "notes": "Txandaka"
     }
   ],
   "events-group": [
