@@ -131,7 +131,7 @@ async function autocomplete(fm) {
         return { title: "", description: "", image: i };
       });
       fm.sections[i].type = "gallery";
-      (fm.sections[i].tags ??= []).push("tiny");
+      (fm.sections[i].tags ??= []).push("small");
       if (!fm.sections[i].elements.length) (fm.sections[i].tags ??= []).push("hidden");
     } else if (fm.sections[i]._block == "calendar") {
       fm.sections[i].events = calendar.filter((obj) => applyComplexFilter(obj, fm.sections[i].filter));

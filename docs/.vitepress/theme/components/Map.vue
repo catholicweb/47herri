@@ -21,37 +21,7 @@ const props = defineProps({ block: { type: Object, required: true } });
 const mapContainer = ref(null);
 let map = null;
 let markersLayer = null;
-
-async function loadCSS(url) {
-  return new Promise((resolve, reject) => {
-    // Check if the CSS is already loaded
-    if (!document.querySelector(`link[href="${url}"]`)) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = url;
-      link.onload = resolve;
-      link.onerror = reject;
-      document.head.appendChild(link);
-    } else {
-      resolve(); // CSS already loaded
-    }
-  });
-}
-
-async function loadScript(src) {
-  return new Promise((resolve, reject) => {
-    // Check if the Script is already loaded
-    if (!document.querySelector(`script[src="${src}"]`)) {
-      const script = document.createElement("script");
-      script.src = src;
-      script.onload = resolve;
-      script.onerror = reject;
-      document.head.appendChild(script);
-    } else {
-      resolve();
-    }
-  });
-}
+let L = null; // Store Leaflet instance locally
 
 watch(
   () => page.value.frontmatter.lang,
@@ -70,12 +40,16 @@ async function loadMap() {
   console.log("loadMap");
   if (!mapContainer.value) return;
 
-  await loadCSS("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
-  await loadScript("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js");
+  // 1. Dynamically import Leaflet and its CSS
+  // Vite handles the CSS injection automatically here
+  const LeafletModule = await import("leaflet");
+  await import("leaflet/dist/leaflet.css");
 
-  // Optionally load additional plugins (like fullscreen)
-  await loadCSS("https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css");
-  await loadScript("https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js");
+  // 2. Load the plugin (Vite will bundle this separately)
+  await import("leaflet-fullscreen");
+  await import("leaflet-fullscreen/dist/leaflet.fullscreen.css");
+
+  L = LeafletModule.default || LeafletModule;
 
   // Try load the geojson file (if any)
   fetch("/map.geojson")
