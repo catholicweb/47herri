@@ -19,7 +19,7 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
 
   // Determine if it's a page navigation/HTML request
-  const isHTML = request.mode === "navigate" || (url.origin === location.origin && (url.pathname.endsWith(".html") || !url.pathname.includes(".")));
+  const isHTML = request.mode === "navigate" || request.destination === "document" || (url.origin === location.origin && url.pathname.endsWith(".html")) || (url.origin === location.origin && !url.pathname.includes("."));
 
   if (isHTML) {
     event.respondWith(networkFirst(request));
