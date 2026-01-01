@@ -148,7 +148,7 @@ async function autocomplete(fm) {
 
 function absoluteURL(url) {
   if (url.startsWith("/")) {
-    const siteurl = config.siteurl || "";
+    const siteurl = config?.dev?.siteurl || "";
     return siteurl + url;
   }
   return url;

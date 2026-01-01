@@ -416,6 +416,9 @@ content:
               - { name: selector, label: "Elemento", component: selector }
               - { name: cssClass, label: "Efecto a aplicar", component: effect }
               - { name: scroll, label: "Aplicar al hacer scroll", type: boolean, default: false }
-      - name: siteurl
-        label: "URL absoluta del sitio web, ej: https://parroquia.app"
-        type: string
+      - name: theme
+        label: Tema visual
+        type: object
+        fields:
+          - { name: siteurl, label: "URL absoluta del sitio web, ej: https://parroquia.app", type: string }
+          - { name: goatcounter, label: "URL de goatcounter endpoint, ej: https://vocacion.goatcounter.com/count", type: string }

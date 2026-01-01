@@ -68,6 +68,7 @@ async function migrateMarkdown(directory) {
 
   const ekitaldiak = [];
   const mezak = [];
+  const hiletak = [];
 
   files.forEach((filePath) => {
     // 2. Read file content
@@ -126,6 +127,16 @@ async function migrateMarkdown(directory) {
       });
     }
 
+    for (var i = 0; i < data.hiletak?.length; i++) {
+      const hileta = data.hiletak[i];
+      hiletak.push({
+        title: hileta.name,
+        date: hileta.date?.split(" ")[0],
+        times: hileta.date?.split(" ")[1],
+        location: [capitalizeFirstLetter(data.title)],
+      });
+    }
+
     for (var i = 0; i < data.mezak?.length; i++) {
       const meza = data.mezak[i];
       mezak.push({
@@ -145,13 +156,13 @@ async function migrateMarkdown(directory) {
 
     // 6. Save back to disk
     const newPath = filePath.replace("/home/miguel/Tech/47herri-old/herriak/", "./pages/");
-    fs.writeFileSync(newPath, newContent, "utf-8");
+    //fs.writeFileSync(newPath, newContent, "utf-8");
 
     console.log(`Updated: ${filePath} -> ${newPath}`);
   });
 
-  const events = JSON.stringify({ "events-feast": ekitaldiak, "events-mass": mezak });
-  //fs.writeFileSync("./pages/events.json", events, "utf-8");
+  const events = JSON.stringify({ "events-feast": ekitaldiak, "events-mass": mezak, "events-funerals": hiletak });
+  fs.writeFileSync("./pages/oldevents.json", events, "utf-8");
 }
 
 migrateMarkdown("/home/miguel/Tech/47herri-old/herriak/"); // Path to your markdown folder
