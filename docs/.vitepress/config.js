@@ -17,6 +17,13 @@ export default defineConfig(async () => {
       ["link", { rel: "manifest", href: "/manifest.json" }],
       ["link", { rel: "icon", href: "/favicon.ico", type: "image/x-icon" }],
       ["script", { "data-goatcounter": config.dev.goatcounter, async: true, src: "//gc.zgo.at/count.js" }],
+      [
+        "meta",
+        {
+          "http-equiv": "Content-Security-Policy",
+          content: "default-src 'self'; img-src * data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';",
+        },
+      ],
     ],
     locales: locales(config.languages),
     title: config.title,
