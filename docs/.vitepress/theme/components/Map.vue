@@ -38,6 +38,21 @@ async function loadCSS(url) {
   });
 }
 
+async function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    // Check if the Script is already loaded
+    if (!document.querySelector(`script[src="${src}"]`)) {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    } else {
+      resolve();
+    }
+  });
+}
+
 watch(
   () => page.value.frontmatter.lang,
   (lang) => {
@@ -56,11 +71,11 @@ async function loadMap() {
   if (!mapContainer.value) return;
 
   await loadCSS("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
-  await import("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js");
+  await loadScript("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js");
 
   // Optionally load additional plugins (like fullscreen)
   await loadCSS("https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css");
-  await import("https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js");
+  await loadScript("https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js");
 
   // Try load the geojson file (if any)
   fetch("/map.geojson")
