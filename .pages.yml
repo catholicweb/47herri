@@ -182,7 +182,7 @@ content:
               - { name: times, label: Horas, component: times }
               - { name: notes, label: Notas sobre el evento (opcional), type: string }
       - name: events-mass
-        label: Horario de misas
+        label: Horarios de misas
         type: object
         list: { collapsible: { collapsed: true, summary: "{fields.location} - {fields.rrule} - {fields.times}" } }
         fields:
@@ -199,7 +199,7 @@ content:
         fields:
           - { name: title, label: Título del evento, type: string }
           - { name: location, label: Ubicación, component: location }
-          - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
+          - { name: rrule, label: Se repite todos los, component: rrule }
           - { name: times, label: Hora, component: times }
           - { name: notes, label: Notas sobre el evento (opcional), type: string }
       - name: events-custom
@@ -215,6 +215,34 @@ content:
           - { name: rrule, label: Se repite todos los, component: rrule, default: "Nunca" }
           - { name: except, type: date, label: Excepto, list: { collapsible: { collapsed: true } } }
           - { name: notes, label: Notas sobre el evento (opcional), type: string }
+      - name: default
+        label: "Valores por defecto para:"
+        type: object
+        fields:
+          - name: funeral
+            label: Funerales
+            type: object
+            fields:
+              - { name: image, label: Imagen, type: image }
+              - { name: description, label: Descripción, type: string }
+          - name: mass
+            label: Horarios de misas
+            type: object
+            fields:
+              - { name: image, label: Imagen, type: image }
+              - { name: description, label: Descripción, type: string }
+          - name: group
+            label: Grupos y Catequesis
+            type: object
+            fields:
+              - { name: image, label: Imagen, type: image }
+              - { name: description, label: Descripción, type: string }
+          - name: feast
+            label: Festividades especiales
+            type: object
+            fields:
+              - { name: image, label: Imagen, type: image }
+              - { name: description, label: Descripción, type: string }
       - { name: urls, type: string, list: true, label: Calendarios externos a importar (ej. url de Google Calendar terminada en .ics) }
 
   - name: pages
