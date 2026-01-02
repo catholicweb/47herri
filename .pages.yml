@@ -399,7 +399,7 @@ content:
       - name: collaborators
         label: Colaboradores
         type: object
-        list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+        list: { collapsible: { collapsed: true, summary: "{fields.name}" } }
         fields:
           - { name: name, label: Nombre, type: string }
           - { name: phonenumber, label: Número de telefono, type: string }
@@ -411,7 +411,7 @@ content:
         list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
         fields:
           - { name: title, label: "Nombre (ej: BIZUM/BBVA/...)", type: string }
-          - { name: account, label: Numero de cuenta/bizum, type: string }
+          - { name: account, label: Número de cuenta/bizum, type: string }
       - name: nav
         label: Menu de navegación
         type: object
@@ -431,8 +431,8 @@ content:
         fields:
           - { name: bodyFont, label: Tipo de letra del cuerpo (cualquiera de https://fonts.google.com/), component: font }
           - { name: headingFont, label: Tipo de letra de los titulos (cualquiera de https://fonts.google.com/), component: font }
-          - { name: accentColor, label: Color elementos acentuados, component: color }
-          - { name: accentPrimary, label: Color elementos secundario, component: color }
+          - { name: accentColor, label: "Color elementos acentuados. Código HEX de https://htmlcolorcodes.com/color-picker/", component: color }
+          - { name: accentPrimary, label: "Color secundario. Código HEX de https://htmlcolorcodes.com/color-picker/", component: color }
           - { name: navStyle, label: Estilo de la barrra de navegación, type: string }
           - name: styles
             label: Estilos y efectos individuales
