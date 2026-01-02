@@ -753,5 +753,14 @@
       "date": "2026-01-03",
       "times": "17:30"
     }
-  ]
+  ],
+  "default": {
+    "funeral": {
+      "image": "/media/3-estela-lekunberri-min.webp",
+      "description": "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen"
+    },
+    "mass": {
+      "image": "/media/mass.webp"
+    }
+  }
 }
