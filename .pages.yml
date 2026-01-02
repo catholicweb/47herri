@@ -393,7 +393,7 @@ content:
       - { name: image, label: Imagen del sitio, type: image }
       - { name: icon, label: Icono del sitio, type: image }
       - name: social
-        label: Social links
+        label: Redes sociales, youtube...
         type: string
         list: { collapsible: { collapsed: true } }
       - name: collaborators
@@ -401,9 +401,9 @@ content:
         type: object
         list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
         fields:
-          - { name: title, label: Nombre, type: string }
-          - { name: phonenumber, label: Numero de telefono (opcional), type: string }
-          - { name: email, label: Correo electrónico (opcional), type: string }
+          - { name: name, label: Nombre, type: string }
+          - { name: phonenumber, label: Número de telefono, type: string }
+          - { name: email, label: Correo electrónico, type: string }
           - { name: image, label: Image, type: image }
       - name: bank
         label: Bizum y cuentas bancarias
@@ -433,9 +433,7 @@ content:
           - { name: headingFont, label: Tipo de letra de los titulos (cualquiera de https://fonts.google.com/), component: font }
           - { name: accentColor, label: Color elementos acentuados, component: color }
           - { name: accentPrimary, label: Color elementos secundario, component: color }
-          - { name: borderRadius, label: Redondeado de borders, component: multiplier }
-          - { name: borderWidth, label: Grosor de los borders, component: multiplier }
-          - { name: shadowDepth, label: Profundidaz de las sombras, component: multiplier }
+          - { name: navStyle, label: Estilo de la barrra de navegación, type: string }
           - name: styles
             label: Estilos y efectos individuales
             type: object
@@ -444,9 +442,10 @@ content:
               - { name: selector, label: "Elemento", component: selector }
               - { name: cssClass, label: "Efecto a aplicar", component: effect }
               - { name: scroll, label: "Aplicar al hacer scroll", type: boolean, default: false }
-      - name: theme
-        label: Tema visual
+      - name: dev
+        label: Opciones avanzadas
         type: object
+        hidden: true
         fields:
           - { name: siteurl, label: "URL absoluta del sitio web, ej: https://parroquia.app", type: string }
           - { name: goatcounter, label: "URL de goatcounter endpoint, ej: https://vocacion.goatcounter.com/count", type: string }
