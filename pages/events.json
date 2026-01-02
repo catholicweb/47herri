@@ -735,5 +735,15 @@
         }
       ]
     }
+  ],
+  "events-funeral": [
+    {
+      "title": "Peio Maria Arricibita Ansorena ",
+      "location": [
+        "Errazkin"
+      ],
+      "date": "2026-01-03",
+      "times": "17:00"
+    }
   ]
 }
