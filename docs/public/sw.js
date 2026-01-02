@@ -1,4 +1,4 @@
-const CACHE_NAME = "v1"; // Increment version when logic changes
+const CACHE_NAME = "v2"; // Increment version when logic changes
 const ASSETS = ["/", "/icon-512.png", "/styles.css"];
 
 self.addEventListener("install", (event) => {
