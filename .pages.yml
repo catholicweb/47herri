@@ -224,25 +224,25 @@ content:
             type: object
             fields:
               - { name: image, label: Imagen, type: image }
-              - { name: description, label: Descripción, type: string }
+              - { name: description, label: Descripción, type: text }
           - name: mass
             label: Horarios de misas
             type: object
             fields:
               - { name: image, label: Imagen, type: image }
-              - { name: description, label: Descripción, type: string }
+              - { name: description, label: Descripción, type: text }
           - name: group
             label: Grupos y Catequesis
             type: object
             fields:
               - { name: image, label: Imagen, type: image }
-              - { name: description, label: Descripción, type: string }
+              - { name: description, label: Descripción, type: text }
           - name: feast
             label: Festividades especiales
             type: object
             fields:
               - { name: image, label: Imagen, type: image }
-              - { name: description, label: Descripción, type: string }
+              - { name: description, label: Descripción, type: text }
       - { name: urls, type: string, list: true, label: Calendarios externos a importar (ej. url de Google Calendar terminada en .ics) }
 
   - name: pages
