@@ -3,7 +3,9 @@
   "description": "Nafarroako ipar-mendebaldeko hamar udalerrietako 47 parrokiek osatzen duten pastoral barruti katolikoa gara gu iruñako elizbarrutian.",
   "image": "/media/hero-bg.webp",
   "icon": "/media/android-chrome-512x512.png",
-  "social": ["https://www.youtube.com/@47herri"],
+  "social": [
+    "https://www.youtube.com/@47herri"
+  ],
   "bank": [
     {
       "title": "Bizum",
@@ -22,17 +24,45 @@
       "account": "ES17 3008 0179 2436 5465 8818"
     }
   ],
-  "languages": ["Euskara:eu", "Castellano:es", "Català:ca", "English:en", "Français:fr", "Deutsch:de", "Italiano:it", "Português:pt", "Română:ro", "العربية:ar", "Български:bg"],
+  "languages": [
+    "Euskara:eu",
+    "Castellano:es",
+    "Català:ca",
+    "English:en",
+    "Français:fr",
+    "Deutsch:de",
+    "Italiano:it",
+    "Português:pt",
+    "Română:ro",
+    "العربية:ar",
+    "Български:bg"
+  ],
   "nav": [
     {
       "title": "Menu",
-      "links": ["pages/index.md", "pages/recursos.md", "pages/parroquias.md"]
+      "links": [
+        "pages/index.md",
+        "pages/recursos.md",
+        "pages/parroquias.md"
+      ]
     }
   ],
   "collaborators": [
-    { "image": "/media/20251129_093926.jpg", "name": "David Galarza", "description": "In solidum parrokoa (moderatzailea)", "phonenumber": "690 08 15 84" },
-    { "image": "/media/Screenshot_20250404_192119_Gallery.webp", "name": "Santi Garisoain", "description": "In solidum parrokoa", "phonenumber": "648 77 22 11" },
-    { "image": "/media/Screenshot_20250404_192754_Gallery.webp", "name": "Jesús Mª Sotil", "description": "In solidum parrokoa", "phonenumber": "638 73 95 75" }
+    {
+      "name": "David Galarza",
+      "phonenumber": "690 08 15 84",
+      "image": "/media/20251129_093926.jpg"
+    },
+    {
+      "name": "Santi Garisoain",
+      "phonenumber": "648 77 22 11",
+      "image": "/media/Screenshot_20250404_192119_Gallery.webp"
+    },
+    {
+      "name": "Jesús Mª Sotil",
+      "phonenumber": "638 73 95 75",
+      "image": "/media/Screenshot_20250404_192754_Gallery.webp"
+    }
   ],
   "theme": {
     "bodyFont": "Open Sans",
@@ -42,7 +72,7 @@
     "borderRadius": "1",
     "borderWidth": "1.25",
     "shadowDepth": "1.50",
-    "styles": []
+    "accentPrimary": "white"
   },
   "dev": {
     "goatcounter": "https://47herri.goatcounter.com/count",
