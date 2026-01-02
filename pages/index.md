@@ -6,15 +6,15 @@ sections:
   - _block: calendar
     title: "Próximas celebraciones"
     filter: "byday:empty"
-    order: ["title", "dates", "", "times", "locations+rrule-byday+language-euskaraz"]
+    order: ["title", "dates", "skip", "times", "locations"]
   - _block: calendar
     title: "Horario de Misas"
     filter: "mass"
-    order: ["weekday", "times", "", "locations", "byday-weekday+byweek+language-euskaraz+notes"]
+    order: ["weekday", "times", "skip", "locations", "byday-weekday+byweek+notes"]
   - _block: calendar
     title: "Otros eventos periódicos"
     filter: "!byday:empty&!mass"
-    order: ["title", "locations", "", "times", "byday+byweek+language-euskaraz+notes"]
+    order: ["title", "locations", "skip", "times", "byday+byweek+notes"]
   - _block: video-channel
     title: Eguneroko Meza
     filter: ""
