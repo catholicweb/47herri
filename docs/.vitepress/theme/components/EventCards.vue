@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { data } from "./../../blocks.data.js";
 import { formatDate, applyComplexFilter, splitRRuleByDay } from "./../../utils.js";
+import Image from "./Image.vue";
 
 const props = defineProps({ block: { type: Object, required: true } });
 
@@ -70,7 +71,7 @@ onUnmounted(stopSlider);
                   {{ event.name || event.title || formatDate(event.type, $frontmatter.lang) }}
                 </h2>
 
-                <img v-if="event.images?.[0]" :src="event.images[0]" class="float-right w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-accent object-cover ml-4 mb-2" crossorigin="anonymous" loading="lazy" />
+                <Image v-if="event.images?.[0]" :src="event.images[0]" :index="index" class="float-right w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-accent object-cover ml-4 mb-2" />
 
                 <div class="space-y-2 text-sm">
                   <p class="location-mark">
