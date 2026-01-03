@@ -71,7 +71,7 @@ async function loadMap() {
 
   map.fitBounds(bounds, { padding: [40, 40] });
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", { attribution: "Voyager", maxZoom: 24 }).addTo(map);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", { attribution: "Voyager", crossOrigin: "anonymous", maxZoom: 24 }).addTo(map);
 
   markersLayer = L.layerGroup().addTo(map);
 
@@ -87,6 +87,7 @@ function renderMarkers(lang) {
   const smallIcon = L.icon({
     iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
     shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+    crossOrigin: "anonymous",
     iconSize: [15, 25], // Width and Height in pixels (Original is 25x41)
     iconAnchor: [7, 25], // The point of the icon which will correspond to marker's location
     popupAnchor: [1, -20], // Point from which the popup should open relative to the iconAnchor
