@@ -1,6 +1,8 @@
 <script setup>
 import { ref, computed } from "vue";
 import Image from "./Image.vue";
+import Hero from "./Hero.vue";
+
 import { useData, useRoute } from "vitepress";
 import EventCards from "./EventCards.vue";
 const { theme, site, page } = useData();
@@ -123,4 +125,7 @@ const mobileMenuOpen = ref(false);
 
     <EventCards v-if="navStyle == '47herri' && !$frontmatter.hideHero" :block="{ events: $frontmatter.events }" class="w-full" />
   </div>
+
+  <!-- Hero Component -->
+  <Hero v-if="navStyle != '47herri' && !$frontmatter.hideHero" :block="$frontmatter" />
 </template>
