@@ -102,7 +102,7 @@ function renderMarkers(lang) {
 
       const html = `
         <a href="${m.url}">
-          <h3 class="text-xl font-bold text-center text-accent">${m.name}</h3>
+          <h3 class="text-xl font-bold text-center text-accent">${m.name} (${m.title})</h3>
           <div style="background:white">
             <img src="${m.image}" style="width:100%;aspect-ratio:16/9;object-fit:cover" />
           </div>

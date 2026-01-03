@@ -31,7 +31,8 @@ export default {
           } else if (section._block === "map") {
             section.lang = data.lang;
             section.image = section.image || data.image;
-            section.name = section.name || data.title;
+            section.title = data.title;
+            section.name = section.name;
             section.url = "/" + file.replace(/index\.md$/, "").replace(/\.md$/, "");
             maps.push(section);
           }
