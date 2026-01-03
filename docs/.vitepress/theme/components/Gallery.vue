@@ -19,7 +19,7 @@
     <!-- 2. Image Gallery (Pinterest/Instagram style) -->
     <div v-if="block.type === 'gallery'" :class="grid(block)">
       <div v-for="(item, i) in block.elements" :key="i">
-        <div class="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
+        <div class="relative aspect-square rounded-lg overflow-hidden group cursor-pointer" @click="currentGalleryIdx = i">
           <Image :src="item.image" :alt="item.title" :index="block.index" class="w-full h-full object-cover transition-transform group-hover:scale-110" />
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all">
             <div class="absolute inset-0 p-4 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity">
@@ -31,6 +31,7 @@
           </div>
         </div>
       </div>
+      <PopupGallery :images="block.elements" :activeIndex="currentGalleryIdx" @close="currentGalleryIdx = null" @select="(i) => (currentGalleryIdx = i)"></PopupGallery>
     </div>
 
     <!-- 3. Book/Resource List -->
@@ -219,7 +220,10 @@
 <script setup>
 import { grid } from "./../../utils.js";
 import Image from "./Image.vue";
+import PopupGallery from "./PopupGallery.vue";
 import { ref } from "vue";
+
+const currentGalleryIdx = ref(null);
 
 const props = defineProps({
   block: {

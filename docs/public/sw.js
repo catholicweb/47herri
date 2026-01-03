@@ -1,5 +1,5 @@
 const CACHE_NAME = "v2"; // Increment version when logic changes
-const ASSETS = ["/", "/icon-512.png", "/styles.css"];
+const ASSETS = ["/", "/icon-512.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));
