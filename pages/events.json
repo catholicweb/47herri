@@ -609,6 +609,19 @@
       "times": [
         "15:45"
       ]
+    },
+    {
+      "title": "Adoración al Santísimo",
+      "location": [
+        "Betelu",
+        "Lekunberri"
+      ],
+      "rrule": [
+        "th"
+      ],
+      "times": [
+        "18:30"
+      ]
     }
   ],
   "urls": [
@@ -758,7 +771,7 @@
   ],
   "default": {
     "funeral": {
-      "image": "/media/3-estela-lekunberri-min.webp",
+      "image": "/media/3-estela-lekunberri.webp",
       "description": "Jauna, zure eskuetan uzten dugu maite dugun senide hau, emaiozu betiko atsedena, eta betiereko argiak argi diezaiola. Goian bego. Amen"
     },
     "mass": {
