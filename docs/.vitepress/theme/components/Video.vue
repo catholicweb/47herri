@@ -1,30 +1,6 @@
 <template>
-  <div v-if="block.filters" class="max-w-4xl mx-auto px-6 flex flex-wrap justify-center gap-2 my-5">
-    <button
-      v-for="(filter, index) in block.filters"
-      :key="index"
-      @click="
-        searchQuery = '';
-        selectedFilter = index;
-      "
-      class="px-2 py-2 rounded-full transition-colors duration-200 text-sm cursor-pointer font-bold"
-      :class="[selectedFilter === index ? 'bg-[#2d3436] text-white' : 'bg-transparent text-gray-700 hover:bg-gray-200']"
-    >
-      {{ filter }}
-    </button>
-  </div>
-
-  <div v-if="block.query" class="relative max-w-md mx-auto mb-5">
-    <span class="absolute inset-y-0 left-4 flex items-center text-gray-400">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-    </span>
-    <input v-model="searchQuery" type="text" placeholder="Bilatu" class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all shadow-sm" />
-  </div>
-
-  <div class="video mb-8 px-2" :class="grid(block)">
-    <LazyItem v-for="(item, index) in filteredItems" :key="item.src" :alwaysVisible="index < 5">
+  <Grid :block="props.block" v-slot="{ item, index }">
+    <LazyItem :key="item.src" :alwaysVisible="index < 5">
       <div class="relative">
         <div v-if="playingVideo === item.src" class="w-full h-full items-center rounded-lg overflow-hidden cursor-pointer aspect-[16/9]">
           <iframe :src="item.src" data-testid="embed-iframe" width="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" class="w-full h-full rounded-lg overflow-hidden"></iframe>
@@ -47,50 +23,15 @@
         <div class="h-[4px] -mt-[8px] bg-accent -mx-[8px]"></div>
       </div>
     </LazyItem>
-  </div>
+  </Grid>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed } from "vue";
 import LazyItem from "./LazyItem.vue";
-import { formatDate, grid } from "./../../utils.js";
+import Grid from "./Grid.vue";
+import { formatDate } from "./../../utils.js";
 const props = defineProps({ block: { type: Object, required: true } });
-const videos = ref(props.block.elements || []);
-
-const searchQuery = ref("");
-const selectedFilter = ref(0);
-// Filter logic: combining Category + Search Text
-const filteredItems = computed(() => {
-  return videos.value.filter((item) => {
-    const haystack = JSON.stringify(item).toLowerCase();
-    const matchesfilter = selectedFilter.value === 0 || haystack.includes(props.block.filters?.[selectedFilter.value]?.toLowerCase());
-    const matchesSearch = haystack.includes(searchQuery.value.toLowerCase());
-    return matchesfilter && matchesSearch;
-  });
-});
-
-/*onMounted(() => {
-  setTimeout(async () => {
-    if (props.block._block == "video-channel") {
-      const res = await fetch("/videos.json");
-      const v = await res.json();
-
-      videos.value = (v || [])
-        .filter((obj) =>
-          JSON.stringify(obj)
-            .toLowerCase()
-            .includes((props.block.filter || "").toLowerCase()),
-        )
-        .filter((item) => {
-          const haystack = JSON.stringify(item).toLowerCase();
-          if (!props.block.filters) return true;
-          return props.block.filters.some((word) => haystack.includes(word?.toLowerCase()));
-        })
-        .map((v) => ({ ...v, src: `https://www.youtube.com/embed/${v.videoId}?autoplay=1`, image: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg` }))
-        .slice(0, 200);
-    }
-  }, 0);
-});*/
 
 function logo(item) {
   if (item.src.includes("youtube")) return "youtube-logo";
