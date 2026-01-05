@@ -8,10 +8,11 @@ const searchQuery = ref("");
 const selectedFilter = ref(0);
 // Filter logic: combining Category + Search Text
 const filteredItems = computed(() => {
+	const needle = selectedFilter.value === 0 ? props.block.filters : [props.block.filters?.[selectedFilter.value]];
 	return (props.block.elements || []).filter((item) => {
 		const haystack = JSON.stringify(item).toLowerCase();
-		const matchesfilter = searchQuery.value || selectedFilter.value === 0 || haystack.includes(props.block.filters?.[selectedFilter.value]?.toLowerCase());
-		const matchesSearch = haystack.includes(searchQuery.value.toLowerCase());
+		const matchesfilter = !props.block.filters || searchQuery.value || needle?.some((word) => haystack.includes(word?.toLowerCase()));
+		const matchesSearch = !searchQuery.value || haystack.includes(searchQuery.value.toLowerCase());
 		return matchesfilter && matchesSearch;
 	});
 });
@@ -26,7 +27,7 @@ const filteredItems = computed(() => {
 					searchQuery = '';
 					selectedFilter = index;
 				"
-				class="px-2 py-2 rounded-full transition-colors duration-200 text-sm cursor-pointer font-bold"
+				class="px-3 py-2 rounded-full transition-colors duration-200 text-sm cursor-pointer font-bold"
 				:class="[selectedFilter === index ? 'bg-[#2d3436] text-white' : 'bg-transparent text-gray-700 hover:bg-gray-200']"
 			>
 				{{ filter }}
