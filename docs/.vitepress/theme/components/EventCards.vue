@@ -15,38 +15,30 @@ function byday(event) {
 
 <template>
   <div class="relative z-10 py-10 font-medium">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 min-h-30">
       <Grid :block="{ ...props.block, elements: block.events, query: false, tags: ['carousel'] }" v-slot="{ item: event, index }">
-        <div :key="index" class="min-w-full px-2 min-h-30">
-          <div class="bg-black/50 backdrop-blur-xl p-6 rounded-xl text-white overflow-hidden">
-            <div class="block">
-              <h2 class="text-3xl font-bold mb-4 leading-tight">
-                {{ event.name || event.title || formatDate(event.type, $frontmatter.lang) }}
-              </h2>
+        <div class="bg-black/50 backdrop-blur-xl p-6 rounded-xl text-white overflow-hidden block">
+          <h2 class="text-3xl font-bold mb-4 leading-tight">
+            {{ event.name || event.title || formatDate(event.type, $frontmatter.lang) }}
+          </h2>
 
-              <Image v-if="event.images?.[0]" :src="event.images[0]" :index="index" class="float-right w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-accent object-cover ml-4 mb-2" />
+          <Image v-if="event.images?.[0]" :src="event.images[0]" :index="index" class="float-right w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-accent object-cover ml-4 mb-2" />
 
-              <div class="space-y-2 text-sm">
-                <p class="location-mark">
-                  {{ event.locations.join(", ") }}
-                </p>
-                <p class="calendar-mark">
-                  {{
-                    byday(event)
-                      .map((i) => formatDate(i, $frontmatter.lang, "byday"))
-                      .join(", ") || event.dates?.map((i) => formatDate(i, $frontmatter.lang)).join(", ")
-                  }}
-                </p>
-                <p class="time-mark">
-                  {{ event.times.join(", ") }}
-                </p>
-              </div>
-
-              <p v-if="event.notes" class="mt-4 italic clear-none">
-                {{ event.notes?.map((i) => formatDate(i, $frontmatter.lang)).join(", ") }}
-              </p>
-            </div>
+          <div class="space-y-2 text-sm">
+            <p class="location-mark">{{ event.locations.join(", ") }}</p>
+            <p class="calendar-mark">
+              {{
+                byday(event)
+                  .map((i) => formatDate(i, $frontmatter.lang, "byday"))
+                  .join(", ") || event.dates?.map((i) => formatDate(i, $frontmatter.lang)).join(", ")
+              }}
+            </p>
+            <p class="time-mark">{{ event.times.join(", ") }}</p>
           </div>
+
+          <p v-if="event.notes" class="mt-4 italic clear-none">
+            {{ event.notes?.map((i) => formatDate(i, $frontmatter.lang)).join(", ") }}
+          </p>
         </div>
       </Grid>
     </div>

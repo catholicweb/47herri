@@ -1,4 +1,13 @@
 <script setup>
+/*
+	Grid system allowing:
+	+ carousel
+	+ 3d carousel
+	+ horizontal scroll
+	+ vertical scroll
+	+ different grid sizes (using flex)
+*/
+
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { grid } from "./../../utils.js";
 const props = defineProps({ block: { type: Object, required: true } });
@@ -17,26 +26,28 @@ const filteredItems = computed(() => {
 });
 
 // --- Swipe handlers ---
-const activeIndex = ref(0);
+const activeIndex = ref(filteredItems.value.findIndex((item) => item.name === props.block.name) || 0);
+
 let startX = 0;
 const onStart = (e) => {
 	stopSlider();
-	// Support both touch and mouse
 	startX = e.touches ? e.touches[0].clientX : e.clientX;
 };
 
 const onEnd = (e) => {
 	const endX = e.changedTouches ? e.changedTouches[0].clientX : e.touches ? e.touches[0].clientX : e.clientX;
-	const diff = startX - endX;
-
 	// Sensitivity threshold of 50px
-	if (diff > 50 && activeIndex.value < filteredItems.value.length - 1) {
-		activeIndex.value++;
-	} else if (diff < -50 && activeIndex.value > 0) {
-		activeIndex.value--;
-	}
-
+	if (startX - endX > 50) nextItem();
+	if (startX - endX < -50) prevItem();
 	startSlider();
+};
+
+const nextItem = () => {
+	if (activeIndex.value < filteredItems.value.length - 1) activeIndex.value++;
+};
+
+const prevItem = () => {
+	if (activeIndex.value > 0) activeIndex.value--;
 };
 
 // --- Autoplay ---
@@ -56,6 +67,19 @@ onMounted(() => {
 	startSlider();
 });
 onUnmounted(stopSlider);
+
+// 3D Carousel
+const getCardClass = (index) => {
+	const diff = index - activeIndex.value;
+
+	if (diff === 0) return "card-active";
+	if (diff === 1) return "card-next-1";
+	if (diff === -1) return "card-prev-1";
+	if (diff === 2) return "card-next-2";
+	if (diff === -2) return "card-prev-2";
+
+	return diff > 0 ? "card-hidden-right" : "card-hidden-left";
+};
 </script>
 <template>
 	<div v-if="block.filters" class="max-w-4xl mx-auto px-6 flex flex-wrap justify-center gap-2 my-5">
@@ -82,22 +106,116 @@ onUnmounted(stopSlider);
 		<input v-model="searchQuery" type="text" placeholder="Bilatu" class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all shadow-sm" />
 	</div>
 
-	<div v-if="block?.tags?.includes('carousel')">
+	<template v-if="block?.tags?.includes('carousel')">
 		<div class="overflow-hidden relative max-w-xl" @touchstart.passive="onStart" @touchend.passive="onEnd" @mousedown.passive="onStart" @mouseup.passive="onEnd">
 			<div class="flex transition-transform duration-500 ease-out" :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
-				<template v-for="(item, index) in filteredItems">
+				<div v-for="(item, index) in filteredItems" :key="index" class="min-w-full px-2">
 					<slot :item="item" :index="index"></slot>
-				</template>
+				</div>
 			</div>
 		</div>
 		<div class="flex gap-2 mt-4 ml-4">
-			<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-white'" />
+			<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-black/20'" />
 		</div>
-	</div>
+	</template>
 
-	<div v-else :class="grid(block)">
-		<template v-for="(item, index) in filteredItems">
-			<slot :item="item" :index="index"></slot>
-		</template>
-	</div>
+	<template v-else-if="block?.tags?.includes('3d')">
+		<!-- 3D Carousel Container -->
+		<div class="flex flex-col items-center justify-center px-4 overflow-hidden">
+			<div class="perspective-1000 relative w-full max-w-4xl h-[400px] flex items-center justify-center">
+				<!-- Cards -->
+				<div class="relative w-full" @touchstart.passive="onStart" @touchend.passive="onEnd" @mousedown.passive="onStart" @mouseup.passive="onEnd">
+					<div v-for="(item, index) in filteredItems" :key="index" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 transition-all duration-700 ease-out cursor-pointer" :class="getCardClass(index)" @click="activeIndex = index">
+						<slot :item="item" :index="index" :activeIndex="activeIndex"></slot>
+					</div>
+				</div>
+			</div>
+			<div>
+				<!-- Navigation Arrows -->
+				<button v-if="filteredItems.length > 1" @click="prevItem" :disabled="activeIndex === 0" aria-label="Previous card" :class="['absolute left-4 top-1/2 -translate-y-1/2 z-25 w-14 h-14 rounded-full bg-black/30 backdrop-blur-md text-white flex items-center justify-center transition-all duration-200 hover:bg-black/50 hover:scale-110 cursor-pointer hidden md:flex', activeIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'opacity-100']">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+						<polyline points="15 18 9 12 15 6" />
+					</svg>
+				</button>
+
+				<button v-if="filteredItems.length > 1" @click="nextItem" aria-label="Next card" :disabled="activeIndex === filteredItems.length - 1" :class="['absolute right-4 top-1/2 -translate-y-1/2 z-25 w-14 h-14 rounded-full bg-black/30 backdrop-blur-md text-white flex items-center justify-center transition-all duration-200 hover:bg-black/50 hover:scale-110 cursor-pointer hidden md:flex', activeIndex === filteredItems.length - 1 ? 'opacity-30 cursor-not-allowed' : 'opacity-100']">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+						<polyline points="9 18 15 12 9 6" />
+					</svg>
+				</button>
+			</div>
+			<div class="flex gap-2 mt-4 ml-4">
+				<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-black/20'" />
+			</div>
+		</div>
+	</template>
+
+	<template v-else>
+		<div :class="grid(block)">
+			<template v-for="(item, index) in filteredItems">
+				<slot :item="item" :index="index"></slot>
+			</template>
+		</div>
+	</template>
 </template>
+
+<style>
+/* Base card state */
+.card-active,
+.card-prev-1,
+.card-next-1,
+.card-prev-2,
+.card-next-2,
+.card-hidden-left,
+.card-hidden-right {
+	position: absolute;
+	will-change: transform, opacity;
+}
+
+.card-active {
+	transform: translateX(0%) scale(1) translateZ(0);
+	opacity: 1;
+	z-index: 15;
+	filter: grayscale(0%);
+}
+
+.card-prev-1 {
+	transform: translateX(-35%) scale(0.85) translateZ(-100px);
+	opacity: 0.6;
+	z-index: 10;
+	filter: grayscale(80%);
+}
+
+.card-next-1 {
+	transform: translateX(35%) scale(0.85) translateZ(-100px);
+	opacity: 0.6;
+	z-index: 10;
+	filter: grayscale(80%);
+}
+
+.card-prev-2 {
+	transform: translateX(-60%) scale(0.7) translateZ(-200px);
+	opacity: 0.3;
+	z-index: 5;
+	filter: grayscale(100%);
+}
+
+.card-next-2 {
+	transform: translateX(60%) scale(0.7) translateZ(-200px);
+	opacity: 0.3;
+	z-index: 5;
+	filter: grayscale(100%);
+}
+
+.card-hidden-left {
+	transform: translateX(-80%) scale(0.6) translateZ(-300px);
+	opacity: 0;
+	z-index: 0;
+}
+
+.card-hidden-right {
+	transform: translateX(80%) scale(0.6) translateZ(-300px);
+	opacity: 0;
+	z-index: 0;
+}
+</style>
