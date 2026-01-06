@@ -115,7 +115,7 @@ const getCardClass = (index) => {
 			</div>
 		</div>
 		<div class="flex gap-2 mt-4 ml-4">
-			<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-black/20'" />
+			<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-gray-400'" />
 		</div>
 	</template>
 
@@ -145,7 +145,7 @@ const getCardClass = (index) => {
 				</button>
 			</div>
 			<div class="flex gap-2 mt-4 ml-4">
-				<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-black/20'" />
+				<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-gray-400'" />
 			</div>
 		</div>
 	</template>

@@ -85,7 +85,7 @@ components:
     options:
       multiple: true
       creatable: false
-      values: ["dark", "twocol", "small", "tiny", "large", "hidden"]
+      values: ["dark", "twocol", "small", "tiny", "large", "hidden", "3d", "carousel"]
   rrule:
     label: Fechas
     type: select
@@ -226,7 +226,7 @@ content:
       fields: [image, title]
       primary: title
     filename: "{primary}.md"
-    exclude: [.vitepress, public, aviso-legal.md, config.json, events.json, theme-builder.md]
+    exclude: [.vitepress, public, aviso-legal.md, config.json, events.json]
     fields:
       - { name: title, label: Título, type: string }
       - { name: description, label: Subtitulo, type: string }
@@ -235,7 +235,7 @@ content:
       - name: sections
         label: Secciones de la página
         type: block
-        list: { collapsible: { collapsed: false, summary: "{fields.title}" } }
+        list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
         blocks:
           - name: accordion
             label: FAQ
