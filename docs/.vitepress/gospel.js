@@ -26,7 +26,7 @@ const parseReference = (ref) => {
   let [, book, rest] = match;
   const bookMap = { mt: "MAT", mk: "MRK", mc: "MRK", lc: "LUK", lk: "LUK", jn: "JHN" };
   book = bookMap[book.toLowerCase()] || book;
-  let bits = rest.replace(/–(\d+),/g, `-60;$1,1-`).split(";");
+  let bits = rest.replace(/–(\d+),/g, `-60;$1,1-`).split(";"); //(handle multichapter)
   const parseRange = (r) => {
     const [start, end] = r.split("-").map(Number);
     return !end ? [start] : Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -76,7 +76,7 @@ export const getBibleReadings = async (options = {}) => {
     // 2. Translation logic for non-Spanish requests
     if (lang !== "es") {
       for (let item of readingsArray) {
-        if (item.tag != "evangeli") continue; // Skip Psalm text translation
+        if (item.tag != "evangeli") continue; // ATM, we only have dictionary for the gospels
 
         try {
           const parsed = parseReference(item.cita);

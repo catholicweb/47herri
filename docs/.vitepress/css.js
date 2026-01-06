@@ -75,43 +75,10 @@ export async function printCSS() {
   --font-heading: '${config.theme.headingFont}', sans-serif;
   --color-accent: ${config.theme.accentColor};
   --color-primary: ${config.theme.accentPrimary};
-  --border-radius-mult: ${config.theme.borderRadius};
-  --border-width-mult: ${config.theme.borderWidth};
-  --shadow-depth-mult: ${config.theme.shadowDepth};
   --accent-angle: ${getHue(config.theme.accentColor)}deg;
   --primary-angle: ${getHue(config.theme.primaryColor)}deg;
 
     
-  /* === Derived Tailwind vars (reactive) === */
-
-    /* Radius */
-    --radius-sm: calc(0.125rem * var(--border-radius-mult));
-    --radius: calc(0.25rem * var(--border-radius-mult));
-    --radius-md: calc(0.375rem * var(--border-radius-mult));
-    --radius-lg: calc(0.5rem * var(--border-radius-mult));
-    --radius-xl: calc(0.75rem * var(--border-radius-mult));
-    --radius-2xl: calc(1rem * var(--border-radius-mult));
-    --radius-3xl: calc(1.5rem * var(--border-radius-mult));
-    --radius-full: 9999px;
-
-    /* Border widths */
-    --border-width: calc(1px * var(--border-width-mult));
-    --border-width-2: calc(2px * var(--border-width-mult));
-    --border-width-4: calc(4px * var(--border-width-mult));
-    --border-width-8: calc(8px * var(--border-width-mult));
-
-    /* Shadows */
-    --shadow-color: 0 0% 0% / 0.15;
-    --shadow-sm: 0 calc(1px * var(--shadow-depth-mult)) calc(2px * var(--shadow-depth-mult)) hsl(var(--shadow-color));
-    --shadow: 0 calc(1px * var(--shadow-depth-mult)) calc(3px * var(--shadow-depth-mult)) hsl(var(--shadow-color)),
-              0 calc(1px * var(--shadow-depth-mult)) calc(2px * var(--shadow-depth-mult)) hsl(var(--shadow-color));
-    --shadow-md: 0 calc(4px * var(--shadow-depth-mult)) calc(6px * var(--shadow-depth-mult)) -1px hsl(var(--shadow-color)),
-                 0 calc(2px * var(--shadow-depth-mult)) calc(4px * var(--shadow-depth-mult)) -2px hsl(var(--shadow-color));
-    --shadow-lg: 0 calc(10px * var(--shadow-depth-mult)) calc(15px * var(--shadow-depth-mult)) -3px hsl(var(--shadow-color)),
-                 0 calc(4px * var(--shadow-depth-mult)) calc(6px * var(--shadow-depth-mult)) -4px hsl(var(--shadow-color));
-    --shadow-xl: 0 calc(20px * var(--shadow-depth-mult)) calc(25px * var(--shadow-depth-mult)) -5px hsl(var(--shadow-color)),
-                 0 calc(10px * var(--shadow-depth-mult)) calc(10px * var(--shadow-depth-mult)) -5px hsl(var(--shadow-color));
-
     /* Apply directly to Tailwind font vars */
     --font-sans: var(--font-body);
     --font-display: var(--font-heading);
@@ -126,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
-.prose-serious * {
+.legal * {
   opacity: 1 !important;          /* fully visible */
   color: black !important;
   transform: scale(1) rotate(0) translate(0)  !important; /* no scaling or translation */
@@ -139,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }\n\n`;
 
-  config.theme.styles.forEach(({ selector, cssClass, scroll }) => {
+  config.theme.styles?.forEach(({ selector, cssClass, scroll }) => {
     if (scroll) {
       css += `${selector} {
   ${cssClass};

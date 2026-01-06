@@ -6,7 +6,6 @@ import { generateNav, locales } from "./navBar.js";
 import { getFontCSS } from "./css.js";
 
 const config = read("./pages/config.json");
-config.goatcounter = "https://vocacion.goatcounter.com/count";
 
 export default defineConfig(async () => {
   return {
@@ -17,7 +16,7 @@ export default defineConfig(async () => {
       ["style", {}, await getFontCSS(config.theme)],
       ["link", { rel: "manifest", href: "/manifest.json" }],
       ["link", { rel: "icon", href: "/favicon.ico", type: "image/x-icon" }],
-      ["script", { "data-goatcounter": config.goatcounter, async: true, src: "//gc.zgo.at/count.js" }],
+      ["script", { "data-goatcounter": config.dev?.goatcounter, async: true, src: "//gc.zgo.at/count.js" }],
     ],
     locales: locales(config.languages),
     title: config.title,

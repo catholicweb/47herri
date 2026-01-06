@@ -94,7 +94,7 @@
       <!-- Footer Info -->
       <div class="mt-4 pt-4 text-center text-gray-800">
         <p class="text-sm">
-          <em> &copy; {{ new Date().getFullYear() }} <a href="https://parroquia.app" class="hover:text-accent transition-colors">parroquia.app </a> — <a href="/aviso-legal" class="hover:text-accent transition-colors"> Aviso Legal </a> — <a href="/aviso-legal" class="hover:text-accent transition-colors"> Política privacidad </a></em>
+          <em> &copy; {{ new Date().getFullYear() }} <a href="https://parroquia.app" class="hover:text-accent transition-colors">parroquia.app </a> — <a href="/aviso-legal-y-politica-de-privacidad" class="hover:text-accent transition-colors"> Aviso Legal </a> — <a href="/aviso-legal-y-politica-de-privacidad" class="hover:text-accent transition-colors"> Política privacidad </a></em>
         </p>
       </div>
     </div>

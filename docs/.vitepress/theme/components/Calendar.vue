@@ -22,10 +22,10 @@ function getSubKeys(table) {
       <div class="overflow-x-auto bg-white">
         <table class="min-w-full border-collapse [border-style:hidden]">
           <!-- Añadir cabezera a la tabla (solo si hay subfields)-->
-          <thead v-if="getSubKeys(table)[0] != ''" class="bg-gray-50 text-gray-600 uppercase text-xs tracking-wide">
+          <thead v-if="getSubKeys(table)[0] != ''" class="bg-gray-50 text-gray-600 uppercase tracking-wide">
             <tr>
-              <th class="px-4 py-2 text-left w-36">&nbsp;</th>
-              <th v-for="subKey in getSubKeys(table)" class="px-4 py-2 text-left">
+              <th class="p-3 text-left">&nbsp;</th>
+              <th v-for="subKey in getSubKeys(table)" class="p-3 text-left">
                 {{ formatDate(subKey, $frontmatter.lang) }}
               </th>
             </tr>
@@ -33,11 +33,11 @@ function getSubKeys(table) {
           <tbody>
             <!-- Añadir columnas a la tabla -->
             <tr v-for="(row, rowKey, rowIndex) in table" class="odd:bg-white even:bg-gray-50">
-              <td class="px-4 py-3 border-1">
+              <td class="p-3 border-1">
                 {{ formatDate(rowKey, $frontmatter.lang) }}
               </td>
               <!-- Añadir filas -->
-              <td v-for="subKey in getSubKeys(table)" class="px-4 py-3 align-top border-1">
+              <td v-for="subKey in getSubKeys(table)" class="p-3 align-top border-1">
                 <!-- Cada fila de la tabla puede tener múltiples elementos -->
                 <p v-for="(line, lineKey) in row[subKey]" class="text-left pl-8 -indent-8">
                   {{ formatDate(lineKey, $frontmatter.lang) }}

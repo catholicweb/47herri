@@ -24,7 +24,7 @@ function highlightRelatedTitles() {
     const h2 = section.querySelector("h2");
     if (!h2) return;
 
-    let targetTitle = h2.innerText.split("(")[0].trim();
+    let targetTitle = h2.innerText.toLowerCase().split("(")[0].trim();
     targetTitle = targetTitle.split("-")[1]?.trim() || targetTitle;
     console.log(targetTitle);
     generateQR(section, targetTitle);
@@ -40,7 +40,7 @@ function highlightRelatedTitles() {
 
     paragraphs.forEach((p) => {
       // Check if the paragraph text contains any of the related titles
-      const containsRelated = relatedTitles.some((relatedTitle) => p.innerText.includes(relatedTitle));
+      const containsRelated = relatedTitles.some((relatedTitle) => p.innerText.toLowerCase().includes(relatedTitle));
 
       if (containsRelated) {
         // Modern Tailwind approach: add a class or direct style
@@ -69,7 +69,9 @@ function clone(section, id) {
 
 /** * Helper from previous step to find related titles
  */
-function getRelatedTitles(targetTitle, tagMap) {
+function getRelatedTitles(targetTitle = "", tagMap) {
+  tagMap = JSON.parse(JSON.stringify(tagMap).toLowerCase());
+  targetTitle = targetTitle.toLowerCase();
   const relatedSet = new Set();
   relatedSet.add(targetTitle);
   for (const [tag, titles] of Object.entries(tagMap)) {
@@ -111,6 +113,7 @@ async function generateQR(section, title) {
 }
 
 onMounted(() => {
+  console.log("Mounting Print!");
   document.body.classList.add("print");
   highlightRelatedTitles();
 });

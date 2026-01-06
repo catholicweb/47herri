@@ -21,22 +21,7 @@ const props = defineProps({ block: { type: Object, required: true } });
 const mapContainer = ref(null);
 let map = null;
 let markersLayer = null;
-
-async function loadCSS(url) {
-  return new Promise((resolve, reject) => {
-    // Check if the CSS is already loaded
-    if (!document.querySelector(`link[href="${url}"]`)) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = url;
-      link.onload = resolve;
-      link.onerror = reject;
-      document.head.appendChild(link);
-    } else {
-      resolve(); // CSS already loaded
-    }
-  });
-}
+let L = null; // Store Leaflet instance locally
 
 watch(
   () => page.value.frontmatter.lang,
@@ -55,12 +40,16 @@ async function loadMap() {
   console.log("loadMap");
   if (!mapContainer.value) return;
 
-  await loadCSS("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
-  await import("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js");
+  // 1. Dynamically import Leaflet and its CSS
+  // Vite handles the CSS injection automatically here
+  const LeafletModule = await import("leaflet");
+  await import("leaflet/dist/leaflet.css");
 
-  // Optionally load additional plugins (like fullscreen)
-  await loadCSS("https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css");
-  await import("https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js");
+  // 2. Load the plugin (Vite will bundle this separately)
+  await import("leaflet-fullscreen");
+  await import("leaflet-fullscreen/dist/leaflet.fullscreen.css");
+
+  L = LeafletModule.default || LeafletModule;
 
   // Try load the geojson file (if any)
   fetch("/map.geojson")
@@ -82,7 +71,7 @@ async function loadMap() {
 
   map.fitBounds(bounds, { padding: [40, 40] });
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", { attribution: "Voyager", maxZoom: 24 }).addTo(map);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", { attribution: "Voyager", crossOrigin: "anonymous", maxZoom: 24 }).addTo(map);
 
   markersLayer = L.layerGroup().addTo(map);
 
@@ -98,6 +87,7 @@ function renderMarkers(lang) {
   const smallIcon = L.icon({
     iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
     shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+    crossOrigin: "anonymous",
     iconSize: [15, 25], // Width and Height in pixels (Original is 25x41)
     iconAnchor: [7, 25], // The point of the icon which will correspond to marker's location
     popupAnchor: [1, -20], // Point from which the popup should open relative to the iconAnchor
@@ -112,7 +102,7 @@ function renderMarkers(lang) {
 
       const html = `
         <a href="${m.url}">
-          <h3 class="text-xl font-bold text-center text-accent">${m.name}</h3>
+          <h3 class="text-xl font-bold text-center text-accent">${m.name} (${m.title})</h3>
           <div style="background:white">
             <img src="${m.image}" style="width:100%;aspect-ratio:16/9;object-fit:cover" />
           </div>

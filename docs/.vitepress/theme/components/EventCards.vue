@@ -1,105 +1,46 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
+import { ref, computed } from "vue";
 import { data } from "./../../blocks.data.js";
-import { formatDate, applyComplexFilter, splitRRuleByDay } from "./../../utils.js";
+import { formatDate, splitRRuleByDay } from "./../../utils.js";
+import Image from "./Image.vue";
+import Grid from "./Grid.vue";
 
 const props = defineProps({ block: { type: Object, required: true } });
-
-// --- Events ---
-const filteredEvents = computed(() => props.block.events);
-
-// --- Autoplay ---
-const startSlider = () => {
-  if (filteredEvents.value.length <= 1) return;
-  timer = setInterval(() => {
-    activeIndex.value = (activeIndex.value + 1) % filteredEvents.value.length;
-  }, 5000);
-};
-
-// --- Slider state ---
-const activeIndex = ref(0);
-let timer = null;
-
-// --- Swipe state ---
-let startX = 0; // Changed from const to a standard variable
-
-const stopSlider = () => {
-  if (timer) clearInterval(timer);
-};
 
 function byday(event) {
   let s = splitRRuleByDay(event.byday);
   return [...s.simpleByDay, ...s.simpleByWeek].filter(Boolean);
 }
-
-// --- Swipe handlers ---
-const onStart = (e) => {
-  stopSlider();
-  // Support both touch and mouse
-  startX = e.touches ? e.touches[0].clientX : e.clientX;
-};
-
-const onEnd = (e) => {
-  const endX = e.changedTouches ? e.changedTouches[0].clientX : e.touches ? e.touches[0].clientX : e.clientX;
-  const diff = startX - endX;
-
-  // Sensitivity threshold of 50px
-  if (diff > 50 && activeIndex.value < filteredEvents.value.length - 1) {
-    activeIndex.value++;
-  } else if (diff < -50 && activeIndex.value > 0) {
-    activeIndex.value--;
-  }
-
-  startSlider();
-};
-
-// --- Lifecycle ---
-onMounted(startSlider);
-onUnmounted(stopSlider);
 </script>
 
 <template>
   <div class="relative z-10 py-10 font-medium">
-    <div class="container mx-auto px-4">
-      <div class="overflow-hidden min-h-30 relative max-w-xl" @touchstart.passive="onStart" @touchend.passive="onEnd" @mousedown.passive="onStart" @mouseup.passive="onEnd">
-        <div class="flex transition-transform duration-500 ease-out" :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
-          <div v-for="(event, index) in filteredEvents" :key="index" class="min-w-full px-2">
-            <div class="bg-black/50 backdrop-blur-xl p-6 rounded-xl text-white overflow-hidden">
-              <img v-if="event.images?.[0]" :src="event.images[0]" class="float-right w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-accent object-cover ml-4 mb-2" crossorigin="anonymous" loading="lazy" />
+    <div class="container mx-auto px-4 min-h-30">
+      <Grid :block="{ ...props.block, elements: block.events, query: false, tags: ['carousel'] }" v-slot="{ item: event, index }">
+        <div class="bg-black/50 backdrop-blur-xl p-6 rounded-xl text-white overflow-hidden block">
+          <h2 class="text-3xl font-bold mb-4 leading-tight">
+            {{ event.name || event.title || formatDate(event.type, $frontmatter.lang) }}
+          </h2>
 
-              <div class="block">
-                <h2 class="text-3xl font-bold mb-4 leading-tight">
-                  {{ event.name || event.title || formatDate(event.type, $frontmatter.lang) }}
-                </h2>
+          <Image v-if="event.images?.[0]" :src="event.images[0]" :index="index" class="float-right w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-accent object-cover ml-4 mb-2" />
 
-                <div class="space-y-2 text-sm">
-                  <p class="location-mark">
-                    {{ event.locations.join(", ") }}
-                  </p>
-                  <p class="calendar-mark">
-                    {{
-                      byday(event)
-                        .map((i) => formatDate(i, $frontmatter.lang, "byday"))
-                        .join(", ") || event.dates?.map((i) => formatDate(i, $frontmatter.lang)).join(", ")
-                    }}
-                  </p>
-                  <p class="time-mark">
-                    {{ event.times.join(", ") }}
-                  </p>
-                </div>
-
-                <p v-if="event.notes" class="mt-4 italic clear-none">
-                  {{ event.notes?.map((i) => formatDate(i, $frontmatter.lang)).join(", ") }}
-                </p>
-              </div>
-            </div>
+          <div class="space-y-2 text-sm">
+            <p class="location-mark">{{ event.locations.join(", ") }}</p>
+            <p class="calendar-mark">
+              {{
+                byday(event)
+                  .map((i) => formatDate(i, $frontmatter.lang, "byday"))
+                  .join(", ") || event.dates?.map((i) => formatDate(i, $frontmatter.lang)).join(", ")
+              }}
+            </p>
+            <p class="time-mark">{{ event.times.join(", ") }}</p>
           </div>
-        </div>
 
-        <div class="flex gap-2 mt-4 ml-4">
-          <button v-for="(_, index) in filteredEvents" :key="index" @click="activeIndex = index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-white'" />
+          <p v-if="event.notes" class="mt-4 italic clear-none">
+            {{ event.notes?.map((i) => formatDate(i, $frontmatter.lang)).join(", ") }}
+          </p>
         </div>
-      </div>
+      </Grid>
     </div>
   </div>
 </template>

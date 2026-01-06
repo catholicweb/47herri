@@ -70,6 +70,12 @@ async function postComplete(fm) {
       fm.sections[i].type = "text";
       fm.sections[i]._block = "gallery";
     }
+    if (fm.sections[i]._block == "legal") {
+      // simple hack to avoid 'legal' being translated, update to interpolate text {{}}
+      fm.sections[i].html = md.render(fm.sections[i].legal);
+      fm.sections[i].type = "text";
+      fm.sections[i]._block = "gallery";
+    }
     if (fm.sections[i].elements && fm.sections[i].elements[0]?.html) {
       for (var j = 0; j < fm.sections[i].elements.length; j++) {
         fm.sections[i].elements[j].html = md.render(fm.sections[i].elements[j].html);
@@ -131,7 +137,7 @@ async function autocomplete(fm) {
         return { title: "", description: "", image: i };
       });
       fm.sections[i].type = "gallery";
-      (fm.sections[i].tags ??= []).push("tiny");
+      (fm.sections[i].tags ??= []).push("small");
       if (!fm.sections[i].elements.length) (fm.sections[i].tags ??= []).push("hidden");
     } else if (fm.sections[i]._block == "calendar") {
       fm.sections[i].events = calendar.filter((obj) => applyComplexFilter(obj, fm.sections[i].filter));
@@ -148,7 +154,7 @@ async function autocomplete(fm) {
 
 function absoluteURL(url) {
   if (url.startsWith("/")) {
-    const siteurl = config.siteurl || "";
+    const siteurl = config?.dev?.siteurl || "";
     return siteurl + url;
   }
   return url;
@@ -176,6 +182,7 @@ function addMeta(fm) {
 }
 
 async function cleanDir(dir) {
+  console.log("TODO: since ./docs is no longer stored on git, this should be rethinked...");
   console.log("Cleaning directory (writing redirects)");
   const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: dir, absolute: true });
   for (const file of files) {
@@ -224,7 +231,7 @@ async function run() {
 
   // Clean output dir and repopulate
   await cleanDir("./docs/");
-  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: "./pages/", absolute: false });
+  const files = await fg(["**/*.md"], { cwd: "./pages/", absolute: false });
   for (const file of files) {
     const { data, content } = read("./pages/" + file);
     data.source = "./pages/" + file;
