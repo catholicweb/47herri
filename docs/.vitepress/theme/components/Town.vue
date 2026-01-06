@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, watch } from "vue";
+import Image from "./Image.vue";
 import Grid from "./Grid.vue";
 import { data } from "./../../blocks.data.js";
 import { useData } from "vitepress";
@@ -22,7 +23,7 @@ watch(
     <div>
       <a :key="item.url" :href="item.url" class="group flex flex-col overflow-hidden rounded-xl bg-[#2d3436] transition-transform">
         <div class="aspect-square overflow-hidden bg-gray-200">
-          <img :src="item.image" :alt="item.title" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+          <Image :src="item.image" :alt="item.title" :index="block.index" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
         </div>
         <div class="p-4 text-center">
           <h3 class="text-white font-bold capitalize text-lg m-0">

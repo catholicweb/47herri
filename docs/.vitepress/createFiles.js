@@ -70,6 +70,12 @@ async function postComplete(fm) {
       fm.sections[i].type = "text";
       fm.sections[i]._block = "gallery";
     }
+    if (fm.sections[i]._block == "legal") {
+      // simple hack to avoid 'legal' being translated, update to interpolate text {{}}
+      fm.sections[i].html = md.render(fm.sections[i].legal);
+      fm.sections[i].type = "text";
+      fm.sections[i]._block = "gallery";
+    }
     if (fm.sections[i].elements && fm.sections[i].elements[0]?.html) {
       for (var j = 0; j < fm.sections[i].elements.length; j++) {
         fm.sections[i].elements[j].html = md.render(fm.sections[i].elements[j].html);
@@ -225,7 +231,7 @@ async function run() {
 
   // Clean output dir and repopulate
   await cleanDir("./docs/");
-  const files = await fg(["**/*.md", "!aviso-legal.md"], { cwd: "./pages/", absolute: false });
+  const files = await fg(["**/*.md"], { cwd: "./pages/", absolute: false });
   for (const file of files) {
     const { data, content } = read("./pages/" + file);
     data.source = "./pages/" + file;

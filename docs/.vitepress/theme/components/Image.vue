@@ -14,7 +14,7 @@ const isMedia = computed(() => props.src?.startsWith("/media/"));
 
 const basePath = computed(() => {
   const p = props.src?.replace(/^\/media\//, "");
-  return p?.replace(/\.[^/.]+$/, ".webp");
+  return encodeURIComponent(p?.replace(/\.[^/.]+$/, ".webp"));
 });
 
 const srcset = computed(() =>

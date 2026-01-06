@@ -335,7 +335,7 @@ content:
               - { name: title, type: string, label: Titulo sección }
               - { name: filter, label: Filtro. Incluir solo videos que contengan, type: string }
               - { name: tags, label: Opciones avanzadas de estilo, component: tags }
-          - name: townGrid
+          - name: town
             label: Lista de pueblos
             fields:
               - { name: title, type: string, label: Titulo sección }

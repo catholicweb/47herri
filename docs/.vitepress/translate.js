@@ -75,11 +75,18 @@ export function translateObject(obj, dict) {
 async function translateMissing(valuesArray, language) {
   if (!dictionary[language]) dictionary[language] = {};
 
-  const missing = valuesArray.filter((phrase) => !dictionary[language][phrase]).slice(0, 50);
+  const missing = valuesArray
+    .filter((phrase) => !dictionary[language][phrase])
+    .filter(Boolean)
+    .slice(0, 50);
+
+  if (!missing.length) return console.log("No need to translate anything", language);
 
   const translations = await translateWithOpenAI(missing, language.split(":")[0]);
 
-  if (translations.length != missing.length) return console.log("Wow, dicitionaries are different sizes....");
+  if (translations.length != missing.length) {
+    return console.log("Wow, dicitionaries are different sizes....", language, missing);
+  }
 
   missing.forEach((text, index) => {
     dictionary[language][text] = translations[index].replaceAll("\\n", "\n").replaceAll("\\\\", "");
@@ -98,45 +105,52 @@ async function translateWithOpenAI(missing, targetLanguage) {
     throw new Error("Missing OPENAI_API_KEY");
   }
 
-  const response = await fetch("https://api.openai.com/v1/responses", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
-    body: JSON.stringify({
-      model: "gpt-5-mini",
-      reasoning: { effort: "minimal" },
-      text: {
-        format: {
-          type: "json_schema",
-          name: "translation_result",
-          schema: {
-            type: "object",
-            properties: { translations: { type: "array", items: { type: "string" } } },
-            required: ["translations"],
-            additionalProperties: false,
+  try {
+    const response = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
+      body: JSON.stringify({
+        model: "gpt-5",
+        reasoning: { effort: "minimal" },
+        text: {
+          format: {
+            type: "json_schema",
+            name: "translation_result",
+            schema: {
+              type: "object",
+              properties: { translations: { type: "array", items: { type: "string" } } },
+              required: ["translations"],
+              additionalProperties: false,
+            },
           },
         },
-      },
 
-      input: [
-        {
-          role: "system",
-          content: "You are a professional translator for a Catholic website. " + "Texts most likely include catholic event titles, descriptions, timings, names etc..." + "Translate the given texts preserving HTML or Markdown. Do not scape or modify new lines, tags... anything that is not text must be returned as it is. " + "If a text is already written in the target language, just fix ortographic typos." + "Do NOT include explanations or reasoning." + "Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}.",
-        },
-        { role: "user", content: `Translate this array of texts to ${targetLanguage.replace("Euskara", "Euskara from Leitza")}: ${JSON.stringify(missing)}` },
-      ],
-    }),
-  });
+        input: [
+          {
+            role: "system",
+            content:
+              "You are a professional translator for a Catholic website. " + "Texts most likely include catholic event titles, descriptions, timings, names etc..." + "Translate the given texts preserving HTML or Markdown. Do not scape or modify new lines, tags... anything that is not text must be returned as it is. " + "If a text is already written in the target language, just fix ortographic typos." + "Do NOT include explanations or reasoning." + "I prefer literal translations" + "Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}.",
+          },
+          { role: "user", content: `Translate this array of texts to ${targetLanguage.replace("Euskara", "Euskara from Leitza")}: ${JSON.stringify(missing)}` },
+        ],
+      }),
+    });
 
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(`OpenAI error ${response.status}: ${text}`);
-  }
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`OpenAI error ${response.status}: ${text}`);
+    }
 
-  const data = await response.json();
+    const data = await response.json();
 
-  //console.log(JSON.stringify(data));
+    const calculateCost = (usage) => {
+      const inputCost = (usage?.input_tokens / 1_000_000) * 1.25 * 100;
+      const outputCost = (usage?.output_tokens / 1_000_000) * 10.0 * 100;
+      return inputCost + outputCost;
+    };
 
-  try {
+    console.log(targetLanguage, "est_cost:", calculateCost(data.usage), "cents");
+
     return JSON.parse(data.output[1].content[0].text).translations;
   } catch (e) {
     console.log("Invalid response format from model", JSON.stringify(data));

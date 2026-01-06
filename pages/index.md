@@ -31,7 +31,7 @@ sections:
       - byday+byweek+notes
   - _block: video-channel
     title: Eguneroko Meza
-  - _block: townGrid
+  - _block: town
     title: Gure herriak
     filters:
       - Todos

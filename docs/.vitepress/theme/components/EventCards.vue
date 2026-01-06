@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { data } from "./../../blocks.data.js";
-import { formatDate, applyComplexFilter, splitRRuleByDay } from "./../../utils.js";
+import { formatDate, splitRRuleByDay } from "./../../utils.js";
 import Image from "./Image.vue";
 
 const props = defineProps({ block: { type: Object, required: true } });
@@ -22,16 +22,11 @@ const activeIndex = ref(0);
 let timer = null;
 
 // --- Swipe state ---
-let startX = 0; // Changed from const to a standard variable
+let startX = 0;
 
 const stopSlider = () => {
   if (timer) clearInterval(timer);
 };
-
-function byday(event) {
-  let s = splitRRuleByDay(event.byday);
-  return [...s.simpleByDay, ...s.simpleByWeek].filter(Boolean);
-}
 
 // --- Swipe handlers ---
 const onStart = (e) => {
@@ -55,8 +50,16 @@ const onEnd = (e) => {
 };
 
 // --- Lifecycle ---
-onMounted(startSlider);
+onMounted(() => {
+  activeIndex.value = 0;
+  startSlider();
+});
 onUnmounted(stopSlider);
+
+function byday(event) {
+  let s = splitRRuleByDay(event.byday);
+  return [...s.simpleByDay, ...s.simpleByWeek].filter(Boolean);
+}
 </script>
 
 <template>

@@ -14,7 +14,7 @@ sections:
 
       Une honetan hiru parroko in solidum aritzen gara aipatutako pastoral barrutian: Jesus Mari Sotil, Santiago Garisoain eta David Galarza, eta asteburutan beste hiru apez etortzen zaizkigu mezak ematen laguntzera: Joxe Mari Aleman, Pako Beloki eta Peio Etxabarri.
   - _block: map
-  - _block: townGrid
+  - _block: town
     title: Gure herriak
     category: "pages"
     filters: ["Todos", "Larraun", "Urumea", "Leitzaran", "Basaburua", "Araitz", "Imotz"]
