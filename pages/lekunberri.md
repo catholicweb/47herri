@@ -22,5 +22,6 @@ sections:
     title: Non Gaude
     geo: 43.00672, -1.89805
     name: Pilar baseliza
+    image: /media/Screenshot_20251003-065406_Maps.jpg
 hideHero: false
 ---
