@@ -613,14 +613,26 @@
     {
       "title": "Adoración al Santísimo",
       "location": [
-        "Lekunberri",
-        "Betelu"
+        "Lekunberri"
       ],
       "rrule": [
         "th"
       ],
       "times": [
         "18:30"
+      ]
+    },
+    {
+      "title": "Adoración nocturna",
+      "location": [
+        "Betelu"
+      ],
+      "rrule": [
+        "th",
+        "week3"
+      ],
+      "times": [
+        "20:00"
       ]
     }
   ],
