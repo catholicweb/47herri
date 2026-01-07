@@ -6,6 +6,13 @@ components:
   text:
     label: Text Content
     type: rich-text
+  ordering:
+    label: Ordering
+    type: select
+    options:
+      multiple: true
+      creatable: true
+      values: ["title", "dates", "times", "locations", "byday", "language", "notes", "weekday", "byweek", "empty"]
   times:
     label: horas
     type: select
