@@ -629,8 +629,8 @@
         "Leitza"
       ],
       "rrule": [
-        "week3",
-        "sa"
+        "sa",
+        "week3"
       ],
       "times": [
         "20:00"
