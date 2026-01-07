@@ -29,7 +29,7 @@ function byday(event) {
             <p class="calendar-mark">
               {{
                 byday(event)
-                  .map((i) => formatDate(i, $frontmatter.lang, "byday"))
+                  .map((i) => formatDate(i, $frontmatter.lang))
                   .join(", ") || event.dates?.map((i) => formatDate(i, $frontmatter.lang)).join(", ")
               }}
             </p>
