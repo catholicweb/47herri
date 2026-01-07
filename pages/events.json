@@ -625,11 +625,12 @@
     {
       "title": "Adoración nocturna",
       "location": [
-        "Betelu"
+        "Betelu",
+        "Leitza"
       ],
       "rrule": [
-        "th",
-        "week3"
+        "week3",
+        "sa"
       ],
       "times": [
         "20:00"
