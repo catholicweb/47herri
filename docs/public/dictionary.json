@@ -301,7 +301,8 @@
     "Peio Maria Arricibita Ansorena": "Peio Maria Arricibita Ansorena",
     "Benito Arrayago Hernandorena": "Benito Arrayago Hernandorena",
     "Adoración al Santísimo": "Adoració al Santíssim",
-    "Adoración nocturna": "Adoració nocturna"
+    "Adoración nocturna": "Adoració nocturna",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "Benedicció d’animals a les 11.15 i després Missa a les 11.30"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -605,7 +606,8 @@
     "Peio Maria Arricibita Ansorena": "Peio Maria Arricibita Ansorena",
     "Benito Arrayago Hernandorena": "Benito Arrayago Hernandorena",
     "Adoración al Santísimo": "Adoration du Saint-Sacrement",
-    "Adoración nocturna": "Adoration nocturne"
+    "Adoración nocturna": "Adoration nocturne",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "Bénédiction des animaux à 11h15 puis Messe à 11h30"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -909,7 +911,8 @@
     "Peio Maria Arricibita Ansorena": "Peio Maria Arricibita Ansorena",
     "Benito Arrayago Hernandorena": "Benito Arrayago Hernandorena",
     "Adoración al Santísimo": "Anbetung des Allerheiligsten",
-    "Adoración nocturna": "Nachtanbetung"
+    "Adoración nocturna": "Nachtanbetung",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "Segnung der Tiere um 11.15 Uhr und danach Messe um 11.30 Uhr"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1213,7 +1216,8 @@
     "Peio Maria Arricibita Ansorena": "Peio Maria Arricibita Ansorena",
     "Benito Arrayago Hernandorena": "Benito Arrayago Hernandorena",
     "Adoración al Santísimo": "Adorazione del Santissimo",
-    "Adoración nocturna": "Adorazione notturna"
+    "Adoración nocturna": "Adorazione notturna",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "Benedizione degli animali alle 11.15 e poi Messa alle 11.30"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1517,7 +1521,8 @@
     "Peio Maria Arricibita Ansorena": "Peio Maria Arricibita Ansorena",
     "Benito Arrayago Hernandorena": "Benito Arrayago Hernandorena",
     "Adoración al Santísimo": "Adoração ao Santíssimo",
-    "Adoración nocturna": "Adoração noturna"
+    "Adoración nocturna": "Adoração noturna",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "Bênção dos animais às 11h15 e depois Missa às 11h30"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -1821,7 +1826,8 @@
     "Peio Maria Arricibita Ansorena": "Peio Maria Arricibita Ansorena",
     "Benito Arrayago Hernandorena": "Benito Arrayago Hernandorena",
     "Adoración al Santísimo": "Adorație față de Preasfântul Sacrament",
-    "Adoración nocturna": "Adorație nocturnă"
+    "Adoración nocturna": "Adorație nocturnă",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "Binecuvântarea animalelor la 11.15 și apoi Sfânta Liturghie la 11.30"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2125,7 +2131,8 @@
     "Peio Maria Arricibita Ansorena": "بيو ماريا أريثيبيتا أنسورينا",
     "Benito Arrayago Hernandorena": "بينيتيو أراياجو هيرناندورينا",
     "Adoración al Santísimo": "التبجيل للقدّاس الأقدس",
-    "Adoración nocturna": "السجود الليلي"
+    "Adoración nocturna": "السجود الليلي",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "تبريك الحيوانات الساعة 11:15 ثم قداس الساعة 11:30"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2429,7 +2436,8 @@
     "Peio Maria Arricibita Ansorena": "Пейо Мария Арричибита Ансорена",
     "Benito Arrayago Hernandorena": "Benito Arrayago Hernandorena",
     "Adoración al Santísimo": "Поклонение пред Найсвятото",
-    "Adoración nocturna": "Нощно поклонение"
+    "Adoración nocturna": "Нощно поклонение",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "Благословия на животните в 11:15 и след това Миса в 11:30"
   },
   "Euskara:eu": {
     "Albiasu": "Albiasu",
@@ -2662,7 +2670,8 @@
     "David Galarza": "David Galarza",
     "Santi Garisoain": "Santi Garisoain",
     "Jesús Mª Sotil": "Jesús Mª Sotil",
-    "Adoración nocturna": "Gaueko adorazioa"
+    "Adoración nocturna": "Gaueko adorazioa",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "Animalien bedeinkapena 11:15ean eta gero Meza 11:30ean"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -2895,7 +2904,8 @@
     "David Galarza": "David Galarza",
     "Santi Garisoain": "Santi Garisoain",
     "Jesús Mª Sotil": "Jesús Mª Sotil",
-    "Adoración nocturna": "Adoración nocturna"
+    "Adoración nocturna": "Adoración nocturna",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "Bendición de animales a las 11:15 y después Misa a las 11:30"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -3128,6 +3138,7 @@
     "David Galarza": "David Galarza",
     "Santi Garisoain": "Santi Garisoain",
     "Jesús Mª Sotil": "Jesús M. Sotil",
-    "Adoración nocturna": "Night Adoration"
+    "Adoración nocturna": "Night Adoration",
+    "Bendición de animales a las 11.15 eta gero Misa a las 11.30": "Blessing of animals at 11:15 and then Mass at 11:30"
   }
 }
