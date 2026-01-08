@@ -523,6 +523,19 @@
         "sa"
       ],
       "notes": "Txandaka"
+    },
+    {
+      "title": "Misa",
+      "location": [
+        "Muskitz"
+      ],
+      "times": [
+        "17:00"
+      ],
+      "rrule": [
+        "sa",
+        "week5"
+      ]
     }
   ],
   "events-group": [
