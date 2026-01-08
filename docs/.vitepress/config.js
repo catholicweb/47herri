@@ -2,6 +2,8 @@ import { defineConfig } from "vitepress";
 import tailwindcss from "@tailwindcss/vite";
 
 import { read } from "./node_utils.js";
+import { events2JSONLD } from "./calendar.js";
+
 import { generateNav, locales } from "./navBar.js";
 import { getFontCSS } from "./css.js";
 
@@ -27,6 +29,9 @@ export default defineConfig(async () => {
     themeConfig: {
       nav: await generateNav(config),
       config: config,
+    },
+    async transformHead({ pageData }) {
+      return events2JSONLD(pageData.frontmatter.events);
     },
     plugins: [tailwindcss()],
   };
