@@ -256,7 +256,7 @@ export function getOrg(config) {
   return {
     "@type": "Organization",
     url: config.dev?.siteurl,
-    //sameAs: ["https://example.net/profile/example1234", "https://example.org/example1234"],
+    sameAs: config.social,
     logo: config.dev?.siteurl + "/icon-512.png",
     name: config.title,
     description: config.description,
@@ -387,7 +387,7 @@ export function events2JSONLD(data, config, path) {
     }
   });
 
-  return [...graph, ...graphEvents.toSorted((a, b) => a.startDate > b.startDate).slice(0, 10)];
+  return [...graph, ...graphEvents.toSorted((a, b) => a.startDate?.localeCompare(b?.startDate)).slice(0, 7)];
 }
 
 function getID(baseUrl, path, name) {
