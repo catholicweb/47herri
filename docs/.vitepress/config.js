@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 import tailwindcss from "@tailwindcss/vite";
 
 import { read } from "./node_utils.js";
-import { events2JSONLD } from "./calendar.js";
+import { events2JSONLD, getLocations } from "./calendar.js";
 
 import { generateNav, locales } from "./navBar.js";
 import { getFontCSS } from "./css.js";
@@ -31,7 +31,19 @@ export default defineConfig(async () => {
       config: config,
     },
     async transformHead({ pageData }) {
-      return events2JSONLD(pageData.frontmatter.events);
+      const path = pageData.relativePath.replace(/\.md$/, "").replace(/\.html$/, "");
+      const locations = getLocations(pageData.frontmatter, config, path);
+      const eventNodes = events2JSONLD(pageData.frontmatter, config, path);
+      return [
+        [
+          "script",
+          { type: "application/ld+json" },
+          JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [...locations, ...eventNodes],
+          }),
+        ],
+      ];
     },
     plugins: [tailwindcss()],
   };

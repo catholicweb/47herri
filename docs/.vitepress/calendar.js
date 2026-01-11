@@ -1,6 +1,7 @@
 // dataExporter.js
 import ICAL from "ical.js";
 import { read, write } from "./node_utils.js";
+import { slugify } from "./utils.js";
 const config = read("./pages/config.json");
 
 function exportCalendar(events) {
@@ -66,6 +67,30 @@ function getNextOccurrence(event, relativeTo = ICAL.Time.now()) {
   return null; // No future occurrences found
 }
 
+function splitRRuleByDay(byDayArray) {
+  const simpleByDay = [];
+  const simpleByWeek = [];
+
+  byDayArray.forEach((item) => {
+    // Regex logic:
+    // ^(-?\d+)? matches an optional positive or negative number at the start
+    // ([A-Z]{2})$ matches exactly two uppercase letters at the end
+    const match = item.match(/^(-?\d+)?([A-Z]{2})$/);
+
+    if (match) {
+      const weekNum = match[1]; // e.g., "3", "-1", or undefined
+      const dayAbbr = match[2]; // e.g., "SA", "SU"
+
+      simpleByDay.push(dayAbbr);
+
+      // If no number is present (like "SU"), we'll store an empty string or null
+      simpleByWeek.push(weekNum ? `WEEK${weekNum}` : "");
+    }
+  });
+
+  return { simpleByDay: formatWeekdays(simpleByDay), simpleByWeek };
+}
+
 function getTime(t) {
   t.isUTC = true;
   return t.toJSDate().toLocaleTimeString("es-ES", {
@@ -91,11 +116,11 @@ function intersectOptions(options, field) {
   const validSet = new Set(validValues[field]);
   let valid = options.filter((opt) => validSet.has(opt));
 
-  if (field == "BYDAY") {
+  /*if (field == "BYDAY") {
     const weekMatch = options.join(",").match(/WEEK(\d+)/);
     if (!weekMatch) return valid;
     return valid.map((opt) => weekMatch[1] + opt);
-  }
+  }*/
   if (field == "FREQ" && !valid.length) {
     const weekMatch = options.join(",").match(/WEEK(\d+)/);
     if (weekMatch) return ["MONTHLY"];
@@ -149,7 +174,7 @@ export async function fetchCalendar() {
           //rrule: toArray(e.rrule).map((r) => r.toUpperCase()),
           images: toArray(e.image || input.default?.[type]?.image),
           byday: intersectOptions(toArray(e.rrule), "BYDAY"),
-          //byweek: intersectOptions(toArray(e.rrule), "BYWEEK"),
+          byweek: intersectOptions(toArray(e.rrule), "BYWEEK"),
           //freq: intersectOptions(toArray(e.rrule), "FREQ"),
           notes: toArray(e.notes || input.default?.[type]?.description),
           language: e.language || null,
@@ -225,8 +250,54 @@ export async function fetchCalendar() {
   return sorted;
 }
 
-export function events2JSONLD(events) {
-  if (!events || !Array.isArray(events)) return [];
+export function getLocations(data, config, path) {
+  const events = data.events || [];
+  const baseUrl = config.dev?.siteurl;
+  const graph = [];
+  //const uniqueLocations = [...new Set(events.flatMap(e => e.locations))].map(n => );
+  data?.sections?.forEach((section) => {
+    if (section._block === "map") {
+      const details = {};
+      const [latitude, longitude] = section.geo?.split(",").map((s) => Number(s.trim())) || [];
+      if (!longitude) return;
+      graph.push({
+        "@type": "Place",
+        "@id": getID(baseUrl, path, graph.length ? section.name : undefined), // first location is the main one
+        name: section.name,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: section.street,
+          addressLocality: data.title,
+          postalCode: section.zip || config.zip,
+          addressRegion: config.region || "Navarra",
+          addressCountry: config.region || "ES",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: latitude,
+          longitude: longitude,
+        },
+        image: baseUrl + (section.image || data.image || config.image),
+        telephone: config.collaborators?.[0]?.phone,
+        email: config.collaborators?.[0]?.email,
+        url: baseUrl + path,
+      });
+    }
+  });
+  return graph;
+}
+
+/**
+ * Transforms frontmatter events into a JSON-LD @graph.
+ * ...
+ */
+export function events2JSONLD(data, config, path) {
+  const events = data.events || [];
+
+  const baseUrl = config.dev?.siteurl;
+  const now = new Date();
+  const eventsHorizon = new Date();
+  eventsHorizon.setDate(now.getDate() + 60);
 
   const dayMap = {
     SU: "Sunday",
@@ -238,68 +309,78 @@ export function events2JSONLD(events) {
     SA: "Saturday",
   };
 
-  const eventNodes = events.map((event) => {
-    // Definición base del nodo del evento
-    const node = {
-      "@type": "Event",
-      name: event.title,
-      description: event.notes?.join(". ") || `Evento en ${event.locations?.[0]}`,
-      image: event.images?.map((img) => (img.startsWith("http") ? img : `${config?.dev?.siteurl || ""}${img}`)),
-      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-      eventStatus: "https://schema.org/EventScheduled",
-      location: {
-        "@type": "Place",
-        name: event.locations?.[0] || "Ubicación por confirmar",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: event.locations?.[0],
-          addressCountry: "ES",
-        },
-      },
-    };
+  const graph = [];
+  const graphEvents = [];
 
-    // CASO 1: Evento con fecha específica (Prioridad)
-    if (event.dates && event.dates.length > 0) {
-      // Tomamos la primera fecha y la combinamos con la primera hora
-      const date = event.dates[0];
-      const time = event.times?.[0] || "00:00";
-      node.startDate = `${date}T${time.replace(".", ":")}:00`;
-      // Nota: No añadimos eventSchedule aquí para evitar confusiones a Google
-    }
-    // CASO 2: Evento recurrente (Sin fechas específicas, pero con byday)
-    else if (event.byday && event.byday.length > 0) {
-      let byDayValue = event.byday[0];
-      let weekNumber = null;
-
-      // Manejo de recurrencias tipo 1SU, 2MO
-      if (/^\d/.test(byDayValue)) {
-        weekNumber = byDayValue[0];
-        byDayValue = byDayValue.substring(1);
-      }
-
-      node.eventSchedule = {
+  events?.forEach((event, idx) => {
+    // 1. Create the Schedule Entry (The "Rule")
+    if (event.byday?.length > 0) {
+      graph.push({
         "@type": "Schedule",
-        byDay: `https://schema.org/${dayMap[byDayValue]}`,
-        startTime: event.times?.[0]?.replace(".", ":"),
-        repeatFrequency: weekNumber ? "Monthly" : "Weekly",
-      };
-
-      if (weekNumber) {
-        node.eventSchedule.repeatDay = weekNumber;
-      }
+        "@id": getID(baseUrl, path, event.title),
+        name: event.title,
+        repeatFrequency: event.byweek?.length > 0 ? "Monthly" : "Weekly",
+        byDay: event.byday.map((d) => `https://schema.org/${dayMap[d]}`),
+        byWeek: event.byweek?.length ? event.byweek.map((w) => Number(w.replace("WEEK", ""))) : undefined,
+        startTime: event.times,
+        description: event.notes.join(". ") || undefined,
+        location: event.locations.map((loc) => ({ "@id": getID(baseUrl, loc) })),
+      });
     }
 
-    return node;
+    // 2. Create Single Event Instances (The "Occurrences")
+
+    // Logic for Fixed Dates (e.g., San Antón)
+    if (event.dates?.length > 0) {
+      event.dates?.forEach((dateStr) => {
+        event.times?.forEach((time) => {
+          graph.push(buildEventInstance(event, dateStr, time, baseUrl, path));
+        });
+      });
+    }
+
+    // Logic for Recurring Dates
+    if (event.byday?.length > 0) {
+      for (let d = new Date(now); d <= eventsHorizon; d.setDate(d.getDate() + 1)) {
+        const dayCode = Object.keys(dayMap).find((key) => dayMap[key] === d.toLocaleDateString("en-US", { weekday: "long" }));
+
+        if (event.byday.includes(dayCode)) {
+          // Filter by WEEK3, etc. if applicable
+          if (event.byweek && event.byweek.length > 0) {
+            const weekOfMonth = Math.ceil(d.getDate() / 7);
+            if (!event.byweek.includes(`WEEK${weekOfMonth}`)) continue;
+          }
+
+          const dateStr = d.toISOString().split("T")[0];
+          event.times?.forEach((time) => {
+            graphEvents.push(buildEventInstance(event, dateStr, time, baseUrl, path));
+          });
+        }
+      }
+    }
   });
 
-  return [
-    [
-      "script",
-      { type: "application/ld+json" },
-      JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": eventNodes,
-      }),
-    ],
-  ];
+  return [...graph, ...graphEvents.toSorted((a, b) => a.startDate > b.startDate).slice(0, 10)];
+}
+
+function getID(baseUrl, path, name) {
+  if (!name) return `${baseUrl}/${slugify(path)}`;
+  return `${baseUrl}/${slugify(path)}#${slugify(name)}`;
+}
+
+function buildEventInstance(event, date, time, baseUrl, path) {
+  const subid = event.byday?.length ? `-${slugify(date + "-" + time)}` : "";
+  return {
+    "@type": "Event",
+    "@id": getID(baseUrl, path, `${event.title}${subid}`),
+    name: event.title,
+    duration: "PT1H",
+    startDate: `${date}T${time}`,
+    location: event.locations.map((loc) => ({ "@id": getID(baseUrl, loc) })),
+    image: event.images ? event.images.map((i) => baseUrl + i) : undefined,
+    description: event.notes ? event.notes.join(". ") : undefined,
+    eventSchedule: event.byday?.length ? { "@id": getID(baseUrl, path, event.title) } : undefined,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  };
 }

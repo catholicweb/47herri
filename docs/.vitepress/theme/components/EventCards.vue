@@ -1,16 +1,11 @@
 <script setup>
 import { ref, computed } from "vue";
 import { data } from "./../../blocks.data.js";
-import { formatDate, splitRRuleByDay } from "./../../utils.js";
+import { formatDate, formatWeekdays } from "./../../utils.js";
 import Image from "./Image.vue";
 import Grid from "./Grid.vue";
 
 const props = defineProps({ block: { type: Object, required: true } });
-
-function byday(event) {
-  let s = splitRRuleByDay(event.byday);
-  return [...s.simpleByDay, ...s.simpleByWeek].filter(Boolean);
-}
 </script>
 
 <template>
@@ -28,9 +23,10 @@ function byday(event) {
             <p class="location-mark">{{ event.locations.join(", ") }}</p>
             <p class="calendar-mark">
               {{
-                byday(event)
+                [...formatWeekdays(event.byday), ...event.byweek, ...event.dates]
+                  .filter(Boolean)
                   .map((i) => formatDate(i, $frontmatter.lang))
-                  .join(", ") || event.dates?.map((i) => formatDate(i, $frontmatter.lang)).join(", ")
+                  .join(", ")
               }}
             </p>
             <p class="time-mark">{{ event.times.join(", ") }}</p>

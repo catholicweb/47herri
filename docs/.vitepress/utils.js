@@ -50,16 +50,12 @@ export function accessMultikey(obj, multikey) {
 
       let value = toArray(obj[mainKey]);
       if (mainKey == "weekday") value = weekday(obj.byday);
-      if (mainKey == "byday") value = splitRRuleByDay(obj.byday).simpleByDay;
-      if (mainKey == "byweek") value = splitRRuleByDay(obj.byday).simpleByWeek;
 
       if (value.length > 0) {
         // If there are subtraction keys, filter the current values
         for (const subKey of keysToSubtract) {
           let subtractValues = toArray(obj[subKey]);
           if (subKey == "weekday") subtractValues = weekday(obj.byday);
-          if (subKey == "byday") subtractValues = splitRRuleByDay(obj.byday).simpleByDay;
-          if (subKey == "byweek") subtractValues = splitRRuleByDay(obj.byday).simpleByWeek;
           if (!subtractValues.length) subtractValues = [subKey];
           value = value.filter((val) => !subtractValues.includes(val));
         }
@@ -102,7 +98,7 @@ export function applyComplexFilter(obj, filter) {
   });
 }
 
-function formatWeekdays(days) {
+export function formatWeekdays(days) {
   // 1. Define the reference order
   const order = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"];
 
@@ -122,33 +118,7 @@ function formatWeekdays(days) {
   return sortedDays;
 }
 
-export function splitRRuleByDay(byDayArray) {
-  const simpleByDay = [];
-  const simpleByWeek = [];
-
-  byDayArray.forEach((item) => {
-    // Regex logic:
-    // ^(-?\d+)? matches an optional positive or negative number at the start
-    // ([A-Z]{2})$ matches exactly two uppercase letters at the end
-    const match = item.match(/^(-?\d+)?([A-Z]{2})$/);
-
-    if (match) {
-      const weekNum = match[1]; // e.g., "3", "-1", or undefined
-      const dayAbbr = match[2]; // e.g., "SA", "SU"
-
-      simpleByDay.push(dayAbbr);
-
-      // If no number is present (like "SU"), we'll store an empty string or null
-      simpleByWeek.push(weekNum ? `WEEK${weekNum}` : "");
-    }
-  });
-
-  return { simpleByDay: formatWeekdays(simpleByDay), simpleByWeek };
-}
-
 function weekday(days) {
-  days = splitRRuleByDay(days).simpleByDay;
-
   const w = [];
   if (days.join(",").match(/mo|tu|we|th|fr/i)) w.push("MO,TU,WE,TH,FR");
   if (days.join(",").toLowerCase().includes("sa")) w.push("SA");
