@@ -5,6 +5,7 @@ const props = defineProps({
   src: { type: String, required: true },
   alt: { type: String, default: "" },
   index: { type: Number, default: 0 },
+  progressive: { type: Boolean, default: true },
   class: { type: String, default: "" },
 });
 
@@ -22,11 +23,34 @@ const srcset = computed(() =>
   /media/md/${basePath.value} 768w,
   /media/lg/${basePath.value} 1080w`.trim(),
 );
+
+function improveImage(e) {
+  const elem = e.target;
+  const img = new Image();
+
+  requestAnimationFrame(() => {
+    const width = elem.getBoundingClientRect().width;
+    if (width > 500) {
+      img.src = elem.src.replace("/sm/", "/md/");
+    } else if (width > 800) {
+      img.src = elem.src.replace("/sm/", "/lg/");
+    } else {
+      return;
+    }
+
+    img.onload = () => {
+      elem.src = img.src;
+    };
+  });
+}
 </script>
 
 <template>
   <!-- External or non-media image -->
   <img v-if="isExternal || !isMedia" :src="src" :alt="alt" :class="class" crossorigin="anonymous" :fetchpriority="index >= 1 ? 'low' : 'high'" :loading="index >= 1 ? 'lazy' : 'eager'" />
+
+  <!-- Progressive -->
+  <img v-else-if="progressive" @load.once="improveImage" :src="`/media/sm/${basePath}`" :alt="alt" :class="class" crossorigin="anonymous" :fetchpriority="index >= 1 ? 'low' : 'high'" :loading="index >= 1 ? 'lazy' : 'eager'" />
 
   <!-- Optimised local image -->
   <picture v-else>
