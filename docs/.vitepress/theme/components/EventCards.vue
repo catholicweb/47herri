@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import { data } from "./../../blocks.data.js";
-import { formatDate, formatWeekdays } from "./../../utils.js";
+import { formatDate, formatWeekdays, slugify } from "./../../utils.js";
 import Image from "./Image.vue";
 import Grid from "./Grid.vue";
 
@@ -13,7 +13,7 @@ const props = defineProps({ block: { type: Object, required: true } });
     <div class="container mx-auto px-4 min-h-30">
       <Grid :block="{ ...props.block, elements: block.events, query: false, tags: ['carousel'] }" v-slot="{ item: event, index }">
         <div class="bg-black/50 backdrop-blur-xl p-6 rounded-xl text-white overflow-hidden block">
-          <h2 class="text-3xl font-bold mb-4 leading-tight">
+          <h2 class="text-3xl font-bold mb-4 leading-tight" :id="slugify(event.name || event.title)">
             {{ event.name || event.title || formatDate(event.type, $frontmatter.lang) }}
           </h2>
 

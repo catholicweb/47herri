@@ -250,10 +250,37 @@ export async function fetchCalendar() {
   return sorted;
 }
 
+// JSON LD
+export function getOrg(config) {
+  const baseUrl = config.dev?.siteurl;
+  return {
+    "@type": "Organization",
+    url: config.dev?.siteurl,
+    //sameAs: ["https://example.net/profile/example1234", "https://example.org/example1234"],
+    logo: config.dev?.siteurl + "/icon-512.png",
+    name: config.title,
+    description: config.description,
+    image: baseUrl + "/" + config.image,
+    telephone: config.collaborators?.[0]?.phone,
+    email: config.collaborators?.[0]?.email,
+    address: {
+      "@type": "PostalAddress",
+      //streetAddress: "Rue Improbable 99",
+      //addressLocality: "Paris",
+      postalCode: config.zip,
+      addressRegion: config.region || "Navarra",
+      addressCountry: config.region || "ES",
+    },
+    //vatID: "FR12345678901",
+    //iso6523Code: "0199:724500PMK2A2M1SQQ228",
+  };
+}
+
 export function getLocations(data, config, path) {
   const events = data.events || [];
   const baseUrl = config.dev?.siteurl;
   const graph = [];
+  if (path.includes("index")) graph.push(getOrg(config));
   //const uniqueLocations = [...new Set(events.flatMap(e => e.locations))].map(n => );
   data?.sections?.forEach((section) => {
     if (section._block === "map") {
@@ -369,18 +396,27 @@ function getID(baseUrl, path, name) {
 }
 
 function buildEventInstance(event, date, time, baseUrl, path) {
+  const typeMapping = {
+    mass: "https://www.wikidata.org/wiki/Q132612",
+    group: "https://www.wikidata.org/wiki/Q1735729",
+    holyHour: "https://www.wikidata.org/wiki/Q5885640",
+    funeral: "https://www.wikidata.org/wiki/Q7361870",
+  };
+
   const subid = event.byday?.length ? `-${slugify(date + "-" + time)}` : "";
   return {
     "@type": "Event",
     "@id": getID(baseUrl, path, `${event.title}${subid}`),
+    url: getID(baseUrl, path, event.title),
+    additionalType: typeMapping[event.type],
     name: event.title,
-    duration: "PT1H",
+    //duration: "PT1H",
     startDate: `${date}T${time}`,
     location: event.locations.map((loc) => ({ "@id": getID(baseUrl, loc) })),
     image: event.images ? event.images.map((i) => baseUrl + i) : undefined,
     description: event.notes ? event.notes.join(". ") : undefined,
     eventSchedule: event.byday?.length ? { "@id": getID(baseUrl, path, event.title) } : undefined,
     eventStatus: "https://schema.org/EventScheduled",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    //eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   };
 }
