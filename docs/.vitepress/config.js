@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 import tailwindcss from "@tailwindcss/vite";
 
 import { read } from "./node_utils.js";
-import { events2JSONLD, getLocations } from "./calendar.js";
+import { getJSONLD } from "./seo.js";
 
 import { generateNav, locales } from "./navBar.js";
 import { getFontCSS } from "./css.js";
@@ -20,7 +20,7 @@ export default defineConfig(async () => {
       // Manifest and icons
       ["link", { rel: "manifest", href: "/manifest.json" }],
       ["link", { rel: "icon", href: "/favicon.ico", type: "image/x-icon" }],
-      ["script", { "data-goatcounter": config.dev?.goatcounter || "", async: true, crossorigin: "anonymous", src: "//gc.zgo.at/count.js" }],
+      ["script", { "data-goatcounter": config.dev?.goatcounter || "", defer: true, crossorigin: "anonymous", src: "//gc.zgo.at/count.js" }],
     ],
     locales: locales(config.languages),
     title: config.title,
@@ -35,18 +35,7 @@ export default defineConfig(async () => {
     },
     async transformHead({ pageData }) {
       const path = pageData.relativePath.replace(/\.md$/, "").replace(/\.html$/, "");
-      const locations = getLocations(pageData.frontmatter, config, path);
-      const eventNodes = events2JSONLD(pageData.frontmatter, config, path);
-      return [
-        [
-          "script",
-          { type: "application/ld+json" },
-          JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [...locations, ...eventNodes],
-          }),
-        ],
-      ];
+      return getJSONLD(pageData.frontmatter, config, path);
     },
     plugins: [tailwindcss()],
   };
