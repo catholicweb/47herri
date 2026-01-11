@@ -1,7 +1,7 @@
 // dataExporter.js
 import ICAL from "ical.js";
 import { read, write } from "./node_utils.js";
-import { slugify } from "./utils.js";
+import { slugify, formatWeekdays } from "./utils.js";
 const config = read("./pages/config.json");
 
 function exportCalendar(events) {
@@ -280,7 +280,7 @@ export function getLocations(data, config, path) {
         image: baseUrl + (section.image || data.image || config.image),
         telephone: config.collaborators?.[0]?.phone,
         email: config.collaborators?.[0]?.email,
-        url: baseUrl + path,
+        url: getID(baseUrl, path),
       });
     }
   });
@@ -324,7 +324,7 @@ export function events2JSONLD(data, config, path) {
         byWeek: event.byweek?.length ? event.byweek.map((w) => Number(w.replace("WEEK", ""))) : undefined,
         startTime: event.times,
         description: event.notes.join(". ") || undefined,
-        location: event.locations.map((loc) => ({ "@id": getID(baseUrl, loc) })),
+        location: event.locations.map((loc) => ({ "@id": getID(baseUrl, loc), name: loc, url: getID(baseUrl, loc) })),
       });
     }
 

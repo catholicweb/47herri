@@ -30,6 +30,9 @@ export default defineConfig(async () => {
       nav: await generateNav(config),
       config: config,
     },
+    sitemap: {
+      hostname: config.dev?.siteurl,
+    },
     async transformHead({ pageData }) {
       const path = pageData.relativePath.replace(/\.md$/, "").replace(/\.html$/, "");
       const locations = getLocations(pageData.frontmatter, config, path);
