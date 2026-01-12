@@ -29,12 +29,14 @@ export default {
             section.progress = (section.raised / section.goal) * 100;
             fundraisings.push(section);
           } else if (section._block === "map") {
-            section.lang = data.lang;
-            section.image = section.image || data.image;
-            section.title = data.title;
-            section.name = section.name;
-            section.url = "/" + file.replace(/index\.md$/, "").replace(/\.md$/, "");
-            maps.push(section);
+            maps.push({
+              lang: data.lang,
+              geo: section.geo,
+              image: section.image || data.image,
+              title: section.city || data.title,
+              name: section.name,
+              url: "/" + file.replace(/index\.md$/, "").replace(/\.md$/, ""),
+            });
           }
         });
       }

@@ -26,6 +26,7 @@ export function read(filename, fallback = {}) {
 export function write(filename, data = {}, content = "") {
   let outContent = {};
   if (filename.endsWith(".md")) {
+    data = JSON.parse(JSON.stringify(data)); // remove undefined...
     outContent = matter.stringify(content, data, { language: "yaml", yamlOptions: { lineWidth: -1 } });
   } else {
     outContent = JSON.stringify(data, null, 2);

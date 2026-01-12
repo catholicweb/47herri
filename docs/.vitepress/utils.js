@@ -404,3 +404,37 @@ export function grid(section) {
 
   return `${base} ${directions[activeDirection]} ${sizes[activeSize]}`;
 }
+
+export async function getAddress(lat, lng, name, zoom = 17) {
+  let extra = {
+    google: `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`,
+    //google: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}&query_place_id=${lat},${lng}`,
+    osm: `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=${zoom}/${lat}/${lng}`,
+  };
+
+  // IMPORTANT: Nominatim requires a custom User-Agent to identify your app
+  const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`;
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        "User-Agent": "ParroquiaApp-Project-Manager (email@parroquia.app)",
+      },
+    });
+    const data = await response.json();
+    return {
+      ...extra,
+      street: data.address.road || data.address.pedestrian,
+      city: data.address.hamlet || data.address.village || data.address.town || data.address.city,
+      zip: data.address.postcode,
+      full: data.display_name,
+      region: data.address.state,
+      country: data.address.country,
+      country_code: data.address.country_code,
+      name: data.address.amenity,
+    };
+  } catch (error) {
+    return extra;
+    console.error("Lookup failed:", error);
+  }
+}

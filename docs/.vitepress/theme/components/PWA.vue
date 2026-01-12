@@ -38,14 +38,10 @@ const isStandalone = () => {
 };
 
 onMounted(() => {
-  if (typeof window === "undefined" || !("serviceWorker" in navigator)) return;
-
-  // 1. Create a function to handle the registration
-  const registerSW = async () => {
+  if (typeof window !== "undefined" && "serviceWorker" in navigator) {
     try {
-      const registration = await navigator.serviceWorker.register("/sw.js");
+      navigator.serviceWorker.register("/sw.js");
 
-      // Handle messages/updates
       navigator.serviceWorker.addEventListener("message", (event) => {
         if (!event.data) return;
         if (event.data.type === "SW_UPDATED" || event.data.type === "CONTENT_UPDATED") {
@@ -59,35 +55,31 @@ onMounted(() => {
     } catch (err) {
       console.error("SW registration failed:", err);
     }
-  };
 
-  // 2. DELAY: Wait until the entire page is fully loaded
-  if (document.readyState === "complete") {
-    registerSW();
-  } else {
-    window.addEventListener("load", registerSW);
-  }
+    // --- LOGIC FOR ANDROID / CHROME / DESKTOP ---
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      // Show button only if not already installed
+      if (!isStandalone()) {
+        state.value.showInstallButton = true;
+      }
+    });
 
-  // --- LOGIC FOR INSTALL PROMPTS ---
-  // Keep this inside onMounted but outside the delayed SW registration
-  // so the install button logic is ready as soon as possible.
-  window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    if (!isStandalone()) state.value.showInstallButton = true;
-  });
+    // --- LOGIC FOR IOS ---
+    // Since iOS doesn't fire beforeinstallprompt, we manually check
+    if (isIOS() && !isStandalone()) {
+      state.value.showInstallButton = true;
+    }
 
-  if (isIOS() && !isStandalone()) {
-    state.value.showInstallButton = true;
-  }
+    window.addEventListener("appinstalled", () => {
+      state.value.showInstallButton = false;
+      deferredPrompt = null;
+    });
 
-  window.addEventListener("appinstalled", () => {
-    state.value.showInstallButton = false;
-    deferredPrompt = null;
-  });
-
-  if (isStandalone()) {
-    setupNotifications();
+    if (isStandalone()) {
+      setupNotifications();
+    }
   }
 });
 

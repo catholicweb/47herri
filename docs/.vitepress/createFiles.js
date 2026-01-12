@@ -1,5 +1,5 @@
 import { read, write, fg, fs, path } from "./node_utils.js";
-import { slugify, applyComplexFilter, groupEvents } from "./utils.js";
+import { slugify, applyComplexFilter, groupEvents, getAddress } from "./utils.js";
 import { getPreview } from "./oembed.js";
 import { fetchVideos } from "./youtube.js";
 import { buildDictionary, translateObject, translateValue } from "./translate.js";
@@ -148,7 +148,13 @@ async function autocomplete(fm) {
     } else if (fm.sections[i]._block == "calendar") {
       fm.sections[i].events = calendar.filter((obj) => applyComplexFilter(obj, fm.sections[i].filter));
       if (!fm.sections[i].events?.length) (fm.sections[i].tags ??= []).push("hidden");
+    } else if (fm.sections[i]._block == "map") {
+      const [latitude, longitude] = fm.sections[i].geo?.split(",").map((s) => Number(s.trim())) || [];
+      const extra = await getAddress(latitude, longitude, fm.sections[i].name);
+      fm.sections[i] = { ...extra, ...fm.sections[i] };
+      console.log(fm.sections[i]);
     }
+
     if (config.theme.navStyle == "47herri") {
       let filter = fm.source == "./pages/index.md" ? "byday:empty" : fm.title;
       fm.events = calendar.filter((obj) => applyComplexFilter(obj, filter));
