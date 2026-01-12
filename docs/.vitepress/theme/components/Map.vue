@@ -109,7 +109,7 @@ function renderMarkers(lang) {
     </h3>
 
   <div class="relative overflow-hidden">
-    <a href="${m.url}" target="_blank" class="block">
+    <a href="${m.url}" class="block">
       <img src="${m.image}" class="w-full aspect-video object-cover block" />
     </a>
     
