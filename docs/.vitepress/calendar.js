@@ -242,7 +242,7 @@ export async function fetchCalendar() {
   function comp(a, b, key, def = "000") {
     return (a[key]?.[0]?.padStart(3, "0") || def).localeCompare(b[key]?.[0]?.padStart(3, "0") || def);
   }
-  const sorted = events.toSorted((a, b) => comp(a, b, "dates") || comp(a, b, "times") || comp(a, b, "byday") || comp(a, b, "title"));
+  const sorted = events.toSorted((a, b) => comp(a, b, "dates") || comp(a, b, "times") || comp(a, b, "byweek") || comp(a, b, "byday") || comp(a, b, "title"));
   exportCalendar(sorted);
   console.log("Events parsed ", sorted?.length);
   return sorted;
