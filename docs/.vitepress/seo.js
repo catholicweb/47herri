@@ -123,7 +123,13 @@ function getEventFAQ(events, lang = "Euskara:eu") {
     }
   }
   console.log(FAQ);
-  return FAQ;
+
+  return [
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQ,
+    },
+  ];
 }
 
 function getLocations(data, config, path) {
