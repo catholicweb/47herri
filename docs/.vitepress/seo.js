@@ -4,7 +4,6 @@ import { slugify, groupEvents, formatDate } from "./utils.js";
 const config = read("./pages/config.json");
 
 export function getJSONLD(fm, config, path) {
-  console.log("getJSONLD");
   const locations = getLocations(fm, config, path);
   const eventNodes = events2JSONLD(fm, config, path);
   const FAQ = getEventFAQ(fm.events, fm.lang);
@@ -122,7 +121,6 @@ function getEventFAQ(events, lang = "Euskara:eu") {
       });
     }
   }
-  console.log(FAQ);
 
   return [
     {

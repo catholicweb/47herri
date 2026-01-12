@@ -33,6 +33,8 @@ sections:
     title: Angelusa
     links:
       - "https://www.youtube.com/watch?v=eDDOa-8RpzA"
+  - _block: video-gospel
+    title: Entzun Itun Berria
   - _block: video-channel
     title: Mezako kantak
     query: true

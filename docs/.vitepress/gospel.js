@@ -1,3 +1,24 @@
+export async function getAudio(lang) {
+  const bibles = {
+    eu: "https://live.bible.is/api/bibles/filesets/EUSEABN1DA",
+  };
+
+  const res = await fetch(bibles[lang] || bibles.eu);
+  const { data } = await res.json();
+
+  const audios = data.map((b) => {
+    return {
+      title: `${b.book_name} ${b.chapter_start}`,
+      src: b.path,
+      image: "/fcbh-logo-square-512.png",
+    };
+  });
+
+  const books = [...new Set(data.map((b) => b.book_name).filter(Boolean))];
+
+  return { audios, books };
+}
+
 const formatDate = (date) => date.toISOString().split("T")[0];
 
 const cleanTitle = (str = "") => str.replace("de la ", "").replace("semana de", "de");

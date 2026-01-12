@@ -323,6 +323,11 @@ content:
               - { name: filter, label: Filtro. Incluir solo eventos que contengan, type: string }
               - { name: order, label: "Agrupación de eventos (tabla, fila, columna, subfila, notas)", component: ordering }
               - { name: tags, label: Opciones avanzadas de estilo, component: tags }
+          - name: video-gospel
+            label: Audios Nuevo Testamento
+            fields:
+              - { name: title, type: string, label: Titulo sección }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: video-podcast
             label: Podcast católicos
             fields:

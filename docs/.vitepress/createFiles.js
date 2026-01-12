@@ -5,10 +5,11 @@ import { fetchVideos } from "./youtube.js";
 import { buildDictionary, translateObject, translateValue } from "./translate.js";
 import { createImages } from "./images.js";
 import { fetchUpstream, commit } from "./git.js";
-import { getBibleReadings } from "./gospel.js";
+import { getBibleReadings, getAudio } from "./gospel.js";
 import { printCSS } from "./css.js";
 import { fetchCalendar } from "./calendar.js";
 import { sendNotifications } from "./notify.js";
+import crypto from "crypto";
 
 import MarkdownIt from "markdown-it";
 import sharp from "sharp";
@@ -20,6 +21,43 @@ const config = read("./pages/config.json");
 const TARGET_LANGS = config.languages?.length ? config.languages : ["Español:es"];
 
 const md = new MarkdownIt({ html: true, linkify: true, breaks: true });
+
+const CACHE_FILE = "./.cache.json";
+const CACHE_DATA = read(CACHE_FILE);
+const originalFetch = globalThis.fetch;
+
+globalThis.fetch = async (url, options = {}) => {
+  // Solo cacheamos GETs
+  if (options.method && options.method !== "GET") {
+    return originalFetch(url, options);
+  }
+
+  const urlStr = url.toString();
+  const safeKey = crypto.createHash("sha256").update(urlStr).digest("hex");
+
+  // 1. ¿Está en la caché?
+  if (CACHE_DATA[safeKey]) {
+    console.log(`[Cache Hit]: ${safeKey}`);
+    return new Response(JSON.stringify(CACHE_DATA[safeKey]), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  // 2. Si no está, hacemos el fetch real
+  const response = await originalFetch(url, options);
+
+  if (response.ok) {
+    const clone = response.clone();
+    const data = await clone.json();
+
+    // 3. Actualizamos el archivo maestro
+    CACHE_DATA[safeKey] = data;
+    write(CACHE_FILE, CACHE_DATA);
+  }
+
+  return response;
+};
 
 async function createManifest() {
   try {
@@ -95,6 +133,14 @@ async function postComplete(fm) {
         return elem;
       });
     }
+
+    if (fm.sections[i]._block == "video-gospel") {
+      const { audios, books } = await getAudio(fm.sections[i].lang);
+      fm.sections[i].filters = books;
+      fm.sections[i].query = false;
+      fm.sections[i].elements = audios;
+      (fm.sections[i].tags ??= []).push("horizontal", "small");
+    }
     if (fm.sections[i]._block == "video-channel") {
       fm.sections[i].elements = videos
         .filter((obj) =>
@@ -152,7 +198,6 @@ async function autocomplete(fm) {
       const [latitude, longitude] = fm.sections[i].geo?.split(",").map((s) => Number(s.trim())) || [];
       const extra = await getAddress(latitude, longitude, fm.sections[i].name);
       fm.sections[i] = { ...extra, ...fm.sections[i] };
-      console.log(fm.sections[i]);
     }
 
     if (config.theme.navStyle == "47herri") {
