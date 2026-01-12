@@ -67,6 +67,7 @@ function getLocations(data, config, path) {
         name: section.name,
         address: {
           "@type": "PostalAddress",
+          address: section.full,
           streetAddress: section.street,
           addressLocality: section.city || data.title,
           postalCode: section.zip || config.zip,
@@ -202,7 +203,7 @@ function buildEventInstance(event, date, time, baseUrl, path) {
     eventSchedule: event.byday?.length ? { "@id": getID(baseUrl, path, event.title) } : undefined,
     eventStatus: "https://schema.org/EventScheduled",
     isAccessibleForFree: true,
-    offers: { "@id": "welcomeOffer" },
+    offers: { "@id": "welcomeOffer", url: getID(baseUrl, path, event.title) },
     organizer: { "@id": "ourOrganization" },
     //eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   };
