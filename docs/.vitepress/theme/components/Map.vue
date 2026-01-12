@@ -104,26 +104,24 @@ function renderMarkers(lang) {
       const wazeUrl = `https://waze.com/ul?ll=${m.geo}&navigate=yes`;
 
       const html = `
-    <h3 class="text-center m-0 text-lg font-bold text-accent italic">
-      ${m.name} - ${m.title}
+    <h3 class="text-center m-0 text-lg font-bold text-accent">
+      ${m.name} (${m.title})
     </h3>
-
-  <div class="relative overflow-hidden">
-    <a href="${m.url}" class="block">
-      <img src="${m.image}" class="w-full aspect-video object-cover block" />
-    </a>
-    
-    <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-3 bg-white px-3 py-2 rounded-full">
-      <a href="${googleUrl}" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" crossorigin="anonymous" loading="lazy" class="w-5 h-5" alt="Google Navigation" />
+    <div class="relative overflow-hidden">
+      <a href="${m.url}" class="block">
+        <img src="${m.image}" class="w-full aspect-video object-cover block" />
       </a>
-      <div class="w-[1px] h-4 bg-gray-300 self-center"></div>
-      <a href="${wazeUrl}" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Tabler-icons_brand-waze.svg" crossorigin="anonymous" loading="lazy" class="w-5 h-5" alt="Waze Navigation" />
-      </a>
-    </div>
-  </div>
-`;
+      
+      <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-3 bg-white px-3 py-2 rounded-full">
+        <a href="${googleUrl}" target="_blank" rel="noopener">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" crossorigin="anonymous" loading="lazy" class="w-5 h-5" alt="Google Navigation" />
+        </a>
+        <div class="w-[1px] h-4 bg-gray-300 self-center"></div>
+        <a href="${wazeUrl}" target="_blank" rel="noopener">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Tabler-icons_brand-waze.svg" crossorigin="anonymous" loading="lazy" class="w-5 h-5" alt="Waze Navigation" />
+        </a>
+      </div>
+    </div>`;
 
       const marker = L.marker(g, { icon: smallIcon }).bindPopup(html).addTo(markersLayer);
 

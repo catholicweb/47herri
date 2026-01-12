@@ -17,8 +17,16 @@ export function getJSONLD(fm, config, path) {
   ];
 }
 
-function getOrg(config) {
+function getOrg(config, path) {
   const baseUrl = config.dev?.siteurl;
+  if (!path.includes("index")) {
+    return {
+      "@type": "Organization",
+      "@id": "ourOrganization",
+      name: config.title,
+      url: baseUrl,
+    };
+  }
   return {
     "@type": "Organization",
     url: config.dev?.siteurl,
@@ -46,7 +54,7 @@ function getLocations(data, config, path) {
   const events = data.events || [];
   const baseUrl = config.dev?.siteurl;
   const graph = [];
-  if (path.includes("index")) graph.push(getOrg(config));
+  graph.push(getOrg(config, path));
   //const uniqueLocations = [...new Set(events.flatMap(e => e.locations))].map(n => );
   data?.sections?.forEach((section) => {
     if (section._block === "map") {
@@ -103,7 +111,16 @@ function events2JSONLD(data, config, path) {
     SA: "Saturday",
   };
 
-  const graph = [];
+  const graph = [
+    {
+      "@type": "Offer",
+      "@id": "welcomeOffer",
+      price: 0,
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      validFrom: now.toISOString().split(".")[0],
+    },
+  ];
   const graphEvents = [];
 
   events?.forEach((event, idx) => {
@@ -177,13 +194,26 @@ function buildEventInstance(event, date, time, baseUrl, path) {
     url: getID(baseUrl, path, event.title),
     additionalType: typeMapping[event.type],
     name: event.title,
-    //duration: "PT1H",
     startDate: `${date}T${time}`,
+    endDate: getEndDate(`${date}T${time}`, 60),
     location: event.locations.map((loc) => ({ "@id": getID(baseUrl, loc) })),
     image: event.images ? event.images.map((i) => baseUrl + i) : undefined,
     description: event.notes ? event.notes.join(". ") : undefined,
     eventSchedule: event.byday?.length ? { "@id": getID(baseUrl, path, event.title) } : undefined,
     eventStatus: "https://schema.org/EventScheduled",
+    isAccessibleForFree: true,
+    offers: { "@id": "welcomeOffer" },
+    organizer: { "@id": "ourOrganization" },
     //eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   };
+}
+
+function getEndDate(startIso, durationMinutes) {
+  const start = new Date(startIso);
+
+  // Add duration (minutes * 60 seconds * 1000 milliseconds)
+  const end = new Date(start.getTime() + durationMinutes * 60000);
+
+  // Return formatted for Schema (removing milliseconds)
+  return end.toISOString().split(".")[0];
 }
