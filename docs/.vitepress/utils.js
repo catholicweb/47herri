@@ -162,11 +162,11 @@ function tr(str, lang = "Español:es") {
   const langCode = lang.split(":")[1];
   const map = {
     eu: {
-      mo: "Astelehena",
-      tu: "Asteartea",
-      we: "Asteazkena",
-      th: "Osteguna",
-      fr: "Ostirala",
+      mo: "Astelehenetan",
+      tu: "Asteartetan",
+      we: "Asteazkenetan",
+      th: "Ostegunetan",
+      fr: "Ostiraletan",
       sa: "Larunbatetan",
       su: "Igandetan",
       "mo,tu,we,th,fr": "Astelehenetik ostiralera",
@@ -185,8 +185,8 @@ function tr(str, lang = "Español:es") {
       we: "Miércoles",
       th: "Jueves",
       fr: "Viernes",
-      sa: "Sábado",
-      su: "Domingo",
+      sa: "Sábados",
+      su: "Domingos",
       "mo,tu,we,th,fr": "Lunes a viernes",
       yearly: "Anualmente",
       monthly: "Mensualmente",
