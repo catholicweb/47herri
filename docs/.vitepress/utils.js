@@ -50,12 +50,14 @@ export function accessMultikey(obj, multikey) {
 
       let value = toArray(obj[mainKey]);
       if (mainKey == "weekday") value = weekday(obj.byday);
+      if (mainKey == "byday") value = formatWeekdays(obj.byday);
 
       if (value.length > 0) {
         // If there are subtraction keys, filter the current values
         for (const subKey of keysToSubtract) {
           let subtractValues = toArray(obj[subKey]);
           if (subKey == "weekday") subtractValues = weekday(obj.byday);
+          if (subKey == "byday") subtractValues = formatWeekdays(obj.byday);
           if (!subtractValues.length) subtractValues = [subKey];
           value = value.filter((val) => !subtractValues.includes(val));
         }
