@@ -153,7 +153,7 @@ function getLocations(data, config, path) {
           addressLocality: section.city || data.title,
           postalCode: section.zip || config.zip,
           addressRegion: section.region || config.region || "Navarra",
-          addressCountry: section.country || config.country || "ES",
+          addressCountry: (section.country_code || config.country_code || "ES").toUpperCase(),
         },
         geo: {
           "@type": "GeoCoordinates",
@@ -164,7 +164,7 @@ function getLocations(data, config, path) {
         image: baseUrl + (section.image || data.image || config.image),
         telephone: config.collaborators?.[0]?.phone,
         email: config.collaborators?.[0]?.email,
-        url: getID(baseUrl, path),
+        url: getID(baseUrl, path, section.name),
       });
     }
   });
