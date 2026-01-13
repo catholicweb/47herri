@@ -40,6 +40,7 @@ components:
           { value: "https://open.spotify.com/show/6FJFJ46Q4aPXIWWDKY9tYf?si=c17c97479bbb4fbe", label: "Evangelio del día (sercreyente.com)" },
           { value: "https://open.spotify.com/show/1OUhu57FCAscICoEMwyONY?si=5f7ea6ad49394828", label: "Liturgia de las horas (litur pro)" },
           { value: "https://open.spotify.com/show/6mpihPJzRA61GEdomhzGqq?si=b59a6acf96104988", label: "Jose Camacho Cotto" },
+          { value: "https://open.spotify.com/show/1XWvEFBoCvahdELmEXgSfL", label: "Rezar Hoy" },
         ]
   languages:
     label: "Idioma"

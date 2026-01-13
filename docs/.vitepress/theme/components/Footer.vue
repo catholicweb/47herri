@@ -1,5 +1,5 @@
 <template>
-  <footer class="border-t border-gray-700 pt-8 pb-4" :class="navStyle == '47herri' ? '[&_*]:text-white bg-[#222831] pt-4' : 'bg-gray-100'">
+  <footer class="border-t border-gray-700 pt-8 mt-16 pb-4" :class="navStyle == '47herri' ? '[&_*]:text-white bg-[#222831] pt-4' : 'bg-gray-100'">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         <!-- Contact Section -->

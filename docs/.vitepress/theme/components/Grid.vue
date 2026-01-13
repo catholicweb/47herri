@@ -80,9 +80,18 @@ const getCardClass = (index) => {
 
 	return diff > 0 ? "card-hidden-right" : "card-hidden-left";
 };
+
+function vtr(key, lang) {
+	const code = lang.split(":").toReversed()[0];
+	const dict = {
+		buscar: { eu: "Bilatu", es: "Buscar", ca: "Cercar", en: "Search", fr: "Rechercher", de: "Suchen", it: "Cercare", pt: "Buscar", ro: "Căuta", ar: "بحث", bg: "търсене" },
+		resultados: { eu: "emaitzak", es: "resultados", ca: "resultats", en: "results", fr: "résultats", de: "ergebnisse", it: "risultati", pt: "resultados", ro: "rezultate" },
+	};
+	return dict[key]?.[code] || dict[key] || key;
+}
 </script>
 <template>
-	<div v-if="block.filters" class="max-w-4xl mx-auto px-3 flex flex-wrap justify-center gap-2 my-4">
+	<div v-if="block.filters" class="max-w-4xl mx-auto px-3 flex flex-wrap justify-center gap-0 my-4">
 		<button
 			v-for="(filter, index) in block.filters"
 			:key="index"
@@ -98,12 +107,15 @@ const getCardClass = (index) => {
 	</div>
 
 	<div v-if="block.query" class="relative max-w-md px-8 mx-auto mb-4">
-		<span class="absolute inset-y-0 left-12 flex items-center text-gray-400">
+		<span class="absolute inset-y-0 left-12 flex items-center text-gray-500">
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
 			</svg>
 		</span>
-		<input v-model="searchQuery" type="text" placeholder="Bilatu" class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all shadow-sm" />
+		<input v-model="searchQuery" type="text" :placeholder="vtr('buscar', $frontmatter.lang)" class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all shadow-sm placeholder-gray-500" />
+		<span class="absolute inset-y-0 right-12 flex items-center text-gray-500">
+			<span>{{ filteredItems.length }} {{ vtr("resultados", $frontmatter.lang) }}</span>
+		</span>
 	</div>
 
 	<template v-if="block?.tags?.includes('carousel')">
@@ -115,7 +127,7 @@ const getCardClass = (index) => {
 			</div>
 		</div>
 		<div class="flex gap-2 mt-4 ml-4">
-			<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" :aria-label="'Go to item ' + index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-gray-400'" />
+			<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" :aria-label="'Go to item ' + index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-gray-500'" />
 		</div>
 	</template>
 
@@ -145,7 +157,7 @@ const getCardClass = (index) => {
 				</button>
 			</div>
 			<div class="flex gap-2 mt-4 ml-4">
-				<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" :aria-label="'Go to item ' + index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-gray-400'" />
+				<button v-for="(_, index) in filteredItems" :key="index" @click="activeIndex = index" :aria-label="'Go to item ' + index" class="w-4 h-4 rounded-full transition-colors" :class="activeIndex === index ? 'bg-accent' : 'bg-gray-500'" />
 			</div>
 		</div>
 	</template>

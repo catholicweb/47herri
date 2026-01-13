@@ -139,7 +139,7 @@ async function postComplete(fm) {
       fm.sections[i].filters = books;
       fm.sections[i].query = false;
       fm.sections[i].elements = audios;
-      (fm.sections[i].tags ??= []).push("horizontal", "small");
+      (fm.sections[i].tags ??= []).push("horizontal");
     }
     if (fm.sections[i]._block == "video-channel") {
       fm.sections[i].elements = videos
@@ -158,7 +158,7 @@ async function postComplete(fm) {
       // TODO: Decide if we want the videos to be added here or on the Video.vue component (not on both...)
 
       if (fm.sections[i].filters?.length) {
-        (fm.sections[i].tags ??= []).push("vertical", "small");
+        //(fm.sections[i].tags ??= []).push("vertical", "small");
       } else {
         (fm.sections[i].tags ??= []).push("horizontal", "medium");
       }

@@ -389,7 +389,7 @@ export function grid(section) {
   // 1. Layout Base
   const base = "container mx-auto flex";
   const directions = {
-    horizontal: "flex-nowrap overflow-x-scroll *:flex-shrink-0 hidescrollbar",
+    horizontal: "flex-nowrap overflow-x-scroll *:flex-shrink-0 hidescrollbar pr-8",
     vertical: "flex-wrap justify-center text-center",
   };
   const sizes = {
