@@ -40,7 +40,7 @@ sections:
     filter: "playlist"
     filters: ["Guztiak", "Imnoak", "Ofertorioa", "San Migel", "Jesusen Bihotza", "Ama Birjina", "Hiletak", "Pazkoa", "Garizuma", "Eguberrialdia", "Abendualdia", "Irteera", "Jaunartzea", "Bakea", "Sanctus", "Salmoak", "Aintza", "Sarrera"]
   - _block: video-gospel
-    title: Entzun Itun Berria
+    title: Itun Berria
   - _block: video-podcast
     title: Beste baliabideak
     tags: ["horizontal"]
