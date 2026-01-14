@@ -31,6 +31,9 @@ globalThis.fetch = async (url, options = {}) => {
   if (options.method && options.method !== "GET") {
     return originalFetch(url, options);
   }
+  if (!url?.includes("nominatim.openstreetmap.org")) {
+    return originalFetch(url, options);
+  }
 
   const urlStr = url.toString();
   const safeKey = crypto.createHash("sha256").update(urlStr).digest("hex");
