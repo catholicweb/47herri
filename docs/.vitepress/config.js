@@ -10,12 +10,11 @@ import { getFontCSS } from "./css.js";
 const config = read("./pages/config.json");
 
 export default defineConfig(async () => {
-  const { css, preloads } = await getFontCSS(config.theme);
+  const { preloads } = await getFontCSS(config.theme);
   return {
     head: [
       // Load google fonts
       ["link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "anonymous" }],
-      ["style", {}, css],
       ...preloads,
       // Manifest and icons
       ["link", { rel: "manifest", href: "/manifest.json" }],

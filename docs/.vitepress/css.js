@@ -1,61 +1,61 @@
 import { read, write, fs, path } from "./node_utils.js";
-
+import subsetFont from "subset-font";
 const config = read("./pages/config.json");
+
+async function downloadAndSubset(fontUrl, fontPath) {
+  try {
+    console.log(`Fetching CSS from: ${fontUrl}`);
+    const cssResponse = await fetch(fontUrl);
+    const cssText = await cssResponse.text();
+
+    const ttfUrl = cssText.match(/url\((.*?)\)/)[1].replace(/['"]/g, "");
+
+    const fontResponse = await fetch(ttfUrl);
+    const arrayBuffer = await fontResponse.arrayBuffer();
+    const inputBuffer = Buffer.from(arrayBuffer);
+
+    fs.writeFileSync(fontPath, inputBuffer);
+
+    let characters = "";
+    for (let i = 32; i <= 255; i++) characters += String.fromCharCode(i);
+
+    const subsetBuffer = await subsetFont(inputBuffer, characters, {
+      targetFormat: "woff2",
+    });
+
+    // Use the specific filename passed in
+    fs.writeFileSync(fontPath, subsetBuffer);
+    console.log(`Saved: ${fontPath}`);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function camelCase(str) {
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join("");
+}
+
 export async function getFontCSS(theme) {
   const fonts = [theme.headingFont, theme.bodyFont];
-  let finalCSS = "";
-  let preloads = []; // Return as an array for easier VitePress integration
-  let googleFontsToFetch = [];
+  let preloads = [];
 
   for (const fontName of fonts) {
-    const camelCaseName =
-      fontName
-        .split(" ")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-        .join("") + ".woff";
+    const fileName = `${camelCase(fontName)}.woff2`;
+    const fontPath = `./docs/public/${fileName}`;
 
-    if (fs.existsSync("./docs/public/" + camelCaseName)) {
-      const fontUrl = `/${camelCaseName}`;
-      finalCSS += `
-  @font-face {
-    font-family: '${fontName}';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(${fontUrl});
-  }\n`;
-      // Push local preload
-      preloads.push(["link", { rel: "preload", href: fontUrl, as: "font", type: "font/woff", crossorigin: "" }]);
-    } else {
-      googleFontsToFetch.push(fontName);
+    if (!fs.existsSync(fontPath)) {
+      // Corrected the URL construction
+      const googleUrl = `https://fonts.googleapis.com/css2?family=${fontName.replace(/\s+/g, "+")}&subset=latin,latin-ext&display=swap`;
+      await downloadAndSubset(googleUrl, fontPath);
     }
+
+    preloads.push(["link", { rel: "preload", href: `/${fileName}`, as: "font", type: "font/woff2", crossorigin: "" }]);
   }
 
-  if (googleFontsToFetch.length > 0) {
-    const gUrl = `https://fonts.googleapis.com/css2?family=${googleFontsToFetch.map((f) => f.replace(/\s+/g, "+")).join("&family=")}&display=swap`;
-
-    try {
-      const res = await fetch(gUrl);
-      let gCss = await res.text();
-
-      // Extract the specific .ttf/.woff2 URLs that PageSpeed is complaining about
-      const fontUrls = gCss.match(/url\(([^)]+)\)/g);
-      if (fontUrls) {
-        fontUrls.forEach((url) => {
-          const cleanUrl = url.replace(/url\(|'|"|\)/g, "");
-          preloads.push(["link", { rel: "preload", href: cleanUrl, as: "font", type: "font/woff2", crossorigin: "" }]);
-        });
-      }
-
-      if (!gCss.includes("font-display")) {
-        gCss = gCss.replace(/}/g, "font-display:swap;}");
-      }
-      finalCSS += gCss;
-    } catch (e) {
-      console.error("Error fetching from Google Fonts:", e.message);
-    }
-  }
-  return { css: finalCSS, preloads };
+  return { preloads };
 }
 
 const getHue = (hex) => {
@@ -93,6 +93,23 @@ export async function printCSS() {
     /* Apply directly to Tailwind font vars */
     --font-sans: var(--font-body);
     --font-display: var(--font-heading);
+  }
+
+
+  @font-face {
+    font-family: '${config.theme.bodyFont}';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/${camelCase(config.theme.bodyFont)}.woff2);
+  }
+
+  @font-face {
+    font-family: '${config.theme.headingFont}';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/${camelCase(config.theme.headingFont)}.woff2);
   }
 
 /* You can also include other global styles */

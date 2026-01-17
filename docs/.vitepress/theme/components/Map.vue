@@ -101,7 +101,12 @@ function renderMarkers(lang) {
       const g = m.geo.split(",").map((s) => Number(s.trim()));
 
       const googleUrl = `https://www.google.com/maps/dir/?api=1&destination=${m.geo}`;
-      const wazeUrl = `https://waze.com/ul?ll=${m.geo}&navigate=yes`;
+
+      let wazeUrl = `https://waze.com/ul?ll=${m.geo}&navigate=yes`;
+      if (/Android/i.test(navigator.userAgent)) {
+        const fallback = encodeURIComponent(`https://waze.com/ul?ll=${m.geo}&navigate=yes`);
+        wazeUrl = `intent://waze.com/ul?ll=${m.geo}&navigate=yes#Intent;package=com.waze;scheme=https;S.browser_fallback_url=${fallback};end;`;
+      }
 
       const html = `
     <h3 class="text-center m-0 text-lg font-bold text-accent">
