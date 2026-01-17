@@ -33,7 +33,10 @@ export default defineConfig(async () => {
       hostname: config.dev?.siteurl,
     },
     async transformHead({ pageData }) {
-      const path = pageData.relativePath.replace(/\.md$/, "").replace(/\.html$/, "");
+      const path = pageData.relativePath
+        .replace(/\.md$/, "")
+        .replace(/\.html$/, "")
+        .replace(/index$/, "");
       return getJSONLD(pageData.frontmatter, config, path);
     },
     plugins: [tailwindcss()],

@@ -256,8 +256,9 @@ function events2JSONLD(data, config, path) {
 }
 
 function getID(baseUrl, path, name) {
-  if (!name) return `${baseUrl}/${slugify(path)}`;
-  return `${baseUrl}/${slugify(path)}#${slugify(name)}`;
+  const slugged = path.includes("/") ? path : `${slugify(path)}`;
+  if (!name) return `${baseUrl}/${slugged}`;
+  return `${baseUrl}/${slugged}#${slugify(name)}`;
 }
 
 function buildEventInstance(event, date, time, baseUrl, path) {

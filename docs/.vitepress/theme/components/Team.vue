@@ -16,9 +16,9 @@ const config = ref(theme.value.config || {});
       </div>
 
       <div class="ml-6 flex flex-col items-start">
-        <h5 class="text-2xl font-bold text-white mb-1">
+        <h3 class="text-2xl font-bold text-white mb-1">
           {{ collab.name }}
-        </h5>
+        </h3>
 
         <p class="text-gray-300 italic mb-2">
           {{ collab.description }}

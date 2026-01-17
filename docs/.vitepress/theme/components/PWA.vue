@@ -6,7 +6,7 @@
       <button @click="state.showUpdateBanner = false" class="px-3 py-1 border border-white rounded cursor-pointer">Cerrar</button>
     </div>
 
-    <button v-if="state.showInstallButton" @click="handleInstall" class="fixed bottom-6 right-6 bg-white border border-neutral-300 rounded-full p-3 shadow hover:bg-neutral-100 active:scale-95 cursor-pointer z-[9998]" title="Instalar app">
+    <button v-show="state.showInstallButton" @click="handleInstall" class="fixed bottom-6 right-6 bg-white border border-neutral-300 rounded-full p-3 shadow hover:bg-neutral-100 active:scale-95 cursor-pointer z-[9998]" title="Instalar app">
       <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
         <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2h14v2H5v-2z" />
       </svg>
