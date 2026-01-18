@@ -7,6 +7,7 @@ import { createImages } from "./images.js";
 import { fetchUpstream, commit } from "./git.js";
 import { getBibleReadings, getAudio } from "./gospel.js";
 import { printCSS } from "./css.js";
+import { getEventFAQ } from "./seo.js";
 import { fetchCalendar } from "./calendar.js";
 import { sendNotifications } from "./notify.js";
 import crypto from "crypto";
@@ -27,39 +28,51 @@ const CACHE_DATA = read(CACHE_FILE);
 const originalFetch = globalThis.fetch;
 
 globalThis.fetch = async (url, options = {}) => {
-  // Solo cacheamos GETs
-  if (options.method && options.method !== "GET") {
-    return originalFetch(url, options);
+  try {
+    // Solo cacheamos GETs
+    if (options.method && options.method !== "GET") {
+      return originalFetch(url, options);
+    }
+
+    const urlStr = url.toString();
+    const safeKey = crypto.createHash("sha256").update(urlStr).digest("hex");
+
+    // 0. Aplicamos network first
+    if (!url?.includes("nominatim.openstreetmap.org") && !url?.includes("https://47herri.eus/bible")) {
+      const response = await originalFetch(url, options);
+
+      if (response.ok) {
+        // 3. Actualizamos el archivo maestro
+        const clone = response.clone();
+        CACHE_DATA[safeKey] = await clone.json();
+        write(CACHE_FILE, CACHE_DATA);
+        return response;
+      }
+    }
+
+    // 1. ¿Está en la caché?
+    if (CACHE_DATA[safeKey]) {
+      console.log(`[Cache Hit]: ${safeKey}`);
+      return new Response(JSON.stringify(CACHE_DATA[safeKey]), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    // 2. Si no está, hacemos el fetch real
+    const response = await originalFetch(url, options);
+
+    if (response.ok) {
+      // 3. Actualizamos el archivo maestro
+      const clone = response.clone();
+      CACHE_DATA[safeKey] = await clone.json();
+      write(CACHE_FILE, CACHE_DATA);
+    }
+
+    return response;
+  } catch (e) {
+    return new Response("{}", { status: 400, headers: { "Content-Type": "application/json" } });
   }
-  if (!url?.includes("nominatim.openstreetmap.org")) {
-    return originalFetch(url, options);
-  }
-
-  const urlStr = url.toString();
-  const safeKey = crypto.createHash("sha256").update(urlStr).digest("hex");
-
-  // 1. ¿Está en la caché?
-  if (CACHE_DATA[safeKey]) {
-    console.log(`[Cache Hit]: ${safeKey}`);
-    return new Response(JSON.stringify(CACHE_DATA[safeKey]), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
-  // 2. Si no está, hacemos el fetch real
-  const response = await originalFetch(url, options);
-
-  if (response.ok) {
-    const clone = response.clone();
-    const data = await clone.json();
-
-    // 3. Actualizamos el archivo maestro
-    CACHE_DATA[safeKey] = data;
-    write(CACHE_FILE, CACHE_DATA);
-  }
-
-  return response;
 };
 
 async function createManifest() {
@@ -170,6 +183,10 @@ async function postComplete(fm) {
     } else if (fm.sections[i]._block == "gospel") {
       fm.sections[i].gospel = await getBibleReadings({ lang: getCode(fm.lang), date: new Date(), gospelOnly: !fm.sections[i].readings });
     }
+
+    if (fm.events) {
+      fm.faq = getEventFAQ(fm.events, fm.lang);
+    }
   }
 }
 
@@ -206,6 +223,7 @@ async function autocomplete(fm) {
     if (config.theme.navStyle == "47herri") {
       let filter = fm.source == "./pages/index.md" ? "byday:empty" : fm.title;
       fm.events = calendar.filter((obj) => applyComplexFilter(obj, filter));
+      fm.faq = getEventFAQ(fm.events);
     }
   }
   // remove hidden sections

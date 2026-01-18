@@ -1,7 +1,7 @@
 <template>
   <footer class="border-t border-gray-700 pt-8 mt-16 pb-4" :class="navStyle == '47herri' ? '[&_*]:text-white bg-[#222831] pt-4' : 'bg-gray-100'">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-8">
         <!-- Contact Section -->
         <div>
           <h3 class="text-xl font-semibold mb-3">Contacto</h3>
@@ -91,10 +91,23 @@
         </div>
       </div>
 
+      <div v-if="$frontmatter.faq" class="mx-auto pt-6 text-xs" :class="grid({ tags: ['small'] })">
+        <h3 class="text-xl font-semibold mb-3 sr-only">FAQ</h3>
+        <details v-for="(item, index) in $frontmatter.faq" :key="index" class="group cursor-pointer items-center">
+          <summary class="list-none font-medium text-gray-500 hover:text-accent transition-colors">
+            {{ item.title }}
+          </summary>
+
+          <p class="mt-2 italic text-gray-400">
+            {{ item.text }}
+          </p>
+        </details>
+      </div>
+
       <!-- Footer Info -->
-      <div class="mt-4 pt-4 text-center text-gray-800">
-        <p class="text-sm">
-          <em> &copy; {{ new Date().getFullYear() }} <a href="https://parroquia.app" class="hover:text-accent transition-colors">parroquia.app </a> — <a href="/aviso-legal-y-politica-de-privacidad" class="hover:text-accent transition-colors"> Aviso Legal </a> — <a href="/aviso-legal-y-politica-de-privacidad" class="hover:text-accent transition-colors"> Política privacidad </a></em>
+      <div class="text-center text-gray-800">
+        <p class="text-xs">
+          <em> &copy; {{ new Date().getFullYear() }} <a href="https://parroquia.app" class="hover:text-accent transition-colors">parroquia.app </a> — <a href="/aviso-legal-y-politica-de-privacidad" class="hover:text-accent transition-colors"> Aviso Legal y Privacidad</a></em>
         </p>
       </div>
     </div>
@@ -105,6 +118,12 @@
 import { ref } from "vue";
 import { useData } from "vitepress";
 const { theme } = useData();
+import { grid } from "./../../utils.js";
 const config = ref(theme.value.config || {});
 const navStyle = ref(theme.value?.config?.theme?.navStyle);
 </script>
+<style>
+summary::-webkit-details-marker {
+  display: none;
+}
+</style>

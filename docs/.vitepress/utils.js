@@ -408,6 +408,7 @@ export function grid(section) {
 }
 
 export async function getAddress(lat, lng, name, zoom = 17) {
+  if (!lat || !lng) return {};
   let extra = {
     google: `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`,
     //google: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}&query_place_id=${lat},${lng}`,

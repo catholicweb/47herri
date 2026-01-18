@@ -6,7 +6,25 @@ const config = read("./pages/config.json");
 export function getJSONLD(fm, config, path) {
   const locations = getLocations(fm, config, path);
   const eventNodes = events2JSONLD(fm, config, path);
-  const FAQ = getEventFAQ(fm.events, fm.lang);
+
+  const FAQ = !fm.faq?.length
+    ? []
+    : [
+        {
+          "@type": "FAQPage",
+          mainEntity: fm.faq.map((faq) => {
+            return {
+              "@type": "Question",
+              name: faq.title,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.text,
+              },
+            };
+          }),
+        },
+      ];
+
   return [
     [
       "script",
@@ -90,7 +108,7 @@ const i18n = {
   },
 };
 
-function getEventFAQ(events, lang = "Euskara:eu") {
+export function getEventFAQ(events, lang = "Euskara:eu") {
   if (!events) return [];
   const langCode = lang.split(":")[1];
   const t = i18n[langCode] || i18n["eu"];
@@ -112,22 +130,13 @@ function getEventFAQ(events, lang = "Euskara:eu") {
       }
 
       FAQ.push({
-        "@type": "Question",
-        name: t.question(title, location),
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: t.answer(title, location, joinConY(when, langCode)),
-        },
+        title: t.question(title, location),
+        text: t.answer(title, location, joinConY(when, langCode)),
       });
     }
   }
 
-  return [
-    {
-      "@type": "FAQPage",
-      mainEntity: FAQ,
-    },
-  ];
+  return FAQ;
 }
 
 function getLocations(data, config, path) {
