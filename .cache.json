@@ -37,17 +37,17 @@
   },
   "f9e10942971ee728b2fe8833f60b848b686e19484ad96ac063489503635ae3c3": {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "pz3JX76904cZqVMKhL6b_wXjNdg",
+    "etag": "udDQpJGNwkdiBwG6YYCyO82iZyI",
     "nextPageToken": "EAAaHlBUOkNESWlFREV5TlVKR01qTXdSVUZHTUVGQ1FqQQ",
     "items": [
       {
         "kind": "youtube#playlistItem",
-        "etag": "wBwATXvfSPpHvRJQFA3wMiigItQ",
+        "etag": "RZj0YKkrfMbnOOcfzW8xlIvkFww",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkJPWGQ0VXlwYVdz",
         "snippet": {
           "publishedAt": "2026-01-20T00:35:52Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "19 de enero de 2026",
+          "title": "Uzko II. Astelehena. Lekunberri. Kristauen batasunaren aldeko otoitz-zortzikoa",
           "description": "",
           "thumbnails": {
             "default": {
