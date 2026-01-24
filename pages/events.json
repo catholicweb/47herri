@@ -835,5 +835,21 @@
     "mass": {
       "image": "/media/mass.webp"
     }
-  }
+  },
+  "events-custom": [
+    {
+      "image": "/media/68c7388ca7c39.jpg",
+      "title": "Hora Santa de Hakuna",
+      "location": [
+        "Lekunberri"
+      ],
+      "date": [
+        "2026-01-25"
+      ],
+      "times": "11:00",
+      "rrule": [
+        "yearly"
+      ]
+    }
+  ]
 }
