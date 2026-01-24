@@ -7,7 +7,7 @@ sections:
   - _block: video
     title: Beruete ezagutu
     links:
-      - 'https://www.youtube.com/watch?v=PmiNoRGv7hY'
+      - https://www.youtube.com/watch?v=PmiNoRGv7hY
   - _block: gallery
     list:
       - /media/jmetayo/Beruete04a.webp
@@ -18,14 +18,11 @@ sections:
     filter: beruete
   - _block: map
     title: Non Gaude
-    name: San Joan Bataiatzailearen
-    geo: '43.02656, -1.82590'
-    tags: []
+    geo: 43.02656, -1.82590
+    name: San Joan Bataiatzailea
   - _block: map
     title: Non Gaude
+    geo: 43.02389, -1.82638
     name: Santa Krutz baseliza
-    geo: '43.02389, -1.82638'
-    tags:
-      - hidden
+hideHero: false
 ---
-
