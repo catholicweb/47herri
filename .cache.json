@@ -37,12 +37,49 @@
   },
   "f9e10942971ee728b2fe8833f60b848b686e19484ad96ac063489503635ae3c3": {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "Rj-6xOV525V0YQDkQ9B6Ue3uH1Y",
-    "nextPageToken": "EAAaHlBUOkNESWlFRGcyTURJeU9UTTJNak0zUmpJMFFqWQ",
+    "etag": "_pSvjjRc_raOURXBtJwATYEx4sc",
+    "nextPageToken": "EAAaHlBUOkNESWlFREpDTXpSRU9EUTBOams1TnpJME5UVQ",
     "items": [
       {
         "kind": "youtube#playlistItem",
-        "etag": "SEkeHH1km5Tl-fr22ztwZJuP5Bk",
+        "etag": "BccOsGjhT_0FgyEyAe0mmPBuBTw",
+        "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLnFNMnpsZmF4TWpv",
+        "snippet": {
+          "publishedAt": "2026-01-30T11:21:33Z",
+          "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
+          "title": "Uzko III. Ostirala. Beteluko Ermita",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/qM2zlfaxMjo/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/qM2zlfaxMjo/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/qM2zlfaxMjo/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "47herri",
+          "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
+          "position": 0,
+          "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "qM2zlfaxMjo"
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
+        }
+      },
+      {
+        "kind": "youtube#playlistItem",
+        "etag": "SOwtYoMF4mXOHB40AI1S8wZSraI",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLk9DVHdZeVlEd1hB",
         "snippet": {
           "publishedAt": "2026-01-29T08:26:35Z",
@@ -78,7 +115,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 0,
+          "position": 1,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "OCTwYyYDwXA"
@@ -89,7 +126,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Dhmi0mT9_2bijfWFrTSvgrtsKek",
+        "etag": "EOkVD3UL_WmMb2Wqx65CHTJTcVE",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLnJueUJrdk5kdGQw",
         "snippet": {
           "publishedAt": "2026-01-28T07:49:36Z",
@@ -125,7 +162,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 1,
+          "position": 2,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "rnyBkvNdtd0"
@@ -136,7 +173,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "iEkFcuaKYgW_ffcg_wqqYAf4MEU",
+        "etag": "I8sFuWD7RFo7K9dnwlaNe4-vnms",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLl9UcUx3Rl9Qdnhv",
         "snippet": {
           "publishedAt": "2026-01-27T07:43:23Z",
@@ -172,7 +209,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 2,
+          "position": 3,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "_TqLwF_Pvxo"
@@ -183,7 +220,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "1fslLZpj9vx-iXbSrehWJl1FEGM",
+        "etag": "79rxe0bp8uiICRDukp9Ifk4bzk4",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLnFCck9za0VhOGNF",
         "snippet": {
           "publishedAt": "2026-01-26T09:08:01Z",
@@ -219,7 +256,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 3,
+          "position": 4,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "qBrOskEa8cE"
@@ -230,7 +267,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "-WcnEZMZOMbnYelxwk4gYfVwo6w",
+        "etag": "TVLwFeE5UyWMkUrYBgljTUGhj3Y",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmdVUGtXZFB2ZEhF",
         "snippet": {
           "publishedAt": "2026-01-25T11:08:13Z",
@@ -266,7 +303,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 4,
+          "position": 5,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "gUPkWdPvdHE"
@@ -277,7 +314,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "L0_D59U5j3ntvck60Fc_gdH9Iqk",
+        "etag": "jH2plg1XLLrjrzvFvc6XR6WoypM",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjlQVWk3T205Z2ZN",
         "snippet": {
           "publishedAt": "2026-01-24T08:55:35Z",
@@ -313,7 +350,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 5,
+          "position": 6,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "9PUi7Om9gfM"
@@ -324,7 +361,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "OoibquLmziBOWQ0O2n91fijsKLI",
+        "etag": "EmlVAMY8ASk-1LPKwMo_2di8XZQ",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmEyazRBeE9Bd3ow",
         "snippet": {
           "publishedAt": "2026-01-23T10:57:52Z",
@@ -360,7 +397,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 6,
+          "position": 7,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "a2k4AxOAwz0"
@@ -371,7 +408,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "68VzuLjYbnrr2PUbmvyA4Yl-n9Y",
+        "etag": "EYBdjYlyf7G6eNJyiedsy6O1EZg",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlNYSFRNTnpNRzM0",
         "snippet": {
           "publishedAt": "2026-01-22T09:29:09Z",
@@ -407,7 +444,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 7,
+          "position": 8,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "SXHTMNzMG34"
@@ -418,7 +455,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "nuOA9U1KgXe2hQg4tjDJ_w__0vo",
+        "etag": "cx-UIUEMtrA85KP95gd9aPcomLU",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLklvM3JXN0RVY2JJ",
         "snippet": {
           "publishedAt": "2026-01-21T18:15:45Z",
@@ -454,7 +491,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 8,
+          "position": 9,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "Io3rW7DUcbI"
@@ -465,7 +502,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "PR1B_6R25xDqzul98YS21KPM2pk",
+        "etag": "9kQyaFx-yApfclpEq9sZG0Luznw",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmVFUGo2V0Izd09N",
         "snippet": {
           "publishedAt": "2026-01-20T08:56:54Z",
@@ -501,7 +538,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 9,
+          "position": 10,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "eEPj6WB3wOM"
@@ -512,7 +549,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "u4RYkehDe4N_LdR7GGkveNBPq30",
+        "etag": "M5K-fhFD_MvCyMR19AC8QuIW0t4",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkJPWGQ0VXlwYVdz",
         "snippet": {
           "publishedAt": "2026-01-20T00:35:52Z",
@@ -548,7 +585,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 10,
+          "position": 11,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "BOXd4UypaWs"
@@ -559,7 +596,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Je9xgqguvShA6rm8fKh2Pixw3rM",
+        "etag": "t63K-r5-vX9609U5cWG8XeE_91g",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlU5Vm5VTmJRek8w",
         "snippet": {
           "publishedAt": "2026-01-18T11:24:31Z",
@@ -595,7 +632,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 11,
+          "position": 12,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "U9VnUNbQzO0"
@@ -606,7 +643,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Z8ivK_VdlgvPSwLAFl3UsV2myKc",
+        "etag": "psC4PkQjCIELejZ26oBqA8y3-wc",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlVlbXFWV0FqTHNr",
         "snippet": {
           "publishedAt": "2026-01-17T12:32:22Z",
@@ -642,7 +679,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 12,
+          "position": 13,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "UemqVWAjLsk"
@@ -653,7 +690,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "XOnw9enHINRZScFQQdtJ_tgFVzQ",
+        "etag": "BTMsR6a8YV2g8BycNhCUoLDZtTc",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmRsWlVMcUJQRHFF",
         "snippet": {
           "publishedAt": "2026-01-16T11:14:15Z",
@@ -689,7 +726,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 13,
+          "position": 14,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "dlZULqBPDqE"
@@ -700,7 +737,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "zIRFYSYHj_SFPDK6RxrpvkYwbl4",
+        "etag": "1IebikV9SnL8Zqo1tNlcWTSv7z8",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLndtdzdsVVRST1Fr",
         "snippet": {
           "publishedAt": "2026-01-15T18:05:16Z",
@@ -736,7 +773,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 14,
+          "position": 15,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "wmw7lUTROQk"
@@ -747,7 +784,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "DtqAL5yOzVsFlSeG78tyiXQ5u8Y",
+        "etag": "YrMmgu_uE_MITKsSV3biVp9aMqc",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmRMTUFYSkgxWjlv",
         "snippet": {
           "publishedAt": "2026-01-14T19:24:38Z",
@@ -783,7 +820,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 15,
+          "position": 16,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "dLMAXJH1Z9o"
@@ -794,7 +831,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "ytkUTMGrhvWOhHuOReqZg3lUL6E",
+        "etag": "zltEXHWnbXtR1AUn3vwINC99hV0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkdwMHVMTW9ueUtB",
         "snippet": {
           "publishedAt": "2026-01-13T08:54:14Z",
@@ -830,7 +867,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 16,
+          "position": 17,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "Gp0uLMonyKA"
@@ -841,7 +878,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "0cOjCL_Bz8L8_n414joqZr8-D20",
+        "etag": "WmPWHQr8K0GzpCIVr69PchquOwU",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLl9pMWxMVkhWdUVr",
         "snippet": {
           "publishedAt": "2026-01-12T19:03:01Z",
@@ -877,7 +914,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 17,
+          "position": 18,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "_i1lLVHVuEk"
@@ -888,7 +925,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Y-BWz2DIs-hO_stOUMR8xByPLR4",
+        "etag": "1R2cH_IA-q-Anhkshqoo9XK71Bk",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLnY5YUlUSjAxT1I4",
         "snippet": {
           "publishedAt": "2026-01-11T13:12:43Z",
@@ -924,7 +961,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 18,
+          "position": 19,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "v9aITJ01OR8"
@@ -935,7 +972,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "opvxFcBYKPpGvnT-FNOKfDbRJ30",
+        "etag": "MHuJcE5vYTbGepTpQq3ZnNxY0l0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLi1ULS1hdzFBd3M4",
         "snippet": {
           "publishedAt": "2026-01-10T19:50:54Z",
@@ -971,7 +1008,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 19,
+          "position": 20,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "-T--aw1Aws8"
@@ -982,7 +1019,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "YDYasfX1jhU_IXuTP8yhuLvYwjc",
+        "etag": "j-sfp3GAJ3eI_EkHaNnJCrx1zyc",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmhaZExVRmxlR2U4",
         "snippet": {
           "publishedAt": "2026-01-09T11:28:02Z",
@@ -1018,7 +1055,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 20,
+          "position": 21,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "hZdLUFleGe8"
@@ -1029,7 +1066,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "B3lt7wzpsAPMPGUDxqhgYOwaIig",
+        "etag": "GTl_KaRx-Z2nMAcyPoRE9xWmnhE",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkFHU2NNenFENXMw",
         "snippet": {
           "publishedAt": "2026-01-08T18:04:39Z",
@@ -1065,7 +1102,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 21,
+          "position": 22,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "AGScMzqD5s0"
@@ -1076,7 +1113,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "__qv4v49OUodM2L8uJ2GO15Py3I",
+        "etag": "TpQ_9BV7dtg6u0wyTE0uPmig75M",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLnFpSDZmUmQ2QnV3",
         "snippet": {
           "publishedAt": "2026-01-07T19:41:48Z",
@@ -1112,7 +1149,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 22,
+          "position": 23,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "qiH6fRd6Buw"
@@ -1123,7 +1160,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "jVL0B_sAYDyKJX_CKBl27Sxrnco",
+        "etag": "_PfJ-KF4QN9tltP-e2phpdZq0eU",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlN5c3ZKMndqcWNV",
         "snippet": {
           "publishedAt": "2026-01-06T11:22:25Z",
@@ -1159,7 +1196,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 23,
+          "position": 24,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "SysvJ2wjqcU"
@@ -1170,7 +1207,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "xpcZoF5gqPmvgFuibmqCqfsQkfY",
+        "etag": "zl6lcY46TGwaKiupWtWwb1VaSD0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLm1UTDlveTdIR0Rv",
         "snippet": {
           "publishedAt": "2026-01-05T23:24:38Z",
@@ -1206,7 +1243,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 24,
+          "position": 25,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "mTL9oy7HGDo"
@@ -1217,7 +1254,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "OaecUbycdqpRucyIb0v3szj1cdg",
+        "etag": "q0alYBFZhI3SGpTQKj8VyJWgAEo",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLl9JTUNxZm9GZUNZ",
         "snippet": {
           "publishedAt": "2026-01-05T15:07:31Z",
@@ -1248,7 +1285,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 25,
+          "position": 26,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "_IMCqfoFeCY"
@@ -1259,7 +1296,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "LwH95cunRBhu07D3aLHI2hFfo6Q",
+        "etag": "VE0eCHdArZ65FNS0LwTTguPS4_g",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLm5DT1h5Q003aHc4",
         "snippet": {
           "publishedAt": "2026-01-04T17:38:23Z",
@@ -1295,7 +1332,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 26,
+          "position": 27,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "nCOXyCM7hw8"
@@ -1306,7 +1343,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Y88XPTfDESTdqIHgjOU2s2N6Y8U",
+        "etag": "3rxXx-sU-GP692rezSo40fjO2AI",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmUzNW5CUC1jTEln",
         "snippet": {
           "publishedAt": "2026-01-04T11:28:30Z",
@@ -1342,7 +1379,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 27,
+          "position": 28,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "e35nBP-cLIg"
@@ -1353,7 +1390,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "MGNX77bBhFVVGJy58NYGgH7_NgY",
+        "etag": "TYFvZa59v6CjgJgzZKVmbgHMo4o",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlU3bEY2LWF6Zk5F",
         "snippet": {
           "publishedAt": "2026-01-03T20:37:27Z",
@@ -1389,7 +1426,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 28,
+          "position": 29,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "U7lF6-azfNE"
@@ -1400,7 +1437,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "4u2kJHKOmTTdOe6jn2bANjUpceU",
+        "etag": "Vb7wP_R_DmkmDNTOQYbNIltr9-0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLm5Qam5xc1dqdFRB",
         "snippet": {
           "publishedAt": "2026-01-02T09:03:41Z",
@@ -1436,7 +1473,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 29,
+          "position": 30,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "nPjnqsWjtTA"
@@ -1447,7 +1484,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "MG0pB54GpbHAircq3jAANpinfkI",
+        "etag": "Lw4UHDIRDk-MDyFwGHAiM5FDA7k",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmJPczZNOE5JZW9r",
         "snippet": {
           "publishedAt": "2025-12-31T20:16:57Z",
@@ -1483,7 +1520,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 30,
+          "position": 31,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "bOs6M8NIeok"
@@ -1494,7 +1531,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "QsyxgrF5lBp-R1rEczj1NPTtjVw",
+        "etag": "6_xgxVuOnTjaMH_cRawKG1P6XvU",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlBVRWpSTVF6NXlN",
         "snippet": {
           "publishedAt": "2025-12-30T08:43:44Z",
@@ -1530,7 +1567,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 31,
+          "position": 32,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "PUEjRMQz5yM"
@@ -1541,7 +1578,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "YVghfld9QCMz7W5OdfNu5jpvLGs",
+        "etag": "sWTavVYmx47RWkYIbPM-6FLoapQ",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLld3LWI1bjJ3Qmlv",
         "snippet": {
           "publishedAt": "2025-12-29T18:21:32Z",
@@ -1577,7 +1614,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 32,
+          "position": 33,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "Ww-b5n2wBio"
@@ -1588,7 +1625,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "4iz_dSozZOtZ13pKVN-fhPuQS_w",
+        "etag": "-y-I52AAK98rZp6NsAzcuyrmSD8",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLldaTUxaWEJNUzRF",
         "snippet": {
           "publishedAt": "2025-12-29T14:25:47Z",
@@ -1624,7 +1661,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 33,
+          "position": 34,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "WZMLZXBMS4E"
@@ -1635,7 +1672,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "KVYdQjMCt8FN6KibKorDW44Fw3c",
+        "etag": "6gbi9tmPWANIahdwqpzml-15zcM",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLl9pTkFnLTRmZjVv",
         "snippet": {
           "publishedAt": "2025-12-28T10:40:04Z",
@@ -1671,7 +1708,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 34,
+          "position": 35,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "_iNAg-4ff5o"
@@ -1682,7 +1719,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "6RF_w3CVqmalIQZAOultuoWbDvM",
+        "etag": "gTjx9AAwJ3d3Q7AwV8mxnsxhi1E",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkNYLW0xN2EtZ2tF",
         "snippet": {
           "publishedAt": "2025-12-27T22:01:08Z",
@@ -1718,7 +1755,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 35,
+          "position": 36,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "CX-m17a-gkE"
@@ -1729,7 +1766,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "CVPe9aYwm0vJ5XaLgTrsgwHwrRY",
+        "etag": "t_oM3HyuhPhlb3SSUDgbBR6cKRY",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlRTOXBLdWZvSmVv",
         "snippet": {
           "publishedAt": "2025-12-26T11:47:21Z",
@@ -1765,7 +1802,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 36,
+          "position": 37,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "TS9pKufoJeo"
@@ -1776,7 +1813,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "oqn5pSyCEORu-wEy9a96mj28JLI",
+        "etag": "c41JgaJkmXffe1CLs9ezdIcVRnc",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlZUbFpGZmNLcDJv",
         "snippet": {
           "publishedAt": "2025-12-24T18:45:15Z",
@@ -1812,7 +1849,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 37,
+          "position": 38,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "VTlZFfcKp2o"
@@ -1823,7 +1860,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "D9bZFMze74za2N5ptmdzsiaYRHc",
+        "etag": "XS-POXGWsXKicxs4lDJ7TTajsd8",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkxmcnFPWjVyM25v",
         "snippet": {
           "publishedAt": "2025-12-24T18:25:49Z",
@@ -1854,7 +1891,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 38,
+          "position": 39,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "LfrqOZ5r3no"
@@ -1865,7 +1902,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "8gkkBAVWQFSI0SUp1QoswXjgVKA",
+        "etag": "JsDSYkNKe8fxrqLNiQukQNZrcFs",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLnNyQ1RyV1pKc3NV",
         "snippet": {
           "publishedAt": "2025-12-23T08:51:53Z",
@@ -1901,7 +1938,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 39,
+          "position": 40,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "srCTrWZJssU"
@@ -1912,7 +1949,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "T7ct1ZoU0VnJEVLTOBe3yQD3UUY",
+        "etag": "eezbt_zsjuemeGseZWIY3Ga5HdM",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLk92UkR2Z3ZLc01v",
         "snippet": {
           "publishedAt": "2025-12-22T18:29:14Z",
@@ -1948,7 +1985,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 40,
+          "position": 41,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "OvRDvgvKsMo"
@@ -1959,7 +1996,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "YpR00FgdyqnbqYpjJO1fgu_zb-c",
+        "etag": "XkQmMsLa2vRdOMJaeHQdbegQhrw",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLnVDY2hRTW4wejQ0",
         "snippet": {
           "publishedAt": "2025-12-21T12:02:33Z",
@@ -1995,7 +2032,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 41,
+          "position": 42,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "uCchQMn0z44"
@@ -2006,7 +2043,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "QYwJlcZGiHb_8UNBMrhADeZ4cpo",
+        "etag": "-toqgcKlXiCbXXpaiI5-jwhNBRU",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLl8tQ0ZmdWxQNmlZ",
         "snippet": {
           "publishedAt": "2025-12-20T19:26:01Z",
@@ -2042,7 +2079,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 42,
+          "position": 43,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "_-CFfulP6iY"
@@ -2053,7 +2090,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "ie8pmwcU9NisESfqCUI8M-A4Y8E",
+        "etag": "6IBCDPfO2PbtmM74SSyTz10fLjM",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmdMQW1aRXBCM3Nv",
         "snippet": {
           "publishedAt": "2025-12-19T11:34:43Z",
@@ -2089,7 +2126,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 43,
+          "position": 44,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "gLAmZEpB3so"
@@ -2100,7 +2137,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "JbjVM8WAZdfjx0qRlManV7FMAAE",
+        "etag": "wEQ7pa9ohVyCZn3eRg5OmwcGjNM",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmpzLXBQT3o1cTNJ",
         "snippet": {
           "publishedAt": "2025-12-18T19:03:41Z",
@@ -2136,7 +2173,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 44,
+          "position": 45,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "js-pPOz5q3I"
@@ -2147,7 +2184,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "v5pGVyeDtD7gIw08I9-VqG-CLao",
+        "etag": "--99nBZwAZxiN08b9r8mi1Fz_Bk",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmszaWIwSjJvalpJ",
         "snippet": {
           "publishedAt": "2025-12-17T19:22:43Z",
@@ -2183,7 +2220,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 45,
+          "position": 46,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "k3ib0J2ojZI"
@@ -2194,7 +2231,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "WLWyJzs_ILzGwNJRguv3EVjt_kY",
+        "etag": "yIWc1Nr8bvb1lnMPY9dtJnGxDq0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmF6OUdYM0syTnpZ",
         "snippet": {
           "publishedAt": "2025-12-16T17:26:15Z",
@@ -2230,7 +2267,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 46,
+          "position": 47,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "az9GX3K2NzY"
@@ -2241,7 +2278,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "uvtG9WYN7Nw1Ilhmex9gLTDYqqA",
+        "etag": "wjWBasLnyVu8a-e-qLFL3eFyJ7U",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLm5SM2ZMOTFlTEtB",
         "snippet": {
           "publishedAt": "2025-12-16T08:57:51Z",
@@ -2277,7 +2314,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 47,
+          "position": 48,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "nR3fL91eLKA"
@@ -2288,7 +2325,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "JjTX1h2LqaGbL8to7U3kBsvlQ74",
+        "etag": "cGfmCIoHGcxn8G-kKQ-2OnUhsAg",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLl9DeUhSdEJwaVVj",
         "snippet": {
           "publishedAt": "2025-12-15T18:25:00Z",
@@ -2324,7 +2361,7 @@
           },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 48,
+          "position": 49,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "_CyHRtBpiUc"
@@ -2332,57 +2369,10 @@
           "videoOwnerChannelTitle": "47herri",
           "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
-      },
-      {
-        "kind": "youtube#playlistItem",
-        "etag": "WbiWw6bmgD_cHMIG0TSFGTXX5_I",
-        "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLklwMW9WVkVIY0xV",
-        "snippet": {
-          "publishedAt": "2025-12-14T13:53:38Z",
-          "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Abendualdiko III. Igandea. Gaudete. 2025/12/14. Betelu",
-          "description": "",
-          "thumbnails": {
-            "default": {
-              "url": "https://i.ytimg.com/vi/Ip1oVVEHcLU/default.jpg",
-              "width": 120,
-              "height": 90
-            },
-            "medium": {
-              "url": "https://i.ytimg.com/vi/Ip1oVVEHcLU/mqdefault.jpg",
-              "width": 320,
-              "height": 180
-            },
-            "high": {
-              "url": "https://i.ytimg.com/vi/Ip1oVVEHcLU/hqdefault.jpg",
-              "width": 480,
-              "height": 360
-            },
-            "standard": {
-              "url": "https://i.ytimg.com/vi/Ip1oVVEHcLU/sddefault.jpg",
-              "width": 640,
-              "height": 480
-            },
-            "maxres": {
-              "url": "https://i.ytimg.com/vi/Ip1oVVEHcLU/maxresdefault.jpg",
-              "width": 1280,
-              "height": 720
-            }
-          },
-          "channelTitle": "47herri",
-          "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
-          "position": 49,
-          "resourceId": {
-            "kind": "youtube#video",
-            "videoId": "Ip1oVVEHcLU"
-          },
-          "videoOwnerChannelTitle": "47herri",
-          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
-        }
       }
     ],
     "pageInfo": {
-      "totalResults": 122,
+      "totalResults": 123,
       "resultsPerPage": 50
     }
   },
