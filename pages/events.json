@@ -791,6 +791,20 @@
           "notes": "11.15 Aziendaren bedeinkazioa "
         }
       ]
+    },
+    {
+      "title": "Santa Ageda",
+      "date": "2026-02-05",
+      "custom": [
+        {
+          "location": [
+            "Arribe"
+          ],
+          "times": [
+            "13:00"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
