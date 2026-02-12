@@ -316,7 +316,8 @@
     "Catalina Alduncin Arrizurieta": "Catalina Alduncín Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Joana Arrizurieta Azpiroz",
     "Hausterre eguna": "Dia de l'Ascensió",
-    "Hautsterre eguna": "Dia d’elecció"
+    "Hautsterre eguna": "Dia d’elecció",
+    "Miércoles de ceniza": "Dimecres de Cendra"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -635,7 +636,8 @@
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
     "Hausterre eguna": "Jour de la maison de la terre",
-    "Hautsterre eguna": "Jour de la Haute Terre"
+    "Hautsterre eguna": "Jour de la Haute Terre",
+    "Miércoles de ceniza": "Mercredi des Cendres"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -954,7 +956,8 @@
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
     "Hausterre eguna": "Tag des Heims/Hauses",
-    "Hautsterre eguna": "Tag von Allerheiligen"
+    "Hautsterre eguna": "Tag von Allerheiligen",
+    "Miércoles de ceniza": "Aschermittwoch"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1273,7 +1276,8 @@
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
     "Hausterre eguna": "Giovedì Santo",
-    "Hautsterre eguna": "Giorno dell'Alta Terra"
+    "Hautsterre eguna": "Giorno dell'Alta Terra",
+    "Miércoles de ceniza": "Mercoledì delle Ceneri"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1592,7 +1596,8 @@
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
     "Hausterre eguna": "Dia de Todos os Santos",
-    "Hautsterre eguna": "Dia de Hautsterre"
+    "Hautsterre eguna": "Dia de Hautsterre",
+    "Miércoles de ceniza": "Quarta-feira de Cinzas"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -1911,7 +1916,8 @@
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
     "Hausterre eguna": "Ziua Hausterrelor",
-    "Hautsterre eguna": "Ziua Adormirii Maicii Domnului"
+    "Hautsterre eguna": "Ziua Adormirii Maicii Domnului",
+    "Miércoles de ceniza": "Miercurea Cenușii"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2230,7 +2236,8 @@
     "Catalina Alduncin Arrizurieta": "كاتالينا ألدونسِين أريثورييتا",
     "Juana Arrizurieta Azpiroz": "خوانا أريثورييتا أثبيروث",
     "Hausterre eguna": "يوم هاوستيري",
-    "Hautsterre eguna": "يوم هاوتستير"
+    "Hautsterre eguna": "يوم هاوتستير",
+    "Miércoles de ceniza": "أربعاء الرماد"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2549,7 +2556,8 @@
     "Catalina Alduncin Arrizurieta": "Каталина Алдунсин Арризуриета",
     "Juana Arrizurieta Azpiroz": "Хуана Арисуриета Аспирос",
     "Hausterre eguna": "Ден на домакинството",
-    "Hautsterre eguna": "Денят на Светата Земя"
+    "Hautsterre eguna": "Денят на Светата Земя",
+    "Miércoles de ceniza": "Пепеляна сряда"
   },
   "Euskara:eu": {
     "Albiasu": "Albiasu",
@@ -2798,7 +2806,8 @@
     "Catalina Alduncin Arrizurieta": "Catalina Alduntzin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
     "Hausterre eguna": "Hausterre eguna",
-    "Hautsterre eguna": "Hauts-asterre eguna"
+    "Hautsterre eguna": "Hauts-asterre eguna",
+    "Miércoles de ceniza": "Ash Wednesday"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -3047,7 +3056,8 @@
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
     "Hausterre eguna": "Día de la Sagrada Familia",
-    "Hautsterre eguna": "Día de Todos los Santos"
+    "Hautsterre eguna": "Día de Todos los Santos",
+    "Miércoles de ceniza": "Miércoles de Ceniza"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -3296,6 +3306,7 @@
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
     "Hausterre eguna": "Palm Sunday",
-    "Hautsterre eguna": "Ascension Day"
+    "Hautsterre eguna": "Ascension Day",
+    "Miércoles de ceniza": "Ash Wednesday"
   }
 }
