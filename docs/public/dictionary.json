@@ -315,7 +315,8 @@
     "Santa Ageda": "Santa Àgueda",
     "Catalina Alduncin Arrizurieta": "Catalina Alduncín Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Joana Arrizurieta Azpiroz",
-    "Hausterre eguna": "Dia de l'Ascensió"
+    "Hausterre eguna": "Dia de l'Ascensió",
+    "Hautsterre eguna": "Dia d’elecció"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -633,7 +634,8 @@
     "Santa Ageda": "Sainte Agathe",
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
-    "Hausterre eguna": "Jour de la maison de la terre"
+    "Hausterre eguna": "Jour de la maison de la terre",
+    "Hautsterre eguna": "Jour de la Haute Terre"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -951,7 +953,8 @@
     "Santa Ageda": "Heilige Agathe",
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
-    "Hausterre eguna": "Tag des Heims/Hauses"
+    "Hausterre eguna": "Tag des Heims/Hauses",
+    "Hautsterre eguna": "Tag von Allerheiligen"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1269,7 +1272,8 @@
     "Santa Ageda": "Sant'Águeda",
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
-    "Hausterre eguna": "Giovedì Santo"
+    "Hausterre eguna": "Giovedì Santo",
+    "Hautsterre eguna": "Giorno dell'Alta Terra"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1587,7 +1591,8 @@
     "Santa Ageda": "Santa Águeda",
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
-    "Hausterre eguna": "Dia de Todos os Santos"
+    "Hausterre eguna": "Dia de Todos os Santos",
+    "Hautsterre eguna": "Dia de Hautsterre"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -1905,7 +1910,8 @@
     "Santa Ageda": "Sfânta Águeda",
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
-    "Hausterre eguna": "Ziua Hausterrelor"
+    "Hausterre eguna": "Ziua Hausterrelor",
+    "Hautsterre eguna": "Ziua Adormirii Maicii Domnului"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2223,7 +2229,8 @@
     "Santa Ageda": "سانتا أغيدا",
     "Catalina Alduncin Arrizurieta": "كاتالينا ألدونسِين أريثورييتا",
     "Juana Arrizurieta Azpiroz": "خوانا أريثورييتا أثبيروث",
-    "Hausterre eguna": "يوم هاوستيري"
+    "Hausterre eguna": "يوم هاوستيري",
+    "Hautsterre eguna": "يوم هاوتستير"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2541,7 +2548,8 @@
     "Santa Ageda": "Санта Агеда",
     "Catalina Alduncin Arrizurieta": "Каталина Алдунсин Арризуриета",
     "Juana Arrizurieta Azpiroz": "Хуана Арисуриета Аспирос",
-    "Hausterre eguna": "Ден на домакинството"
+    "Hausterre eguna": "Ден на домакинството",
+    "Hautsterre eguna": "Денят на Светата Земя"
   },
   "Euskara:eu": {
     "Albiasu": "Albiasu",
@@ -2789,7 +2797,8 @@
     "Santa Ageda": "Santa Ageda",
     "Catalina Alduncin Arrizurieta": "Catalina Alduntzin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
-    "Hausterre eguna": "Hausterre eguna"
+    "Hausterre eguna": "Hausterre eguna",
+    "Hautsterre eguna": "Hauts-asterre eguna"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -3037,7 +3046,8 @@
     "Santa Ageda": "Santa Águeda",
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
-    "Hausterre eguna": "Día de la Sagrada Familia"
+    "Hausterre eguna": "Día de la Sagrada Familia",
+    "Hautsterre eguna": "Día de Todos los Santos"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -3285,6 +3295,7 @@
     "Santa Ageda": "Saint Agatha",
     "Catalina Alduncin Arrizurieta": "Catalina Alduncin Arrizurieta",
     "Juana Arrizurieta Azpiroz": "Juana Arrizurieta Azpiroz",
-    "Hausterre eguna": "Palm Sunday"
+    "Hausterre eguna": "Palm Sunday",
+    "Hautsterre eguna": "Ascension Day"
   }
 }
