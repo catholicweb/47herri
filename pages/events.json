@@ -805,6 +805,37 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Hausterre eguna",
+      "date": "2026-02-18",
+      "custom": [
+        {
+          "location": [
+            "Lekunberri"
+          ],
+          "times": [
+            "16:00",
+            "18:30"
+          ]
+        },
+        {
+          "location": [
+            "Leitza"
+          ],
+          "times": [
+            "19:30"
+          ]
+        },
+        {
+          "location": [
+            "Aldatz"
+          ],
+          "times": [
+            "09:00"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
