@@ -837,6 +837,25 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Xabierraldiak",
+      "date": "2026-03-14",
+      "custom": [
+        {
+          "location": [
+            "Venta Judas (15km)"
+          ],
+          "times": [
+            "11:00"
+          ]
+        },
+        {
+          "times": [
+            "13:00"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
