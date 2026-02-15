@@ -318,7 +318,8 @@
     "Hausterre eguna": "Dia de l'Ascensió",
     "Hautsterre eguna": "Dia d’elecció",
     "Miércoles de ceniza": "Dimecres de Cendra",
-    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaikoetxea"
+    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaikoetxea",
+    "Xabierraldiak": "Xabierraldiak"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -639,7 +640,8 @@
     "Hausterre eguna": "Jour de la maison de la terre",
     "Hautsterre eguna": "Jour de la Haute Terre",
     "Miércoles de ceniza": "Mercredi des Cendres",
-    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea"
+    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea",
+    "Xabierraldiak": "Fêtes de Saint François Xavier"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -960,7 +962,8 @@
     "Hausterre eguna": "Tag des Heims/Hauses",
     "Hautsterre eguna": "Tag von Allerheiligen",
     "Miércoles de ceniza": "Aschermittwoch",
-    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea"
+    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea",
+    "Xabierraldiak": "Xabierfeste"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1281,7 +1284,8 @@
     "Hausterre eguna": "Giovedì Santo",
     "Hautsterre eguna": "Giorno dell'Alta Terra",
     "Miércoles de ceniza": "Mercoledì delle Ceneri",
-    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea"
+    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea",
+    "Xabierraldiak": "Xabierraldiak"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1602,7 +1606,8 @@
     "Hausterre eguna": "Dia de Todos os Santos",
     "Hautsterre eguna": "Dia de Hautsterre",
     "Miércoles de ceniza": "Quarta-feira de Cinzas",
-    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea"
+    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea",
+    "Xabierraldiak": "Xabierraldiak"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -1923,7 +1928,8 @@
     "Hausterre eguna": "Ziua Hausterrelor",
     "Hautsterre eguna": "Ziua Adormirii Maicii Domnului",
     "Miércoles de ceniza": "Miercurea Cenușii",
-    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea"
+    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea",
+    "Xabierraldiak": "Xabierraldiak"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2244,7 +2250,8 @@
     "Hausterre eguna": "يوم هاوستيري",
     "Hautsterre eguna": "يوم هاوتستير",
     "Miércoles de ceniza": "أربعاء الرماد",
-    "Dolores Arandia Garaicoechea": "دولوريس أرانديا غارايكوتشيا"
+    "Dolores Arandia Garaicoechea": "دولوريس أرانديا غارايكوتشيا",
+    "Xabierraldiak": "سابييرالدياك"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2565,7 +2572,8 @@
     "Hausterre eguna": "Ден на домакинството",
     "Hautsterre eguna": "Денят на Светата Земя",
     "Miércoles de ceniza": "Пепеляна сряда",
-    "Dolores Arandia Garaicoechea": "Долорес Арандия Гарайкочеа"
+    "Dolores Arandia Garaicoechea": "Долорес Арандия Гарайкочеа",
+    "Xabierraldiak": "Сабиералдиак"
   },
   "Euskara:eu": {
     "Albiasu": "Albiasu",
@@ -2816,7 +2824,8 @@
     "Hausterre eguna": "Hausterre eguna",
     "Hautsterre eguna": "Hauts-asterre eguna",
     "Miércoles de ceniza": "Hautsterre eguna",
-    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaikoetxea"
+    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaikoetxea",
+    "Xabierraldiak": "Xabierraldiak"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -3067,7 +3076,8 @@
     "Hausterre eguna": "Día de la Sagrada Familia",
     "Hautsterre eguna": "Día de Todos los Santos",
     "Miércoles de ceniza": "Miércoles de Ceniza",
-    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea"
+    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea",
+    "Xabierraldiak": "Xabierraldiak"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -3318,6 +3328,7 @@
     "Hausterre eguna": "Palm Sunday",
     "Hautsterre eguna": "Ascension Day",
     "Miércoles de ceniza": "Ash Wednesday",
-    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea"
+    "Dolores Arandia Garaicoechea": "Dolores Arandia Garaicoechea",
+    "Xabierraldiak": "St. Francis Xavier Novenas"
   }
 }
