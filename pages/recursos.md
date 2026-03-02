@@ -45,6 +45,7 @@ sections:
     title: Beste baliabideak
     tags: ["horizontal"]
     links:
+      - "https://sallebarne.eus/wp-content/uploads/{year}/{month}/{year}.{month}.{day}.mp3||https://sallebarne.eus/wp-content/uploads/{year}/{month-1}/{year}.{month}.{day}.mp3||https://sallebarne.eus/wp-content/uploads/{year-1}/{month-1}/{year}.{month}.{day}.mp3"
       - "https://open.spotify.com/show/7LonKVvfQIsCp45TM58h7y"
       - "https://open.spotify.com/show/1XWvEFBoCvahdELmEXgSfL"
       - "https://open.spotify.com/show/1zR5ODOgjx1lGObG2gJvox"
