@@ -49,6 +49,14 @@ export async function getPreview(url) {
   try {
     if (url.endsWith(".md")) {
       return await localLinks(url);
+    } else if (url.includes("sallebarne.eus")) {
+      return {
+        type: "link",
+        src: url,
+        title: "Egunez egun",
+        image: "",
+        aspect: round(16 / 9),
+      };
     } else {
       return await getOEmbed(url);
     }
