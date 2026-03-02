@@ -55,7 +55,7 @@ const isAudio = (url) => {
 
 const interpolate = (str) => {
   const [year, month, day] = new Date().toISOString().split('T')[0].split('-');
-  return str.replaceAll('{year}', year).str.replaceAll('{year-1}', year-1).replaceAll('{month}', month).replaceAll('{month-1}', month-1).replaceAll('{day}', day).trim()
+  return str.replaceAll('{year}', year).replaceAll('{year-1}', year-1).replaceAll('{month}', month).replaceAll('{month-1}', month-1).replaceAll('{day}', day).trim()
 }
 
 function logo(item) {
