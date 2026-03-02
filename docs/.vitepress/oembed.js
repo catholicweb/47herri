@@ -54,7 +54,7 @@ export async function getPreview(url) {
         type: "link",
         src: url,
         title: "Egunez egun",
-        image: "",
+        image: "https://sallebarne.eus/wp-content/uploads/2026/02/2026.03.06-570x350.jpg",
         aspect: round(16 / 9),
       };
     } else {
