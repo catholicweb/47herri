@@ -8,7 +8,12 @@
             <h3 class="text-2xl font-bold text-white mb-4 w-full px-4">{{ item.title }}</h3>
 
             <audio controls autoplay class="w-full h-10 px-2">
-              <source :src="item.src" type="audio/mpeg" />
+              <source 
+                v-for="(url, index) in item.src?.split('||')" 
+                :key="index"
+                :src="interpolate(url)" 
+                type="audio/mpeg" 
+              />
               Tu navegador no soporta el elemento de audio.
             </audio>
           </div>
@@ -47,6 +52,11 @@ const isAudio = (url) => {
   if (!url) return false;
   return url.toLowerCase().includes(".mp3");
 };
+
+const interpolate = (str) => {
+  const [year, month, day] = new Date().toISOString().split('T')[0].split('-');
+  return str.replaceAll('{year}', year).str.replaceAll('{year-1}', year-1).replaceAll('{month}', month).replaceAll('{month-1}', month-1).replaceAll('{day}', day).trim()
+}
 
 function logo(item) {
   if (item.src.includes("youtube")) return "youtube-logo";
