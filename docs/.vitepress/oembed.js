@@ -51,9 +51,11 @@ export async function getPreview(url) {
       return await localLinks(url);
     } else if (url.includes("sallebarne.eus")) {
 
+      console.log(url)
       const html = await (await fetch('https://sallebarne.eus')).text();
       const match = html.match(/sallebarne\.eus\/wp-content\/uploads\/([^-]+?)-([^\.]+?)\.jpg/);
 
+      console.log(match)
       return {
         type: "link",
         src: `https://sallebarne.eus/wp-content/uploads/${match[1]}.mp3`,
