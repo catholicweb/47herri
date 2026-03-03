@@ -50,11 +50,15 @@ export async function getPreview(url) {
     if (url.endsWith(".md")) {
       return await localLinks(url);
     } else if (url.includes("sallebarne.eus")) {
+
+      const html = await (await fetch('https://sallebarne.eus')).text();
+      const match = html.match(/sallebarne\.eus\/wp-content\/uploads\/([^-]+?)-([^\.]+?)\.jpg/);
+
       return {
         type: "link",
-        src: url,
-        title: "Egunez egun",
-        image: "https://sallebarne.eus/wp-content/uploads/2026/02/2026.03.06-570x350.jpg",
+        src: `https://sallebarne.eus/wp-content/uploads/${match[1]}.mp3`,
+        title: `Egunez egun ${match[1]?.split('/')[2]?.split('.').toReversed().join('-') || ''}`,
+        image: `https://sallebarne.eus/wp-content/uploads/${match[1]}-${match[2]}.jpg`,
         aspect: round(16 / 9),
       };
     } else {

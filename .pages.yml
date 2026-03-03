@@ -41,7 +41,7 @@ components:
           { value: "https://open.spotify.com/show/1OUhu57FCAscICoEMwyONY?si=5f7ea6ad49394828", label: "Liturgia de las horas (litur pro)" },
           { value: "https://open.spotify.com/show/6mpihPJzRA61GEdomhzGqq?si=b59a6acf96104988", label: "Jose Camacho Cotto" },
           { value: "https://open.spotify.com/show/1XWvEFBoCvahdELmEXgSfL", label: "Rezar Hoy" },
-          { value: "https://sallebarne.eus/wp-content/uploads/{year}/{month}/{year}.{month}.{day}.mp3||https://sallebarne.eus/wp-content/uploads/{year}/{month-1}/{year}.{month}.{day}.mp3||https://sallebarne.eus/wp-content/uploads/{year-1}/{month-1}/{year}.{month}.{day}.mp3", label: "Egunez Egun (SalleBARNE)" },          
+          { value: "https://sallebarne.eus", label: "Egunez Egun (SalleBARNE)" },          
         ]
   languages:
     label: "Idioma"
