@@ -30,7 +30,7 @@ const originalFetch = globalThis.fetch;
 globalThis.fetch = async (url, options = {}) => {
   try {
     // Solo cacheamos GETs
-    if (options.method && options.method !== "GET") {
+    if ( options.cache == 'no-cache' || (options.method && options.method !== "GET")) {
       return originalFetch(url, options);
     }
 
