@@ -1,6 +1,8 @@
 export async function getAudio(lang) {
   const bibles = {
     eu: "https://live.bible.is/api/bibles/filesets/EUSEABN1DA",
+    es: "https://live.bible.is/api/bibles/filesets/SPADHH",
+    en: "https://live.bible.is/api/bibles/filesets/ENGNIV",
   };
 
   const res = await fetch(bibles[lang] || bibles.eu);
