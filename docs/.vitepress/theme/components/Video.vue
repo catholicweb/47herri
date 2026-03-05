@@ -4,7 +4,7 @@
       <div class="relative">
         <div v-if="playingVideo === item.src" class="w-full h-full items-center rounded-lg overflow-hidden cursor-pointer aspect-[16/9]">
           <div v-if="isAudio(item.src)" class="w-full text-center flex flex-col items-center justify-center h-full bg-black">
-            <img :src="item.image" :alt="`Thumbnail for ${item.title}`" :fetchpriority="block.index >= 1 ? 'low' : 'high'" :loading="block.index >= 1 ? 'lazy' : 'eager'" crossorigin="anonymous" class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-10" />
+            <img :src="item.image" :alt="`Thumbnail for ${item.title}`" :fetchpriority="block.index >= 1 ? 'low' : 'high'" :loading="block.index >= 1 ? 'lazy' : 'eager'" @error.once="$event.target.crossOrigin = 'anonymous'; $event.target.src = item.image" class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-10" />
             <h3 class="text-2xl font-bold text-white mb-4 w-full px-4">{{ item.title }}</h3>
 
             <audio controls autoplay class="w-full h-10 px-2">
