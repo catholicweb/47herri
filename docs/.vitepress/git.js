@@ -31,9 +31,7 @@ export function fetchUpstream() {
 
   // 4) Quitar workflows... del staging (si no existen, no pasa nada)
   sh(`git reset .github/workflows || true`);
-  sh(`git reset docs/public/dictionary.json || true`);
-  sh(`git reset docs/public/calendar.json || true`);
-  sh(`git reset docs/public/media || true`);
+  sh(`git reset docs/public || true`);
   sh(`git reset pages || true`);
 
   // 5) Commit (si no hay cambios, fallo → también bien)
