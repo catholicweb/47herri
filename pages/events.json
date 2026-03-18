@@ -859,6 +859,21 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Encuentro de cuaresma",
+      "date": "2026-03-28",
+      "custom": [
+        {
+          "location": [
+            "Lekunberri"
+          ],
+          "times": [
+            "11:00"
+          ],
+          "notes": "11.0a"
+        }
+      ]
     }
   ],
   "events-funeral": [
