@@ -843,20 +843,16 @@
       "date": "2026-03-14",
       "custom": [
         {
-          "location": [
-            "Venta Judas (15km)"
-          ],
           "times": [
             "11:00"
-          ]
+          ],
+          "notes": "Venta Judas (15km)"
         },
         {
-          "location": [
-            "Zangoza (8km)"
-          ],
           "times": [
             "13:00"
-          ]
+          ],
+          "notes": "Zangoza (8km)"
         }
       ]
     },
@@ -904,7 +900,7 @@
     {
       "title": "Concepción Martín Esnaola",
       "location": [
-        "Etxarri - larraun"
+        "Etxarri"
       ],
       "date": "2026-01-25",
       "times": "16:00"
