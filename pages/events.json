@@ -948,6 +948,9 @@
         {
           "location": [
             "Lekunberri"
+          ],
+          "times": [
+            "23:00"
           ]
         },
         {
@@ -1012,6 +1015,37 @@
           ],
           "times": [
             "11:00"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hora Santa",
+      "date": "2026-04-02",
+      "image": "/media/Monumento-eucaristico-Jueves-Santo.webp",
+      "custom": [
+        {
+          "location": [
+            "Leitza"
+          ],
+          "times": [
+            "20:15"
+          ]
+        },
+        {
+          "location": [
+            "Betelu"
+          ],
+          "times": [
+            "21:00"
+          ]
+        },
+        {
+          "location": [
+            "Lekunberri"
+          ],
+          "times": [
+            "20:00"
           ]
         }
       ]
