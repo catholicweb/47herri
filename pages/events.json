@@ -871,6 +871,40 @@
           "notes": "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria"
         }
       ]
+    },
+    {
+      "title": "Jueves Santo",
+      "date": "2026-04-02",
+      "image": "/media/IMG-20250410-WA0023.webp",
+      "notes": "Última Cena",
+      "custom": [
+        {
+          "location": [
+            "Areso",
+            "Lekunberri"
+          ],
+          "times": [
+            "18:00"
+          ]
+        },
+        {
+          "location": [
+            "Goizueta"
+          ],
+          "times": [
+            "19:00"
+          ]
+        },
+        {
+          "location": [
+            "Leitza",
+            "Betelu"
+          ],
+          "times": [
+            "19:30"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
