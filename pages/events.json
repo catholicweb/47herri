@@ -905,6 +905,40 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Viernes Santo",
+      "date": "2026-04-03",
+      "image": "/media/viernesanto.jpeg",
+      "notes": "Crucifixión y muerte del Señor",
+      "custom": [
+        {
+          "location": [
+            "Lekunberri",
+            "Leitza"
+          ],
+          "times": [
+            "18:00"
+          ]
+        },
+        {
+          "location": [
+            "Goizueta"
+          ],
+          "times": [
+            "19:00"
+          ]
+        },
+        {
+          "location": [
+            "Betelu",
+            "Areso"
+          ],
+          "times": [
+            "16:30"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
