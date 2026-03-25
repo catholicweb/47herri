@@ -983,6 +983,38 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Vía Crucis",
+      "date": "2026-04-03",
+      "image": "/media/cuadros-estaciones-via-crucis-15-piezas-madera.jpg",
+      "custom": [
+        {
+          "location": [
+            "Lekunberri"
+          ],
+          "times": [
+            "12:00"
+          ]
+        },
+        {
+          "location": [
+            "Leitza"
+          ],
+          "times": [
+            "08:00"
+          ]
+        },
+        {
+          "location": [
+            "Betelu",
+            "Areso"
+          ],
+          "times": [
+            "11:00"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
