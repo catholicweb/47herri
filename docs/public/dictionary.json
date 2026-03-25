@@ -326,7 +326,8 @@
     "Encuentro de cuaresma": "Trobada de Quaresma",
     "María Jesús Zubillaga Gabirondo": "Maria Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Litúrgia. 12:00 Sopars Alfa. 13:30 Dinar"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Litúrgia. 12:00 Sopars Alfa. 13:30 Dinar",
+    "Jueves Santo": "Dijous Sant"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -655,7 +656,8 @@
     "Encuentro de cuaresma": "Rencontre de carême",
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgie. 12:00 Dîners Alpha. 13:30 Déjeuner"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgie. 12:00 Dîners Alpha. 13:30 Déjeuner",
+    "Jueves Santo": "Jeudi Saint"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -984,7 +986,8 @@
     "Encuentro de cuaresma": "Fastenzeit-Treffen",
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgie. 12:00 Alpha-Abendessen. 13:30 Mittagessen"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgie. 12:00 Alpha-Abendessen. 13:30 Mittagessen",
+    "Jueves Santo": "Gründonnerstag"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1313,7 +1316,8 @@
     "Encuentro de cuaresma": "Incontro di Quaresima",
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Pranzo Alpha. 13:30 Pranzo"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Pranzo Alpha. 13:30 Pranzo",
+    "Jueves Santo": "Giovedì Santo"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1642,7 +1646,8 @@
     "Encuentro de cuaresma": "Encontro de Quaresma",
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Jantares Alpha. 13:30 Almoço"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Jantares Alpha. 13:30 Almoço",
+    "Jueves Santo": "Quinta-feira Santa"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -1971,7 +1976,8 @@
     "Encuentro de cuaresma": "Întâlnire de Postul Mare",
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturghia. 12:00 Cina Alfa. 13:30 Prânzul"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturghia. 12:00 Cina Alfa. 13:30 Prânzul",
+    "Jueves Santo": "Joia Mare"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2300,7 +2306,8 @@
     "Encuentro de cuaresma": "لقاء زمن الصوم",
     "María Jesús Zubillaga Gabirondo": "ماريا خيسوس زوبيياجا جابيروندو",
     "Josefa Galarza Arangoa": "خوسيفا غالارثا أرانغوا",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 الليتورجيا. 12:00 عشاء ألفا. 13:30 الغداء"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 الليتورجيا. 12:00 عشاء ألفا. 13:30 الغداء",
+    "Jueves Santo": "خميس圣"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2629,7 +2636,8 @@
     "Encuentro de cuaresma": "Великопостна среща",
     "María Jesús Zubillaga Gabirondo": "Мария Хесус Зубийага Габирондо",
     "Josefa Galarza Arangoa": "Хосефа Галарса Арангоа",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Литургия. 12:00 Вечери Алфа. 13:30 Обяд"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Литургия. 12:00 Вечери Алфа. 13:30 Обяд",
+    "Jueves Santo": "Велики четвъртък"
   },
   "Euskara:eu": {
     "Albiasu": "Albiasu",
@@ -2888,7 +2896,9 @@
     "Encuentro de cuaresma": "Garizumako topaketa",
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Alfa Afariak. 13:30 Bazkaria"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Alfa Afariak. 13:30 Bazkaria",
+    "Urte berria": "Urte berria",
+    "Jueves Santo": "Ostegun Santua"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -3147,7 +3157,9 @@
     "Encuentro de cuaresma": "Encuentro de Cuaresma",
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Cenas Alfa. 13:30 Comida"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Cenas Alfa. 13:30 Comida",
+    "Urte berria": "Año nuevo",
+    "Jueves Santo": "Jueves Santo"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -3406,6 +3418,8 @@
     "Encuentro de cuaresma": "Lenten Encounter",
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
-    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgy. 12:00 Alpha dinner. 13:30 Lunch"
+    "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgy. 12:00 Alpha dinner. 13:30 Lunch",
+    "Urte berria": "New Year",
+    "Jueves Santo": "Holy Thursday"
   }
 }
