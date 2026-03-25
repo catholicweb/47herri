@@ -333,7 +333,8 @@
     "Crucifixión y muerte del Señor": "Crucifixió i mort del Senyor",
     "Vigilia Pascual": "Vetlla Pasqual",
     "Vía Crucis": "Via Crucis",
-    "Hora Santa": "Hora Santa"
+    "Hora Santa": "Hora Santa",
+    "Confesiones Cuaresma": "Confessions de Quaresma"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -669,7 +670,8 @@
     "Crucifixión y muerte del Señor": "Crucifixion et mort du Seigneur",
     "Vigilia Pascual": "Vigile pascale",
     "Vía Crucis": "Chemin de Croix",
-    "Hora Santa": "Heure Sainte"
+    "Hora Santa": "Heure Sainte",
+    "Confesiones Cuaresma": "Confessions de Carême"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -1005,7 +1007,8 @@
     "Crucifixión y muerte del Señor": "Kreuzigung und Tod des Herrn",
     "Vigilia Pascual": "Ostervigil",
     "Vía Crucis": "Kreuzweg",
-    "Hora Santa": "Heilige Stunde"
+    "Hora Santa": "Heilige Stunde",
+    "Confesiones Cuaresma": "Beichten in der Fastenzeit"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1341,7 +1344,8 @@
     "Crucifixión y muerte del Señor": "Crocifissione e morte del Signore",
     "Vigilia Pascual": "Veglia Pasquale",
     "Vía Crucis": "Via Crucis",
-    "Hora Santa": "Ora Santa"
+    "Hora Santa": "Ora Santa",
+    "Confesiones Cuaresma": "Confessioni di Quaresima"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1677,7 +1681,8 @@
     "Crucifixión y muerte del Señor": "Crucificação e morte do Senhor",
     "Vigilia Pascual": "Vigília Pascal",
     "Vía Crucis": "Via-Sacra",
-    "Hora Santa": "Hora Santa"
+    "Hora Santa": "Hora Santa",
+    "Confesiones Cuaresma": "Confissões da Quaresma"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -2013,7 +2018,8 @@
     "Crucifixión y muerte del Señor": "Răstignirea și moartea Domnului",
     "Vigilia Pascual": "Vigilia Pascală",
     "Vía Crucis": "Calea Crucii",
-    "Hora Santa": "Ora Sfântă"
+    "Hora Santa": "Ora Sfântă",
+    "Confesiones Cuaresma": "Spovezi de Postul Mare"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2349,7 +2355,8 @@
     "Crucifixión y muerte del Señor": "صلب وموت الرب",
     "Vigilia Pascual": "قداس ليلة عيد القيامة",
     "Vía Crucis": "درب الصليب",
-    "Hora Santa": "الساعة المقدسة"
+    "Hora Santa": "الساعة المقدسة",
+    "Confesiones Cuaresma": "اعترافات زمن الصوم"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2685,7 +2692,8 @@
     "Crucifixión y muerte del Señor": "Разпятие и смърт на Господа",
     "Vigilia Pascual": "Великденско бдение",
     "Vía Crucis": "Кръстен път",
-    "Hora Santa": "Свети час"
+    "Hora Santa": "Свети час",
+    "Confesiones Cuaresma": "Изповеди за Великия пост"
   },
   "Euskara:eu": {
     "Albiasu": "Albiasu",
@@ -2952,7 +2960,8 @@
     "Crucifixión y muerte del Señor": "Jaunaren gurutziltzaketa eta heriotza",
     "Vigilia Pascual": "Pazko Bezperako Vigilia",
     "Vía Crucis": "Bide‑Gurutzea",
-    "Hora Santa": "Ordu Saindua"
+    "Hora Santa": "Ordu Saindua",
+    "Confesiones Cuaresma": "Aste Santuko aitorpenak"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -3219,7 +3228,8 @@
     "Crucifixión y muerte del Señor": "Crucifixión y muerte del Señor",
     "Vigilia Pascual": "Vigilia Pascual",
     "Vía Crucis": "Vía Crucis",
-    "Hora Santa": "Hora Santa"
+    "Hora Santa": "Hora Santa",
+    "Confesiones Cuaresma": "Confesiones de Cuaresma"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -3486,6 +3496,7 @@
     "Crucifixión y muerte del Señor": "Crucifixion and death of the Lord",
     "Vigilia Pascual": "Easter Vigil",
     "Vía Crucis": "Way of the Cross",
-    "Hora Santa": "Holy Hour"
+    "Hora Santa": "Holy Hour",
+    "Confesiones Cuaresma": "Lenten Confessions"
   }
 }
