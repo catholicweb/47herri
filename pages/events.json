@@ -939,6 +939,50 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Vigilia Pascual",
+      "date": "2026-04-04",
+      "image": "/media/vigilia.jpeg",
+      "custom": [
+        {
+          "location": [
+            "Lekunberri"
+          ]
+        },
+        {
+          "location": [
+            "Goizueta"
+          ],
+          "times": [
+            "19:00"
+          ]
+        },
+        {
+          "location": [
+            "Leitza"
+          ],
+          "times": [
+            "22:00"
+          ]
+        },
+        {
+          "location": [
+            "Betelu"
+          ],
+          "times": [
+            "21:00"
+          ]
+        },
+        {
+          "location": [
+            "Areso"
+          ],
+          "times": [
+            "20:00"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
