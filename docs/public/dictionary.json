@@ -330,7 +330,8 @@
     "Jueves Santo": "Dijous Sant",
     "Última Cena": "Darrer Sopar",
     "Viernes Santo": "Divendres Sant",
-    "Crucifixión y muerte del Señor": "Crucifixió i mort del Senyor"
+    "Crucifixión y muerte del Señor": "Crucifixió i mort del Senyor",
+    "Vigilia Pascual": "Vetlla Pasqual"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -663,7 +664,8 @@
     "Jueves Santo": "Jeudi Saint",
     "Última Cena": "Dernière Cène",
     "Viernes Santo": "Vendredi saint",
-    "Crucifixión y muerte del Señor": "Crucifixion et mort du Seigneur"
+    "Crucifixión y muerte del Señor": "Crucifixion et mort du Seigneur",
+    "Vigilia Pascual": "Vigile pascale"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -996,7 +998,8 @@
     "Jueves Santo": "Gründonnerstag",
     "Última Cena": "Letztes Abendmahl",
     "Viernes Santo": "Karfreitag",
-    "Crucifixión y muerte del Señor": "Kreuzigung und Tod des Herrn"
+    "Crucifixión y muerte del Señor": "Kreuzigung und Tod des Herrn",
+    "Vigilia Pascual": "Ostervigil"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1329,7 +1332,8 @@
     "Jueves Santo": "Giovedì Santo",
     "Última Cena": "Ultima Cena",
     "Viernes Santo": "Venerdì Santo",
-    "Crucifixión y muerte del Señor": "Crocifissione e morte del Signore"
+    "Crucifixión y muerte del Señor": "Crocifissione e morte del Signore",
+    "Vigilia Pascual": "Veglia Pasquale"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1662,7 +1666,8 @@
     "Jueves Santo": "Quinta-feira Santa",
     "Última Cena": "Última Ceia",
     "Viernes Santo": "Sexta-feira Santa",
-    "Crucifixión y muerte del Señor": "Crucificação e morte do Senhor"
+    "Crucifixión y muerte del Señor": "Crucificação e morte do Senhor",
+    "Vigilia Pascual": "Vigília Pascal"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -1995,7 +2000,8 @@
     "Jueves Santo": "Joia Mare",
     "Última Cena": "Cina cea de Taină",
     "Viernes Santo": "Vinerea Mare",
-    "Crucifixión y muerte del Señor": "Răstignirea și moartea Domnului"
+    "Crucifixión y muerte del Señor": "Răstignirea și moartea Domnului",
+    "Vigilia Pascual": "Vigilia Pascală"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2328,7 +2334,8 @@
     "Jueves Santo": "خميس圣",
     "Última Cena": "العشاء الأخير",
     "Viernes Santo": "الجمعة العظيمة",
-    "Crucifixión y muerte del Señor": "صلب وموت الرب"
+    "Crucifixión y muerte del Señor": "صلب وموت الرب",
+    "Vigilia Pascual": "قداس ليلة عيد القيامة"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2661,7 +2668,8 @@
     "Jueves Santo": "Велики четвъртък",
     "Última Cena": "Тайната вечеря",
     "Viernes Santo": "Разпети петък",
-    "Crucifixión y muerte del Señor": "Разпятие и смърт на Господа"
+    "Crucifixión y muerte del Señor": "Разпятие и смърт на Господа",
+    "Vigilia Pascual": "Великденско бдение"
   },
   "Euskara:eu": {
     "Albiasu": "Albiasu",
@@ -2925,7 +2933,8 @@
     "Jueves Santo": "Ostegun Santua",
     "Última Cena": "Azken Afaria",
     "Viernes Santo": "Ostiral Santua",
-    "Crucifixión y muerte del Señor": "Jaunaren gurutziltzaketa eta heriotza"
+    "Crucifixión y muerte del Señor": "Jaunaren gurutziltzaketa eta heriotza",
+    "Vigilia Pascual": "Pazko Bezperako Vigilia"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -3189,7 +3198,8 @@
     "Jueves Santo": "Jueves Santo",
     "Última Cena": "Última Cena",
     "Viernes Santo": "Viernes Santo",
-    "Crucifixión y muerte del Señor": "Crucifixión y muerte del Señor"
+    "Crucifixión y muerte del Señor": "Crucifixión y muerte del Señor",
+    "Vigilia Pascual": "Vigilia Pascual"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -3453,6 +3463,7 @@
     "Jueves Santo": "Holy Thursday",
     "Última Cena": "Last Supper",
     "Viernes Santo": "Good Friday",
-    "Crucifixión y muerte del Señor": "Crucifixion and death of the Lord"
+    "Crucifixión y muerte del Señor": "Crucifixion and death of the Lord",
+    "Vigilia Pascual": "Easter Vigil"
   }
 }
