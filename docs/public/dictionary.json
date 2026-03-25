@@ -327,7 +327,8 @@
     "María Jesús Zubillaga Gabirondo": "Maria Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Litúrgia. 12:00 Sopars Alfa. 13:30 Dinar",
-    "Jueves Santo": "Dijous Sant"
+    "Jueves Santo": "Dijous Sant",
+    "Última Cena": "Darrer Sopar"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -657,7 +658,8 @@
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgie. 12:00 Dîners Alpha. 13:30 Déjeuner",
-    "Jueves Santo": "Jeudi Saint"
+    "Jueves Santo": "Jeudi Saint",
+    "Última Cena": "Dernière Cène"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -987,7 +989,8 @@
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgie. 12:00 Alpha-Abendessen. 13:30 Mittagessen",
-    "Jueves Santo": "Gründonnerstag"
+    "Jueves Santo": "Gründonnerstag",
+    "Última Cena": "Letztes Abendmahl"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1317,7 +1320,8 @@
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Pranzo Alpha. 13:30 Pranzo",
-    "Jueves Santo": "Giovedì Santo"
+    "Jueves Santo": "Giovedì Santo",
+    "Última Cena": "Ultima Cena"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1647,7 +1651,8 @@
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Jantares Alpha. 13:30 Almoço",
-    "Jueves Santo": "Quinta-feira Santa"
+    "Jueves Santo": "Quinta-feira Santa",
+    "Última Cena": "Última Ceia"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -1977,7 +1982,8 @@
     "María Jesús Zubillaga Gabirondo": "María Jesús Zubillaga Gabirondo",
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturghia. 12:00 Cina Alfa. 13:30 Prânzul",
-    "Jueves Santo": "Joia Mare"
+    "Jueves Santo": "Joia Mare",
+    "Última Cena": "Cina cea de Taină"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2307,7 +2313,8 @@
     "María Jesús Zubillaga Gabirondo": "ماريا خيسوس زوبيياجا جابيروندو",
     "Josefa Galarza Arangoa": "خوسيفا غالارثا أرانغوا",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 الليتورجيا. 12:00 عشاء ألفا. 13:30 الغداء",
-    "Jueves Santo": "خميس圣"
+    "Jueves Santo": "خميس圣",
+    "Última Cena": "العشاء الأخير"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2637,7 +2644,8 @@
     "María Jesús Zubillaga Gabirondo": "Мария Хесус Зубийага Габирондо",
     "Josefa Galarza Arangoa": "Хосефа Галарса Арангоа",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Литургия. 12:00 Вечери Алфа. 13:30 Обяд",
-    "Jueves Santo": "Велики четвъртък"
+    "Jueves Santo": "Велики четвъртък",
+    "Última Cena": "Тайната вечеря"
   },
   "Euskara:eu": {
     "Albiasu": "Albiasu",
@@ -2898,7 +2906,8 @@
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Alfa Afariak. 13:30 Bazkaria",
     "Urte berria": "Urte berria",
-    "Jueves Santo": "Ostegun Santua"
+    "Jueves Santo": "Ostegun Santua",
+    "Última Cena": "Azken Afaria"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -3159,7 +3168,8 @@
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgia. 12:00 Cenas Alfa. 13:30 Comida",
     "Urte berria": "Año nuevo",
-    "Jueves Santo": "Jueves Santo"
+    "Jueves Santo": "Jueves Santo",
+    "Última Cena": "Última Cena"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -3420,6 +3430,7 @@
     "Josefa Galarza Arangoa": "Josefa Galarza Arangoa",
     "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria": "11:00 Liturgy. 12:00 Alpha dinner. 13:30 Lunch",
     "Urte berria": "New Year",
-    "Jueves Santo": "Holy Thursday"
+    "Jueves Santo": "Holy Thursday",
+    "Última Cena": "Last Supper"
   }
 }
