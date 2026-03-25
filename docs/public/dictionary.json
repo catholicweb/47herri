@@ -332,7 +332,8 @@
     "Viernes Santo": "Divendres Sant",
     "Crucifixión y muerte del Señor": "Crucifixió i mort del Senyor",
     "Vigilia Pascual": "Vetlla Pasqual",
-    "Vía Crucis": "Via Crucis"
+    "Vía Crucis": "Via Crucis",
+    "Hora Santa": "Hora Santa"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -667,7 +668,8 @@
     "Viernes Santo": "Vendredi saint",
     "Crucifixión y muerte del Señor": "Crucifixion et mort du Seigneur",
     "Vigilia Pascual": "Vigile pascale",
-    "Vía Crucis": "Chemin de Croix"
+    "Vía Crucis": "Chemin de Croix",
+    "Hora Santa": "Heure Sainte"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -1002,7 +1004,8 @@
     "Viernes Santo": "Karfreitag",
     "Crucifixión y muerte del Señor": "Kreuzigung und Tod des Herrn",
     "Vigilia Pascual": "Ostervigil",
-    "Vía Crucis": "Kreuzweg"
+    "Vía Crucis": "Kreuzweg",
+    "Hora Santa": "Heilige Stunde"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1337,7 +1340,8 @@
     "Viernes Santo": "Venerdì Santo",
     "Crucifixión y muerte del Señor": "Crocifissione e morte del Signore",
     "Vigilia Pascual": "Veglia Pasquale",
-    "Vía Crucis": "Via Crucis"
+    "Vía Crucis": "Via Crucis",
+    "Hora Santa": "Ora Santa"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1672,7 +1676,8 @@
     "Viernes Santo": "Sexta-feira Santa",
     "Crucifixión y muerte del Señor": "Crucificação e morte do Senhor",
     "Vigilia Pascual": "Vigília Pascal",
-    "Vía Crucis": "Via-Sacra"
+    "Vía Crucis": "Via-Sacra",
+    "Hora Santa": "Hora Santa"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -2007,7 +2012,8 @@
     "Viernes Santo": "Vinerea Mare",
     "Crucifixión y muerte del Señor": "Răstignirea și moartea Domnului",
     "Vigilia Pascual": "Vigilia Pascală",
-    "Vía Crucis": "Calea Crucii"
+    "Vía Crucis": "Calea Crucii",
+    "Hora Santa": "Ora Sfântă"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2342,7 +2348,8 @@
     "Viernes Santo": "الجمعة العظيمة",
     "Crucifixión y muerte del Señor": "صلب وموت الرب",
     "Vigilia Pascual": "قداس ليلة عيد القيامة",
-    "Vía Crucis": "درب الصليب"
+    "Vía Crucis": "درب الصليب",
+    "Hora Santa": "الساعة المقدسة"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2677,7 +2684,8 @@
     "Viernes Santo": "Разпети петък",
     "Crucifixión y muerte del Señor": "Разпятие и смърт на Господа",
     "Vigilia Pascual": "Великденско бдение",
-    "Vía Crucis": "Кръстен път"
+    "Vía Crucis": "Кръстен път",
+    "Hora Santa": "Свети час"
   },
   "Euskara:eu": {
     "Albiasu": "Albiasu",
@@ -2943,7 +2951,8 @@
     "Viernes Santo": "Ostiral Santua",
     "Crucifixión y muerte del Señor": "Jaunaren gurutziltzaketa eta heriotza",
     "Vigilia Pascual": "Pazko Bezperako Vigilia",
-    "Vía Crucis": "Bide‑Gurutzea"
+    "Vía Crucis": "Bide‑Gurutzea",
+    "Hora Santa": "Ordu Saindua"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -3209,7 +3218,8 @@
     "Viernes Santo": "Viernes Santo",
     "Crucifixión y muerte del Señor": "Crucifixión y muerte del Señor",
     "Vigilia Pascual": "Vigilia Pascual",
-    "Vía Crucis": "Vía Crucis"
+    "Vía Crucis": "Vía Crucis",
+    "Hora Santa": "Hora Santa"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -3475,6 +3485,7 @@
     "Viernes Santo": "Good Friday",
     "Crucifixión y muerte del Señor": "Crucifixion and death of the Lord",
     "Vigilia Pascual": "Easter Vigil",
-    "Vía Crucis": "Way of the Cross"
+    "Vía Crucis": "Way of the Cross",
+    "Hora Santa": "Holy Hour"
   }
 }
