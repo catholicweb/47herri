@@ -168,7 +168,7 @@ content:
       - name: events-funeral
         label: Funerales
         type: object
-        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.location} - {fields.times}" } }
+        list: { collapsible: { collapsed: true, summary: "{fields.title} - {fields.location} - {fields.date} - {fields.times}" } }
         fields:
           - { name: title, label: Nombre del difunto, type: string }
           - { name: location, label: Ubicación, component: location }
@@ -201,11 +201,12 @@ content:
           - { name: notes, label: Notas (opcional), type: string }
           - name: custom
             label: Actos concretos
-            list: { collapsible: { collapsed: true, summary: "{fields.location} - {fields.times}" } }
+            list: { collapsible: { collapsed: true, summary: "{fields.location} - {fields.times} - {fields.date}" } }
             fields:
               - { name: location, label: Ubicación, component: location }
               - { name: times, label: Hora, component: times }
               - { name: date, label: Fecha, type: date  }
+              - { name: notes, label: Notas (opcional), type: string }
       - name: events-mass
         label: Horarios de misas
         type: object
