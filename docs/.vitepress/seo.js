@@ -300,11 +300,14 @@ function buildEventInstance(event, date, time, baseUrl, path) {
 }
 
 function getEndDate(startIso, durationMinutes = 60) {
-  const start = new Date(startIso) || return '';
+  const start = new Date(startIso);
 
-  // Add duration (minutes * 60 seconds * 1000 milliseconds)
+  // Check if the date is valid
+  if (isNaN(start.getTime())) return '';
+
+  // Add duration (minutes * 60,000ms)
   const end = new Date(start.getTime() + durationMinutes * 60000);
 
-  // Return formatted for Schema (removing milliseconds)
+  // Return formatted for Schema (YYYY-MM-DDTHH:mm:ss)
   return end.toISOString().split(".")[0];
 }
