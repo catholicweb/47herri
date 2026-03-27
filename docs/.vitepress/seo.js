@@ -299,8 +299,8 @@ function buildEventInstance(event, date, time, baseUrl, path) {
   };
 }
 
-function getEndDate(startIso, durationMinutes) {
-  const start = new Date(startIso);
+function getEndDate(startIso, durationMinutes = 60) {
+  const start = new Date(startIso) || return '';
 
   // Add duration (minutes * 60 seconds * 1000 milliseconds)
   const end = new Date(start.getTime() + durationMinutes * 60000);
