@@ -335,7 +335,8 @@
     "Via Crucis": "Via Crucis",
     "Hora Santa": "Hora Santa",
     "Confesiones Cuaresma": "Confessions de Quaresma",
-    "Vicente Otamendi": "Vicent Otamendi"
+    "Vicente Otamendi": "Vicent Otamendi",
+    "Domingo de Ramos": "Diumenge de Rams"
   },
   "Français:fr": {
     "Albiasu": "Albiasu",
@@ -673,7 +674,8 @@
     "Via Crucis": "Chemin de Croix",
     "Hora Santa": "Heure Sainte",
     "Confesiones Cuaresma": "Confessions de Carême",
-    "Vicente Otamendi": "Vicente Otamendi"
+    "Vicente Otamendi": "Vicente Otamendi",
+    "Domingo de Ramos": "Dimanche des Rameaux"
   },
   "Deutsch:de": {
     "Albiasu": "Albiasu",
@@ -1011,7 +1013,8 @@
     "Via Crucis": "Kreuzweg",
     "Hora Santa": "Heilige Stunde",
     "Confesiones Cuaresma": "Beichten in der Fastenzeit",
-    "Vicente Otamendi": "Vicente Otamendi"
+    "Vicente Otamendi": "Vicente Otamendi",
+    "Domingo de Ramos": "Palmsonntag"
   },
   "Italiano:it": {
     "Albiasu": "Albiasu",
@@ -1349,7 +1352,8 @@
     "Via Crucis": "Via Crucis",
     "Hora Santa": "Ora Santa",
     "Confesiones Cuaresma": "Confessioni di Quaresima",
-    "Vicente Otamendi": "Vicente Otamendi"
+    "Vicente Otamendi": "Vicente Otamendi",
+    "Domingo de Ramos": "Domenica delle Palme"
   },
   "Português:pt": {
     "Albiasu": "Albiasu",
@@ -1687,7 +1691,8 @@
     "Via Crucis": "Via-Sacra",
     "Hora Santa": "Hora Santa",
     "Confesiones Cuaresma": "Confissões da Quaresma",
-    "Vicente Otamendi": "Vicente Otamendi"
+    "Vicente Otamendi": "Vicente Otamendi",
+    "Domingo de Ramos": "Domingo de Ramos"
   },
   "Română:ro": {
     "Albiasu": "Albiasu",
@@ -2025,7 +2030,8 @@
     "Via Crucis": "Calea Crucii",
     "Hora Santa": "Ora Sfântă",
     "Confesiones Cuaresma": "Spovezi de Postul Mare",
-    "Vicente Otamendi": "Vicente Otamendi"
+    "Vicente Otamendi": "Vicente Otamendi",
+    "Domingo de Ramos": "Duminica Floriilor"
   },
   "العربية:ar": {
     "Albiasu": "ألبياسو",
@@ -2363,7 +2369,8 @@
     "Via Crucis": "درب الصليب",
     "Hora Santa": "الساعة المقدسة",
     "Confesiones Cuaresma": "اعترافات زمن الصوم",
-    "Vicente Otamendi": "فينسنت أوتامندي"
+    "Vicente Otamendi": "فينسنت أوتامندي",
+    "Domingo de Ramos": "أحد السعف"
   },
   "Български:bg": {
     "Albiasu": "Albiasu",
@@ -2701,7 +2708,8 @@
     "Via Crucis": "Кръстен път",
     "Hora Santa": "Свети час",
     "Confesiones Cuaresma": "Изповеди за Великия пост",
-    "Vicente Otamendi": "Висенте Отаменди"
+    "Vicente Otamendi": "Висенте Отаменди",
+    "Domingo de Ramos": "Палмова неделя"
   },
   "Euskara:eu": {
     "Albiasu": "Albiasu",
@@ -2970,7 +2978,8 @@
     "Via Crucis": "Gurutz bidea",
     "Hora Santa": "Ordu Santua",
     "Confesiones Cuaresma": "Aste Santuko aitorzak",
-    "Vicente Otamendi": "Vicente Otamendi"
+    "Vicente Otamendi": "Vicente Otamendi",
+    "Domingo de Ramos": "Ramoen Igandea"
   },
   "Castellano:es": {
     "Albiasu": "Albiasu",
@@ -3239,7 +3248,8 @@
     "Via Crucis": "Via Crucis",
     "Hora Santa": "Hora Santa",
     "Confesiones Cuaresma": "Confesiones de Cuaresma",
-    "Vicente Otamendi": "Vicente Otamendi"
+    "Vicente Otamendi": "Vicente Otamendi",
+    "Domingo de Ramos": "Domingo de Ramos"
   },
   "English:en": {
     "Albiasu": "Albiasu",
@@ -3508,6 +3518,7 @@
     "Via Crucis": "Way of the Cross",
     "Hora Santa": "Holy Hour",
     "Confesiones Cuaresma": "Lenten Confessions",
-    "Vicente Otamendi": "Vicente Otamendi"
+    "Vicente Otamendi": "Vicente Otamendi",
+    "Domingo de Ramos": "Palm Sunday"
   }
 }
