@@ -7,29 +7,22 @@ sections:
   - _block: video
     title: Arano ezagutu
     links:
-      - 'https://www.youtube.com/watch?v=UdCfCIHmvaU'
+      - https://www.youtube.com/watch?v=UdCfCIHmvaU
   - _block: gallery
-    list:
-      - /media/jmetayo/Echarri Aranaz3.webp
   - _block: video-channel
     title: Azken ospakizunak
     filter: arano
   - _block: map
     title: Non Gaude
+    geo: 43.19951, -1.89462
     name: San Martin
-    geo: '43.19951, -1.89462'
-    tags: []
   - _block: map
     title: Non Gaude
+    geo: 43.22057, -1.91492
     name: Santiagoko baseliza
-    geo: '43.22057, -1.91492'
-    tags:
-      - hidden
   - _block: map
     title: Non Gaude
+    geo: 43.19331, -1.89248
     name: San Roke baseliza
-    geo: '43.19331, -1.89248'
-    tags:
-      - hidden
+hideHero: false
 ---
-
