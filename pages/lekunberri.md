@@ -11,6 +11,7 @@ sections:
   - _block: gallery
     list:
       - /media/Escudo de Lekunberri.svg
+      - /media/IMG-20260403-WA0014.jpg
   - _block: video-channel
     title: Azken ospakizunak
     filter: lekunberri
@@ -23,7 +24,5 @@ sections:
     geo: 43.00672, -1.89805
     name: Pilar baseliza
     image: /media/Screenshot_20251003-065406_Maps.jpg
-    tags:
-      - hidden
 hideHero: false
 ---
