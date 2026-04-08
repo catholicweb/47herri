@@ -1113,6 +1113,38 @@
           "times": [
             "19:30"
           ]
+        },
+        {
+          "location": [
+            "Gorriti"
+          ],
+          "times": [
+            "09:00"
+          ]
+        },
+        {
+          "location": [
+            "Uitzi"
+          ],
+          "times": [
+            "10:00"
+          ]
+        },
+        {
+          "location": [
+            "Arruitz"
+          ],
+          "times": [
+            "11:15"
+          ]
+        },
+        {
+          "location": [
+            "Etxarri"
+          ],
+          "times": [
+            "12:30"
+          ]
         }
       ]
     },
