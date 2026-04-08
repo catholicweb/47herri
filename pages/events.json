@@ -1093,6 +1093,28 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Visita San Miguel",
+      "date": "2026-04-08",
+      "custom": [
+        {
+          "location": [
+            "Mugiro"
+          ],
+          "times": [
+            "17:00"
+          ]
+        },
+        {
+          "location": [
+            "Aldatz"
+          ],
+          "times": [
+            "19:30"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
