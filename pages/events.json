@@ -1115,6 +1115,28 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Visita San Miguel",
+      "date": "2026-04-09",
+      "custom": [
+        {
+          "location": [
+            "Alli"
+          ],
+          "times": [
+            "08:30"
+          ]
+        },
+        {
+          "location": [
+            "Oderitz"
+          ],
+          "times": [
+            "09:30"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
