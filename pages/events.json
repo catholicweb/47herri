@@ -1135,6 +1135,22 @@
           "times": [
             "09:30"
           ]
+        },
+        {
+          "location": [
+            "Astitz"
+          ],
+          "times": [
+            "10:30"
+          ]
+        },
+        {
+          "location": [
+            "Iribas"
+          ],
+          "times": [
+            "11:30"
+          ]
         }
       ]
     }
