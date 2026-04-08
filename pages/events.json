@@ -1210,6 +1210,61 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Visita San Miguel",
+      "date": "2026-04-10",
+      "image": "/media/Screenshot_20250530_094045_Gallery.webp",
+      "custom": [
+        {
+          "location": [
+            "Latasa"
+          ],
+          "times": [
+            "08:30"
+          ]
+        },
+        {
+          "location": [
+            "Zarrantz"
+          ],
+          "times": [
+            "09:30"
+          ]
+        },
+        {
+          "location": [
+            "Eraso"
+          ],
+          "times": [
+            "11:00"
+          ]
+        },
+        {
+          "location": [
+            "Etxaleku"
+          ],
+          "times": [
+            "12:30"
+          ]
+        },
+        {
+          "location": [
+            "Oskotz"
+          ],
+          "times": [
+            "18:00"
+          ]
+        },
+        {
+          "location": [
+            "Muskitz"
+          ],
+          "times": [
+            "19:00"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
