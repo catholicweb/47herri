@@ -1151,6 +1151,30 @@
           "times": [
             "11:30"
           ]
+        },
+        {
+          "location": [
+            "Madotz"
+          ],
+          "times": [
+            "13:00"
+          ]
+        },
+        {
+          "location": [
+            "Urritza"
+          ],
+          "times": [
+            "19:00"
+          ]
+        },
+        {
+          "location": [
+            "Goldaratz"
+          ],
+          "times": [
+            "20:00"
+          ]
         }
       ]
     }
