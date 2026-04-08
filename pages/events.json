@@ -1349,6 +1349,54 @@
           "times": [
             "13:00"
           ]
+        },
+        {
+          "location": [
+            "Udabe"
+          ],
+          "times": [
+            "16:30"
+          ]
+        },
+        {
+          "location": [
+            "Beramendi"
+          ],
+          "times": [
+            "17:15"
+          ]
+        },
+        {
+          "location": [
+            "Itsaso"
+          ],
+          "times": [
+            "18:00"
+          ]
+        },
+        {
+          "location": [
+            "Ihaben"
+          ],
+          "times": [
+            "18:45"
+          ]
+        },
+        {
+          "location": [
+            "Jauntsarats"
+          ],
+          "times": [
+            "19:30"
+          ]
+        },
+        {
+          "location": [
+            "Beruete"
+          ],
+          "times": [
+            "20:15"
+          ]
         }
       ]
     }
