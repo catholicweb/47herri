@@ -1304,6 +1304,52 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Visita San Miguel",
+      "date": "2026-05-05",
+      "custom": [
+        {
+          "location": [
+            "Igoa eta Aizarotz"
+          ],
+          "times": [
+            "08:30"
+          ]
+        },
+        {
+          "location": [
+            "Arrarats"
+          ],
+          "times": [
+            "09:30"
+          ]
+        },
+        {
+          "location": [
+            "Orokieta"
+          ],
+          "times": [
+            "11:00"
+          ]
+        },
+        {
+          "location": [
+            "Gartzaron"
+          ],
+          "times": [
+            "12:00"
+          ]
+        },
+        {
+          "location": [
+            "Erbiti"
+          ],
+          "times": [
+            "13:00"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
