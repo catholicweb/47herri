@@ -222,8 +222,10 @@ import { grid } from "./../../utils.js";
 import Image from "./Image.vue";
 import PopupGallery from "./PopupGallery.vue";
 import { ref } from "vue";
+import { useRouter } from "vitepress";
 
 const currentGalleryIdx = ref(null);
+const router = useRouter();
 
 const props = defineProps({
   block: {
@@ -232,17 +234,10 @@ const props = defineProps({
   },
 });
 
-// Accordion state management
-const accordionOpen = ref({});
-
-const toggleAccordion = (index) => {
-  accordionOpen.value[index] = !accordionOpen.value[index];
-};
-
-// Handle clicks with optional links
+// Handle clicks with optional links — use SPA navigation to avoid full reloads
 const handleClick = (item) => {
   if (item.link) {
-    window.location.href = item.link;
+    router.go(item.link);
   }
 };
 </script>

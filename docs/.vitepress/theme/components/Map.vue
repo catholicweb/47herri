@@ -37,7 +37,6 @@ watch(mapContainer, (newVal) => {
 const allMaps = ref([]);
 
 async function loadMap() {
-  console.log("loadMap");
   if (!mapContainer.value) return;
 
   // 1. Dynamically import Leaflet and its CSS
@@ -76,11 +75,9 @@ async function loadMap() {
   markersLayer = L.layerGroup().addTo(map);
 
   renderMarkers(page.value.frontmatter.lang);
-  console.log("finished loading");
 }
 
 function renderMarkers(lang) {
-  console.log("renderMarkers");
   if (!markersLayer) return;
 
   // Create a smaller icon

@@ -26,7 +26,6 @@ function highlightRelatedTitles() {
 
     let targetTitle = h2.innerText.toLowerCase().split("(")[0].trim();
     targetTitle = targetTitle.split("-")[1]?.trim() || targetTitle;
-    console.log(targetTitle);
     generateQR(section, targetTitle);
     clone(section, "#contact");
 
@@ -113,7 +112,6 @@ async function generateQR(section, title) {
 }
 
 onMounted(() => {
-  console.log("Mounting Print!");
   document.body.classList.add("print");
   highlightRelatedTitles();
 });
