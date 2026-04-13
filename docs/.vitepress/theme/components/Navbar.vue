@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 import Image from "./Image.vue";
 import Hero from "./Hero.vue";
 
@@ -18,6 +18,11 @@ const navStyle = ref(site?.value?.themeConfig?.config?.theme?.navStyle);
 const hasItems = (item) => item.items && item.items.length > 0;
 const isActive = (item) => item.link && (route.path === item.link || route.path.startsWith(item.link + "/"));
 const mobileMenuOpen = ref(false);
+
+const langOpen = ref(false);
+function closeLang() { langOpen.value = false; }
+onMounted(() => document.addEventListener("click", closeLang));
+onUnmounted(() => document.removeEventListener("click", closeLang));
 </script>
 
 <template>
@@ -66,14 +71,14 @@ const mobileMenuOpen = ref(false);
         <!-- Right controls -->
         <div class="flex items-center space-x-2" :class="[navStyle == '47herri' ? '' : 'bg-white']">
           <!-- Language Switcher -->
-          <div v-if="$frontmatter?.equiv?.length > 1" class="relative group" :class="[navStyle == '47herri' ? '' : 'bg-white']">
-            <button class="px-2 py-1 rounded-sm dark:hover:bg-gray-700 hover:text-accent transition-colors flex items-center space-x-1" :class="[navStyle == '47herri' ? '' : 'hover:bg-white']">
+          <div v-if="$frontmatter?.equiv?.length > 1" class="relative" :class="[navStyle == '47herri' ? '' : 'bg-white']" @click.stop>
+            <button @click="langOpen = !langOpen" class="px-2 py-1 rounded-sm dark:hover:bg-gray-700 hover:text-accent transition-colors flex items-center space-x-1" :class="[navStyle == '47herri' ? '' : 'hover:bg-white']">
               <span>{{ $frontmatter.lang.split(":")[0] }}</span>
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-4 h-4 transition-transform" :class="langOpen ? 'rotate-180' : ''" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M5.23 7.21a.75.75 0 011.06 0L10 10.91l3.71-3.7a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 010-1.06z" />
               </svg>
             </button>
-            <div class="absolute right-0 w-36 opacity-0 group-hover:opacity-100 invisible group-hover:visible group-focus-within:visible group-focus-within:opacity-100 transition-all z-50 bg-white" :class="[navStyle == '47herri' ? 'text-black' : '']">
+            <div v-show="langOpen" class="absolute right-0 w-36 shadow-lg rounded-sm z-50 bg-white" :class="[navStyle == '47herri' ? 'text-black' : '']">
               <a v-for="equiv in $frontmatter.equiv" :key="equiv.lang" :href="equiv.href" class="block px-3 py-2 rounded-sm dark:hover:bg-gray-700 cursor-pointer transition-colors" :class="equiv.lang === $frontmatter.lang ? 'text-accent' : ''">
                 {{ equiv.lang.split(":")[0] }}
               </a>
