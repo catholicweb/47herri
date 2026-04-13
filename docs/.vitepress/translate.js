@@ -105,17 +105,19 @@ async function translateWithOpenAI(missing, targetLanguage) {
     throw new Error("Missing OPENAI_API_KEY");
   }
 
+  const langLabel = targetLanguage.replace("Euskara", "Euskara (Leitza dialect)");
+
   try {
-    const response = await fetch("https://api.openai.com/v1/responses", {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: "gpt-5",
-        reasoning: { effort: "minimal" },
-        text: {
-          format: {
-            type: "json_schema",
+        model: "gpt-4.1",
+        response_format: {
+          type: "json_schema",
+          json_schema: {
             name: "translation_result",
+            strict: true,
             schema: {
               type: "object",
               properties: { translations: { type: "array", items: { type: "string" } } },
@@ -124,14 +126,24 @@ async function translateWithOpenAI(missing, targetLanguage) {
             },
           },
         },
-
-        input: [
+        messages: [
           {
             role: "system",
-            content:
-              "You are a professional translator for a Catholic website. " + "Texts most likely include catholic event titles, descriptions, timings, names etc..." + "Translate the given texts preserving HTML or Markdown. Do not scape or modify new lines, tags... anything that is not text must be returned as it is. " + "If a text is already written in the target language, just fix ortographic typos." + "Do NOT include explanations or reasoning." + "I prefer literal translations" + "Return only a JSON object with translations, ej translations = { [translation-text-0, translation-text-1... ]}.",
+            content: `You are a professional translator for a Catholic parish website serving a community in the Basque Country (northern Navarre, Spain). Content includes parish announcements, mass times, event descriptions, village names, and religious texts.
+
+Rules:
+- Translate into natural, fluent ${langLabel} with a warm, formal parish tone.
+- Source texts are in Basque (Euskara) or Spanish — detect automatically.
+- Preserve ALL HTML tags, Markdown syntax, and line breaks exactly as they appear; translate only the human-readable text around them.
+- Do NOT translate proper nouns: village and place names (Leitza, Betelu, Arruitz, Arrarats, Goizueta, Lekunberri, Areso, Larraun, Basaburua, Esteribar, and similar), personal names, or the name "47 herri".
+- If a string is already in the target language, a number, a symbol, or a URL, return it unchanged.
+- Return exactly as many strings as you receive, in the same order — one translation per input.
+- Return ONLY the JSON object, no explanation or preamble.`,
           },
-          { role: "user", content: `Translate this array of texts to ${targetLanguage.replace("Euskara", "Euskara from Leitza")}: ${JSON.stringify(missing)}` },
+          {
+            role: "user",
+            content: `Translate each string in this JSON array to ${langLabel}:\n${JSON.stringify(missing)}`,
+          },
         ],
       }),
     });
@@ -144,16 +156,16 @@ async function translateWithOpenAI(missing, targetLanguage) {
     const data = await response.json();
 
     const calculateCost = (usage) => {
-      const inputCost = (usage?.input_tokens / 1_000_000) * 1.25 * 100;
-      const outputCost = (usage?.output_tokens / 1_000_000) * 10.0 * 100;
+      const inputCost = (usage?.prompt_tokens / 1_000_000) * 2.0 * 100;
+      const outputCost = (usage?.completion_tokens / 1_000_000) * 8.0 * 100;
       return inputCost + outputCost;
     };
 
-    console.log(targetLanguage, "est_cost:", calculateCost(data.usage), "cents");
+    console.log(targetLanguage, "est_cost:", calculateCost(data.usage).toFixed(4), "cents");
 
-    return JSON.parse(data.output[1].content[0].text).translations;
+    return JSON.parse(data.choices[0].message.content).translations;
   } catch (e) {
-    console.log("Invalid response format from model", JSON.stringify(data));
+    console.error("Translation failed:", e.message);
     return [];
   }
 }
