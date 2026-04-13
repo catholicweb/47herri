@@ -437,7 +437,7 @@ export async function getAddress(lat, lng, name, zoom = 17) {
       name: data.address.amenity,
     };
   } catch (error) {
-    return extra;
     console.error("Lookup failed:", error);
+    return extra;
   }
 }

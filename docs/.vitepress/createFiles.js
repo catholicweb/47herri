@@ -41,9 +41,11 @@ globalThis.fetch = async (url, options = {}) => {
 
       if (response.ok) {
         // 3. Actualizamos el archivo maestro
-        const clone = response.clone();
-        CACHE_DATA[safeKey] = await clone.json();
-        write(CACHE_FILE, CACHE_DATA);
+        try {
+          const clone = response.clone();
+          CACHE_DATA[safeKey] = await clone.json();
+          write(CACHE_FILE, CACHE_DATA);
+        } catch (_) { /* non-JSON response — skip caching */ }
         return response;
       }
     }
@@ -62,9 +64,11 @@ globalThis.fetch = async (url, options = {}) => {
 
     if (response.ok) {
       // 3. Actualizamos el archivo maestro
-      const clone = response.clone();
-      CACHE_DATA[safeKey] = await clone.json();
-      write(CACHE_FILE, CACHE_DATA);
+      try {
+        const clone = response.clone();
+        CACHE_DATA[safeKey] = await clone.json();
+        write(CACHE_FILE, CACHE_DATA);
+      } catch (_) { /* non-JSON response — skip caching */ }
     }
 
     return response;
@@ -106,7 +110,7 @@ async function createManifest() {
     // generate the favicon
 
     await sharp("./docs/public" + config.icon)
-      .resize(64, 64) // Resize to 32x32 pixels for the favicon size
+      .resize(32, 32) // Resize to 32x32 pixels for the favicon size
       .toFile(`./docs/public/favicon.ico`);
   } catch (e) {
     console.log(e, "failed to createManifest");

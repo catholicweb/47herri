@@ -54,6 +54,7 @@ export async function getPreview(url) {
       const html = await (await fetch('https://sallebarne.eus', { cache: 'no-cache' })).text();
       const match = html.match(/sallebarne\.eus\/wp-content\/uploads\/([^-]+?)-([^\.]+?)\.jpg/);
 
+      if (!match) throw new Error("sallebarne.eus: no image match found");
       console.log(url, match[1])
       return {
         type: "link",

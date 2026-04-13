@@ -52,14 +52,14 @@ function getNextOccurrence(event, relativeTo = ICAL.Time.now()) {
 
   // 3. Skip all occurrences that happened before "relativeTo"
   let next;
+  let iterCount = 0;
   while ((next = iterator.next())) {
     if (next.compare(relativeTo) >= 0) {
       return parseDateToISO(next.toJSDate().toLocaleDateString("es-ES")); // This is the first occurrence in the future
     }
 
-    // Safety break: Prevent infinite loops on poorly formed rules
-    // (Optional: stop after 1000 iterations or a specific end date)
-    if (iterator.last && iterator.last.year > relativeTo.year + 10) break;
+    // Safety break: Prevent slow/infinite loops on poorly formed rules
+    if (++iterCount > 1000 || (iterator.last && iterator.last.year > relativeTo.year + 10)) break;
   }
 
   return null; // No future occurrences found
