@@ -19,8 +19,8 @@
     <!-- Footer Component -->
     <component :is="components.Footer" />
 
-    <!-- PWA Component -->
-    <component :is="components.PWA" />
+    <!-- PWA Component (client-only: uses navigator/serviceWorker) -->
+    <ClientOnly><component :is="components.PWA" /></ClientOnly>
   </div>
 </template>
 
