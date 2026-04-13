@@ -3,7 +3,7 @@ import { read, write, fg } from "./node_utils.js";
 const dictPath = "./docs/public/dictionary.json";
 const FIELDS = ["title", "description", "html", "name", "action", "notes"];
 const valueSet = new Set();
-const dictionary = read(dictPath);
+export const dictionary = read(dictPath);
 
 /**
  * Recorre recursivamente un objeto/array y aplica una función

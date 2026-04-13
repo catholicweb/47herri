@@ -2,7 +2,7 @@ import { read, write, fg, fs, path } from "./node_utils.js";
 import { slugify, applyComplexFilter, groupEvents, getAddress } from "./utils.js";
 import { getPreview } from "./oembed.js";
 import { fetchVideos } from "./youtube.js";
-import { buildDictionary, translateObject, translateValue } from "./translate.js";
+import { buildDictionary, translateObject, translateValue, dictionary as DICTIONARY } from "./translate.js";
 import { createImages } from "./images.js";
 import { fetchUpstream, commit } from "./git.js";
 import { getBibleReadings, getAudio } from "./gospel.js";
@@ -14,8 +14,6 @@ import crypto from "crypto";
 
 import MarkdownIt from "markdown-it";
 import sharp from "sharp";
-
-const DICTIONARY = read("./docs/public/dictionary.json");
 
 const config = read("./pages/config.json");
 // Lista de lenguas a generar
