@@ -19,7 +19,7 @@ export default defineConfig(async () => {
       // Manifest and icons
       ["link", { rel: "manifest", href: "/manifest.json" }],
       ["link", { rel: "icon", href: "/favicon.ico", type: "image/x-icon" }],
-      ["script", { "data-goatcounter": config.dev?.goatcounter || "", defer: true, crossorigin: "anonymous", src: "//gc.zgo.at/count.js" }],
+      ["script", { "data-goatcounter": config.dev?.goatcounter || "", async: true, src: "//gc.zgo.at/count.js" }],
     ],
     locales: locales(config.languages),
     title: config.title,

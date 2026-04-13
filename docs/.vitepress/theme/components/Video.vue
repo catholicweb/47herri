@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, watch } from "vue";
 import LazyItem from "./LazyItem.vue";
 import Grid from "./Grid.vue";
 import { formatDate } from "./../../utils.js";
@@ -56,6 +56,21 @@ function logo(item) {
 }
 
 const playingVideo = ref(null);
+
+watch(playingVideo, (src) => {
+  if (!src) return;
+  const item = props.block.items?.find((i) => i.src === src);
+  const platform = src.includes("youtube") ? "youtube"
+    : src.includes("spotify") ? "spotify"
+    : src.includes("vimeo") ? "vimeo"
+    : src.includes(".mp3") ? "audio"
+    : "video";
+  window.goatcounter?.count({
+    path: `play-${platform}-${(item?.title || src).slice(0, 60)}`,
+    title: item?.title || src,
+    event: true,
+  });
+});
 </script>
 
 <style>
