@@ -21,7 +21,7 @@ const TARGET_LANGS = config.languages?.length ? config.languages : ["Español:es
 
 const md = new MarkdownIt({ html: true, linkify: true, breaks: true });
 
-const CACHE_FILE = "./.cache.json";
+const CACHE_FILE = "./.buildtimecache.json";
 const CACHE_DATA = read(CACHE_FILE);
 const originalFetch = globalThis.fetch;
 
@@ -153,7 +153,7 @@ async function postComplete(fm) {
     }
 
     if (fm.sections[i]._block == "video-gospel") {
-      const { audios, books } = await getAudio(fm.sections[i].lang);
+      const { audios, books } = await getAudio(fm.lang);
       fm.sections[i].filters = books;
       fm.sections[i].query = false;
       fm.sections[i].elements = audios;

@@ -7,6 +7,7 @@ on:
     paths:
       - "**/*.json"
       - "**/*.md"
+      - "**/*.vue"
   # Cada hora (using multiple triggers to be able to tell them appart)
   schedule:
     - cron: "0 0 * * *"
