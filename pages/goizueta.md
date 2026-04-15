@@ -22,13 +22,19 @@ sections:
     title: Non Gaude
     geo: 43.17848, -1.86194
     name: San Anton baseliza
+    tags:
+      - hidden
   - _block: map
     title: Non Gaude
     geo: 43.17502, -1.86284
     name: Magdalenako baseliza
+    tags:
+      - hidden
   - _block: map
     title: Non Gaude
     geo: 43.17111, -1.86466
     name: Andre Mariaren Jasokundea
+    tags:
+      - hidden
 hideHero: false
 ---

@@ -190,7 +190,6 @@ content:
             fields:
               - { name: location, label: Ubicación, component: location }
               - { name: times, label: Hora, component: times }
-              - { name: notes, label: Notas (opcional), type: string }
       - name: events-multidate
         label: Eventos en multiples fechas
         type: object
@@ -206,7 +205,6 @@ content:
               - { name: location, label: Ubicación, component: location }
               - { name: times, label: Hora, component: times }
               - { name: date, label: Fecha, type: date  }
-              - { name: notes, label: Notas (opcional), type: string }
       - name: events-mass
         label: Horarios de misas
         type: object
@@ -378,6 +376,7 @@ content:
               - { name: geo, type: string, label: "Coordenadas (ej: 42.801941, -1.645660)" }
               - { name: name, type: string, label: Nombre }
               - { name: image, type: image, label: Imagen }
+              - { name: tags, label: Opciones avanzadas de estilo, component: tags }
           - name: fundraising
             label: Campaña financiación
             fields:

@@ -780,6 +780,7 @@
       "title": "San Antón ",
       "date": "2026-01-17",
       "image": "/media/sananton.webp",
+      "notes": "11.15 Aziendaren bedeinkazioa",
       "custom": [
         {
           "location": [
@@ -787,8 +788,8 @@
           ],
           "times": [
             "11:30"
-          ],
-          "notes": "11.15 Aziendaren bedeinkazioa "
+          ]
+          
         }
       ]
     },
@@ -841,18 +842,10 @@
     {
       "title": "Xabierraldiak",
       "date": "2026-03-14",
+      "notes": "Venta Judas (15km) - Zangoza (8km)",
       "custom": [
         {
-          "times": [
-            "11:00"
-          ],
-          "notes": "Venta Judas (15km)"
-        },
-        {
-          "times": [
-            "13:00"
-          ],
-          "notes": "Zangoza (8km)"
+          "times": [            "11:00",            "13:00"          ]
         }
       ]
     },
@@ -860,6 +853,7 @@
       "title": "Encuentro de cuaresma",
       "date": "2026-03-28",
       "image": "/media/de1a626b-4173-48e2-ae52-19ec7b26361b.jpeg",
+      "notes": "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria",
       "custom": [
         {
           "location": [
@@ -867,8 +861,7 @@
           ],
           "times": [
             "11:00"
-          ],
-          "notes": "11:00 Liturjia. 12:00 Cenas Alfa. 13:30 Bazkaria"
+          ]
         }
       ]
     },
@@ -1044,7 +1037,6 @@
       "title": "Hora Santa",
       "date": "2026-04-02",
       "image": "/media/Monumento-eucaristico-Jueves-Santo.webp",
-      "notes": " ",
       "custom": [
         {
           "location": [

@@ -24,5 +24,7 @@ sections:
     title: Non Gaude
     geo: 43.19331, -1.89248
     name: San Roke baseliza
+    tags:
+      - hidden
 hideHero: false
 ---
