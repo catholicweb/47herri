@@ -29,9 +29,9 @@ const { updateServiceWorker } = useRegisterSW({
   onNeedRefresh() {
     if (theme.value.pwa?.autoReload) {
       updateServiceWorker(true);
-    } else {
+    } /*else {
       state.value.showUpdateBanner = true;
-    }
+    }*/
   },
 });
 
