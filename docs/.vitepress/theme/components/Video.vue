@@ -66,8 +66,8 @@ watch(playingVideo, (src) => {
     : src.includes(".mp3") ? "audio"
     : "video";
   window.goatcounter?.count({
-    path: `play-${platform}-${(item?.title || src).slice(0, 60)}`,
-    title: item?.title || src,
+    path: `play-${platform}-${(props.block.title || src).slice(0, 60)}`,
+    title: src,
     event: true,
   });
 });
