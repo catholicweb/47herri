@@ -59,9 +59,15 @@ const playingVideo = ref(null);
 
 watch(playingVideo, (src) => {
   if (!src) return;
+  const item = props.block.elements?.find((i) => i.src === src);
+  const platform = src.includes("youtube") ? "youtube"
+    : src.includes("spotify") ? "spotify"
+    : src.includes("vimeo") ? "vimeo"
+    : src.includes(".mp3") ? "audio"
+    : "video";
   window.goatcounter?.count({
-    path: `play-${(props.block.title || src).slice(0, 60)}`,
-    title: src,
+    path: `Reproducir: ${(item?.title || src).slice(0, 60)} @${platform}`,
+    title: item?.title || src,
     event: true,
   });
 });
