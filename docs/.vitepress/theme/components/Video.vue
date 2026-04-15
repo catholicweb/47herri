@@ -59,14 +59,8 @@ const playingVideo = ref(null);
 
 watch(playingVideo, (src) => {
   if (!src) return;
-  const item = props.block.items?.find((i) => i.src === src);
-  const platform = src.includes("youtube") ? "youtube"
-    : src.includes("spotify") ? "spotify"
-    : src.includes("vimeo") ? "vimeo"
-    : src.includes(".mp3") ? "audio"
-    : "video";
   window.goatcounter?.count({
-    path: `play-${platform}-${(props.block.title || src).slice(0, 60)}`,
+    path: `play-${(props.block.title || src).slice(0, 60)}`,
     title: src,
     event: true,
   });
