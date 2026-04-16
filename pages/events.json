@@ -1413,6 +1413,7 @@
       "title": "Santa Engracia ",
       "date": "2026-04-16",
       "image": "/media/santa_engracia.jpg",
+      "notes": "Ermita",
       "custom": [
         {
           "location": [
@@ -1420,6 +1421,22 @@
           ],
           "times": [
             "11:00"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Santa Engracia ",
+      "date": "2026-04-19",
+      "image": "/media/santa_engracia-1.jpg",
+      "notes": "Ermita",
+      "custom": [
+        {
+          "location": [
+            "Uitzi"
+          ],
+          "times": [
+            "12:30"
           ]
         }
       ]
