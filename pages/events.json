@@ -789,7 +789,6 @@
           "times": [
             "11:30"
           ]
-          
         }
       ]
     },
@@ -845,7 +844,10 @@
       "notes": "Venta Judas (15km) - Zangoza (8km)",
       "custom": [
         {
-          "times": [            "11:00",            "13:00"          ]
+          "times": [
+            "11:00",
+            "13:00"
+          ]
         }
       ]
     },
@@ -1403,6 +1405,21 @@
           ],
           "times": [
             "19:30"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Santa Engracia ",
+      "date": "2026-04-16",
+      "image": "/media/santa_engracia.jpg",
+      "custom": [
+        {
+          "location": [
+            "Uitzi"
+          ],
+          "times": [
+            "11:00"
           ]
         }
       ]
