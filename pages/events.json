@@ -1440,6 +1440,18 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Oración por las vocaciones",
+      "date": "2026-04-24",
+      "image": "/media/f8a4d3dcd8074c8e81e1f59d1dceaa82.jpg",
+      "custom": [
+        {
+          "times": [
+            "19:00"
+          ]
+        }
+      ]
     }
   ],
   "events-funeral": [
@@ -1596,6 +1608,9 @@
       ],
       "date": "2026-04-18",
       "times": "17:00"
+    },
+    {
+      "date": "2026-04-17"
     }
   ],
   "default": {
