@@ -21,7 +21,7 @@ const repository = process.env.GITHUB_REPOSITORY;
 sh(`git config user.name "github-actions[bot]"`);
 sh(`git config user.email "github-actions[bot]@users.noreply.github.com"`);
 
-const TEMPLATE_URL = "https://github.com/catholicweb/web-template.git";
+const TEMPLATE_URL = "https://github.com/catholicweb/subtree.git";
 const SUBTREE_PREFIX = "docs/.vitepress";
 const ROOT_MIRROR = `${SUBTREE_PREFIX}/_root`;
 
@@ -29,12 +29,6 @@ export function fetchUpstream() {
   if (schedule !== "0 3 * * *" && eventName !== "workflow_dispatch") {
     return console.log("Not the right time to fetch...", schedule, eventName);
   }
-
-  // web-template is the source of the subtree — it does not pull from itself
-  if (repository === "catholicweb/web-template") {
-    return console.log("Running in web-template (source repo), skipping upstream pull.");
-  }
-
   console.log("Syncing template via git subtree...");
 
   sh(`git remote add template ${TEMPLATE_URL} || true`);
@@ -50,8 +44,9 @@ export function fetchUpstream() {
     console.log("First run: initializing subtree...");
     // Remove .vitepress from the git index (keep working-tree files intact)
     // so git subtree add can take ownership of the prefix.
-    sh(`git rm -r --cached ${SUBTREE_PREFIX}/ || true`);
-    sh(`git commit -m "chore: untrack .vitepress for subtree migration" || true`);
+    sh(`git rm -r --cached ${SUBTREE_PREFIX}/`);
+    sh(`rm -rf ${SUBTREE_PREFIX}`);  // force remove from disk regardless
+    sh(`git commit -m "chore: untrack .vitepress for subtree migration"`);
     sh(`git subtree add --prefix=${SUBTREE_PREFIX} template main --squash -m "chore: initialize template subtree"`);
   } else {
     sh(`git subtree pull --prefix=${SUBTREE_PREFIX} template main --squash -m "Sync template" || true`);
