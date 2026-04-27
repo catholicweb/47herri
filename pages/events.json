@@ -1286,7 +1286,7 @@
             "Arano"
           ],
           "times": [
-            "11:00"
+            "12:00"
           ]
         },
         {
@@ -1294,7 +1294,7 @@
             "Goizueta"
           ],
           "times": [
-            "12:30"
+            "18:00"
           ]
         }
       ]
@@ -1617,9 +1617,6 @@
       "times": "17:00"
     },
     {
-      "date": "2026-04-25"
-    },
-    {
       "title": "Miguel Zabaleta Caballero",
       "location": [
         "Areso"
@@ -1631,9 +1628,6 @@
       "title": "Juan Manuel Urchipia Galarza ",
       "date": "2026-04-28",
       "times": "17:30"
-    },
-    {
-      "date": "2026-04-27"
     }
   ],
   "default": {
