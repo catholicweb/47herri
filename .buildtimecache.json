@@ -37,17 +37,17 @@
   },
   "f9e10942971ee728b2fe8833f60b848b686e19484ad96ac063489503635ae3c3": {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "f5RLpLtL_RIqbGyeI25iemhiUZI",
+    "etag": "rGVuUdlE9WPC1-2d0r1IUK7T39A",
     "nextPageToken": "EAAaHlBUOkNESWlFRVF3TlVJd01VWkNOVFEwTWtOQk1FTQ",
     "items": [
       {
         "kind": "youtube#playlistItem",
-        "etag": "DMOiked40pxduVBtHJtnFTyogBE",
+        "etag": "UX_SYFIAoASyPKSljUUJVKDicVg",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLm5uNTRaeF9JVFhZ",
         "snippet": {
           "publishedAt": "2026-06-17T19:12:58Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Hileta Peio Arregui Zubitur. Leitza",
+          "title": "Hileta Peio Aguirre Zubitur. Leitza",
           "description": "",
           "thumbnails": {
             "default": {
