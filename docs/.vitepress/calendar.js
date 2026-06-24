@@ -140,8 +140,57 @@ function parseDateToISO(dateStr) {
   return dateStr.split("/").toReversed().join("-");
 }
 
+function archivePastFunerals(input) {
+  const FUNERAL_KEY = "events-funeral";
+  const funerals = input[FUNERAL_KEY];
+  if (!Array.isArray(funerals)) return;
+
+
+  const oneWeekAgo = new Date();
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+  const past = [];
+  const future = [];
+
+  funerals.forEach((event) => {
+    const dates = toArray(event.date).map((d) => parseDateToISO(d));
+    const hasFutureDate = dates.some((d) => new Date(d) >= oneWeekAgo);
+    // Keep if it has any future date, or if it has rrule (recurring)
+    if (hasFutureDate || toArray(event.rrule).length) {
+      future.push(event);
+    } else {
+      past.push(event);
+    }
+  });
+
+  if (!past.length) return;
+
+  // Merge past events into events-old.json
+  let old = {};
+  try {
+    old = read("./pages/events-old.json") || {};
+  } catch (_) {
+    // File doesn't exist yet — start fresh
+  }
+  if (!Array.isArray(old[FUNERAL_KEY])) old[FUNERAL_KEY] = [];
+  // Avoid duplicates by title+date
+  const existingKeys = new Set(old[FUNERAL_KEY].map((e) => `${e.title}|${toArray(e.date).join(",")}`));
+  past.forEach((e) => {
+    const key = `${e.title}|${toArray(e.date).join(",")}`;
+    if (!existingKeys.has(key)) old[FUNERAL_KEY].push(e);
+  });
+  write("./pages/events-old.json", old);
+
+  // Remove past events from the live input (mutate in-place so the rest of fetchCalendar sees it)
+  input[FUNERAL_KEY] = future;
+  write("./pages/events.json", input);
+
+  console.log(`Archived ${past.length} past funeral event(s) to events-old.json`);
+}
+
 export async function fetchCalendar() {
   let input = read("./pages/events.json");
+  archivePastFunerals(input);
   const events = [];
 
   Object.keys(input).forEach((key) => {
