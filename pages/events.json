@@ -1453,16 +1453,7 @@
       ]
     }
   ],
-  "events-funeral": [
-    {
-      "title": "Maite Gomez Lombana",
-      "location": [
-        "Leitza"
-      ],
-      "date": "2026-06-18",
-      "times": "17:30"
-    }
-  ],
+  "events-funeral": [],
   "default": {
     "funeral": {
       "image": "/media/3-estela-lekunberri.webp",
