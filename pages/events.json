@@ -1453,7 +1453,16 @@
       ]
     }
   ],
-  "events-funeral": [],
+  "events-funeral": [
+    {
+      "title": "Mariano Astiz Zubeldia",
+      "location": [
+        "Astitz"
+      ],
+      "date": "2026-06-27",
+      "times": "18:00"
+    }
+  ],
   "default": {
     "funeral": {
       "image": "/media/3-estela-lekunberri.webp",
