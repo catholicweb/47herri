@@ -1453,24 +1453,7 @@
       ]
     }
   ],
-  "events-funeral": [
-    {
-      "title": "José Zarranz Martinicorena ",
-      "location": [
-        "Lekunberri"
-      ],
-      "date": "2026-06-30",
-      "times": "17:00"
-    },
-    {
-      "title": "Kontxi Liziaga Zatarain ",
-      "location": [
-        "Atallu"
-      ],
-      "date": "2026-06-30",
-      "times": "18:00"
-    }
-  ],
+  "events-funeral": [],
   "default": {
     "funeral": {
       "image": "/media/3-estela-lekunberri.webp",
