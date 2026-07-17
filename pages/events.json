@@ -1453,7 +1453,13 @@
       ]
     }
   ],
-  "events-funeral": [],
+  "events-funeral": [
+    {
+      "title": "Mª Carmen Iribarren Arroki ",
+      "date": "2026-07-18",
+      "times": "18:30"
+    }
+  ],
   "default": {
     "funeral": {
       "image": "/media/3-estela-lekunberri.webp",
