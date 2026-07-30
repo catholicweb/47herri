@@ -1453,7 +1453,16 @@
       ]
     }
   ],
-  "events-funeral": [],
+  "events-funeral": [
+    {
+      "title": "Martin Alduntzin Zabaleta",
+      "location": [
+        "Leitza"
+      ],
+      "date": "2026-07-31",
+      "times": "19:30"
+    }
+  ],
   "default": {
     "funeral": {
       "image": "/media/3-estela-lekunberri.webp",
