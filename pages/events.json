@@ -1451,9 +1451,68 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Asunción de la Santísima Virgen María",
+      "date": "2026-08-15",
+      "custom": [
+        {
+          "location": [
+            "Agustinas Aldatz",
+            "Leitza",
+            "Lekunberri"
+          ],
+          "times": [
+            "09:00"
+          ]
+        },
+        {
+          "location": [
+            "Areso",
+            "Leitza",
+            "Lekunberri",
+            "Goizueta"
+          ],
+          "times": [
+            "11:00"
+          ]
+        },
+        {
+          "location": [
+            "Uztegi",
+            "Gartzaron"
+          ],
+          "times": [
+            "12:00"
+          ]
+        },
+        {
+          "location": [
+            "Lezaeta"
+          ],
+          "times": [
+            "12:30"
+          ]
+        },
+        {
+          "location": [
+            "Latasa"
+          ],
+          "times": [
+            "17:00"
+          ]
+        },
+        {
+          "location": [
+            "Etxarri"
+          ],
+          "times": [
+            "18:00"
+          ]
+        }
+      ]
     }
   ],
-  "events-funeral": [],
   "default": {
     "funeral": {
       "image": "/media/3-estela-lekunberri.webp",
