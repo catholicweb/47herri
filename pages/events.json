@@ -1528,6 +1528,18 @@
           ]
         }
       ]
+    },
+    {
+      "title": "San Agustín ",
+      "date": "2026-08-28",
+      "notes": "Artikutza",
+      "custom": [
+        {
+          "times": [
+            "11:00"
+          ]
+        }
+      ]
     }
   ],
   "default": {
