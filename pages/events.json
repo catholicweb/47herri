@@ -1554,6 +1554,19 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Gurutze Eguna",
+      "date": "2026-09-06",
+      "image": "/media/about-img.webp",
+      "notes": "San Miguel de Aralar ",
+      "custom": [
+        {
+          "times": [
+            "12:30"
+          ]
+        }
+      ]
     }
   ],
   "default": {
