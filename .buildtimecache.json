@@ -37,17 +37,17 @@
   },
   "f9e10942971ee728b2fe8833f60b848b686e19484ad96ac063489503635ae3c3": {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "n_QEd2qXhAuDCpuXp9gMoQIikUY",
+    "etag": "I0DnHtILBMaOwBGZQfIr5HbSaRg",
     "nextPageToken": "EAAaHlBUOkNESWlFRVV5UkRrM09FSTROa1JEUmtZd09EVQ",
     "items": [
       {
         "kind": "youtube#playlistItem",
-        "etag": "R87heipgzML1N7_GD3GNgP43tnA",
+        "etag": "p4STJXyHav8oX0J6Uc77CnA_xNA",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmJhLTdYSXVwckZB",
         "snippet": {
           "publishedAt": "2026-08-31T18:34:13Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Uzko XXIII. Astelehena. Lekunberri",
+          "title": "Uzko XXII. Astelehena. Lekunberri",
           "description": "",
           "thumbnails": {
             "default": {
@@ -136,7 +136,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Fh1g1uQC9KR9XdFTmh2XRPer7YA",
+        "etag": "YSCyt0EADXOzhpcYhgrZwvBGM14",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkpyM2c4Und2Y09N",
         "snippet": {
           "publishedAt": "2026-08-29T18:10:23Z",
