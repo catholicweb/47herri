@@ -1622,15 +1622,5 @@
       ]
     }
   ],
-  "events-funeral": [
-    {
-      "title": "Juan Mari Michaus Villanueva",
-      "location": [
-        "Lekunberri"
-      ],
-      "date": "2026-08-28",
-      "times": "18:30",
-      "notes": "Nuestro querido sacristán "
-    }
-  ]
+  "events-funeral": []
 }
