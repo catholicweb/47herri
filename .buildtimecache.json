@@ -37,7 +37,7 @@
   },
   "f9e10942971ee728b2fe8833f60b848b686e19484ad96ac063489503635ae3c3": {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "zrEj2BinuOlkoOO7_SXrHJvoQXA",
+    "etag": "SCjOrxsls0ayJMOeSEGwwsyy808",
     "nextPageToken": "EAAaHlBUOkNESWlFREZDTnpRd1FrUXdOVFJET1VVMlFUaw",
     "items": [
       {
@@ -747,7 +747,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "YU4LXiv43zsE_mUmvh2QaRtw2M8",
+        "etag": "nJMigUIqj50rGpVVmhv4HetiYnc",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLk5KTDV0MVNRMmxB",
         "snippet": {
           "publishedAt": "2026-08-27T17:51:41Z",
@@ -841,7 +841,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "98rsH1s25hD3uXFnb1UNcTJSYDk",
+        "etag": "MPRS-zzkYmEqVKKBfD397ADcnok",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkpyLTlTRDlRWlR3",
         "snippet": {
           "publishedAt": "2026-08-25T07:54:53Z",
@@ -935,7 +935,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "za939z2j8KsUxoXo5Qx2oN1w1qE",
+        "etag": "K3LcisP-hDJCptNnbLy4s9A7-s0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmJZcmJIM3ZQa05F",
         "snippet": {
           "publishedAt": "2026-08-24T10:26:13Z",
@@ -1687,7 +1687,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "_78wxeuKUvl_Rc8g-Pss6YRDX9M",
+        "etag": "DVYtXRa9fUV3nWMbag6lM9kr9xk",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkdOalE1bTQ4eDcw",
         "snippet": {
           "publishedAt": "2026-08-10T11:28:14Z",
@@ -2157,7 +2157,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Mf59p_abZqXDn1i5voOMQE-jcOg",
+        "etag": "KQ4Ptbn2vrnDFon7Wjzo1M20i6E",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLm9BbVdsb3MtWWNJ",
         "snippet": {
           "publishedAt": "2026-07-31T11:27:18Z",
@@ -2345,7 +2345,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "_op3Ih8qgitskg_4fDAamb-FFK4",
+        "etag": "Rn4KsXYYk6ABbDvRDUANjaQ5Q2E",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlZQME5QemVJaGRZ",
         "snippet": {
           "publishedAt": "2026-07-27T08:13:06Z",
