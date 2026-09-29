@@ -37,12 +37,12 @@
   },
   "f9e10942971ee728b2fe8833f60b848b686e19484ad96ac063489503635ae3c3": {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "SMv2JmIbZsqcq5Tu0lQC1aARMvo",
+    "etag": "Mn8yNqdRl0V9X6tmKFc_ZSChHTE",
     "nextPageToken": "EAAaHlBUOkNESWlFRU0wUVRBME5FRkJPRU16TVVOR056aw",
     "items": [
       {
         "kind": "youtube#playlistItem",
-        "etag": "Lm7qg0RkMEmkSuiedeyvMLRFA7I",
+        "etag": "n7-jI98Hn9kua9onX5wcUUXrVL4",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkJtZkhweFRUOEMw",
         "snippet": {
           "publishedAt": "2026-09-29T20:06:10Z",
@@ -64,6 +64,16 @@
               "url": "https://i.ytimg.com/vi/BmfHpxTT8C0/hqdefault.jpg",
               "width": 480,
               "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/BmfHpxTT8C0/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/BmfHpxTT8C0/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
             }
           },
           "channelTitle": "47herri",
