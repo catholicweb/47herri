@@ -37,957 +37,2357 @@
   },
   "f9e10942971ee728b2fe8833f60b848b686e19484ad96ac063489503635ae3c3": {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "75tRRBRoQvl7ZpmkCM6X5r2J6k0",
+    "etag": "c9xsudaICe7HYTmR2zbu8INohVE",
     "nextPageToken": "EAAaHlBUOkNESWlFREUzTURNMk5ERkNRalpDTkRjeVJrTQ",
     "items": [
       {
         "kind": "youtube#playlistItem",
-        "etag": "43E4ZfRept60PDUQcC-HT3Yjcgo",
+        "etag": "0KrGC5qgv3akJI_RjoqrgLiGvKo",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkVaQnozS0xjdmww",
         "snippet": {
           "publishedAt": "2026-10-23T10:15:55Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Uzko XXIX. Ostirala. Beteluko ermita",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/EZBz3KLcvl0/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/EZBz3KLcvl0/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/EZBz3KLcvl0/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/EZBz3KLcvl0/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/EZBz3KLcvl0/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 0,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "EZBz3KLcvl0"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "1rswqD9YwSEVcpP8KpHRpGsGYVg",
+        "etag": "gAEybAdS3jrusFGcwUT34o0MVno",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmRGenNXbzIyaFlB",
         "snippet": {
           "publishedAt": "2026-10-22T08:12:27Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Santas Nunilo y Alodia. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/dFzsWo22hYA/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/dFzsWo22hYA/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/dFzsWo22hYA/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/dFzsWo22hYA/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/dFzsWo22hYA/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 1,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "dFzsWo22hYA"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "rJQYMMao8wgVnn4EpE8u9VuutGk",
+        "etag": "-NecEq_aCu6O0_yqARs6yEuH5jM",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmpnMVB3LVlqdV8w",
         "snippet": {
           "publishedAt": "2026-10-21T07:49:31Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Miércoles XXIX T.O. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/jg1Pw-Yju_0/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/jg1Pw-Yju_0/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/jg1Pw-Yju_0/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/jg1Pw-Yju_0/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/jg1Pw-Yju_0/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 2,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "jg1Pw-Yju_0"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "RFQ1GxYPPuIAuQJGUVRt3pC7eTE",
+        "etag": "VvCyqin23eoYM8h1p_CVL0BXErQ",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjFpaENGLXZqN3k4",
         "snippet": {
           "publishedAt": "2026-10-20T08:19:31Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Santa Magdalena de Nagasaki. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/1ihCF-vj7y8/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/1ihCF-vj7y8/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/1ihCF-vj7y8/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/1ihCF-vj7y8/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/1ihCF-vj7y8/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 3,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "1ihCF-vj7y8"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "EfwISX04gO96tePNcaCXqDk-Icw",
+        "etag": "ySPQthH3ZcLFKBDCVV3UPSzUL6s",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmowak1WSVBtQ2Vv",
         "snippet": {
           "publishedAt": "2026-10-19T17:38:35Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Espiritu Santuaren Meza. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/j0jMVIPmCeo/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/j0jMVIPmCeo/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/j0jMVIPmCeo/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/j0jMVIPmCeo/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/j0jMVIPmCeo/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 4,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "j0jMVIPmCeo"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "KCQjEi5MFogxE10B1rot-oeOuu4",
+        "etag": "nNa4u1NPEKTq7kBTNv5m2NvKteY",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLks4MjVpbGpkd09B",
         "snippet": {
           "publishedAt": "2026-10-18T08:41:07Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "DOMUND Eguna. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/K825iljdwOA/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/K825iljdwOA/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/K825iljdwOA/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/K825iljdwOA/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/K825iljdwOA/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 5,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "K825iljdwOA"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "wCP2BBsgjN-CLzQT07Lfov8NOIo",
+        "etag": "0SvgDVRZK29KgNsi3ojk7P8GrTI",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlA2b2IyTDg5dFAw",
         "snippet": {
           "publishedAt": "2026-10-17T08:02:56Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "San Ignacio de Antioquia. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/P6ob2L89tP0/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/P6ob2L89tP0/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/P6ob2L89tP0/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/P6ob2L89tP0/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/P6ob2L89tP0/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 6,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "P6ob2L89tP0"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Tn_1mdQKY1e7iXSHDG5mX-DKu_4",
+        "etag": "YHK-GSBGKBry2QZh1XnK57DH7Bw",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmd4VlJlV05rMzlJ",
         "snippet": {
           "publishedAt": "2026-10-16T17:15:35Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Santa Margarita María de Alacoque. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/gxVReWNk39I/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/gxVReWNk39I/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/gxVReWNk39I/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/gxVReWNk39I/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/gxVReWNk39I/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 7,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "gxVReWNk39I"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "3B1fj44jHRD70R487xrM90R7wS0",
+        "etag": "7614iwBA2vYjXUzDbJU8nXpWwFs",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmxDdjdodXRfQmww",
         "snippet": {
           "publishedAt": "2026-10-15T17:33:15Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Santa Teresa Avilako. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/lCv7hut_Bl0/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/lCv7hut_Bl0/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/lCv7hut_Bl0/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/lCv7hut_Bl0/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/lCv7hut_Bl0/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 8,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "lCv7hut_Bl0"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "ATWPdekBGFKdrNW2vk6Px8Kxz6U",
+        "etag": "72GiBBRACi29yLgBl6NwdNxbh7o",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmpER21rbG94dkpv",
         "snippet": {
           "publishedAt": "2026-10-14T08:31:41Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Miércoles XXVIII T.O. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/jDGmkloxvJo/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/jDGmkloxvJo/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/jDGmkloxvJo/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/jDGmkloxvJo/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/jDGmkloxvJo/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 9,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "jDGmkloxvJo"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "p90ssULGFxRAlZmKRWAeuB_wpko",
+        "etag": "z4IJCQvg93VYNQPxH2y-ZNIQ8sM",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjRQYTZvRl9iQzRB",
         "snippet": {
           "publishedAt": "2026-10-13T08:18:16Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Misa por los bienhechores difuntos de la Orden. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/4Pa6oF_bC4A/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/4Pa6oF_bC4A/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/4Pa6oF_bC4A/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/4Pa6oF_bC4A/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/4Pa6oF_bC4A/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 10,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "4Pa6oF_bC4A"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Fhgs7OQHlmbyWcPuzL5S2F0VDT8",
+        "etag": "x0F6AITtURTklRsMNRX2O6F-jO0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmtmUnlTN1JQR2o4",
         "snippet": {
           "publishedAt": "2026-10-12T13:51:18Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Pilarreko Ama Birjinaren Meza. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/kfRyS7RPGj8/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/kfRyS7RPGj8/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/kfRyS7RPGj8/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/kfRyS7RPGj8/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/kfRyS7RPGj8/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 11,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "kfRyS7RPGj8"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "gyx-IvxvQECFBuyntQgcRqzjr9o",
+        "etag": "YSCepfeZEJs3O8Xp_ak2HELX9JE",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkZJR2FtWkprRjZR",
         "snippet": {
           "publishedAt": "2026-10-12T10:45:02Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Pilarreko Ama Birjinaren bederatziurreneko azken eguna",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/FIGamZJkF6Q/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/FIGamZJkF6Q/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/FIGamZJkF6Q/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/FIGamZJkF6Q/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/FIGamZJkF6Q/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 12,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "FIGamZJkF6Q"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "zg31xM-giLo4qxliKjs4i8d4FCk",
+        "etag": "x3vHLxB3pvOswIDqV170RgdcdMA",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmFQVEpLdzVzWWdZ",
         "snippet": {
           "publishedAt": "2026-10-11T11:09:55Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Pilarreko Ama Birjinaren bederatziurreneko zortzigarren eguna",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/aPTJKw5sYgY/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/aPTJKw5sYgY/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/aPTJKw5sYgY/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/aPTJKw5sYgY/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/aPTJKw5sYgY/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 13,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "aPTJKw5sYgY"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "p2hgkXYf2lNgLz5AeumTIFWzHqM",
+        "etag": "zc-R88ocw6nCXP_r5Rqc-Ht_XKA",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLnI5ZktFeDVwQkU0",
         "snippet": {
           "publishedAt": "2026-10-10T18:55:14Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Uzko XXVIII. Igandea Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/r9fKEx5pBE4/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/r9fKEx5pBE4/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/r9fKEx5pBE4/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/r9fKEx5pBE4/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/r9fKEx5pBE4/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 14,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "r9fKEx5pBE4"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "9-rg_vUzPuS9Uq-ooJ-C2srm600",
+        "etag": "Qz4iwBPAKpjRa-Lirwiwn-gjYkc",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLm5lbHl3cVBaMVJz",
         "snippet": {
           "publishedAt": "2026-10-10T07:56:31Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Pilarreko Ama Birjinaren bederatziurreneko zazpigarren eguna",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/nelywqPZ1Rs/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/nelywqPZ1Rs/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/nelywqPZ1Rs/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/nelywqPZ1Rs/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/nelywqPZ1Rs/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 15,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "nelywqPZ1Rs"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Xu1Qb68NJhVi2FphANusAkaB8Kw",
+        "etag": "DJbhhp567GWNRv165yTliks2jac",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmk5TlVMeHZIVVk0",
         "snippet": {
           "publishedAt": "2026-10-09T07:20:14Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Pilarreko Ama Birjinaren bederatziurreneko seigarren eguna",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/i9NULxvHUY4/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/i9NULxvHUY4/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/i9NULxvHUY4/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/i9NULxvHUY4/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/i9NULxvHUY4/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 16,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "i9NULxvHUY4"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "cwK59YZwDC5_p3wswKIeJToFjM4",
+        "etag": "7KO1BkmHrt6MYR_yv4_zy2PysFA",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLktZVFE2SG9hd0hR",
         "snippet": {
           "publishedAt": "2026-10-08T07:17:11Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Pilarreko Ama Birjinaren bederatziurreneko bostgarren eguna",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/KYTQ6HoawHQ/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/KYTQ6HoawHQ/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/KYTQ6HoawHQ/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/KYTQ6HoawHQ/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/KYTQ6HoawHQ/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 17,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "KYTQ6HoawHQ"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Cjp2K83qEGk89f489thbyVa2h0g",
+        "etag": "uJirhK0UhZ_08ygdGY0Dmc9whuw",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmU5cjlhMjRxSFl3",
         "snippet": {
           "publishedAt": "2026-10-07T09:05:51Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Pilarreko Ama Birjinaren bederatziurreneko laugarren eguna",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/e9r9a24qHYw/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/e9r9a24qHYw/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/e9r9a24qHYw/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/e9r9a24qHYw/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/e9r9a24qHYw/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 18,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "e9r9a24qHYw"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "4sxVuKYMV8RrUjb9FS4OYP642nQ",
+        "etag": "gWskREwFsdtpMHFQOJbCnLfj_20",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkQ4Q09FQzNpMkJV",
         "snippet": {
           "publishedAt": "2026-10-06T07:45:17Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "San Bruno. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/D8COEC3i2BU/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/D8COEC3i2BU/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/D8COEC3i2BU/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/D8COEC3i2BU/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/D8COEC3i2BU/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 19,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "D8COEC3i2BU"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "F3ZVhTx9sD91xPBiAZkgGYATxjQ",
+        "etag": "FK9yR6WjgRBDiyNlo5pG0rj_Qhs",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmNHaFJ0NFVSdHFZ",
         "snippet": {
           "publishedAt": "2026-10-05T08:16:59Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Pilarreko Ama Birjinaren bederatziurreneko bigarren eguna. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/cGhRt4URtqY/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/cGhRt4URtqY/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/cGhRt4URtqY/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/cGhRt4URtqY/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/cGhRt4URtqY/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 20,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "cGhRt4URtqY"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "BADyFhGEo7FRruynSVHjhJjBe78",
+        "etag": "ywRlsnNilGvzrCzhLj-OZLH5CFQ",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlJVcEczc1dMNTd3",
         "snippet": {
           "publishedAt": "2026-10-04T13:07:46Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Uzko XXVII. Igandea. Arano",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/RUpG3sWL57w/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/RUpG3sWL57w/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/RUpG3sWL57w/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/RUpG3sWL57w/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/RUpG3sWL57w/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 21,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "RUpG3sWL57w"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "LW8qCC-EpgcigpfkRk9Tqpf6PUg",
+        "etag": "5Ks2t4E-aobHGk7VCE_HW0mPtcA",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmRJTWs1RGZXWHMw",
         "snippet": {
           "publishedAt": "2026-10-03T19:01:37Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Uzko XXVII. Igandea. Leitza",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/dIMk5DfWXs0/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/dIMk5DfWXs0/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/dIMk5DfWXs0/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/dIMk5DfWXs0/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/dIMk5DfWXs0/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 22,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "dIMk5DfWXs0"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "PqR6FPDjZR3xBPXz7jyteCQCX3Y",
+        "etag": "TwvtdZasrIATI4ahC2xLdQYw3D0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLm5zZXZ1YzBvTWc0",
         "snippet": {
           "publishedAt": "2026-10-02T11:04:02Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Aingeru Zaintzaileak. Beteluko ermita",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/nsevuc0oMg4/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/nsevuc0oMg4/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/nsevuc0oMg4/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/nsevuc0oMg4/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/nsevuc0oMg4/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 23,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "nsevuc0oMg4"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "XZxgU8wtNhTvZ9vcc_IJkE7K7eU",
+        "etag": "ffG6JgquxHTbTkzwzi2cD2voPTs",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLk9jTHl5QUtNZGRN",
         "snippet": {
           "publishedAt": "2026-10-01T15:45:49Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Santa Teresa Jesus Haurrarena. Goldaratz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/OcLyyAKMddM/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/OcLyyAKMddM/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/OcLyyAKMddM/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/OcLyyAKMddM/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/OcLyyAKMddM/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 24,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "OcLyyAKMddM"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Q6phfUXJzx4tYUhZ7-JN5Iucf7Q",
+        "etag": "Q9muijP9IwoEa6vw7ZXJWK3oOPU",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmExMV9FNERSOW5z",
         "snippet": {
           "publishedAt": "2026-09-30T08:03:46Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "San Jerónimo. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/a11_E4DR9ns/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/a11_E4DR9ns/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/a11_E4DR9ns/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/a11_E4DR9ns/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/a11_E4DR9ns/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 25,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "a11_E4DR9ns"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "RxN54qe1eN7vJmdDW6S2CuP8m4Q",
+        "etag": "PCmt3WptIumu_io3GRosHxQoxjc",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkJtZkhweFRUOEMw",
         "snippet": {
           "publishedAt": "2026-09-29T20:06:10Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Mikel Deunaren Meza. Aralarreko Santutegia",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/BmfHpxTT8C0/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/BmfHpxTT8C0/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/BmfHpxTT8C0/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/BmfHpxTT8C0/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/BmfHpxTT8C0/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 26,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "BmfHpxTT8C0"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "PUSWiMOOZcKLaJYRQBBYU4d532g",
+        "etag": "x8x8Ke2kpWPuFpbasBUpN24ghmQ",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlFlOTU4VmpMNEdF",
         "snippet": {
           "publishedAt": "2026-09-29T12:10:34Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Nor Jaungoikoa bezala? Inor ez Jaungoikoa bezala!",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/Qe958VjL4GE/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/Qe958VjL4GE/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/Qe958VjL4GE/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/Qe958VjL4GE/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/Qe958VjL4GE/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 27,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "Qe958VjL4GE"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "SJuMbcnOgSgJYrU-99ts42_vxp4",
+        "etag": "1qBxIRUdFARvSrN7aRJn35EQNn0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjJURGdzUl9CV1dv",
         "snippet": {
           "publishedAt": "2026-09-27T08:58:30Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Uzko XXVI. Igandea. Jauntsarats",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/2TDgsR_BWWo/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/2TDgsR_BWWo/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/2TDgsR_BWWo/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/2TDgsR_BWWo/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/2TDgsR_BWWo/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 28,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "2TDgsR_BWWo"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "_Gx612-uBz-JR2T6ZbbrWd3GavE",
+        "etag": "ihB5Ysf7DLw2jWw2tUjBJdR_tso",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkFjSVUxdHRaeHVZ",
         "snippet": {
           "publishedAt": "2026-09-25T10:04:39Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "San Fermin gotzainaren martirioa. Beteluko ermita",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/AcIU1ttZxuY/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/AcIU1ttZxuY/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/AcIU1ttZxuY/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/AcIU1ttZxuY/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/AcIU1ttZxuY/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 29,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "AcIU1ttZxuY"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "T7jKT3OXDEo-LGU2d0JWWSiqVPA",
+        "etag": "ayZ3o7wGI0NlRa3jzBMfTBi7wlI",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLk5iYWxlZThwaWI0",
         "snippet": {
           "publishedAt": "2026-09-24T07:59:42Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Nuestra Señora de la Merced. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/Nbalee8pib4/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/Nbalee8pib4/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/Nbalee8pib4/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/Nbalee8pib4/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/Nbalee8pib4/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 30,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "Nbalee8pib4"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "bFi2JL9ipDgnDUTQzWTrcCEsh6M",
+        "etag": "q2OcS-dJDccE_9m5IvfBcpWdD-o",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlBHTC14Y241SU9B",
         "snippet": {
           "publishedAt": "2026-09-23T17:01:29Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Hileta Miguel Tomás Auza Balda. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/PGL-xcn5IOA/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/PGL-xcn5IOA/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/PGL-xcn5IOA/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/PGL-xcn5IOA/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/PGL-xcn5IOA/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 31,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "PGL-xcn5IOA"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "bveEzCth_iPWsLLlttE6jEo5PyU",
+        "etag": "8DDk6sNsFS6BzIK73m5v6ofVk4A",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLldNbWVHb2J1UmJ3",
         "snippet": {
           "publishedAt": "2026-09-22T08:12:15Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Misa votiva Espíritu Santo. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/WMmeGobuRbw/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/WMmeGobuRbw/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/WMmeGobuRbw/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/WMmeGobuRbw/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/WMmeGobuRbw/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 32,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "WMmeGobuRbw"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "v-vPSvFOjdnH-NGX2KEv5HUd8N8",
+        "etag": "oeHmKWSo4_4uJRYVRREEQhMAp-0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmliMW1LcXk3QjJN",
         "snippet": {
           "publishedAt": "2026-09-21T09:08:59Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "San Mateo. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/ib1mKqy7B2M/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/ib1mKqy7B2M/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/ib1mKqy7B2M/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/ib1mKqy7B2M/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/ib1mKqy7B2M/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 33,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "ib1mKqy7B2M"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "ZzCBUVPuZ_EyL2GRpn6FdIGFGE8",
+        "etag": "4DDwtHDkK_c7yB_QeqOUwrgwN90",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmVMb0x1TExzZjdN",
         "snippet": {
           "publishedAt": "2026-09-20T08:42:18Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Uzko XXV. Igandea. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/eLoLuLLsf7M/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/eLoLuLLsf7M/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/eLoLuLLsf7M/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/eLoLuLLsf7M/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/eLoLuLLsf7M/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 34,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "eLoLuLLsf7M"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "OZXF6pmfjk7scaQir9Gqnd7j6jI",
+        "etag": "KOqQQ9wkS2tdcenQ6rSJC0Dlrxg",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkZ6LUhXbEdqS0VJ",
         "snippet": {
           "publishedAt": "2026-09-19T17:34:41Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Uzko XXV. Igandea. Gartzaron. 1er Aniv. Blanca Esther Jaunarena Ezcurra",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/Fz-HWlGjKEI/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/Fz-HWlGjKEI/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/Fz-HWlGjKEI/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/Fz-HWlGjKEI/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/Fz-HWlGjKEI/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 35,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "Fz-HWlGjKEI"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "zHdrBOUIkyIJEaakneWQxgS_iz8",
+        "etag": "4urpihKbiUm5dKELvG6BJzcXfdY",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLk5RNDRmbldoX204",
         "snippet": {
           "publishedAt": "2026-09-18T18:54:46Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Misa en la Novena del Martirio de San Fermín. Parroquia san Lorenzo. Pamplona",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/NQ44fnWh_m8/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/NQ44fnWh_m8/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/NQ44fnWh_m8/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/NQ44fnWh_m8/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/NQ44fnWh_m8/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 36,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "NQ44fnWh_m8"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "J8LoTEPpPUaxl51g3wgewY4yQ5c",
+        "etag": "wfsuJtLTJ2FhNw_29-vd325aVmo",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkp6ZlZNNkdYUkFr",
         "snippet": {
           "publishedAt": "2026-09-17T08:08:26Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Jueves XXIV Semana T.O. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/JzfVM6GXRAk/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/JzfVM6GXRAk/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/JzfVM6GXRAk/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/JzfVM6GXRAk/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/JzfVM6GXRAk/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 37,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "JzfVM6GXRAk"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "r63Lcb8GPrfwxG8E_Zt-tVKVVc0",
+        "etag": "PuZuITlo1pk9VF247hI9mWtu0Fg",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLnJfZm91WXo1S0RJ",
         "snippet": {
           "publishedAt": "2026-09-16T18:35:00Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Kornelio eta Zipriano Santuak. Leitza",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/r_fouYz5KDI/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/r_fouYz5KDI/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/r_fouYz5KDI/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/r_fouYz5KDI/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/r_fouYz5KDI/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 38,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "r_fouYz5KDI"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "h9bGr2S1zkkn4OI5NeNVaCaB3wU",
+        "etag": "GUx2TRE0XuB66Q_pSp_nbskz5Ps",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjZ6ZVJPWEZ0am9R",
         "snippet": {
           "publishedAt": "2026-09-15T08:22:58Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Ntra. Sra. de los Dolores. Agustinas Aldatz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/6zeROXFtjoQ/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/6zeROXFtjoQ/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/6zeROXFtjoQ/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/6zeROXFtjoQ/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/6zeROXFtjoQ/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 39,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "6zeROXFtjoQ"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "fXnlpUb1KCdLyQK-gDPs5rbypng",
+        "etag": "P72lExHLHTpfvyCE86Jv7nIIFO0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlVleC14VWNkMEhJ",
         "snippet": {
           "publishedAt": "2026-09-14T09:16:30Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Gurutz Bidea. Leitzako Ermita.",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/Uex-xUcd0HI/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/Uex-xUcd0HI/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/Uex-xUcd0HI/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/Uex-xUcd0HI/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/Uex-xUcd0HI/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 40,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "Uex-xUcd0HI"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "ItCH-lsB9y2FJcwVfBky0QGlstc",
+        "etag": "UV17gp5HaCbf6f9HvwEgQBw2VOU",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLk1uLXhxa2R1Z1Nv",
         "snippet": {
           "publishedAt": "2026-09-14T08:50:46Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Gurutze Santuaren Goralpena. Leitzako Ermita",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/Mn-xqkdugSo/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/Mn-xqkdugSo/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/Mn-xqkdugSo/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/Mn-xqkdugSo/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/Mn-xqkdugSo/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 41,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "Mn-xqkdugSo"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "yt0Zlu-QfYzafV-WuFbjM9ApRps",
+        "etag": "kByVyP0pUof1Ss8aAH3epqMiBbw",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkZscFc2MEctd3dB",
         "snippet": {
           "publishedAt": "2026-09-13T08:51:08Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Uzko XXIV. Igandea. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/FlpW60G-wwA/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/FlpW60G-wwA/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/FlpW60G-wwA/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/FlpW60G-wwA/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/FlpW60G-wwA/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 42,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "FlpW60G-wwA"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "jnedQAUB-Mq-hQfHR9_2bt3sbA8",
+        "etag": "r7RfA_Irw1QQwxtWLF_2j76Tqvg",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjBNblZsMXFOLXQ4",
         "snippet": {
           "publishedAt": "2026-09-12T16:54:51Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Hileta Mariano Arguiñena Elberdin. Atallu",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/0MnVl1qN-t8/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/0MnVl1qN-t8/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/0MnVl1qN-t8/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/0MnVl1qN-t8/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/0MnVl1qN-t8/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 43,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "0MnVl1qN-t8"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "afCIFj2EhnZ5Fa1xYBMb8GjtfzY",
+        "etag": "wG-cPDfZOmOC4LnML-K9QVShYrk",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjRoVS14UUk1dXVN",
         "snippet": {
           "publishedAt": "2026-09-11T10:38:55Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Uzko XXIII. Ostirala. Beteluko ermita",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/4hU-xQI5uuM/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/4hU-xQI5uuM/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/4hU-xQI5uuM/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/4hU-xQI5uuM/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/4hU-xQI5uuM/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 44,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "4hU-xQI5uuM"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "mQlEgPgdW88CmskMnP7LtVu_PwI",
+        "etag": "qjVg2M9lN8uTKYEcya0OtYq5-K4",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjM3eDA5c1c3MDVv",
         "snippet": {
           "publishedAt": "2026-09-10T17:37:39Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "San Pedro Claver. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/37x09sW705o/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/37x09sW705o/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/37x09sW705o/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/37x09sW705o/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/37x09sW705o/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 45,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "37x09sW705o"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "e9U4kUyXipSe_0tcigTd1tCrhko",
+        "etag": "WsihfnPXJAS5pgqbeIC3ynaHZoc",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkJ3ZXBvVzlnQlNV",
         "snippet": {
           "publishedAt": "2026-09-09T18:08:11Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Uzko XXIII. Asteazkena. Lekunberri",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/BwepoW9gBSU/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/BwepoW9gBSU/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/BwepoW9gBSU/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/BwepoW9gBSU/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/BwepoW9gBSU/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 46,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "BwepoW9gBSU"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "8ql1Q2_KJoAs-xky8b-rAJJVRSE",
+        "etag": "V20EKS-exhEbXKafsu24rcSy8k0",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlQ1ajQ3TkU0RWh3",
         "snippet": {
           "publishedAt": "2026-09-08T15:06:45Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Maria Birjinaren Jaiotza. Goldaratz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/T5j47NE4Ehw/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/T5j47NE4Ehw/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/T5j47NE4Ehw/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/T5j47NE4Ehw/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/T5j47NE4Ehw/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 47,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "T5j47NE4Ehw"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "MfvaQsC-9zAeIYsoAFbPkSP43XI",
+        "etag": "26wDt1M5W0GOxxQYMk6Qio4fOOI",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjNmcm9WMHptWm4w",
         "snippet": {
           "publishedAt": "2026-09-08T14:39:28Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Ama Birjinaren Jaiotza. Intza",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/3froV0zmZn0/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/3froV0zmZn0/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/3froV0zmZn0/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/3froV0zmZn0/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/3froV0zmZn0/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 48,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "3froV0zmZn0"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "4q6k0HaUiDWdYvMxBllWtokiCMI",
+        "etag": "ohlZEb3lu5zo4gNs48UY6vp72Gw",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjRtRE5FQllYTG9j",
         "snippet": {
           "publishedAt": "2026-09-08T14:31:04Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Deleted video",
-          "description": "This video is unavailable.",
-          "thumbnails": {},
+          "title": "Ama Birjinaren Jaiotza. Prozesioa. Goldaratz",
+          "description": "",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/4mDNEBYXLoc/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/4mDNEBYXLoc/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/4mDNEBYXLoc/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/4mDNEBYXLoc/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/4mDNEBYXLoc/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+            }
+          },
           "channelTitle": "47herri",
           "playlistId": "UUYibdEdQAPs55xBnIElKLkQ",
           "position": 49,
           "resourceId": {
             "kind": "youtube#video",
             "videoId": "4mDNEBYXLoc"
-          }
+          },
+          "videoOwnerChannelTitle": "47herri",
+          "videoOwnerChannelId": "UCYibdEdQAPs55xBnIElKLkQ"
         }
       }
     ],
