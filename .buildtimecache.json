@@ -37,7 +37,7 @@
   },
   "f9e10942971ee728b2fe8833f60b848b686e19484ad96ac063489503635ae3c3": {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "Ye8amxNk7X5ZXLwK-w9TAN1O8ZU",
+    "etag": "3C7pwhSxVD8QEcRNTGPxX9OJ76c",
     "nextPageToken": "EAAaHlBUOkNESWlFRFkyT0RWQ00wWTNNelpDTTBKRFEwVQ",
     "items": [
       {
@@ -230,7 +230,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "Fpkq2lm2BhlwMPVn0xmENEbUBGY",
+        "etag": "F4a4eHFmpd6JmPbWifzBE67sFsc",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLjFpaENGLXZqN3k4",
         "snippet": {
           "publishedAt": "2026-10-20T08:19:31Z",
@@ -277,7 +277,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "0bY1JtL3A4VCHKHjfSqw2ppafvw",
+        "etag": "UQzOute4tsjcIjDrvHa_0ccptOI",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmowak1WSVBtQ2Vv",
         "snippet": {
           "publishedAt": "2026-10-19T17:38:35Z",
@@ -1593,7 +1593,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "PfwmPPg9Vgsrlh8Oyp1w4DC9eNM",
+        "etag": "-bzr8voGpX_TBIXcznvxIBVuJpk",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLldNbWVHb2J1UmJ3",
         "snippet": {
           "publishedAt": "2026-09-22T08:12:15Z",
