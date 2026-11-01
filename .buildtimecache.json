@@ -37,17 +37,17 @@
   },
   "f9e10942971ee728b2fe8833f60b848b686e19484ad96ac063489503635ae3c3": {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "HLAvtqHHru0VRQVzOUYb5kWPudk",
+    "etag": "o-_DakfZUVMI9eipg9P2XDwcRQY",
     "nextPageToken": "EAAaHlBUOkNESWlFREEzT0RJNVFqa3pNVGRETWprMU5UWQ",
     "items": [
       {
         "kind": "youtube#playlistItem",
-        "etag": "sG1UAqrRgjstqRnnjRwgd15dPXM",
+        "etag": "ayGs07Eehl0P0Sx_g1g03bwwx5o",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLlA1ZGRibnFqQTI0",
         "snippet": {
           "publishedAt": "2026-10-31T18:47:48Z",
           "channelId": "UCYibdEdQAPs55xBnIElKLkQ",
-          "title": "Santu Guztiak Eguna. Lekunberri",
+          "title": "Santu Guztien Eguna. Lekunberri",
           "description": "",
           "thumbnails": {
             "default": {
