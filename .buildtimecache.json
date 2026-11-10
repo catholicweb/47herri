@@ -37,12 +37,12 @@
   },
   "f9e10942971ee728b2fe8833f60b848b686e19484ad96ac063489503635ae3c3": {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "yXR2bhw2-T8XfMTzotIBYJLTe2Y",
+    "etag": "FiKg5CMB5A7cyfYI18DEsVPhItg",
     "nextPageToken": "EAAaHlBUOkNESWlFRFZCUmpNNFJFUXhRa0pEUkVJNVF6aw",
     "items": [
       {
         "kind": "youtube#playlistItem",
-        "etag": "3FSM1pIWV2ABVrIeAi0MEUchWwY",
+        "etag": "gDicyxP_2LLr3qyxOAkeBAEmpio",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmpvdmRnOFZqVnNn",
         "snippet": {
           "publishedAt": "2026-11-10T08:52:33Z",
@@ -64,6 +64,16 @@
               "url": "https://i.ytimg.com/vi/jovdg8VjVsg/hqdefault.jpg",
               "width": 480,
               "height": 360
+            },
+            "standard": {
+              "url": "https://i.ytimg.com/vi/jovdg8VjVsg/sddefault.jpg",
+              "width": 640,
+              "height": 480
+            },
+            "maxres": {
+              "url": "https://i.ytimg.com/vi/jovdg8VjVsg/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
             }
           },
           "channelTitle": "47herri",
@@ -173,7 +183,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "BZpI1E_zRsSQj31UVMlswcdxxvg",
+        "etag": "htEq6NnfNr6xSfUA1E-qPmJ9xrw",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLkJlU0EzVUxteHpr",
         "snippet": {
           "publishedAt": "2026-11-07T19:21:53Z",
@@ -220,7 +230,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "F84ImO0Vmbgh56GILrTla2NLqO0",
+        "etag": "ldsGNRTTfQNlE29rkAPb3gb1mxo",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLktwWG5lQmp1cHR3",
         "snippet": {
           "publishedAt": "2026-11-06T17:49:16Z",
@@ -267,7 +277,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "iJAM84JGlQBrU9ls4YvAFBjy97A",
+        "etag": "cSQysCl4QGHof75G9G1ibnVp1FI",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmRVbWNGYTFsVW1F",
         "snippet": {
           "publishedAt": "2026-11-05T18:54:40Z",
@@ -314,7 +324,7 @@
       },
       {
         "kind": "youtube#playlistItem",
-        "etag": "pss9ZK77L7La58MO9pxTRk-LquQ",
+        "etag": "HYDid2rDNwNLbNr_XQdBwqs4cMk",
         "id": "VVVZaWJkRWRRQVBzNTV4Qm5JRWxLTGtRLmdmUmFoQXZOcGt3",
         "snippet": {
           "publishedAt": "2026-11-05T15:36:16Z",
